@@ -58,6 +58,14 @@ def check_question(q, tag, errors, warns):
         errors.append(f"{tag} explanation 없음")
     if not q.get("tip"):
         warns.append(f"{tag} tip 없음")
+    # 기출 변환 문항: origin="past-exam" + pastExamRef(시험·문항 번호, 학교명 금지)
+    origin = q.get("origin")
+    if origin is not None and origin != "past-exam":
+        errors.append(f"{tag} origin은 'past-exam'만 쓸 수 있음 (새로 만든 문항은 origin 생략)")
+    if origin == "past-exam" and not str(q.get("pastExamRef", "")).strip():
+        errors.append(f"{tag} 기출 변환 문항인데 pastExamRef(예: '2025-1학기-기말-07') 없음")
+    if q.get("pastExamRef") and origin != "past-exam":
+        errors.append(f"{tag} pastExamRef가 있는데 origin이 'past-exam'이 아님")
     if q.get("figure"):
         check_svg(tag, "figure", q["figure"].get("svg"), errors)
     refs = q.get("refs") or []
@@ -174,6 +182,21 @@ def build_book(bdir, errors, warns, info):
             by_slot[s["id"]].append(q)
             q = dict(q, unit=udir.name)
             questions.append(q)
+        # 기출 반영 검사: 설계도 슬롯의 pastExams 목록 ↔ 문항의 pastExamRef가 서로 맞아야 한다
+        past_refs = Counter(q.get("pastExamRef") for q in qs if q.get("origin") == "past-exam")
+        for ref, c in past_refs.items():
+            if c > 1:
+                errors.append(f"{tagu} 같은 기출 {ref}이(가) 문항 {c}개로 들어감 (기출 하나 = 문항 하나, 나머지는 새 변형으로)")
+        for s in slots:
+            listed = s.get("pastExams") or []
+            have = {q.get("pastExamRef") for q in by_slot[s["id"]] if q.get("origin") == "past-exam"}
+            for ref in listed:
+                if ref not in have:
+                    errors.append(f"{tagu} 슬롯 {s['id']} 설계도에 기출 {ref}이(가) 배정됐는데 변환 문항이 없음")
+            for ref in have - set(listed):
+                errors.append(f"{tagu} 슬롯 {s['id']}의 기출 문항 {ref}이(가) 설계도 pastExams에 없음")
+        if past_refs:
+            info.append(f"{tagu} 기출 변환 문항 {sum(past_refs.values())}개")
         for s in slots:
             n = len(by_slot[s["id"]])
             if n == 0:
