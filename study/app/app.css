@@ -461,3 +461,11 @@ th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)} th.n,
 .mdetail{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
 .mdh{display:flex;align-items:center;gap:8px;margin-bottom:8px} .mdh b{font-size:.92rem}
 .mdh .madd{margin-left:auto;min-height:34px;padding:2px 10px;font-size:.82rem;font-weight:700;color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+
+/* ── 공휴일 (빨간 날) ── */
+.cday.hol{background:color-mix(in srgb,var(--bad) 8%,var(--paper))}
+.cday.hol .cn,.mday.hol .mn,.mday.hol .mw{color:var(--bad)}
+.cday .chn{display:none;font-size:.72rem;line-height:1.25;font-weight:700;color:var(--bad);padding:0 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (min-width:700px){ .cday .chn{display:block} }
+.hchip{display:inline-block;font-size:.76rem;font-weight:800;color:var(--bad);background:var(--bad-soft);border-radius:999px;padding:1px 9px;white-space:nowrap}
+.cal-legend i.hl{background:var(--bad);border-radius:2px}
