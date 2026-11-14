@@ -13,3 +13,6 @@ __pycache__/
 # OS
 Thumbs.db
 desktop.ini
+
+# 검수 중인 문제 은행 (만장일치 통과 전에는 올리지 않음)
+drafts/

@@ -5,7 +5,7 @@ description: 시험 설계도(blueprint.json)와 핵심 정리(notes.md)로 중�
 
 # 문제 은행 출제 (study-quiz)
 
-화면·채점·시험지 조합은 앱(`app/app.js`)이 한다. **이 스킬은 `library/<책id>/<단원id>/questions.json`의 문제 데이터만 만든다.**
+화면·채점·시험지 조합은 앱(`app/app.js`)이 한다. **이 스킬은 `drafts/<책id>/<단원id>/questions.json`의 문제 데이터만 만든다.**
 오답풀이 항목(detail·choiceExplanations·refs 등)은 `study-explain` 스킬이 채우지만, 출제자가 의도를 알고 있으므로 초안을 함께 써 두면 좋다.
 
 ## 입력
@@ -63,7 +63,7 @@ description: 시험 설계도(blueprint.json)와 핵심 정리(notes.md)로 중�
 - 모든 문항에 `source`. 교과서와 자습서가 다르면 교과서를 따르고 해설에 적는다.
 
 ## 자체 점검
-`python engine/build_library.py <책id> --check-only` → `✖` 0개가 될 때까지 고친다. `⚠`(변형 부족, refs 없음 등)도 해소한다.
+`python engine/build_library.py --check-unit drafts/<책id>/<단원id>` → `✖` 0개가 될 때까지 고친다. `⚠`(변형 부족, refs 없음 등)도 해소한다.
 
 ## 반려 문항 수정
 지적된 문항만 고친다. 다른 문항을 바꿔야 하면 이유를 보고한다. 수정 후 다시 빌드 검사.

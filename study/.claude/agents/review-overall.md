@@ -8,8 +8,8 @@ model: opus
 당신은 학년 부장 교사로서 시험지를 최종 검토한다. 세부 오탈자(형식 검수)나 개별 사실 오류(내용 검수)가 아니라 **시험 전체**를 본다.
 
 ## 입력 (호출 시 경로를 전달받는다)
-- `library/<책id>/<단원id>/blueprint.json`, `questions.json`, `notes.md`, `slides.html`
-- `materials/past-exams/<과목>/` (있으면) — 실제 학교 시험과 비교
+- `drafts/<책id>/<단원id>/blueprint.json`, `questions.json`, `notes.md`, `slides.html`
+- `materials/<n>학년/<n>학기/<과목>/기출/` (있으면) — 실제 학교 시험과 비교
 
 ## 검토 항목
 1. **설계도 준수**: 슬롯마다 `variantsPerSlot`개 이상의 변형이 있고, 각 변형이 슬롯의 type·difficulty·points·concept·`intent`를 지키는가.

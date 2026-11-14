@@ -10,7 +10,7 @@ description: 문제 은행(questions.json)의 각 문항에 상세 오답풀이�
 실시간 생성은 없다. 이 스킬이 미리 써 둔 내용이 그대로 나온다. **틀린 내용이 있으면 아이가 잘못 배우므로**, 모든 내용은 원문에 근거하고 `review-explanation`·`review-content` 검수를 거친다.
 
 ## 입력
-`library/<책id>/<단원id>/questions.json`, `notes.md`, `materials/…`(원문)
+`drafts/<책id>/<단원id>/questions.json`, `notes.md`, `materials/…`(원문)
 
 ## 문항별로 채울 항목
 | 항목 | 대상 | 작성 규칙 |
@@ -44,4 +44,4 @@ description: 문제 은행(questions.json)의 각 문항에 상세 오답풀이�
 - 풀이가 정답·채점 기준과 모순되면 안 된다(정답이 틀렸다고 판단되면 고치지 말고 `quiz` 반려 사유로 보고).
 
 ## 점검
-`python engine/build_library.py <책id> --check-only` → `✖` 0개, `⚠`의 "refs 없음 / tip 없음 / commonMistakes 없음"도 해소.
+`python engine/build_library.py --check-unit drafts/<책id>/<단원id>` → `✖` 0개, `⚠`의 "refs 없음 / tip 없음 / commonMistakes 없음"도 해소.

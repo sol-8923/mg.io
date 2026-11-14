@@ -4,6 +4,7 @@
     python engine/build_library.py                 # 모든 책 검사·생성
     python engine/build_library.py g1s2-science    # 한 책만
     python engine/build_library.py --check-only    # 검사만
+    python engine/build_library.py --check-unit drafts/<책id>/<단원id>   # 검수 중인 단원 검사 (통과 기록 불필요)
 
 폴더 구조:
     library/<책id>/meta.json                 {"grade":1,"semester":2,"subject":"과학", "color"?, "description"?, "sample"?}
@@ -143,6 +144,12 @@ def build_book(bdir, errors, warns, info):
         slot_map = {s["id"]: s for s in slots}
         target = bp.get("variantsPerSlot", 2)
         tagu = f"[{bdir.name}/{udir.name}]"
+        # 검수 통과 기록이 있는 단원만 사이트에 올린다 (검수 중인 단원은 drafts/ 에서 작업)
+        if not CHECK_UNIT:
+            st_path = udir / "review" / "status.json"
+            st = load(st_path) if st_path.exists() else {}
+            if st.get("verdict") != "PASS":
+                errors.append(f"{tagu} 검수 통과 기록(review/status.json, verdict=PASS)이 없음 — drafts/에서 4중 검수 만장일치 후 옮길 것")
         if not bp.get("unitName"):
             errors.append(f"{tagu} blueprint.unitName 없음")
         if bp.get("totalPoints") is not None and sum(s.get("points", 0) for s in slots) != bp["totalPoints"]:
@@ -192,7 +199,39 @@ def build_book(bdir, errors, warns, info):
     return book
 
 
+CHECK_UNIT = False
+
+
+def check_draft_unit(path):
+    """drafts/<책id>/<단원id> 하나를 검사만 한다 (검수 통과 기록 불필요)."""
+    global CHECK_UNIT
+    CHECK_UNIT = True
+    udir = Path(path).resolve()
+    bdir = udir.parent
+    errors, warns, info = [], [], []
+    if not (bdir / "meta.json").exists():
+        errors.append(f"[{bdir.name}] meta.json 없음 (drafts/<책id>/meta.json)")
+    else:
+        # 해당 단원만 남긴 가상의 책으로 검사
+        meta = load(bdir / "meta.json")
+        class OneUnit:
+            name = bdir.name
+            def iterdir(self_inner):
+                return [udir]
+            def __truediv__(self_inner, other):
+                return bdir / other
+        build_book(OneUnit(), errors, warns, info)
+    for line in info: print("  ·", line)
+    for w in warns: print("  ⚠", w)
+    for e in errors: print("  ✖", e)
+    print(f"결과: {'실패' if errors else '통과'} (오류 {len(errors)}, 경고 {len(warns)})")
+    sys.exit(1 if errors else 0)
+
+
 def main():
+    if "--check-unit" in sys.argv:
+        i = sys.argv.index("--check-unit")
+        return check_draft_unit(sys.argv[i + 1])
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     check_only = "--check-only" in sys.argv
     errors, warns, info = [], [], []
