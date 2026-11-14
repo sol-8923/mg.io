@@ -53,7 +53,6 @@ function board(ctx,y,h,title,sub,titleSize){
   T(ctx,'MINGYEOM · STUDY ROOM',84,y+66,22,{w:600,c:C.chalk,al:.6});
   T(ctx,title,84,y+66+(titleSize||64)+10,titleSize||64,{k:'serif',w:700,c:'#fbf8ef'});
   T(ctx,sub,84,y+66+(titleSize||64)+56,28,{c:C.chalk,al:.82,max:W-300});
-  T(ctx,'겪어나가는 모든 것이 공부다',W-84,y+h-62,40,{k:'hand',c:C.pink,a:'right'});
 }
 function footer(ctx,y,label){ T(ctx,'민겸이 공부 공간 · '+label,W/2,y+36,24,{c:C.muted,a:'center'}); return y+72; }
 function chip(ctx,rightX,cy,label,color){
