@@ -1,0 +1,15 @@
+# 원문 자료(교과서·자습서·기출 사진/PDF)는 저작물이고 용량이 커서 올리지 않는다
+materials/**
+!materials/**/
+!materials/**/.gitkeep
+
+# 비밀정보
+.env
+
+# Python
+__pycache__/
+.venv/
+
+# OS
+Thumbs.db
+desktop.ini

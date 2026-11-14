@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "id": "sample-science-state-change",
+    "title": "[샘플] 물질의 상태 변화 사전 시험",
+    "subject": "과학",
+    "grade": "중1",
+    "unit": "샘플 · 물질의 상태 변화",
+    "description": "엔진 동작 확인용 샘플 (교과서 내용 아님)",
+    "totalPoints": 30,
+    "timeLimitMin": 10
+  },
+  "questions": [
+    {
+      "id": "Q01", "type": "mc", "difficulty": "하", "points": 4, "concept": "상태 변화의 종류",
+      "question": "고체가 액체로 변하는 현상을 무엇이라고 하는가?",
+      "choices": ["기화", "융해", "응고", "액화", "승화"],
+      "answer": 2,
+      "explanation": "고체 → 액체는 융해이다. 응고는 반대로 액체 → 고체이다.",
+      "source": "샘플 자료 1쪽"
+    },
+    {
+      "id": "Q02", "type": "mc", "difficulty": "중", "points": 5, "concept": "입자 배열",
+      "passage": "ㄱ. 고체는 입자가 규칙적으로 배열되어 있다.\nㄴ. 기체는 입자 사이의 거리가 가장 멀다.\nㄷ. 액체는 입자가 제자리에서 진동만 한다.",
+      "question": "위 설명 중 옳은 것만을 있는 대로 고른 것은?",
+      "choices": ["ㄱ", "ㄷ", "ㄱ, ㄴ", "ㄴ, ㄷ", "ㄱ, ㄴ, ㄷ"],
+      "answer": 3,
+      "explanation": "ㄷ은 고체에 대한 설명이다. 액체 입자는 비교적 자유롭게 움직인다.",
+      "source": "샘플 자료 2쪽"
+    },
+    {
+      "id": "Q03", "type": "mc", "difficulty": "상", "points": 5, "concept": "열에너지 출입",
+      "question": "열에너지를 흡수하는 상태 변화를 모두 고르시오. (2개)",
+      "choices": ["응고", "기화", "액화", "융해", "(기체→고체) 승화"],
+      "answer": [2, 4],
+      "explanation": "융해·기화·(고체→기체) 승화는 열에너지를 흡수하고, 응고·액화·(기체→고체) 승화는 방출한다.",
+      "source": "샘플 자료 3쪽"
+    },
+    {
+      "id": "Q04", "type": "short", "difficulty": "중", "points": 4, "concept": "상태 변화의 종류",
+      "question": "추운 겨울날 유리창 안쪽에 성에가 생기는 현상과 관계있는 상태 변화의 이름을 쓰시오.",
+      "answer": ["승화", "기체에서 고체로의 승화"],
+      "answerHint": "두 글자로 쓰시오.",
+      "explanation": "수증기(기체)가 바로 얼음(고체)이 되는 승화이다.",
+      "source": "샘플 자료 3쪽"
+    },
+    {
+      "id": "Q05", "type": "ox", "difficulty": "하", "points": 2, "concept": "상태 변화와 질량",
+      "question": "물질의 상태가 변해도 질량은 변하지 않는다.",
+      "answer": true,
+      "explanation": "상태 변화는 입자 배열만 바뀌고 입자 수는 그대로이므로 질량이 보존된다.",
+      "source": "샘플 자료 4쪽"
+    },
+    {
+      "id": "S01", "type": "essay", "difficulty": "상", "points": 10, "concept": "열에너지 출입",
+      "question": "더운 여름날 마당에 물을 뿌리면 시원해지는 까닭을 '상태 변화'와 '열에너지'라는 말을 사용하여 서술하시오.",
+      "answerHint": "두 낱말을 모두 사용하여 서술하시오.",
+      "modelAnswer": "뿌린 물이 증발(기화)하면서 주변의 열에너지를 흡수하기 때문에 주변 온도가 낮아져 시원해진다.",
+      "rubric": [
+        { "criterion": "물이 기화(증발)하는 상태 변화를 언급함", "points": 5 },
+        { "criterion": "기화할 때 주변의 열에너지를 흡수하여 온도가 낮아짐을 설명함", "points": 5 }
+      ],
+      "source": "샘플 자료 4쪽"
+    }
+  ]
+}
