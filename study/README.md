@@ -61,14 +61,7 @@ python -m http.server               # http://localhost:8000
 시험 기록·오답노트·대시보드 통계는 각 기기(브라우저)에 저장된다. 기기를 옮길 때는 오답노트 화면의 내보내기/가져오기를 쓴다.
 
 ## 우리 집 일정을 모든 기기에서 공유하기
-일정(루틴·달력·해야 할 일)은 알림과 같은 Firebase 프로젝트의 `plan/routine`, `plan/events`, `plan/todos` 문서에 저장한다. **Firebase 콘솔 → Firestore → 규칙**에서 기존 규칙(`notices`)은 그대로 두고 `match /databases/{database}/documents { ... }` 안에 아래를 추가해 게시하면 폰·탭이 같은 일정을 본다. 추가하기 전에는 일정이 각 기기에만 저장되고, 일정 페이지 위쪽에 안내가 뜬다.
-```
-match /plan/{doc} {
-  allow get: if doc in ['routine','events','todos'];
-  allow create, update: if doc in ['routine','events','todos']
-    && request.resource.data.keys().hasOnly(['data','updatedAt'])
-    && request.resource.data.data is string
-    && request.resource.data.data.size() < 100000;
-  allow delete: if false;
-}
-```
+일정(루틴·달력·해야 할 일)은 알림과 같은 Firebase 프로젝트(`mg-study`)의 `plan/routine`, `plan/events`, `plan/todos` 문서에 저장되고, 폰·탭이 같은 일정을 본다. **보안 규칙은 이미 적용돼 있다**(2026-11-15). 규칙 전문은 `firestore.rules`에 있다.
+- 알림(`notices`)과 일정(`plan`)만 읽고 쓸 수 있고 나머지 경로는 전부 막혀 있다. 일정은 3개 문서만, 100KB 미만만 쓸 수 있고 삭제는 막혀 있다.
+- 규칙을 고쳐서 다시 올릴 때: `firebase login` 후 `firebase.json`(`{"firestore":{"rules":"firestore.rules"}}`)을 둔 폴더에서 `firebase deploy --only firestore:rules --project mg-study`. 올리기 전에 콘솔의 현재 규칙과 비교해 `notices`가 지워지지 않게 한다.
+- 인터넷이 불안정하면 일정 페이지 위쪽에 안내가 뜨고 이 기기에 저장된 내용을 보여 준다.

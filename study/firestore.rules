@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /notices/{who} {
+      allow read: if who in ['dad', 'mom'];
+      allow write: if who in ['dad', 'mom']
+        && request.resource.data.keys().hasOnly(['text', 'updatedAt'])
+        && request.resource.data.text is string
+        && request.resource.data.text.size() <= 300
+        && request.resource.data.updatedAt is string;
+    }
+    match /plan/{doc} {
+      allow get: if doc in ['routine', 'events', 'todos'];
+      allow create, update: if doc in ['routine', 'events', 'todos']
+        && request.resource.data.keys().hasOnly(['data', 'updatedAt'])
+        && request.resource.data.data is string
+        && request.resource.data.data.size() < 100000
+        && request.resource.data.updatedAt is string;
+      allow delete: if false;
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}
