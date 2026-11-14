@@ -1,22 +1,106 @@
 {
   "unitName": "물질의 상태 변화",
   "basis": "default",
-  "analysis": "기출 없음 — 중학교 내신 일반형(자료 해석·합답형·서술형 조건 제시) 적용. 샘플 단원평가 크기(12문항).",
+  "analysis": "기출 없음 — 중학교 내신 일반형(자료 해석·합답형·서술형 조건 제시) 적용. 샘플 단원평가 크기(12문항). 라운드 1 검수 반영: 슬롯 간 답 노출 제거, 정답 위치 분산.",
   "timeLimitMin": 25,
   "totalPoints": 100,
   "variantsPerSlot": 2,
   "slots": [
-    { "id": "Q01", "type": "mc", "difficulty": "하", "points": 6, "concept": "입자의 운동", "intent": "확산·증발의 사례 구분" },
-    { "id": "Q02", "type": "mc", "difficulty": "중", "points": 6, "concept": "입자의 운동", "intent": "실험 상황 + 〈보기〉 합답형: 온도·조건과 입자 운동, 변인 통제" },
-    { "id": "Q03", "type": "mc", "difficulty": "하", "points": 6, "concept": "상태 변화의 종류", "intent": "상태 변화 순환 그림(A~F)에서 변화 이름 찾기" },
-    { "id": "Q04", "type": "mc", "difficulty": "중", "points": 6, "concept": "상태 변화의 종류", "intent": "생활 속 사례를 상태 변화로 분류 (액화·승화 등)" },
-    { "id": "Q05", "type": "mc", "difficulty": "중", "points": 6, "concept": "입자 배열", "intent": "세 상태 입자 모형 그림 해석, 변하는 것/변하지 않는 것" },
-    { "id": "Q06", "type": "mc", "difficulty": "중", "points": 6, "concept": "부피와 질량 변화", "intent": "상태 변화 시 부피·질량 변화 (촛농, 물의 예외) 〈보기〉 합답형" },
-    { "id": "Q07", "type": "mc", "difficulty": "상", "points": 6, "concept": "가열·냉각 곡선", "intent": "가열 곡선 그래프 구간 해석, 양 변화와 녹는점" },
-    { "id": "Q08", "type": "mc", "difficulty": "상", "points": 6, "concept": "가열·냉각 곡선", "intent": "냉각 곡선 해석: 어는점=녹는점, 응고 시 열 방출, 양 변화" },
-    { "id": "Q09", "type": "mc", "difficulty": "상", "points": 6, "concept": "녹는점과 끓는점", "intent": "녹는점·끓는점 표로 특정 온도의 상태 판단 (경계값 함정)" },
-    { "id": "Q10", "type": "short", "difficulty": "하", "points": 6, "concept": "상태 변화의 종류", "intent": "핵심 용어 단답 (승화, 끓는점 등)" },
-    { "id": "S01", "type": "essay", "difficulty": "상", "points": 20, "concept": "가열·냉각 곡선", "intent": "그래프 수평 구간에서 온도가 일정한 까닭을 조건 낱말로 서술" },
-    { "id": "S02", "type": "essay", "difficulty": "중", "points": 20, "concept": "상태 변화와 열에너지", "intent": "생활 현상을 상태 변화 이름과 열에너지 출입으로 서술" }
+    {
+      "id": "Q01",
+      "type": "mc",
+      "difficulty": "하",
+      "points": 6,
+      "concept": "입자의 운동",
+      "intent": "확산·증발의 사례 구분"
+    },
+    {
+      "id": "Q02",
+      "type": "mc",
+      "difficulty": "중",
+      "points": 6,
+      "concept": "입자의 운동",
+      "intent": "실험 상황 + 〈보기〉 합답형: 온도·조건과 입자 운동, 변인 통제"
+    },
+    {
+      "id": "Q03",
+      "type": "mc",
+      "difficulty": "하",
+      "points": 6,
+      "concept": "상태 변화의 종류",
+      "intent": "상태 변화 순환 그림(A~F)에서 변화 이름 찾기"
+    },
+    {
+      "id": "Q04",
+      "type": "mc",
+      "difficulty": "중",
+      "points": 6,
+      "concept": "상태 변화의 종류",
+      "intent": "생활 속 사례를 상태 변화로 분류 — 겉모양이 비슷한 사례 속에서 처음·나중 상태를 따져야 답이 나오게"
+    },
+    {
+      "id": "Q05",
+      "type": "mc",
+      "difficulty": "중",
+      "points": 6,
+      "concept": "입자 배열",
+      "intent": "세 상태 입자 모형 그림 해석, 변하는 것/변하지 않는 것"
+    },
+    {
+      "id": "Q06",
+      "type": "mc",
+      "difficulty": "중",
+      "points": 6,
+      "concept": "부피와 질량 변화",
+      "intent": "상태 변화 시 부피·질량 변화 (촛농, 물의 예외) 〈보기〉 합답형"
+    },
+    {
+      "id": "Q07",
+      "type": "mc",
+      "difficulty": "상",
+      "points": 6,
+      "concept": "가열·냉각 곡선",
+      "intent": "가열 곡선 해석: 녹는점·끓는점 구분, 구간별 상태, 양 변화와 녹는점(두 변형 모두 포함)"
+    },
+    {
+      "id": "Q08",
+      "type": "mc",
+      "difficulty": "중",
+      "points": 6,
+      "concept": "가열·냉각 곡선",
+      "intent": "냉각 곡선 해석: 구간별 상태, 두 상태 공존(수평 구간), 어는점=녹는점 (양 변화·열 방출·입자 운동은 다루지 않음 — Q02·Q07·S01과 중복 방지)"
+    },
+    {
+      "id": "Q09",
+      "type": "mc",
+      "difficulty": "상",
+      "points": 6,
+      "concept": "녹는점과 끓는점",
+      "intent": "녹는점·끓는점 표로 특정 온도의 상태 판단 — 녹는점·끓는점 양쪽 비교, 기준 온도와 1~4℃ 차이 나는 경계값 함정"
+    },
+    {
+      "id": "Q10",
+      "type": "short",
+      "difficulty": "하",
+      "points": 6,
+      "concept": "상태 변화의 종류",
+      "intent": "핵심 용어 단답 — 정의만 제시(현상·사례 단서 금지). Q03·Q04에서 사례로 묻는 현상을 발문에 쓰지 않는다. 발문에 답의 낱말이 들어가지 않게."
+    },
+    {
+      "id": "S01",
+      "type": "essay",
+      "difficulty": "상",
+      "points": 20,
+      "concept": "가열·냉각 곡선",
+      "intent": "객관식과 다른 물질의 그래프로, 수평 구간에서 온도가 일정한 까닭을 조건 낱말로 서술"
+    },
+    {
+      "id": "S02",
+      "type": "essay",
+      "difficulty": "중",
+      "points": 20,
+      "concept": "상태 변화와 열에너지",
+      "intent": "생활 현상을 상태 변화 이름과 열에너지 출입(흡수/방출)으로 서술"
+    }
   ]
 }

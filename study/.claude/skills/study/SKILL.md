@@ -59,6 +59,7 @@ description: 교과서·자습서 자료로 "민겸이 공부 공간"의 교과�
    - 전달: 책id·단원id, materials 경로, `library/<책id>/<단원id>/` 경로, past-exams 경로(있으면), 라운드 번호. 보강 모드면 새로 추가된 문항 id 목록도.
 2. 보고서를 `library/<책id>/<단원id>/review/round-<N>-<format|content|overall|explanation>.md`로 저장.
 3. **넷 모두 `VERDICT: PASS` → 통과.** 하나라도 REJECT → 되돌림 후 N+1 라운드. **횟수 제한 없음.**
+   - **예외 (사용자 지정 규칙):** `review-overall`이 REJECT여도 지적 사항이 **난이도에 관한 것뿐**(난이도 표시의 타당성, 변형 간 난이도 차이, 상/중/하 체감)이면 통과로 본다. 이때 그 지적은 고치지 않고 `review/changelog.md`에 "난이도 참고"로 기록만 한다. 난이도 외의 지적(답 노출, 개념 중복, 변형 복제, 설계도 위반, 선택지 구성 결함 등)이 하나라도 섞여 있으면 평소처럼 반려한다.
 
 ### 되돌림 규칙
 | 되돌릴 곳 | 처리 |
