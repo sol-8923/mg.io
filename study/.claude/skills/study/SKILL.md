@@ -43,7 +43,7 @@ description: 교과서·자습서 학습 자료로 요약 발표 자료(slides.h
 - `frontend-slides` 스킬을 따른다. 단, 아래는 고정값이라 묻지 않는다.
   - 콘텐츠 밀도: **High density / reading-first** (혼자 읽으며 공부하는 자료)
   - 입력 내용: notes.md (원문을 직접 요약하지 않는다)
-  - 배포(Vercel)·PDF 변환은 하지 않는다 — 교과서 내용이 공개되면 안 됨
+  - frontend-slides의 Vercel 배포·PDF 변환은 쓰지 않는다 (공개는 GitHub Pages로 한다 — 5단계)
 - 스타일: `config/slide-style.md`에 저장된 스타일이 있으면 그대로 쓴다. 없으면(첫 실행) frontend-slides의 스타일 고르기 과정을 진행하고, 고른 결과를 `config/slide-style.md`에 저장한다.
 - 구성: 표지 → 단원 개요 → 핵심 개념(개념당 1~2장) → 꼭 외울 것 → 헷갈리는 것 비교 → 시험 포인트 → 마무리 요약.
 - 글꼴은 한글이 잘 보이는 것(Pretendard, Noto Sans KR 등)을 쓴다.
@@ -74,9 +74,13 @@ description: 교과서·자습서 학습 자료로 요약 발표 자료(slides.h
 
 ### 5단계 · 완료
 1. `quiz.html`과 `slides.html`을 브라우저로 열어 정상 표시를 확인한다(E 드라이브 지침의 완료 확인 규칙).
-2. 보고는 짧게: 만든 파일 2개 경로, 문항 수·총점, 검수 통과 라운드 수, 사용자 판단이 필요했던 쟁점(있으면).
-3. git 저장소면 커밋한다(`materials/`는 커밋하지 않음 — .gitignore).
+2. 목록 페이지 갱신: `python engine/build_index.py` → `study/index.html`
+3. 커밋 후 push한다(`materials/`는 .gitignore로 제외됨). GitHub Pages가 1~2분 뒤 자동 반영된다.
+4. 보고는 짧게: 문항 수·총점, 검수 통과 라운드 수, 사용자 판단이 필요했던 쟁점(있으면), 그리고 주소
+   - 목록: `https://sol-8923.github.io/mg.io/study/`
+   - 해당 단원 시험·요약 주소 (경로의 한글은 브라우저가 자동 처리)
 
 ## 주의
-- 교과서·자습서 내용은 저작물이다. 결과물은 가족 학습용으로만 쓰고 공개 배포하지 않는다.
+- 저장소(mg.io)와 Pages는 **공개**다. 결과물(요약·문제)은 누구나 볼 수 있으므로, 교과서 문장·그림을 그대로 길게 옮기지 말고 **요약·재구성한 내용**으로 만든다. 교과서 사진 원본(`materials/`)은 절대 커밋하지 않는다.
+- 이름·학교 등 개인정보를 결과물에 넣지 않는다.
 - 중간에 멈춰야 할 때(자료 판독 불가, 사용자 판단 필요)는 진행 상황을 `review/changelog.md`에 남겨 다음에 이어서 할 수 있게 한다.

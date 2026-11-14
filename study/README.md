@@ -6,7 +6,7 @@
 1. 자료 넣기: `materials\<과목>\<단원>\` 에 교과서·자습서 사진, PDF, 텍스트를 넣는다.
    - 예: `materials\과학\2단원\교과서-p30.jpg`
    - 기출문제가 있으면 `materials\past-exams\<과목>\` 에 넣는다 (실제 학교 시험 경향에 맞춰 줌).
-2. **`study` 폴더에서** Claude Code를 실행하고 (스킬·에이전트가 `study\.claude\`에 있어서 이 폴더에서 실행해야 인식됨) `/study 과학 2단원` 입력.
+2. `E:\dev\mg.io` 또는 `study` 폴더에서 Claude Code를 실행하고 `/study 과학 2단원` 입력.
 3. 결과: `output\과학\2단원\`
    - `slides.html` — 요약 발표 자료 (브라우저로 열기, 방향키로 넘김)
    - `quiz.html` — 사전 시험 (연습 모드: 한 문제씩 바로 채점 / 실전 모드: 시간 제한, 끝나고 채점)
@@ -40,5 +40,9 @@ python engine\build_quiz.py output\과학\2단원\questions.json            # �
 python engine\build_quiz.py output\과학\2단원\questions.json --check-only
 ```
 
+## 온라인으로 보기 (GitHub Pages)
+- 목록: https://sol-8923.github.io/mg.io/study/
+- `/study`가 끝나면 목록 페이지(`index.html`)를 갱신하고 push해서 1~2분 뒤 반영된다.
+
 ## 주의
-교과서·자습서 내용은 저작물이므로 결과물은 가족 학습용으로만 쓰고 공개하지 않는다. `materials/`는 git에 올리지 않는다.
+저장소와 Pages는 공개다. 결과물은 교과서 문장을 그대로 옮기지 않고 요약·재구성한 내용으로 만든다. 교과서 사진 원본(`materials/`)은 git에 올리지 않는다(.gitignore).
