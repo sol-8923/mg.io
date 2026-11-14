@@ -52,12 +52,14 @@ description: 학년·학기·과목 폴더(materials/<학년>/<학기>/<과목>/
 `study-explain` 스킬. 모든 문항에 상세 풀이·보기별 해설·자주 하는 오답·기억할 점·**참고 자료(refs)**를 채운다.
 
 ### 5단계 · 요약 정리 → `slides.html`
+> 디자인 작업이므로 **Sonnet** 서브에이전트에 맡겨도 된다(사용자 허용).
 `frontend-slides` 스킬. 고정값: High density / reading-first, 입력은 notes.md, Vercel 배포·PDF 변환은 쓰지 않음. 스타일은 `config/slide-style.md`(없으면 첫 실행 때 정해 저장). 한글 글꼴 사용.
 
 ### 6단계 · 빌드 검사
 `python engine/build_library.py --check-unit drafts/<책id>/<단원id>` — `✖`가 없을 때까지 3·4단계로 돌아가 고친다. (1~7단계의 모든 작업 경로는 `drafts/<책id>/<단원id>/`)
 
 ### 7단계 · 4중 검수 (만장일치)
+> **모델 배정(사용자 지정):** 내용 검수(`review-content`)만 **Opus**, 형식·종합·오답풀이 검수는 **Sonnet**. 에이전트를 이름으로 못 부르는 환경에서 general-purpose로 대신 실행할 때도 같은 모델을 지정한다.
 1. `review-format`, `review-content`, `review-overall`, `review-explanation` 네 에이전트를 **한 번에 동시에** 호출. 서로의 결과는 전달하지 않는다.
    - 전달: 책id·단원id, materials 경로, `drafts/<책id>/<단원id>/` 경로, `기출/` 경로(있으면), 라운드 번호. 보강 모드면 새로 추가된 문항 id 목록도.
 2. 보고서를 `drafts/<책id>/<단원id>/review/round-<N>-<format|content|overall|explanation>.md`로 저장.
@@ -77,6 +79,7 @@ description: 학년·학기·과목 폴더(materials/<학년>/<학기>/<과목>/
 - 수정마다 `review/changelog.md`에 한 줄씩 기록.
 
 ### 8단계 · 통과 단원 옮기기 · 빌드 · 배포 · 확인
+> 옮기기·빌드·커밋·push는 **Sonnet** 서브에이전트에 맡겨도 된다(사용자 허용).
 0. **만장일치로 통과한 단원만** `drafts/<책id>/<단원id>/`를 `library/<책id>/<단원id>/`로 옮기고(`meta.json`도 처음이면 함께), `review/status.json`에 `{"verdict":"PASS","round":N,"date":"YYYY-MM-DD"}`를 기록한다. 통과하지 못한 단원은 drafts에 남겨 다음에 이어서 한다. 빌드는 통과 기록이 없는 library 단원을 거부한다.
 1. `python engine/build_library.py <책id>` → `book.json`, `catalog.json` 생성
 2. 로컬 확인: study 폴더에서 `python -m http.server` → 책장에 책이 보이고, 새로운 시험 보기·오답풀이·참고 자료가 정상 표시되는지 확인
