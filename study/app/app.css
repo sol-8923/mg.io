@@ -437,3 +437,11 @@ th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)} th.n,
 /* ── 되돌리기 토스트 ── */
 .toast.undo{display:flex;align-items:center;gap:12px;padding:6px 8px 6px 16px}
 .toast.undo button{min-height:36px;padding:2px 12px;background:rgba(255,255,255,.14);color:inherit;border-color:transparent;font-weight:700}
+
+/* ── 제목 앞 이모지 대신 색 막대 ── */
+.tp{--tc:var(--accent)}
+.tp.col-e{--tc:var(--sat)} .tp.col-t{--tc:var(--brass)}
+.tp-h b,.mini-head h3,.dm-sec>b{display:inline-flex;align-items:center;gap:9px}
+.tp-h b::before,.mini-head h3::before,.dm-sec>b::before{content:'';flex:none;width:4px;height:1.05em;border-radius:2px;background:var(--tc,var(--accent))}
+.mini-head h3{--tc:var(--wood1)}
+.empty-t{font-family:var(--serif);font-size:1.15rem;font-weight:700;margin:0}
