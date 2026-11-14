@@ -58,6 +58,34 @@ def check(data, blueprint=None):
             errors.append(f"{tag} source(출처 쪽수) 없음")
         if t != "essay" and not q.get("explanation"):
             errors.append(f"{tag} explanation(해설) 없음")
+        # 상세 오답풀이용 항목
+        if not str(q.get("detail", "")).strip():
+            errors.append(f"{tag} detail(상세 정답 풀이) 없음")
+        if not str(q.get("tip", "")).strip():
+            warns.append(f"{tag} tip(기억할 점) 없음")
+        if t == "mc":
+            ce = q.get("choiceExplanations")
+            if not isinstance(ce, list):
+                errors.append(f"{tag} choiceExplanations(보기별 해설) 없음")
+            elif isinstance(q.get("choices"), list) and len(ce) != len(q["choices"]):
+                errors.append(f"{tag} 보기별 해설 {len(ce)}개 ≠ 보기 {len(q['choices'])}개")
+            elif any(not str(x).strip() for x in ce):
+                errors.append(f"{tag} 비어 있는 보기별 해설이 있음")
+        if t == "short":
+            cm = q.get("commonMistakes")
+            if cm is None:
+                warns.append(f"{tag} commonMistakes(자주 하는 오답) 없음")
+            elif not isinstance(cm, list) or any(not m.get("answer") or not m.get("why") for m in cm):
+                errors.append(f"{tag} commonMistakes 항목은 answer와 why가 모두 있어야 함")
+            else:
+                acc = {norm(a) for a in (q.get("answer") if isinstance(q.get("answer"), list) else [q.get("answer")])}
+                for m in cm:
+                    for a in (m["answer"] if isinstance(m["answer"], list) else [m["answer"]]):
+                        if norm(a) in acc:
+                            errors.append(f"{tag} 자주 하는 오답 '{a}'가 정답 목록에도 있음")
+        if t == "essay" and isinstance(q.get("rubric"), list):
+            if any(not r.get("tip") for r in q["rubric"]):
+                warns.append(f"{tag} 채점 기준에 tip(빠졌을 때 보완 방법)이 없는 항목이 있음")
 
         key = norm(q.get("question", "")) + norm(q.get("passage", ""))
         if key in seen_q:
@@ -191,6 +219,9 @@ def main():
 
     if "--check-only" in sys.argv:
         return
+    # 같은 폴더에 요약 발표 자료가 있으면 오답풀이에서 링크한다
+    if src.with_name("slides.html").exists():
+        data.setdefault("meta", {})["slidesHref"] = "slides.html"
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     html = ENGINE.read_text(encoding="utf-8").replace("/*__QUIZ_DATA__*/", payload, 1)
     out = src.with_name("quiz.html")

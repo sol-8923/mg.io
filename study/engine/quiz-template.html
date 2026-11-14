@@ -102,6 +102,25 @@ th.n,td.n{text-align:right;font-variant-numeric:tabular-nums}
 .review summary{cursor:pointer;font-weight:600}
 .mark{font-weight:800;margin-right:6px}
 .mark.r{color:var(--ok)} .mark.w{color:var(--bad)} .mark.p{color:var(--warn)}
+/* 오답풀이 */
+.rv-box{border-radius:10px;padding:10px 14px;margin-top:10px;border:1px solid var(--line)}
+.rv-box .rv-t{display:block;margin-bottom:4px;font-size:.92rem}
+.rv-my{background:var(--bad-soft);border-color:transparent}
+.rv-ans{background:var(--ok-soft);border-color:transparent}
+.rv-why{background:var(--warn-soft);border-color:transparent}
+.rv-detail{background:var(--accent-soft);border-color:transparent}
+.rv-tip{background:var(--bg)}
+.rv-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rv-pair .rv-box{margin-top:0}
+.pre{white-space:pre-wrap}
+.it{border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:6px}
+.it.right{border-color:var(--ok)} .it.wrong{border-color:var(--bad)}
+.it small{display:block;color:var(--muted);margin-top:2px;font-size:.88rem}
+.tag{font-size:.75rem;font-weight:700;margin-left:6px;padding:1px 6px;border-radius:6px;background:var(--bad-soft);color:var(--bad)}
+.tag.ok{background:var(--ok-soft);color:var(--ok)}
+.rv-choices{margin-top:10px} .rv-choices summary{cursor:pointer;color:var(--accent);font-weight:600}
+.btnlink{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid var(--line);color:var(--ink);text-decoration:none}
+@media (max-width:520px){ .rv-pair{grid-template-columns:1fr} }
 .hidden{display:none!important}
 @media (max-width:520px){ .modes{grid-template-columns:1fr} .stats{grid-template-columns:repeat(3,1fr)} body{font-size:16px} }
 @media (prefers-reduced-motion: reduce){ *{transition:none!important} }
@@ -167,7 +186,8 @@ function earned(q){
 
 /* ---------- 시작 화면 ---------- */
 function renderStart(){
-  stopTimer();
+  stopTimer(); clearHash(); S.view='start'; S.submitted=false;
+  if(navEl){ navEl.remove(); navEl=null; }
   var app = document.getElementById('app'); app.innerHTML='';
   var store = load();
   var wrongIds = (store.wrong||[]).filter(function(id){ return ALL.some(function(q){return q.id===id;}); });
@@ -200,6 +220,7 @@ function renderStart(){
     h('div',{class:'row'},[
       h('button',{class:'primary',onclick:function(){start(ALL);}},['처음부터 풀기']),
       wrongIds.length?h('button',{onclick:function(){ start(ALL.filter(function(q){return wrongIds.indexOf(q.id)>=0;})); }},['틀린 문제만 ('+wrongIds.length+')']):null,
+      store.last?h('button',{onclick:function(){ if(restoreLast()) openReview(); }},['📝 지난 오답풀이']):null,
       h('span',{class:'spacer'}),
       h('button',{onclick:toggleTheme,title:'화면 밝기 전환'},['🌓'])
     ])
@@ -216,6 +237,7 @@ try{ var t=localStorage.getItem('study-kit:theme'); if(t) document.documentEleme
 
 /* ---------- 진행 ---------- */
 function start(list){
+  clearHash(); S.view='quiz';
   S.list = list.slice(); S.idx=0; S.ans={}; S.checked={}; S.self={}; S.submitted=false;
   S.startAt = Date.now();
   if(S.mode==='exam' && META.timeLimitMin){ startTimer(); }
@@ -353,6 +375,7 @@ function feedback(q, interactive){
   else ansText = (Array.isArray(q.answer)?q.answer:[q.answer]).join(' / ');
   kids.push(h('b',{class:'t',text:g?'⭕ 정답이에요!':'❌ 틀렸어요'}));
   if(!g) kids.push(h('div',{},[h('b',{text:'정답: '}),h('span',{text:ansText})]));
+  if(!g && (q.choiceExplanations||q.commonMistakes||q.wrongExplanation)) kids.push(h('div',{class:'pre',style:'margin-top:4px',text:'💬 '+whyWrong(q,a)}));
   if(q.explanation) kids.push(h('div',{style:'margin-top:4px',text:q.explanation}));
   if(q.source) kids.push(h('div',{class:'src',text:'📖 '+q.source}));
   return h('div',{class:'fb '+(g?'ok':'bad')},kids);
@@ -403,7 +426,42 @@ function submit(){
   if(navEl){ navEl.remove(); navEl=null; }
   var hasEssay = S.list.some(function(q){return q.type==='essay';});
   if(hasEssay && S.mode==='exam'){ renderSelfGrade(); return; }
-  renderResult();
+  finalize(); renderResult();
+}
+
+/* 채점 집계 (화면과 저장에서 같이 씀) */
+function summarize(){
+  var list=S.list, got=0, max=totalPts(list), byDiff={}, byConcept={}, wrong=[];
+  list.forEach(function(q){
+    var e=earned(q), p=q.points||0; got+=e;
+    var full = e>=p && p>0;
+    if(!full) wrong.push(q.id);
+    var d=q.difficulty||'-'; byDiff[d]=byDiff[d]||{g:0,m:0,n:0,r:0}; byDiff[d].g+=e; byDiff[d].m+=p; byDiff[d].n++; if(full) byDiff[d].r++;
+    var c=q.concept||'기타'; byConcept[c]=byConcept[c]||{g:0,m:0,n:0,r:0}; byConcept[c].g+=e; byConcept[c].m+=p; byConcept[c].n++; if(full) byConcept[c].r++;
+  });
+  return {got:got,max:max,byDiff:byDiff,byConcept:byConcept,wrong:wrong,score100:max?Math.round(got/max*100):0};
+}
+
+/* 제출 확정: 오답 목록·최고 점수·기록·마지막 풀이(오답풀이용) 저장 — 한 번만 호출 */
+function finalize(){
+  S.endAt=Date.now();
+  var r=summarize(), list=S.list, st=load();
+  var solvedIds=list.map(function(q){return q.id;});
+  st.wrong=(st.wrong||[]).filter(function(id){ return solvedIds.indexOf(id)<0; }).concat(r.wrong);
+  if(list.length===ALL.length){ st.best=Math.max(st.best||0, r.score100); }
+  st.history=(st.history||[]).concat([{at:new Date().toISOString(),mode:S.mode,score:r.got,max:r.max,n:list.length}]).slice(-30);
+  st.last={at:new Date().toISOString(),mode:S.mode,ids:solvedIds,ans:S.ans,self:S.self,startAt:S.startAt,endAt:S.endAt};
+  save(st);
+}
+
+/* 저장된 마지막 풀이 복원 (새로고침·나중에 오답풀이 다시 보기) */
+function restoreLast(){
+  var L=load().last; if(!L) return false;
+  var map={}; ALL.forEach(function(q){map[q.id]=q;});
+  S.list=L.ids.map(function(id){return map[id];}).filter(Boolean);
+  if(!S.list.length) return false;
+  S.mode=L.mode; S.ans=L.ans||{}; S.self=L.self||{}; S.startAt=L.startAt; S.endAt=L.endAt; S.submitted=true;
+  return true;
 }
 
 /* 실전 모드 서술형: 제출 후 자기채점 단계 */
@@ -423,32 +481,15 @@ function renderSelfGrade(){
       feedback(q,true)
     ]));
   });
-  app.appendChild(h('div',{class:'row',style:'margin-top:14px'},[h('span',{class:'spacer'}),h('button',{class:'primary',onclick:renderResult},['채점 완료 → 결과 보기'])]));
+  app.appendChild(h('div',{class:'row',style:'margin-top:14px'},[h('span',{class:'spacer'}),h('button',{class:'primary',onclick:function(){ finalize(); renderResult(); }},['채점 완료 → 결과 보기'])]));
 }
 
 function renderResult(){
+  S.view='result';
   var app=document.getElementById('app'); app.innerHTML='';
-  var list=S.list, got=0, max=totalPts(list);
-  var byDiff={}, byConcept={}, wrong=[];
-  list.forEach(function(q){
-    var e=earned(q), p=q.points||0; got+=e;
-    var full = e>=p && p>0;
-    if(!full) wrong.push(q.id);
-    var d=q.difficulty||'-'; byDiff[d]=byDiff[d]||{g:0,m:0,n:0,r:0}; byDiff[d].g+=e; byDiff[d].m+=p; byDiff[d].n++; if(full) byDiff[d].r++;
-    var c=q.concept||'기타'; byConcept[c]=byConcept[c]||{g:0,m:0,n:0,r:0}; byConcept[c].g+=e; byConcept[c].m+=p; byConcept[c].n++; if(full) byConcept[c].r++;
-  });
-  var mins=Math.round((Date.now()-S.startAt)/60000);
-
-  // 저장: 오답 목록, 최고 점수(전체 문항을 풀었을 때만), 기록
+  var list=S.list, R=summarize(), got=R.got, max=R.max, byDiff=R.byDiff, byConcept=R.byConcept, wrong=R.wrong, score100=R.score100;
+  var mins=Math.round(((S.endAt||Date.now())-S.startAt)/60000);
   var st=load();
-  var prevWrong=st.wrong||[];
-  var solvedIds=list.map(function(q){return q.id;});
-  var keep=prevWrong.filter(function(id){ return solvedIds.indexOf(id)<0; });
-  st.wrong=keep.concat(wrong);
-  var score100 = max? Math.round(got/max*100) : 0;
-  if(list.length===ALL.length){ st.best=Math.max(st.best||0, score100); }
-  st.history=(st.history||[]).concat([{at:new Date().toISOString(),mode:S.mode,score:got,max:max,n:list.length}]).slice(-30);
-  save(st);
 
   function table(title,obj,order){
     var keys=Object.keys(obj); if(order) keys.sort(function(a,b){return order.indexOf(a)-order.indexOf(b);});
@@ -463,7 +504,8 @@ function renderResult(){
     h('div',{class:'big',text:got+' / '+max+'점'}),
     h('div',{class:'muted',text:'100점 환산 '+score100+'점'+(list.length===ALL.length&&st.best!=null?' · 최고 '+st.best+'점':'')}),
     h('div',{class:'row',style:'margin-top:14px'},[
-      wrong.length?h('button',{class:'primary',onclick:function(){ start(list.filter(function(q){return wrong.indexOf(q.id)>=0;})); }},['틀린 문제 다시 풀기 ('+wrong.length+')']):h('span',{text:'🎉 모두 맞혔어요!'}),
+      wrong.length?h('button',{class:'primary',onclick:openReview},['📝 상세 오답풀이 ('+wrong.length+')']):h('span',{text:'🎉 모두 맞혔어요!'}),
+      wrong.length?h('button',{onclick:function(){ start(list.filter(function(q){return wrong.indexOf(q.id)>=0;})); }},['틀린 문제 다시 풀기']):null,
       h('button',{onclick:renderStart},['처음 화면'])
     ]),
     table('난이도별',byDiff,['하','중','상','-']),
@@ -494,9 +536,133 @@ function renderResult(){
   window.scrollTo(0,0);
 }
 
+/* ---------- 상세 오답풀이 ---------- */
+function myAnswerText(q, my){
+  if(my==null||my===''||(Array.isArray(my)&&!my.length)) return '(답하지 않음)';
+  if(q.type==='mc') return (Array.isArray(my)?my:[my]).map(function(n){return CIRCLED[n-1]+' '+q.choices[n-1];}).join(', ');
+  if(q.type==='ox') return my?'O':'X';
+  return String(my);
+}
+function rightAnswerText(q){
+  if(q.type==='mc') return (isMulti(q)?q.answer:[q.answer]).map(function(n){return CIRCLED[n-1]+' '+q.choices[n-1];}).join(', ');
+  if(q.type==='ox') return q.answer?'O':'X';
+  if(q.type==='short') return (Array.isArray(q.answer)?q.answer:[q.answer]).join(' / ');
+  return q.modelAnswer||'';
+}
+function box(cls, title, kids){ return h('div',{class:'rv-box '+cls},[h('b',{class:'rv-t',text:title})].concat(kids)); }
+
+/* 내 답이 왜 틀렸는지: 보기별 해설 / 자주 하는 오답 / 기본 문구 */
+function whyWrong(q, my){
+  var none = my==null||my===''||(Array.isArray(my)&&!my.length);
+  if(none) return '답을 하지 않았어요. 아래 정답 풀이로 개념을 먼저 확인해 보세요.';
+  if(q.type==='mc' && q.choiceExplanations){
+    var picks=(Array.isArray(my)?my:[my]);
+    var right=isMulti(q)?q.answer:[q.answer];
+    var lines=picks.filter(function(n){return right.indexOf(n)<0;}).map(function(n){ return CIRCLED[n-1]+' '+(q.choiceExplanations[n-1]||''); });
+    if(isMulti(q)){
+      var missed=right.filter(function(n){return picks.indexOf(n)<0;});
+      if(missed.length) lines.push('빠뜨린 정답: '+missed.map(function(n){return CIRCLED[n-1];}).join(', '));
+    }
+    if(lines.length) return lines.join('\n');
+  }
+  if(q.type==='short' && q.commonMistakes){
+    var n=norm(my);
+    for(var i=0;i<q.commonMistakes.length;i++){
+      var m=q.commonMistakes[i], cands=Array.isArray(m.answer)?m.answer:[m.answer];
+      if(cands.some(function(c){return norm(c)===n;})) return m.why;
+    }
+  }
+  if(q.type==='ox' && q.wrongExplanation) return q.wrongExplanation;
+  return '정답과 다른 답이에요. 아래 정답 풀이에서 어디가 달랐는지 비교해 보세요.';
+}
+
+function reviewCard(q, idx){
+  var my=S.ans[q.id], kids=[];
+  kids.push(h('div',{class:'qhead'},[
+    h('span',{class:'qnum',text:(idx+1)+'.'}),
+    h('span',{class:'chips',style:'margin:0'},[h('span',{class:'chip',text:q.concept||'기타'}),h('span',{class:'chip d-'+q.difficulty,text:'난이도 '+q.difficulty})]),
+    h('span',{class:'pts',text:earned(q)+' / '+(q.points||0)+'점'})
+  ]));
+  if(q.passage) kids.push(h('div',{class:'passage',text:q.passage}));
+  kids.push(h('div',{class:'qtext',text:q.question}));
+
+  if(q.type==='essay'){
+    kids.push(box('rv-my','✍️ 내 답안',[h('div',{class:'pre',text:my||'(작성하지 않음)'})]));
+    if(q.rubric && q.rubric.length){
+      var items=q.rubric.map(function(r,i){
+        var ok=!!S.self[q.id+':'+i];
+        return h('div',{class:'it '+(ok?'right':'wrong')},[
+          h('div',{},[h('b',{text:(ok?'✓ ':'✗ ')}),r.criterion+' ('+(r.points||0)+'점)']),
+          !ok&&r.tip?h('small',{text:'보완하려면: '+r.tip}):null
+        ]);
+      });
+      kids.push(box('','📋 채점 기준별 점검',items));
+    }
+    kids.push(box('rv-ans','⭕ 모범 답안',[h('div',{class:'pre',text:q.modelAnswer||''})]));
+  } else {
+    kids.push(h('div',{class:'rv-pair'},[
+      box('rv-my','❌ 내 답',[h('div',{text:myAnswerText(q,my)})]),
+      box('rv-ans','⭕ 정답',[h('div',{text:rightAnswerText(q)})])
+    ]));
+    kids.push(box('rv-why','🤔 왜 틀렸을까?',[h('div',{class:'pre',text:whyWrong(q,my)})]));
+  }
+
+  kids.push(box('rv-detail','🔍 정답 풀이',[h('div',{class:'pre',text:q.detail||q.explanation||''})]));
+
+  if(q.type==='mc' && q.choiceExplanations){
+    var picks=Array.isArray(my)?my:[my], right=isMulti(q)?q.answer:[q.answer];
+    var list=q.choices.map(function(c,i){
+      var n=i+1, isR=right.indexOf(n)>=0, isMine=picks.indexOf(n)>=0;
+      return h('div',{class:'it'+(isR?' right':isMine?' wrong':'')},[
+        h('div',{},[h('b',{text:CIRCLED[i]+' '}),c,isMine?h('span',{class:'tag',text:'내 선택'}):null,isR?h('span',{class:'tag ok',text:'정답'}):null]),
+        h('small',{text:q.choiceExplanations[i]||''})
+      ]);
+    });
+    var det=h('details',{class:'rv-choices'},[h('summary',{text:'보기별 분석 펼치기'})].concat(list));
+    kids.push(det);
+  }
+  if(q.tip) kids.push(box('rv-tip','💡 기억할 점',[h('div',{class:'pre',text:q.tip})]));
+  if(q.source) kids.push(h('div',{class:'src',text:'📖 '+q.source}));
+  return h('div',{class:'card',style:'margin-top:12px'},kids);
+}
+
+function renderReview(){
+  S.view='review';
+  stopTimer(); if(navEl){ navEl.remove(); navEl=null; }
+  var app=document.getElementById('app'); app.innerHTML='';
+  var R=summarize(), wrongQs=S.list.filter(function(q){return R.wrong.indexOf(q.id)>=0;});
+  var concepts={}; wrongQs.forEach(function(q){ var c=q.concept||'기타'; concepts[c]=(concepts[c]||0)+1; });
+  var ckeys=Object.keys(concepts).sort(function(a,b){return concepts[b]-concepts[a];});
+
+  app.appendChild(h('div',{class:'card'},[
+    h('div',{class:'muted',text:(S.mode==='exam'?'실전':'연습')+' · '+R.got+' / '+R.max+'점'}),
+    h('h1',{text:'상세 오답풀이'}),
+    h('p',{class:'muted',text:'틀린 문제 '+wrongQs.length+'개를 내가 고른 답 기준으로 풀이했어요.'}),
+    ckeys.length?h('div',{},[h('b',{text:'다시 볼 개념'}),h('div',{class:'chips'},ckeys.map(function(c){return h('span',{class:'chip',text:c+' '+concepts[c]});}))]):null,
+    h('div',{class:'row',style:'margin-top:14px'},[
+      h('button',{onclick:function(){ if(location.hash==='#review') history.back(); else renderResult(); }},['← 결과로']),
+      META.slidesHref?h('a',{class:'btnlink',href:META.slidesHref},['📘 요약 정리 다시 보기']):null,
+      wrongQs.length?h('button',{class:'primary',onclick:function(){ start(wrongQs); }},['틀린 문제 다시 풀기']):null
+    ])
+  ]));
+  wrongQs.forEach(function(q){ app.appendChild(reviewCard(q, S.list.indexOf(q))); });
+  window.scrollTo(0,0);
+}
+
+/* 오답풀이는 주소에 #review를 붙여 '링크로 넘어가는' 화면으로 만든다 (뒤로가기 = 결과) */
+function openReview(){
+  try{ history.pushState({v:'review'},'',location.pathname+location.search+'#review'); }catch(e){}
+  renderReview();
+}
+window.addEventListener('popstate',function(){
+  if(location.hash==='#review'){ if(S.submitted || restoreLast()) renderReview(); }
+  else if(S.view==='review'){ renderResult(); }
+});
+function clearHash(){ if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(e){} } }
+
 /* ---------- 시작 ---------- */
 document.title = (META.title||'사전 시험');
-renderStart();
+if(location.hash==='#review' && restoreLast()) renderReview(); else { clearHash(); renderStart(); }
 })();
 </script>
 </body>

@@ -52,20 +52,27 @@ description: 시험 설계도(blueprint.json)와 핵심 정리(notes.md)를 바�
       "question": "다음 중 원소에 대한 설명으로 옳은 것은?",
       "choices": ["…", "…", "…", "…", "…"],
       "answer": 3,                         // 1부터 시작. 복수 정답이면 [2, 4]
-      "explanation": "…",
+      "explanation": "…",                  // 짧은 해설 (연습 모드 즉시 채점)
+      "choiceExplanations": ["①이 왜 틀렸/맞았는지", "…", "…", "…", "…"],  // 보기 수와 같게
+      "detail": "…",                       // 상세 정답 풀이 (오답풀이 화면)
+      "tip": "…",                          // 기억할 점
       "source": "교과서 p.32"
     },
     { "id": "Q02", "type": "short", "difficulty": "중", "points": 4, "concept": "…",
       "question": "…", "answer": ["정답", "인정 답안"], "answerHint": "(선택) 한 단어로 쓰시오",
-      "explanation": "…", "source": "…" },
+      "explanation": "…",
+      "commonMistakes": [ { "answer": ["자주 하는 오답"], "why": "왜 틀렸는지" } ],
+      "detail": "…", "tip": "…", "source": "…" },
     { "id": "Q03", "type": "ox", "difficulty": "하", "points": 2, "concept": "…",
-      "question": "…", "answer": true, "explanation": "…", "source": "…" },
+      "question": "…", "answer": true, "explanation": "…",
+      "wrongExplanation": "(선택) 반대로 답했을 때 흔한 오해",
+      "detail": "…", "tip": "…", "source": "…" },
     { "id": "S01", "type": "essay", "difficulty": "상", "points": 8, "concept": "…",
       "question": "…", "answerHint": "(선택) 두 가지를 포함하여 서술하시오",
       "modelAnswer": "…",
-      "rubric": [ { "criterion": "…을 포함하여 설명함", "points": 4 },
-                  { "criterion": "…을 근거로 제시함", "points": 4 } ],
-      "explanation": "(선택)", "source": "…" }
+      "rubric": [ { "criterion": "…을 포함하여 설명함", "points": 4, "tip": "빠졌을 때 보완 방법" },
+                  { "criterion": "…을 근거로 제시함", "points": 4, "tip": "…" } ],
+      "detail": "…", "tip": "…", "explanation": "(선택)", "source": "…" }
   ]
 }
 ```
@@ -73,6 +80,20 @@ description: 시험 설계도(blueprint.json)와 핵심 정리(notes.md)를 바�
 - `type`: `mc`(선택형) / `short`(단답형) / `ox` / `essay`(서술형)
 - `difficulty`: `상` / `중` / `하`
 - 문항 순서 = 시험지 순서. 설계도의 슬롯 순서를 따른다(보통 선택형 → 단답형 → 서술형).
+
+## 상세 오답풀이 항목 작성 규칙
+결과 화면의 **📝 상세 오답풀이**는 학생이 **실제로 고른 답**에 맞춰 풀이를 보여 준다. 실시간 생성 없이 아래 항목을 미리 써 둔다.
+| 항목 | 필수 | 쓰는 법 |
+|------|------|---------|
+| `detail` | 모든 문항 | 상세 정답 풀이. 개념 정리 → 적용 → 결론 순서로 3~6줄. 줄바꿈(`\n`)과 `·` 목록 사용 가능 |
+| `choiceExplanations` | 선택형 | 보기마다 한두 문장. **오답 보기는 "학생이 왜 이걸 골랐을지(오해)"와 "실제로는 어떤지"**를 함께. 정답 보기는 "정답." 으로 시작 |
+| `commonMistakes` | 단답형(권장) | 중학생이 자주 쓰는 오답 1~3개와 이유. 정답·인정 답안과 겹치면 안 됨 |
+| `wrongExplanation` | OX(선택) | 반대로 답한 학생의 흔한 오해 |
+| `rubric[].tip` | 서술형(권장) | 그 기준이 빠졌을 때 무엇을 보완해야 하는지 |
+| `tip` | 권장 | 다음에 안 틀리는 요령·암기법 한 줄 |
+
+- 말투는 중학생에게 말하듯 "~예요/~해요"체.
+- 원문에 근거한다. 암기 요령(`tip`)도 원문 내용과 어긋나면 안 된다.
 
 ## 빌드와 자체 점검
 1. `python engine/build_quiz.py <questions.json>` 실행.

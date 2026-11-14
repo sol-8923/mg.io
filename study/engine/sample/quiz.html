@@ -102,6 +102,25 @@ th.n,td.n{text-align:right;font-variant-numeric:tabular-nums}
 .review summary{cursor:pointer;font-weight:600}
 .mark{font-weight:800;margin-right:6px}
 .mark.r{color:var(--ok)} .mark.w{color:var(--bad)} .mark.p{color:var(--warn)}
+/* 오답풀이 */
+.rv-box{border-radius:10px;padding:10px 14px;margin-top:10px;border:1px solid var(--line)}
+.rv-box .rv-t{display:block;margin-bottom:4px;font-size:.92rem}
+.rv-my{background:var(--bad-soft);border-color:transparent}
+.rv-ans{background:var(--ok-soft);border-color:transparent}
+.rv-why{background:var(--warn-soft);border-color:transparent}
+.rv-detail{background:var(--accent-soft);border-color:transparent}
+.rv-tip{background:var(--bg)}
+.rv-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rv-pair .rv-box{margin-top:0}
+.pre{white-space:pre-wrap}
+.it{border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:6px}
+.it.right{border-color:var(--ok)} .it.wrong{border-color:var(--bad)}
+.it small{display:block;color:var(--muted);margin-top:2px;font-size:.88rem}
+.tag{font-size:.75rem;font-weight:700;margin-left:6px;padding:1px 6px;border-radius:6px;background:var(--bad-soft);color:var(--bad)}
+.tag.ok{background:var(--ok-soft);color:var(--ok)}
+.rv-choices{margin-top:10px} .rv-choices summary{cursor:pointer;color:var(--accent);font-weight:600}
+.btnlink{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid var(--line);color:var(--ink);text-decoration:none}
+@media (max-width:520px){ .rv-pair{grid-template-columns:1fr} }
 .hidden{display:none!important}
 @media (max-width:520px){ .modes{grid-template-columns:1fr} .stats{grid-template-columns:repeat(3,1fr)} body{font-size:16px} }
 @media (prefers-reduced-motion: reduce){ *{transition:none!important} }
@@ -111,7 +130,7 @@ th.n,td.n{text-align:right;font-variant-numeric:tabular-nums}
 <div class="wrap" id="app"></div>
 
 <!-- 문제 데이터: build_quiz.py가 이 자리에 JSON을 넣는다 -->
-<script id="quiz-data" type="application/json">{"meta": {"id": "sample-science-state-change", "title": "[샘플] 물질의 상태 변화 사전 시험", "subject": "과학", "grade": "중1", "unit": "샘플 · 물질의 상태 변화", "description": "엔진 동작 확인용 샘플 (교과서 내용 아님)", "totalPoints": 30, "timeLimitMin": 10}, "questions": [{"id": "Q01", "type": "mc", "difficulty": "하", "points": 4, "concept": "상태 변화의 종류", "question": "고체가 액체로 변하는 현상을 무엇이라고 하는가?", "choices": ["기화", "융해", "응고", "액화", "승화"], "answer": 2, "explanation": "고체 → 액체는 융해이다. 응고는 반대로 액체 → 고체이다.", "source": "샘플 자료 1쪽"}, {"id": "Q02", "type": "mc", "difficulty": "중", "points": 5, "concept": "입자 배열", "passage": "ㄱ. 고체는 입자가 규칙적으로 배열되어 있다.\nㄴ. 기체는 입자 사이의 거리가 가장 멀다.\nㄷ. 액체는 입자가 제자리에서 진동만 한다.", "question": "위 설명 중 옳은 것만을 있는 대로 고른 것은?", "choices": ["ㄱ", "ㄷ", "ㄱ, ㄴ", "ㄴ, ㄷ", "ㄱ, ㄴ, ㄷ"], "answer": 3, "explanation": "ㄷ은 고체에 대한 설명이다. 액체 입자는 비교적 자유롭게 움직인다.", "source": "샘플 자료 2쪽"}, {"id": "Q03", "type": "mc", "difficulty": "상", "points": 5, "concept": "열에너지 출입", "question": "열에너지를 흡수하는 상태 변화를 모두 고르시오. (2개)", "choices": ["응고", "기화", "액화", "융해", "(기체→고체) 승화"], "answer": [2, 4], "explanation": "융해·기화·(고체→기체) 승화는 열에너지를 흡수하고, 응고·액화·(기체→고체) 승화는 방출한다.", "source": "샘플 자료 3쪽"}, {"id": "Q04", "type": "short", "difficulty": "중", "points": 4, "concept": "상태 변화의 종류", "question": "추운 겨울날 유리창 안쪽에 성에가 생기는 현상과 관계있는 상태 변화의 이름을 쓰시오.", "answer": ["승화", "기체에서 고체로의 승화"], "answerHint": "두 글자로 쓰시오.", "explanation": "수증기(기체)가 바로 얼음(고체)이 되는 승화이다.", "source": "샘플 자료 3쪽"}, {"id": "Q05", "type": "ox", "difficulty": "하", "points": 2, "concept": "상태 변화와 질량", "question": "물질의 상태가 변해도 질량은 변하지 않는다.", "answer": true, "explanation": "상태 변화는 입자 배열만 바뀌고 입자 수는 그대로이므로 질량이 보존된다.", "source": "샘플 자료 4쪽"}, {"id": "S01", "type": "essay", "difficulty": "상", "points": 10, "concept": "열에너지 출입", "question": "더운 여름날 마당에 물을 뿌리면 시원해지는 까닭을 '상태 변화'와 '열에너지'라는 말을 사용하여 서술하시오.", "answerHint": "두 낱말을 모두 사용하여 서술하시오.", "modelAnswer": "뿌린 물이 증발(기화)하면서 주변의 열에너지를 흡수하기 때문에 주변 온도가 낮아져 시원해진다.", "rubric": [{"criterion": "물이 기화(증발)하는 상태 변화를 언급함", "points": 5}, {"criterion": "기화할 때 주변의 열에너지를 흡수하여 온도가 낮아짐을 설명함", "points": 5}], "source": "샘플 자료 4쪽"}]}</script>
+<script id="quiz-data" type="application/json">{"meta": {"id": "sample-science-state-change", "title": "[샘플] 물질의 상태 변화 사전 시험", "subject": "과학", "grade": "중1", "unit": "샘플 · 물질의 상태 변화", "description": "엔진 동작 확인용 샘플 (교과서 내용 아님)", "totalPoints": 30, "timeLimitMin": 10}, "questions": [{"id": "Q01", "type": "mc", "difficulty": "하", "points": 4, "concept": "상태 변화의 종류", "question": "고체가 액체로 변하는 현상을 무엇이라고 하는가?", "choices": ["기화", "융해", "응고", "액화", "승화"], "answer": 2, "explanation": "고체 → 액체는 융해이다. 응고는 반대로 액체 → 고체이다.", "choiceExplanations": ["기화는 액체 → 기체 변화예요. '기(氣)'가 들어가면 기체가 되는 쪽이에요.", "정답. 융해는 고체가 녹아 액체가 되는 변화예요. (예: 얼음이 녹아 물이 됨)", "응고는 반대 방향, 액체 → 고체예요. 방향을 거꾸로 기억하지 않았는지 확인하세요.", "액화는 기체 → 액체 변화예요. (예: 차가운 컵 표면에 물방울이 맺힘)", "승화는 고체와 기체 사이를 액체를 거치지 않고 바로 오가는 변화예요."], "detail": "상태 변화 이름은 '처음 상태 → 나중 상태'로 외우면 쉬워요.\n· 고체 → 액체: 융해   · 액체 → 고체: 응고\n· 액체 → 기체: 기화   · 기체 → 액체: 액화\n· 고체 ↔ 기체: 승화\n문제는 고체 → 액체이므로 융해가 정답이에요.", "tip": "융해(녹을 融)와 응고(엉길 凝)는 서로 반대! '얼음이 녹는다 = 융해'로 기억하세요.", "source": "샘플 자료 1쪽"}, {"id": "Q02", "type": "mc", "difficulty": "중", "points": 5, "concept": "입자 배열", "passage": "ㄱ. 고체는 입자가 규칙적으로 배열되어 있다.\nㄴ. 기체는 입자 사이의 거리가 가장 멀다.\nㄷ. 액체는 입자가 제자리에서 진동만 한다.", "question": "위 설명 중 옳은 것만을 있는 대로 고른 것은?", "choices": ["ㄱ", "ㄷ", "ㄱ, ㄴ", "ㄴ, ㄷ", "ㄱ, ㄴ, ㄷ"], "answer": 3, "explanation": "ㄷ은 고체에 대한 설명이다. 액체 입자는 비교적 자유롭게 움직인다.", "choiceExplanations": ["ㄱ은 맞지만, ㄴ(기체는 입자 사이 거리가 가장 멂)도 옳은 설명이라 빠뜨렸어요.", "ㄷ은 틀린 설명이에요. 제자리에서 진동만 하는 것은 고체예요.", "정답. ㄱ과 ㄴ만 옳고, ㄷ은 고체의 특징을 액체로 바꿔 쓴 함정이에요.", "ㄴ은 맞지만 ㄷ은 틀렸어요. 액체 입자는 서로 위치를 바꾸며 움직일 수 있어요.", "ㄷ이 틀렸기 때문에 모두 고를 수 없어요."], "detail": "세 상태의 입자 모습을 비교해 보세요.\n· 고체: 규칙적 배열, 제자리에서 진동, 입자 사이 거리 가장 가까움\n· 액체: 불규칙 배열, 비교적 자유롭게 이동\n· 기체: 매우 자유롭게 운동, 입자 사이 거리 가장 멂\nㄷ은 고체의 특징이므로 틀렸고, 옳은 것은 ㄱ, ㄴ이에요.", "tip": "합답형은 ㄱ, ㄴ, ㄷ을 하나씩 O/X 표시한 다음 보기를 고르면 실수가 줄어요.", "source": "샘플 자료 2쪽"}, {"id": "Q03", "type": "mc", "difficulty": "상", "points": 5, "concept": "열에너지 출입", "question": "열에너지를 흡수하는 상태 변화를 모두 고르시오. (2개)", "choices": ["응고", "기화", "액화", "융해", "(기체→고체) 승화"], "answer": [2, 4], "explanation": "융해·기화·(고체→기체) 승화는 열에너지를 흡수하고, 응고·액화·(기체→고체) 승화는 방출한다.", "choiceExplanations": ["응고는 액체가 굳는 변화로 열에너지를 방출해요. 입자가 더 가까워지는 쪽은 방출!", "정답. 기화는 입자가 멀어지는 변화라 열에너지를 흡수해요.", "액화는 기체 → 액체로 입자가 가까워지므로 열에너지를 방출해요.", "정답. 융해는 고체 → 액체로 입자가 멀어지므로 열에너지를 흡수해요.", "기체 → 고체 승화는 입자가 가까워지므로 방출이에요. 방향에 주의!"], "detail": "핵심 규칙: 입자 사이가 멀어지는 변화(고체→액체→기체)는 열에너지를 흡수하고, 가까워지는 변화(기체→액체→고체)는 열에너지를 방출해요.\n· 흡수: 융해, 기화, 승화(고체→기체)\n· 방출: 응고, 액화, 승화(기체→고체)\n보기 중 흡수는 기화(②)와 융해(④)예요.", "tip": "'멀어지려면 에너지가 필요하다' → 흡수. 승화는 방향에 따라 흡수/방출이 달라요.", "source": "샘플 자료 3쪽"}, {"id": "Q04", "type": "short", "difficulty": "중", "points": 4, "concept": "상태 변화의 종류", "question": "추운 겨울날 유리창 안쪽에 성에가 생기는 현상과 관계있는 상태 변화의 이름을 쓰시오.", "answer": ["승화", "기체에서 고체로의 승화"], "answerHint": "두 글자로 쓰시오.", "explanation": "수증기(기체)가 바로 얼음(고체)이 되는 승화이다.", "commonMistakes": [{"answer": ["응고"], "why": "응고는 액체 → 고체예요. 성에는 물방울이 언 것이 아니라 수증기가 바로 얼음 결정이 된 거예요."}, {"answer": ["액화"], "why": "액화는 기체 → 액체로, 유리창에 물방울이 맺히는 경우예요. 성에는 얼음 결정이에요."}], "detail": "성에는 공기 중의 수증기(기체)가 차가운 유리창에 닿아 액체를 거치지 않고 바로 얼음(고체)이 된 것이에요. 기체 → 고체로 바로 변하는 것은 승화예요.", "tip": "물방울이 맺히면 액화, 얼음 결정(성에·서리)이 생기면 승화!", "source": "샘플 자료 3쪽"}, {"id": "Q05", "type": "ox", "difficulty": "하", "points": 2, "concept": "상태 변화와 질량", "question": "물질의 상태가 변해도 질량은 변하지 않는다.", "answer": true, "explanation": "상태 변화는 입자 배열만 바뀌고 입자 수는 그대로이므로 질량이 보존된다.", "wrongExplanation": "부피는 변할 수 있지만 질량은 변하지 않아요. 부피와 질량을 헷갈리지 않았는지 확인하세요.", "detail": "상태가 변할 때는 입자 사이의 거리와 배열만 달라지고, 입자의 종류와 개수는 그대로예요. 질량은 입자의 개수와 종류로 정해지므로 변하지 않아요. 반면 부피는 입자 사이 거리가 달라지므로 변할 수 있어요.", "tip": "상태 변화: 부피는 변한다 / 질량은 그대로!", "source": "샘플 자료 4쪽"}, {"id": "S01", "type": "essay", "difficulty": "상", "points": 10, "concept": "열에너지 출입", "question": "더운 여름날 마당에 물을 뿌리면 시원해지는 까닭을 '상태 변화'와 '열에너지'라는 말을 사용하여 서술하시오.", "answerHint": "두 낱말을 모두 사용하여 서술하시오.", "modelAnswer": "뿌린 물이 증발(기화)하면서 주변의 열에너지를 흡수하기 때문에 주변 온도가 낮아져 시원해진다.", "rubric": [{"criterion": "물이 기화(증발)하는 상태 변화를 언급함", "points": 5, "tip": "어떤 상태 변화인지 이름을 꼭 쓰세요. '물이 마른다'보다 '물이 기화(증발)한다'가 정확해요."}, {"criterion": "기화할 때 주변의 열에너지를 흡수하여 온도가 낮아짐을 설명함", "points": 5, "tip": "열에너지의 방향(흡수)과 결과(주변 온도가 낮아짐)를 둘 다 써야 만점이에요."}], "detail": "서술형은 '원인(상태 변화) → 에너지 출입 → 결과' 순서로 쓰면 빠뜨리지 않아요.\n① 물이 기화한다 → ② 이때 주변의 열에너지를 흡수한다 → ③ 그래서 주변 온도가 낮아진다.", "tip": "조건 낱말('상태 변화', '열에너지')이 주어지면 답안에 그 낱말이 꼭 들어가야 해요.", "source": "샘플 자료 4쪽"}]}</script>
 
 <script>
 (function(){
@@ -167,7 +186,8 @@ function earned(q){
 
 /* ---------- 시작 화면 ---------- */
 function renderStart(){
-  stopTimer();
+  stopTimer(); clearHash(); S.view='start'; S.submitted=false;
+  if(navEl){ navEl.remove(); navEl=null; }
   var app = document.getElementById('app'); app.innerHTML='';
   var store = load();
   var wrongIds = (store.wrong||[]).filter(function(id){ return ALL.some(function(q){return q.id===id;}); });
@@ -200,6 +220,7 @@ function renderStart(){
     h('div',{class:'row'},[
       h('button',{class:'primary',onclick:function(){start(ALL);}},['처음부터 풀기']),
       wrongIds.length?h('button',{onclick:function(){ start(ALL.filter(function(q){return wrongIds.indexOf(q.id)>=0;})); }},['틀린 문제만 ('+wrongIds.length+')']):null,
+      store.last?h('button',{onclick:function(){ if(restoreLast()) openReview(); }},['📝 지난 오답풀이']):null,
       h('span',{class:'spacer'}),
       h('button',{onclick:toggleTheme,title:'화면 밝기 전환'},['🌓'])
     ])
@@ -216,6 +237,7 @@ try{ var t=localStorage.getItem('study-kit:theme'); if(t) document.documentEleme
 
 /* ---------- 진행 ---------- */
 function start(list){
+  clearHash(); S.view='quiz';
   S.list = list.slice(); S.idx=0; S.ans={}; S.checked={}; S.self={}; S.submitted=false;
   S.startAt = Date.now();
   if(S.mode==='exam' && META.timeLimitMin){ startTimer(); }
@@ -353,6 +375,7 @@ function feedback(q, interactive){
   else ansText = (Array.isArray(q.answer)?q.answer:[q.answer]).join(' / ');
   kids.push(h('b',{class:'t',text:g?'⭕ 정답이에요!':'❌ 틀렸어요'}));
   if(!g) kids.push(h('div',{},[h('b',{text:'정답: '}),h('span',{text:ansText})]));
+  if(!g && (q.choiceExplanations||q.commonMistakes||q.wrongExplanation)) kids.push(h('div',{class:'pre',style:'margin-top:4px',text:'💬 '+whyWrong(q,a)}));
   if(q.explanation) kids.push(h('div',{style:'margin-top:4px',text:q.explanation}));
   if(q.source) kids.push(h('div',{class:'src',text:'📖 '+q.source}));
   return h('div',{class:'fb '+(g?'ok':'bad')},kids);
@@ -403,7 +426,42 @@ function submit(){
   if(navEl){ navEl.remove(); navEl=null; }
   var hasEssay = S.list.some(function(q){return q.type==='essay';});
   if(hasEssay && S.mode==='exam'){ renderSelfGrade(); return; }
-  renderResult();
+  finalize(); renderResult();
+}
+
+/* 채점 집계 (화면과 저장에서 같이 씀) */
+function summarize(){
+  var list=S.list, got=0, max=totalPts(list), byDiff={}, byConcept={}, wrong=[];
+  list.forEach(function(q){
+    var e=earned(q), p=q.points||0; got+=e;
+    var full = e>=p && p>0;
+    if(!full) wrong.push(q.id);
+    var d=q.difficulty||'-'; byDiff[d]=byDiff[d]||{g:0,m:0,n:0,r:0}; byDiff[d].g+=e; byDiff[d].m+=p; byDiff[d].n++; if(full) byDiff[d].r++;
+    var c=q.concept||'기타'; byConcept[c]=byConcept[c]||{g:0,m:0,n:0,r:0}; byConcept[c].g+=e; byConcept[c].m+=p; byConcept[c].n++; if(full) byConcept[c].r++;
+  });
+  return {got:got,max:max,byDiff:byDiff,byConcept:byConcept,wrong:wrong,score100:max?Math.round(got/max*100):0};
+}
+
+/* 제출 확정: 오답 목록·최고 점수·기록·마지막 풀이(오답풀이용) 저장 — 한 번만 호출 */
+function finalize(){
+  S.endAt=Date.now();
+  var r=summarize(), list=S.list, st=load();
+  var solvedIds=list.map(function(q){return q.id;});
+  st.wrong=(st.wrong||[]).filter(function(id){ return solvedIds.indexOf(id)<0; }).concat(r.wrong);
+  if(list.length===ALL.length){ st.best=Math.max(st.best||0, r.score100); }
+  st.history=(st.history||[]).concat([{at:new Date().toISOString(),mode:S.mode,score:r.got,max:r.max,n:list.length}]).slice(-30);
+  st.last={at:new Date().toISOString(),mode:S.mode,ids:solvedIds,ans:S.ans,self:S.self,startAt:S.startAt,endAt:S.endAt};
+  save(st);
+}
+
+/* 저장된 마지막 풀이 복원 (새로고침·나중에 오답풀이 다시 보기) */
+function restoreLast(){
+  var L=load().last; if(!L) return false;
+  var map={}; ALL.forEach(function(q){map[q.id]=q;});
+  S.list=L.ids.map(function(id){return map[id];}).filter(Boolean);
+  if(!S.list.length) return false;
+  S.mode=L.mode; S.ans=L.ans||{}; S.self=L.self||{}; S.startAt=L.startAt; S.endAt=L.endAt; S.submitted=true;
+  return true;
 }
 
 /* 실전 모드 서술형: 제출 후 자기채점 단계 */
@@ -423,32 +481,15 @@ function renderSelfGrade(){
       feedback(q,true)
     ]));
   });
-  app.appendChild(h('div',{class:'row',style:'margin-top:14px'},[h('span',{class:'spacer'}),h('button',{class:'primary',onclick:renderResult},['채점 완료 → 결과 보기'])]));
+  app.appendChild(h('div',{class:'row',style:'margin-top:14px'},[h('span',{class:'spacer'}),h('button',{class:'primary',onclick:function(){ finalize(); renderResult(); }},['채점 완료 → 결과 보기'])]));
 }
 
 function renderResult(){
+  S.view='result';
   var app=document.getElementById('app'); app.innerHTML='';
-  var list=S.list, got=0, max=totalPts(list);
-  var byDiff={}, byConcept={}, wrong=[];
-  list.forEach(function(q){
-    var e=earned(q), p=q.points||0; got+=e;
-    var full = e>=p && p>0;
-    if(!full) wrong.push(q.id);
-    var d=q.difficulty||'-'; byDiff[d]=byDiff[d]||{g:0,m:0,n:0,r:0}; byDiff[d].g+=e; byDiff[d].m+=p; byDiff[d].n++; if(full) byDiff[d].r++;
-    var c=q.concept||'기타'; byConcept[c]=byConcept[c]||{g:0,m:0,n:0,r:0}; byConcept[c].g+=e; byConcept[c].m+=p; byConcept[c].n++; if(full) byConcept[c].r++;
-  });
-  var mins=Math.round((Date.now()-S.startAt)/60000);
-
-  // 저장: 오답 목록, 최고 점수(전체 문항을 풀었을 때만), 기록
+  var list=S.list, R=summarize(), got=R.got, max=R.max, byDiff=R.byDiff, byConcept=R.byConcept, wrong=R.wrong, score100=R.score100;
+  var mins=Math.round(((S.endAt||Date.now())-S.startAt)/60000);
   var st=load();
-  var prevWrong=st.wrong||[];
-  var solvedIds=list.map(function(q){return q.id;});
-  var keep=prevWrong.filter(function(id){ return solvedIds.indexOf(id)<0; });
-  st.wrong=keep.concat(wrong);
-  var score100 = max? Math.round(got/max*100) : 0;
-  if(list.length===ALL.length){ st.best=Math.max(st.best||0, score100); }
-  st.history=(st.history||[]).concat([{at:new Date().toISOString(),mode:S.mode,score:got,max:max,n:list.length}]).slice(-30);
-  save(st);
 
   function table(title,obj,order){
     var keys=Object.keys(obj); if(order) keys.sort(function(a,b){return order.indexOf(a)-order.indexOf(b);});
@@ -463,7 +504,8 @@ function renderResult(){
     h('div',{class:'big',text:got+' / '+max+'점'}),
     h('div',{class:'muted',text:'100점 환산 '+score100+'점'+(list.length===ALL.length&&st.best!=null?' · 최고 '+st.best+'점':'')}),
     h('div',{class:'row',style:'margin-top:14px'},[
-      wrong.length?h('button',{class:'primary',onclick:function(){ start(list.filter(function(q){return wrong.indexOf(q.id)>=0;})); }},['틀린 문제 다시 풀기 ('+wrong.length+')']):h('span',{text:'🎉 모두 맞혔어요!'}),
+      wrong.length?h('button',{class:'primary',onclick:openReview},['📝 상세 오답풀이 ('+wrong.length+')']):h('span',{text:'🎉 모두 맞혔어요!'}),
+      wrong.length?h('button',{onclick:function(){ start(list.filter(function(q){return wrong.indexOf(q.id)>=0;})); }},['틀린 문제 다시 풀기']):null,
       h('button',{onclick:renderStart},['처음 화면'])
     ]),
     table('난이도별',byDiff,['하','중','상','-']),
@@ -494,9 +536,133 @@ function renderResult(){
   window.scrollTo(0,0);
 }
 
+/* ---------- 상세 오답풀이 ---------- */
+function myAnswerText(q, my){
+  if(my==null||my===''||(Array.isArray(my)&&!my.length)) return '(답하지 않음)';
+  if(q.type==='mc') return (Array.isArray(my)?my:[my]).map(function(n){return CIRCLED[n-1]+' '+q.choices[n-1];}).join(', ');
+  if(q.type==='ox') return my?'O':'X';
+  return String(my);
+}
+function rightAnswerText(q){
+  if(q.type==='mc') return (isMulti(q)?q.answer:[q.answer]).map(function(n){return CIRCLED[n-1]+' '+q.choices[n-1];}).join(', ');
+  if(q.type==='ox') return q.answer?'O':'X';
+  if(q.type==='short') return (Array.isArray(q.answer)?q.answer:[q.answer]).join(' / ');
+  return q.modelAnswer||'';
+}
+function box(cls, title, kids){ return h('div',{class:'rv-box '+cls},[h('b',{class:'rv-t',text:title})].concat(kids)); }
+
+/* 내 답이 왜 틀렸는지: 보기별 해설 / 자주 하는 오답 / 기본 문구 */
+function whyWrong(q, my){
+  var none = my==null||my===''||(Array.isArray(my)&&!my.length);
+  if(none) return '답을 하지 않았어요. 아래 정답 풀이로 개념을 먼저 확인해 보세요.';
+  if(q.type==='mc' && q.choiceExplanations){
+    var picks=(Array.isArray(my)?my:[my]);
+    var right=isMulti(q)?q.answer:[q.answer];
+    var lines=picks.filter(function(n){return right.indexOf(n)<0;}).map(function(n){ return CIRCLED[n-1]+' '+(q.choiceExplanations[n-1]||''); });
+    if(isMulti(q)){
+      var missed=right.filter(function(n){return picks.indexOf(n)<0;});
+      if(missed.length) lines.push('빠뜨린 정답: '+missed.map(function(n){return CIRCLED[n-1];}).join(', '));
+    }
+    if(lines.length) return lines.join('\n');
+  }
+  if(q.type==='short' && q.commonMistakes){
+    var n=norm(my);
+    for(var i=0;i<q.commonMistakes.length;i++){
+      var m=q.commonMistakes[i], cands=Array.isArray(m.answer)?m.answer:[m.answer];
+      if(cands.some(function(c){return norm(c)===n;})) return m.why;
+    }
+  }
+  if(q.type==='ox' && q.wrongExplanation) return q.wrongExplanation;
+  return '정답과 다른 답이에요. 아래 정답 풀이에서 어디가 달랐는지 비교해 보세요.';
+}
+
+function reviewCard(q, idx){
+  var my=S.ans[q.id], kids=[];
+  kids.push(h('div',{class:'qhead'},[
+    h('span',{class:'qnum',text:(idx+1)+'.'}),
+    h('span',{class:'chips',style:'margin:0'},[h('span',{class:'chip',text:q.concept||'기타'}),h('span',{class:'chip d-'+q.difficulty,text:'난이도 '+q.difficulty})]),
+    h('span',{class:'pts',text:earned(q)+' / '+(q.points||0)+'점'})
+  ]));
+  if(q.passage) kids.push(h('div',{class:'passage',text:q.passage}));
+  kids.push(h('div',{class:'qtext',text:q.question}));
+
+  if(q.type==='essay'){
+    kids.push(box('rv-my','✍️ 내 답안',[h('div',{class:'pre',text:my||'(작성하지 않음)'})]));
+    if(q.rubric && q.rubric.length){
+      var items=q.rubric.map(function(r,i){
+        var ok=!!S.self[q.id+':'+i];
+        return h('div',{class:'it '+(ok?'right':'wrong')},[
+          h('div',{},[h('b',{text:(ok?'✓ ':'✗ ')}),r.criterion+' ('+(r.points||0)+'점)']),
+          !ok&&r.tip?h('small',{text:'보완하려면: '+r.tip}):null
+        ]);
+      });
+      kids.push(box('','📋 채점 기준별 점검',items));
+    }
+    kids.push(box('rv-ans','⭕ 모범 답안',[h('div',{class:'pre',text:q.modelAnswer||''})]));
+  } else {
+    kids.push(h('div',{class:'rv-pair'},[
+      box('rv-my','❌ 내 답',[h('div',{text:myAnswerText(q,my)})]),
+      box('rv-ans','⭕ 정답',[h('div',{text:rightAnswerText(q)})])
+    ]));
+    kids.push(box('rv-why','🤔 왜 틀렸을까?',[h('div',{class:'pre',text:whyWrong(q,my)})]));
+  }
+
+  kids.push(box('rv-detail','🔍 정답 풀이',[h('div',{class:'pre',text:q.detail||q.explanation||''})]));
+
+  if(q.type==='mc' && q.choiceExplanations){
+    var picks=Array.isArray(my)?my:[my], right=isMulti(q)?q.answer:[q.answer];
+    var list=q.choices.map(function(c,i){
+      var n=i+1, isR=right.indexOf(n)>=0, isMine=picks.indexOf(n)>=0;
+      return h('div',{class:'it'+(isR?' right':isMine?' wrong':'')},[
+        h('div',{},[h('b',{text:CIRCLED[i]+' '}),c,isMine?h('span',{class:'tag',text:'내 선택'}):null,isR?h('span',{class:'tag ok',text:'정답'}):null]),
+        h('small',{text:q.choiceExplanations[i]||''})
+      ]);
+    });
+    var det=h('details',{class:'rv-choices'},[h('summary',{text:'보기별 분석 펼치기'})].concat(list));
+    kids.push(det);
+  }
+  if(q.tip) kids.push(box('rv-tip','💡 기억할 점',[h('div',{class:'pre',text:q.tip})]));
+  if(q.source) kids.push(h('div',{class:'src',text:'📖 '+q.source}));
+  return h('div',{class:'card',style:'margin-top:12px'},kids);
+}
+
+function renderReview(){
+  S.view='review';
+  stopTimer(); if(navEl){ navEl.remove(); navEl=null; }
+  var app=document.getElementById('app'); app.innerHTML='';
+  var R=summarize(), wrongQs=S.list.filter(function(q){return R.wrong.indexOf(q.id)>=0;});
+  var concepts={}; wrongQs.forEach(function(q){ var c=q.concept||'기타'; concepts[c]=(concepts[c]||0)+1; });
+  var ckeys=Object.keys(concepts).sort(function(a,b){return concepts[b]-concepts[a];});
+
+  app.appendChild(h('div',{class:'card'},[
+    h('div',{class:'muted',text:(S.mode==='exam'?'실전':'연습')+' · '+R.got+' / '+R.max+'점'}),
+    h('h1',{text:'상세 오답풀이'}),
+    h('p',{class:'muted',text:'틀린 문제 '+wrongQs.length+'개를 내가 고른 답 기준으로 풀이했어요.'}),
+    ckeys.length?h('div',{},[h('b',{text:'다시 볼 개념'}),h('div',{class:'chips'},ckeys.map(function(c){return h('span',{class:'chip',text:c+' '+concepts[c]});}))]):null,
+    h('div',{class:'row',style:'margin-top:14px'},[
+      h('button',{onclick:function(){ if(location.hash==='#review') history.back(); else renderResult(); }},['← 결과로']),
+      META.slidesHref?h('a',{class:'btnlink',href:META.slidesHref},['📘 요약 정리 다시 보기']):null,
+      wrongQs.length?h('button',{class:'primary',onclick:function(){ start(wrongQs); }},['틀린 문제 다시 풀기']):null
+    ])
+  ]));
+  wrongQs.forEach(function(q){ app.appendChild(reviewCard(q, S.list.indexOf(q))); });
+  window.scrollTo(0,0);
+}
+
+/* 오답풀이는 주소에 #review를 붙여 '링크로 넘어가는' 화면으로 만든다 (뒤로가기 = 결과) */
+function openReview(){
+  try{ history.pushState({v:'review'},'',location.pathname+location.search+'#review'); }catch(e){}
+  renderReview();
+}
+window.addEventListener('popstate',function(){
+  if(location.hash==='#review'){ if(S.submitted || restoreLast()) renderReview(); }
+  else if(S.view==='review'){ renderResult(); }
+});
+function clearHash(){ if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(e){} } }
+
 /* ---------- 시작 ---------- */
 document.title = (META.title||'사전 시험');
-renderStart();
+if(location.hash==='#review' && restoreLast()) renderReview(); else { clearHash(); renderStart(); }
 })();
 </script>
 </body>

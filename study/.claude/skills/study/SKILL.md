@@ -74,9 +74,10 @@ description: 교과서·자습서 학습 자료로 요약 발표 자료(slides.h
 
 ### 5단계 · 완료
 1. `quiz.html`과 `slides.html`을 브라우저로 열어 정상 표시를 확인한다(E 드라이브 지침의 완료 확인 규칙).
-2. 목록 페이지 갱신: `python engine/build_index.py` → `study/index.html`
-3. 커밋 후 push한다(`materials/`는 .gitignore로 제외됨). GitHub Pages가 1~2분 뒤 자동 반영된다.
-4. 보고는 짧게: 문항 수·총점, 검수 통과 라운드 수, 사용자 판단이 필요했던 쟁점(있으면), 그리고 주소
+2. `slides.html`이 완성된 상태에서 `python engine/build_quiz.py <questions.json>`을 한 번 더 실행해 오답풀이 화면의 "요약 정리 다시 보기" 링크를 넣는다.
+3. 목록 페이지 갱신: `python engine/build_index.py` → `study/index.html`
+4. 커밋 후 push한다(`materials/`는 .gitignore로 제외됨). GitHub Pages가 1~2분 뒤 자동 반영된다.
+5. 보고는 짧게: 문항 수·총점, 검수 통과 라운드 수, 사용자 판단이 필요했던 쟁점(있으면), 그리고 주소
    - 목록: `https://sol-8923.github.io/mg.io/study/`
    - 해당 단원 시험·요약 주소 (경로의 한글은 브라우저가 자동 처리)
 
