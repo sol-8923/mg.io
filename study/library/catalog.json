@@ -11,6 +11,16 @@
    "questions": 24
   },
   {
+   "id": "g1s2-history",
+   "grade": 1,
+   "semester": 2,
+   "subject": "역사",
+   "color": null,
+   "sample": true,
+   "units": 1,
+   "questions": 24
+  },
+  {
    "id": "g1s2-science",
    "grade": 1,
    "semester": 2,

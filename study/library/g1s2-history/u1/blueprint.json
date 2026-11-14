@@ -1,0 +1,131 @@
+{
+ "unitName": "삼국의 성립과 발전",
+ "basis": "default",
+ "analysis": "기출 없음 — 중학교 내신 일반형 적용(연표 자료 해석, 〈보기〉 합답형, 조건 서술형). 샘플 단원평가 크기(12문항, 100점)로 과학·수학 샘플과 같게 구성.",
+ "timeLimitMin": 25,
+ "totalPoints": 100,
+ "variantsPerSlot": 2,
+ "slots": [
+  {
+   "id": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "삼국의 건국",
+   "intent": "삼국(고구려·백제·신라)의 건국 시기·순서 또는 건국 사실 고르기"
+  },
+  {
+   "id": "Q02",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "가야 연맹",
+   "intent": "가야가 철을 바탕으로 성장한 연맹 국가임을 이해했는지 묻는 문항"
+  },
+  {
+   "id": "Q03",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "백제 근초고왕",
+   "intent": "4세기 백제 근초고왕의 업적 고르기"
+  },
+  {
+   "id": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "고구려 광개토대왕",
+   "intent": "광개토대왕의 연호·대외 활동 고르기"
+  },
+  {
+   "id": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "신라의 체제 정비",
+   "intent": "지증왕·법흥왕 때 신라의 체제 정비 사실 구분하기"
+  },
+  {
+   "id": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "신라 진흥왕",
+   "intent": "진흥왕의 업적과 순수비 이해"
+  },
+  {
+   "id": "Q07",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 6,
+   "concept": "한강 유역을 둘러싼 다툼",
+   "intent": "연표(자료)를 보고 고구려·백제의 주요 사건을 순서에 맞게 연결하기"
+  },
+  {
+   "id": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "고구려 소수림왕",
+   "intent": "소수림왕 때 고구려의 체제 정비(불교·태학·율령)"
+  },
+  {
+   "id": "Q09",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 6,
+   "concept": "삼국의 전성기",
+   "intent": "근초고왕·광개토대왕·진흥왕 전성기의 시대 순서 또는 한강 유역 〈보기〉 합답형"
+  },
+  {
+   "id": "Q10",
+   "type": "short",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "신라의 왕호와 동맹",
+   "intent": "신라 초기 왕호 / 고구려의 남진에 맞선 동맹 단답형"
+  },
+  {
+   "id": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 20,
+   "concept": "장수왕의 남진 정책",
+   "intent": "장수왕의 평양 천도와 남진 정책의 결과를 인과로 서술 (조건어 제시)"
+  },
+  {
+   "id": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 20,
+   "concept": "가야 연맹의 한계",
+   "intent": "가야가 중앙 집권 국가로 성장하지 못하고 신라에 흡수된 까닭·과정 서술"
+  }
+ ],
+ "totalQuestions": 12,
+ "types": {
+  "mc": 9,
+  "short": 1,
+  "essay": 2
+ },
+ "difficulty": {
+  "하": 3,
+  "중": 6,
+  "상": 3
+ },
+ "concepts": {
+  "삼국의 건국": 1,
+  "가야 연맹": 1,
+  "백제 근초고왕": 1,
+  "고구려 광개토대왕": 1,
+  "신라의 체제 정비": 1,
+  "신라 진흥왕": 1,
+  "한강 유역을 둘러싼 다툼": 1,
+  "고구려 소수림왕": 1,
+  "삼국의 전성기": 1,
+  "신라의 왕호와 동맹": 1,
+  "장수왕의 남진 정책": 1,
+  "가야 연맹의 한계": 1
+ }
+}
