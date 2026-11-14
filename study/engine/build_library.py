@@ -1,0 +1,229 @@
+"""문제 은행 검사 + 책(book.json)·책장 목록(catalog.json) 생성.
+
+사용법 (study 폴더에서):
+    python engine/build_library.py                 # 모든 책 검사·생성
+    python engine/build_library.py g1s2-science    # 한 책만
+    python engine/build_library.py --check-only    # 검사만
+
+폴더 구조:
+    library/<책id>/meta.json                 {"grade":1,"semester":2,"subject":"과학", "color"?, "description"?, "sample"?}
+    library/<책id>/<단원id>/blueprint.json   시험 설계도 (unitName, timeLimitMin, totalPoints, variantsPerSlot, slots[])
+    library/<책id>/<단원id>/questions.json   문제 은행 (슬롯마다 변형 문제 여러 개)
+    library/<책id>/<단원id>/slides.html      요약 정리 (있으면 연결)
+오류가 하나라도 있으면 종료 코드 1, 파일을 만들지 않는다.
+"""
+import json
+import re
+import sys
+from collections import Counter, defaultdict
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+LIB = ROOT / "library"
+TYPES = {"mc", "ox", "short", "essay"}
+DIFFS = {"상", "중", "하"}
+CIRCLED = re.compile(r"[①②③④⑤⑥⑦⑧]")
+BAD_SVG = re.compile(r"<script|\son\w+\s*=|javascript:|<foreignObject|href\s*=\s*[\"']https?:", re.I)
+
+
+def norm(s):
+    return re.sub(r"[\s.,·・'\"‘’“”()\[\]{}~\-_/!?]", "", str(s)).lower()
+
+
+def load(p):
+    return json.loads(p.read_text(encoding="utf-8-sig"))
+
+
+def check_svg(tag, where, svg, errors):
+    if not isinstance(svg, str) or "<svg" not in svg:
+        errors.append(f"{tag} {where}: svg 문자열이 아님")
+    elif BAD_SVG.search(svg):
+        errors.append(f"{tag} {where}: svg에 스크립트·이벤트·외부 링크가 있음 (금지)")
+
+
+def check_question(q, tag, errors, warns):
+    t = q.get("type")
+    if t not in TYPES:
+        errors.append(f"{tag} type 오류: {t!r}")
+        return
+    for f in ("question", "concept", "source", "detail"):
+        if not str(q.get(f, "")).strip():
+            errors.append(f"{tag} {f} 없음")
+    if q.get("difficulty") not in DIFFS:
+        errors.append(f"{tag} difficulty는 상/중/하")
+    if not isinstance(q.get("points"), (int, float)) or q.get("points", 0) <= 0:
+        errors.append(f"{tag} points가 양수가 아님")
+    if t != "essay" and not q.get("explanation"):
+        errors.append(f"{tag} explanation 없음")
+    if not q.get("tip"):
+        warns.append(f"{tag} tip 없음")
+    if q.get("figure"):
+        check_svg(tag, "figure", q["figure"].get("svg"), errors)
+    refs = q.get("refs") or []
+    if not refs:
+        warns.append(f"{tag} refs(참고 자료) 없음")
+    for i, r in enumerate(refs):
+        k = r.get("kind")
+        if k not in ("svg", "table", "text") or not r.get("title"):
+            errors.append(f"{tag} refs[{i}] kind(svg/table/text)·title 필요")
+        elif k == "svg":
+            check_svg(tag, f"refs[{i}]", r.get("svg"), errors)
+        elif k == "table" and (not r.get("head") or not r.get("rows") or any(len(row) != len(r["head"]) for row in r["rows"])):
+            errors.append(f"{tag} refs[{i}] 표의 head/rows 칸 수가 맞지 않음")
+        elif k == "text" and not r.get("text"):
+            errors.append(f"{tag} refs[{i}] text 비어 있음")
+
+    if t == "mc":
+        ch = q.get("choices")
+        if not isinstance(ch, list) or len(ch) < 2:
+            errors.append(f"{tag} choices 2개 미만")
+            return
+        if len(ch) != 5:
+            warns.append(f"{tag} 보기 {len(ch)}개 (내신은 보통 5지선다)")
+        normed = [norm(c) for c in ch]
+        if len(set(normed)) != len(normed):
+            errors.append(f"{tag} 보기 중복")
+        ans = q.get("answer")
+        answers = ans if isinstance(ans, list) else [ans]
+        if not answers or any(not isinstance(a, int) or isinstance(a, bool) or a < 1 or a > len(ch) for a in answers):
+            errors.append(f"{tag} answer 범위 오류: {ans!r}")
+        elif len(set(answers)) != len(answers):
+            errors.append(f"{tag} answer 중복")
+        ce = q.get("choiceExplanations")
+        if not isinstance(ce, list) or len(ce) != len(ch) or any(not str(x).strip() for x in ce):
+            errors.append(f"{tag} choiceExplanations가 보기 수만큼 있어야 함")
+        if not q.get("fixedOrder"):
+            texts = [q.get("detail", ""), q.get("explanation", ""), q.get("tip", "")] + list(ce or [])
+            if any(CIRCLED.search(str(x)) for x in texts):
+                errors.append(f"{tag} 보기가 섞이는 문항인데 해설에 ①~⑤ 번호가 있음 (보기 내용으로 가리키거나 fixedOrder:true)")
+    elif t == "ox":
+        if not isinstance(q.get("answer"), bool):
+            errors.append(f"{tag} ox answer는 true/false")
+    elif t == "short":
+        ans = q.get("answer")
+        answers = ans if isinstance(ans, list) else [ans]
+        if not answers or any(not str(a).strip() for a in answers):
+            errors.append(f"{tag} short answer 비어 있음")
+        acc = {norm(a) for a in answers}
+        for m in q.get("commonMistakes") or []:
+            if not m.get("answer") or not m.get("why"):
+                errors.append(f"{tag} commonMistakes는 answer·why 필요")
+                continue
+            for a in (m["answer"] if isinstance(m["answer"], list) else [m["answer"]]):
+                if norm(a) in acc:
+                    errors.append(f"{tag} 자주 하는 오답 '{a}'가 정답에도 있음")
+        if not q.get("commonMistakes"):
+            warns.append(f"{tag} commonMistakes 없음")
+    elif t == "essay":
+        if not q.get("modelAnswer"):
+            errors.append(f"{tag} modelAnswer 없음")
+        rub = q.get("rubric")
+        if not isinstance(rub, list) or not rub:
+            errors.append(f"{tag} rubric 없음")
+        else:
+            if sum(r.get("points", 0) for r in rub) != q.get("points"):
+                errors.append(f"{tag} rubric 점수 합 ≠ 배점")
+            if any(not r.get("criterion") for r in rub):
+                errors.append(f"{tag} rubric criterion 빈 항목")
+            if any(not r.get("tip") for r in rub):
+                warns.append(f"{tag} rubric tip 없는 항목")
+
+
+def build_book(bdir, errors, warns, info):
+    meta = load(bdir / "meta.json")
+    for k in ("grade", "semester", "subject"):
+        if not meta.get(k):
+            errors.append(f"[{bdir.name}] meta.{k} 없음")
+    units, questions, ids = [], [], Counter()
+    for udir in sorted(p for p in bdir.iterdir() if p.is_dir() and (p / "blueprint.json").exists()):
+        bp = load(udir / "blueprint.json")
+        qpath = udir / "questions.json"
+        qs = load(qpath).get("questions", []) if qpath.exists() else []
+        slots = bp.get("slots") or []
+        slot_map = {s["id"]: s for s in slots}
+        target = bp.get("variantsPerSlot", 2)
+        tagu = f"[{bdir.name}/{udir.name}]"
+        if not bp.get("unitName"):
+            errors.append(f"{tagu} blueprint.unitName 없음")
+        if bp.get("totalPoints") is not None and sum(s.get("points", 0) for s in slots) != bp["totalPoints"]:
+            errors.append(f"{tagu} 슬롯 배점 합 ≠ totalPoints")
+        by_slot = defaultdict(list)
+        seen_text = {}
+        for q in qs:
+            tag = f"{tagu}[{q.get('id')}]"
+            ids[q.get("id")] += 1
+            s = slot_map.get(q.get("slot"))
+            if not s:
+                errors.append(f"{tag} slot '{q.get('slot')}'이 설계도에 없음")
+                continue
+            for f in ("type", "difficulty", "points", "concept"):
+                if s.get(f) is not None and s.get(f) != q.get(f):
+                    errors.append(f"{tag} 설계도 {f}={s.get(f)!r} ≠ 문항 {q.get(f)!r}")
+            check_question(q, tag, errors, warns)
+            key = norm(q.get("question", "")) + norm(q.get("passage", ""))
+            if key in seen_text:
+                errors.append(f"{tag} 발문이 {seen_text[key]}와 같음")
+            seen_text.setdefault(key, q.get("id"))
+            by_slot[s["id"]].append(q)
+            q = dict(q, unit=udir.name)
+            questions.append(q)
+        for s in slots:
+            n = len(by_slot[s["id"]])
+            if n == 0:
+                errors.append(f"{tagu} 슬롯 {s['id']}에 문제가 없음")
+            elif n < target:
+                warns.append(f"{tagu} 슬롯 {s['id']} 변형 {n}개 (목표 {target}개)")
+        dc = Counter(s.get("difficulty") for s in slots)
+        tc = Counter(s.get("type") for s in slots)
+        info.append(f"{tagu} {bp.get('unitName')} · 시험 {len(slots)}문항/{sum(s.get('points',0) for s in slots)}점 · 은행 {len(qs)}문항 · "
+                    + "유형 " + ", ".join(f"{k} {v}" for k, v in sorted(tc.items())) + " · 난이도 " + "/".join(f"{k}{dc.get(k,0)}" for k in "상중하"))
+        unit = {"id": udir.name, "name": bp.get("unitName", udir.name), "timeLimitMin": bp.get("timeLimitMin", 0),
+                "slots": [{k: s.get(k) for k in ("id", "type", "difficulty", "points", "concept")} for s in slots]}
+        if (udir / "slides.html").exists():
+            unit["slides"] = f"{udir.name}/slides.html"
+        units.append(unit)
+    dup = [i for i, c in ids.items() if c > 1]
+    if dup:
+        errors.append(f"[{bdir.name}] 중복 문항 id: {dup}")
+    if not units:
+        errors.append(f"[{bdir.name}] 단원이 없음")
+    book = {"id": bdir.name, **{k: meta.get(k) for k in ("grade", "semester", "subject", "color", "description", "sample") if meta.get(k) is not None},
+            "units": units, "questions": questions}
+    return book
+
+
+def main():
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    check_only = "--check-only" in sys.argv
+    errors, warns, info = [], [], []
+    bdirs = sorted(p for p in LIB.iterdir() if p.is_dir() and (p / "meta.json").exists()) if LIB.exists() else []
+    if args:
+        bdirs = [b for b in bdirs if b.name in args]
+    books = {b.name: build_book(b, errors, warns, info) for b in bdirs}
+    for line in info:
+        print("  ·", line)
+    for w in warns:
+        print("  ⚠", w)
+    for e in errors:
+        print("  ✖", e)
+    if errors:
+        print(f"결과: 실패 (오류 {len(errors)}, 경고 {len(warns)})")
+        sys.exit(1)
+    print(f"결과: 통과 (경고 {len(warns)})")
+    if check_only:
+        return
+    for bid, book in books.items():
+        (LIB / bid / "book.json").write_text(json.dumps(book, ensure_ascii=False), encoding="utf-8")
+    # 책장 목록은 항상 전체 책으로 다시 만든다
+    catalog = []
+    for b in sorted(p for p in LIB.iterdir() if (p / "book.json").exists()):
+        bk = books.get(b.name) or load(b / "book.json")
+        catalog.append({"id": bk["id"], "grade": bk.get("grade"), "semester": bk.get("semester"), "subject": bk.get("subject"),
+                        "color": bk.get("color"), "sample": bk.get("sample", False), "units": len(bk["units"]), "questions": len(bk["questions"])})
+    (LIB / "catalog.json").write_text(json.dumps({"books": catalog}, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"생성: 책 {len(books)}권, catalog.json (전체 {len(catalog)}권)")
+
+
+if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8")
+    main()

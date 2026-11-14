@@ -1,0 +1,14 @@
+{
+ "books": [
+  {
+   "id": "g1s2-science",
+   "grade": 1,
+   "semester": 2,
+   "subject": "과학",
+   "color": null,
+   "sample": true,
+   "units": 1,
+   "questions": 24
+  }
+ ]
+}

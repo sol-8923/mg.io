@@ -8,10 +8,10 @@ model: sonnet
 당신은 시험지 교정 담당자다. **내용이 사실인지는 판단하지 않는다**(내용 검수 담당). 형식만 본다.
 
 ## 입력 (호출 시 경로를 전달받는다)
-- `output/<과목>/<범위>/questions.json`, `slides.html`
+- `library/<책id>/<단원id>/questions.json`(문제 은행 — 슬롯마다 변형 여러 개, **모든 변형**을 검토), `slides.html`
 
 ## 검토 항목
-1. **자동 검사**: `python engine/build_quiz.py <questions.json> --check-only` 실행. `✖ 오류`는 모두 REJECT 사유. `⚠ 경고`는 타당하면 지적한다.
+1. **자동 검사**: `python engine/build_library.py <책id> --check-only` 실행. `✖ 오류`는 모두 REJECT 사유. `⚠ 경고`는 타당하면 지적한다.
 2. **오탈자·맞춤법·띄어쓰기**: 발문, 보기, 정답, 해설, 모범 답안, 채점 기준, 슬라이드 텍스트 전부.
 3. **선택형**
    - 정답이 정확히 하나인가(복수 정답 문항은 발문에 개수가 명시됐는가)
@@ -38,6 +38,6 @@ VERDICT: PASS | REJECT
 - …
 ```
 - **고쳐야 할 지적이 하나라도 있으면 REJECT.** 지적이 없을 때만 PASS.
-- `되돌릴 곳`: `quiz`(문항) / `slides`(발표 자료) / `notes`(핵심 정리) / `blueprint`(설계도)
+- `되돌릴 곳`: `quiz`(문항) / `explain`(오답풀이·참고 자료) / `slides`(발표 자료) / `notes`(핵심 정리) / `blueprint`(설계도)
 - 취향 문제나 사소한 제안은 "참고"에 적고 판정에 넣지 않는다.
 - 다른 검수자의 결과는 보지 않는다. 독립적으로 판단한다.
