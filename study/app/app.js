@@ -1016,7 +1016,7 @@ function todayPlan(){
         rs.length?h('div',{class:'tp-list'},rs.map(function(r){ return routineItem(r,dow,draw); })):h('p',{class:'tp-empty',text:'오늘은 정해진 루틴이 없어요.'})]));
       body.appendChild(h('div',{class:'tp col-e'},[h('div',{class:'tp-h'},[h('b',{text:'📅 오늘 일정'}),h('a',{href:'#/plan/cal',text:'달력'})]),
         es.length?h('div',{class:'tp-list'},es.map(function(e){ return eventItem(e,draw); })):h('p',{class:'tp-empty',text:'오늘은 특별한 일정이 없어요.'}),
-        soon.length?h('div',{class:'tp-soon'},[h('span',{class:'kl',text:'다가오는 일정'})].concat(soon.map(function(e){ var dl=dLabel(e.date); return h('div',{class:'soon-row'},[h('span',{class:'dday '+dl.c,text:dl.t}),h('span',{text:e.text})]); }))):null]));
+        soon.length?h('div',{class:'tp-soon'},[h('span',{class:'kl',text:'다가오는 일정'})].concat(soon.map(function(e){ var dl=dLabel(e.date); return h('div',{class:'soon-row'},[h('span',{class:'dday '+dl.c,text:dl.t}),h('span',{class:'sx',text:e.text}),whoChip(e.who)]); }))):null]));
       body.appendChild(h('div',{class:'tp col-t'},[h('div',{class:'tp-h'},[h('b',{text:'✅ 해야 할 일 '+(ts.length?ts.length+'개':'')}),h('button',{class:'mini-add',onclick:function(){ todoEditor(null,draw); }},['＋ 적기'])]),
         ts.length?h('div',{class:'tp-list'},ts.slice(0,5).map(function(t){ return todoRow(t,draw); })):h('p',{class:'tp-empty',text:'다 했어요! 🎉'}),
         ts.length>5?h('a',{class:'tp-more',href:'#/plan/todo',text:'나머지 '+(ts.length-5)+'개 더 보기 →'}):null]));
