@@ -445,3 +445,19 @@ th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)} th.n,
 .tp-h b::before,.mini-head h3::before,.dm-sec>b::before{content:'';flex:none;width:4px;height:1.05em;border-radius:2px;background:var(--tc,var(--accent))}
 .mini-head h3{--tc:var(--wood1)}
 .empty-t{font-family:var(--serif);font-size:1.15rem;font-weight:700;margin:0}
+
+/* ── 홈: 미니 달력 (어제 ~ 다음 주 같은 요일) ── */
+.tp-h .rng{font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.mgrid{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:3px}
+.mday{flex-direction:column;align-items:center;justify-content:flex-start;gap:2px;padding:6px 0 5px;min-height:62px;border-radius:10px;background:var(--paper);border:1px solid transparent;line-height:1.1;min-width:0}
+.mday .mw{font-size:.68rem;font-weight:700;color:var(--muted)}
+.mday .mn{font-weight:700;font-size:.95rem}
+.mday.sun .mw,.mday.sun .mn{color:var(--bad)} .mday.sat .mw,.mday.sat .mn{color:var(--sat)}
+.mday.past{opacity:.55}
+.mday.today{background:var(--accent-soft);border-color:var(--accent)} .mday.today .mn,.mday.today .mw{color:var(--accent)}
+.mday.sel{box-shadow:inset 0 0 0 2px var(--ink);opacity:1}
+.mdots{display:flex;gap:3px;justify-content:center;min-height:7px}
+.mdots i{width:7px;height:7px;border-radius:50%}
+.mdetail{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+.mdh{display:flex;align-items:center;gap:8px;margin-bottom:8px} .mdh b{font-size:.92rem}
+.mdh .madd{margin-left:auto;min-height:34px;padding:2px 10px;font-size:.82rem;font-weight:700;color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
