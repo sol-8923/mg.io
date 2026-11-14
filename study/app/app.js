@@ -139,9 +139,9 @@ function renderHome(){
       h('div',{class:'hero-top'},[
         h('div',{class:'kicker',text:'MINGYEOM · STUDY ROOM'}),
         h('h1',{text:'민겸이 공부 공간'}),
-        h('div',{class:'date',text:d.getFullYear()+'년 '+(d.getMonth()+1)+'월 '+d.getDate()+'일 '+days[d.getDay()]+'요일 · 오늘도 한 걸음씩'})
+        h('div',{class:'date',text:d.getFullYear()+'년 '+(d.getMonth()+1)+'월 '+d.getDate()+'일 '+days[d.getDay()]+'요일 · 겪어나가는 모든 것이 공부다'})
       ]),
-      h('div',{class:'emblem',html:ICONS.openbook}),
+      h('div',{class:'noisy','aria-label':'떠든 사람 김민겸'},[h('span',{class:'nl',text:'떠든 사람 :'}),h('span',{class:'nn',text:'김민겸'})]),
       noticeBoard(),
       h('div',{class:'chalk-line'})
     ]),

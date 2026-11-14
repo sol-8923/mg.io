@@ -469,3 +469,15 @@ th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)} th.n,
 @media (min-width:700px){ .cday .chn{display:block} }
 .hchip{display:inline-block;font-size:.76rem;font-weight:800;color:var(--bad);background:var(--bad-soft);border-radius:999px;padding:1px 9px;white-space:nowrap}
 .cal-legend i.hl{background:var(--bad);border-radius:2px}
+
+/* ── 칠판 오른쪽 위: 떠든 사람 ── */
+.hero .noisy{position:absolute;z-index:1;top:clamp(18px,3vw,30px);right:clamp(18px,4vw,44px);display:flex;align-items:baseline;gap:8px;
+  transform:rotate(3deg);transform-origin:right top;font-family:"Nanum Pen Script","Gaegu","Noto Serif KR",cursive;color:var(--chalk);
+  text-shadow:0 0 1px rgba(255,255,255,.55),0 0 6px rgba(255,255,255,.12);pointer-events:none;white-space:nowrap}
+.hero .noisy .nl{font-size:clamp(1.15rem,2.6vw,1.6rem);opacity:.9}
+.hero .noisy .nn{font-size:clamp(1.5rem,3.6vw,2.2rem);color:#f6c4cb;line-height:1;padding-bottom:3px;
+  border-bottom:3px solid transparent;border-image:repeating-linear-gradient(90deg,#f6c4cb 0 10px,transparent 10px 14px) 1}
+@media (max-width:520px){
+  .hero{display:flex;flex-direction:column}
+  .hero .noisy{position:static;order:-1;align-self:flex-end;margin:-8px 2px 6px 0}
+}
