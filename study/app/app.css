@@ -488,3 +488,8 @@ th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)} th.n,
   .hero .noisy .ntext{gap:6px}
   .hero .noisy .nl{font-size:1.15rem} .hero .noisy .nn{font-size:1.55rem}
 }
+
+/* ── 칠판 날짜 줄: 문구는 단어 단위로 끊고, 좁은 화면에서는 자기 줄에 ── */
+.hero .date{word-break:keep-all}
+.hero .date .dmotto{white-space:nowrap}
+@media (max-width:520px){ .hero .date .dsep{display:none} .hero .date .dmotto{display:block;margin-top:1px} }
