@@ -1058,7 +1058,7 @@ function renderPlan(tab){
   if(['todo','routine','cal'].indexOf(tab)<0){ try{ tab=localStorage.getItem('mg-study:plantab'); }catch(e){} if(['todo','routine','cal'].indexOf(tab)<0) tab='todo'; }
   try{ localStorage.setItem('mg-study:plantab',tab); }catch(e){}
   var app=$app(), page=h('div',{class:'page'}); app.appendChild(page); app.appendChild(themeBtn());
-  page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:'#/'},['← 홈']),h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:'우리 집 일정'})])]));
+  page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:'#/'},['← 홈']),h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:'우리 집 일정'})]),h('button',{class:'share-btn',onclick:sharePlan},['공유'])]));
   var share=h('div'), tabs=h('div',{class:'ptabs',role:'tablist'}), body=h('div',{class:'pbody'},[h('p',{class:'muted',text:'불러오는 중…'})]);
   page.appendChild(share); page.appendChild(tabs); page.appendChild(body);
   var T=[['todo','','해야 할 일'],['routine','','요일 루틴'],['cal','','달력']];
@@ -1165,6 +1165,65 @@ function dayModal(k,P,redraw){
     rs.length?h('div',{class:'dm-sec'},[h('b',{text:DAYS[d.getDay()]+'요일 루틴'}),h('p',{class:'muted',style:'margin:4px 0 0;font-size:.9rem',text:rs.map(function(r){ return (r.start?r.start+' ':'')+r.text; }).join(' · ')})]):null,
     h('div',{class:'row',style:'margin-top:16px;justify-content:flex-end'},[h('button',{onclick:function(){ m.close(); }},['닫기']),h('button',{class:'primary',onclick:function(){ m.close(); eventEditor(null,k,redraw); }},['＋ 이날 일정 적기'])])
   ]);
+}
+
+/* ═════════ 공유 (카톡·메일 등으로 이미지 카드 보내기) ═════════
+ * 이미지는 app/share.js 가 이 기기 안에서 그린다. 안드로이드 크롬 등은 기본 공유 창(Web Share)이 뜨고,
+ * 지원하지 않는 브라우저(PC 등)는 이미지 저장·글로 복사로 대신한다. */
+function openShare(title,make){
+  var body=h('div',{class:'sh-preview'},[h('p',{class:'muted',style:'padding:16px;margin:0',text:'카드를 만드는 중…'})]);
+  var actions=h('div',{class:'row sh-actions'});
+  var m=openModal([h('h2',{style:'margin:0 0 4px',text:title}),
+    h('p',{class:'muted',style:'margin:0 0 12px;font-size:.92rem',text:'이미지로 만들었어요. 공유를 누르면 카톡·메일 같은 앱을 고를 수 있어요.'}),body,actions]);
+  make().then(function(r){
+    var url=URL.createObjectURL(r.blob), file=null;
+    try{ file=new File([r.blob],r.name,{type:'image/png'}); }catch(e){}
+    var canFile=!!(file&&navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})), canText=!!navigator.share;
+    body.innerHTML=''; body.appendChild(h('img',{src:url,alt:title+' 미리보기'}));
+    function save(){ var a=h('a',{href:url,download:r.name}); document.body.appendChild(a); a.click(); a.remove(); toast('이미지를 저장했어요'); }
+    function share(){
+      var data=canFile?{files:[file],title:title,text:r.text}:{title:title,text:r.text};
+      navigator.share(data).catch(function(e){ if(e&&e.name==='AbortError') return; toast('공유 창을 열지 못했어요. 이미지 저장을 눌러 주세요'); });
+    }
+    function copy(){
+      function fallback(){ var ta=h('textarea',{style:'position:fixed;opacity:0'}); ta.value=r.text; document.body.appendChild(ta); ta.select(); var ok=false; try{ ok=document.execCommand('copy'); }catch(e){} ta.remove(); toast(ok?'글로 복사했어요':'복사하지 못했어요'); }
+      if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(r.text).then(function(){ toast('글로 복사했어요'); },fallback); else fallback();
+    }
+    actions.appendChild(canText?h('button',{class:'primary',onclick:share},[canFile?'공유하기':'글로 공유하기']):h('button',{class:'primary',onclick:save},['이미지 저장']));
+    if(canText) actions.appendChild(h('button',{onclick:save},['이미지 저장']));
+    actions.appendChild(h('button',{onclick:copy},['글로 복사']));
+    actions.appendChild(h('span',{class:'spacer'})); actions.appendChild(h('button',{onclick:function(){ m.close(); URL.revokeObjectURL(url); }},['닫기']));
+  }).catch(function(){ body.innerHTML=''; body.appendChild(h('p',{class:'muted',style:'padding:16px;margin:0',text:'카드를 만들지 못했어요. 잠시 후 다시 시도해 주세요.'})); });
+}
+function ymdLabel(d){ return d.getFullYear()+'.'+('0'+(d.getMonth()+1)).slice(-2)+'.'+('0'+d.getDate()).slice(-2); }
+function sharePlan(){
+  Plan.all().then(function(P){
+    var now=new Date(), M=PlanUI.month||new Date(now.getFullYear(),now.getMonth(),1);
+    openShare(M.getFullYear()+'년 '+(M.getMonth()+1)+'월 일정',function(){
+      return MGShare.schedule({year:M.getFullYear(),month:M.getMonth()+1,todayKey:dayKey(now),todayLabel:ymdLabel(now),events:P.events,todos:P.todos,holidays:window.MG_HOLIDAYS||{},who:WHO});
+    });
+  });
+}
+function dashShareData(S2,scope){
+  var now=new Date(), conc=S2.byConcept.filter(function(c){ return c.n>=2; }), pick=function(c){ return {l:c.key,acc:c.acc,n:c.n,ok:c.ok}; };
+  // 다시 볼 개념은 정답률 80% 미만만, 잘하는 개념은 거기에 든 개념을 뺀 나머지에서 고른다(같은 개념이 두 곳에 나오지 않게)
+  var weakList=conc.filter(function(c){ return c.acc<0.8; }).sort(function(a,b){ return a.acc-b.acc||b.n-a.n; }).slice(0,3), weakKeys=weakList.map(function(c){ return c.key; });
+  return {scope:scope,today:now.getFullYear()+'년 '+(now.getMonth()+1)+'월 '+now.getDate()+'일',todayKey:dayKey(now),todayLabel:ymdLabel(now),
+    kpis:[{l:'푼 시험',v:S2.tests+'회',s:'연습 '+S2.pracN+' · 실전 '+S2.examN},{l:'평균 점수',v:Math.round(S2.avg)+'점',s:'100점 환산'},
+      {l:'최고 점수',v:Math.round(S2.best)+'점',s:'최근 '+Math.round(S2.last)+'점'},{l:'연속 공부',v:S2.streak+'일',s:'최근 7일 중 '+S2.week+'일'},
+      {l:'푼 문항',v:S2.solved+'개',s:'정답률 '+pct(S2.acc)},{l:'공부 시간',v:fmtDur(S2.dur),s:'시험당 평균 '+fmtDur(S2.dur/S2.tests)}],
+    trend:S2.H.slice(-12).map(function(e){ return {y:e.max?Math.round(e.got/e.max*100):0,label:fmtDate(e.at)}; }),
+    weak:weakList.map(pick),
+    strong:conc.filter(function(c){ return weakKeys.indexOf(c.key)<0; }).sort(function(a,b){ return b.acc-a.acc||b.n-a.n; }).slice(0,3).map(pick)};
+}
+function shareStats(){
+  var mm=location.hash.match(/^#\/stats\/(.+)$/), bookId=mm?decodeURIComponent(mm[1]):'';
+  var S2=computeStats(bookId||undefined);
+  if(!S2.tests){ toast('공유할 시험 기록이 아직 없어요'); return; }
+  Data.catalogP().catch(function(){ return {books:[]}; }).then(function(cat){
+    var scope='전체'; cat.books.forEach(function(b){ if(b.id===bookId) scope=bookLabel(b); });
+    openShare('공부 기록',function(){ return MGShare.dashboard(dashShareData(S2,scope)); });
+  });
 }
 
 /* ═════════ 통계 ═════════ */
@@ -1286,7 +1345,7 @@ function miniDashboard(){
 /* 대시보드 페이지 */
 function renderStats(bookId){
   var app=$app(), page=h('div',{class:'page'}); app.appendChild(page); app.appendChild(themeBtn());
-  page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:'#/'},['← 홈']),h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:'공부 기록'})])]));
+  page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:'#/'},['← 홈']),h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:'공부 기록'})]),h('button',{class:'share-btn',onclick:shareStats},['공유'])]));
   return Data.catalogP().catch(function(){ return {books:[]}; }).then(function(cat){
     var labels={}; cat.books.forEach(function(b){ labels[b.id]=bookLabel(b); });
     var used={}; allHistory().forEach(function(e){ used[e.bookId]=1; });

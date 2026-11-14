@@ -493,3 +493,9 @@ th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)} th.n,
 .hero .date{word-break:keep-all}
 .hero .date .dmotto{white-space:nowrap}
 @media (max-width:520px){ .hero .date .dsep{display:none} .hero .date .dmotto{display:block;margin-top:1px} }
+
+/* ── 공유 ── */
+.topbar .share-btn{margin-left:auto;min-height:42px;padding:6px 18px;font-weight:700;color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.sh-preview{max-height:56vh;overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+.sh-preview img{display:block;width:100%;height:auto}
+.sh-actions{margin-top:14px}
