@@ -245,7 +245,7 @@ th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)} th.n,
 .note .chalk{font-family:"Nanum Pen Script","Gaegu","Noto Serif KR",cursive;letter-spacing:.01em;text-shadow:0 0 1px rgba(255,255,255,.55),0 0 6px rgba(255,255,255,.12)}
 .note .nt{display:flex;align-items:center;gap:6px;font-size:clamp(1.35rem,3.6vw,1.8rem);line-height:1.2;padding-bottom:5px;
   border-bottom:2px solid transparent;border-image:repeating-linear-gradient(90deg,rgba(241,237,226,.7) 0 9px,transparent 9px 13px) 1;opacity:.98}
-.note.dad .nt .chalk{color:#bcd7f5} .note.mom .nt .chalk{color:#f6c4cb}
+.note.dad .nt .chalk{color:var(--chalk-blue)} .note.mom .nt .chalk{color:#f6c4cb}
 .note .pen{margin-left:auto;font-size:.95rem;opacity:.5;font-family:var(--sans)}
 .note .nb{white-space:pre-wrap;word-break:keep-all;font-size:clamp(1.25rem,3.2vw,1.55rem);line-height:1.4;max-height:9.2em;overflow:auto;flex:1;color:#f6f2e6;scrollbar-width:thin}
 .note .nb.empty{color:rgba(241,237,226,.5)}
@@ -254,7 +254,7 @@ th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)} th.n,
 .pop-note{border-radius:12px;padding:14px 16px;margin-top:10px;background:var(--board);color:var(--chalk)}
 .pop-note b{font-family:"Nanum Pen Script","Gaegu",var(--serif);font-size:1.4rem;font-weight:400}
 .pop-note .pre{font-family:"Nanum Pen Script","Gaegu",var(--serif);font-size:1.35rem;line-height:1.45}
-.pop-note.dad b{color:#bcd7f5} .pop-note.mom b{color:#f6c4cb}
+.pop-note.dad b{color:var(--chalk-blue)} .pop-note.mom b{color:#f6c4cb}
 .pop-note .nd{font-size:.8rem;color:rgba(241,237,226,.6);margin-top:6px}
 
 /* ── 모달 ── */
@@ -470,14 +470,20 @@ th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)} th.n,
 .hchip{display:inline-block;font-size:.76rem;font-weight:800;color:var(--bad);background:var(--bad-soft);border-radius:999px;padding:1px 9px;white-space:nowrap}
 .cal-legend i.hl{background:var(--bad);border-radius:2px}
 
-/* ── 칠판 오른쪽 위: 떠든 사람 ── */
-.hero .noisy{position:absolute;z-index:1;top:clamp(18px,3vw,30px);right:clamp(18px,4vw,44px);display:flex;align-items:baseline;gap:8px;
-  transform:rotate(3deg);transform-origin:right top;font-family:"Nanum Pen Script","Gaegu","Noto Serif KR",cursive;color:var(--chalk);
+/* ── 칠판 오른쪽: 떠든 사람 + 메롱 ── */
+:root{--chalk-blue:#bcd7f5}
+.hero .noisy{position:absolute;z-index:1;top:clamp(44px,6.5vw,78px);right:clamp(34px,9vw,124px);display:flex;align-items:center;gap:clamp(10px,1.6vw,18px);
+  transform:rotate(-3deg);font-family:"Nanum Pen Script","Gaegu","Noto Serif KR",cursive;color:var(--chalk);
   text-shadow:0 0 1px rgba(255,255,255,.55),0 0 6px rgba(255,255,255,.12);pointer-events:none;white-space:nowrap}
-.hero .noisy .nl{font-size:clamp(1.15rem,2.6vw,1.6rem);opacity:.9}
-.hero .noisy .nn{font-size:clamp(1.5rem,3.6vw,2.2rem);color:#f6c4cb;line-height:1;padding-bottom:3px;
-  border-bottom:3px solid transparent;border-image:repeating-linear-gradient(90deg,#f6c4cb 0 10px,transparent 10px 14px) 1}
+.hero .noisy .mer{flex:none;width:clamp(46px,6.4vw,70px);color:var(--chalk);transform:rotate(8deg);filter:drop-shadow(0 0 1px rgba(255,255,255,.35))}
+.hero .noisy .mer svg{display:block;width:100%;height:auto}
+.hero .noisy .ntext{display:flex;flex-direction:column;align-items:flex-start;line-height:1.05}
+.hero .noisy .nl{font-size:clamp(1.15rem,2.5vw,1.55rem);opacity:.92}
+.hero .noisy .nn{font-size:clamp(1.8rem,4.2vw,2.7rem);color:var(--chalk-blue)}
 @media (max-width:520px){
   .hero{display:flex;flex-direction:column}
-  .hero .noisy{position:static;order:-1;align-self:flex-end;margin:-8px 2px 6px 0}
+  .hero .noisy{position:static;order:-1;align-self:flex-end;margin:-6px 6px 4px 0;gap:8px}
+  .hero .noisy .mer{width:38px}
+  .hero .noisy .ntext{flex-direction:row;align-items:baseline;gap:6px}
+  .hero .noisy .nl{font-size:1.1rem} .hero .noisy .nn{font-size:1.5rem}
 }

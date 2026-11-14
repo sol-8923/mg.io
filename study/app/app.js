@@ -31,6 +31,7 @@ var ICONS = {
   soc:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="13"/><path d="M7 20h26M20 7c-5 5-5 21 0 26M20 7c5 5 5 21 0 26"/></svg>',
   his:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M11 8h20v20a4 4 0 0 1-4 4H9"/><path d="M11 8a3 3 0 0 0-3 3v17a4 4 0 0 0 4 4"/><path d="M15 15h11M15 21h11"/></svg>'
 };
+ICONS.meron='<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="25"/><path d="M18 23l8 4-8 4M46 23l-8 4 8 4"/><ellipse cx="13.5" cy="38" rx="4" ry="2.6" fill="#f6c4cb" stroke="none" opacity=".55"/><ellipse cx="50.5" cy="38" rx="4" ry="2.6" fill="#f6c4cb" stroke="none" opacity=".55"/><path d="M33 43v8.5a4.6 4.6 0 0 0 9.2 0V41.5" fill="#f6c4cb" stroke="#f6c4cb"/><path d="M37.6 47v4.5" stroke="#d98a96" stroke-width="1.8"/><path d="M21 40q11 7 22 0"/><path d="M54 13l4-3M57 20h5M53 6l1.5-4"/></svg>';
 function emblem(sub){
   var s=(SUBJECTS[sub]||{}).e;
   if(ICONS[s]) return ICONS[s];
@@ -141,7 +142,7 @@ function renderHome(){
         h('h1',{text:'민겸이 공부 공간'}),
         h('div',{class:'date',text:d.getFullYear()+'년 '+(d.getMonth()+1)+'월 '+d.getDate()+'일 '+days[d.getDay()]+'요일 · 겪어나가는 모든 것이 공부다'})
       ]),
-      h('div',{class:'noisy','aria-label':'떠든 사람 민겸이'},[h('span',{class:'nl',text:'떠든 사람 :'}),h('span',{class:'nn',text:'민겸이'})]),
+      h('div',{class:'noisy','aria-label':'떠든 사람 민겸이'},[h('span',{class:'mer','aria-hidden':'true',html:ICONS.meron}),h('span',{class:'ntext'},[h('span',{class:'nl',text:'떠든 사람 :'}),h('span',{class:'nn',text:'민겸이'})])]),
       noticeBoard(),
       h('div',{class:'chalk-line'})
     ]),
