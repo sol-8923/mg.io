@@ -1,0 +1,129 @@
+{
+ "unitName": "소인수분해",
+ "basis": "default",
+ "analysis": "기출 없음 — 중학교 내신 일반형 적용(자료·그림 해석, 〈보기〉 합답형, 조건 서술형). 샘플 단원평가 크기(12문항, 100점)로 과학 샘플과 같게 구성.",
+ "timeLimitMin": 25,
+ "totalPoints": 100,
+ "variantsPerSlot": 2,
+ "slots": [
+  {
+   "id": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "소수와 합성수",
+   "intent": "소수 하나(또는 합성수 하나)를 약수로 판별해 고르는 기본 문항"
+  },
+  {
+   "id": "Q02",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "소수와 합성수",
+   "intent": "소수·합성수·1의 성질에 대한 옳은 설명 고르기 (반례가 있는 오개념 포함)"
+  },
+  {
+   "id": "Q03",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "거듭제곱",
+   "intent": "같은 수의 곱을 거듭제곱으로 나타내거나 밑·지수의 뜻 판별"
+  },
+  {
+   "id": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "소인수분해",
+   "intent": "그림(나눗셈 사다리·가지치기)을 보고 소인수분해 결과 고르기"
+  },
+  {
+   "id": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "소인수",
+   "intent": "소인수의 뜻(소인수분해에 나오는 소수) 이해 문항"
+  },
+  {
+   "id": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "약수의 개수",
+   "intent": "소인수분해를 이용해 약수의 개수 구하기·비교하기"
+  },
+  {
+   "id": "Q07",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 6,
+   "concept": "최대공약수",
+   "intent": "소인수분해된 두 수의 최대공약수와 공약수의 개수를 함께 구하기(자료 해석+결합)"
+  },
+  {
+   "id": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "최소공배수",
+   "intent": "두 수 또는 세 수의 최소공배수 구하기"
+  },
+  {
+   "id": "Q09",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 6,
+   "concept": "최대공약수·최소공배수의 관계",
+   "intent": "(최대공약수)×(최소공배수)=두 수의 곱 활용 또는 서로소 〈보기〉 합답형"
+  },
+  {
+   "id": "Q10",
+   "type": "short",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "소수와 합성수",
+   "intent": "소수에 대한 단답형(가장 작은 소수 / 20 미만 소수의 개수)"
+  },
+  {
+   "id": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 20,
+   "concept": "소인수분해와 약수의 개수",
+   "intent": "소인수분해하고 약수의 개수를 구하는 풀이 과정 서술 (조건: '지수')"
+  },
+  {
+   "id": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 20,
+   "concept": "최대공약수·최소공배수의 활용",
+   "intent": "생활 문제에서 최대공약수 또는 최소공배수를 이용한 풀이 서술"
+  }
+ ],
+ "totalQuestions": 12,
+ "types": {
+  "mc": 9,
+  "short": 1,
+  "essay": 2
+ },
+ "difficulty": {
+  "하": 3,
+  "중": 6,
+  "상": 3
+ },
+ "concepts": {
+  "소수와 합성수": 3,
+  "거듭제곱": 1,
+  "소인수분해": 1,
+  "소인수": 1,
+  "약수의 개수": 1,
+  "최대공약수": 1,
+  "최소공배수": 1,
+  "최대공약수·최소공배수의 관계": 1,
+  "소인수분해와 약수의 개수": 1,
+  "최대공약수·최소공배수의 활용": 1
+ }
+}
