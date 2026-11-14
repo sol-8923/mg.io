@@ -1,11 +1,10 @@
 /* 민겸이 공부 공간 설정
  *
- * 아빠·엄마 알림을 모든 기기(폰·탭)에서 함께 보려면 Firebase(Firestore) 정보를 넣는다.
- * 비워 두면 알림은 글을 쓴 그 기기에만 저장된다.
- *
- * 예)
- * firebase: { projectId: "mg-study-xxxx", apiKey: "AIza..." }
+ * 아빠·엄마 알림을 모든 기기(폰·탭)에서 함께 보기 위한 Firebase(Firestore) 정보.
+ * apiKey는 공개돼도 되는 프로젝트 식별값이고, 실제 접근 범위는 Firestore 보안 규칙이 정한다
+ * (notices/dad, notices/mom 문서의 text·updatedAt만 읽기/쓰기 허용, 300자 제한).
+ * 비우면(firebase: null) 알림은 글을 쓴 기기에만 저장된다.
  */
 window.MG_CONFIG = {
-  firebase: null
+  firebase: { projectId: "mg-study", apiKey: "AIzaSyBISC0B66JrWv-TNqG3zFTphLFT5Ea_LSI" }
 };
