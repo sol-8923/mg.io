@@ -75,7 +75,7 @@ description: 교과서·자습서 자료로 "민겸이 공부 공간"의 교과�
 
 ### 8단계 · 빌드 · 배포 · 확인
 1. `python engine/build_library.py <책id>` → `book.json`, `catalog.json` 생성
-2. 로컬 확인: study 폴더에서 `python -m http.server` → 책장에 책이 보이고, 새 시험지·오답풀이·참고 자료가 정상 표시되는지 확인
+2. 로컬 확인: study 폴더에서 `python -m http.server` → 책장에 책이 보이고, 새로운 시험 보기·오답풀이·참고 자료가 정상 표시되는지 확인
 3. 커밋 후 push (materials는 .gitignore로 제외). 1~2분 뒤 Pages 반영
 4. 보고는 짧게: 은행 문항 수(슬롯×변형), 검수 통과 라운드 수, 사용자 판단 쟁점, 주소
 

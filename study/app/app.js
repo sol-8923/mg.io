@@ -8,7 +8,7 @@
 
 /* ───────── 설정: 홈 메뉴 (여기에 추가하면 홈에 카드가 생김) ───────── */
 var MENUS = [
-  { id:'exam',  color:'#2f6b52', icon:'exam',  title:'시험으로 풀어보기', desc:'학년·학기·과목을 고르면 들어갈 때마다 새 시험지가 만들어져요.', href:'#/exam' },
+  { id:'exam',  color:'#2f6b52', icon:'exam',  title:'시험으로 풀어보기', desc:'학년·학기·과목을 고르면 들어갈 때마다 새로운 시험을 볼 수 있어요.', href:'#/exam' },
   { id:'notes', color:'#a8362c', icon:'notes', title:'오답노트', desc:'틀린 문제만 모아 다시 풀어요. 두 번 연속 맞히면 졸업!', href:'#/notes' }
 ];
 var SUBJECTS = {
@@ -191,7 +191,7 @@ function renderShelf(kind){
     h('a',{class:'btn back',href:'#/'},['← 홈']),
     h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:kind==='exam'?'시험으로 풀어보기':'오답노트'})])
   ]));
-  page.appendChild(h('p',{class:'muted',style:'margin:-6px 0 14px',text:kind==='exam'?'풀고 싶은 교과서를 눌러 보세요. 누를 때마다 새 시험지가 만들어져요.':'교과서별로 틀린 문제가 모여 있어요. 빨간 숫자는 아직 학습 중인 문제 수예요.'}));
+  page.appendChild(h('p',{class:'muted',style:'margin:-6px 0 14px',text:kind==='exam'?'풀고 싶은 교과서를 눌러 보세요. 누를 때마다 새로운 시험을 볼 수 있어요.':'교과서별로 틀린 문제가 모여 있어요. 빨간 숫자는 아직 학습 중인 문제 수예요.'}));
   var cs=h('div',{class:'bookcase'}); page.appendChild(cs);
   if(kind==='notes') page.appendChild(backupCard());
   app.appendChild(page); app.appendChild(themeBtn());
@@ -282,7 +282,7 @@ function renderBook(id){
             var ids=book.units.filter(function(u){ return picked[u.id]; }).map(function(u){ return u.id; });
             if(!ids.length) return toast('시험 범위를 하나 이상 골라 주세요');
             S.exam=makeExam(book,ids,S.mode); go('#/quiz');
-          }},['✏️ 새 시험지 만들기']),
+          }},['✏️ 새로운 시험 보기']),
           resume?h('button',{onclick:function(){ go('#/quiz'); }},['이어서 풀기']):null
         ])
       ]),
@@ -554,7 +554,7 @@ function renderResult(){
     masteredNow?h('div',{style:'margin-top:6px;color:var(--ok);font-weight:700',text:'🎓 오답노트에서 '+masteredNow+'문제 졸업!'}):null,
     h('div',{class:'row',style:'margin-top:16px'},[
       R.wrong.length?h('button',{class:'primary',onclick:function(){ openReview(R.wrong.map(function(q){ return {q:q,ans:E.ans[q.id],self:pickSelf(E.self,q)}; }),E.title+' 오답풀이','#/result'); }},['📝 상세 오답풀이 ('+R.wrong.length+')']):h('span',{style:'font-weight:700',text:'🎉 모두 맞혔어요!'}),
-      E.source==='exam'?h('button',{onclick:function(){ Data.bookP(E.bookId).then(function(b){ S.exam=makeExam(b,E.units,E.mode); go('#/quiz'); }); }},['✏️ 새 시험지']):null,
+      E.source==='exam'?h('button',{onclick:function(){ Data.bookP(E.bookId).then(function(b){ S.exam=makeExam(b,E.units,E.mode); go('#/quiz'); }); }},['✏️ 새로운 시험 보기']):null,
       h('a',{class:'btn',href:'#/notes/'+encodeURIComponent(E.bookId)},['📒 오답노트']),
       h('a',{class:'btn',href:'#/'},['홈'])
     ])
