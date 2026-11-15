@@ -5,23 +5,23 @@
    "slot": "Q01",
    "type": "mc",
    "difficulty": "하",
-   "points": 6,
+   "points": 5,
    "concept": "입자의 운동",
    "question": "다음 중 확산 현상의 예로 가장 적절한 것은?",
    "choices": [
-    "빨래 건조대에 넌 젖은 수건이 햇볕에 마른다.",
+    "빨래 건조대에 넌 젖은 수건이 햇볕을 받아 서서히 마른다.",
+    "프라이팬에 올려 둔 버터 조각이 열을 받아 녹는다.",
+    "끓는 냄비의 뚜껑 안쪽에 작은 물방울이 맺힌다.",
     "방 한쪽에서 뿌린 향수 냄새가 방 전체에 퍼진다.",
-    "끓는 냄비 뚜껑 안쪽에 물방울이 맺힌다.",
-    "프라이팬에 올려 둔 버터 조각이 녹는다.",
-    "촛불을 끈 뒤 흘러내린 촛농이 굳는다."
+    "촛불을 끈 뒤 흘러내린 촛농이 서서히 굳는다."
    ],
-   "answer": 2,
+   "answer": 4,
    "explanation": "확산은 입자가 스스로 운동하여 퍼져 나가는 현상이다. 향수 냄새가 퍼지는 것이 대표적인 예이다.",
    "choiceExplanations": [
     "수건이 마르는 것은 액체 표면의 입자가 기체가 되어 날아가는 증발이에요. 증발도 입자 운동의 증거지만, '퍼져 나가는' 확산과는 달라요.",
-    "정답. 향수 입자가 스스로 움직여 공기 중으로 퍼져 나가는 대표적인 확산 현상이에요.",
-    "냄비 속에서 생긴 수증기가 뚜껑에 닿아 식으며 물방울이 되는 액화예요. 상태 변화이지 확산이 아니에요.",
     "고체가 액체로 변하는 융해로, 상태 변화예요.",
+    "냄비 속에서 생긴 수증기가 뚜껑에 닿아 식으며 물방울이 되는 액화예요. 상태 변화이지 확산이 아니에요.",
+    "정답. 향수 입자가 스스로 움직여 공기 중으로 퍼져 나가는 대표적인 확산 현상이에요.",
     "액체가 고체로 변하는 응고로, 상태 변화예요."
    ],
    "detail": "입자 운동의 증거는 두 가지로 정리해요.\n· 확산: 입자가 스스로 움직여 다른 물질 속으로 퍼져 나가는 현상 (향수·음식 냄새가 퍼짐, 물에 떨어뜨린 잉크가 퍼짐)\n· 증발: 액체 표면의 입자가 기체가 되어 날아가는 현상 (빨래가 마름, 어항 물이 줄어듦)\n보기 중 '퍼져 나가는' 현상은 향수 냄새뿐이고, 나머지는 증발이거나 다른 상태 변화예요.",
@@ -56,22 +56,22 @@
    "slot": "Q01",
    "type": "mc",
    "difficulty": "하",
-   "points": 6,
+   "points": 5,
    "concept": "입자의 운동",
    "question": "다음 중 증발 현상의 예로 가장 적절한 것은?",
    "choices": [
-    "물에 떨어뜨린 잉크가 점점 퍼진다.",
+    "물에 떨어뜨린 잉크가 시간이 지나며 점점 퍼진다.",
+    "아이스크림이 녹아 막대를 타고 천천히 흘러내린다.",
     "어항의 물이 시간이 지나면서 조금씩 줄어든다.",
-    "아이스크림이 녹아 막대를 타고 흘러내린다.",
-    "냉동실에 넣어 둔 물이 얼음이 된다.",
-    "빵 굽는 냄새가 거실까지 퍼진다."
+    "냉동실에 넣어 둔 물이 시간이 지나 얼음이 된다.",
+    "빵 굽는 냄새가 집 안 여기저기로 퍼져 나간다."
    ],
-   "answer": 2,
+   "answer": 3,
    "explanation": "증발은 액체 표면에서 입자가 기체로 변해 날아가는 현상으로, 어항 물이 줄어드는 것이 예이다.",
    "choiceExplanations": [
     "잉크 입자가 물속으로 퍼져 나가는 확산이에요.",
-    "정답. 물 표면의 입자가 수증기가 되어 공기 중으로 날아가 물이 줄어드는 증발이에요.",
     "아이스크림이 녹는 것은 고체가 액체로 변하는 융해예요. 증발은 액체가 표면에서 기체가 되는 거예요.",
+    "정답. 물 표면의 입자가 수증기가 되어 공기 중으로 날아가 물이 줄어드는 증발이에요.",
     "물이 얼음이 되는 것은 액체가 고체로 변하는 응고예요.",
     "냄새 입자가 공기 중으로 퍼지는 확산이에요."
    ],
@@ -107,7 +107,7 @@
    "slot": "Q02",
    "type": "mc",
    "difficulty": "중",
-   "points": 6,
+   "points": 5,
    "concept": "입자의 운동",
    "question": "이 실험에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
    "choices": [
@@ -166,7 +166,7 @@
    "slot": "Q02",
    "type": "mc",
    "difficulty": "중",
-   "points": 6,
+   "points": 5,
    "concept": "입자의 운동",
    "question": "이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
    "choices": [
@@ -230,7 +230,7 @@
    "slot": "Q03",
    "type": "mc",
    "difficulty": "하",
-   "points": 6,
+   "points": 5,
    "concept": "상태 변화의 종류",
    "question": "그림은 물질의 세 가지 상태 사이의 변화를 나타낸 것이다. 햇볕이 드는 창가에 둔 초콜릿이 녹는 현상에 해당하는 것은?",
    "choices": [
@@ -312,7 +312,7 @@
    "slot": "Q03",
    "type": "mc",
    "difficulty": "하",
-   "points": 6,
+   "points": 5,
    "concept": "상태 변화의 종류",
    "question": "그림은 물질의 세 가지 상태 사이의 변화를 나타낸 것이다. 겨울철 처마 끝에 고드름이 생기는 현상에 해당하는 것은?",
    "choices": [
@@ -394,7 +394,7 @@
    "slot": "Q04",
    "type": "mc",
    "difficulty": "중",
-   "points": 6,
+   "points": 5,
    "concept": "상태 변화의 종류",
    "question": "다음 중 상태 변화의 종류가 나머지 넷과 다른 하나는?",
    "choices": [
@@ -476,7 +476,7 @@
    "slot": "Q04",
    "type": "mc",
    "difficulty": "중",
-   "points": 6,
+   "points": 5,
    "concept": "상태 변화의 종류",
    "question": "〈보기〉 중 열에너지를 흡수하여 고체에서 곧바로 기체가 되는 현상만을 있는 대로 고른 것은?",
    "choices": [
@@ -555,15 +555,15 @@
    "slot": "Q05",
    "type": "mc",
    "difficulty": "중",
-   "points": 6,
+   "points": 5,
    "concept": "입자 배열",
    "question": "그림은 같은 질량의 한 물질이 세 가지 상태 (가)~(다)에 있을 때의 입자 모형이다. 이에 대한 설명으로 옳은 것은?",
    "choices": [
-    "(가)는 입자가 움직이지 않고 완전히 멈춰 있다.",
+    "(가)는 입자가 움직이지 않고 한 자리에 완전히 멈춰 있다.",
     "(나)에서 (다)로 변할 때 입자 사이의 거리가 멀어진다.",
-    "(다)는 입자 사이의 거리가 가장 가깝다.",
-    "(가)에서 (나)로 변할 때 입자의 크기가 커진다.",
-    "(다)에서 (나)로 변할 때 입자의 수가 줄어든다."
+    "(다)는 세 상태 중 입자 사이의 거리가 가장 가깝다.",
+    "(가)에서 (나)로 변할 때 입자 하나하나의 크기가 커진다.",
+    "(다)에서 (나)로 변할 때 입자의 수가 눈에 띄게 줄어든다."
    ],
    "answer": 2,
    "explanation": "(가)는 고체, (나)는 액체, (다)는 기체이다. 액체가 기체로 변하면 입자 사이 거리가 멀어진다.",
@@ -630,7 +630,7 @@
    "slot": "Q05",
    "type": "mc",
    "difficulty": "중",
-   "points": 6,
+   "points": 5,
    "concept": "입자 배열",
    "question": "그림은 같은 질량의 한 물질이 세 가지 상태 (가)~(다)에 있을 때의 입자 모형이다. (가)가 (나)를 거쳐 (다)로 변할 때 변하지 않는 것만을 〈보기〉에서 있는 대로 고른 것은?",
    "choices": [
@@ -707,7 +707,7 @@
    "slot": "Q06",
    "type": "mc",
    "difficulty": "중",
-   "points": 6,
+   "points": 5,
    "concept": "부피와 질량 변화",
    "question": "이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
    "choices": [
@@ -756,7 +756,7 @@
    "slot": "Q06",
    "type": "mc",
    "difficulty": "중",
-   "points": 6,
+   "points": 5,
    "concept": "부피와 질량 변화",
    "question": "그림은 시험관에 물을 넣고 얼리기 전과 얼린 후의 모습이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
    "choices": [
@@ -808,7 +808,7 @@
    "slot": "Q07",
    "type": "mc",
    "difficulty": "상",
-   "points": 6,
+   "points": 5,
    "concept": "가열·냉각 곡선",
    "question": "그림은 고체 물질 X를 일정한 세기의 불꽃으로 가열하면서 시간에 따른 온도를 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
    "choices": [
@@ -886,7 +886,7 @@
    "slot": "Q07",
    "type": "mc",
    "difficulty": "상",
-   "points": 6,
+   "points": 5,
    "concept": "가열·냉각 곡선",
    "question": "그림은 고체 물질 M을 일정한 세기의 불꽃으로 가열하면서 시간에 따른 온도를 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
    "choices": [
@@ -964,7 +964,7 @@
    "slot": "Q08",
    "type": "mc",
    "difficulty": "중",
-   "points": 6,
+   "points": 5,
    "concept": "가열·냉각 곡선",
    "question": "그림은 액체 물질 Y를 냉각하면서 시간에 따른 온도를 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
    "choices": [
@@ -1032,7 +1032,7 @@
    "slot": "Q08",
    "type": "mc",
    "difficulty": "중",
-   "points": 6,
+   "points": 5,
    "concept": "가열·냉각 곡선",
    "question": "그림은 액체 물질 N을 냉각하면서 시간에 따른 온도를 나타낸 것이다. 이에 대한 설명으로 옳은 것은?",
    "choices": [
@@ -1098,7 +1098,7 @@
    "slot": "Q09",
    "type": "mc",
    "difficulty": "상",
-   "points": 6,
+   "points": 5,
    "concept": "녹는점과 끓는점",
    "question": "표는 물질 A~E의 녹는점과 끓는점을 나타낸 것이다. 18℃에서 액체 상태인 물질만을 있는 대로 고른 것은?",
    "choices": [
@@ -1180,7 +1180,7 @@
    "slot": "Q09",
    "type": "mc",
    "difficulty": "상",
-   "points": 6,
+   "points": 5,
    "concept": "녹는점과 끓는점",
    "question": "표는 물질 A~E의 녹는점과 끓는점을 나타낸 것이다. 60℃에서 액체 상태인 물질만을 있는 대로 고른 것은?",
    "choices": [
@@ -1258,11 +1258,11 @@
    "fixedOrder": true
   },
   {
-   "id": "u1-Q10-a",
-   "slot": "Q10",
+   "id": "u1-Q13-a",
+   "slot": "Q13",
    "type": "short",
    "difficulty": "하",
-   "points": 6,
+   "points": 4,
    "concept": "상태 변화의 종류",
    "question": "물질의 상태 변화 중, 고체가 액체 상태를 거치지 않고 바로 기체로 변하는 현상을 무엇이라고 하는지 쓰시오.",
    "answer": [
@@ -1338,11 +1338,11 @@
    "answerHint": "두 글자로 쓰시오."
   },
   {
-   "id": "u1-Q10-b",
-   "slot": "Q10",
+   "id": "u1-Q13-b",
+   "slot": "Q13",
    "type": "short",
    "difficulty": "하",
-   "points": 6,
+   "points": 4,
    "concept": "상태 변화의 종류",
    "question": "물질의 상태 변화 중, 고체가 액체로 변하는 현상을 무엇이라고 하는지 쓰시오.",
    "answer": [
@@ -1422,7 +1422,7 @@
    "slot": "S01",
    "type": "essay",
    "difficulty": "상",
-   "points": 20,
+   "points": 8,
    "concept": "가열·냉각 곡선",
    "question": "그림은 고체 물질 Z를 가열하면서 측정한 온도를 나타낸 것이다. B 구간에서 계속 가열하는데도 온도가 일정하게 유지되는 까닭을 서술하시오.",
    "answerHint": "(단, '열에너지'와 '입자 배열'이라는 말을 모두 사용할 것)",
@@ -1430,17 +1430,17 @@
    "rubric": [
     {
      "criterion": "B 구간에서 융해(고체 → 액체)가 일어난다고 씀",
-     "points": 6,
+     "points": 2,
      "tip": "수평 구간에서 어떤 상태 변화가 일어나는지 먼저 밝히세요."
     },
     {
      "criterion": "가해 준 열에너지가 입자 배열을 바꾸는 데(상태 변화에) 쓰인다고 설명함",
-     "points": 10,
+     "points": 4,
      "tip": "'열에너지'와 '입자 배열'을 함께 써서, 열이 어디에 쓰이는지 분명히 쓰세요."
     },
     {
      "criterion": "그래서 온도가 높아지지 않고 일정하게 유지된다는 결론을 씀",
-     "points": 4,
+     "points": 2,
      "tip": "마지막에 '그래서 온도가 일정하다'로 결론을 맺으세요."
     }
    ],
@@ -1491,7 +1491,7 @@
    "slot": "S01",
    "type": "essay",
    "difficulty": "상",
-   "points": 20,
+   "points": 8,
    "concept": "가열·냉각 곡선",
    "question": "그림은 액체 물질 W를 냉각하면서 측정한 온도를 나타낸 것이다. B 구간에서 계속 냉각하는데도 온도가 일정하게 유지되는 까닭을 서술하시오.",
    "answerHint": "(단, '열에너지'와 '입자 배열'이라는 말을 모두 사용할 것)",
@@ -1499,17 +1499,17 @@
    "rubric": [
     {
      "criterion": "B 구간에서 응고(액체 → 고체)가 일어난다고 씀",
-     "points": 6,
+     "points": 2,
      "tip": "냉각 곡선의 수평 구간에서 어떤 상태 변화가 일어나는지 먼저 밝히세요."
     },
     {
      "criterion": "응고하면서 입자 배열이 바뀌어 열에너지를 방출한다고 설명함",
-     "points": 10,
+     "points": 4,
      "tip": "'입자 배열이 바뀌며 열에너지를 방출한다'는 흐름으로 두 낱말을 모두 쓰세요."
     },
     {
      "criterion": "방출한 열에너지 때문에 온도가 일정하게 유지된다는 결론을 씀",
-     "points": 4,
+     "points": 2,
      "tip": "방출한 열이 온도가 내려가는 것을 막는다는 결론으로 마무리하세요."
     }
    ],
@@ -1560,7 +1560,7 @@
    "slot": "S02",
    "type": "essay",
    "difficulty": "중",
-   "points": 20,
+   "points": 8,
    "concept": "상태 변화와 열에너지",
    "question": "더운 여름날 마당에 물을 뿌리면 시원해지는 까닭을 서술하시오.",
    "answerHint": "(단, 일어나는 상태 변화의 이름과 열에너지의 출입을 포함할 것)",
@@ -1568,17 +1568,17 @@
    "rubric": [
     {
      "criterion": "뿌린 물이 기화(증발)한다는 상태 변화를 씀",
-     "points": 8,
+     "points": 3,
      "tip": "'물이 마른다'가 아니라 '기화(증발)한다'처럼 상태 변화 이름을 정확히 쓰세요."
     },
     {
      "criterion": "기화할 때 주변의 열에너지를 흡수한다고 씀",
-     "points": 8,
+     "points": 3,
      "tip": "열에너지의 방향(흡수)을 분명히 쓰세요."
     },
     {
      "criterion": "그 결과 주변의 온도가 낮아진다고 씀",
-     "points": 4,
+     "points": 2,
      "tip": "'그래서 주변 온도가 낮아진다'로 결론을 쓰세요."
     }
    ],
@@ -1639,7 +1639,7 @@
    "slot": "S02",
    "type": "essay",
    "difficulty": "중",
-   "points": 20,
+   "points": 8,
    "concept": "상태 변화와 열에너지",
    "question": "냉장고에서 꺼낸 차가운 음료수 캔을 실온에 두었더니 캔 표면에 물방울이 맺혔다. 이 물방울이 생기는 까닭을 서술하시오.",
    "answerHint": "(단, 물방울이 어디에서 왔는지, 일어나는 상태 변화의 이름, 열에너지의 출입을 모두 포함할 것)",
@@ -1647,17 +1647,17 @@
    "rubric": [
     {
      "criterion": "물방울이 공기 중의 수증기에서 왔다고 씀",
-     "points": 6,
+     "points": 3,
      "tip": "캔 속 음료가 새어 나온 것이 아니라 공기 중 수증기라는 점을 밝히세요."
     },
     {
      "criterion": "수증기가 액체로 변하는 액화가 일어났다고 씀",
-     "points": 6,
+     "points": 2,
      "tip": "기체 → 액체 변화의 이름(액화)을 정확히 쓰세요."
     },
     {
      "criterion": "수증기가 차가운 캔에 열에너지를 방출하며(빼앗기며) 액화한다고 씀",
-     "points": 8,
+     "points": 3,
      "tip": "열에너지의 방향을 '방출'로 정확히 쓰세요. 수증기가 열을 잃어야 액체가 돼요."
     }
    ],
@@ -1712,6 +1712,610 @@
     }
    ],
    "source": "샘플 자료"
+  },
+  {
+   "id": "u1-Q10-a",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 5,
+   "concept": "물질의 세 가지 상태",
+   "source": "샘플 자료",
+   "question": "액체 상태의 물질에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "담는 그릇에 따라 모양은 변하지만 부피는 일정하다.",
+    "담는 그릇이 달라도 모양과 부피가 모두 일정하게 유지된다.",
+    "담는 그릇 전체로 퍼져서 모양과 부피가 모두 변한다.",
+    "입자가 규칙적으로 배열되어 제자리에서만 진동한다.",
+    "입자 사이의 거리가 가장 멀어서 쉽게 압축된다."
+   ],
+   "answer": 1,
+   "explanation": "액체는 그릇에 따라 모양이 변하지만 부피는 일정하다.",
+   "choiceExplanations": [
+    "정답. 액체는 그릇에 따라 모양이 변하지만 부피는 일정해요.",
+    "모양과 부피가 모두 일정한 것은 고체의 특징이에요.",
+    "그릇 전체로 퍼져 모양과 부피가 모두 변하는 것은 기체의 특징이에요.",
+    "규칙적으로 배열되어 제자리에서 진동하는 것은 고체 입자예요. 액체 입자는 비교적 자유롭게 움직여요.",
+    "입자 사이의 거리가 가장 멀어 쉽게 압축되는 것은 기체예요."
+   ],
+   "detail": "세 상태의 특징을 모양과 부피로 비교해요.\n· 고체: 모양·부피 모두 일정\n· 액체: 모양은 변하고 부피는 일정\n· 기체: 모양·부피 모두 변함\n보기는 고체와 기체의 특징이 섞여 있어요.",
+   "tip": "액체 = 모양은 변하고 부피는 일정.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "물질의 세 가지 상태의 특징",
+     "head": [
+      "상태",
+      "모양",
+      "부피",
+      "입자 배열"
+     ],
+     "rows": [
+      [
+       "고체",
+       "일정",
+       "일정",
+       "규칙적으로 배열, 제자리에서 진동"
+      ],
+      [
+       "액체",
+       "그릇에 따라 변함",
+       "일정",
+       "비교적 자유롭게 움직임"
+      ],
+      [
+       "기체",
+       "변함(그릇 전체로 퍼짐)",
+       "변함(쉽게 압축)",
+       "서로 멀리 떨어져 자유롭게 움직임"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u1-Q10-b",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 5,
+   "concept": "물질의 세 가지 상태",
+   "source": "샘플 자료",
+   "question": "기체 상태의 물질에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "일정한 모양을 가지며 부피도 쉽게 변하지 않는다.",
+    "입자가 서로 달라붙어 규칙적으로 배열되어 있다.",
+    "담는 그릇 전체로 퍼져서 모양과 부피가 모두 변한다.",
+    "그릇에 담으면 부피는 일정하지만 모양이 변한다.",
+    "입자 사이의 거리가 가장 가까워 압축되기 어렵다."
+   ],
+   "answer": 3,
+   "explanation": "기체는 그릇 전체로 퍼져 모양과 부피가 모두 변한다.",
+   "choiceExplanations": [
+    "일정한 모양을 가지는 것은 고체의 특징이에요.",
+    "규칙적인 배열은 고체의 특징이에요. 기체 입자는 서로 멀리 떨어져 자유롭게 움직여요.",
+    "정답. 기체는 그릇 전체로 퍼져서 모양과 부피가 모두 변해요.",
+    "부피는 일정하고 모양만 변하는 것은 액체의 특징이에요.",
+    "거리가 가장 가까운 것은 고체·액체이고, 기체는 거리가 가장 멀어 쉽게 압축돼요."
+   ],
+   "detail": "기체는 입자 사이의 거리가 가장 멀고 입자가 자유롭게 움직여요.\n· 그릇 전체로 퍼져 모양·부피가 변함\n· 입자 사이가 멀어 쉽게 압축됨\n고체·액체의 특징과 구분해요.",
+   "tip": "기체 = 모양·부피 모두 변함.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "물질의 세 가지 상태의 특징",
+     "head": [
+      "상태",
+      "모양",
+      "부피",
+      "입자 배열"
+     ],
+     "rows": [
+      [
+       "고체",
+       "일정",
+       "일정",
+       "규칙적으로 배열, 제자리에서 진동"
+      ],
+      [
+       "액체",
+       "그릇에 따라 변함",
+       "일정",
+       "비교적 자유롭게 움직임"
+      ],
+      [
+       "기체",
+       "변함(그릇 전체로 퍼짐)",
+       "변함(쉽게 압축)",
+       "서로 멀리 떨어져 자유롭게 움직임"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u1-Q11-a",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 5,
+   "concept": "증발과 끓음",
+   "source": "샘플 자료",
+   "question": "증발과 끓음에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "끓음은 끓는점에서 액체 표면뿐 아니라 내부에서도 기화가 일어난다.",
+    "증발은 끓는점에서만 액체 내부에서 일어나는 현상이다.",
+    "끓음은 모든 온도에서 액체 표면에서만 천천히 일어난다.",
+    "증발과 끓음은 모두 액체가 고체로 변하는 현상이다.",
+    "증발은 기체가 액체로 변하면서 열에너지를 방출하는 현상이다."
+   ],
+   "answer": 1,
+   "explanation": "끓음은 끓는점에서 액체 표면과 내부에서 모두 기화가 일어난다.",
+   "choiceExplanations": [
+    "정답. 끓음은 끓는점에서 액체 표면과 내부에서 모두 기화가 일어나 기포가 생겨요.",
+    "증발은 끓는점보다 낮은 온도에서도 액체 표면에서 일어나요.",
+    "끓음은 끓는점에서만 일어나요. 표면에서 천천히 일어나는 것은 증발이에요.",
+    "증발과 끓음은 액체가 기체로 변하는 기화예요. 액체가 고체로 변하는 것은 응고예요.",
+    "기체가 액체로 변하는 것은 액화예요. 증발은 액체가 기체로 변하는 기화의 한 가지예요."
+   ],
+   "detail": "증발과 끓음은 모두 액체가 기체로 변하는 기화예요.\n· 증발: 끓는점보다 낮은 온도에서도 액체 표면에서만 천천히\n· 끓음: 끓는점에서 표면과 내부에서 빠르게(기포 발생)\n장소와 온도로 구분해요.",
+   "tip": "증발 = 표면, 끓음 = 표면 + 내부.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "증발과 끓음",
+     "head": [
+      "구분",
+      "증발",
+      "끓음"
+     ],
+     "rows": [
+      [
+       "온도",
+       "끓는점보다 낮은 온도에서도 일어남",
+       "끓는점에서 일어남"
+      ],
+      [
+       "장소",
+       "액체 표면에서만",
+       "액체 표면과 내부에서"
+      ],
+      [
+       "속도",
+       "천천히",
+       "빠르게(기포 발생)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u1-Q11-b",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 5,
+   "concept": "증발과 끓음",
+   "source": "샘플 자료",
+   "question": "증발과 끓음에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄴ, ㄷ",
+    "ㄱ, ㄴ, ㄷ",
+    "ㄱ, ㄴ, ㄹ",
+    "ㄷ, ㄹ"
+   ],
+   "answer": 3,
+   "explanation": "ㄱ, ㄴ, ㄷ은 옳고, 온도가 높고 바람이 불수록 증발이 잘 일어나므로 ㄹ은 틀리다.",
+   "choiceExplanations": [
+    "ㄱ은 옳지만 ㄴ, ㄷ도 옳아요.",
+    "ㄱ(증발은 액체 표면에서 일어남)도 옳아요.",
+    "정답. ㄱ, ㄴ, ㄷ이 옳아요. ㄹ은 반대로 말했어요. 온도가 높고 바람이 불수록 증발은 더 잘 일어나요.",
+    "ㄹ은 틀리고 ㄷ이 빠졌어요.",
+    "ㄹ은 틀리고 ㄱ, ㄴ이 빠졌어요."
+   ],
+   "detail": "하나씩 따져 봐요.\nㄱ. 증발은 액체 표면에서 일어나요. (옳음)\nㄴ. 증발은 끓는점보다 낮은 온도에서도 일어나요. (옳음)\nㄷ. 끓음은 액체 내부에서도 기포가 생겨요. (옳음)\nㄹ. 온도가 높고 바람이 불수록 증발이 더 잘 일어나요. (틀림)",
+   "tip": "증발은 온도가 높고 바람이 불면 더 빠르다.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "증발과 끓음",
+     "head": [
+      "구분",
+      "증발",
+      "끓음"
+     ],
+     "rows": [
+      [
+       "온도",
+       "끓는점보다 낮은 온도에서도 일어남",
+       "끓는점에서 일어남"
+      ],
+      [
+       "장소",
+       "액체 표면에서만",
+       "액체 표면과 내부에서"
+      ],
+      [
+       "속도",
+       "천천히",
+       "빠르게(기포 발생)"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "보기",
+   "passage": "ㄱ. 증발은 액체의 표면에서 일어난다.\nㄴ. 증발은 끓는점보다 낮은 온도에서도 일어난다.\nㄷ. 끓음은 액체 내부에서도 기포가 생기며 일어난다.\nㄹ. 증발은 온도가 높고 바람이 불수록 잘 일어나지 않는다.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u1-Q12-a",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "녹는점·끓는점 표 해석 II",
+   "source": "샘플 자료",
+   "question": "표는 물질 F~J의 녹는점과 끓는점을 나타낸 것이다. −100℃에서 액체 상태인 물질만을 있는 대로 고른 것은?",
+   "choices": [
+    "F",
+    "F, J",
+    "G, H",
+    "H, I",
+    "J"
+   ],
+   "answer": 1,
+   "explanation": "−100℃에서 액체인 물질은 F뿐이다.",
+   "choiceExplanations": [
+    "정답. F는 녹는점(−114℃)보다 −100℃가 높고 끓는점(78℃)보다 낮아서 액체예요.",
+    "J는 끓는점(−183℃)보다 −100℃가 높아서 기체예요. 액체가 아니에요.",
+    "G(녹는점 0℃)와 H(녹는점 −39℃)는 −100℃가 녹는점보다 낮아서 고체예요.",
+    "H와 I는 −100℃가 녹는점보다 낮아서 둘 다 고체예요.",
+    "J는 −100℃가 끓는점(−183℃)보다 높아서 기체예요."
+   ],
+   "detail": "온도를 녹는점·끓는점과 비교해요(−100℃).\n· F: 녹는점 −114 < −100 < 끓는점 78 → 액체\n· G, H, I: −100이 녹는점보다 낮음 → 고체\n· J: −100이 끓는점 −183보다 높음 → 기체",
+   "tip": "녹는점 ≤ 온도 < 끓는점이면 액체.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "표로 상태 판단하기",
+     "text": "온도 t에서 물질의 상태: t가 녹는점보다 낮으면 고체, 녹는점 이상이고 끓는점보다 낮으면 액체, 끓는점 이상이면 기체예요. 녹는점·끓는점을 수직선에 놓고 t의 위치를 확인하면 쉬워요."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330 236' font-family='sans-serif'><rect x='20' y='16' width='70' height='34' fill='#e8efe9' stroke='#555'/><text x='55' y='38' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>물질</text><rect x='90' y='16' width='110' height='34' fill='#e8efe9' stroke='#555'/><text x='145' y='38' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>녹는점(℃)</text><rect x='200' y='16' width='110' height='34' fill='#e8efe9' stroke='#555'/><text x='255' y='38' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>끓는점(℃)</text><rect x='20' y='50' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='72' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>F</text><rect x='90' y='50' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='72' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-114</text><rect x='200' y='50' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='72' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>78</text><rect x='20' y='84' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='106' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>G</text><rect x='90' y='84' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='106' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>0</text><rect x='200' y='84' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='106' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>100</text><rect x='20' y='118' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='140' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>H</text><rect x='90' y='118' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='140' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-39</text><rect x='200' y='118' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='140' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>357</text><rect x='20' y='152' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='174' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>I</text><rect x='90' y='152' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='174' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>801</text><rect x='200' y='152' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='174' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>1413</text><rect x='20' y='186' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='208' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>J</text><rect x='90' y='186' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='208' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-219</text><rect x='200' y='186' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='208' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-183</text></svg>",
+    "caption": "물질 F~J의 녹는점과 끓는점"
+   },
+   "fixedOrder": true
+  },
+  {
+   "id": "u1-Q12-b",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "녹는점·끓는점 표 해석 II",
+   "source": "샘플 자료",
+   "question": "표는 물질 F~J의 녹는점과 끓는점을 나타낸 것이다. 25℃에서 액체 상태인 물질만을 있는 대로 고른 것은?",
+   "choices": [
+    "F, G",
+    "G, H, I",
+    "F, G, H",
+    "H, I, J",
+    "F, J"
+   ],
+   "answer": 3,
+   "explanation": "25℃에서 액체인 물질은 F, G, H이다.",
+   "choiceExplanations": [
+    "H도 녹는점(−39℃)보다 높고 끓는점(357℃)보다 낮아서 액체예요. H가 빠졌어요.",
+    "I는 녹는점이 801℃라서 25℃에서 고체예요.",
+    "정답. 25℃는 F(−114~78), G(0~100), H(−39~357) 범위 안에 있어서 셋 모두 액체예요.",
+    "I는 고체, J는 기체예요. 액체인 것은 H뿐이에요.",
+    "J는 끓는점(−183℃)보다 높아서 기체예요."
+   ],
+   "detail": "온도를 녹는점·끓는점과 비교해요(25℃).\n· F: −114 < 25 < 78 → 액체\n· G: 0 < 25 < 100 → 액체\n· H: −39 < 25 < 357 → 액체\n· I: 25 < 801 → 고체, J: 25 > −183 → 기체",
+   "tip": "수직선에 온도 위치를 표시해 보세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "표로 상태 판단하기",
+     "text": "온도 t에서 물질의 상태: t가 녹는점보다 낮으면 고체, 녹는점 이상이고 끓는점보다 낮으면 액체, 끓는점 이상이면 기체예요. 녹는점·끓는점을 수직선에 놓고 t의 위치를 확인하면 쉬워요."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330 236' font-family='sans-serif'><rect x='20' y='16' width='70' height='34' fill='#e8efe9' stroke='#555'/><text x='55' y='38' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>물질</text><rect x='90' y='16' width='110' height='34' fill='#e8efe9' stroke='#555'/><text x='145' y='38' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>녹는점(℃)</text><rect x='200' y='16' width='110' height='34' fill='#e8efe9' stroke='#555'/><text x='255' y='38' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>끓는점(℃)</text><rect x='20' y='50' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='72' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>F</text><rect x='90' y='50' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='72' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-114</text><rect x='200' y='50' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='72' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>78</text><rect x='20' y='84' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='106' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>G</text><rect x='90' y='84' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='106' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>0</text><rect x='200' y='84' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='106' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>100</text><rect x='20' y='118' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='140' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>H</text><rect x='90' y='118' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='140' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-39</text><rect x='200' y='118' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='140' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>357</text><rect x='20' y='152' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='174' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>I</text><rect x='90' y='152' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='174' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>801</text><rect x='200' y='152' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='174' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>1413</text><rect x='20' y='186' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='208' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>J</text><rect x='90' y='186' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='208' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-219</text><rect x='200' y='186' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='208' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-183</text></svg>",
+    "caption": "물질 F~J의 녹는점과 끓는점"
+   },
+   "fixedOrder": true
+  },
+  {
+   "id": "u1-Q14-a",
+   "slot": "Q14",
+   "type": "short",
+   "difficulty": "하",
+   "points": 4,
+   "concept": "상태 변화와 열·온도",
+   "source": "샘플 자료",
+   "question": "액체가 기체로 변할 때 주변에서 흡수하는 열을 무엇이라고 하는지 쓰시오.",
+   "answer": [
+    "기화열"
+   ],
+   "answerHint": "세 글자로 쓰시오.",
+   "commonMistakes": [
+    {
+     "answer": [
+      "융해열"
+     ],
+     "why": "융해열은 고체가 액체로 변할 때 흡수하는 열이에요. 문제는 액체가 기체로 변할 때를 물었어요."
+    },
+    {
+     "answer": [
+      "응고열"
+     ],
+     "why": "응고열은 액체가 고체로 변할 때 방출하는 열이에요."
+    }
+   ],
+   "explanation": "액체가 기체로 변할 때 흡수하는 열은 기화열이다.",
+   "detail": "상태 변화에서 드나드는 열에너지를 이름 붙여 불러요.\n· 기화열: 액체 → 기체, 열 흡수\n· 융해열: 고체 → 액체, 열 흡수",
+   "tip": "기화 = 기체로 → 기화열.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "기화열과 융해열",
+     "text": "상태가 변할 때 드나드는 열에너지를 이름 붙여 불러요. 액체가 기체로 변할 때(기화) 흡수하는 열은 기화열, 고체가 액체로 변할 때(융해) 흡수하는 열은 융해열이에요."
+    }
+   ]
+  },
+  {
+   "id": "u1-Q14-b",
+   "slot": "Q14",
+   "type": "short",
+   "difficulty": "하",
+   "points": 4,
+   "concept": "상태 변화와 열·온도",
+   "source": "샘플 자료",
+   "question": "1기압에서 얼음이 녹는 온도는 몇 ℃인지 숫자로 쓰시오.",
+   "answer": [
+    "0",
+    "0도"
+   ],
+   "answerHint": "숫자로 쓰시오.(단위 ℃ 생략 가능)",
+   "commonMistakes": [
+    {
+     "answer": [
+      "100",
+      "100℃"
+     ],
+     "why": "100℃는 물이 끓는 온도(끓는점)예요. 얼음이 녹는 온도는 0℃예요."
+    },
+    {
+     "answer": [
+      "4",
+      "4℃"
+     ],
+     "why": "4℃는 물의 밀도가 가장 큰 온도로 얼음이 녹는 온도가 아니에요."
+    }
+   ],
+   "explanation": "1기압에서 얼음이 녹는 온도는 0℃이다.",
+   "detail": "순수한 물의 녹는점(어는점)은 1기압에서 0℃예요.\n· 얼음이 녹는 온도 = 물이 어는 온도 = 0℃\n· 물이 끓는 온도 = 100℃",
+   "tip": "물의 녹는점 0℃, 끓는점 100℃.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "표로 상태 판단하기",
+     "text": "온도 t에서 물질의 상태: t가 녹는점보다 낮으면 고체, 녹는점 이상이고 끓는점보다 낮으면 액체, 끓는점 이상이면 기체예요. 녹는점·끓는점을 수직선에 놓고 t의 위치를 확인하면 쉬워요."
+    }
+   ]
+  },
+  {
+   "id": "u1-S03-a",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 8,
+   "concept": "상태 변화와 입자 배열 서술",
+   "source": "샘플 자료",
+   "question": "물이 얼어 얼음이 될 때 입자 사이의 거리와 입자 배열이 어떻게 달라지는지 서술하시오.",
+   "answerHint": "(단, '규칙적'이라는 말을 사용할 것)",
+   "modelAnswer": "물이 얼어 얼음이 되면 입자 사이의 거리가 가까워지고 입자가 규칙적으로 배열된다. 그래서 얼음은 일정한 모양을 가진다.",
+   "rubric": [
+    {
+     "criterion": "입자 사이의 거리가 가까워진다고 씀",
+     "points": 3,
+     "tip": "응고할 때 입자 사이의 거리가 어떻게 변하는지 쓰세요."
+    },
+    {
+     "criterion": "입자가 '규칙적'으로 배열된다고 씀('규칙적' 사용)",
+     "points": 3,
+     "tip": "조건 낱말 '규칙적'을 넣어 배열을 쓰세요."
+    },
+    {
+     "criterion": "그 결과 일정한 모양을 가진다는 점을 덧붙임",
+     "points": 2,
+     "tip": "고체의 특징과 연결해 마무리하세요."
+    }
+   ],
+   "detail": "서술형 답안 구조: 거리 → 배열 → 결과\n1) 입자 사이의 거리가 가까워짐\n2) 입자가 규칙적으로 배열됨\n3) 일정한 모양(고체)\n조건 낱말 '규칙적'을 꼭 써요.",
+   "tip": "조건 낱말('규칙적')을 꼭 써요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "물질의 세 가지 상태의 특징",
+     "head": [
+      "상태",
+      "모양",
+      "부피",
+      "입자 배열"
+     ],
+     "rows": [
+      [
+       "고체",
+       "일정",
+       "일정",
+       "규칙적으로 배열, 제자리에서 진동"
+      ],
+      [
+       "액체",
+       "그릇에 따라 변함",
+       "일정",
+       "비교적 자유롭게 움직임"
+      ],
+      [
+       "기체",
+       "변함(그릇 전체로 퍼짐)",
+       "변함(쉽게 압축)",
+       "서로 멀리 떨어져 자유롭게 움직임"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u1-S03-b",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 8,
+   "concept": "상태 변화와 입자 배열 서술",
+   "source": "샘플 자료",
+   "question": "수증기가 물이 될 때 입자 사이의 거리와 열에너지의 출입을 서술하시오.",
+   "answerHint": "(단, '방출'이라는 말을 사용할 것)",
+   "modelAnswer": "수증기가 물로 변하는 액화가 일어나면 입자 사이의 거리가 가까워지고, 열에너지를 방출한다.",
+   "rubric": [
+    {
+     "criterion": "입자 사이의 거리가 가까워진다고 씀",
+     "points": 3,
+     "tip": "기체가 액체가 될 때 입자 사이가 어떻게 되는지 쓰세요."
+    },
+    {
+     "criterion": "열에너지를 '방출'한다고 씀('방출' 사용)",
+     "points": 3,
+     "tip": "조건 낱말 '방출'을 넣어 열의 출입을 쓰세요."
+    },
+    {
+     "criterion": "이 상태 변화의 이름(액화)을 정확히 씀",
+     "points": 2,
+     "tip": "기체 → 액체 변화의 이름을 쓰세요."
+    }
+   ],
+   "detail": "서술형 답안 구조: 상태 변화 → 거리 → 열에너지\n1) 수증기 → 물: 액화\n2) 입자 사이의 거리가 가까워짐\n3) 열에너지를 방출함\n조건 낱말 '방출'을 꼭 써요.",
+   "tip": "조건 낱말('방출')을 꼭 써요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "물질의 세 가지 상태의 특징",
+     "head": [
+      "상태",
+      "모양",
+      "부피",
+      "입자 배열"
+     ],
+     "rows": [
+      [
+       "고체",
+       "일정",
+       "일정",
+       "규칙적으로 배열, 제자리에서 진동"
+      ],
+      [
+       "액체",
+       "그릇에 따라 변함",
+       "일정",
+       "비교적 자유롭게 움직임"
+      ],
+      [
+       "기체",
+       "변함(그릇 전체로 퍼짐)",
+       "변함(쉽게 압축)",
+       "서로 멀리 떨어져 자유롭게 움직임"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u1-S04-a",
+   "slot": "S04",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 8,
+   "concept": "표를 읽고 상태 판단 서술",
+   "source": "샘플 자료",
+   "question": "표의 물질 G와 I가 20℃에서 각각 어떤 상태인지 쓰고, 그렇게 판단한 까닭을 서술하시오.",
+   "answerHint": "(단, '녹는점'과 '끓는점'이라는 말을 모두 사용할 것)",
+   "modelAnswer": "G는 녹는점 0℃보다 높고 끓는점 100℃보다 낮으므로 20℃에서 액체이다. I는 녹는점이 801℃로 20℃보다 높으므로 20℃에서 고체이다.",
+   "rubric": [
+    {
+     "criterion": "G가 20℃에서 액체이고, 그 까닭이 '녹는점'보다 높고 '끓는점'보다 낮기 때문이라고 씀",
+     "points": 3,
+     "tip": "20℃가 0℃와 100℃ 사이에 있다는 점을 쓰세요."
+    },
+    {
+     "criterion": "I가 20℃에서 고체이고, 그 까닭이 '녹는점'(801℃)이 20℃보다 높기 때문이라고 씀",
+     "points": 3,
+     "tip": "20℃가 I의 녹는점보다 낮다는 점을 쓰세요."
+    },
+    {
+     "criterion": "'녹는점'과 '끓는점'이라는 조건 낱말을 모두 사용함",
+     "points": 2,
+     "tip": "두 낱말을 모두 넣어 판단 기준을 설명하세요."
+    }
+   ],
+   "detail": "서술형 답안 구조: G 판단 → I 판단 → 기준\n1) G: 0℃ < 20℃ < 100℃ → 액체\n2) I: 20℃ < 801℃(녹는점) → 고체\n3) 녹는점보다 낮으면 고체, 녹는점 이상 끓는점 미만이면 액체\n조건 낱말 '녹는점', '끓는점'을 모두 써요.",
+   "tip": "온도를 녹는점·끓는점과 비교해 써요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "표로 상태 판단하기",
+     "text": "온도 t에서 물질의 상태: t가 녹는점보다 낮으면 고체, 녹는점 이상이고 끓는점보다 낮으면 액체, 끓는점 이상이면 기체예요. 녹는점·끓는점을 수직선에 놓고 t의 위치를 확인하면 쉬워요."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330 236' font-family='sans-serif'><rect x='20' y='16' width='70' height='34' fill='#e8efe9' stroke='#555'/><text x='55' y='38' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>물질</text><rect x='90' y='16' width='110' height='34' fill='#e8efe9' stroke='#555'/><text x='145' y='38' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>녹는점(℃)</text><rect x='200' y='16' width='110' height='34' fill='#e8efe9' stroke='#555'/><text x='255' y='38' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>끓는점(℃)</text><rect x='20' y='50' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='72' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>F</text><rect x='90' y='50' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='72' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-114</text><rect x='200' y='50' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='72' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>78</text><rect x='20' y='84' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='106' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>G</text><rect x='90' y='84' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='106' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>0</text><rect x='200' y='84' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='106' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>100</text><rect x='20' y='118' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='140' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>H</text><rect x='90' y='118' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='140' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-39</text><rect x='200' y='118' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='140' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>357</text><rect x='20' y='152' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='174' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>I</text><rect x='90' y='152' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='174' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>801</text><rect x='200' y='152' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='174' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>1413</text><rect x='20' y='186' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='208' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>J</text><rect x='90' y='186' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='208' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-219</text><rect x='200' y='186' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='208' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-183</text></svg>",
+    "caption": "물질 F~J의 녹는점과 끓는점"
+   }
+  },
+  {
+   "id": "u1-S04-b",
+   "slot": "S04",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 8,
+   "concept": "표를 읽고 상태 판단 서술",
+   "source": "샘플 자료",
+   "question": "표의 물질 J가 25℃에서 어떤 상태인지 쓰고, 그렇게 판단한 까닭을 서술하시오.",
+   "answerHint": "(단, '끓는점'이라는 말을 사용할 것)",
+   "modelAnswer": "J의 끓는점은 −183℃이고 25℃는 끓는점보다 높으므로 25℃에서 J는 기체 상태이다.",
+   "rubric": [
+    {
+     "criterion": "J가 25℃에서 기체라고 씀",
+     "points": 3,
+     "tip": "상태를 정확히 쓰세요."
+    },
+    {
+     "criterion": "그 까닭이 25℃가 '끓는점'(−183℃)보다 높기 때문이라고 씀('끓는점' 사용)",
+     "points": 3,
+     "tip": "조건 낱말 '끓는점'과 −183℃를 함께 쓰세요."
+    },
+    {
+     "criterion": "끓는점보다 온도가 높으면 기체라는 판단 기준을 설명함",
+     "points": 2,
+     "tip": "일반적인 기준으로 정리하며 마무리하세요."
+    }
+   ],
+   "detail": "서술형 답안 구조: 상태 → 까닭 → 기준\n1) 25℃에서 J는 기체\n2) 25℃ > 끓는점 −183℃\n3) 온도가 끓는점 이상이면 기체\n조건 낱말 '끓는점'을 꼭 써요.",
+   "tip": "끓는점과 온도를 비교해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "표로 상태 판단하기",
+     "text": "온도 t에서 물질의 상태: t가 녹는점보다 낮으면 고체, 녹는점 이상이고 끓는점보다 낮으면 액체, 끓는점 이상이면 기체예요. 녹는점·끓는점을 수직선에 놓고 t의 위치를 확인하면 쉬워요."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330 236' font-family='sans-serif'><rect x='20' y='16' width='70' height='34' fill='#e8efe9' stroke='#555'/><text x='55' y='38' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>물질</text><rect x='90' y='16' width='110' height='34' fill='#e8efe9' stroke='#555'/><text x='145' y='38' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>녹는점(℃)</text><rect x='200' y='16' width='110' height='34' fill='#e8efe9' stroke='#555'/><text x='255' y='38' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>끓는점(℃)</text><rect x='20' y='50' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='72' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>F</text><rect x='90' y='50' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='72' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-114</text><rect x='200' y='50' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='72' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>78</text><rect x='20' y='84' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='106' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>G</text><rect x='90' y='84' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='106' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>0</text><rect x='200' y='84' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='106' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>100</text><rect x='20' y='118' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='140' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>H</text><rect x='90' y='118' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='140' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-39</text><rect x='200' y='118' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='140' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>357</text><rect x='20' y='152' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='174' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>I</text><rect x='90' y='152' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='174' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>801</text><rect x='200' y='152' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='174' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>1413</text><rect x='20' y='186' width='70' height='34' fill='#fff' stroke='#555'/><text x='55' y='208' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>J</text><rect x='90' y='186' width='110' height='34' fill='#fff' stroke='#555'/><text x='145' y='208' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-219</text><rect x='200' y='186' width='110' height='34' fill='#fff' stroke='#555'/><text x='255' y='208' font-size='15' text-anchor='middle' fill='#222' font-weight='400'>-183</text></svg>",
+    "caption": "물질 F~J의 녹는점과 끓는점"
+   }
   }
  ]
 }

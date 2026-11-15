@@ -1,2 +1,11 @@
-{ "verdict": "PASS", "round": 9, "date": "2026-11-14", "reviewers": ["format", "content", "overall", "explanation"],
-  "note": "4중 검수 만장일치 (종합 검수 난이도 예외 규칙 적용 전후 모두 통과)" }
+{
+ "verdict": "PASS",
+ "round": 2,
+ "date": "2026-11-15",
+ "mode": "reduced",
+ "reviewers": [
+  "self-check"
+ ],
+ "revision": "R1-R7",
+ "note": "개정 규칙 적용(18슬롯). 임시 축약 검수(자체 점검 1회, 4중 만장일치 아님). 정식 검수 전까지 샘플."
+}
