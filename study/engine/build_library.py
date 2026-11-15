@@ -239,6 +239,31 @@ def build_book(bdir, errors, warns, info):
     return book
 
 
+COVER_EXT = (".jpg", ".jpeg", ".png", ".webp")
+
+
+def sync_cover(book):
+    """materials/<N>학년/<M>학기/<과목>/ 안의 '표지.*'(또는 cover.*)를 library/<책id>/cover.<확장자>로 복사하고 상대 경로를 돌려준다.
+    원본 교과서 표지는 저작물이라 library/*/cover.* 는 .gitignore로 올라가지 않게 해 두었다(공개 사이트에 보이려면 그 줄을 지운다)."""
+    src_dir = ROOT / "materials" / f"{book.get('grade')}학년" / f"{book.get('semester')}학기" / str(book.get("subject"))
+    dst_dir = LIB / book["id"]
+    for old in dst_dir.glob("cover.*"):
+        old.unlink()
+    if not src_dir.is_dir():
+        return None
+    for stem in ("표지", "cover"):
+        for ext in COVER_EXT:
+            f = src_dir / (stem + ext)
+            if f.exists():
+                import shutil
+                dst = dst_dir / ("cover" + ext)
+                shutil.copy2(f, dst)
+                if dst.stat().st_size > 800_000:
+                    print(f"  ⚠ [{book['id']}] 표지 이미지가 {dst.stat().st_size // 1000}KB로 큽니다 (800KB 이하로 줄이면 앱이 빨리 열려요)")
+                return f"{book['id']}/{dst.name}?v={int(dst.stat().st_mtime)}"
+    return None
+
+
 CHECK_UNIT = False
 
 
@@ -292,13 +317,16 @@ def main():
     if check_only:
         return
     for bid, book in books.items():
+        cv = sync_cover(book)
+        if cv:
+            book["cover"] = cv
         (LIB / bid / "book.json").write_text(json.dumps(book, ensure_ascii=False), encoding="utf-8")
     # 책장 목록은 항상 전체 책으로 다시 만든다
     catalog = []
     for b in sorted(p for p in LIB.iterdir() if (p / "book.json").exists()):
         bk = books.get(b.name) or load(b / "book.json")
         catalog.append({"id": bk["id"], "grade": bk.get("grade"), "semester": bk.get("semester"), "subject": bk.get("subject"),
-                        "color": bk.get("color"), "sample": bk.get("sample", False), "units": len(bk["units"]), "questions": len(bk["questions"])})
+                        "color": bk.get("color"), "cover": bk.get("cover"), "sample": bk.get("sample", False), "units": len(bk["units"]), "questions": len(bk["questions"])})
     (LIB / "catalog.json").write_text(json.dumps({"books": catalog}, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"생성: 책 {len(books)}권, catalog.json (전체 {len(catalog)}권)")
 

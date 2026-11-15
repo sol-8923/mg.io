@@ -499,3 +499,31 @@ th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)} th.n,
 .sh-preview{max-height:56vh;overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
 .sh-preview img{display:block;width:100%;height:auto}
 .sh-actions{margin-top:14px}
+
+/* ── 교실 문 (학년·학기 고르기) ── */
+.hall{display:flex;flex-direction:column;gap:22px;margin-top:8px}
+.hall-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px clamp(14px,4vw,34px);align-items:end;position:relative;padding:14px clamp(14px,4vw,30px) 0;
+  background:linear-gradient(var(--card),var(--card));border:1px solid var(--line);border-radius:16px}
+.hall-grade{grid-column:1/-1;font-family:var(--serif);font-weight:700;font-size:1.05rem;color:var(--muted);letter-spacing:.06em}
+.door{position:relative;display:block;text-decoration:none;color:inherit;text-align:center;padding-bottom:14px;transition:transform .25s cubic-bezier(.3,.7,.35,1.35)}
+.door-plate{margin:0 auto 8px;display:inline-block;background:#fbf6ea;color:#2a2622;border:1px solid rgba(150,120,70,.5);border-radius:5px;padding:4px 14px;
+  font-family:var(--serif);font-weight:700;font-size:clamp(.9rem,2.6vw,1.1rem);box-shadow:0 1px 0 rgba(0,0,0,.15)}
+.door-body{position:relative;margin:0 auto;width:min(100%,190px);aspect-ratio:3/4.4;border-radius:10px 10px 2px 2px;
+  background:linear-gradient(90deg,rgba(0,0,0,.18),rgba(255,255,255,.06) 12%,rgba(255,255,255,0) 50%,rgba(0,0,0,.14)),var(--wood1);
+  box-shadow:inset 0 0 0 7px var(--wood2),inset 0 0 0 9px rgba(0,0,0,.18),0 10px 16px -10px rgba(35,20,8,.7)}
+.door-win{position:absolute;left:24%;right:24%;top:11%;height:24%;border-radius:4px;background:linear-gradient(160deg,#cfe6ee,#8fb3c2);box-shadow:inset 0 0 0 3px var(--wood2),inset 0 0 0 4px rgba(0,0,0,.2)}
+.door-panel{position:absolute;left:18%;right:18%;top:44%;bottom:10%;border-radius:4px;box-shadow:inset 0 0 0 3px rgba(0,0,0,.2),inset 0 0 0 5px rgba(255,255,255,.07)}
+.door-knob{position:absolute;right:11%;top:56%;width:9%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f6e3a7,var(--brass));box-shadow:0 2px 3px rgba(0,0,0,.4)}
+.door-note{margin-top:8px;font-size:.88rem;color:var(--muted);font-weight:600}
+.door-badge{position:absolute;top:30px;right:calc(50% - min(50%,95px) + 6px);background:var(--red);color:#fff;font-weight:800;font-size:.8rem;border-radius:999px;padding:2px 9px;box-shadow:0 3px 8px rgba(0,0,0,.25)}
+.door.closed{filter:saturate(.35) brightness(.9);cursor:default}
+.door.closed .door-win{background:#9aa;}
+@media (hover:hover){ a.door:hover{transform:translateY(-6px)} }
+a.door:active{transform:scale(.97)}
+a.door:focus-visible{outline-offset:6px}
+
+/* ── 책 표지 이미지 ── */
+.book.has-img .cover{overflow:hidden;background:var(--c)}
+.book.has-img .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.book.has-img .cover::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.34) 0,rgba(0,0,0,.1) 5%,rgba(255,255,255,.2) 7.5%,rgba(255,255,255,0) 11%,rgba(0,0,0,0) 90%,rgba(0,0,0,.12) 100%)}
+.book.has-img .label,.book.has-img .emblem,.book.has-img .band,.book.has-img .ribbon{display:none}

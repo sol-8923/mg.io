@@ -95,8 +95,9 @@ function route(){
   var done=function(){ window.scrollTo(0,0); };
   try{
     if(!a) return renderHome(), done();
-    if(a==='exam') return renderShelf('exam').then(done);
-    if(a==='notes' && !b) return renderShelf('notes').then(done);
+    if(a==='exam') return (isSem(b)?renderShelf('exam',b):renderDoors('exam')).then(done);
+    if(a==='notes' && !b) return renderDoors('notes').then(done);
+    if(a==='notes' && isSem(b)) return renderShelf('notes',b).then(done);
     if(a==='notes') return renderNotebook(b).then(done);
     if(a==='book') return renderBook(b).then(done);
     if(a==='stats') return renderStats(b).then(done);
@@ -167,8 +168,10 @@ function renderHome(){
 function bookEl(b, opts){
   opts=opts||{};
   var sub=SUBJECTS[b.subject]||{c:'#5b5b5b'};
-  var el=h('button',{class:'book'+(opts.dim?' dim':''),style:'--c:'+(b.color||sub.c),'aria-label':bookLabel(b)},[
-    h('div',{class:'cover'}),h('div',{class:'pages'}),
+  var img=b.cover?h('img',{src:'library/'+b.cover,alt:'',loading:'lazy',decoding:'async'}):null;
+  if(img) img.addEventListener('error',function(){ el.classList.remove('has-img'); img.remove(); });
+  var el=h('button',{class:'book'+(img?' has-img':'')+(opts.dim?' dim':''),style:'--c:'+(b.color||sub.c),'aria-label':bookLabel(b)+(opts.caption?' ('+opts.caption+')':'')},[
+    h('div',{class:'cover'},[img]),h('div',{class:'pages'}),
     h('div',{class:'band t'}),h('div',{class:'band b'}),
     h('div',{class:'label'},[
       h('div',{class:'gs',text:b.grade+'학년 '+b.semester+'학기'}),
@@ -189,19 +192,51 @@ function bookEl(b, opts){
   });
   return el;
 }
-function renderShelf(kind){
-  var app=$app();
-  var page=h('div',{class:'page'});
+function isSem(x){ return /^g\d+s\d+$/.test(x||''); }
+function semKey(b){ return 'g'+b.grade+'s'+b.semester; }
+function semBack(kind,b){ return '#/'+kind+(b&&b.grade&&b.semester&&b.grade!=='?'?'/'+semKey(b):''); }
+/* 교실 문: 학년·학기를 고르는 화면 */
+function renderDoors(kind){
+  var app=$app(), page=h('div',{class:'page'});
   page.appendChild(h('div',{class:'topbar'},[
     h('a',{class:'btn back',href:'#/'},['← 홈']),
     h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:kind==='exam'?'시험으로 풀어보기':'오답노트'})])
+  ]));
+  page.appendChild(h('p',{class:'muted',style:'margin:-6px 0 14px',text:'들어갈 교실을 골라 보세요. 학년과 학기 문을 열면 그 학기 교과서가 나와요.'}));
+  var hall=h('div',{class:'hall'}); page.appendChild(hall);
+  app.appendChild(page); app.appendChild(themeBtn());
+  return Data.catalogP().then(function(c){
+    for(var g=1; g<=3; g++){
+      var row=h('div',{class:'hall-row'},[h('div',{class:'hall-grade',text:g+'학년'})]);
+      [1,2].forEach(function(sm){
+        var bs=c.books.filter(function(b){ return b.grade===g&&b.semester===sm; });
+        var learning=0; bs.forEach(function(b){ learning+=noteCounts(b.id).learning; });
+        var door=h('a',{class:'door'+(bs.length?'':' closed'),href:bs.length?'#/'+kind+'/g'+g+'s'+sm:null,role:bs.length?null:'img','aria-label':g+'학년 '+sm+'학기'+(bs.length?' 교실, 교과서 '+bs.length+'권':' 교실, 준비 중')},[
+          h('div',{class:'door-plate',text:g+'학년 '+sm+'학기'}),
+          h('div',{class:'door-body'},[h('div',{class:'door-win'}),h('div',{class:'door-panel'}),h('div',{class:'door-knob'})]),
+          h('div',{class:'door-note',text:bs.length?(kind==='notes'&&learning?'학습 중 '+learning+'문제':'교과서 '+bs.length+'권'):'준비 중'}),
+          kind==='notes'&&learning?h('div',{class:'door-badge',text:String(learning)}):null
+        ]);
+        row.appendChild(door);
+      });
+      hall.appendChild(row);
+    }
+  }).catch(renderError);
+}
+function renderShelf(kind,sem){
+  var app=$app();
+  var page=h('div',{class:'page'});
+  var gs=/^g(\d+)s(\d+)$/.exec(sem), semText=gs?gs[1]+'학년 '+gs[2]+'학기':'';
+  page.appendChild(h('div',{class:'topbar'},[
+    h('a',{class:'btn back',href:'#/'+kind},['← 교실 고르기']),
+    h('div',{},[h('div',{class:'crumb',text:(kind==='exam'?'시험으로 풀어보기':'오답노트')}),h('h1',{text:semText})])
   ]));
   page.appendChild(h('p',{class:'muted',style:'margin:-6px 0 14px',text:kind==='exam'?'풀고 싶은 교과서를 눌러 보세요. 누를 때마다 새로운 시험을 볼 수 있어요.':'교과서별로 틀린 문제가 모여 있어요. 빨간 숫자는 아직 학습 중인 문제 수예요.'}));
   var cs=h('div',{class:'bookcase'}); page.appendChild(cs);
   if(kind==='notes') page.appendChild(backupCard());
   app.appendChild(page); app.appendChild(themeBtn());
   return Data.catalogP().then(function(c){
-    var books=c.books.slice().sort(function(a,b){ return a.grade-b.grade||a.semester-b.semester||a.subject.localeCompare(b.subject,'ko'); });
+    var books=c.books.filter(function(b){ return semKey(b)===sem; }).sort(function(a,b){ return a.grade-b.grade||a.semester-b.semester||a.subject.localeCompare(b.subject,'ko'); });
     function layout(){
       cs.innerHTML='';
       if(!books.length){ cs.appendChild(h('div',{class:'shelf-empty',text:'아직 책장에 교과서가 없어요. /study로 자료를 만들면 여기에 꽂혀요.'})); return; }
@@ -257,7 +292,7 @@ function renderBook(id){
   var app=$app(), page=h('div',{class:'page'}); app.appendChild(page); app.appendChild(themeBtn());
   return Data.bookP(id).then(function(book){
     var st=Store.book(id), nc=noteCounts(id), last=(st.history||[]).slice(-1)[0];
-    page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:'#/exam'},['← 책장']),h('div',{class:'crumb',text:'시험으로 풀어보기'})]));
+    page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:semBack('exam',book)},['← 책장']),h('div',{class:'crumb',text:'시험으로 풀어보기'})]));
     var modeBox=h('div',{class:'modes'});
     function drawModes(){ modeBox.innerHTML='';
       [['practice','연습 모드','한 문제씩 풀고 바로 채점·해설'],['exam','실전 모드','시간 재며 끝까지 풀고 한 번에 채점']].forEach(function(m){
@@ -268,7 +303,7 @@ function renderBook(id){
     var resume = S.exam && !S.exam.done && S.exam.bookId===id;
     page.appendChild(h('div',{class:'grid2'},[
       h('div',{class:'card'},[
-        h('div',{class:'bookhead'},[bookEl({grade:book.grade,semester:book.semester,subject:book.subject,color:book.color,units:book.units.length,questions:book.questions.length,sample:book.sample}),
+        h('div',{class:'bookhead'},[bookEl({grade:book.grade,semester:book.semester,subject:book.subject,color:book.color,units:book.units.length,questions:book.questions.length,sample:book.sample,cover:book.cover}),
           h('div',{},[h('div',{class:'crumb',text:book.grade+'학년 '+book.semester+'학기'}),h('h1',{style:'font-size:1.7rem',text:book.subject}),
             book.description?h('p',{class:'muted',style:'margin:4px 0 0',text:book.description}):null,
             h('p',{class:'muted',style:'margin:6px 0 0;font-size:.9rem',text:'문제 은행 '+book.questions.length+'문항'+(last?' · 최근 '+Math.round(last.got/last.max*100)+'점':'')})])
@@ -675,7 +710,7 @@ function renderNotebook(id){
     for(var k in st.notes) all.push(st.notes[k]);
     var learning=all.filter(function(n){ return !n.mastered; }), mastered=all.filter(function(n){ return n.mastered; });
     var tab=S.noteTab||'learning';
-    page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:'#/notes'},['← 책장']),h('div',{},[h('div',{class:'crumb',text:title}),h('h1',{text:'오답노트'})])]));
+    page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:semBack('notes',b)},['← 책장']),h('div',{},[h('div',{class:'crumb',text:title}),h('h1',{text:'오답노트'})])]));
     page.appendChild(h('div',{class:'nstats'},[
       h('div',{class:'s'},[h('b',{text:String(learning.length)}),h('span',{class:'muted',text:'학습 중'})]),
       h('div',{class:'s'},[h('b',{text:String(mastered.length)}),h('span',{class:'muted',text:'졸업'})]),
