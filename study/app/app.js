@@ -350,23 +350,71 @@ function toOriginal(q,a){
   var f=function(d){ return q._perm[d-1]+1; };
   return Array.isArray(a)?a.map(f).sort(function(x,y){return x-y;}):f(a);
 }
+/* 한 시험의 문항 수는 과목별 기출 구성(객관/단답/서술)에 맞추고, 고른 범위 안에서
+ * 단원·난이도·배점·유형이 고르게 퍼지도록 슬롯을 뽑는다. 책 meta.json 의 "exam" 으로 덮어쓸 수 있다. */
+var EXAM_DEFAULT = {
+  '국어':{mc:25,short:4,essay:1,timeMin:50}, '사회':{mc:30,short:0,essay:0,timeMin:45}, '역사':{mc:30,short:0,essay:0,timeMin:45},
+  '수학':{mc:18,short:0,essay:2,timeMin:50}, '영어':{mc:20,short:2,essay:3,timeMin:50}, '과학':{mc:25,short:0,essay:0,timeMin:45},
+  '도덕':{mc:25,short:0,essay:1,timeMin:45}
+};
+function examSpec(book){
+  var d=EXAM_DEFAULT[book.subject]||{mc:20,short:3,essay:2,timeMin:45}, o=book.exam||{};
+  return {mc:o.mc!=null?o.mc:d.mc, short:o.short!=null?o.short:d.short, essay:o.essay!=null?o.essay:d.essay, timeMin:o.timeMin||d.timeMin};
+}
+function slotKind(s){ return s.type==='short'?'short':s.type==='essay'?'essay':'mc'; }
+function planExam(book, unitIds){
+  var spec=examSpec(book), cand=[];
+  book.units.forEach(function(u,ui){
+    if(unitIds.indexOf(u.id)<0) return;
+    u.slots.forEach(function(s,si){ cand.push({u:u,s:s,ui:ui,si:si,kind:slotKind(s)}); });
+  });
+  var avail={mc:0,short:0,essay:0}; cand.forEach(function(c){ avail[c.kind]++; });
+  var k={}; ['mc','short','essay'].forEach(function(t){ k[t]=Math.min(spec[t],avail[t]); });
+  var lack=(spec.mc+spec.short+spec.essay)-(k.mc+k.short+k.essay);
+  if(lack>0) k.mc=Math.min(avail.mc,k.mc+lack);
+  var N=k.mc+k.short+k.essay;
+  if(!N) return {picks:[],spec:spec,counts:k,n:0};
+  function share(key){ var m={}; cand.forEach(function(c){ var v=key(c); m[v]=(m[v]||0)+1; }); for(var v in m) m[v]=Math.max(1,N*m[v]/cand.length); return m; }
+  var qu={}; unitIds.forEach(function(id){ qu[id]=N/unitIds.length; });
+  var qd=share(function(c){ return c.s.difficulty; }), qp=share(function(c){ return c.s.points; });
+  var cu={}, cd={}, cp={}, picks=[], left=cand.slice();
+  ['essay','short','mc'].forEach(function(t){
+    for(var i=0;i<k[t];i++){
+      var best=null, bs=1e9;
+      left.forEach(function(c){
+        if(c.kind!==t) return;
+        var sc=((cu[c.u.id]||0)+1)/qu[c.u.id]+((cd[c.s.difficulty]||0)+1)/qd[c.s.difficulty]+((cp[c.s.points]||0)+1)/qp[c.s.points]+Math.random()*0.05;
+        if(sc<bs){ bs=sc; best=c; }
+      });
+      if(!best) break;
+      cu[best.u.id]=(cu[best.u.id]||0)+1; cd[best.s.difficulty]=(cd[best.s.difficulty]||0)+1; cp[best.s.points]=(cp[best.s.points]||0)+1;
+      picks.push(best); left.splice(left.indexOf(best),1);
+    }
+  });
+  return {picks:picks,spec:spec,counts:k,n:N};
+}
+function examCounts(book, unitIds){
+  var spec=examSpec(book), av={mc:0,short:0,essay:0};
+  book.units.forEach(function(u){ if(unitIds.indexOf(u.id)<0) return; u.slots.forEach(function(s){ av[slotKind(s)]++; }); });
+  var k={mc:Math.min(spec.mc,av.mc),short:Math.min(spec.short,av.short),essay:Math.min(spec.essay,av.essay)};
+  var lack=(spec.mc+spec.short+spec.essay)-(k.mc+k.short+k.essay);
+  if(lack>0) k.mc=Math.min(av.mc,k.mc+lack);
+  return {mc:k.mc,short:k.short,essay:k.essay,n:k.mc+k.short+k.essay};
+}
 function makeExam(book, unitIds, mode){
   var st=Store.book(book.id), groups={};
   book.questions.forEach(function(q){ if(unitIds.indexOf(q.unit)<0) return; var k=q.unit+'/'+q.slot; (groups[k]=groups[k]||[]).push(q); });
-  var picked=[], time=0;
-  book.units.forEach(function(u,ui){
-    if(unitIds.indexOf(u.id)<0) return;
-    time+=u.timeLimitMin||0;
-    u.slots.forEach(function(s,si){
-      var vs=groups[u.id+'/'+s.id]; if(!vs||!vs.length) return;
-      var min=Math.min.apply(null,vs.map(function(v){ return st.seen[v.id]||0; }));
-      var pool=vs.filter(function(v){ return (st.seen[v.id]||0)===min; });
-      picked.push({q:pool[Math.floor(Math.random()*pool.length)],ui:ui,si:si});
-    });
+  var plan=planExam(book,unitIds), picked=[];
+  plan.picks.forEach(function(c){
+    var vs=groups[c.u.id+'/'+c.s.id]; if(!vs||!vs.length) return;
+    var min=Math.min.apply(null,vs.map(function(v){ return st.seen[v.id]||0; }));
+    var pool=vs.filter(function(v){ return (st.seen[v.id]||0)===min; });
+    picked.push({q:pool[Math.floor(Math.random()*pool.length)],ui:c.ui,si:c.si});
   });
   picked.sort(function(a,b){ return TYPE_ORDER[a.q.type]-TYPE_ORDER[b.q.type]||a.ui-b.ui||a.si-b.si; });
   var orig={}; picked.forEach(function(p){ orig[p.q.id]=p.q; });
-  return newExam({bookId:book.id,title:bookLabel(book),mode:mode,source:'exam',units:unitIds,qs:picked.map(function(p){return prepare(p.q);}),orig:orig,timeLimitMin:mode==='exam'?Math.min(time||45,50):0});
+  var total=plan.spec.mc+plan.spec.short+plan.spec.essay, time=Math.max(10,Math.round(plan.spec.timeMin*picked.length/(total||1)));
+  return newExam({bookId:book.id,title:bookLabel(book),mode:mode,source:'exam',units:unitIds,qs:picked.map(function(p){return prepare(p.q);}),orig:orig,timeLimitMin:mode==='exam'?time:0});
 }
 function makeNotesExam(bookId, title){
   var notes=Store.book(bookId).notes, list=[];
@@ -768,19 +816,20 @@ function rangeModal(book){
   var st=Store.book(book.id), last=st.lastUnits||[], picked={};
   book.units.forEach(function(u){ picked[u.id]=!last.length||last.indexOf(u.id)>=0; });
   if(!book.units.some(function(u){ return picked[u.id]; })) book.units.forEach(function(u){ picked[u.id]=true; });
-  var allCb=h('input',{type:'checkbox'}), startBtn, cbs={};
+  var allCb=h('input',{type:'checkbox'}), startBtn, cbs={}, info=h('div',{class:'muted',style:'margin-top:10px;font-size:.9rem'});
   var list=h('div',{class:'opt'});
   book.units.forEach(function(u){
     var cb=h('input',{type:'checkbox'}); cb.checked=picked[u.id]; cbs[u.id]=cb;
     cb.addEventListener('change',function(){ picked[u.id]=cb.checked; refresh(); });
-    list.appendChild(h('label',{},[cb,h('span',{text:u.name}),h('span',{class:'u-meta',text:u.slots.length+'문항'})]));
+    list.appendChild(h('label',{},[cb,h('span',{text:u.name}),h('span',{class:'u-meta',text:'문제은행 '+u.slots.length+'칸'})]));
   });
   allCb.addEventListener('change',function(){ book.units.forEach(function(u){ picked[u.id]=allCb.checked; cbs[u.id].checked=allCb.checked; }); refresh(); });
   function chosen(){ return book.units.filter(function(u){ return picked[u.id]; }); }
   function refresh(){
-    var c=chosen(), n=c.reduce(function(s,u){ return s+u.slots.length; },0);
+    var c=chosen(), ec=examCounts(book,c.map(function(u){ return u.id; }));
     allCb.checked=c.length===book.units.length;
-    startBtn.disabled=!c.length; startBtn.textContent=c.length?'시험 시작 ('+n+'문항)':'단원을 골라 주세요';
+    startBtn.disabled=!c.length; startBtn.textContent=c.length?'시험 시작 ('+ec.n+'문항)':'단원을 골라 주세요';
+    info.textContent=c.length?'객관식 '+ec.mc+(ec.short?' · 단답 '+ec.short:'')+(ec.essay?' · 서술 '+ec.essay:'')+' — 고른 범위에서 단원·난이도·배점이 고르게 섞여요.':'';
   }
   startBtn=h('button',{class:'primary',onclick:function(){
     var ids=chosen().map(function(u){ return u.id; }); if(!ids.length) return;
@@ -792,6 +841,7 @@ function rangeModal(book){
     h('h2',{style:'margin:2px 0 14px',text:'시험 범위를 골라주세요'}),
     h('label',{class:'all-pick'},[allCb,h('b',{text:'전체 선택'})]),
     list,
+    info,
     h('div',{class:'row',style:'margin-top:16px;justify-content:flex-end'},[h('button',{onclick:function(){ m.close(); }},['취소']),startBtn])
   ]);
   refresh();
