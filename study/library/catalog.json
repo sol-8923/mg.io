@@ -1,3 +1,15 @@
 {
- "books": []
+ "books": [
+  {
+   "id": "g1s2-korean",
+   "grade": 1,
+   "semester": 2,
+   "subject": "국어",
+   "color": null,
+   "cover": "g1s2-korean/cover.jpg?v=1794720997",
+   "sample": false,
+   "units": 1,
+   "questions": 36
+  }
+ ]
 }
