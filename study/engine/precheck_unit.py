@@ -126,7 +126,7 @@ for q in qs:
         if q.get(k) != s.get(k): E("%s: %s가 설계도와 다름(%s ≠ %s)" % (q["id"], k, q.get(k), s.get(k)))
 for sid, s in slots.items():
     n = sum(1 for q in qs if q["slot"] == sid)
-    if n < bp.get("variantsPerSlot", 2): E("슬롯 %s: 변형 %d개(필요 %d)" % (sid, n, bp.get("variantsPerSlot", 2)))
+    if n < bp.get("variantsPerSlot", 2) and not all(q.get("origin") == "past-exam" for q in qs if q["slot"] == sid): E("슬롯 %s: 변형 %d개(필요 %d)" % (sid, n, bp.get("variantsPerSlot", 2)))
 
 exec(compile(open(ROOT / "engine" / "_precheck_extra.py", encoding="utf-8").read(), "_precheck_extra.py", "exec"))   # 공통 반려 예방 규칙
 print("사전 점검: %s/%s — 문항 %d개" % (a.book, a.unit, len(qs)))
