@@ -1,0 +1,11 @@
+{
+  "name": "mg-study-functions",
+  "private": true,
+  "description": "가족 채팅 푸시 알림(새 메시지가 생기면 다른 가족 기기에 FCM 전송)",
+  "engines": { "node": "22" },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^6.1.0"
+  }
+}

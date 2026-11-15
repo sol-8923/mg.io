@@ -7,5 +7,5 @@
  * 비우면(firebase: null) 알림은 글을 쓴 기기에만 저장된다.
  */
 window.MG_CONFIG = {
-  firebase: { projectId: "mg-study", apiKey: "AIzaSyBISC0B66JrWv-TNqG3zFTphLFT5Ea_LSI" }
+  firebase: { projectId: "mg-study", apiKey: "AIzaSyBISC0B66JrWv-TNqG3zFTphLFT5Ea_LSI", appId: "1:905539239303:web:d40dc31575073f4998e722", messagingSenderId: "905539239303" }
 };

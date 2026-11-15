@@ -1462,7 +1462,7 @@ function loadFB(){
   function s(src){ return new Promise(function(res,rej){ var e=document.createElement('script'); e.src=src; e.onload=res; e.onerror=function(){ rej(new Error('Firebase를 불러오지 못했어요')); }; document.head.appendChild(e); }); }
   var B='https://www.gstatic.com/firebasejs/10.12.2/';
   var ready=(window.firebase&&firebase.firestore)?Promise.resolve():s(B+'firebase-app-compat.js').then(function(){ return s(B+'firebase-firestore-compat.js'); });
-  FB.p=ready.then(function(){ if(!firebase.apps.length) firebase.initializeApp({projectId:f.projectId,apiKey:f.apiKey}); FB.db=firebase.firestore(); return FB.db; });
+  FB.p=ready.then(function(){ if(!firebase.apps.length) firebase.initializeApp({projectId:f.projectId,apiKey:f.apiKey,appId:f.appId,messagingSenderId:f.messagingSenderId}); FB.db=firebase.firestore(); return FB.db; });
   FB.p.catch(function(){ FB.p=null; });
   return FB.p;
 }
@@ -1519,7 +1519,7 @@ function pickWho(onpick){
   var btns=Object.keys(CHAT_PEOPLE).map(function(k){
     var p=CHAT_PEOPLE[k], tag=h('span',{class:'who-tag'}); tags[k]=tag;
     return h('button',{class:'who-btn',style:'--wc:'+p.c,onclick:function(){
-      claimWho(k).then(function(ok){ if(!ok) return; setChatWho(k); m.close(); onpick(k); },function(){ toast('선택하지 못했어요. 인터넷을 확인해 주세요'); });
+      claimWho(k).then(function(ok){ if(!ok) return; setChatWho(k); syncToken(); m.close(); onpick(k); },function(){ toast('선택하지 못했어요. 인터넷을 확인해 주세요'); });
     }},[h('span',{text:p.n}),tag]);
   });
   m=openModal([h('h2',{style:'margin:0 0 6px',text:'누구세요?'}),h('p',{class:'muted',style:'margin:0 0 14px',text:'한 사람은 한 기기에서만 쓸 수 있어요. 나중에 바꿀 수도 있어요.'}),h('div',{class:'who-row'},btns)]);
@@ -1552,6 +1552,22 @@ function startChatWatch(){
   }).catch(function(){ NOTIF.on=false; });
 }
 
+/* 푸시(앱을 닫아도 오는 알림): 이 기기의 FCM 번호를 chattokens/{기기번호}에 저장하면 서버 함수가 새 메시지를 그 번호로 보낸다 */
+function syncToken(){
+  if(!notifGranted()||!CFG.firebase||!CFG.firebase.messagingSenderId) return Promise.resolve();
+  var who=chatWho(); if(!who) return Promise.resolve();
+  var B='https://www.gstatic.com/firebasejs/10.12.2/';
+  function s(src){ return new Promise(function(res,rej){ var e=document.createElement('script'); e.src=src; e.onload=res; e.onerror=rej; document.head.appendChild(e); }); }
+  return loadFB().then(function(db){
+    return (firebase.messaging?Promise.resolve():s(B+'firebase-messaging-compat.js')).then(function(){
+      if(!firebase.messaging.isSupported()) return;
+      return navigator.serviceWorker.register('sw.js').then(function(reg){ return navigator.serviceWorker.ready.then(function(){ return firebase.messaging().getToken({serviceWorkerRegistration:reg}); }); })
+        .then(function(token){ if(token) return db.collection('chattokens').doc(devId()).set({who:who,token:token,at:Date.now()}); });
+    });
+  }).catch(function(){});
+}
+function dropToken(){ return loadFB().then(function(db){ return db.collection('chattokens').doc(devId()).delete(); }).catch(function(){}); }
+
 function chatCard(){
   var cnt=h('span',{class:'count',style:'display:none'});
   var card=h('nav',{class:'menu family'},[h('a',{class:'mcard',href:'#/chat',style:'--mc:#7a5a3a'},[
@@ -1568,7 +1584,7 @@ function renderChat(){
   var app=$app(), me=chatWho(), last=[];
   var list=h('div',{class:'chat-list',role:'log','aria-live':'polite'});
   var status=h('div',{class:'chat-status',text:'불러오는 중…'});
-  var whoLbl=h('button',{class:'chat-who',onclick:function(){ var old=me; clearChatWho(); releaseWho(old).then(function(){ renderChat(); }); }});
+  var whoLbl=h('button',{class:'chat-who',onclick:function(){ var old=me; clearChatWho(); dropToken(); releaseWho(old).then(function(){ renderChat(); }); }});
   function paintWho(){ var p=CHAT_PEOPLE[me]; whoLbl.innerHTML=''; whoLbl.appendChild(p?h('span',{style:'color:'+p.c,text:'나: '+p.n}):h('span',{text:'누구세요?'})); whoLbl.appendChild(h('span',{class:'chg',text:' · 바꾸기'})); }
   paintWho();
   var ta=h('textarea',{rows:'1',maxlength:'500',placeholder:'메시지를 입력하세요','aria-label':'메시지'});
@@ -1605,7 +1621,7 @@ function renderChat(){
     if(Notification.permission==='denied'){ bar.appendChild(h('span',{text:'알림이 꺼져 있어요. 브라우저 설정에서 이 사이트의 알림을 허용해 주세요.'})); return bar; }
     bar.appendChild(h('span',{text:'새 메시지를 알림으로 받을까요? (앱을 열어 둔 동안)'}));
     bar.appendChild(h('button',{class:'primary',onclick:function(){
-      Notification.requestPermission().then(function(r){ if(r==='granted'){ bar.remove(); toast('알림을 켰어요'); startChatWatch(); } else { bar.textContent='알림을 허용하지 않았어요.'; } });
+      Notification.requestPermission().then(function(r){ if(r==='granted'){ bar.remove(); toast('알림을 켰어요'); startChatWatch(); syncToken(); } else { bar.textContent='알림을 허용하지 않았어요.'; } });
     }},['알림 켜기']));
     return bar;
   }
@@ -1640,7 +1656,7 @@ function renderChat(){
     var t=0; last.forEach(function(x){ if(!x.pending&&x.data.at>t) t=x.data.at; });
     if(t>(reads[me]||0)){ reads[me]=t; db.collection('chatread').doc(me).set({at:t}).catch(function(){}); }
   }
-  function dropped(){ clearChatWho(); toast('다른 기기에서 '+CHAT_PEOPLE[me].n+'(으)로 접속해서 선택이 풀렸어요'); renderChat(); }
+  function dropped(){ clearChatWho(); dropToken(); toast('다른 기기에서 '+CHAT_PEOPLE[me].n+'(으)로 접속해서 선택이 풀렸어요'); renderChat(); }
   loadFB().then(function(db){
     if(!me) return db;
     return whoRef(db,me).get().then(function(d){
@@ -1663,5 +1679,6 @@ function renderChat(){
 
 /* ───────── 시작 ───────── */
 startChatWatch();
+syncToken();
 route();
 })();

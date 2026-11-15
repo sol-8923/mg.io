@@ -83,3 +83,4 @@ python -m http.server               # http://localhost:8000
 - **한 사람은 한 기기에서만**: 고른 사람은 Firestore `chatwho/{dad|mom|min}` = `{device, at}`에 기기 번호로 기록된다. 다른 기기에서 같은 사람을 고르면 '이 기기로 옮길까요?'를 묻고, 옮기면 원래 기기는 선택이 풀려 다시 고르게 된다. '바꾸기'를 누르면 선택이 풀려 다른 기기가 쓸 수 있다. 로그인이 없는 가족용 잠금이라 보안 기능은 아니다.
 - **읽음 표시**: 선택한 사람이 채팅 화면을 보고 있으면 Firestore `chatread/{dad|mom|min}` = `{at}`에 '여기까지 읽음' 시각이 기록되고, 내가 보낸 글 아래에 '아빠 읽음' / '모두 읽음'이 뜬다.
 - **새 메시지 알림**: 채팅 화면의 '알림 켜기'로 브라우저 알림을 허용하면, 그 기기에서 앱(탭)이 열려 있는 동안 새 메시지가 오면 알림이 뜬다(`sw.js`). 앱을 완전히 닫았을 때의 푸시 알림은 서버(Cloud Functions, 유료 Blaze 요금제)가 필요해 아직 없다. iPhone은 홈 화면에 추가한 앱에서만 알림이 된다.
+- **푸시 알림(앱을 닫아도)**: `functions/index.js`의 `notifyChat`(Cloud Function, 서울 리전)이 새 채팅 문서가 생기면 보낸 사람을 뺀 다른 가족 기기(`chattokens/{기기번호}` = `{who, token, at}`)로 FCM 알림을 보낸다. 기기는 '알림 켜기'를 누를 때 번호가 등록된다. 함수 배포는 Firebase **Blaze(종량제) 요금제**가 필요하다: `firebase deploy --only functions --project mg-study` (study 폴더에서).
