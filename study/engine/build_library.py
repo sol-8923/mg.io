@@ -203,12 +203,29 @@ def build_book(bdir, errors, warns, info):
                 errors.append(f"{tagu} 슬롯 {s['id']}에 문제가 없음")
             elif n < target:
                 warns.append(f"{tagu} 슬롯 {s['id']} 변형 {n}개 (목표 {target}개)")
+        # ── 내신 현실성 점검 (경고만, 개정안 R1·R4 — docs/내신-적합성-검토와-개정안.md) ──
+        for t_, lim, label in (("mc", 5, "선택형"), ("short", 5, "단답형"), ("essay", 10, "서술형")):
+            big = [x for x in slots if x.get("type") == t_ and x.get("points", 0) > lim]
+            if big:
+                warns.append(f"{tagu} {label} {len(big)}슬롯의 배점이 {lim}점을 넘음(내신은 선택형 3~5점, 단답 3~4점, 서술형 4~8점 권장): " + ", ".join(f"{x['id']}={x['points']}점" for x in big[:4]))
+        n_essay = sum(1 for x in slots if x.get("type") == "essay")
+        if not meta.get("sample") and (len(slots) < 15 or n_essay < 3):
+            warns.append(f"{tagu} 정식 단원은 15~20슬롯, 서술형 3~5문항을 권장(현재 {len(slots)}슬롯, 서술형 {n_essay}문항)")
+        mcq = [q for q in qs if q.get("type") == "mc" and not q.get("fixedOrder") and isinstance(q.get("answer"), int) and isinstance(q.get("choices"), list) and len(q["choices"]) >= 2]
+        if len(mcq) >= 8:
+            longest = sum(1 for q in mcq if len(str(q["choices"][q["answer"] - 1])) == max(len(str(c)) for c in q["choices"]))
+            if longest / len(mcq) > 0.4:
+                warns.append(f"{tagu} 정답이 가장 긴 보기인 선택형이 {longest}/{len(mcq)}({round(longest * 100 / len(mcq))}%)로 40% 초과 — 보기 길이로 정답이 드러남(오답을 정답과 비슷한 길이·구조로 쓸 것)")
         dc = Counter(s.get("difficulty") for s in slots)
         tc = Counter(s.get("type") for s in slots)
         info.append(f"{tagu} {bp.get('unitName')} · 시험 {len(slots)}문항/{sum(s.get('points',0) for s in slots)}점 · 은행 {len(qs)}문항 · "
                     + "유형 " + ", ".join(f"{k} {v}" for k, v in sorted(tc.items())) + " · 난이도 " + "/".join(f"{k}{dc.get(k,0)}" for k in "상중하"))
         unit = {"id": udir.name, "name": bp.get("unitName", udir.name), "timeLimitMin": bp.get("timeLimitMin", 0),
                 "slots": [{k: s.get(k) for k in ("id", "type", "difficulty", "points", "concept")} for s in slots]}
+        _sp = udir / "review" / "status.json"
+        _mode = load(_sp).get("mode") if _sp.exists() else None
+        if _mode:
+            unit["reviewMode"] = _mode   # 예: "reduced" = 임시 축약 검수 (개정안 R8)
         if (udir / "slides.html").exists():
             unit["slides"] = f"{udir.name}/slides.html"
         units.append(unit)
