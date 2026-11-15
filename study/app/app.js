@@ -240,10 +240,17 @@ function renderDoors(kind){
         var learning=0; bs.forEach(function(b){ learning+=noteCounts(b.id).learning; });
         var door=h('a',{class:'door'+(bs.length?'':' closed'),href:bs.length?'#/'+kind+'/g'+g+'s'+sm:null,role:bs.length?null:'img','aria-label':g+'학년 '+sm+'학기'+(bs.length?' 교실, 교과서 '+bs.length+'권':' 교실, 준비 중')},[
           h('div',{class:'door-plate',text:g+'학년 '+sm+'학기'}),
-          h('div',{class:'door-body'},[h('div',{class:'door-win'}),h('div',{class:'door-panel'}),h('div',{class:'door-knob'})]),
+          h('div',{class:'door-body'},[h('div',{class:'door-leaf'},[h('div',{class:'door-win'}),h('div',{class:'door-panel'}),h('div',{class:'door-knob'})])]),
           h('div',{class:'door-note',text:bs.length?(kind==='notes'&&learning?'학습 중 '+learning+'문제':'교과서 '+bs.length+'권'):'준비 중'}),
           kind==='notes'&&learning?h('div',{class:'door-badge',text:String(learning)}):null
         ]);
+        if(bs.length) door.addEventListener('click',function(e){
+          if(e.ctrlKey||e.metaKey||e.shiftKey||e.button) return;
+          if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+          e.preventDefault(); if(door.classList.contains('opening')) return;
+          door.classList.add('opening');
+          var href=door.getAttribute('href'); setTimeout(function(){ location.hash=href; },380);
+        });
         row.appendChild(door);
       });
       hall.appendChild(row);

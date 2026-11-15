@@ -508,9 +508,14 @@ th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)} th.n,
 .door{position:relative;display:block;text-decoration:none;color:inherit;text-align:center;padding-bottom:14px;transition:transform .25s cubic-bezier(.3,.7,.35,1.35)}
 .door-plate{margin:0 auto 8px;display:inline-block;background:#fbf6ea;color:#2a2622;border:1px solid rgba(150,120,70,.5);border-radius:5px;padding:4px 14px;
   font-family:var(--serif);font-weight:700;font-size:clamp(.9rem,2.6vw,1.1rem);box-shadow:0 1px 0 rgba(0,0,0,.15)}
-.door-body{position:relative;margin:0 auto;width:min(100%,190px);aspect-ratio:3/4.4;border-radius:10px 10px 2px 2px;
+.door-body{position:relative;margin:0 auto;width:min(100%,190px);aspect-ratio:3/4.4;border-radius:10px 10px 2px 2px;perspective:700px;
+  background:radial-gradient(ellipse at 50% 80%,#ffe9a8,#c98f3c 70%,#6b4a1e);box-shadow:inset 0 0 0 7px var(--wood2),inset 0 0 0 9px rgba(0,0,0,.18),0 10px 16px -10px rgba(35,20,8,.7)}
+.door-leaf{position:absolute;inset:0;border-radius:10px 10px 2px 2px;transform-origin:0 50%;transition:transform .45s cubic-bezier(.3,.7,.3,1);
   background:linear-gradient(90deg,rgba(0,0,0,.18),rgba(255,255,255,.06) 12%,rgba(255,255,255,0) 50%,rgba(0,0,0,.14)),var(--wood1);
-  box-shadow:inset 0 0 0 7px var(--wood2),inset 0 0 0 9px rgba(0,0,0,.18),0 10px 16px -10px rgba(35,20,8,.7)}
+  box-shadow:inset 0 0 0 7px var(--wood2),inset 0 0 0 9px rgba(0,0,0,.18)}
+a.door.opening .door-leaf{transform:rotateY(-58deg)}
+@media (hover:hover){ a.door:hover .door-leaf{transform:rotateY(-14deg)} a.door.opening:hover .door-leaf{transform:rotateY(-58deg)} }
+@media (prefers-reduced-motion:reduce){ .door-leaf{transition:none} }
 .door-win{position:absolute;left:24%;right:24%;top:11%;height:24%;border-radius:4px;background:linear-gradient(160deg,#cfe6ee,#8fb3c2);box-shadow:inset 0 0 0 3px var(--wood2),inset 0 0 0 4px rgba(0,0,0,.2)}
 .door-panel{position:absolute;left:18%;right:18%;top:44%;bottom:10%;border-radius:4px;box-shadow:inset 0 0 0 3px rgba(0,0,0,.2),inset 0 0 0 5px rgba(255,255,255,.07)}
 .door-knob{position:absolute;right:11%;top:56%;width:9%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f6e3a7,var(--brass));box-shadow:0 2px 3px rgba(0,0,0,.4)}
