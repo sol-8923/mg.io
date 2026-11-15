@@ -1,0 +1,1499 @@
+{
+ "questions": [
+  {
+   "id": "u8-Q01-a",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 2,
+   "concept": "문화의 속성",
+   "source": "교과서 p.149",
+   "question": "문화를 이루는 여러 요소가 서로 밀접하게 연결되어 있어 어느 한 부분에 변화가 생기면 다른 부분도 그 영향으로 변하는, 문화의 속성은?",
+   "choices": [
+    "공유성",
+    "학습성",
+    "전체성",
+    "축적성",
+    "변동성"
+   ],
+   "answer": 3,
+   "explanation": "여러 요소가 서로 밀접하게 연결되어 한 부분의 변화가 다른 부분에 영향을 주는 속성은 전체성(총체성)이다.",
+   "choiceExplanations": [
+    "공유성은 구성원들이 문화를 함께 가져 서로 의사소통하고 행동을 예측할 수 있다는 속성이에요. 이 설명의 핵심은 요소들이 연결되어 함께 변한다는 점이라 달라요.",
+    "이 설명에는 문화를 성장하며 어떻게 익히게 되는지에 관한 내용이 없어요. 설명이 말하는 것은 한 부분의 변화가 다른 부분에 미치는 영향이에요.",
+    "정답. 여러 요소가 서로 밀접하게 연결되어 한 부분의 변화가 다른 부분에 영향을 주는 속성은 전체성(총체성)이다.",
+    "이 설명에는 문화가 다음 세대로 전해지며 새 내용이 더해지는 과정에 관한 내용이 없어요. 설명이 말하는 것은 같은 시점에서 요소들 사이의 연결이에요.",
+    "'변화'라는 말이 있어 고르기 쉽지만, 설명의 핵심은 시간 흐름에 따른 변화가 아니라 한 부분의 변화가 다른 부분으로 이어지는 연결이에요."
+   ],
+   "detail": "문화는 생활양식을 이루는 수많은 요소로 되어 있고 이 요소들이 서로 밀접하게 연결되어 있어요. 설명문에서 '밀접하게 연결', '한 부분의 변화', '다른 부분도 변함'이라는 세 단서가 모두 한 속성을 가리켜요. 연결되어 있다는 점에서 문화를 부분이 아니라 전체로 보게 하므로 전체성 또는 총체성이라고 불러요.",
+   "tip": "'연결 → 함께 변함'이면 전체성(총체성).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "전체성(총체성)이란",
+     "text": "문화는 생활양식을 이루는 수많은 요소로 되어 있고, 이 요소들은 서로 밀접하게 연결되어 있어요. 그래서 한 부분이 바뀌면 다른 부분도 그 영향으로 달라져요. 예를 들어 인터넷이 발달하자 온라인상의 인사 예절이 중요해졌어요."
+    }
+   ]
+  },
+  {
+   "id": "u8-Q01-b",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 2,
+   "concept": "문화의 속성",
+   "source": "교과서 p.149",
+   "question": "한 사회의 구성원들이 서로 언어나 몸짓으로 의사소통할 수 있고 상대방이 어떻게 행동할지 예측할 수 있는 것은 문화의 어떤 속성 때문인가?",
+   "choices": [
+    "공유성",
+    "학습성",
+    "축적성",
+    "변동성",
+    "전체성"
+   ],
+   "answer": 1,
+   "explanation": "구성원들이 문화를 함께 가지고 있기 때문에 의사소통과 행동 예측이 가능하며, 이런 속성은 공유성이다.",
+   "choiceExplanations": [
+    "정답. 구성원들이 문화를 함께 가지고 있기 때문에 의사소통과 행동 예측이 가능하며, 이런 속성은 공유성이다.",
+    "이 설명에는 문화를 익히는 과정에 관한 내용이 없어요. 설명의 핵심은 구성원들이 서로의 말과 행동을 알아차리고 예측한다는 점이에요.",
+    "이 설명에는 문화가 전해지고 더해지는 과정에 관한 내용이 없어요. 설명은 같은 시기 구성원들 사이의 소통과 예측을 말해요.",
+    "설명에는 시간이 지나며 달라지는 내용이 없어요. 구성원들이 서로의 행동을 예측한다는 점이 핵심이에요.",
+    "설명이 말하는 것은 요소들 사이의 관계가 아니라 구성원들 사이의 의사소통과 예측이에요."
+   ],
+   "detail": "한 사회의 구성원은 같은 언어와 몸짓의 의미를 알고 있어요. 그래서 인사를 건네면 상대가 알아차리고 안부를 묻는 식으로 서로의 행동을 예측할 수 있어요. 이것은 구성원들이 문화를 함께 가지고 있기 때문에 가능한 일이므로 공유성이에요.",
+   "tip": "'함께 가지고 있어서 소통·예측 가능'이면 공유성.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "공유성이란",
+     "text": "한 사회의 구성원들은 문화를 함께 가지고 있어서 서로 언어나 몸짓으로 의사소통할 수 있고, 상대가 어떻게 행동할지 예측할 수 있어요."
+    }
+   ]
+  },
+  {
+   "id": "u8-Q02-a",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "문화의 의미(좁은 의미)",
+   "source": "교과서 p.147",
+   "question": "㉠~㉣에서 '문화'가 좁은 의미로 쓰인 것만을 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉡",
+    "㉠, ㉢",
+    "㉡, ㉢, ㉣",
+    "㉠, ㉢, ㉣",
+    "㉡, ㉣"
+   ],
+   "answer": 2,
+   "explanation": "㉠은 예술을, ㉢은 교양 있는 모습을 가리키므로 좁은 의미로 쓰인 것은 ㉠, ㉢이다.",
+   "choiceExplanations": [
+    "㉡은(는) 옳지 않은 설명이에요. ㉡은 반 아이들이 급식 후에 따르는 생활 방식을 말하므로 교양이나 예술을 가리키는 좁은 의미가 아니에요. ㉢도 옳은 설명인데 빠졌어요. ㉢은 도서관에서 조용히 해야 한다는 교양 있는 모습을 '문화 시민'이라고 하므로 좁은 의미예요.",
+    "정답. ㉠은 예술을, ㉢은 교양 있는 모습을 가리키므로 좁은 의미로 쓰인 것은 ㉠, ㉢이다.",
+    "㉡, ㉣은(는) 옳지 않은 설명이에요. ㉡은 반 아이들이 급식 후에 따르는 생활 방식을 말하므로 교양이나 예술을 가리키는 좁은 의미가 아니에요. ㉣은 마을 사람들이 대보름에 함께 이어 온 생활 방식을 말하므로 교양이나 예술을 가리키는 좁은 의미가 아니에요. ㉠도 옳은 설명인데 빠졌어요. ㉠은 전시를 보는 일을 '문화생활'이라고 하여 예술을 가리키므로 좁은 의미예요.",
+    "㉣은(는) 옳지 않은 설명이에요. ㉣은 마을 사람들이 대보름에 함께 이어 온 생활 방식을 말하므로 교양이나 예술을 가리키는 좁은 의미가 아니에요.",
+    "㉡, ㉣은(는) 옳지 않은 설명이에요. ㉡은 반 아이들이 급식 후에 따르는 생활 방식을 말하므로 교양이나 예술을 가리키는 좁은 의미가 아니에요. ㉣은 마을 사람들이 대보름에 함께 이어 온 생활 방식을 말하므로 교양이나 예술을 가리키는 좁은 의미가 아니에요. ㉠, ㉢도 옳은 설명인데 빠졌어요. ㉠은 전시를 보는 일을 '문화생활'이라고 하여 예술을 가리키므로 좁은 의미예요. ㉢은 도서관에서 조용히 해야 한다는 교양 있는 모습을 '문화 시민'이라고 하므로 좁은 의미예요."
+   ],
+   "detail": "'문화'를 좁은 의미로 쓰면 교양 있거나 세련된 모습, 또는 문학이나 예술을 가리켜요. ㉠의 '문화생활'은 전시 관람 같은 예술 활동을, ㉢의 '문화 시민'은 교양 있는 태도를 뜻해요. ㉡과 ㉣의 '문화'는 반이나 마을 사람들이 함께 따라 하는 생활 방식을 가리켜 쓰였어요. 같은 낱말이어도 문장 속에서 무엇을 가리키는지 확인해야 해요.",
+   "tip": "'문화생활·문화 시민'처럼 예술·교양을 말하면 좁은 의미.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "문화를 좁은 의미로 쓰는 경우",
+     "text": "일상에서 '문화'는 교양 있거나 세련된 모습을 나타낼 때(예: 문화 시민), 문학이나 예술을 가리킬 때(예: 문화계 소식, 문화생활)도 쓰여요. 이때는 사회의 한 부분을 한정해 가리키는 좁은 의미예요."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "대화",
+   "passage": "〈학생들의 대화〉\n㉠ 지아: 주말에 지역 문화 센터에서 전시를 보고 와서 문화생활을 했더니 기분이 좋아.\n㉡ 도윤: 우리 반에는 급식을 먹은 뒤 차례로 줄을 서서 식판을 반납하는 문화가 있어.\n㉢ 서진: 도서관에서 큰 소리로 떠드는 사람을 보면 '문화 시민이라면 조용히 해야지.'라는 생각이 들어.\n㉣ 하준: 우리 마을 사람들은 정월 대보름이면 모여서 함께 달집을 태우는 문화를 이어 왔어."
+  },
+  {
+   "id": "u8-Q02-b",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "문화의 의미(좁은 의미)",
+   "source": "교과서 p.147",
+   "question": "㉠~㉣에서 '문화'가 좁은 의미로 쓰인 것만을 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉡",
+    "㉡, ㉢",
+    "㉠, ㉢, ㉣",
+    "㉡, ㉢, ㉣",
+    "㉠, ㉣"
+   ],
+   "answer": 5,
+   "explanation": "㉠은 문학과 예술을, ㉣은 교양 있는 모습을 가리키므로 좁은 의미로 쓰인 것은 ㉠, ㉣이다.",
+   "choiceExplanations": [
+    "㉡은(는) 옳지 않은 설명이에요. ㉡은 가족이 설날 아침마다 함께 이어 오는 생활 방식을 말하므로 교양이나 예술을 가리키는 좁은 의미가 아니에요. ㉣도 옳은 설명인데 빠졌어요. ㉣은 말씨와 행동이 교양 있는 사람을 '문화인'이라고 하므로 좁은 의미예요.",
+    "㉡, ㉢은(는) 옳지 않은 설명이에요. ㉡은 가족이 설날 아침마다 함께 이어 오는 생활 방식을 말하므로 교양이나 예술을 가리키는 좁은 의미가 아니에요. ㉢은 가족이 저녁 식사 뒤에 함께 산책하는 생활 방식을 말하므로 교양이나 예술을 가리키는 좁은 의미가 아니에요. ㉠, ㉣도 옳은 설명인데 빠졌어요. ㉠은 신문의 '문화면'에서 소설과 연극 소식을 읽는 것이므로 문학과 예술을 가리키는 좁은 의미예요. ㉣은 말씨와 행동이 교양 있는 사람을 '문화인'이라고 하므로 좁은 의미예요.",
+    "㉢은(는) 옳지 않은 설명이에요. ㉢은 가족이 저녁 식사 뒤에 함께 산책하는 생활 방식을 말하므로 교양이나 예술을 가리키는 좁은 의미가 아니에요.",
+    "㉡, ㉢은(는) 옳지 않은 설명이에요. ㉡은 가족이 설날 아침마다 함께 이어 오는 생활 방식을 말하므로 교양이나 예술을 가리키는 좁은 의미가 아니에요. ㉢은 가족이 저녁 식사 뒤에 함께 산책하는 생활 방식을 말하므로 교양이나 예술을 가리키는 좁은 의미가 아니에요. ㉠도 옳은 설명인데 빠졌어요. ㉠은 신문의 '문화면'에서 소설과 연극 소식을 읽는 것이므로 문학과 예술을 가리키는 좁은 의미예요.",
+    "정답. ㉠은 문학과 예술을, ㉣은 교양 있는 모습을 가리키므로 좁은 의미로 쓰인 것은 ㉠, ㉣이다."
+   ],
+   "detail": "㉠의 '문화면'은 소설과 연극 같은 문학·예술 소식을 싣는 지면이고, ㉣의 '문화인'은 교양이 있는 사람을 가리키는 말이에요. 이렇게 교양이나 세련된 모습, 문학·예술을 가리키면 좁은 의미예요. ㉡과 ㉢은 가족이 함께 지키는 생활 방식을 가리켜서 이 기준에 맞지 않아요. 보기 속 낱말보다 그 낱말이 가리키는 대상을 기준으로 판단하세요.",
+   "tip": "'문화면·문화인'처럼 문학·예술·교양이면 좁은 의미.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "문화를 좁은 의미로 쓰는 경우",
+     "text": "일상에서 '문화'는 교양 있거나 세련된 모습을 나타낼 때(예: 문화 시민), 문학이나 예술을 가리킬 때(예: 문화계 소식, 문화생활)도 쓰여요. 이때는 사회의 한 부분을 한정해 가리키는 좁은 의미예요."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "대화",
+   "passage": "〈학생들의 대화〉\n㉠ 윤아: 신문의 문화면에서 새로 나온 소설과 연극 소식을 읽었어.\n㉡ 민재: 우리 가족은 설날 아침마다 함께 떡국을 먹는 문화가 있어.\n㉢ 예린: 우리 집에는 저녁을 먹고 나면 온 가족이 함께 산책하는 문화가 있어.\n㉣ 소희: 말씨와 행동이 늘 바른 선배를 보고 '정말 문화인 같다.'라고 생각했어."
+  },
+  {
+   "id": "u8-Q03-a",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "문화가 아닌 것",
+   "source": "교과서 p.147",
+   "question": "다음은 민서네 반 학생들이 하루 동안 한 행동이다. 문화의 의미를 기준으로 볼 때 성격이 나머지와 다른 하나는?",
+   "choices": [
+    "명절에 가족이 모여 앉아 윷놀이를 하는 풍습",
+    "학교에서 선생님께 높임말을 써서 말하는 언어 예절",
+    "점심시간에 수저를 사용해 밥과 반찬을 먹는 식사 방식",
+    "시험 결과를 기다리며 손톱을 물어뜯는 버릇",
+    "생일에 미역국을 끓여 먹으며 축하하는 생활 모습"
+   ],
+   "answer": 4,
+   "explanation": "손톱을 무는 버릇은 개인의 버릇이므로 문화가 아니고, 나머지는 구성원이 함께 이어 가는 생활 모습이므로 문화이다.",
+   "choiceExplanations": [
+    "한 사회의 구성원이 함께 이어 가는 놀이이므로 문화예요. 성격이 다른 하나가 아니에요.",
+    "구성원이 함께 배우고 공유하는 언어 생활이므로 문화예요.",
+    "한 사회의 구성원이 공유하는 식생활이므로 문화예요.",
+    "정답. 손톱을 무는 버릇은 개인의 버릇이므로 문화가 아니고, 나머지는 구성원이 함께 이어 가는 생활 모습이므로 문화이다.",
+    "구성원들이 함께 지키는 관습이므로 문화예요."
+   ],
+   "detail": "문화는 한 사회의 구성원이 주어진 환경에 적응하며 함께 갖게 된 생활양식이에요. 윷놀이, 높임말, 수저 사용, 미역국은 모두 여러 사람이 배워서 함께 따르는 모습이에요. 반면 시험 결과를 기다리며 손톱을 무는 일은 그 사람 개인의 버릇이어서 사회 구성원이 공유하는 것이 아니에요. 그래서 이것만 성격이 달라요.",
+   "tip": "개인의 버릇·본능은 문화가 아니다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "문화로 보지 않는 행동",
+     "text": "개인의 버릇이나 습관, 유전이나 본능에 따른 행동은 사회 구성원이 환경에 적응하며 함께 갖게 된 것이 아니므로 문화가 아니에요. 요령: '이 사회 사람들이 함께 배우고 따르는 방식인가?'를 물어보세요."
+    }
+   ]
+  },
+  {
+   "id": "u8-Q03-b",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "문화가 아닌 것",
+   "source": "교과서 p.147",
+   "question": "다음은 하은이네 가족과 이웃이 한 주 동안 한 행동이다. 문화의 의미를 기준으로 볼 때 성격이 나머지와 다른 하나는?",
+   "choices": [
+    "추석에 가족이 모여 송편을 빚는 행동",
+    "큰 소리에 놀라 몸이 움찔하는 반사 행동",
+    "새 학기 입학식에 단정한 교복을 입고 참석하는 행동",
+    "한글로 문자 메시지를 주고받으며 소식을 전하는 행동",
+    "생일에 케이크의 촛불을 끄며 소원을 비는 행동"
+   ],
+   "answer": 2,
+   "explanation": "놀라서 몸이 움찔하는 것은 본능적인 반응이므로 문화가 아니고, 나머지는 구성원이 함께 이어 가는 생활 모습이므로 문화이다.",
+   "choiceExplanations": [
+    "여러 사람이 함께 이어 가는 명절 풍습이므로 문화예요. 성격이 다른 하나가 아니에요.",
+    "정답. 놀라서 몸이 움찔하는 것은 본능적인 반응이므로 문화가 아니고, 나머지는 구성원이 함께 이어 가는 생활 모습이므로 문화이다.",
+    "구성원들이 함께 지키는 복장 예절이므로 문화예요.",
+    "한 사회가 함께 쓰는 문자와 언어이므로 문화예요.",
+    "구성원들이 함께하는 축하 방식이므로 문화예요."
+   ],
+   "detail": "송편 빚기, 교복 입기, 한글 문자, 촛불 끄기는 모두 사회 구성원이 배워서 함께 따르는 생활 모습이에요. 큰 소리에 놀라 몸이 움찔하는 것은 누구에게 배운 것이 아니라 본능에 따른 반응이라서 문화가 아니에요. 문화인지 가리려면 '함께 배우고 공유하는가'를 물어보면 돼요.",
+   "tip": "본능 반응은 문화가 아니다. 나머지 넷은 함께 배우고 공유한다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "문화로 보지 않는 행동",
+     "text": "개인의 버릇이나 습관, 유전이나 본능에 따른 행동은 사회 구성원이 환경에 적응하며 함께 갖게 된 것이 아니므로 문화가 아니에요. 요령: '이 사회 사람들이 함께 배우고 따르는 방식인가?'를 물어보세요."
+    }
+   ]
+  },
+  {
+   "id": "u8-Q04-a",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "문화의 속성 사례 판단",
+   "source": "교과서 p.149",
+   "question": "다음 사례에 나타난 문화의 속성으로 가장 적절한 것은?",
+   "choices": [
+    "학습성",
+    "공유성",
+    "축적성",
+    "변동성",
+    "전체성"
+   ],
+   "answer": 1,
+   "explanation": "민아는 가족에게서 식사 예절을 배웠고 로이는 배우지 못해 행동이 다르므로 학습성이다.",
+   "choiceExplanations": [
+    "정답. 민아는 가족에게서 식사 예절을 배웠고 로이는 배우지 못해 행동이 다르므로 학습성이다.",
+    "사례가 다루는 것은 식사 예절을 아는지 모르는지의 차이예요. 이 보기와 연결되는 장면은 사례에 없어요.",
+    "사례에는 식사 예절이 기록으로 남거나 대를 이어 더해지는 장면이 없어요.",
+    "사례에는 식사 예절이 시간이 지나며 달라지는 장면이 나오지 않아요.",
+    "사례에는 식사 예절 말고 다른 생활 모습이 등장하지 않아요. 이 보기와 연결되는 장면은 사례에 없어요."
+   ],
+   "detail": "민아는 어릴 때 가족에게서 어른이 먼저 수저를 든 뒤에 먹는다는 예절을 배웠어요. 이 예절을 배운 적이 없는 로이는 먼저 먹기 시작했어요. 같은 사회의 문화라도 배우지 않으면 자연스럽게 따르지 못하므로, 문화가 성장하면서 배워서 익히는 것임을 보여 줘요. 이런 속성을 학습성이라고 해요.",
+   "tip": "'배워서 익힘 / 배우지 않아 모름'이면 학습성.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "학습성이란",
+     "text": "문화는 유전이나 본능이 아니라 한 사회의 구성원으로 성장하며 배워서 익히는 것이에요. 그래서 같은 나라에서 태어났더라도 다른 곳에서 자라면 그 사회의 문화를 어색해할 수 있어요."
+    }
+   ],
+   "passageTitle": "사례",
+   "passage": "민아는 어릴 때 식사 자리에서 어른이 먼저 수저를 든 뒤에 먹는 것이라고 가족에게 배웠다. 다른 곳에서 살다 전학 온 로이는 그런 예절을 들어 본 적이 없어, 식사 시간에 가장 먼저 음식을 먹기 시작했다."
+  },
+  {
+   "id": "u8-Q04-b",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "문화의 속성 사례 판단",
+   "source": "교과서 p.149",
+   "question": "다음 사례에 나타난 문화의 속성으로 가장 적절한 것은?",
+   "choices": [
+    "공유성",
+    "학습성",
+    "변동성",
+    "축적성",
+    "전체성"
+   ],
+   "answer": 4,
+   "explanation": "기록이 다음 세대로 전해지고 새 방법이 덧붙어 풍부해지므로 축적성이다.",
+   "choiceExplanations": [
+    "사례가 다루는 것은 농사 기록이 책으로 이어지는 과정이에요. 이 보기와 연결되는 장면은 사례에 없어요.",
+    "사례의 중심은 개인이 배우는 과정이 아니라 마을 전체에서 기록이 대를 이어 전해지고 불어나는 과정이에요.",
+    "사례에서 달라지는 것이 있지만, 핵심은 변화 자체보다 전해진 내용 위에 새 내용이 덧붙어 책이 두꺼워지는 점이에요.",
+    "정답. 기록이 다음 세대로 전해지고 새 방법이 덧붙어 풍부해지므로 축적성이다.",
+    "사례에는 농사 기록 말고 다른 생활 모습이 함께 등장하지 않아요. 이 보기와 연결되는 장면은 사례에 없어요."
+   ],
+   "detail": "마을 어른들이 대대로 전해 온 농사 기록을 책으로 남겼어요. 젊은 농부들은 이 책을 바탕으로 새로 알아낸 방법을 덧붙여 책이 더 두꺼워졌어요. 문화가 글로 기록되어 다음 세대에 전달되고, 그 위에 새 지식이 더해져 풍부해지는 모습이므로 축적성이에요. 변화가 있다고 해서 모두 변동성은 아니고, 전해진 것에 더해 가는 과정이 핵심이면 축적성이에요.",
+   "tip": "'전해 받아 덧붙여 풍부해짐'이면 축적성.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "축적성이란",
+     "text": "한 사회가 공유하는 문화는 말로 전해지거나 글로 기록되어 다음 세대에 전달돼요. 이 과정에서 기존 문화에 새로운 지식이나 기술이 더해져 문화가 더욱 풍부해져요."
+    }
+   ],
+   "passageTitle": "사례",
+   "passage": "어느 마을의 어른들은 대대로 전해 온 농사 방법을 책으로 남겼다. 젊은 농부들은 이 책을 바탕으로 농사를 짓다가 새로 알아낸 방법을 책에 덧붙였고, 책은 해마다 더 두꺼워졌다."
+  },
+  {
+   "id": "u8-Q05-a",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "문화의 보편성과 특수성(표)",
+   "source": "교과서 p.148",
+   "question": "표의 ㉠~㉣ 중 문화의 특수성에 해당하는 것만을 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉡",
+    "㉠, ㉢",
+    "㉠, ㉡, ㉣",
+    "㉡, ㉢, ㉣",
+    "㉡, ㉣"
+   ],
+   "answer": 5,
+   "explanation": "장례 때 입는 옷(㉡)과 주로 먹는 음식(㉣)은 사회마다 다르게 나타나므로 특수성에 해당한다.",
+   "choiceExplanations": [
+    "㉠은(는) 옳지 않은 설명이에요. ㉠은 두 사회가 모두 장례를 치르며 애도한다는 공통점이어서 모든 사회에 나타나는 공통된 특성이에요. ㉣도 옳은 설명인데 빠졌어요. ㉣은 사회마다 주로 먹는 음식이 달라서 고유한 모습을 보여 줘요.",
+    "㉠, ㉢은(는) 옳지 않은 설명이에요. ㉠은 두 사회가 모두 장례를 치르며 애도한다는 공통점이어서 모든 사회에 나타나는 공통된 특성이에요. ㉢은 세 사회가 모두 언어로 의사소통한다는 공통점이어서 모든 사회에 나타나는 공통된 특성이에요. ㉡, ㉣도 옳은 설명인데 빠졌어요. ㉡은 사회마다 장례 때 입는 옷이 달라서 고유한 모습을 보여 줘요. ㉣은 사회마다 주로 먹는 음식이 달라서 고유한 모습을 보여 줘요.",
+    "㉠은(는) 옳지 않은 설명이에요. ㉠은 두 사회가 모두 장례를 치르며 애도한다는 공통점이어서 모든 사회에 나타나는 공통된 특성이에요.",
+    "㉢은(는) 옳지 않은 설명이에요. ㉢은 세 사회가 모두 언어로 의사소통한다는 공통점이어서 모든 사회에 나타나는 공통된 특성이에요.",
+    "정답. 장례 때 입는 옷(㉡)과 주로 먹는 음식(㉣)은 사회마다 다르게 나타나므로 특수성에 해당한다."
+   ],
+   "detail": "먼저 각 문장이 '사회들이 같은 점'을 말하는지 '다른 점'을 말하는지 나눠요. ㉠은 장례를 치르며 애도한다는 같은 점, ㉢은 모두 언어를 쓴다는 같은 점이에요. ㉡은 흰옷과 검은 옷, ㉣은 밥과 빵처럼 사회마다 다른 점이에요. 사회마다 고유한 특성을 지니며 다르게 나타나는 것이 문화의 특수성이므로 ㉡과 ㉣이 답이에요.",
+   "tip": "'같은 점'이면 보편성, '다른 점'이면 특수성.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "문화의 두 가지 특징",
+     "head": [
+      "특징",
+      "뜻",
+      "예"
+     ],
+     "rows": [
+      [
+       "보편성",
+       "모든 사회의 문화에 나타나는 공통된 특성",
+       "어느 사회나 예술을 즐기고 언어로 의사소통하며 의식을 치름"
+      ],
+      [
+       "특수성",
+       "각 사회마다 고유한 특성을 지니며 다르게 나타남",
+       "춤·노래의 표현 방식, 사용하는 언어, 의식의 모습이 사회마다 다름"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 444 238' width='444' height='238' font-family='sans-serif'><rect width='444' height='238' fill='#fff'/><rect x='2' y='2' width='50' height='32' fill='#e8eff7' stroke='#555'/><text x='27.0' y='23.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>기호</text><rect x='52' y='2' width='390' height='32' fill='#e8eff7' stroke='#555'/><text x='247.0' y='23.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>서로 다른 사회에서 관찰한 모습</text><rect x='2' y='34' width='50' height='50' fill='#fff' stroke='#555'/><text x='27.0' y='64.0' font-size='13' text-anchor='middle' fill='#222' font-weight='normal'>㉠</text><rect x='52' y='34' width='390' height='50' fill='#fff' stroke='#555'/><text x='61' y='55.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>가 사회와 나 사회에서는 모두 장례를 치르며 세상을 떠난</text><text x='61' y='73.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>사람을 애도한다.</text><rect x='2' y='84' width='50' height='50' fill='#fff' stroke='#555'/><text x='27.0' y='114.0' font-size='13' text-anchor='middle' fill='#222' font-weight='normal'>㉡</text><rect x='52' y='84' width='390' height='50' fill='#fff' stroke='#555'/><text x='61' y='105.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>가 사회에서는 장례 때 흰옷을 입고, 나 사회에서는 장례 때</text><text x='61' y='123.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>검은 옷을 입는다.</text><rect x='2' y='134' width='50' height='50' fill='#fff' stroke='#555'/><text x='27.0' y='164.0' font-size='13' text-anchor='middle' fill='#222' font-weight='normal'>㉢</text><rect x='52' y='134' width='390' height='50' fill='#fff' stroke='#555'/><text x='61' y='155.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>가·나·다 사회 사람들은 모두 말과 글 같은 언어를 사용해</text><text x='61' y='173.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>의사소통을 한다.</text><rect x='2' y='184' width='50' height='50' fill='#fff' stroke='#555'/><text x='27.0' y='214.0' font-size='13' text-anchor='middle' fill='#222' font-weight='normal'>㉣</text><rect x='52' y='184' width='390' height='50' fill='#fff' stroke='#555'/><text x='61' y='205.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>가 사회에서는 주로 밥을 먹고, 다 사회에서는 주로 빵을</text><text x='61' y='223.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>먹는다.</text></svg>",
+    "caption": "가·나·다 사회의 생활 모습(모식 자료)"
+   }
+  },
+  {
+   "id": "u8-Q05-b",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "문화의 보편성과 특수성(표)",
+   "source": "교과서 p.148",
+   "question": "표의 ㉠~㉣ 중 문화의 보편성에 해당하는 것만을 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉡",
+    "㉡, ㉣",
+    "㉠, ㉢",
+    "㉠, ㉢, ㉣",
+    "㉡, ㉢, ㉣"
+   ],
+   "answer": 3,
+   "explanation": "축제에서 노래와 춤을 즐기는 것(㉠)과 결혼식을 올려 부부가 된 것을 알리는 것(㉢)은 여러 사회의 공통된 모습이므로 보편성에 해당한다.",
+   "choiceExplanations": [
+    "㉡은(는) 옳지 않은 설명이에요. ㉡은 사회마다 새해에 나누어 먹는 음식이 달라서 사회마다 다른 모습이에요. ㉢도 옳은 설명인데 빠졌어요. ㉢은 세 사회가 모두 결혼식을 올려 부부가 된 것을 알린다는 공통점이어서 모든 사회에 나타나는 공통된 특성이에요.",
+    "㉡, ㉣은(는) 옳지 않은 설명이에요. ㉡은 사회마다 새해에 나누어 먹는 음식이 달라서 사회마다 다른 모습이에요. ㉣은 사회마다 인사하는 방식이 달라서 사회마다 다른 모습이에요. ㉠, ㉢도 옳은 설명인데 빠졌어요. ㉠은 두 사회가 모두 축제에서 노래와 춤을 즐긴다는 공통점이어서 모든 사회에 나타나는 공통된 특성이에요. ㉢은 세 사회가 모두 결혼식을 올려 부부가 된 것을 알린다는 공통점이어서 모든 사회에 나타나는 공통된 특성이에요.",
+    "정답. 축제에서 노래와 춤을 즐기는 것(㉠)과 결혼식을 올려 부부가 된 것을 알리는 것(㉢)은 여러 사회의 공통된 모습이므로 보편성에 해당한다.",
+    "㉣은(는) 옳지 않은 설명이에요. ㉣은 사회마다 인사하는 방식이 달라서 사회마다 다른 모습이에요.",
+    "㉡, ㉣은(는) 옳지 않은 설명이에요. ㉡은 사회마다 새해에 나누어 먹는 음식이 달라서 사회마다 다른 모습이에요. ㉣은 사회마다 인사하는 방식이 달라서 사회마다 다른 모습이에요. ㉠도 옳은 설명인데 빠졌어요. ㉠은 두 사회가 모두 축제에서 노래와 춤을 즐긴다는 공통점이어서 모든 사회에 나타나는 공통된 특성이에요."
+   ],
+   "detail": "각 문장이 사회들의 같은 점을 말하는지 다른 점을 말하는지 먼저 나눠요. ㉠은 두 사회가 모두 노래와 춤을 즐긴다는 같은 점, ㉢은 세 사회가 모두 결혼식을 올린다는 같은 점이에요. ㉡은 떡과 만두, ㉣은 허리 숙이기와 손 맞잡기처럼 사회마다 다른 점이에요. 모든 사회의 문화에 나타나는 공통된 특성이 문화의 보편성이므로 ㉠과 ㉢이 답이에요.",
+   "tip": "'어느 사회에나 있다'면 보편성.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "문화의 두 가지 특징",
+     "head": [
+      "특징",
+      "뜻",
+      "예"
+     ],
+     "rows": [
+      [
+       "보편성",
+       "모든 사회의 문화에 나타나는 공통된 특성",
+       "어느 사회나 예술을 즐기고 언어로 의사소통하며 의식을 치름"
+      ],
+      [
+       "특수성",
+       "각 사회마다 고유한 특성을 지니며 다르게 나타남",
+       "춤·노래의 표현 방식, 사용하는 언어, 의식의 모습이 사회마다 다름"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 444 220' width='444' height='220' font-family='sans-serif'><rect width='444' height='220' fill='#fff'/><rect x='2' y='2' width='50' height='32' fill='#e8eff7' stroke='#555'/><text x='27.0' y='23.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>기호</text><rect x='52' y='2' width='390' height='32' fill='#e8eff7' stroke='#555'/><text x='247.0' y='23.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>서로 다른 사회에서 관찰한 모습</text><rect x='2' y='34' width='50' height='32' fill='#fff' stroke='#555'/><text x='27.0' y='55.0' font-size='13' text-anchor='middle' fill='#222' font-weight='normal'>㉠</text><rect x='52' y='34' width='390' height='32' fill='#fff' stroke='#555'/><text x='61' y='55.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>가 사회와 나 사회에서는 모두 축제 때 노래와 춤을 즐긴다.</text><rect x='2' y='66' width='50' height='50' fill='#fff' stroke='#555'/><text x='27.0' y='96.0' font-size='13' text-anchor='middle' fill='#222' font-weight='normal'>㉡</text><rect x='52' y='66' width='390' height='50' fill='#fff' stroke='#555'/><text x='61' y='87.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>가 사회에서는 새해에 떡을 나누어 먹고, 나 사회에서는</text><text x='61' y='105.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>만두를 나누어 먹는다.</text><rect x='2' y='116' width='50' height='50' fill='#fff' stroke='#555'/><text x='27.0' y='146.0' font-size='13' text-anchor='middle' fill='#222' font-weight='normal'>㉢</text><rect x='52' y='116' width='390' height='50' fill='#fff' stroke='#555'/><text x='61' y='137.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>가·나·다 사회에서는 모두 결혼식을 올려 새로운 부부가</text><text x='61' y='155.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>된 것을 알린다.</text><rect x='2' y='166' width='50' height='50' fill='#fff' stroke='#555'/><text x='27.0' y='196.0' font-size='13' text-anchor='middle' fill='#222' font-weight='normal'>㉣</text><rect x='52' y='166' width='390' height='50' fill='#fff' stroke='#555'/><text x='61' y='187.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>가 사회에서는 인사할 때 허리를 숙이고, 나 사회에서는</text><text x='61' y='205.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>손을 맞잡고 흔든다.</text></svg>",
+    "caption": "가·나·다 사회의 생활 모습(모식 자료)"
+   }
+  },
+  {
+   "id": "u8-Q06-a",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "물질문화와 비물질문화",
+   "source": "교과서 p.147",
+   "question": "그림의 (가)~(다)를 문화의 구성에 따라 분류하여 바르게 연결한 것은?",
+   "choices": [
+    "(가) 물질문화 (나) 물질문화 (다) 비물질문화",
+    "(가) 물질문화 (나) 비물질문화 (다) 물질문화",
+    "(가) 비물질문화 (나) 물질문화 (다) 비물질문화",
+    "(가) 비물질문화 (나) 비물질문화 (다) 물질문화",
+    "(가) 물질문화 (나) 비물질문화 (다) 비물질문화"
+   ],
+   "answer": 2,
+   "explanation": "(가)와 (다)는 의식주에 해당하는 물질문화, (나)는 관습·도덕에 해당하는 비물질문화이다.",
+   "choiceExplanations": [
+    "(나)를 물질문화로 연결했지만 (나)는 어른께 공손하게 대하는 예절이라 관습·도덕에 해당하는 비물질문화예요. (다)를 비물질문화로 연결했지만 (다)는 온돌이 있는 방, 곧 주거에 해당하는 물질문화예요.",
+    "정답. (가)와 (다)는 의식주에 해당하는 물질문화, (나)는 관습·도덕에 해당하는 비물질문화이다.",
+    "(가)를 비물질문화로 연결했지만 (가)는 점심에 먹는 음식으로 의식주 가운데 식에 해당하는 물질문화예요. (나)를 물질문화로 연결했지만 (나)는 어른께 공손하게 대하는 예절이라 관습·도덕에 해당하는 비물질문화예요. (다)를 비물질문화로 연결했지만 (다)는 온돌이 있는 방, 곧 주거에 해당하는 물질문화예요.",
+    "(가)를 비물질문화로 연결했지만 (가)는 점심에 먹는 음식으로 의식주 가운데 식에 해당하는 물질문화예요.",
+    "(다)를 비물질문화로 연결했지만 (다)는 온돌이 있는 방, 곧 주거에 해당하는 물질문화예요."
+   ],
+   "detail": "넓은 의미의 문화는 의식주 같은 물질문화와 신앙·도덕·관습 같은 비물질문화를 모두 포함해요. (가)의 비빔밥은 식, (다)의 온돌이 있는 방은 주에 해당하는 물질문화예요. (나)의 어른께 두 손으로 드리는 예절은 관습·도덕에 해당하는 비물질문화예요. 쉽게 말해 먹고 입고 사는 것인지, 믿음·도덕·관습인지로 나눠 보세요.",
+   "tip": "의식주=물질문화, 신앙·도덕·관습=비물질문화.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "문화의 구성",
+     "head": [
+      "구분",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "물질문화",
+       "의식주와 같은 문화"
+      ],
+      [
+       "비물질문화",
+       "신앙, 도덕, 관습 등의 문화"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 430 184' width='430' height='184' font-family='sans-serif'><rect width='430' height='184' fill='#fff'/><rect x='3' y='4' width='424' height='46' rx='8' fill='#f6f9fc' stroke='#5b7ea6' stroke-width='1.5'/><rect x='3' y='4' width='56' height='46' rx='8' fill='#dbe7f4' stroke='#5b7ea6' stroke-width='1.5'/><text x='31' y='32.0' font-size='15' text-anchor='middle' fill='#1f3b5c' font-weight='bold'>(가)</text><text x='70' y='32.3' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>점심 급식으로 비빔밥을 먹는다.</text><rect x='3' y='60' width='424' height='46' rx='8' fill='#f6f9fc' stroke='#5b7ea6' stroke-width='1.5'/><rect x='3' y='60' width='56' height='46' rx='8' fill='#dbe7f4' stroke='#5b7ea6' stroke-width='1.5'/><text x='31' y='88.0' font-size='15' text-anchor='middle' fill='#1f3b5c' font-weight='bold'>(나)</text><text x='70' y='88.3' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>어른께 물건을 드릴 때 두 손으로 공손하게 드린다.</text><rect x='3' y='116' width='424' height='58' rx='8' fill='#f6f9fc' stroke='#5b7ea6' stroke-width='1.5'/><rect x='3' y='116' width='56' height='58' rx='8' fill='#dbe7f4' stroke='#5b7ea6' stroke-width='1.5'/><text x='31' y='150.0' font-size='15' text-anchor='middle' fill='#1f3b5c' font-weight='bold'>(다)</text><text x='70' y='140.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>겨울에 바닥을 따뜻하게 데우는 온돌이 있는 방에서</text><text x='70' y='159.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>지낸다.</text></svg>",
+    "caption": "문화 사례 카드(모식 자료)"
+   }
+  },
+  {
+   "id": "u8-Q06-b",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "물질문화와 비물질문화",
+   "source": "교과서 p.147",
+   "question": "그림의 (가)~(다) 사례를 문화를 이루는 요소의 종류로 나눌 때 바르게 짝지은 것은?",
+   "choices": [
+    "(가) 비물질문화 (나) 물질문화 (다) 비물질문화",
+    "(가) 물질문화 (나) 비물질문화 (다) 비물질문화",
+    "(가) 비물질문화 (나) 비물질문화 (다) 물질문화",
+    "(가) 물질문화 (나) 물질문화 (다) 비물질문화",
+    "(가) 비물질문화 (나) 물질문화 (다) 물질문화"
+   ],
+   "answer": 1,
+   "explanation": "(가)와 (다)는 관습·예절에 해당하는 비물질문화, (나)는 주거에 해당하는 물질문화이다.",
+   "choiceExplanations": [
+    "정답. (가)와 (다)는 관습·예절에 해당하는 비물질문화, (나)는 주거에 해당하는 물질문화이다.",
+    "(가)를 물질문화로 연결했지만 (가)는 조상께 차례를 지내는 풍습이라 신앙·관습에 해당하는 비물질문화예요. (나)를 비물질문화로 연결했지만 (나)는 대청마루가 있는 한옥이라 주거에 해당하는 물질문화예요.",
+    "(나)를 비물질문화로 연결했지만 (나)는 대청마루가 있는 한옥이라 주거에 해당하는 물질문화예요. (다)를 물질문화로 연결했지만 (다)는 이웃 어른께 먼저 인사하는 예절이라 도덕·관습에 해당하는 비물질문화예요.",
+    "(가)를 물질문화로 연결했지만 (가)는 조상께 차례를 지내는 풍습이라 신앙·관습에 해당하는 비물질문화예요.",
+    "(다)를 물질문화로 연결했지만 (다)는 이웃 어른께 먼저 인사하는 예절이라 도덕·관습에 해당하는 비물질문화예요."
+   ],
+   "detail": "(가)의 차례는 조상을 기리는 신앙과 관습이고 (다)의 인사는 예절이므로 비물질문화예요. (나)의 대청마루가 있는 한옥은 의식주 중 주에 해당하는 물질문화예요. 문화를 이루는 요소는 이처럼 두 가지로 나눌 수 있어요. 한 사례 안에 장소가 나와도 그것이 '건물·물건'인지 '풍습·예절'인지를 보고 판단하세요.",
+   "tip": "집·옷·음식은 물질, 풍습·예절·믿음은 비물질.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "문화의 구성",
+     "head": [
+      "구분",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "물질문화",
+       "의식주와 같은 문화"
+      ],
+      [
+       "비물질문화",
+       "신앙, 도덕, 관습 등의 문화"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 430 172' width='430' height='172' font-family='sans-serif'><rect width='430' height='172' fill='#fff'/><rect x='3' y='4' width='424' height='46' rx='8' fill='#f6f9fc' stroke='#5b7ea6' stroke-width='1.5'/><rect x='3' y='4' width='56' height='46' rx='8' fill='#dbe7f4' stroke='#5b7ea6' stroke-width='1.5'/><text x='31' y='32.0' font-size='15' text-anchor='middle' fill='#1f3b5c' font-weight='bold'>(가)</text><text x='70' y='32.3' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>설날 아침에 가족이 모여 조상께 차례를 지낸다.</text><rect x='3' y='60' width='424' height='46' rx='8' fill='#f6f9fc' stroke='#5b7ea6' stroke-width='1.5'/><rect x='3' y='60' width='56' height='46' rx='8' fill='#dbe7f4' stroke='#5b7ea6' stroke-width='1.5'/><text x='31' y='88.0' font-size='15' text-anchor='middle' fill='#1f3b5c' font-weight='bold'>(나)</text><text x='70' y='88.3' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>대청마루가 있는 한옥에서 지낸다.</text><rect x='3' y='116' width='424' height='46' rx='8' fill='#f6f9fc' stroke='#5b7ea6' stroke-width='1.5'/><rect x='3' y='116' width='56' height='46' rx='8' fill='#dbe7f4' stroke='#5b7ea6' stroke-width='1.5'/><text x='31' y='144.0' font-size='15' text-anchor='middle' fill='#1f3b5c' font-weight='bold'>(다)</text><text x='70' y='144.3' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>이웃 어른을 만나면 먼저 인사하는 예절을 지킨다.</text></svg>",
+    "caption": "문화 사례 카드(모식 자료)"
+   }
+  },
+  {
+   "id": "u8-Q07-a",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "미디어의 의미와 종류",
+   "source": "교과서 p.152",
+   "question": "그림은 지안이의 하루 일과이다. 미디어를 이용한 장면이 아닌 것은?",
+   "choices": [
+    "㉠",
+    "㉡",
+    "㉢",
+    "㉣",
+    "㉤"
+   ],
+   "answer": 4,
+   "explanation": "㉣은 직접 만나 얼굴을 보며 나눈 대화여서 지식이나 정보를 주고받는 수단인 미디어를 이용한 장면이 아니다.",
+   "choiceExplanations": [
+    "㉠은 라디오로 일기 예보를 들은 장면이어서 미디어를 이용했어요. 정답이 아니에요.",
+    "㉡은 신문을 읽어 정보를 얻은 장면이어서 미디어를 이용했어요.",
+    "㉢은 전자 우편으로 과제를 보낸 장면이어서 미디어를 이용했어요.",
+    "정답. ㉣은 직접 만나 얼굴을 보며 나눈 대화여서 지식이나 정보를 주고받는 수단인 미디어를 이용한 장면이 아니다.",
+    "㉤은 동영상 공유 플랫폼으로 영상을 본 장면이어서 미디어를 이용했어요."
+   ],
+   "detail": "미디어는 지식과 정보를 주고받을 때 사용하는 수단이에요. ㉠의 라디오, ㉡의 신문, ㉢의 전자 우편, ㉤의 동영상 공유 플랫폼은 모두 그런 수단이에요. ㉣은 학원 앞에서 친구를 만나 얼굴을 보며 이야기한 장면으로, 수단을 거치지 않고 직접 만나 나눈 대화예요. 따라서 ㉣만 미디어를 이용한 장면이 아니에요.",
+   "tip": "라디오·신문·전자 우편·영상 플랫폼은 미디어, 직접 만난 대화는 아님.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "미디어란",
+     "text": "미디어는 지식과 정보를 주고받을 때 사용하는 수단이에요. 우편, 신문, 책, 라디오, 텔레비전, 전자 우편, 동영상 공유 플랫폼, 사회 관계망 서비스(SNS) 등이 있어요. 직접 만나 얼굴을 보며 나누는 대화는 이런 수단을 거치지 않아요."
+    }
+   ],
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 450 230' width='450' height='230' font-family='sans-serif'><rect width='450' height='230' fill='#fff'/><line x1='22' y1='6' x2='22' y2='224' stroke='#9aa9bb' stroke-width='3'/><circle cx='22' cy='32.0' r='15' fill='#fff' stroke='#2f5d8c' stroke-width='2'/><text x='22' y='37.0' font-size='15' text-anchor='middle' fill='#2f5d8c' font-weight='bold'>㉠</text><text x='46' y='37.0' font-size='13' text-anchor='start' fill='#555' font-weight='bold'>7:30</text><text x='112' y='27.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>라디오에서 나오는 일기 예보를 들으며 우산을</text><text x='112' y='46.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>챙겼다.</text><line x1='46' y1='58' x2='444' y2='58' stroke='#e1e6ec'/><circle cx='22' cy='77.0' r='15' fill='#fff' stroke='#2f5d8c' stroke-width='2'/><text x='22' y='82.0' font-size='15' text-anchor='middle' fill='#2f5d8c' font-weight='bold'>㉡</text><text x='46' y='82.0' font-size='13' text-anchor='start' fill='#555' font-weight='bold'>12:40</text><text x='112' y='82.3' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>점심시간에 학교 도서관에서 신문을 읽었다.</text><line x1='46' y1='96' x2='444' y2='96' stroke='#e1e6ec'/><circle cx='22' cy='115.0' r='15' fill='#fff' stroke='#2f5d8c' stroke-width='2'/><text x='22' y='120.0' font-size='15' text-anchor='middle' fill='#2f5d8c' font-weight='bold'>㉢</text><text x='46' y='120.0' font-size='13' text-anchor='start' fill='#555' font-weight='bold'>15:20</text><text x='112' y='120.3' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>선생님께 전자 우편으로 과제를 제출했다.</text><line x1='46' y1='134' x2='444' y2='134' stroke='#e1e6ec'/><circle cx='22' cy='160.0' r='15' fill='#fff' stroke='#2f5d8c' stroke-width='2'/><text x='22' y='165.0' font-size='15' text-anchor='middle' fill='#2f5d8c' font-weight='bold'>㉣</text><text x='46' y='165.0' font-size='13' text-anchor='start' fill='#555' font-weight='bold'>17:10</text><text x='112' y='155.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>학원 앞에서 친구를 만나 얼굴을 보며 안부를</text><text x='112' y='174.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>나누었다.</text><line x1='46' y1='186' x2='444' y2='186' stroke='#e1e6ec'/><circle cx='22' cy='205.0' r='15' fill='#fff' stroke='#2f5d8c' stroke-width='2'/><text x='22' y='210.0' font-size='15' text-anchor='middle' fill='#2f5d8c' font-weight='bold'>㉤</text><text x='46' y='210.0' font-size='13' text-anchor='start' fill='#555' font-weight='bold'>21:00</text><text x='112' y='210.3' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>동영상 공유 플랫폼으로 요리 영상을 보았다.</text><line x1='46' y1='224' x2='444' y2='224' stroke='#e1e6ec'/></svg>",
+    "caption": "지안이의 하루 일과(모식 자료)"
+   }
+  },
+  {
+   "id": "u8-Q07-b",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "미디어의 의미와 종류",
+   "source": "교과서 p.152",
+   "question": "그림은 도하의 하루 일과이다. 미디어를 이용한 장면이 아닌 것은?",
+   "choices": [
+    "㉠",
+    "㉡",
+    "㉢",
+    "㉣",
+    "㉤"
+   ],
+   "answer": 5,
+   "explanation": "㉤은 가족과 마주 앉아 직접 나눈 대화여서 지식이나 정보를 주고받는 수단인 미디어를 이용한 장면이 아니다.",
+   "choiceExplanations": [
+    "㉠은 텔레비전으로 뉴스를 본 장면이어서 미디어를 이용했어요. 정답이 아니에요.",
+    "㉡은 책을 읽어 지식을 얻은 장면이어서 미디어를 이용했어요.",
+    "㉢은 우편으로 온 엽서를 읽은 장면이어서 미디어를 이용했어요.",
+    "㉣은 사회 관계망 서비스에 사진을 올린 장면이어서 미디어를 이용했어요.",
+    "정답. ㉤은 가족과 마주 앉아 직접 나눈 대화여서 지식이나 정보를 주고받는 수단인 미디어를 이용한 장면이 아니다."
+   ],
+   "detail": "텔레비전(㉠), 책(㉡), 우편(㉢), 사회 관계망 서비스(㉣)는 모두 지식과 정보를 주고받을 때 쓰는 수단이에요. ㉤은 거실에서 가족과 마주 앉아 이야기를 나눈 장면으로, 별다른 수단 없이 직접 만나 나눈 대화예요. 그래서 ㉤만 미디어를 이용한 장면이 아니에요. 사회 관계망 서비스에서 올리는 글도 미디어라는 점을 함께 기억하세요.",
+   "tip": "수단을 거쳤는지(미디어) / 직접 만났는지를 따진다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "미디어란",
+     "text": "미디어는 지식과 정보를 주고받을 때 사용하는 수단이에요. 우편, 신문, 책, 라디오, 텔레비전, 전자 우편, 동영상 공유 플랫폼, 사회 관계망 서비스(SNS) 등이 있어요. 직접 만나 얼굴을 보며 나누는 대화는 이런 수단을 거치지 않아요."
+    }
+   ],
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 450 216' width='450' height='216' font-family='sans-serif'><rect width='450' height='216' fill='#fff'/><line x1='22' y1='6' x2='22' y2='210' stroke='#9aa9bb' stroke-width='3'/><circle cx='22' cy='25.0' r='15' fill='#fff' stroke='#2f5d8c' stroke-width='2'/><text x='22' y='30.0' font-size='15' text-anchor='middle' fill='#2f5d8c' font-weight='bold'>㉠</text><text x='46' y='30.0' font-size='13' text-anchor='start' fill='#555' font-weight='bold'>7:20</text><text x='112' y='30.3' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>아침 식사를 하며 텔레비전으로 뉴스를 보았다.</text><line x1='46' y1='44' x2='444' y2='44' stroke='#e1e6ec'/><circle cx='22' cy='63.0' r='15' fill='#fff' stroke='#2f5d8c' stroke-width='2'/><text x='22' y='68.0' font-size='15' text-anchor='middle' fill='#2f5d8c' font-weight='bold'>㉡</text><text x='46' y='68.0' font-size='13' text-anchor='start' fill='#555' font-weight='bold'>12:30</text><text x='112' y='68.3' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>점심시간에 도서관에서 책을 읽었다.</text><line x1='46' y1='82' x2='444' y2='82' stroke='#e1e6ec'/><circle cx='22' cy='101.0' r='15' fill='#fff' stroke='#2f5d8c' stroke-width='2'/><text x='22' y='106.0' font-size='15' text-anchor='middle' fill='#2f5d8c' font-weight='bold'>㉢</text><text x='46' y='106.0' font-size='13' text-anchor='start' fill='#555' font-weight='bold'>16:00</text><text x='112' y='106.3' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>이모가 보낸 엽서를 우편으로 받아 읽었다.</text><line x1='46' y1='120' x2='444' y2='120' stroke='#e1e6ec'/><circle cx='22' cy='139.0' r='15' fill='#fff' stroke='#2f5d8c' stroke-width='2'/><text x='22' y='144.0' font-size='15' text-anchor='middle' fill='#2f5d8c' font-weight='bold'>㉣</text><text x='46' y='144.0' font-size='13' text-anchor='start' fill='#555' font-weight='bold'>19:40</text><text x='112' y='144.3' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>사회 관계망 서비스에 오늘 찍은 사진을 올렸다.</text><line x1='46' y1='158' x2='444' y2='158' stroke='#e1e6ec'/><circle cx='22' cy='184.0' r='15' fill='#fff' stroke='#2f5d8c' stroke-width='2'/><text x='22' y='189.0' font-size='15' text-anchor='middle' fill='#2f5d8c' font-weight='bold'>㉤</text><text x='46' y='189.0' font-size='13' text-anchor='start' fill='#555' font-weight='bold'>20:30</text><text x='112' y='179.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>거실에서 가족과 마주 앉아 하루 있었던 일을</text><text x='112' y='198.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>이야기했다.</text><line x1='46' y1='210' x2='444' y2='210' stroke='#e1e6ec'/></svg>",
+    "caption": "도하의 하루 일과(모식 자료)"
+   }
+  },
+  {
+   "id": "u8-Q08-a",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "미디어의 변화(비교 도식)",
+   "source": "교과서 p.152",
+   "question": "표의 (가), (나)에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉢",
+    "㉡, ㉣",
+    "㉠, ㉡",
+    "㉠, ㉡, ㉢",
+    "㉡, ㉢, ㉣"
+   ],
+   "answer": 3,
+   "explanation": "(가)는 소수의 생산자가 만든 정보를 일방향으로 전달했고(㉠), (나)는 쌍방향 소통이 가능하므로(㉡) 옳은 것은 ㉠, ㉡이다.",
+   "choiceExplanations": [
+    "㉢은(는) 옳지 않은 설명이에요. 누구나 영상이나 게시물을 쉽게 만들 수 있게 된 것은 (가)가 아니라 (나)의 변화예요. ㉡도 옳은 설명인데 빠졌어요. (나)처럼 인터넷과 스마트폰이 쓰이면서 전 세계 사람들과 쌍방향 소통이 가능해졌어요.",
+    "㉣은(는) 옳지 않은 설명이에요. (나)에서는 누구나 정보를 만들 수 있어 생산자와 소비자의 경계가 무너지고 있어요. ㉠도 옳은 설명인데 빠졌어요. (가)처럼 신문·라디오·텔레비전 중심일 때는 소수의 생산자가 만든 정보를 대중에게 일방향으로 전달했어요.",
+    "정답. (가)는 소수의 생산자가 만든 정보를 일방향으로 전달했고(㉠), (나)는 쌍방향 소통이 가능하므로(㉡) 옳은 것은 ㉠, ㉡이다.",
+    "㉢은(는) 옳지 않은 설명이에요. 누구나 영상이나 게시물을 쉽게 만들 수 있게 된 것은 (가)가 아니라 (나)의 변화예요.",
+    "㉢, ㉣은(는) 옳지 않은 설명이에요. 누구나 영상이나 게시물을 쉽게 만들 수 있게 된 것은 (가)가 아니라 (나)의 변화예요. (나)에서는 누구나 정보를 만들 수 있어 생산자와 소비자의 경계가 무너지고 있어요. ㉠도 옳은 설명인데 빠졌어요. (가)처럼 신문·라디오·텔레비전 중심일 때는 소수의 생산자가 만든 정보를 대중에게 일방향으로 전달했어요."
+   ],
+   "detail": "표에서 (가)는 신문·라디오·텔레비전을 쓰던 정보 통신 기술 발달 전, (나)는 인터넷·컴퓨터·스마트폰을 쓰는 오늘날이에요. 과거에는 소수의 생산자가 정보를 만들어 대중에게 한쪽 방향으로 전달했어요. 오늘날에는 쌍방향 소통이 가능하고 누구나 영상이나 게시물을 만들 수 있어 생산자와 소비자의 경계가 무너지고 있어요. 이 흐름으로 ㉠, ㉡만 옳다고 판단할 수 있어요.",
+   "tip": "과거=소수 생산·일방향, 오늘날=쌍방향·누구나 생산.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "미디어의 변화",
+     "head": [
+      "구분",
+      "특징"
+     ],
+     "rows": [
+      [
+       "책·신문·라디오·텔레비전 중심",
+       "소수의 생산자가 만든 지식·정보·문화를 대중에게 일방향으로 전달"
+      ],
+      [
+       "인터넷·컴퓨터·스마트폰 중심",
+       "전 세계 사람들과 쌍방향 소통이 가능, 누구나 영상·게시물을 만들 수 있어 생산자와 소비자의 경계가 무너짐"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "보기",
+   "passage": "〈보기〉\n㉠ (가)에서는 소수의 생산자가 만든 정보를 대중에게 일방향으로 전달하였다.\n㉡ (나)에서는 전 세계 사람들과 쌍방향 소통이 가능하다.\n㉢ (가)에서는 누구나 쉽게 영상이나 게시물을 만들어 올릴 수 있었다.\n㉣ (나)에서는 정보의 생산자와 소비자의 경계가 더욱 뚜렷해졌다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 454 138' width='454' height='138' font-family='sans-serif'><rect width='454' height='138' fill='#fff'/><rect x='2' y='2' width='110' height='32' fill='#e8eff7' stroke='#555'/><text x='57.0' y='23.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>구분</text><rect x='112' y='2' width='170' height='32' fill='#e8eff7' stroke='#555'/><text x='197.0' y='23.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>(가)</text><rect x='282' y='2' width='170' height='32' fill='#e8eff7' stroke='#555'/><text x='367.0' y='23.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>(나)</text><rect x='2' y='34' width='110' height='50' fill='#fff' stroke='#555'/><text x='57.0' y='55.0' font-size='13' text-anchor='middle' fill='#222' font-weight='normal'>주로 이용한</text><text x='57.0' y='73.0' font-size='13' text-anchor='middle' fill='#222' font-weight='normal'>미디어</text><rect x='112' y='34' width='170' height='50' fill='#fff' stroke='#555'/><text x='121' y='64.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>신문, 라디오, 텔레비전</text><rect x='282' y='34' width='170' height='50' fill='#fff' stroke='#555'/><text x='291' y='55.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>인터넷, 컴퓨터,</text><text x='291' y='73.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>스마트폰</text><rect x='2' y='84' width='110' height='50' fill='#fff' stroke='#555'/><text x='57.0' y='114.0' font-size='13' text-anchor='middle' fill='#222' font-weight='normal'>이용한 시기</text><rect x='112' y='84' width='170' height='50' fill='#fff' stroke='#555'/><text x='121' y='105.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>정보 통신 기술이</text><text x='121' y='123.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>발달하기 전</text><rect x='282' y='84' width='170' height='50' fill='#fff' stroke='#555'/><text x='291' y='105.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>정보 통신 기술이 발달한</text><text x='291' y='123.0' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>오늘날</text></svg>",
+    "caption": "두 시기의 미디어 이용(모식 자료)"
+   }
+  },
+  {
+   "id": "u8-Q08-b",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "미디어의 변화(비교 도식)",
+   "source": "교과서 p.152",
+   "question": "그림의 (가), (나)에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉡",
+    "㉡, ㉢",
+    "㉠, ㉣",
+    "㉡, ㉢, ㉣",
+    "㉠, ㉢, ㉣"
+   ],
+   "answer": 2,
+   "explanation": "(가)에서는 정보를 만드는 사람이 적고 대중은 주로 받아들이는 쪽이었고(㉡), (나)에서는 이용자가 직접 영상이나 게시물을 만들 수 있으므로(㉢) 옳은 것은 ㉡, ㉢이다.",
+   "choiceExplanations": [
+    "㉠은(는) 옳지 않은 설명이에요. (나)에서는 이용자가 정보를 받기만 하는 것이 아니라 되돌려 보내며 쌍방향으로 소통할 수 있어요. ㉢도 옳은 설명인데 빠졌어요. (나)에서는 이용자가 영상이나 게시물을 직접 만들어 올릴 수 있어요.",
+    "정답. (가)에서는 정보를 만드는 사람이 적고 대중은 주로 받아들이는 쪽이었고(㉡), (나)에서는 이용자가 직접 영상이나 게시물을 만들 수 있으므로(㉢) 옳은 것은 ㉡, ㉢이다.",
+    "㉠, ㉣은(는) 옳지 않은 설명이에요. (나)에서는 이용자가 정보를 받기만 하는 것이 아니라 되돌려 보내며 쌍방향으로 소통할 수 있어요. 전 세계 사람들과 쌍방향으로 소통하는 것은 (가)가 아니라 (나)의 특징이에요. ㉡, ㉢도 옳은 설명인데 빠졌어요. (가)에서는 정보를 만드는 사람이 적고 대중은 주로 받아들이는 쪽이었어요. (나)에서는 이용자가 영상이나 게시물을 직접 만들어 올릴 수 있어요.",
+    "㉣은(는) 옳지 않은 설명이에요. 전 세계 사람들과 쌍방향으로 소통하는 것은 (가)가 아니라 (나)의 특징이에요.",
+    "㉠, ㉣은(는) 옳지 않은 설명이에요. (나)에서는 이용자가 정보를 받기만 하는 것이 아니라 되돌려 보내며 쌍방향으로 소통할 수 있어요. 전 세계 사람들과 쌍방향으로 소통하는 것은 (가)가 아니라 (나)의 특징이에요. ㉡도 옳은 설명인데 빠졌어요. (가)에서는 정보를 만드는 사람이 적고 대중은 주로 받아들이는 쪽이었어요."
+   ],
+   "detail": "그림의 (가)는 책·신문·라디오·텔레비전을 쓰던 시기, (나)는 인터넷·스마트폰·사회 관계망 서비스를 쓰는 시기예요. (가) 시기에는 소수의 생산자가 만든 내용을 대중이 받아들였고, (나) 시기에는 누구나 영상이나 게시물을 만들 수 있어요. ㉠은 (나)에 대해, ㉣은 (가)에 대해 반대로 말했어요. 시기별 특징을 짝지어 기억하세요.",
+   "tip": "(가)는 받아들이는 대중, (나)는 직접 만드는 이용자.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "미디어의 변화",
+     "head": [
+      "구분",
+      "특징"
+     ],
+     "rows": [
+      [
+       "책·신문·라디오·텔레비전 중심",
+       "소수의 생산자가 만든 지식·정보·문화를 대중에게 일방향으로 전달"
+      ],
+      [
+       "인터넷·컴퓨터·스마트폰 중심",
+       "전 세계 사람들과 쌍방향 소통이 가능, 누구나 영상·게시물을 만들 수 있어 생산자와 소비자의 경계가 무너짐"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "보기",
+   "passage": "〈보기〉\n㉠ (나)에서는 이용자가 정보를 받기만 하고 되돌려 보낼 수는 없다.\n㉡ (가)에서는 정보를 만드는 사람이 적고 대중은 주로 받아들이는 쪽이었다.\n㉢ (나)에서는 이용자가 영상이나 게시물을 직접 만들어 올릴 수 있다.\n㉣ (가)에서는 전 세계 사람들과 쌍방향으로 소통하는 것이 일반적이었다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 460 172' width='460' height='172' font-family='sans-serif'><rect width='460' height='172' fill='#fff'/><rect x='4' y='6' width='190' height='158' rx='10' fill='#f7f3e8' stroke='#b59a45' stroke-width='1.5'/><text x='99.0' y='30' font-size='14' text-anchor='middle' fill='#222' font-weight='bold'>(가) 이전 시기</text><text x='20' y='54' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>· 책</text><text x='20' y='79' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>· 신문</text><text x='20' y='104' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>· 라디오</text><text x='20' y='129' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>· 텔레비전</text><rect x='266' y='6' width='190' height='158' rx='10' fill='#eaf3fb' stroke='#4f86b5' stroke-width='1.5'/><text x='361.0' y='30' font-size='14' text-anchor='middle' fill='#222' font-weight='bold'>(나) 오늘날</text><text x='282' y='54' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>· 인터넷</text><text x='282' y='79' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>· 스마트폰</text><text x='282' y='104' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>· 사회 관계망 서비스</text><text x='282' y='129' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>· 동영상 플랫폼</text><line x1='202' y1='85.0' x2='252' y2='85.0' stroke='#555' stroke-width='3'/><polygon points='258,85.0 246,77.0 246,93.0' fill='#555'/></svg>",
+    "caption": "미디어의 변화(모식 자료)"
+   }
+  },
+  {
+   "id": "u8-Q09-a",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 2,
+   "concept": "잘못된 정보와 허위 정보",
+   "source": "교과서 p.154",
+   "question": "경제적 이익을 얻거나 대중을 속이려고 만들어진, 진실이 아닌 정보를 무엇이라고 하는가?",
+   "choices": [
+    "허위 정보",
+    "잘못된 정보",
+    "편향된 정보",
+    "광고 정보",
+    "맞춤형 정보"
+   ],
+   "answer": 1,
+   "explanation": "경제적 이익을 얻거나 대중을 속이려는 의도로 만든 진실이 아닌 정보는 허위 정보이다.",
+   "choiceExplanations": [
+    "정답. 경제적 이익을 얻거나 대중을 속이려는 의도로 만든 진실이 아닌 정보는 허위 정보이다.",
+    "사용자가 사실이라고 믿고 공유하지만 틀린 정보예요. 설명에는 이익을 얻거나 속이려는 의도가 있어 이와 달라요.",
+    "한쪽으로 치우친 정보를 말해요. 설명이 가리키는 '속이려고 만든 진실이 아닌 정보'가 아니에요.",
+    "상품을 알리는 내용이에요. 설명은 진실이 아닌 정보라는 점을 말하고 있어요.",
+    "사용자에게 맞춰 제공되는 정보예요. 설명에서 말하는 정보의 진위와는 관계가 없어요."
+   ],
+   "detail": "설명에서 '경제적 이익을 얻거나 대중을 속이려고'라는 부분이 만든 사람의 의도를 보여 줘요. 의도적으로 진실이 아닌 내용을 만들었다면 허위 정보예요. 같은 틀린 정보라도 퍼뜨린 사람이 사실이라고 믿었다면 의도가 없으므로 다른 용어가 돼요. 의도 여부가 두 용어를 가르는 기준이에요.",
+   "tip": "속이려는 의도가 있으면 허위 정보.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "허위 정보란",
+     "text": "경제적 이익을 얻거나 대중을 속이려고 일부러 만들어진, 진실이 아닌 정보예요. 만든 사람의 의도(이익, 속이기)가 핵심이에요."
+    }
+   ]
+  },
+  {
+   "id": "u8-Q09-b",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 2,
+   "concept": "잘못된 정보와 허위 정보",
+   "source": "교과서 p.154",
+   "question": "사용자가 사실이라고 믿고 다른 사람에게 공유했지만, 알고 보니 틀린 정보를 무엇이라고 하는가?",
+   "choices": [
+    "허위 정보",
+    "편향된 정보",
+    "광고 정보",
+    "잘못된 정보",
+    "맞춤형 정보"
+   ],
+   "answer": 4,
+   "explanation": "사용자가 사실이라고 믿고 공유했지만 틀린 정보는 잘못된 정보이다.",
+   "choiceExplanations": [
+    "경제적 이익을 얻거나 대중을 속이려고 일부러 만든 정보예요. 설명에는 속이려는 의도가 나오지 않아요.",
+    "한쪽으로 치우친 정보를 말해요. 설명은 틀린 정보라는 점을 말하고 있어요.",
+    "상품을 알리는 내용이에요. 설명의 '사실이라고 믿고 공유한 틀린 정보'와 달라요.",
+    "정답. 사용자가 사실이라고 믿고 공유했지만 틀린 정보는 잘못된 정보이다.",
+    "사용자에게 맞춰 제공되는 정보예요. 설명은 정보가 틀렸다는 점을 말하고 있어요."
+   ],
+   "detail": "설명에서 '사실이라고 믿고 공유'했다는 부분은 퍼뜨린 사람에게 속이려는 의도가 없었음을 보여 줘요. 내용은 틀렸지만 의도가 없다면 잘못된 정보예요. 만든 사람이 이익을 얻거나 속이려는 의도를 가졌을 때는 허위 정보라고 해서 둘을 구별해요.",
+   "tip": "믿고 공유했지만 틀림 → 잘못된 정보.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "잘못된 정보란",
+     "text": "사용자가 사실이라고 믿고 공유하지만 틀린 정보예요. 퍼뜨린 사람은 사실이라고 믿었다는 점이 핵심이에요."
+    }
+   ]
+  },
+  {
+   "id": "u8-Q10-a",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "미디어 속 정보의 특징",
+   "source": "교과서 p.153",
+   "question": "다음 사례에서 확인할 수 있는 미디어 속 정보의 특징으로 가장 적절한 것은?",
+   "choices": [
+    "정보가 너무 많아 필요한 정보를 찾기 어려울 수 있다.",
+    "미디어 속 문화 콘텐츠는 상품의 성격을 지니기도 한다.",
+    "많은 사람이 콘텐츠를 만들어 문화의 다양성이 확대된다.",
+    "흥미를 끌려고 자극적이고 선정적인 내용으로 만들기도 한다.",
+    "맞춤형으로 제공된 정보만 접해 관점이 치우칠 수 있다."
+   ],
+   "answer": 5,
+   "explanation": "추천 영상만 계속 보다가 한쪽으로 치우친 생각을 갖게 되었으므로 제한된 정보로 편향된 관점을 갖게 되는 특징이다.",
+   "choiceExplanations": [
+    "사례에서 하윤이는 정보를 찾지 못한 것이 아니라 비슷한 영상만 계속 보게 되었어요.",
+    "사례에는 영상을 사고파는 내용이나 광고가 나오지 않아요.",
+    "사례에서는 오히려 비슷한 영상만 접하게 되어 다양한 내용을 접하지 못했어요.",
+    "사례에는 영상의 내용이 자극적이라는 설명이 없어요.",
+    "정답. 추천 영상만 계속 보다가 한쪽으로 치우친 생각을 갖게 되었으므로 제한된 정보로 편향된 관점을 갖게 되는 특징이다."
+   ],
+   "detail": "하윤이는 축구 영상을 몇 번 본 뒤 계속 축구 영상만 추천받았어요. 그래서 '모두 축구만 좋아한다'는 한쪽으로 치우친 생각을 하게 되었고 다른 운동을 좋아하는 친구의 말이 이해되지 않았어요. 사용자에게 맞춘 서비스 때문에 제한된 정보만 접해 편향된 관점을 갖고, 다른 생각을 가진 사람과 소통하기 어려워진 모습이에요.",
+   "tip": "비슷한 정보만 추천 → 편향된 관점.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "맞춤형 서비스와 편향",
+     "text": "여러 미디어는 사용자 맞춤형 서비스를 제공해요. 그러면 자신도 모르게 제한된 정보만 얻어 한쪽으로 치우친(편향된) 관점을 갖거나, 다른 생각을 가진 사람과 소통하기 어려워질 수 있어요."
+    }
+   ],
+   "passageTitle": "사례",
+   "passage": "하윤이는 동영상 공유 플랫폼에서 축구 영상을 몇 번 보았다. 그 뒤로 화면에는 계속 축구 영상만 추천되었다. 어느새 하윤이는 '요즘 사람들은 모두 축구만 좋아한다.'라고 생각하게 되었고, 다른 운동을 좋아하는 친구의 이야기가 잘 이해되지 않았다."
+  },
+  {
+   "id": "u8-Q10-b",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "미디어 속 정보의 특징",
+   "source": "교과서 p.153",
+   "question": "다음 사례에서 확인할 수 있는 미디어 속 정보의 특징으로 가장 적절한 것은?",
+   "choices": [
+    "맞춤형으로 제공된 정보만 접해 관점이 치우칠 수 있다.",
+    "미디어 속 문화 콘텐츠는 상품의 성격을 지니기도 한다.",
+    "정보가 너무 많아 필요한 정보를 찾기 어려울 수 있다.",
+    "많은 사람이 콘텐츠를 만들어 문화의 다양성이 확대된다.",
+    "흥미를 끌려고 자극적이고 선정적인 내용으로 만들기도 한다."
+   ],
+   "answer": 3,
+   "explanation": "검색 결과가 너무 많아 필요한 자료를 고르지 못했으므로 정보가 범람해 필요한 정보를 찾기 어려워진 특징이다.",
+   "choiceExplanations": [
+    "사례에서 서윤이는 한쪽으로 치우친 생각을 하게 된 것이 아니라 자료를 고르지 못해 헤맸어요.",
+    "사례에는 콘텐츠를 상품처럼 파는 내용이나 광고가 나오지 않아요.",
+    "정답. 검색 결과가 너무 많아 필요한 자료를 고르지 못했으므로 정보가 범람해 필요한 정보를 찾기 어려워진 특징이다.",
+    "콘텐츠가 다양하다는 것은 장점이지만, 사례에서는 그 때문에 서윤이가 자료를 고르기 어려웠어요.",
+    "사례에는 내용이 자극적이라는 설명이 없어요."
+   ],
+   "detail": "서윤이는 과제 자료를 찾으려고 검색했더니 비슷한 글과 영상이 수천 개나 나와 어느 것이 필요한 자료인지 고르지 못했어요. 정보 통신 기술의 발달로 정보가 너무 많이 쏟아져 오히려 필요한 정보를 찾기 어려워진 모습이에요. 사례에 나온 어려움이 '치우침'인지 '찾기 어려움'인지 구별해서 답을 고르세요.",
+   "tip": "정보가 너무 많아 고르기 어려움 → 정보 범람.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "정보의 범람",
+     "text": "정보 통신 기술의 발달로 많은 사람이 콘텐츠를 만들고 퍼뜨리면서 정보가 너무 많이 쏟아져요. 그 결과 오히려 필요한 정보를 찾기 어려워졌어요."
+    }
+   ],
+   "passageTitle": "사례",
+   "passage": "서윤이는 과제를 하려고 인터넷에서 자료를 검색했다. 비슷한 글과 영상이 수천 개나 나와서, 어느 것이 필요한 자료인지 고르지 못하고 한참을 헤맸다."
+  },
+  {
+   "id": "u8-Q11-a",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "미디어 정보 확인 방법",
+   "source": "교과서 p.154",
+   "question": "그림의 게시물을 본 학생들이 정보를 확인하려는 행동으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉡",
+    "㉡, ㉣",
+    "㉠, ㉡, ㉣",
+    "㉡, ㉢, ㉣",
+    "㉠, ㉢"
+   ],
+   "answer": 2,
+   "explanation": "같은 내용을 다룬 다른 자료를 찾아보고(㉡) 사진이 왜곡되지 않았는지 검증하는 것(㉣)이 올바른 확인 방법이다.",
+   "choiceExplanations": [
+    "㉠은(는) 옳지 않은 설명이에요. 제목과 사진만 보고 바로 공유하지 말고 이야기 전체를 읽고 사실을 확인한 뒤에 공유해야 해요. ㉣도 옳은 설명인데 빠졌어요. 사진이 다른 상황의 사진을 가져온 것은 아닌지 왜곡 여부를 검증해 보는 것은 올바른 확인 방법이에요.",
+    "정답. 같은 내용을 다룬 다른 자료를 찾아보고(㉡) 사진이 왜곡되지 않았는지 검증하는 것(㉣)이 올바른 확인 방법이다.",
+    "㉠은(는) 옳지 않은 설명이에요. 제목과 사진만 보고 바로 공유하지 말고 이야기 전체를 읽고 사실을 확인한 뒤에 공유해야 해요.",
+    "㉢은(는) 옳지 않은 설명이에요. 댓글이나 공유 수가 많다고 사실인 것은 아니에요. 믿을 만한 정보인지 스스로 조사해야 해요.",
+    "㉠, ㉢은(는) 옳지 않은 설명이에요. 제목과 사진만 보고 바로 공유하지 말고 이야기 전체를 읽고 사실을 확인한 뒤에 공유해야 해요. 댓글이나 공유 수가 많다고 사실인 것은 아니에요. 믿을 만한 정보인지 스스로 조사해야 해요. ㉡, ㉣도 옳은 설명인데 빠졌어요. 같은 정보를 다룬 다른 미디어나 공공 기관의 자료를 찾아보는 것은 올바른 확인 방법이에요. 사진이 다른 상황의 사진을 가져온 것은 아닌지 왜곡 여부를 검증해 보는 것은 올바른 확인 방법이에요."
+   ],
+   "detail": "미디어 속 정보는 제목과 사진만 보지 말고 전체를 읽고, 같은 정보를 다룬 다른 미디어의 자료를 찾아보고, 스스로 조사하고, 사진과 영상이 왜곡되지 않았는지 검증하며 확인해야 해요. ㉡은 다른 자료를 비교하는 것이고 ㉣은 왜곡 여부를 검증하는 것이므로 올바른 행동이에요. ㉠은 확인 없이 공유했고 ㉢은 댓글과 공유 수만 믿었으므로 올바르지 않아요.",
+   "tip": "전체 읽기·다른 자료 비교·직접 조사·왜곡 검증.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "미디어 속 정보 이렇게 확인하자",
+     "head": [
+      "순서",
+      "확인 방법"
+     ],
+     "rows": [
+      [
+       "1",
+       "제목과 사진만 보지 말고 이야기 전체를 자세히 읽어 본다"
+      ],
+      [
+       "2",
+       "같은 정보를 다룬 다른 미디어의 자료를 찾아본다"
+      ],
+      [
+       "3",
+       "믿을 만한 정보인지 스스로 조사해 본다"
+      ],
+      [
+       "4",
+       "사진과 영상이 왜곡되지는 않았는지 검증해 본다"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "보기",
+   "passage": "〈보기〉\n㉠ 사진과 제목만 보고 곧바로 친구들에게 공유한다.\n㉡ 같은 내용을 다룬 다른 뉴스나 공공 기관의 자료가 있는지 찾아본다.\n㉢ 댓글과 공유 수가 많으니 사실이라고 판단한다.\n㉣ 다른 상황에서 찍은 사진을 가져와 꾸민 것은 아닌지 따져 본다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 212' width='420' height='212' font-family='sans-serif'><rect width='420' height='212' fill='#fff'/><rect x='3' y='3' width='414' height='205' rx='10' fill='#fff' stroke='#8a96a6' stroke-width='1.5'/><circle cx='30' cy='26' r='15' fill='#cfd8e3'/><text x='54' y='31' font-size='13' text-anchor='start' fill='#222' font-weight='bold'>동네 소식 계정</text><text x='20' y='66' font-size='14' text-anchor='start' fill='#222' font-weight='bold'>[속보] 이번 주말부터 우리 동네 공원 전체 폐쇄!</text><rect x='20' y='82' width='380' height='88' fill='#eef1f5' stroke='#b9c2cf'/><polygon points='176.0,140 202.0,104 228.0,140' fill='#c3ccd8'/><polygon points='206.0,140 232.0,116 256.0,140' fill='#d4dbe5'/><text x='210.0' y='162' font-size='11' text-anchor='middle' fill='#555' font-weight='normal'>(사진)</text><text x='20' y='192' font-size='12' text-anchor='start' fill='#555' font-weight='normal'>좋아요 2.3천 · 댓글 481 · 공유 1.1천</text></svg>",
+    "caption": "SNS 게시물(모식 자료)"
+   }
+  },
+  {
+   "id": "u8-Q11-b",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "미디어 정보 확인 방법",
+   "source": "교과서 p.154",
+   "question": "그림의 게시물을 본 학생들이 정보를 확인하려는 행동으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉢, ㉣",
+    "㉠, ㉡",
+    "㉡, ㉢",
+    "㉠, ㉡, ㉢",
+    "㉡, ㉢, ㉣"
+   ],
+   "answer": 1,
+   "explanation": "본문 전체를 읽고(㉠), 다른 미디어의 자료와 비교하고(㉢), 혼자 어려우면 공공 기관의 도움을 받는 것(㉣)이 올바른 확인 방법이다.",
+   "choiceExplanations": [
+    "정답. 본문 전체를 읽고(㉠), 다른 미디어의 자료와 비교하고(㉢), 혼자 어려우면 공공 기관의 도움을 받는 것(㉣)이 올바른 확인 방법이다.",
+    "㉡은(는) 옳지 않은 설명이에요. 의사 사진이 있다고 해서 별도 확인 없이 믿으면 안 돼요. 믿을 만한 정보인지 따져 봐야 해요. ㉢, ㉣도 옳은 설명인데 빠졌어요. 같은 정보를 다룬 다른 미디어의 자료를 찾아 비교하는 것은 올바른 확인 방법이에요. 혼자 확인하기 어려우면 공공 기관이나 관련 연구소의 도움을 받는 것은 올바른 방법이에요.",
+    "㉡은(는) 옳지 않은 설명이에요. 의사 사진이 있다고 해서 별도 확인 없이 믿으면 안 돼요. 믿을 만한 정보인지 따져 봐야 해요. ㉠, ㉣도 옳은 설명인데 빠졌어요. 제목만 보지 않고 본문 전체를 끝까지 읽는 것은 올바른 확인 방법이에요. 혼자 확인하기 어려우면 공공 기관이나 관련 연구소의 도움을 받는 것은 올바른 방법이에요.",
+    "㉡은(는) 옳지 않은 설명이에요. 의사 사진이 있다고 해서 별도 확인 없이 믿으면 안 돼요. 믿을 만한 정보인지 따져 봐야 해요. ㉣도 옳은 설명인데 빠졌어요. 혼자 확인하기 어려우면 공공 기관이나 관련 연구소의 도움을 받는 것은 올바른 방법이에요.",
+    "㉡은(는) 옳지 않은 설명이에요. 의사 사진이 있다고 해서 별도 확인 없이 믿으면 안 돼요. 믿을 만한 정보인지 따져 봐야 해요. ㉠도 옳은 설명인데 빠졌어요. 제목만 보지 않고 본문 전체를 끝까지 읽는 것은 올바른 확인 방법이에요."
+   ],
+   "detail": "미디어 속 정보를 확인하는 방법에는 이야기 전체를 읽기, 같은 정보를 다룬 다른 자료 비교하기, 스스로 조사하기, 왜곡 여부 검증하기가 있어요. 사실 확인을 혼자 하기 어려우면 공공 기관이나 언론 관련 연구소의 도움을 받을 수 있어요. ㉠, ㉢, ㉣은 이런 방법에 해당해요. ㉡은 의사 사진만 보고 확인 없이 믿는 행동이므로 올바르지 않아요.",
+   "tip": "읽기·비교·조사·검증, 어려우면 기관의 도움.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "미디어 속 정보 이렇게 확인하자",
+     "head": [
+      "순서",
+      "확인 방법"
+     ],
+     "rows": [
+      [
+       "1",
+       "제목과 사진만 보지 말고 이야기 전체를 자세히 읽어 본다"
+      ],
+      [
+       "2",
+       "같은 정보를 다룬 다른 미디어의 자료를 찾아본다"
+      ],
+      [
+       "3",
+       "믿을 만한 정보인지 스스로 조사해 본다"
+      ],
+      [
+       "4",
+       "사진과 영상이 왜곡되지는 않았는지 검증해 본다"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "혼자 확인하기 어려울 때",
+     "text": "사실 확인을 혼자 하기 어려우면 여러 공공 기관이나 언론 관련 연구소의 도움을 받을 수 있어요. 사실 여부를 확인한 뒤에 다른 사람과 공유하는 것이 바람직해요."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "보기",
+   "passage": "〈보기〉\n㉠ 제목만 보지 않고 본문 전체를 끝까지 읽는다.\n㉡ 게시물에 의사 사진이 있으니 별도 확인 없이 믿는다.\n㉢ 같은 정보를 다룬 다른 미디어의 자료를 찾아 비교한다.\n㉣ 혼자 확인하기 어려우면 공공 기관이나 관련 연구소의 도움을 받는다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 212' width='420' height='212' font-family='sans-serif'><rect width='420' height='212' fill='#fff'/><rect x='3' y='3' width='414' height='205' rx='10' fill='#fff' stroke='#8a96a6' stroke-width='1.5'/><circle cx='30' cy='26' r='15' fill='#cfd8e3'/><text x='54' y='31' font-size='13' text-anchor='start' fill='#222' font-weight='bold'>건강 정보 계정</text><text x='20' y='66' font-size='14' text-anchor='start' fill='#222' font-weight='bold'>먹기만 해도 눈이 좋아지는 과일! 의사 선생님도 추천!</text><rect x='20' y='82' width='380' height='88' fill='#eef1f5' stroke='#b9c2cf'/><polygon points='176.0,140 202.0,104 228.0,140' fill='#c3ccd8'/><polygon points='206.0,140 232.0,116 256.0,140' fill='#d4dbe5'/><text x='210.0' y='162' font-size='11' text-anchor='middle' fill='#555' font-weight='normal'>(의사 사진)</text><text x='20' y='192' font-size='12' text-anchor='start' fill='#555' font-weight='normal'>좋아요 5.6천 · 댓글 902 · 공유 3.2천</text></svg>",
+    "caption": "SNS 게시물(모식 자료)"
+   }
+  },
+  {
+   "id": "u8-Q12-a",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "광고의 성격",
+   "source": "교과서 p.153",
+   "question": "다음 광고 장면을 보고 학생들이 나눈 대화 중 옳지 않은 것은?",
+   "choices": [
+    "가온: 선수가 직접 말하니 더 믿음이 가. 사람들은 유명인의 말을 더 쉽게 신뢰해서 광고에 쓰는 것 같아.",
+    "나래: 가격과 살 곳을 알려 주는 것은 정보 전달이고, 사고 싶게 만드는 말은 설득이야.",
+    "다온: 이 운동화 회사는 광고로 상품의 판매를 늘리려는 목적이 있을 거야.",
+    "라희: 광고에는 설득하려는 요소가 들어 있지 않으니 선수의 말은 모두 사실로 받아들여도 돼.",
+    "마루: 이런 광고는 미디어 속 문화가 상업적 성격을 띠게 만들기도 해."
+   ],
+   "answer": 4,
+   "explanation": "광고는 설득 요소를 포함하므로 광고 속 말을 모두 사실로 받아들여도 된다는 발언은 옳지 않다.",
+   "choiceExplanations": [
+    "유명인을 모델로 쓰는 까닭을 바르게 말한 옳은 발언이에요.",
+    "광고는 정보와 설득 두 요소로 이루어진다는 점을 바르게 말한 옳은 발언이에요.",
+    "광고를 만든 기업의 목적을 바르게 짐작한 옳은 발언이에요.",
+    "정답. 광고는 설득 요소를 포함하므로 광고 속 말을 모두 사실로 받아들여도 된다는 발언은 옳지 않다.",
+    "광고 과정에서 상업적 성격의 문화가 만들어질 수 있다는 옳은 발언이에요."
+   ],
+   "detail": "광고는 정보와 설득 두 요소로 이루어져 있어요. 장면에서 선수는 기록이 좋아졌다고 말하며 운동화를 소개하고, 화면 끝에는 가격과 살 곳이 나와요. 가격과 살 곳은 정보이고, 선수의 말은 사고 싶게 만드는 설득이에요. 따라서 설득 요소가 없다는 라희의 말은 틀렸고, 광고를 볼 때는 비판적으로 살펴야 해요.",
+   "tip": "광고 = 정보 + 설득. 광고 속 말은 비판적으로 본다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "광고의 두 요소",
+     "text": "광고는 크게 정보와 설득 두 요소로 이루어져요. 유명인이나 전문가를 광고 모델로 쓰는 것은 사람들이 이들의 말을 더 쉽게 신뢰하는 경향이 있기 때문이에요. 미디어는 기업이 소유하는 경우가 많아 문화 콘텐츠가 상품의 성격을 지니기도 해요."
+    }
+   ],
+   "passageTitle": "광고 장면",
+   "passage": "인기 있는 육상 선수가 새 운동화를 신고 트랙을 달리며 '가벼워서 기록이 좋아졌어요.'라고 말한다. 장면의 마지막에는 운동화의 가격과 살 수 있는 곳이 화면에 나온다."
+  },
+  {
+   "id": "u8-Q12-b",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "광고의 성격",
+   "source": "교과서 p.153, p.161",
+   "question": "다음 드라마 장면을 보고 학생들이 나눈 대화 중 옳지 않은 것은?",
+   "choices": [
+    "지호: 상표를 크게 보여 주는 것은 정보를 알리면서 사고 싶게 설득하려는 것일 수 있어.",
+    "소율: 기업은 이런 장면으로 상품을 알려 판매를 늘리려는 목적이 있을 거야.",
+    "태오: 미디어는 기업이 소유하는 경우가 많아서 문화 콘텐츠가 상품의 성격을 지니기도 해.",
+    "은서: 인기 배우가 마시면 시청자들이 더 쉽게 믿는 경향이 있어서 광고 효과가 커질 수 있어.",
+    "나윤: 드라마는 꾸며 낸 이야기이므로 상표가 나오더라도 상업적인 목적은 있을 수 없어."
+   ],
+   "answer": 5,
+   "explanation": "드라마 속에 등장해도 광고 효과를 노린 상업적 목적이 있을 수 있으므로 상업적 목적이 있을 수 없다는 발언은 옳지 않다.",
+   "choiceExplanations": [
+    "광고에는 정보와 설득이 함께 들어 있다는 점을 바르게 말한 옳은 발언이에요.",
+    "광고를 만든 기업의 목적을 바르게 짐작한 옳은 발언이에요. 지문에서 상표가 이야기와 관계없이 확대되어 보인다는 점이 근거예요.",
+    "미디어를 기업이 소유하는 경우가 많아 콘텐츠가 상품의 성격을 지닌다는 옳은 발언이에요.",
+    "사람들이 유명인의 말이나 행동을 더 쉽게 신뢰한다는 점을 바르게 말한 옳은 발언이에요.",
+    "정답. 드라마 속에 등장해도 광고 효과를 노린 상업적 목적이 있을 수 있으므로 상업적 목적이 있을 수 없다는 발언은 옳지 않다."
+   ],
+   "detail": "장면에서 인기 배우가 연기하는 주인공이 특정 상표의 음료를 마시고, 카메라가 상표를 한참 확대해 보여 줘요. 이 상표는 이야기 전개와 관계가 없어요. 이야기와 무관하게 상표를 보여 주는 것은 기업의 홍보와 연결될 수 있고, 미디어 속 문화 콘텐츠가 광고 과정에서 상업적 성격을 띠게 되는 사례예요. 따라서 상업적 목적이 있을 수 없다는 나윤이의 말이 옳지 않아요.",
+   "tip": "꾸며 낸 이야기여도 상표 노출은 상업적 목적일 수 있다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "광고의 두 요소",
+     "text": "광고는 크게 정보와 설득 두 요소로 이루어져요. 유명인이나 전문가를 광고 모델로 쓰는 것은 사람들이 이들의 말을 더 쉽게 신뢰하는 경향이 있기 때문이에요. 미디어는 기업이 소유하는 경우가 많아 문화 콘텐츠가 상품의 성격을 지니기도 해요."
+    }
+   ],
+   "passageTitle": "드라마 장면",
+   "passage": "인기 배우가 연기하는 드라마 속 주인공이 친구와 이야기하며 특정 상표의 음료를 마신다. 카메라는 음료의 상표를 한참 확대해서 보여 주는데, 이 상표는 이야기의 전개와는 관계가 없다."
+  },
+  {
+   "id": "u8-Q13-a",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "문화의 다양성",
+   "source": "교과서 p.157",
+   "question": "다음 사례에서 두 마을의 의식주가 서로 다른 모습으로 나타난 까닭으로 가장 적절한 것은?",
+   "choices": [
+    "어느 한쪽 마을의 문화가 더 우수해서 다른 마을이 따라 하지 못했기 때문이다.",
+    "마을마다 사람들이 타고난 유전적 본능이 서로 다르기 때문이다.",
+    "사람들이 처한 환경과 상황에 적응해 생활 방식을 만들었기 때문이다.",
+    "두 마을 모두 한번 정한 생활 방식을 바꾸지 않고 지켜 왔기 때문이다.",
+    "구성원 개개인이 저마다 다른 버릇을 가지고 있기 때문이다."
+   ],
+   "answer": 3,
+   "explanation": "호숫가와 산악 지대라는 서로 다른 환경에 적응하며 주식과 집을 다르게 만들었기 때문이다.",
+   "choiceExplanations": [
+    "사례에는 한쪽 문화가 더 우수하다는 내용이 없어요. 문화의 차이는 우열이 아니라 환경과 상황에서 비롯돼요.",
+    "사례에는 두 마을 사람들이 타고난 특성이 다르다는 내용이 없어요. 차이는 사는 환경과 상황에서 비롯돼요.",
+    "정답. 호숫가와 산악 지대라는 서로 다른 환경에 적응하며 주식과 집을 다르게 만들었기 때문이다.",
+    "생활 방식을 바꾸지 않는다는 내용은 사례에 없고, 차이가 생긴 까닭을 설명하지도 못해요.",
+    "사례에는 개인마다 다른 습관을 말하는 내용이 없어요. 사례는 각 마을이 집단으로 이어 온 생활 방식의 차이를 다뤄요."
+   ],
+   "detail": "호숫가 마을은 물고기를 주식으로 하고 물 위에 집을 지으며, 산악 마을은 감자와 양고기를 먹고 돌집을 지어요. 두 마을은 서로 다른 환경에 놓여 있어서 그 환경에 적응하며 독특한 생활 방식을 만들어 왔어요. 의식주 같은 문화의 모든 요소가 사회나 집단마다 다르게 나타나는 까닭은 처한 환경과 상황이 다르기 때문이에요.",
+   "tip": "문화가 다른 까닭 = 처한 환경·상황에 대한 적응.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "문화가 다양한 까닭",
+     "text": "인간은 자신이 처한 환경과 상황에 적응하면서 독특한 생활 방식과 가치관을 형성해 왔어요. 그래서 의식주, 언어, 법과 관습, 제도 등 문화를 이루는 모든 요소가 사회나 집단마다 다른 모습으로 나타나요."
+    }
+   ],
+   "passageTitle": "사례",
+   "passage": "호숫가 마을 사람들은 물고기를 잡아 주식으로 삼고, 물 위에 기둥을 세워 집을 짓는다. 높은 산악 지대의 마을 사람들은 감자와 양고기를 주식으로 삼고, 돌을 쌓아 집을 짓는다."
+  },
+  {
+   "id": "u8-Q13-b",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "문화의 다양성",
+   "source": "교과서 p.157",
+   "question": "다음 사례에서 두 지방의 의식주가 서로 다른 모습으로 나타난 까닭으로 가장 적절한 것은?",
+   "choices": [
+    "더운 지방 사람들이 추운 지방 사람들보다 문화 수준이 높기 때문이다.",
+    "지방마다 기후 같은 환경에 적응하며 생활 방식을 만들었기 때문이다.",
+    "지방마다 사람들이 타고난 본능에 따라 옷과 집을 정하기 때문이다.",
+    "두 지방 모두 외부의 생활 방식을 전혀 받아들이지 않기 때문이다.",
+    "지방마다 한 사람이 정한 생활 방식을 모두가 따르기 때문이다."
+   ],
+   "answer": 2,
+   "explanation": "추운 지방과 더운 지방이라는 다른 환경에 적응하며 옷과 집을 다르게 만들었기 때문이다.",
+   "choiceExplanations": [
+    "사례에는 한쪽 문화가 더 높다는 내용이 없어요. 차이는 우열이 아니라 환경에서 비롯돼요.",
+    "정답. 추운 지방과 더운 지방이라는 다른 환경에 적응하며 옷과 집을 다르게 만들었기 때문이다.",
+    "사례에는 타고난 본능에 관한 내용이 없고 두 지방의 의식주가 기후에 따라 달라진 모습만 나와요.",
+    "외부와의 교류 여부는 사례에 나오지 않고, 의식주가 달라진 까닭도 설명하지 못해요.",
+    "사례에는 한 사람이 정했다는 내용이 없어요."
+   ],
+   "detail": "추운 지방 사람들은 두꺼운 털옷을 입고 난방 시설이 있는 집에서 살고, 더운 지방 사람들은 얇고 바람이 잘 통하는 옷을 입고 넓은 처마가 있는 집에서 살아요. 각자 처한 기후 환경에 맞춰 살아가는 방법을 찾은 결과예요. 문화를 이루는 요소가 지역과 집단마다 다른 까닭은 환경과 상황에 적응하는 방식이 달랐기 때문이에요.",
+   "tip": "의식주가 지방마다 다른 까닭 = 환경에 적응.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "문화가 다양한 까닭",
+     "text": "인간은 자신이 처한 환경과 상황에 적응하면서 독특한 생활 방식과 가치관을 형성해 왔어요. 그래서 의식주, 언어, 법과 관습, 제도 등 문화를 이루는 모든 요소가 사회나 집단마다 다른 모습으로 나타나요."
+    }
+   ],
+   "passageTitle": "사례",
+   "passage": "일 년 내내 눈이 쌓이는 추운 지방의 마을 사람들은 두꺼운 털옷을 입고 난방 시설이 있는 집에서 산다. 일 년 내내 더운 지방의 마을 사람들은 얇고 바람이 잘 통하는 옷을 입고, 그늘을 만드는 넓은 처마가 있는 집에서 산다."
+  },
+  {
+   "id": "u8-Q14-a",
+   "slot": "Q14",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "문화를 이해하는 태도 구분",
+   "source": "교과서 p.158",
+   "question": "그림의 (가)~(다) 발언에 나타난 문화를 대하는 태도를 바르게 연결한 것은?",
+   "choices": [
+    "(가) 자문화 중심주의 (나) 문화 사대주의 (다) 문화 상대주의",
+    "(가) 자문화 중심주의 (나) 문화 상대주의 (다) 문화 사대주의",
+    "(가) 문화 사대주의 (나) 자문화 중심주의 (다) 문화 상대주의",
+    "(가) 문화 상대주의 (나) 자문화 중심주의 (다) 문화 사대주의",
+    "(가) 문화 사대주의 (나) 문화 상대주의 (다) 자문화 중심주의"
+   ],
+   "answer": 1,
+   "explanation": "(가)는 자문화 중심주의, (나)는 문화 사대주의, (다)는 문화 상대주의의 태도이다.",
+   "choiceExplanations": [
+    "정답. (가)는 자문화 중심주의, (나)는 문화 사대주의, (다)는 문화 상대주의의 태도이다.",
+    "(나)를 문화 상대주의로 연결했지만 (나)는 외국 것은 훌륭하고 우리 전통 음악은 촌스럽다고 보므로 문화 사대주의예요. (다)를 문화 사대주의로 연결했지만 (다)는 그 나라의 기후와 생활 환경 속에서 이유를 알아보려 하므로 문화 상대주의예요.",
+    "(가)를 문화 사대주의로 연결했지만 (가)는 자기 지역의 음식만 훌륭하고 다른 나라 음식은 수준이 낮다고 보므로 자문화 중심주의예요. (나)를 자문화 중심주의로 연결했지만 (나)는 외국 것은 훌륭하고 우리 전통 음악은 촌스럽다고 보므로 문화 사대주의예요.",
+    "(가)를 문화 상대주의로 연결했지만 (가)는 자기 지역의 음식만 훌륭하고 다른 나라 음식은 수준이 낮다고 보므로 자문화 중심주의예요. (나)를 자문화 중심주의로 연결했지만 (나)는 외국 것은 훌륭하고 우리 전통 음악은 촌스럽다고 보므로 문화 사대주의예요. (다)를 문화 사대주의로 연결했지만 (다)는 그 나라의 기후와 생활 환경 속에서 이유를 알아보려 하므로 문화 상대주의예요.",
+    "(가)를 문화 사대주의로 연결했지만 (가)는 자기 지역의 음식만 훌륭하고 다른 나라 음식은 수준이 낮다고 보므로 자문화 중심주의예요. (나)를 문화 상대주의로 연결했지만 (나)는 외국 것은 훌륭하고 우리 전통 음악은 촌스럽다고 보므로 문화 사대주의예요. (다)를 자문화 중심주의로 연결했지만 (다)는 그 나라의 기후와 생활 환경 속에서 이유를 알아보려 하므로 문화 상대주의예요."
+   ],
+   "detail": "(가)는 자기 문화만 우수하다고 보고 다른 문화는 낮게 평가해요. (나)는 외국 문화를 동경하고 자기 문화를 열등하게 여겨요. (다)는 낮잠 시간이 긴 것을 그 나라의 기후와 생활 환경 속에서 이해하려고 해요. 자기 문화의 우월을 내세우는지, 남의 문화를 따르며 자기 문화를 낮추는지, 환경과 맥락 속에서 이해하려는지를 비교해 보세요.",
+   "tip": "우리만 최고=자문화 중심, 남의 것이 최고=사대, 맥락 속 이해=상대.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "문화를 대하는 세 가지 태도",
+     "head": [
+      "태도",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "자문화 중심주의",
+       "자신의 문화만 우수하고 올바르며 다른 문화는 열등하고 잘못된 것으로 여김"
+      ],
+      [
+       "문화 사대주의",
+       "특정 문화를 우수하고 올바른 것으로 여겨 동경하거나 따르면서 자신의 문화를 열등하고 잘못된 것으로 여김"
+      ],
+      [
+       "문화 상대주의",
+       "문화의 상대성을 인정하고 그 사회의 환경과 사회적 맥락 속에서 문화를 이해하려는 태도"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 450 228' width='450' height='228' font-family='sans-serif'><rect width='450' height='228' fill='#fff'/><circle cx='30' cy='37.0' r='22' fill='#e8eff7' stroke='#5b7ea6' stroke-width='1.5'/><text x='30' y='42.0' font-size='14' text-anchor='middle' fill='#1f3b5c' font-weight='bold'>(가)</text><polygon points='58,37.0 74,30.0 74,44.0' fill='#fffbea' stroke='#c9a93c'/><rect x='73' y='6' width='371' height='62' rx='10' fill='#fffbea' stroke='#c9a93c' stroke-width='1.5'/><rect x='71' y='30.0' width='4' height='14' fill='#fffbea'/><text x='88' y='32.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>우리 동네 음식만 제대로 된 음식이야. 다른 나라</text><text x='88' y='51.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>음식은 이상하고 수준이 낮아서 먹을 가치가 없어.</text><circle cx='30' cy='111.0' r='22' fill='#e8eff7' stroke='#5b7ea6' stroke-width='1.5'/><text x='30' y='116.0' font-size='14' text-anchor='middle' fill='#1f3b5c' font-weight='bold'>(나)</text><polygon points='58,111.0 74,104.0 74,118.0' fill='#fffbea' stroke='#c9a93c'/><rect x='73' y='80' width='371' height='62' rx='10' fill='#fffbea' stroke='#c9a93c' stroke-width='1.5'/><rect x='71' y='104.0' width='4' height='14' fill='#fffbea'/><text x='88' y='106.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>외국 가수들이 하는 건 다 훌륭해 보여. 우리나라 전통</text><text x='88' y='125.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>음악은 촌스러워서 듣고 싶지 않아.</text><circle cx='30' cy='185.0' r='22' fill='#e8eff7' stroke='#5b7ea6' stroke-width='1.5'/><text x='30' y='190.0' font-size='14' text-anchor='middle' fill='#1f3b5c' font-weight='bold'>(다)</text><polygon points='58,185.0 74,178.0 74,192.0' fill='#fffbea' stroke='#c9a93c'/><rect x='73' y='154' width='371' height='62' rx='10' fill='#fffbea' stroke='#c9a93c' stroke-width='1.5'/><rect x='71' y='178.0' width='4' height='14' fill='#fffbea'/><text x='88' y='180.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>낮잠 시간이 긴 나라가 있대. 그 나라의 기후와 생활</text><text x='88' y='199.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>환경 속에서 어떤 이유가 있는지 먼저 알아보자.</text></svg>",
+    "caption": "학생들의 발언(모식 자료)"
+   }
+  },
+  {
+   "id": "u8-Q14-b",
+   "slot": "Q14",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "문화를 이해하는 태도 구분",
+   "source": "교과서 p.158",
+   "question": "그림에서 (가)~(다)가 보이는 문화에 대한 태도를 바르게 짝지은 것은?",
+   "choices": [
+    "(가) 자문화 중심주의 (나) 문화 사대주의 (다) 문화 상대주의",
+    "(가) 자문화 중심주의 (나) 문화 상대주의 (다) 문화 사대주의",
+    "(가) 문화 상대주의 (나) 자문화 중심주의 (다) 문화 사대주의",
+    "(가) 문화 사대주의 (나) 자문화 중심주의 (다) 문화 상대주의",
+    "(가) 문화 상대주의 (나) 문화 사대주의 (다) 자문화 중심주의"
+   ],
+   "answer": 4,
+   "explanation": "(가)는 문화 사대주의, (나)는 자문화 중심주의, (다)는 문화 상대주의의 태도이다.",
+   "choiceExplanations": [
+    "(가)를 자문화 중심주의로 연결했지만 (가)는 유럽에서 온 옷이면 무엇이든 멋지다고 보고 한복을 낡았다고 여기므로 문화 사대주의예요. (나)를 문화 사대주의로 연결했지만 (나)는 우리 마을의 풍습만 올바르고 이웃의 풍습은 틀렸다고 보므로 자문화 중심주의예요.",
+    "(가)를 자문화 중심주의로 연결했지만 (가)는 유럽에서 온 옷이면 무엇이든 멋지다고 보고 한복을 낡았다고 여기므로 문화 사대주의예요. (나)를 문화 상대주의로 연결했지만 (나)는 우리 마을의 풍습만 올바르고 이웃의 풍습은 틀렸다고 보므로 자문화 중심주의예요. (다)를 문화 사대주의로 연결했지만 (다)는 식사 전 기도를 그 사회의 종교와 생활 속에서 이해하려 하므로 문화 상대주의예요.",
+    "(가)를 문화 상대주의로 연결했지만 (가)는 유럽에서 온 옷이면 무엇이든 멋지다고 보고 한복을 낡았다고 여기므로 문화 사대주의예요. (다)를 문화 사대주의로 연결했지만 (다)는 식사 전 기도를 그 사회의 종교와 생활 속에서 이해하려 하므로 문화 상대주의예요.",
+    "정답. (가)는 문화 사대주의, (나)는 자문화 중심주의, (다)는 문화 상대주의의 태도이다.",
+    "(가)를 문화 상대주의로 연결했지만 (가)는 유럽에서 온 옷이면 무엇이든 멋지다고 보고 한복을 낡았다고 여기므로 문화 사대주의예요. (나)를 문화 사대주의로 연결했지만 (나)는 우리 마을의 풍습만 올바르고 이웃의 풍습은 틀렸다고 보므로 자문화 중심주의예요. (다)를 자문화 중심주의로 연결했지만 (다)는 식사 전 기도를 그 사회의 종교와 생활 속에서 이해하려 하므로 문화 상대주의예요."
+   ],
+   "detail": "(가)는 외국 옷을 동경하며 자기 나라의 한복을 열등하게 여겨요. (나)는 자기 마을의 풍습만 올바르다고 보고 이웃의 다른 풍습을 고치라고 해요. (다)는 식사 전 기도를 그 사회의 종교와 생활 속에서 이해하려 해요. 같은 '무시'처럼 보여도 무시하는 대상이 자기 문화인지 남의 문화인지 구별하면 사대주의와 자문화 중심주의가 갈려요.",
+   "tip": "자기 문화를 낮춤=사대, 남의 문화를 낮춤=자문화 중심.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "문화를 대하는 세 가지 태도",
+     "head": [
+      "태도",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "자문화 중심주의",
+       "자신의 문화만 우수하고 올바르며 다른 문화는 열등하고 잘못된 것으로 여김"
+      ],
+      [
+       "문화 사대주의",
+       "특정 문화를 우수하고 올바른 것으로 여겨 동경하거나 따르면서 자신의 문화를 열등하고 잘못된 것으로 여김"
+      ],
+      [
+       "문화 상대주의",
+       "문화의 상대성을 인정하고 그 사회의 환경과 사회적 맥락 속에서 문화를 이해하려는 태도"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 450 247' width='450' height='247' font-family='sans-serif'><rect width='450' height='247' fill='#fff'/><circle cx='30' cy='37.0' r='22' fill='#e8eff7' stroke='#5b7ea6' stroke-width='1.5'/><text x='30' y='42.0' font-size='14' text-anchor='middle' fill='#1f3b5c' font-weight='bold'>(가)</text><polygon points='58,37.0 74,30.0 74,44.0' fill='#fffbea' stroke='#c9a93c'/><rect x='73' y='6' width='371' height='62' rx='10' fill='#fffbea' stroke='#c9a93c' stroke-width='1.5'/><rect x='71' y='30.0' width='4' height='14' fill='#fffbea'/><text x='88' y='32.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>유럽에서 온 옷이면 무엇이든 멋져 보여. 우리 한복은</text><text x='88' y='51.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>낡고 뒤떨어진 옷이라 입기 싫어.</text><circle cx='30' cy='111.0' r='22' fill='#e8eff7' stroke='#5b7ea6' stroke-width='1.5'/><text x='30' y='116.0' font-size='14' text-anchor='middle' fill='#1f3b5c' font-weight='bold'>(나)</text><polygon points='58,111.0 74,104.0 74,118.0' fill='#fffbea' stroke='#c9a93c'/><rect x='73' y='80' width='371' height='62' rx='10' fill='#fffbea' stroke='#c9a93c' stroke-width='1.5'/><rect x='71' y='104.0' width='4' height='14' fill='#fffbea'/><text x='88' y='106.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>우리 마을의 명절 풍습만 올바른 거야. 이사 온 이웃이</text><text x='88' y='125.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>지키는 다른 풍습은 틀렸으니 고치라고 해야 해.</text><circle cx='30' cy='194.5' r='22' fill='#e8eff7' stroke='#5b7ea6' stroke-width='1.5'/><text x='30' y='199.5' font-size='14' text-anchor='middle' fill='#1f3b5c' font-weight='bold'>(다)</text><polygon points='58,194.5 74,187.5 74,201.5' fill='#fffbea' stroke='#c9a93c'/><rect x='73' y='154' width='371' height='81' rx='10' fill='#fffbea' stroke='#c9a93c' stroke-width='1.5'/><rect x='71' y='187.5' width='4' height='14' fill='#fffbea'/><text x='88' y='180.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>이 나라 사람들은 식사 전에 기도를 한대. 그 사회의</text><text x='88' y='199.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>종교와 생활 속에서 어떤 뜻이 있는지 알아본 뒤에</text><text x='88' y='218.8' font-size='13' text-anchor='start' fill='#222' font-weight='normal'>이해하자.</text></svg>",
+    "caption": "학생들의 발언(모식 자료)"
+   }
+  },
+  {
+   "id": "u8-Q15-a",
+   "slot": "Q15",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "문화 이해 태도의 영향",
+   "source": "교과서 p.158",
+   "question": "문화를 대하는 태도의 영향에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉢",
+    "㉡, ㉣",
+    "㉠, ㉡, ㉢",
+    "㉡, ㉢, ㉣",
+    "㉠, ㉡"
+   ],
+   "answer": 5,
+   "explanation": "자문화 중심주의는 결속력을 강화할 수 있고(㉠), 문화 사대주의는 주체성을 잃게 할 수 있으므로(㉡) 옳은 것은 ㉠, ㉡이다.",
+   "choiceExplanations": [
+    "㉢은(는) 옳지 않은 설명이에요. 다른 문화의 장점을 쉽게 받아들여 자기 문화 발전에 도움이 되는 것은 자문화 중심주의가 아니라 문화 사대주의의 영향이에요. ㉡도 옳은 설명인데 빠졌어요. 문화 사대주의는 문화의 주체성을 잃게 만들 수 있어요.",
+    "㉣은(는) 옳지 않은 설명이에요. 편견으로 다른 문화권 사람들을 차별하고 무시해 갈등을 빚는 것은 문화 상대주의가 아니라 자문화 중심주의의 문제예요. ㉠도 옳은 설명인데 빠졌어요. 자문화 중심주의는 자기 문화에 대한 자부심을 키우고 구성원의 결속력을 강화해 사회 통합에 도움이 될 수 있어요.",
+    "㉢은(는) 옳지 않은 설명이에요. 다른 문화의 장점을 쉽게 받아들여 자기 문화 발전에 도움이 되는 것은 자문화 중심주의가 아니라 문화 사대주의의 영향이에요.",
+    "㉢, ㉣은(는) 옳지 않은 설명이에요. 다른 문화의 장점을 쉽게 받아들여 자기 문화 발전에 도움이 되는 것은 자문화 중심주의가 아니라 문화 사대주의의 영향이에요. 편견으로 다른 문화권 사람들을 차별하고 무시해 갈등을 빚는 것은 문화 상대주의가 아니라 자문화 중심주의의 문제예요. ㉠도 옳은 설명인데 빠졌어요. 자문화 중심주의는 자기 문화에 대한 자부심을 키우고 구성원의 결속력을 강화해 사회 통합에 도움이 될 수 있어요.",
+    "정답. 자문화 중심주의는 결속력을 강화할 수 있고(㉠), 문화 사대주의는 주체성을 잃게 할 수 있으므로(㉡) 옳은 것은 ㉠, ㉡이다."
+   ],
+   "detail": "태도마다 도움이 되는 점과 문제가 되는 점이 달라요. 자문화 중심주의는 자부심과 결속력을 높이지만 편견으로 갈등을 빚을 수 있어요. 문화 사대주의는 다른 문화의 장점을 받아들여 발전에 도움이 되지만 주체성을 잃거나 고유문화가 사라질 수 있어요. ㉢은 두 태도의 효과를 서로 바꿔 말했고, ㉣은 문제가 되는 점을 다른 태도에 붙였어요.",
+   "tip": "각 태도의 장단점을 주체(자문화 중심/사대)별로 짝지어 기억.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "태도별 영향",
+     "head": [
+      "태도",
+      "도움이 되는 점",
+      "문제가 되는 점"
+     ],
+     "rows": [
+      [
+       "자문화 중심주의",
+       "자기 문화에 대한 자부심, 구성원의 결속력 강화, 사회 통합",
+       "편견으로 다른 문화권 사람을 차별하고 무시해 갈등을 빚음"
+      ],
+      [
+       "문화 사대주의",
+       "다른 문화의 장점을 쉽게 받아들여 자기 문화 발전에 도움",
+       "주체성을 잃거나 고유문화가 사라짐"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "보기",
+   "passage": "〈보기〉\n㉠ 자문화 중심주의는 구성원의 결속력을 강화하여 사회 통합에 도움이 될 수 있다.\n㉡ 문화 사대주의는 문화의 주체성을 잃게 할 수 있다.\n㉢ 자문화 중심주의는 다른 문화의 장점을 쉽게 받아들여 자기 문화를 발전시키는 데 도움이 된다.\n㉣ 문화 상대주의는 편견으로 다른 문화권 사람들을 차별하여 갈등을 빚게 할 수 있다."
+  },
+  {
+   "id": "u8-Q15-b",
+   "slot": "Q15",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "문화 이해 태도의 영향",
+   "source": "교과서 p.158",
+   "question": "문화를 대하는 태도의 영향에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉡",
+    "㉠, ㉣",
+    "㉡, ㉣",
+    "㉠, ㉢, ㉣",
+    "㉡, ㉢, ㉣"
+   ],
+   "answer": 3,
+   "explanation": "자문화 중심주의는 자부심을 키울 수 있고(㉡), 문화 사대주의는 고유문화를 사라지게 만들 수 있으므로(㉣) 옳은 것은 ㉡, ㉣이다.",
+   "choiceExplanations": [
+    "㉠은(는) 옳지 않은 설명이에요. 구성원의 결속력을 강화해 사회 통합에 도움이 되는 것은 문화 사대주의가 아니라 자문화 중심주의의 영향이에요. ㉣도 옳은 설명인데 빠졌어요. 문화 사대주의는 고유문화를 사라지게 만들 수 있어요.",
+    "㉠은(는) 옳지 않은 설명이에요. 구성원의 결속력을 강화해 사회 통합에 도움이 되는 것은 문화 사대주의가 아니라 자문화 중심주의의 영향이에요. ㉡도 옳은 설명인데 빠졌어요. 자문화 중심주의는 자기 문화에 대한 자부심을 키울 수 있어요.",
+    "정답. 자문화 중심주의는 자부심을 키울 수 있고(㉡), 문화 사대주의는 고유문화를 사라지게 만들 수 있으므로(㉣) 옳은 것은 ㉡, ㉣이다.",
+    "㉠, ㉢은(는) 옳지 않은 설명이에요. 구성원의 결속력을 강화해 사회 통합에 도움이 되는 것은 문화 사대주의가 아니라 자문화 중심주의의 영향이에요. 문화의 주체성을 잃는 것은 자문화 중심주의가 아니라 문화 사대주의의 문제예요. ㉡도 옳은 설명인데 빠졌어요. 자문화 중심주의는 자기 문화에 대한 자부심을 키울 수 있어요.",
+    "㉢은(는) 옳지 않은 설명이에요. 문화의 주체성을 잃는 것은 자문화 중심주의가 아니라 문화 사대주의의 문제예요."
+   ],
+   "detail": "자문화 중심주의의 도움이 되는 점은 자부심과 결속력이고, 문제가 되는 점은 편견과 갈등이에요. 문화 사대주의의 도움이 되는 점은 다른 문화의 장점을 받아들이는 것이고, 문제가 되는 점은 주체성 상실과 고유문화의 소멸이에요. ㉡은 자문화 중심주의의 도움이 되는 점, ㉣은 문화 사대주의의 문제점이어서 옳아요. ㉠과 ㉢은 주체를 바꾸어 말한 오답이에요.",
+   "tip": "자부심·결속=자문화 중심, 주체성 상실·고유문화 소멸=사대.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "태도별 영향",
+     "head": [
+      "태도",
+      "도움이 되는 점",
+      "문제가 되는 점"
+     ],
+     "rows": [
+      [
+       "자문화 중심주의",
+       "자기 문화에 대한 자부심, 구성원의 결속력 강화, 사회 통합",
+       "편견으로 다른 문화권 사람을 차별하고 무시해 갈등을 빚음"
+      ],
+      [
+       "문화 사대주의",
+       "다른 문화의 장점을 쉽게 받아들여 자기 문화 발전에 도움",
+       "주체성을 잃거나 고유문화가 사라짐"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "보기",
+   "passage": "〈보기〉\n㉠ 문화 사대주의는 구성원의 결속력을 강화하여 사회 통합에 도움이 된다.\n㉡ 자문화 중심주의는 자기 문화에 대한 자부심을 키울 수 있다.\n㉢ 자문화 중심주의는 문화의 주체성을 잃게 한다.\n㉣ 문화 사대주의는 고유문화를 사라지게 만들 수 있다."
+  },
+  {
+   "id": "u8-Q16-a",
+   "slot": "Q16",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "문화 상대주의",
+   "source": "교과서 p.158",
+   "question": "다음은 문화 상대주의에 대해 학생들이 나눈 대화이다. 옳지 않은 것은?",
+   "choices": [
+    "지후: 문화의 상대성을 인정하는 태도야.",
+    "서아: 자기 기준으로 다른 문화를 평가해 열등한 문화는 바로잡아야 한다고 봐.",
+    "도현: 다른 사회의 문화를 제대로 이해할 수 있도록 도와주는 태도야.",
+    "하은: 문화를 있는 그대로 존중하므로 문화의 다양성을 보존하는 데 도움이 돼.",
+    "민준: 같은 문화의 가치도 지역이나 시대에 따라 다르게 인식될 수 있다고 봐."
+   ],
+   "answer": 2,
+   "explanation": "서아의 말처럼 자기 기준으로 다른 문화를 열등하다고 평가해 바로잡으려는 것은 자문화 중심주의의 태도이고, 문화 상대주의의 설명이 아니다.",
+   "choiceExplanations": [
+    "문화 상대주의가 문화의 상대성을 인정하는 태도라는 옳은 발언이에요.",
+    "정답. 서아의 말처럼 자기 기준으로 다른 문화를 열등하다고 평가해 바로잡으려는 것은 자문화 중심주의의 태도이고, 문화 상대주의의 설명이 아니다.",
+    "문화 상대주의의 효과를 바르게 말한 옳은 발언이에요.",
+    "문화를 있는 그대로 존중해 다양성을 보존한다는 옳은 발언이에요.",
+    "문화의 가치가 지역과 시대에 따라 다르게 인식되는 상대성을 바르게 설명한 옳은 발언이에요."
+   ],
+   "detail": "문화 상대주의는 문화의 상대성을 인정하는 태도예요. 그래서 다른 사회의 문화를 제대로 이해하게 하고, 문화를 있는 그대로 존중해 다양성을 보존하도록 도와요. 지후·도현·하은·민준의 말은 모두 이런 내용이에요. 서아의 말은 자기 기준으로 다른 문화를 열등하다고 평가하므로 자문화 중심주의의 태도에 해당해요.",
+   "tip": "상대주의 = 상대성 인정, 이해·존중·다양성 보존.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "문화 상대주의",
+     "text": "문화의 가치는 지역이나 시대에 따라 다르게 인식될 수 있는데, 이를 문화의 상대성이라고 해요. 이 상대성을 인정하는 태도가 문화 상대주의예요. 다른 사회의 문화를 제대로 이해할 수 있게 하고, 문화를 있는 그대로 존중해 문화의 다양성을 보존하도록 도와요."
+    }
+   ]
+  },
+  {
+   "id": "u8-Q16-b",
+   "slot": "Q16",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "문화 상대주의",
+   "source": "교과서 p.158",
+   "question": "다음은 문화 상대주의를 정리하는 수업 시간의 학생 발언이다. 옳지 않은 것은?",
+   "choices": [
+    "다율: 다른 사회의 문화는 우수하고 자기 문화는 열등하다고 여기는 태도야.",
+    "이안: 문화가 지닌 상대성을 인정하고 받아들이는 태도야.",
+    "채원: 문화를 있는 그대로 존중해서 문화의 다양성을 지키는 데 도움을 줘.",
+    "유찬: 서로 다른 사회의 문화를 제대로 이해하도록 도와주는 태도야.",
+    "소민: 같은 문화라도 지역이나 시대가 다르면 가치를 다르게 인식할 수 있다고 봐."
+   ],
+   "answer": 1,
+   "explanation": "다율의 말처럼 다른 문화를 우수하다고 여기며 자기 문화를 열등하게 보는 것은 문화 사대주의의 태도이고, 문화 상대주의의 설명이 아니다.",
+   "choiceExplanations": [
+    "정답. 다율의 말처럼 다른 문화를 우수하다고 여기며 자기 문화를 열등하게 보는 것은 문화 사대주의의 태도이고, 문화 상대주의의 설명이 아니다.",
+    "문화 상대주의가 문화의 상대성을 인정하는 태도라는 옳은 발언이에요.",
+    "문화를 있는 그대로 존중해 다양성을 보존한다는 옳은 발언이에요.",
+    "문화 상대주의의 효과를 바르게 말한 옳은 발언이에요.",
+    "문화의 상대성을 바르게 설명한 옳은 발언이에요."
+   ],
+   "detail": "문화 상대주의는 문화의 상대성을 인정하는 태도로, 문화를 있는 그대로 존중하고 다른 사회의 문화를 제대로 이해하게 하며 다양성을 지키는 데 도움을 줘요. 이안·채원·유찬·소민의 말은 모두 이런 내용이에요. 다율의 말은 다른 문화를 높이고 자기 문화를 낮추므로 문화 사대주의의 태도에 해당해요. 어느 문화도 우열로 가르지 않는다는 점이 상대주의의 기본이에요.",
+   "tip": "상대주의는 우열로 가르지 않고 상대성을 인정.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "문화 상대주의",
+     "text": "문화의 가치는 지역이나 시대에 따라 다르게 인식될 수 있는데, 이를 문화의 상대성이라고 해요. 이 상대성을 인정하는 태도가 문화 상대주의예요. 다른 사회의 문화를 제대로 이해할 수 있게 하고, 문화를 있는 그대로 존중해 문화의 다양성을 보존하도록 도와요."
+    }
+   ]
+  },
+  {
+   "id": "u8-S01-a",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "문화 상대주의의 한계",
+   "source": "교과서 p.158, p.161",
+   "question": "다음 사례의 풍습을 문화 상대주의의 관점에서 인정하기 어려운 까닭을 서술하시오.",
+   "answerHint": "(단, 문화 상대주의가 어떤 태도인지 한 문장, 이 풍습을 인정하기 어려운 까닭 한 문장으로 쓰고, '존엄성'을 사용할 것.)",
+   "modelAnswer": "문화 상대주의는 문화의 상대성을 인정하고 그 사회의 환경과 맥락 속에서 문화를 이해하려는 태도이다. 그러나 이 풍습은 아이들의 건강과 배울 기회를 빼앗아 인간의 생명과 존엄성 같은 인류의 보편적 가치를 무시하므로 인정하기 어렵다.",
+   "explanation": "모범 답안: 문화 상대주의는 문화의 상대성을 인정하고 그 사회의 환경과 맥락 속에서 문화를 이해하려는 태도이다. 그러나 이 풍습은 아이들의 건강과 배울 기회를 빼앗아 인간의 생명과 존엄성 같은 인류의 보편적 가치를 무시하므로 인정하기 어렵다. (근거: 교과서 p.158(인간의 생명과 존엄성 등 인류의 보편적 가치를 무시하는 관습은 인정하지 않음). 인정 표현은 내용 항목에만 적용: '인간의 존엄성을 해친다', '인권(생명)을 침해한다', '배울 권리를 빼앗는다'도 인정(조건 낱말 항목은 '존엄성'이라는 낱말 자체가 있어야 함))",
+   "rubric": [
+    {
+     "criterion": "문화 상대주의가 그 사회의 환경과 맥락(또는 사회적 맥락) 속에서 문화를 이해하려는 태도임을 한 문장으로 씀",
+     "points": 2,
+     "tip": "이 항목이 빠지면 상대주의가 무엇인지 먼저 한 문장으로 쓰세요. 예: 문화를 그 사회의 환경과 맥락 속에서 이해하려는 태도."
+    },
+    {
+     "criterion": "풍습이 인간의 생명이나 인류의 보편적 가치를 무시(훼손)한다는 까닭을 한 문장으로 씀",
+     "points": 2,
+     "tip": "풍습 때문에 아이들이 잃는 것(건강, 배울 기회)을 짚고 그것이 보편적 가치를 무시한다고 연결하세요."
+    },
+    {
+     "criterion": "조건 낱말 '존엄성'을 사용함",
+     "points": 1,
+     "tip": "'존엄성'이라는 낱말을 까닭 문장에 넣어 쓰세요."
+    }
+   ],
+   "detail": "사례의 풍습은 아이들이 다치고 글을 배울 기회도 얻지 못하게 해요. 문화 상대주의는 그 사회의 환경과 맥락 속에서 문화를 이해하려는 태도이지만, 인간의 생명과 존엄성 등 인류의 보편적 가치를 무시하는 관습이나 제도까지 인정해야 하는 것은 아니에요. 그래서 이 풍습은 상대주의의 관점에서도 인정하기 어려워요. 답은 '상대주의의 뜻 한 문장 + 인정하기 어려운 까닭 한 문장' 두 문장 구조로 쓰면 돼요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: '존엄성' 낱말이 없으면 조건 항목 0점. 상대주의의 뜻 없이 풍습이 나쁘다고만 쓰면 첫 항목 0점. 두 문장을 지키지 않아도 내용이 맞으면 내용 점수는 주되 '문장 수'는 확인하세요.",
+   "tip": "상대주의의 뜻 → 그래도 인정 못 하는 까닭(보편적 가치·존엄성).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "문화 상대주의와 인류의 보편적 가치",
+     "text": "문화 상대주의는 그 사회의 환경과 맥락 속에서 문화를 이해하려는 태도예요. 그러나 인간의 생명과 존엄성 등 인류의 보편적 가치를 무시하는 관습이나 제도까지 인정해야 하는 것은 아니에요."
+    }
+   ],
+   "passageTitle": "사례",
+   "passage": "가상의 B 사회에는 집안 어른이 정하면 아이가 학교를 그만두고 낮 동안 위험한 광산에서 일해야 하는 오래된 풍습이 있다. 일하는 아이들은 자주 다치고, 글을 배울 기회도 얻지 못한다."
+  },
+  {
+   "id": "u8-S01-b",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "문화 상대주의의 한계",
+   "source": "교과서 p.158, p.161",
+   "question": "다음 사례의 풍습을 문화 상대주의의 관점에서 인정하기 어려운 까닭을 서술하시오.",
+   "answerHint": "(단, 문화 상대주의가 어떤 태도인지 한 문장, 이 풍습을 인정하기 어려운 까닭 한 문장으로 쓰고, '생명'을 사용할 것.)",
+   "modelAnswer": "문화 상대주의는 어떤 문화든 그 사회의 환경과 사회적 맥락 속에서 이해하려는 태도이다. 그러나 이 풍습은 아픈 사람의 생명을 위협하여 인류의 보편적 가치를 무시하므로 인정하기 어렵다.",
+   "explanation": "모범 답안: 문화 상대주의는 어떤 문화든 그 사회의 환경과 사회적 맥락 속에서 이해하려는 태도이다. 그러나 이 풍습은 아픈 사람의 생명을 위협하여 인류의 보편적 가치를 무시하므로 인정하기 어렵다. (근거: 교과서 p.158(인간의 생명과 존엄성 등 인류의 보편적 가치를 무시하는 관습은 인정하지 않음). 인정 표현은 내용 항목에만 적용: '사람의 목숨을 위협한다', '인권을 침해한다'도 인정(조건 낱말 항목은 '생명'이라는 낱말이 있어야 함))",
+   "rubric": [
+    {
+     "criterion": "문화 상대주의가 그 사회의 환경과 맥락(또는 사회적 맥락) 속에서 문화를 이해하려는 태도임을 한 문장으로 씀",
+     "points": 2,
+     "tip": "이 항목이 빠지면 상대주의가 무엇인지 먼저 한 문장으로 쓰세요. 예: 문화를 그 사회의 환경과 맥락 속에서 이해하려는 태도."
+    },
+    {
+     "criterion": "풍습이 인간의 생명이나 인류의 보편적 가치를 무시(훼손)한다는 까닭을 한 문장으로 씀",
+     "points": 2,
+     "tip": "풍습 때문에 아픈 사람이 치료와 돌봄을 받지 못한다는 점을 짚고 그것이 보편적 가치를 무시한다고 연결하세요."
+    },
+    {
+     "criterion": "조건 낱말 '생명'을 사용함",
+     "points": 1,
+     "tip": "'생명'이라는 낱말을 까닭 문장에 넣어 쓰세요."
+    }
+   ],
+   "detail": "사례의 풍습은 병에 걸린 사람이 치료와 돌봄을 받지 못하게 해요. 문화 상대주의는 그 사회의 환경과 맥락 속에서 문화를 이해하려는 태도이지만, 인간의 생명과 존엄성 등 인류의 보편적 가치를 무시하는 관습이나 제도까지 인정해야 하는 것은 아니에요. 그래서 이 풍습은 상대주의의 관점에서도 인정하기 어려워요. 답은 '상대주의의 뜻 한 문장 + 인정하기 어려운 까닭 한 문장' 두 문장으로 쓰세요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: '생명' 낱말이 없으면 조건 항목 0점('목숨'만 쓰면 조건 항목은 인정하지 않음, 단 내용 항목에서는 '목숨을 위협한다'도 인정). 상대주의의 뜻 없이 풍습이 나쁘다고만 쓰면 첫 항목 0점.",
+   "tip": "상대주의의 뜻 → 그래도 인정 못 하는 까닭(보편적 가치·생명).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "문화 상대주의와 인류의 보편적 가치",
+     "text": "문화 상대주의는 그 사회의 환경과 맥락 속에서 문화를 이해하려는 태도예요. 그러나 인간의 생명과 존엄성 등 인류의 보편적 가치를 무시하는 관습이나 제도까지 인정해야 하는 것은 아니에요."
+    }
+   ],
+   "passageTitle": "사례",
+   "passage": "가상의 C 사회에는 병에 걸린 사람을 마을 밖 숲에서 혼자 지내게 하고, 다른 사람이 돌보거나 치료하는 것을 막는 오래된 풍습이 있다. 병에 걸린 사람은 치료를 받지 못한 채 홀로 지낸다."
+  }
+ ]
+}
