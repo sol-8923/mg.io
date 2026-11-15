@@ -213,7 +213,7 @@ def build_book(bdir, errors, warns, info):
             n = len(by_slot[s["id"]])
             if n == 0:
                 errors.append(f"{tagu} 슬롯 {s['id']}에 문제가 없음")
-            elif n < target:
+            elif n < target and not all(q.get("origin") == "past-exam" for q in by_slot[s["id"]]):   # 기출 원문 슬롯은 변형 1개가 정상
                 warns.append(f"{tagu} 슬롯 {s['id']} 변형 {n}개 (목표 {target}개)")
         # ── 내신 현실성 점검 (경고만, 개정안 R1·R4 — docs/내신-적합성-검토와-개정안.md) ──
         # 배점 상한은 과목별 기출(화곡중 1-2, 2023~2025)의 최대 배점에서 도출한 값 (docs/subjects/<과목>.md 0번 절). 기출 없는 과목은 기본값.
