@@ -10,6 +10,17 @@
    "sample": false,
    "units": 4,
    "questions": 174
+  },
+  {
+   "id": "g1s2-social",
+   "grade": 1,
+   "semester": 2,
+   "subject": "사회",
+   "color": null,
+   "cover": "g1s2-social/cover.jpg?v=1794721066",
+   "sample": false,
+   "units": 1,
+   "questions": 34
   }
  ]
 }
