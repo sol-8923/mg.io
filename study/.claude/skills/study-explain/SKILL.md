@@ -45,3 +45,5 @@ description: 문제 은행(questions.json)의 각 문항에 상세 오답풀이�
 
 ## 점검
 `python engine/build_library.py --check-unit drafts/<책id>/<단원id>` → `✖` 0개, `⚠`의 "refs 없음 / tip 없음 / commonMistakes 없음"도 해소.
+
+- **과목별 기준(사용자 지시)**: 해당 과목의 `docs/subjects/<과목>.md`를 먼저 읽고(특히 '출제 형식', '지문·자료 규칙', '자주 나온 반려 사유', '다음 단원에서 개선할 것') 따른다.
