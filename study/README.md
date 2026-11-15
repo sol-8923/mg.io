@@ -80,3 +80,4 @@ python -m http.server               # http://localhost:8000
 - 사진은 기기에서 긴 변 1000px JPEG로 줄여(70만 자 이하) 문서에 글자 데이터로 함께 저장한다(Firebase 저장소 불필요, 무료). 최근 40개만 불러온다.
 - 데이터: Firestore `chat/{자동id}` = `{who, text, img?, at}`. 규칙은 `firestore.rules`의 `chat` 항목(글 500자, 사진 70만 자 제한, 수정 불가, 누구나 읽기·쓰기·삭제). 로그인이 없으므로 주소를 공유하지 않는 전제다.
 - 규칙은 `firebase deploy --only firestore:rules --project mg-study`로 배포해야 동작한다.
+- **한 사람은 한 기기에서만**: 고른 사람은 Firestore `chatwho/{dad|mom|min}` = `{device, at}`에 기기 번호로 기록된다. 다른 기기에서 같은 사람을 고르면 '이 기기로 옮길까요?'를 묻고, 옮기면 원래 기기는 선택이 풀려 다시 고르게 된다. '바꾸기'를 누르면 선택이 풀려 다른 기기가 쓸 수 있다. 로그인이 없는 가족용 잠금이라 보안 기능은 아니다.

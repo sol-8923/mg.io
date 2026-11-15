@@ -560,3 +560,5 @@ a.door:focus-visible{outline-offset:6px}
 .who-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .who-btn{min-height:84px;font-size:1.2rem;font-weight:800;border-radius:16px;background:color-mix(in srgb,var(--wc) 16%,var(--card));color:var(--ink);border:2px solid var(--wc);justify-content:center}
 .who-btn:active{transform:scale(.96)}
+.who-btn{flex-direction:column;gap:4px}
+.who-tag{font-size:.7rem;font-weight:600;color:var(--muted);min-height:1em}

@@ -1495,13 +1495,35 @@ function shrinkImage(file){
   });
 }
 
-function pickWho(onpick){
-  var m;
-  var btns=Object.keys(CHAT_PEOPLE).map(function(k){
-    var p=CHAT_PEOPLE[k];
-    return h('button',{class:'who-btn',style:'--wc:'+p.c,onclick:function(){ setChatWho(k); m.close(); onpick(k); }},[p.n]);
+function devId(){ try{ var d=localStorage.getItem('mg-chat-dev'); if(!d){ d=Math.random().toString(36).slice(2,10)+Math.random().toString(36).slice(2,10); localStorage.setItem('mg-chat-dev',d); } return d; }catch(e){ return 'nodev'; } }
+function whoRef(db,k){ return db.collection('chatwho').doc(k); }
+function clearChatWho(){ try{ localStorage.removeItem('mg-chat-who'); }catch(e){} }
+/* 내 선택을 풀어 다른 기기가 쓸 수 있게 한다 */
+function releaseWho(k){
+  if(!k) return Promise.resolve();
+  return loadFB().then(function(db){ return whoRef(db,k).get().then(function(d){ if(d.exists&&d.data().device===devId()) return whoRef(db,k).delete(); }); }).catch(function(){});
+}
+/* 선택하기: 다른 기기가 쓰는 중이면 옮길지 물어보고, 옮기면 그 기기의 선택은 자동으로 풀린다 */
+function claimWho(k){
+  return loadFB().then(function(db){
+    return whoRef(db,k).get().then(function(d){
+      if(d.exists&&d.data().device!==devId()){
+        if(!confirm(CHAT_PEOPLE[k].n+'는 다른 기기에서 쓰는 중이에요.\n이 기기로 옮길까요? (그 기기는 선택이 풀려요)')) return false;
+      }
+      return whoRef(db,k).set({device:devId(),at:Date.now()}).then(function(){ return true; });
+    });
   });
-  m=openModal([h('h2',{style:'margin:0 0 6px',text:'누구세요?'}),h('p',{class:'muted',style:'margin:0 0 14px',text:'이 기기에서는 선택한 사람으로 대화해요. 나중에 바꿀 수도 있어요.'}),h('div',{class:'who-row'},btns)]);
+}
+function pickWho(onpick){
+  var m, tags={};
+  var btns=Object.keys(CHAT_PEOPLE).map(function(k){
+    var p=CHAT_PEOPLE[k], tag=h('span',{class:'who-tag'}); tags[k]=tag;
+    return h('button',{class:'who-btn',style:'--wc:'+p.c,onclick:function(){
+      claimWho(k).then(function(ok){ if(!ok) return; setChatWho(k); m.close(); onpick(k); },function(){ toast('선택하지 못했어요. 인터넷을 확인해 주세요'); });
+    }},[h('span',{text:p.n}),tag]);
+  });
+  m=openModal([h('h2',{style:'margin:0 0 6px',text:'누구세요?'}),h('p',{class:'muted',style:'margin:0 0 14px',text:'한 사람은 한 기기에서만 쓸 수 있어요. 나중에 바꿀 수도 있어요.'}),h('div',{class:'who-row'},btns)]);
+  loadFB().then(function(db){ Object.keys(CHAT_PEOPLE).forEach(function(k){ whoRef(db,k).get().then(function(d){ if(d.exists&&d.data().device!==devId()) tags[k].textContent='다른 기기 사용 중'; }); }); }).catch(function(){});
 }
 
 function chatCard(){
@@ -1520,7 +1542,7 @@ function renderChat(){
   var app=$app(), me=chatWho(), last=[];
   var list=h('div',{class:'chat-list',role:'log','aria-live':'polite'});
   var status=h('div',{class:'chat-status',text:'불러오는 중…'});
-  var whoLbl=h('button',{class:'chat-who',onclick:function(){ pickWho(function(){ renderChat(); }); }});
+  var whoLbl=h('button',{class:'chat-who',onclick:function(){ var old=me; clearChatWho(); releaseWho(old).then(function(){ renderChat(); }); }});
   function paintWho(){ var p=CHAT_PEOPLE[me]; whoLbl.innerHTML=''; whoLbl.appendChild(p?h('span',{style:'color:'+p.c,text:'나: '+p.n}):h('span',{text:'누구세요?'})); whoLbl.appendChild(h('span',{class:'chg',text:' · 바꾸기'})); }
   paintWho();
   var ta=h('textarea',{rows:'1',maxlength:'500',placeholder:'메시지를 입력하세요','aria-label':'메시지'});
@@ -1576,14 +1598,23 @@ function renderChat(){
     if(first||near) list.scrollTop=list.scrollHeight;
   }
   if(!me) pickWho(function(k){ me=k; paintWho(); paint(last); });
+  function dropped(){ clearChatWho(); toast('다른 기기에서 '+CHAT_PEOPLE[me].n+'(으)로 접속해서 선택이 풀렸어요'); renderChat(); }
   loadFB().then(function(db){
+    if(!me) return db;
+    return whoRef(db,me).get().then(function(d){
+      if(d.exists&&d.data().device!==devId()) return Promise.reject({dropped:true});
+      return d.exists?null:whoRef(db,me).set({device:devId(),at:Date.now()});
+    }).then(function(){ return db; });
+  }).then(function(db){
     status.style.display='none';
-    S.chatUnsub=db.collection('chat').orderBy('at','desc').limit(40).onSnapshot(function(snap){
+    var unW=me?whoRef(db,me).onSnapshot(function(d){ if(d.exists&&d.data().device!==devId()) dropped(); }):null;
+    var unC=db.collection('chat').orderBy('at','desc').limit(40).onSnapshot(function(snap){
       var docs=snap.docs.map(function(d){ return {ref:d.ref,data:d.data(),pending:d.metadata.hasPendingWrites}; }).reverse();
       paint(docs);
       if(docs.length) setChatSeen(Math.max(chatSeen(),docs[docs.length-1].data.at));
     },function(){ status.style.display=''; status.textContent='대화를 불러오지 못했어요. 인터넷이나 접근 설정을 확인해 주세요.'; });
-  }).catch(function(e){ status.textContent='대화를 불러오지 못했어요: '+(e&&e.message||''); });
+    S.chatUnsub=function(){ unC(); if(unW) unW(); };
+  }).catch(function(e){ if(e&&e.dropped) return dropped(); status.textContent='대화를 불러오지 못했어요: '+(e&&e.message||''); });
 }
 
 /* ───────── 시작 ───────── */

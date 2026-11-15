@@ -33,6 +33,15 @@ service cloud.firestore {
       allow update: if false;
       allow delete: if true;
     }
+    match /chatwho/{who} {
+      allow read: if who in ['dad', 'mom', 'min'];
+      allow create, update: if who in ['dad', 'mom', 'min']
+        && request.resource.data.keys().hasOnly(['device', 'at'])
+        && request.resource.data.device is string
+        && request.resource.data.device.size() <= 40
+        && request.resource.data.at is number;
+      allow delete: if who in ['dad', 'mom', 'min'];
+    }
     match /{document=**} { allow read, write: if false; }
   }
 }
