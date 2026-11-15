@@ -925,7 +925,7 @@ function noticeEditor(w,onSaved){
 /* ═════════ 우리 집 일정 (요일 루틴 · 달력 · 해야 할 일) ═════════
  * Firestore plan/routine, plan/events, plan/todos 문서에 목록을 JSON 문자열로 저장해 가족 모두가 함께 본다.
  * 보안 규칙이 아직 없거나(403) 공유 설정이 비어 있으면 이 기기(localStorage)에만 저장한다. */
-var WHO={ dad:{label:'아빠',c:'#3b6fb6'}, mom:{label:'엄마',c:'#c2413b'}, kid:{label:'민겸',c:'#2f8a5b'}, all:{label:'가족',c:'#b5862e'} };
+var WHO={ dad:{label:'아빠',c:'#3b6fb6'}, mom:{label:'엄마',c:'#c2413b'}, kid:{label:'민겸',c:'#2f8a5b'}, school:{label:'화곡중',c:'#7a4fb0'}, all:{label:'가족',c:'#b5862e'} };
 var WEEK=[1,2,3,4,5,6,0], DAYS=['일','월','화','수','목','금','토'];
 var Plan={
   denied:false,
@@ -948,7 +948,7 @@ var Plan={
       .catch(function(){ self.offline=true; return self.local(d); });
   },
   all:function(){ var self=this; return Promise.all(['routine','events','todos'].map(function(d){ return self.get(d); }))
-    .then(function(v){ return {routine:v[0],events:v[1],todos:v[2]}; }); },
+    .then(function(v){ return {routine:v[0],events:v[1].concat(window.MG_SCHOOL||[]),todos:v[2]}; }); }, // 화곡중 학사일정(school.js)은 읽기 전용으로 합친다
   // 최신 목록을 다시 읽고 → fn으로 고친 뒤 → 저장 (가족이 동시에 고쳐도 덮어쓰지 않도록)
   update:function(d,fn){ var self=this;
     var base=self.shared()?self.remote(d):Promise.resolve(self.local(d));
@@ -1077,7 +1077,7 @@ function routineItem(r,day,after){
     r.start?h('span',{class:'rt',text:timeText(r.start,r.end)}):null,h('span',{class:'rx',text:r.text}),h('span',{class:'rw',text:(WHO[r.who]||WHO.all).label})]);
 }
 function eventItem(e,after){
-  return h('button',{class:'eitem',style:'--wc:'+(WHO[e.who]||WHO.all).c,onclick:function(){ eventEditor(e,e.date,after); }},[
+  return h('button',{class:'eitem',style:'--wc:'+(WHO[e.who]||WHO.all).c,onclick:function(){ if(e.fixed){ toast('화곡중 학사일정은 고칠 수 없어요'); return; } eventEditor(e,e.date,after); }},[
     h('span',{class:'et',text:e.time||'하루'}),h('span',{class:'ex',text:e.text}),whoChip(e.who)]);
 }
 
