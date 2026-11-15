@@ -1,0 +1,131 @@
+{
+ "unitName": "현대시 감상: 진달래꽃",
+ "basis": "default",
+ "analysis": "기출 없음 — 중학교 내신 일반형 적용(작품 지문 해석, 〈보기〉 합답형, 조건 서술형). 샘플 단원평가 크기(12문항, 100점)로 과학·수학·역사 샘플과 같게 구성.",
+ "timeLimitMin": 25,
+ "totalPoints": 100,
+ "variantsPerSlot": 2,
+ "slots": [
+  {
+   "id": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "작품과 시인",
+   "intent": "「진달래꽃」의 작가 또는 발표 지면을 묻는 기본 문항"
+  },
+  {
+   "id": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "시의 형식과 발표",
+   "intent": "연·행의 수, 시집 발간 연도 등 형식·발표 정보"
+  },
+  {
+   "id": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "시적 화자와 상황",
+   "intent": "화자의 처지와 시에 드러난 행동을 본문에서 확인하는 문항"
+  },
+  {
+   "id": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "시의 정서와 태도",
+   "intent": "중심 정서(이별의 슬픔)와 4연에 드러난 화자의 태도"
+  },
+  {
+   "id": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "시의 운율",
+   "intent": "7·5조 음수율, 3음보 민요조 율격"
+  },
+  {
+   "id": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "시의 구성",
+   "intent": "1연과 4연이 반복되는 수미상관 구성 이해"
+  },
+  {
+   "id": "Q07",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 6,
+   "concept": "시구의 의미와 어조",
+   "intent": "시 전문을 읽고 시구의 의미와 어미의 효과를 해석하는 자료 해석 문항"
+  },
+  {
+   "id": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "시인 김소월",
+   "intent": "김소월의 생애와 시 세계(일제강점기, 민요조, 향토적 정서)"
+  },
+  {
+   "id": "Q09",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 6,
+   "concept": "시의 감상",
+   "intent": "학생의 감상 중 적절하지 않은 것 찾기 / 〈보기〉 합답형 감상 판단"
+  },
+  {
+   "id": "Q10",
+   "type": "short",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "시의 갈래와 시론",
+   "intent": "갈래(서정시) / 김소월의 시론(시혼) 단답형"
+  },
+  {
+   "id": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 20,
+   "concept": "시의 정서와 표현",
+   "intent": "화자의 마음 또는 한국 고유의 정서를 근거와 함께 서술 (조건어 제시)"
+  },
+  {
+   "id": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 20,
+   "concept": "시의 내용과 구성 이해",
+   "intent": "시구를 인용해 화자의 행동을 정리하거나 1연과 4연의 관계와 효과를 서술"
+  }
+ ],
+ "totalQuestions": 12,
+ "types": {
+  "mc": 9,
+  "short": 1,
+  "essay": 2
+ },
+ "difficulty": {
+  "하": 3,
+  "중": 6,
+  "상": 3
+ },
+ "concepts": {
+  "작품과 시인": 1,
+  "시의 형식과 발표": 1,
+  "시적 화자와 상황": 1,
+  "시의 정서와 태도": 1,
+  "시의 운율": 1,
+  "시의 구성": 1,
+  "시구의 의미와 어조": 1,
+  "시인 김소월": 1,
+  "시의 감상": 1,
+  "시의 갈래와 시론": 1,
+  "시의 정서와 표현": 1,
+  "시의 내용과 구성 이해": 1
+ }
+}
