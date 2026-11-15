@@ -154,3 +154,51 @@ for q in qs:
     if (q.get("figure") or {}).get("svg"): check_svg(q["id"], "figure", q["figure"]["svg"])
     for i, r in enumerate(q.get("refs") or []):
         if r.get("svg"): check_svg(q["id"], "refs[%d]" % i, r["svg"])
+
+# ── R-I. 조사 오류('로/으로') — 해설 템플릿이 받침을 안 보고 '로'를 붙이는 사고 ──
+_JOSA_C = re.compile(r"[㉠㉡㉢㉤-㉿]로")                       # ㉣(ㄹ)만 '로', 나머지 원문자는 '으로'
+_JOSA_H = re.compile(r"([가-힣]{1,3})로(?![가-힣])")
+def _has_batchim_not_rieul(ch):
+    code = ord(ch) - 0xAC00
+    if not (0 <= code < 11172): return False
+    j = code % 28
+    return j != 0 and j != 8
+for q in qs:
+    for fname, text in fields(q):
+        if not text: continue
+        if _JOSA_C.search(text): E("%s %s: 조사 오류 '㉡로' 꼴 — 원문자 ㉠㉡㉢㉤… 뒤에는 '으로'(㉣만 '로')" % (q["id"], fname))
+        for m in _JOSA_H.finditer(text):
+            w = m.group(1)
+            if _has_batchim_not_rieul(w[-1]) and norm(w[-1:] + "로") not in ("진로", "경로", "항로", "통로", "활로", "수로", "도로", "정로"):
+                word = norm(w + "로")
+                if not any(word[-k:] in full for k in (3, 4) if len(word) >= k):
+                    W("%s %s: 조사 오류 의심 '%s' — 받침 뒤 '로'(→ '으로')이거나 원문에 없는 합성어" % (q["id"], fname, (w + "로")))
+                    break
+
+# ── R-J. source(근거 쪽) 복사 실수 — 모든 문항이 같은 값 ────────
+_src = collections.Counter(q.get("source", "") for q in qs)
+if qs and _src:
+    top, n = _src.most_common(1)[0]
+    if n > 0.6 * len(qs) and len(qs) >= 10:
+        E("source가 문항 대부분(%d/%d)에서 같음 → '%s' — 슬롯별 근거 쪽수로 고칠 것(설계도 사실 배분표의 쪽과 대조)" % (n, len(qs), top[:40]))
+
+# ── R-K. 정답 글자((가)~(바))가 섞이는 문항의 해설 속 정답 글자 일치 ──
+_PL = re.compile(r"\(([가-힣])\)")
+for q in qs:
+    if q["type"] != "mc": continue
+    ch = q["choices"]; ans_txt = ch[q["answer"] - 1]
+    m = _PL.match(ans_txt.strip())
+    if not m: continue
+    L = m.group(1)
+    others = {_PL.match(c.strip()).group(1) for i, c in enumerate(ch) if i != q["answer"] - 1 and _PL.match(c.strip())}
+    if not others: continue
+    text = q.get("explanation", "") + " " + q.get("detail", "") + " " + " ".join(c for c in (q.get("choiceExplanations") or []) if c.startswith("정답."))
+    found = set(_PL.findall(text))
+    if ("(%s)" % L) not in text and (found & others):
+        E("%s: 정답 보기는 (%s)인데 정답 해설·detail은 (%s)를 정답처럼 서술 — 보기 순서가 섞이면 해설의 정답 글자가 틀어짐(글자를 변수로 생성할 것)" % (q["id"], L, ",".join(sorted(found & others))))
+
+# ── R-L. 학생이 보는 풀이가 교사용 교과서·지도서를 근거로 듦 ────
+for q in qs:
+    txt = " ".join([f[1] for f in fields(q)] + [ref_text(r) for r in (q.get("refs") or [])])
+    m = re.search(r"(지도서|교사용)", txt)
+    if m: E("%s: 학생이 보는 풀이·참고 자료에 '%s'가 나옴 — 근거는 학생 교과서 쪽수로만(교사용·지도서는 제작자용)" % (q["id"], m.group(1)))
