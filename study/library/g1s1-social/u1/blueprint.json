@@ -1,0 +1,131 @@
+{
+ "unitName": "세계의 기후 지역",
+ "basis": "default",
+ "analysis": "기출 없음 — 중학교 내신 일반형 적용(기후 그래프 자료 해석, 〈보기〉 합답형, 조건어 서술형). 샘플 단원평가 크기(12문항, 100점).",
+ "timeLimitMin": 25,
+ "totalPoints": 100,
+ "variantsPerSlot": 2,
+ "slots": [
+  {
+   "id": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "기후 구분의 기준",
+   "intent": "쾨펜의 기후 구분이 무엇에 주목했는지, 누가 만들었는지 묻는 기본 문항"
+  },
+  {
+   "id": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "열대 기후",
+   "intent": "열대 기후의 기온 기준과 분포 지역"
+  },
+  {
+   "id": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "열대 우림과 사바나",
+   "intent": "열대 우림 기후와 사바나 기후의 특징 구분"
+  },
+  {
+   "id": "Q04",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "건조 기후",
+   "intent": "사막 기후의 강수량 기준, 건조 기후의 분포와 원인"
+  },
+  {
+   "id": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "지중해성 기후",
+   "intent": "지중해성 기후의 특징(여름 건기, 겨울 우기, 분포)"
+  },
+  {
+   "id": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "서안 해양성 기후",
+   "intent": "서안 해양성 기후의 특징과 지중해성 기후와의 비교"
+  },
+  {
+   "id": "Q07",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 6,
+   "concept": "기후 그래프 해석",
+   "intent": "기온·강수량 그래프(모식도)에서 읽을 수 있는 사실 고르기"
+  },
+  {
+   "id": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "한대 기후",
+   "intent": "한대 기후의 기준과 툰드라 기후의 특징"
+  },
+  {
+   "id": "Q09",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 6,
+   "concept": "기후 지역 종합",
+   "intent": "저위도→고위도 기후대 순서 또는 기후 지역별 특징 〈보기〉 합답형"
+  },
+  {
+   "id": "Q10",
+   "type": "short",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "기후 구분의 역사와 식생",
+   "intent": "쾨펜의 발표 연도 / 열대 우림 해안의 상록수림 단답형"
+  },
+  {
+   "id": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 20,
+   "concept": "강수의 계절 변화 비교",
+   "intent": "두 기후 지역의 강수 특징 차이를 조건어를 사용해 비교 서술"
+  },
+  {
+   "id": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 20,
+   "concept": "기후 기준과 원인 서술",
+   "intent": "기후 기준(기온·강수량)과 분포 원인을 조건어를 사용해 서술"
+  }
+ ],
+ "totalQuestions": 12,
+ "types": {
+  "mc": 9,
+  "short": 1,
+  "essay": 2
+ },
+ "difficulty": {
+  "하": 4,
+  "중": 5,
+  "상": 3
+ },
+ "concepts": {
+  "기후 구분의 기준": 1,
+  "열대 기후": 1,
+  "열대 우림과 사바나": 1,
+  "건조 기후": 1,
+  "지중해성 기후": 1,
+  "서안 해양성 기후": 1,
+  "기후 그래프 해석": 1,
+  "한대 기후": 1,
+  "기후 지역 종합": 1,
+  "기후 구분의 역사와 식생": 1,
+  "강수의 계절 변화 비교": 1,
+  "기후 기준과 원인 서술": 1
+ }
+}

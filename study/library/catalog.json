@@ -21,6 +21,16 @@
    "questions": 24
   },
   {
+   "id": "g1s1-social",
+   "grade": 1,
+   "semester": 1,
+   "subject": "사회",
+   "color": null,
+   "sample": true,
+   "units": 1,
+   "questions": 24
+  },
+  {
    "id": "g1s2-history",
    "grade": 1,
    "semester": 2,
