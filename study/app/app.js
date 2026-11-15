@@ -169,11 +169,34 @@ function renderHome(){
 }
 
 /* ═════════ 책장 ═════════ */
+/* 표지 사진은 정사각형 캔버스 안에 흰 여백이 있는 경우가 많다. 그대로 책 모양(세로로 긴 상자)에 채우면
+ * 양옆이 잘려 글씨가 반쯤 보이므로, 흰 여백을 찾아 잘라 내고 표지의 실제 비율로 책 상자를 맞춘다. */
+function fitCover(img, el){
+  try{
+    var W=img.naturalWidth, H=img.naturalHeight; if(!W||!H) return;
+    var sc=Math.min(1,200/Math.max(W,H)), w=Math.max(1,Math.round(W*sc)), hh=Math.max(1,Math.round(H*sc));
+    var c=document.createElement('canvas'); c.width=w; c.height=hh;
+    var x=c.getContext('2d'); x.drawImage(img,0,0,w,hh);
+    var d=x.getImageData(0,0,w,hh).data;
+    function ink(px,py){ var k=(py*w+px)*4; return d[k+3]>20&&(d[k]<238||d[k+1]<238||d[k+2]<238); }
+    function colInk(px){ var n=0; for(var py=0;py<hh;py++) if(ink(px,py)) n++; return n>=Math.max(2,hh*0.03); }
+    function rowInk(py){ var n=0; for(var px=0;px<w;px++) if(ink(px,py)) n++; return n>=Math.max(2,w*0.03); }
+    var L=0,R=w-1,T=0,B=hh-1;
+    while(L<R&&!colInk(L)) L++; while(R>L&&!colInk(R)) R--;
+    while(T<B&&!rowInk(T)) T++; while(B>T&&!rowInk(B)) B--;
+    var cw=R-L+1, ch=B-T+1;
+    if(cw<w*0.5||ch<hh*0.5) return;                       // 이상하게 잘리면 원본 그대로
+    var r=Math.max(.6,Math.min(1,cw/ch));                  // 표지의 가로/세로 비율
+    img.style.cssText='position:absolute;inset:auto;max-width:none;object-fit:fill;width:'+(w/cw*100)+'%;height:'+(hh/ch*100)+'%;left:'+(-L/cw*100)+'%;top:'+(-T/ch*100)+'%';
+    el.style.setProperty('--ar',(r/0.93).toFixed(4));       // 책 상자 = 표지 폭 93% + 책등
+  }catch(e){}
+}
 function bookEl(b, opts){
   opts=opts||{};
   var sub=SUBJECTS[b.subject]||{c:'#5b5b5b'};
   var img=b.cover?h('img',{src:'library/'+b.cover,alt:'',loading:'lazy',decoding:'async'}):null;
   if(img) img.addEventListener('error',function(){ el.classList.remove('has-img'); img.remove(); });
+  if(img) img.addEventListener('load',function(){ fitCover(img,el); });
   var el=h('button',{class:'book'+(img?' has-img':'')+(opts.dim?' dim':''),style:'--c:'+(b.color||sub.c),'aria-label':bookLabel(b)+(opts.caption?' ('+opts.caption+')':'')},[
     h('div',{class:'cover'},[img]),h('div',{class:'pages'}),
     h('div',{class:'band t'}),h('div',{class:'band b'}),

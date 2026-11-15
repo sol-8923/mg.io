@@ -523,6 +523,7 @@ a.door:active{transform:scale(.97)}
 a.door:focus-visible{outline-offset:6px}
 
 /* ── 책 표지 이미지 ── */
+.book.has-img{aspect-ratio:var(--ar,.85)}
 .book.has-img .cover{overflow:hidden;background:var(--c)}
 .book.has-img .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .book.has-img .cover::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.34) 0,rgba(0,0,0,.1) 5%,rgba(255,255,255,.2) 7.5%,rgba(255,255,255,0) 11%,rgba(0,0,0,0) 90%,rgba(0,0,0,.12) 100%)}
