@@ -1,2 +1,11 @@
-{ "verdict": "PASS", "round": 1, "date": "2026-11-15", "mode": "reduced", "reviewers": ["self-check"],
-  "note": "임시 축약 검수(자체 점검 1회, 4중 만장일치 아님). 사용자 지시로 이번 작업에 한해 적용. 정식 검수 전까지 샘플." }
+{
+ "verdict": "PASS",
+ "round": 2,
+ "date": "2026-11-15",
+ "mode": "reduced",
+ "reviewers": [
+  "self-check"
+ ],
+ "revision": "R1-R7",
+ "note": "개정 규칙 적용(18슬롯). 임시 축약 검수(자체 점검 1회, 4중 만장일치 아님). 정식 검수 전까지 샘플."
+}

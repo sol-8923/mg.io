@@ -213,9 +213,9 @@ def build_book(bdir, errors, warns, info):
             warns.append(f"{tagu} 정식 단원은 15~20슬롯, 서술형 3~5문항을 권장(현재 {len(slots)}슬롯, 서술형 {n_essay}문항)")
         mcq = [q for q in qs if q.get("type") == "mc" and not q.get("fixedOrder") and isinstance(q.get("answer"), int) and isinstance(q.get("choices"), list) and len(q["choices"]) >= 2]
         if len(mcq) >= 8:
-            longest = sum(1 for q in mcq if len(str(q["choices"][q["answer"] - 1])) == max(len(str(c)) for c in q["choices"]))
+            longest = sum(1 for q in mcq if len(str(q["choices"][q["answer"] - 1])) > max(len(str(c)) for i, c in enumerate(q["choices"]) if i != q["answer"] - 1))  # 동률은 단서가 아니므로 엄격하게 더 긴 경우만
             if longest / len(mcq) > 0.4:
-                warns.append(f"{tagu} 정답이 가장 긴 보기인 선택형이 {longest}/{len(mcq)}({round(longest * 100 / len(mcq))}%)로 40% 초과 — 보기 길이로 정답이 드러남(오답을 정답과 비슷한 길이·구조로 쓸 것)")
+                warns.append(f"{tagu} 정답이 다른 모든 보기보다 긴 선택형이 {longest}/{len(mcq)}({round(longest * 100 / len(mcq))}%)로 40% 초과 — 보기 길이로 정답이 드러남(오답을 정답과 비슷한 길이·구조로 쓸 것)")
         dc = Counter(s.get("difficulty") for s in slots)
         tc = Counter(s.get("type") for s in slots)
         info.append(f"{tagu} {bp.get('unitName')} · 시험 {len(slots)}문항/{sum(s.get('points',0) for s in slots)}점 · 은행 {len(qs)}문항 · "
