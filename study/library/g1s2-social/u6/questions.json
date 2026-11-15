@@ -1,0 +1,1620 @@
+{
+ "questions": [
+  {
+   "id": "u6-Q01-a",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 2,
+   "concept": "오세아니아의 구성",
+   "source": "교과서 p.109, p.111, p.124",
+   "question": "다음 중 오세아니아에 속하는 국가는?",
+   "choices": [
+    "뉴질랜드",
+    "케냐",
+    "필리핀",
+    "칠레",
+    "이탈리아"
+   ],
+   "answer": 1,
+   "explanation": "뉴질랜드는 오스트레일리아와 함께 오세아니아를 이루는 대표적인 국가예요.",
+   "choiceExplanations": [
+    "정답. 뉴질랜드는 오스트레일리아와 함께 오세아니아를 이루는 대표적인 국가예요.",
+    "케냐는 아프리카 동부에 있는 국가예요. 적도가 지나고 인도양에 접해서 헷갈릴 수 있지만 아프리카에 속해요.",
+    "필리핀은 태평양에 접해 있어 오세아니아로 착각하기 쉽지만 아시아에 속하는 섬나라예요.",
+    "칠레는 태평양에 접해 있지만 남아메리카 서쪽에 길게 놓인 아메리카의 국가예요.",
+    "이탈리아는 지중해로 뻗은 반도 국가로 유럽에 속해요."
+   ],
+   "detail": "오세아니아는 오스트레일리아와 뉴질랜드를 비롯해 태평양의 작은 섬나라들로 이루어진 지역이에요.\n오스트레일리아와 뉴질랜드는 서로 가까운 바다 위의 땅으로 오세아니아로 묶여요.\n태평양에 접했다고 해서 모두 오세아니아가 되는 것은 아니에요. 필리핀은 아시아, 칠레는 아메리카에 속해요.",
+   "tip": "오세아니아 = 오스트레일리아 + 뉴질랜드 + 태평양의 작은 섬나라들.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "오세아니아에 속하는 국가",
+     "text": "오스트레일리아, 뉴질랜드, 그리고 태평양의 작은 섬나라들(투발루, 피지, 키리바시 등)이에요."
+    }
+   ]
+  },
+  {
+   "id": "u6-Q01-b",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 2,
+   "concept": "오세아니아의 구성",
+   "source": "교과서 p.109, p.111, p.124",
+   "question": "다음 글이 설명하는 지역으로 옳은 것은?",
+   "choices": [
+    "오세아니아",
+    "아시아",
+    "아프리카",
+    "유럽",
+    "남아메리카"
+   ],
+   "answer": 1,
+   "explanation": "오스트레일리아·뉴질랜드와 태평양의 섬들로 이루어지고 동쪽이 태평양, 서쪽이 인도양인 곳은 오세아니아예요.",
+   "choiceExplanations": [
+    "정답. 오스트레일리아·뉴질랜드와 태평양의 섬들로 이루어지고 동쪽이 태평양, 서쪽이 인도양인 곳은 오세아니아예요.",
+    "아시아는 오스트레일리아·뉴질랜드가 속한 지역이 아니에요. 같은 태평양에 접해 있지만 구성이 달라요.",
+    "아프리카는 서쪽이 대서양, 동쪽이 인도양에 접해요. 글의 방향과 반대예요.",
+    "유럽은 대서양과 지중해에 가까운 대륙이고 태평양의 섬들을 포함하지 않아요.",
+    "남아메리카는 동쪽이 대서양, 서쪽이 태평양에 접해서 글과 방향이 달라요. 오스트레일리아·뉴질랜드도 속하지 않아요."
+   ],
+   "detail": "글은 오스트레일리아와 뉴질랜드, 그리고 태평양의 크고 작은 섬들로 이루어진 지역이라고 설명해요. 이 구성은 오세아니아의 구성이에요.\n동쪽이 태평양, 서쪽이 인도양에 맞닿는다는 위치도 오세아니아와 맞아요.\n아시아·유럽·아프리카·남아메리카는 구성하는 국가와 접한 바다가 달라서 맞지 않아요.",
+   "tip": "오스트레일리아 + 뉴질랜드 + 태평양의 섬들 = 오세아니아.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "오세아니아의 구성과 위치",
+     "text": "오스트레일리아와 뉴질랜드, 태평양의 크고 작은 섬들로 이루어지고 동쪽은 태평양, 서쪽은 인도양과 맞닿아 있어요."
+    }
+   ],
+   "passageTitle": "설명",
+   "passage": "오스트레일리아와 뉴질랜드, 그리고 태평양의 크고 작은 섬들로 이루어진 지역이다. 동쪽으로는 태평양, 서쪽으로는 인도양과 맞닿아 있다."
+  },
+  {
+   "id": "u6-Q02-a",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "주요 도시의 위치(지도)",
+   "source": "교과서 p.111, p.124",
+   "question": "지도의 (가)~(마)는 주요 도시이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉡",
+    "㉠, ㉢",
+    "㉡, ㉢",
+    "㉠, ㉡, ㉢",
+    "㉠, ㉢, ㉣"
+   ],
+   "answer": 2,
+   "explanation": "(가)는 브리즈번, (라)는 오클랜드이므로 ㉠과 ㉢이 옳아요.",
+   "choiceExplanations": [
+    "㉡은 옳지 않은 진술이에요. (나)는 시드니, (다)는 멜버른으로 둘 다 오스트레일리아 남동부 해안에 있어요. ㉢은 옳은 진술인데 빠졌어요. (라)는 뉴질랜드 북섬 위쪽의 항구 도시 오클랜드예요.",
+    "정답. (가)는 브리즈번, (라)는 오클랜드이므로 ㉠과 ㉢이 옳아요.",
+    "㉡은 옳지 않은 진술이에요. (나)는 시드니, (다)는 멜버른으로 둘 다 오스트레일리아 남동부 해안에 있어요. ㉠은 옳은 진술인데 빠졌어요. (가)는 오스트레일리아 동쪽 해안의 도시로 브리즈번이에요.",
+    "㉡은 옳지 않은 진술이에요. (나)는 시드니, (다)는 멜버른으로 둘 다 오스트레일리아 남동부 해안에 있어요.",
+    "㉣은 옳지 않은 진술이에요. (마)는 웰링턴이지만 지도에서 (라)보다 남쪽에 있어요."
+   ],
+   "detail": "지도에서 먼저 오스트레일리아와 뉴질랜드의 윤곽을 구분해요. (가)~(다)는 오스트레일리아, (라)·(마)는 뉴질랜드에 찍혀 있어요.\n오스트레일리아 동쪽 해안에서는 위쪽부터 브리즈번(가), 시드니(나), 멜버른(다) 순으로 남쪽으로 내려와요.\n뉴질랜드 북섬 위쪽이 오클랜드(라), 북섬 아래 끝이 웰링턴(마)이에요. 그래서 (마)는 (라)보다 남쪽이에요.",
+   "tip": "점이 어느 나라 땅 위에 있는지부터 가려요. 그다음 위·아래 위치로 이름을 맞혀요.",
+   "refs": [
+    {
+     "kind": "svg",
+     "title": "도시의 위치(이름 표시)",
+     "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 236' font-family='sans-serif'><rect width='360' height='236' fill='#fff'/><rect x='0' y='0' width='360' height='236' fill='#e3f2fd'/><polygon points='152.5,15.7 157.5,34.8 166.5,40.6 171.0,63.8 182.5,72.5 192.5,84.1 206.0,98.6 207.5,117.2 205.0,133.4 196.0,150.2 190.0,168.2 175.0,175.7 162.5,176.3 147.5,175.7 137.5,162.4 130.0,156.6 127.5,145.0 117.5,155.4 110.0,142.1 95.0,136.3 70.0,140.9 57.5,149.6 40.0,150.8 29.0,156.6 15.0,152.5 17.5,136.3 14.0,116.0 7.5,104.4 10.0,81.2 22.5,73.7 45.0,63.8 51.5,52.2 65.0,37.7 77.5,34.8 87.5,40.6 92.5,26.1 102.5,20.3 120.0,23.2 123.5,23.2 120.0,34.8 117.5,40.6 125.0,49.3 137.5,55.1 147.5,46.4 147.5,26.1' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='165.0,190.2 181.5,190.8 180.0,203.0 172.5,206.5 166.0,200.1' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='303.5,153.1 311.5,158.3 317.5,168.2 325.0,171.7 332.5,172.3 329.5,181.0 324.5,185.6 316.5,194.9 314.0,193.1 315.0,186.8 312.5,181.5 309.0,181.0 313.0,174.0 314.0,168.2 312.0,162.4 305.0,158.3' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='303.5,188.5 310.0,192.6 309.0,202.4 304.0,207.6 296.0,211.1 294.0,219.2 285.0,223.9 275.0,220.4 272.5,215.8 282.0,208.8 292.5,203.0 297.5,196.0' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><text x='225' y='215' font-size='11' fill='#5b7fa3' text-anchor='start'>태평양</text><text x='20' y='215' font-size='11' fill='#5b7fa3' text-anchor='start'>인도양</text><text x='75' y='112' font-size='11' fill='#777' text-anchor='middle'>오스트레일리아</text><text x='354' y='205' font-size='10' fill='#777' text-anchor='end'>뉴질랜드</text><circle cx='205.0' cy='113.1' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='197.0' y='109.1' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가) 브리즈번</text><circle cx='196.0' cy='150.2' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='188.0' y='153.2' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(나) 시드니</text><circle cx='164.5' cy='172.8' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='156.5' y='186.8' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(다) 멜버른</text><circle cx='314.0' cy='167.0' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='306.0' y='163.0' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(라) 오클랜드</text><circle cx='314.0' cy='193.1' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='306.0' y='205.1' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(마) 웰링턴</text><text x='6' y='14' font-size='10' fill='#555' text-anchor='start'>N ↑</text></svg>",
+     "caption": "문항의 점에 해당하는 도시 이름을 붙인 모식도예요."
+    }
+   ],
+   "passageTitle": "〈보기〉",
+   "passage": "주요 도시 위치 (모식도)\n〈보기〉\n㉠ (가)는 오스트레일리아 동부 해안에 있는 브리즈번이다.\n㉡ (나)와 (다)는 모두 뉴질랜드에 있는 도시이다.\n㉢ (라)는 뉴질랜드 북섬에 있는 오클랜드이다.\n㉣ (마)는 (라)보다 북쪽에 있는 웰링턴이다.",
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 236' font-family='sans-serif'><rect width='360' height='236' fill='#fff'/><rect x='0' y='0' width='360' height='236' fill='#e3f2fd'/><polygon points='152.5,15.7 157.5,34.8 166.5,40.6 171.0,63.8 182.5,72.5 192.5,84.1 206.0,98.6 207.5,117.2 205.0,133.4 196.0,150.2 190.0,168.2 175.0,175.7 162.5,176.3 147.5,175.7 137.5,162.4 130.0,156.6 127.5,145.0 117.5,155.4 110.0,142.1 95.0,136.3 70.0,140.9 57.5,149.6 40.0,150.8 29.0,156.6 15.0,152.5 17.5,136.3 14.0,116.0 7.5,104.4 10.0,81.2 22.5,73.7 45.0,63.8 51.5,52.2 65.0,37.7 77.5,34.8 87.5,40.6 92.5,26.1 102.5,20.3 120.0,23.2 123.5,23.2 120.0,34.8 117.5,40.6 125.0,49.3 137.5,55.1 147.5,46.4 147.5,26.1' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='165.0,190.2 181.5,190.8 180.0,203.0 172.5,206.5 166.0,200.1' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='303.5,153.1 311.5,158.3 317.5,168.2 325.0,171.7 332.5,172.3 329.5,181.0 324.5,185.6 316.5,194.9 314.0,193.1 315.0,186.8 312.5,181.5 309.0,181.0 313.0,174.0 314.0,168.2 312.0,162.4 305.0,158.3' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='303.5,188.5 310.0,192.6 309.0,202.4 304.0,207.6 296.0,211.1 294.0,219.2 285.0,223.9 275.0,220.4 272.5,215.8 282.0,208.8 292.5,203.0 297.5,196.0' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><text x='225' y='215' font-size='11' fill='#5b7fa3' text-anchor='start'>태평양</text><text x='20' y='215' font-size='11' fill='#5b7fa3' text-anchor='start'>인도양</text><text x='75' y='112' font-size='11' fill='#777' text-anchor='middle'>오스트레일리아</text><text x='354' y='205' font-size='10' fill='#777' text-anchor='end'>뉴질랜드</text><circle cx='205.0' cy='113.1' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='213.0' y='109.1' font-size='11' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가)</text><circle cx='196.0' cy='150.2' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='204.0' y='155.2' font-size='11' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(나)</text><circle cx='164.5' cy='172.8' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='156.5' y='185.8' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(다)</text><circle cx='314.0' cy='167.0' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='306.0' y='163.0' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(라)</text><circle cx='314.0' cy='193.1' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='306.0' y='205.1' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(마)</text><text x='6' y='14' font-size='10' fill='#555' text-anchor='start'>N ↑</text></svg>",
+    "caption": "오스트레일리아와 뉴질랜드의 주요 도시 위치를 나타낸 모식도"
+   }
+  },
+  {
+   "id": "u6-Q02-b",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "주요 도시의 위치(지도)",
+   "source": "교과서 p.111, p.124",
+   "question": "지도의 (가)~(라)는 주요 도시이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉡, ㉢",
+    "㉡, ㉣",
+    "㉠, ㉡, ㉢",
+    "㉠, ㉢, ㉣",
+    "㉡, ㉢, ㉣"
+   ],
+   "answer": 5,
+   "explanation": "(나)는 시드니 서쪽의 캔버라, (다)는 북섬의 오클랜드, (라)는 그 남쪽의 웰링턴이므로 ㉡㉢㉣이 옳아요.",
+   "choiceExplanations": [
+    "㉣은 옳은 진술인데 빠졌어요. (라)는 웰링턴으로 북섬 아래쪽 끝에 있어 오클랜드보다 남쪽이에요.",
+    "㉢은 옳은 진술인데 빠졌어요. (다)는 북섬 위쪽에 있는 오클랜드예요.",
+    "㉠은 옳지 않은 진술이에요. (가)는 시드니로 오스트레일리아 동남쪽 해안에 있어요. ㉣은 옳은 진술인데 빠졌어요. (라)는 웰링턴으로 북섬 아래쪽 끝에 있어 오클랜드보다 남쪽이에요.",
+    "㉠은 옳지 않은 진술이에요. (가)는 시드니로 오스트레일리아 동남쪽 해안에 있어요. ㉡은 옳은 진술인데 빠졌어요. (나)는 캔버라로 시드니보다 조금 서쪽에 있어요.",
+    "정답. (나)는 시드니 서쪽의 캔버라, (다)는 북섬의 오클랜드, (라)는 그 남쪽의 웰링턴이므로 ㉡㉢㉣이 옳아요."
+   ],
+   "detail": "(가)와 (나)는 오스트레일리아 땅 위, (다)와 (라)는 뉴질랜드 땅 위에 있어요. 그러므로 (가)가 뉴질랜드라는 ㉠은 틀려요.\n오스트레일리아 남동부에서 (가) 시드니는 해안, (나) 캔버라는 그보다 서쪽에 있어요.\n뉴질랜드 북섬에서는 위쪽의 (다) 오클랜드보다 아래쪽의 (라) 웰링턴이 더 남쪽이에요.",
+   "tip": "나라(땅)를 먼저 가리고, 그다음 동서·남북 위치를 비교해요.",
+   "refs": [
+    {
+     "kind": "svg",
+     "title": "도시의 위치(이름 표시)",
+     "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 236' font-family='sans-serif'><rect width='360' height='236' fill='#fff'/><rect x='0' y='0' width='360' height='236' fill='#e3f2fd'/><polygon points='152.5,15.7 157.5,34.8 166.5,40.6 171.0,63.8 182.5,72.5 192.5,84.1 206.0,98.6 207.5,117.2 205.0,133.4 196.0,150.2 190.0,168.2 175.0,175.7 162.5,176.3 147.5,175.7 137.5,162.4 130.0,156.6 127.5,145.0 117.5,155.4 110.0,142.1 95.0,136.3 70.0,140.9 57.5,149.6 40.0,150.8 29.0,156.6 15.0,152.5 17.5,136.3 14.0,116.0 7.5,104.4 10.0,81.2 22.5,73.7 45.0,63.8 51.5,52.2 65.0,37.7 77.5,34.8 87.5,40.6 92.5,26.1 102.5,20.3 120.0,23.2 123.5,23.2 120.0,34.8 117.5,40.6 125.0,49.3 137.5,55.1 147.5,46.4 147.5,26.1' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='165.0,190.2 181.5,190.8 180.0,203.0 172.5,206.5 166.0,200.1' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='303.5,153.1 311.5,158.3 317.5,168.2 325.0,171.7 332.5,172.3 329.5,181.0 324.5,185.6 316.5,194.9 314.0,193.1 315.0,186.8 312.5,181.5 309.0,181.0 313.0,174.0 314.0,168.2 312.0,162.4 305.0,158.3' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='303.5,188.5 310.0,192.6 309.0,202.4 304.0,207.6 296.0,211.1 294.0,219.2 285.0,223.9 275.0,220.4 272.5,215.8 282.0,208.8 292.5,203.0 297.5,196.0' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><text x='225' y='215' font-size='11' fill='#5b7fa3' text-anchor='start'>태평양</text><text x='20' y='215' font-size='11' fill='#5b7fa3' text-anchor='start'>인도양</text><text x='75' y='112' font-size='11' fill='#777' text-anchor='middle'>오스트레일리아</text><text x='354' y='205' font-size='10' fill='#777' text-anchor='end'>뉴질랜드</text><circle cx='196.0' cy='150.2' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='188.0' y='146.2' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가) 시드니</text><circle cx='185.5' cy='158.3' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='177.5' y='170.3' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(나) 캔버라</text><circle cx='314.0' cy='167.0' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='306.0' y='163.0' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(다) 오클랜드</text><circle cx='314.0' cy='193.1' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='306.0' y='205.1' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(라) 웰링턴</text><text x='6' y='14' font-size='10' fill='#555' text-anchor='start'>N ↑</text></svg>",
+     "caption": "문항의 점에 해당하는 도시 이름을 붙인 모식도예요."
+    }
+   ],
+   "passageTitle": "〈보기〉",
+   "passage": "주요 도시 위치 (모식도)\n〈보기〉\n㉠ (가)는 뉴질랜드에 있는 도시이다.\n㉡ (나)는 (가)보다 서쪽에 있는 오스트레일리아의 도시이다.\n㉢ (다)는 뉴질랜드 북섬에 있는 도시이다.\n㉣ (라)는 (다)보다 남쪽에 있는 도시이다.",
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 236' font-family='sans-serif'><rect width='360' height='236' fill='#fff'/><rect x='0' y='0' width='360' height='236' fill='#e3f2fd'/><polygon points='152.5,15.7 157.5,34.8 166.5,40.6 171.0,63.8 182.5,72.5 192.5,84.1 206.0,98.6 207.5,117.2 205.0,133.4 196.0,150.2 190.0,168.2 175.0,175.7 162.5,176.3 147.5,175.7 137.5,162.4 130.0,156.6 127.5,145.0 117.5,155.4 110.0,142.1 95.0,136.3 70.0,140.9 57.5,149.6 40.0,150.8 29.0,156.6 15.0,152.5 17.5,136.3 14.0,116.0 7.5,104.4 10.0,81.2 22.5,73.7 45.0,63.8 51.5,52.2 65.0,37.7 77.5,34.8 87.5,40.6 92.5,26.1 102.5,20.3 120.0,23.2 123.5,23.2 120.0,34.8 117.5,40.6 125.0,49.3 137.5,55.1 147.5,46.4 147.5,26.1' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='165.0,190.2 181.5,190.8 180.0,203.0 172.5,206.5 166.0,200.1' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='303.5,153.1 311.5,158.3 317.5,168.2 325.0,171.7 332.5,172.3 329.5,181.0 324.5,185.6 316.5,194.9 314.0,193.1 315.0,186.8 312.5,181.5 309.0,181.0 313.0,174.0 314.0,168.2 312.0,162.4 305.0,158.3' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='303.5,188.5 310.0,192.6 309.0,202.4 304.0,207.6 296.0,211.1 294.0,219.2 285.0,223.9 275.0,220.4 272.5,215.8 282.0,208.8 292.5,203.0 297.5,196.0' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><text x='225' y='215' font-size='11' fill='#5b7fa3' text-anchor='start'>태평양</text><text x='20' y='215' font-size='11' fill='#5b7fa3' text-anchor='start'>인도양</text><text x='75' y='112' font-size='11' fill='#777' text-anchor='middle'>오스트레일리아</text><text x='354' y='205' font-size='10' fill='#777' text-anchor='end'>뉴질랜드</text><circle cx='196.0' cy='150.2' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='204.0' y='150.2' font-size='11' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가)</text><circle cx='185.5' cy='158.3' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='177.5' y='165.3' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(나)</text><circle cx='314.0' cy='167.0' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='306.0' y='163.0' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(다)</text><circle cx='314.0' cy='193.1' r='3.6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='306.0' y='205.1' font-size='11' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(라)</text><text x='6' y='14' font-size='10' fill='#555' text-anchor='start'>N ↑</text></svg>",
+    "caption": "오스트레일리아와 뉴질랜드의 주요 도시 위치를 나타낸 모식도"
+   }
+  },
+  {
+   "id": "u6-Q03-a",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "오스트레일리아의 지형",
+   "source": "교과서 p.111",
+   "question": "지도의 (가)~(다)에 해당하는 지형 이름을 바르게 연결한 것은?",
+   "choices": [
+    "(가) 대보초, (나) 대찬정 분지, (다) 그레이트디바이딩산맥",
+    "(가) 대찬정 분지, (나) 그레이트디바이딩산맥, (다) 대보초",
+    "(가) 그레이트디바이딩산맥, (나) 대찬정 분지, (다) 대보초",
+    "(가) 대보초, (나) 그레이트디바이딩산맥, (다) 대찬정 분지",
+    "(가) 대찬정 분지, (나) 대보초, (다) 그레이트디바이딩산맥"
+   ],
+   "answer": 3,
+   "explanation": "(가)는 동부 해안의 산맥, (나)는 그 서쪽 중앙부의 분지, (다)는 북동부 바다의 산호초예요.",
+   "choiceExplanations": [
+    "(가)는 실제로 그레이트디바이딩산맥(동부 해안을 따라 남북으로 긴 산맥)인데 대보초로 연결했어요. (다)는 실제로 대보초(북동부 해안의 산호초 군락)인데 그레이트디바이딩산맥으로 연결했어요.",
+    "(가)는 실제로 그레이트디바이딩산맥(동부 해안을 따라 남북으로 긴 산맥)인데 대찬정 분지로 연결했어요. (나)는 실제로 대찬정 분지(산맥의 서쪽 중앙부에 있는 분지)인데 그레이트디바이딩산맥으로 연결했어요.",
+    "정답. (가)는 동부 해안의 산맥, (나)는 그 서쪽 중앙부의 분지, (다)는 북동부 바다의 산호초예요.",
+    "(가)는 실제로 그레이트디바이딩산맥(동부 해안을 따라 남북으로 긴 산맥)인데 대보초로 연결했어요. (나)는 실제로 대찬정 분지(산맥의 서쪽 중앙부에 있는 분지)인데 그레이트디바이딩산맥으로 연결했어요. (다)는 실제로 대보초(북동부 해안의 산호초 군락)인데 대찬정 분지로 연결했어요.",
+    "(가)는 실제로 그레이트디바이딩산맥(동부 해안을 따라 남북으로 긴 산맥)인데 대찬정 분지로 연결했어요. (나)는 실제로 대찬정 분지(산맥의 서쪽 중앙부에 있는 분지)인데 대보초로 연결했어요. (다)는 실제로 대보초(북동부 해안의 산호초 군락)인데 그레이트디바이딩산맥으로 연결했어요."
+   ],
+   "detail": "(가)는 동부 해안을 따라 남북으로 길게 이어진 모양이므로 그레이트디바이딩산맥이에요.\n(나)는 그 산맥의 서쪽, 대륙 중앙부에 있는 분지로 대찬정 분지예요.\n(다)는 육지가 아니라 북동부 해안 바다에 점선으로 이어진 산호초 군락으로 대보초예요.",
+   "tip": "산맥 = 동쪽에 길게, 분지 = 그 서쪽 중앙, 산호초 = 북동쪽 바다.",
+   "refs": [
+    {
+     "kind": "svg",
+     "title": "지형 이름 표시",
+     "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 322' font-family='sans-serif'><rect width='360' height='322' fill='#fff'/><rect width='360' height='322' fill='#e3f2fd'/><polygon points='231.8,22.7 239.4,50.4 253.1,58.8 259.9,92.4 277.4,105.0 292.6,121.8 313.1,142.8 315.4,169.7 311.6,193.2 297.9,217.6 288.8,243.6 266.0,254.5 247.0,255.4 224.2,254.5 209.0,235.2 197.6,226.8 193.8,210.0 178.6,225.1 167.2,205.8 144.4,197.4 106.4,204.1 87.4,216.7 60.8,218.4 44.1,226.8 22.8,220.9 26.6,197.4 21.3,168.0 11.4,151.2 15.2,117.6 34.2,106.7 68.4,92.4 78.3,75.6 98.8,54.6 117.8,50.4 133.0,58.8 140.6,37.8 155.8,29.4 182.4,33.6 187.7,33.6 182.4,50.4 178.6,58.8 190.0,71.4 209.0,79.8 224.2,67.2 224.2,37.8' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='250.8,275.5 275.9,276.4 273.6,294.0 262.2,299.0 252.3,289.8' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polyline points='249.3,55.4 255.4,84.0 272.1,117.6 288.8,155.4 296.4,189.0 288.8,222.6 267.5,243.6' fill='none' stroke='#6d4c41' stroke-width='5' stroke-linejoin='round' stroke-linecap='round'  stroke-opacity='0.55'/><ellipse cx='229.5' cy='151.2' rx='34' ry='38' fill='#90caf9' fill-opacity='0.55' stroke='#1565c0' stroke-width='1.2' stroke-dasharray='4 3'/><polyline points='247.8,45.4 259.2,71.4 273.6,97.4 293.4,122.6 308.6,136.1' fill='none' stroke='#e91e63' stroke-width='3.2' stroke-linejoin='round' stroke-linecap='round' stroke-dasharray='1 5' /><circle cx='291.1' cy='171.4' r='3.4' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='303.1' y='175.4' font-size='12' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가) 산맥</text><text x='229.5' y='155.2' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(나) 분지</text><circle cx='294.1' cy='94.1' r='3.4' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='284.1' y='96.1' font-size='12' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(다) 산호초</text><text x='8' y='18' font-size='10' fill='#555' text-anchor='start'>N ↑</text><text x='40' y='150' font-size='11' fill='#777' text-anchor='start'>오스트레일리아</text></svg>",
+     "caption": "문항의 (가)~(다)가 어떤 종류의 지형인지 붙인 모식도"
+    }
+   ],
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 322' font-family='sans-serif'><rect width='360' height='322' fill='#fff'/><rect width='360' height='322' fill='#e3f2fd'/><polygon points='231.8,22.7 239.4,50.4 253.1,58.8 259.9,92.4 277.4,105.0 292.6,121.8 313.1,142.8 315.4,169.7 311.6,193.2 297.9,217.6 288.8,243.6 266.0,254.5 247.0,255.4 224.2,254.5 209.0,235.2 197.6,226.8 193.8,210.0 178.6,225.1 167.2,205.8 144.4,197.4 106.4,204.1 87.4,216.7 60.8,218.4 44.1,226.8 22.8,220.9 26.6,197.4 21.3,168.0 11.4,151.2 15.2,117.6 34.2,106.7 68.4,92.4 78.3,75.6 98.8,54.6 117.8,50.4 133.0,58.8 140.6,37.8 155.8,29.4 182.4,33.6 187.7,33.6 182.4,50.4 178.6,58.8 190.0,71.4 209.0,79.8 224.2,67.2 224.2,37.8' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='250.8,275.5 275.9,276.4 273.6,294.0 262.2,299.0 252.3,289.8' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polyline points='249.3,55.4 255.4,84.0 272.1,117.6 288.8,155.4 296.4,189.0 288.8,222.6 267.5,243.6' fill='none' stroke='#6d4c41' stroke-width='5' stroke-linejoin='round' stroke-linecap='round'  stroke-opacity='0.55'/><ellipse cx='229.5' cy='151.2' rx='34' ry='38' fill='#90caf9' fill-opacity='0.55' stroke='#1565c0' stroke-width='1.2' stroke-dasharray='4 3'/><polyline points='247.8,45.4 259.2,71.4 273.6,97.4 293.4,122.6 308.6,136.1' fill='none' stroke='#e91e63' stroke-width='3.2' stroke-linejoin='round' stroke-linecap='round' stroke-dasharray='1 5' /><circle cx='291.1' cy='171.4' r='3.4' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='303.1' y='175.4' font-size='12' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가)</text><text x='229.5' y='155.2' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(나)</text><circle cx='294.1' cy='94.1' r='3.4' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='284.1' y='96.1' font-size='12' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(다)</text><text x='8' y='18' font-size='10' fill='#555' text-anchor='start'>N ↑</text><text x='40' y='150' font-size='11' fill='#777' text-anchor='start'>오스트레일리아</text></svg>",
+    "caption": "오스트레일리아의 주요 지형 위치를 나타낸 모식도"
+   }
+  },
+  {
+   "id": "u6-Q03-b",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "오스트레일리아의 지형",
+   "source": "교과서 p.111",
+   "question": "지도의 (가)~(다)를 ㉠~㉢의 설명과 바르게 연결한 것은?",
+   "choices": [
+    "(가) ㉡, (나) ㉠, (다) ㉢",
+    "(가) ㉢, (나) ㉠, (다) ㉡",
+    "(가) ㉢, (나) ㉡, (다) ㉠",
+    "(가) ㉠, (나) ㉡, (다) ㉢",
+    "(가) ㉡, (나) ㉢, (다) ㉠"
+   ],
+   "answer": 2,
+   "explanation": "(가)는 서쪽 중앙부의 분지(㉢), (나)는 북동부 바다의 산호초(㉠), (다)는 동부 해안의 산맥(㉡)이에요.",
+   "choiceExplanations": [
+    "(가)는 실제로 ㉢(산맥 서쪽 중앙부의 분지)인데 ㉡으로 연결했어요. (다)는 실제로 ㉡(동부 해안을 따라 남북으로 뻗은 산맥)인데 ㉢으로 연결했어요.",
+    "정답. (가)는 서쪽 중앙부의 분지(㉢), (나)는 북동부 바다의 산호초(㉠), (다)는 동부 해안의 산맥(㉡)이에요.",
+    "(나)는 실제로 ㉠(북동부 해안의 산호초 군락)인데 ㉡으로 연결했어요. (다)는 실제로 ㉡(동부 해안을 따라 남북으로 뻗은 산맥)인데 ㉠으로 연결했어요.",
+    "(가)는 실제로 ㉢(산맥 서쪽 중앙부의 분지)인데 ㉠으로 연결했어요. (나)는 실제로 ㉠(북동부 해안의 산호초 군락)인데 ㉡으로 연결했어요. (다)는 실제로 ㉡(동부 해안을 따라 남북으로 뻗은 산맥)인데 ㉢으로 연결했어요.",
+    "(가)는 실제로 ㉢(산맥 서쪽 중앙부의 분지)인데 ㉡으로 연결했어요. (나)는 실제로 ㉠(북동부 해안의 산호초 군락)인데 ㉢으로 연결했어요. (다)는 실제로 ㉡(동부 해안을 따라 남북으로 뻗은 산맥)인데 ㉠으로 연결했어요."
+   ],
+   "detail": "(가)는 대륙 안쪽에 둥글게 표시된 곳으로 산맥의 서쪽 중앙부에 있는 분지(㉢)예요.\n(나)는 육지 밖 북동부 바다에 점선으로 표시되어 산호가 모여 이룬 산호초 군락(㉠)이에요.\n(다)는 동쪽 해안을 따라 길게 이어진 산맥(㉡)이에요. 지형의 모양과 위치를 같이 보면 쉽게 연결돼요.",
+   "tip": "분지 = 안쪽 중앙, 산호초 = 바다, 산맥 = 길게 이어진 줄.",
+   "refs": [
+    {
+     "kind": "svg",
+     "title": "지형 종류 표시",
+     "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 322' font-family='sans-serif'><rect width='360' height='322' fill='#fff'/><rect width='360' height='322' fill='#e3f2fd'/><polygon points='231.8,22.7 239.4,50.4 253.1,58.8 259.9,92.4 277.4,105.0 292.6,121.8 313.1,142.8 315.4,169.7 311.6,193.2 297.9,217.6 288.8,243.6 266.0,254.5 247.0,255.4 224.2,254.5 209.0,235.2 197.6,226.8 193.8,210.0 178.6,225.1 167.2,205.8 144.4,197.4 106.4,204.1 87.4,216.7 60.8,218.4 44.1,226.8 22.8,220.9 26.6,197.4 21.3,168.0 11.4,151.2 15.2,117.6 34.2,106.7 68.4,92.4 78.3,75.6 98.8,54.6 117.8,50.4 133.0,58.8 140.6,37.8 155.8,29.4 182.4,33.6 187.7,33.6 182.4,50.4 178.6,58.8 190.0,71.4 209.0,79.8 224.2,67.2 224.2,37.8' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='250.8,275.5 275.9,276.4 273.6,294.0 262.2,299.0 252.3,289.8' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polyline points='249.3,55.4 255.4,84.0 272.1,117.6 288.8,155.4 296.4,189.0 288.8,222.6 267.5,243.6' fill='none' stroke='#6d4c41' stroke-width='5' stroke-linejoin='round' stroke-linecap='round'  stroke-opacity='0.55'/><ellipse cx='229.5' cy='151.2' rx='34' ry='38' fill='#90caf9' fill-opacity='0.55' stroke='#1565c0' stroke-width='1.2' stroke-dasharray='4 3'/><polyline points='247.8,45.4 259.2,71.4 273.6,97.4 293.4,122.6 308.6,136.1' fill='none' stroke='#e91e63' stroke-width='3.2' stroke-linejoin='round' stroke-linecap='round' stroke-dasharray='1 5' /><circle cx='291.1' cy='171.4' r='3.4' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='303.1' y='175.4' font-size='12' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(다) 산맥</text><text x='229.5' y='155.2' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가) 분지</text><circle cx='294.1' cy='94.1' r='3.4' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='284.1' y='96.1' font-size='12' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(나) 산호초</text><text x='8' y='18' font-size='10' fill='#555' text-anchor='start'>N ↑</text><text x='40' y='150' font-size='11' fill='#777' text-anchor='start'>오스트레일리아</text></svg>",
+     "caption": "문항의 (가)~(다)가 어떤 종류의 지형인지 붙인 모식도"
+    }
+   ],
+   "passageTitle": "설명",
+   "passage": "㉠ 북동부 해안에서 바다 쪽에 발달한 세계 최대의 산호초 군락\n㉡ 동부 해안을 따라 남북으로 길게 뻗은 산맥\n㉢ 산맥의 서쪽 중앙부에 있는 분지",
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 322' font-family='sans-serif'><rect width='360' height='322' fill='#fff'/><rect width='360' height='322' fill='#e3f2fd'/><polygon points='231.8,22.7 239.4,50.4 253.1,58.8 259.9,92.4 277.4,105.0 292.6,121.8 313.1,142.8 315.4,169.7 311.6,193.2 297.9,217.6 288.8,243.6 266.0,254.5 247.0,255.4 224.2,254.5 209.0,235.2 197.6,226.8 193.8,210.0 178.6,225.1 167.2,205.8 144.4,197.4 106.4,204.1 87.4,216.7 60.8,218.4 44.1,226.8 22.8,220.9 26.6,197.4 21.3,168.0 11.4,151.2 15.2,117.6 34.2,106.7 68.4,92.4 78.3,75.6 98.8,54.6 117.8,50.4 133.0,58.8 140.6,37.8 155.8,29.4 182.4,33.6 187.7,33.6 182.4,50.4 178.6,58.8 190.0,71.4 209.0,79.8 224.2,67.2 224.2,37.8' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='250.8,275.5 275.9,276.4 273.6,294.0 262.2,299.0 252.3,289.8' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polyline points='249.3,55.4 255.4,84.0 272.1,117.6 288.8,155.4 296.4,189.0 288.8,222.6 267.5,243.6' fill='none' stroke='#6d4c41' stroke-width='5' stroke-linejoin='round' stroke-linecap='round'  stroke-opacity='0.55'/><ellipse cx='229.5' cy='151.2' rx='34' ry='38' fill='#90caf9' fill-opacity='0.55' stroke='#1565c0' stroke-width='1.2' stroke-dasharray='4 3'/><polyline points='247.8,45.4 259.2,71.4 273.6,97.4 293.4,122.6 308.6,136.1' fill='none' stroke='#e91e63' stroke-width='3.2' stroke-linejoin='round' stroke-linecap='round' stroke-dasharray='1 5' /><circle cx='291.1' cy='171.4' r='3.4' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='303.1' y='175.4' font-size='12' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(다)</text><text x='229.5' y='155.2' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가)</text><circle cx='294.1' cy='94.1' r='3.4' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='284.1' y='96.1' font-size='12' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(나)</text><text x='8' y='18' font-size='10' fill='#555' text-anchor='start'>N ↑</text><text x='40' y='150' font-size='11' fill='#777' text-anchor='start'>오스트레일리아</text></svg>",
+    "caption": "오스트레일리아의 주요 지형 위치를 나타낸 모식도"
+   }
+  },
+  {
+   "id": "u6-Q04-a",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "뉴질랜드의 자연환경",
+   "source": "교과서 p.111",
+   "question": "윗글의 내용으로 옳지 않은 것은?",
+   "choices": [
+    "북섬은 지진과 화산 활동이 자주 일어나는 섬이다.",
+    "남섬에는 빙하가 만든 지형이 다양하게 나타난다.",
+    "일 년 내내 비가 고르게 내리는 편이어서 계절별 차이가 작다.",
+    "남섬은 지각이 불안정해 화산 활동이 활발한 곳이다.",
+    "기온의 연교차가 작은 온대 기후가 나타난다."
+   ],
+   "answer": 4,
+   "explanation": "화산 활동이 활발한 곳은 남섬이 아니라 북섬이에요.",
+   "choiceExplanations": [
+    "여행 일기 첫째 날에 북섬은 땅이 불안정하다고 적혀 있어요. 옳은 설명이에요.",
+    "둘째 날 남섬에서 빙하 지형을 구경했다고 적혀 있어요. 옳은 설명이에요.",
+    "셋째 날 기록에 비가 일 년 내내 고르게 내린다고 나와요. 옳은 설명이에요.",
+    "정답. 화산 활동이 활발한 곳은 남섬이 아니라 북섬이에요.",
+    "셋째 날 기록에 연교차가 작은 온대 기후라고 나와요. 옳은 설명이에요."
+   ],
+   "detail": "여행 일기에서 북섬은 지진과 화산 활동이 잦고, 남섬은 빙하 지형이 발달했다고 정리돼 있어요.\n그런데 선택지는 두 섬의 특징을 서로 바꿔서 남섬에 화산 활동을 붙였어요.\n뉴질랜드는 두 큰 섬(북섬·남섬)으로 이루어져 있고 특징이 섬마다 달라요. 온대 기후는 두 섬을 아울러 설명한 내용이에요.",
+   "tip": "북섬 = 화산·지진, 남섬 = 빙하. 섬 이름을 바꾼 진술을 찾으면 돼요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "뉴질랜드 두 섬의 특징",
+     "head": [
+      "섬",
+      "지형"
+     ],
+     "rows": [
+      [
+       "북섬",
+       "지각 불안정, 지진·화산 활동 잦음"
+      ],
+      [
+       "남섬",
+       "다양한 빙하 지형"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "[뉴질랜드 가족 여행 일기]\n첫째 날(북섬) 안내원이 이 섬은 땅이 불안정해서 지진과 화산 활동이 자주 일어난다고 했다. 김이 오르는 땅이 신기했다.\n둘째 날(남섬) 빙하가 깎아 만든 지형을 배를 타고 둘러보았다. 이 섬에는 이런 빙하 지형이 다양하게 발달해 있다고 한다.\n셋째 날 비가 일 년 내내 고르게 내리고, 기온의 연교차가 작은 온대 기후라서 여행하기 좋았다."
+  },
+  {
+   "id": "u6-Q04-b",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "뉴질랜드의 자연환경",
+   "source": "교과서 p.111",
+   "question": "표의 내용으로 옳지 않은 것은?",
+   "choices": [
+    "북섬은 지각이 불안정해 화산 활동이 활발하다.",
+    "남섬에는 빙하 지형이 다양하게 발달해 있다.",
+    "내륙에 사막이 발달한 건조 기후 나라이다.",
+    "일 년 내내 비가 고르게 내려 강수량의 변화가 작다.",
+    "기온의 연교차가 작은 온대 기후가 나타난다."
+   ],
+   "answer": 3,
+   "explanation": "뉴질랜드는 온대 기후가 나타나며, 건조 기후와 사막은 표에도 없고 맞지 않아요.",
+   "choiceExplanations": [
+    "표의 북섬 칸에 같은 내용이 있어요. 옳은 설명이에요.",
+    "표의 남섬 칸에 같은 내용이 있어요. 옳은 설명이에요.",
+    "정답. 뉴질랜드는 온대 기후가 나타나며, 건조 기후와 사막은 표에도 없고 맞지 않아요.",
+    "표의 강수 칸에 같은 내용이 있어요. 옳은 설명이에요.",
+    "표의 기온 칸에 같은 내용이 있어요. 옳은 설명이에요."
+   ],
+   "detail": "표에는 북섬의 화산·지진, 남섬의 빙하 지형, 일 년 내내 고른 강수, 작은 기온 연교차가 정리돼 있어요.\n뉴질랜드는 일 년 내내 비가 고르게 내리는 온대 기후라서 건조 기후 지역이나 사막이 넓게 있지 않아요.\n건조 기후와 사막은 뉴질랜드에 해당하지 않아요. 표에 없는 내용이 나오면 의심해 봐요.",
+   "tip": "표에 있는 네 가지(화산·빙하·고른 강수·작은 연교차)에 없으면 틀린 설명이에요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "뉴질랜드의 자연환경",
+     "head": [
+      "구분",
+      "특징"
+     ],
+     "rows": [
+      [
+       "북섬",
+       "지진·화산 활동 잦음"
+      ],
+      [
+       "남섬",
+       "빙하 지형 발달"
+      ],
+      [
+       "기후",
+       "연중 고른 강수, 연교차 작은 온대"
+      ]
+     ]
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 162' font-family='sans-serif'><rect width='348' height='162' fill='#fff'/><text x='4' y='16' font-size='11.5' fill='#222' text-anchor='start' font-weight='bold'>모둠 발표 자료: 뉴질랜드</text><rect x='4' y='26' width='60' height='26' fill='#e3f2fd' stroke='#9e9e9e' stroke-width='0.8'/><text x='34.0' y='43.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>구분</text><rect x='64' y='26' width='280' height='26' fill='#e3f2fd' stroke='#9e9e9e' stroke-width='0.8'/><text x='204.0' y='43.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>내용</text><rect x='4' y='52' width='60' height='26' fill='#fafafa' stroke='#9e9e9e' stroke-width='0.8'/><text x='34.0' y='69.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>북섬</text><rect x='64' y='52' width='280' height='26' fill='#fff' stroke='#9e9e9e' stroke-width='0.8'/><text x='204.0' y='69.0' font-size='11' fill='#222' text-anchor='middle'>지각이 불안정해 화산 활동이 활발</text><rect x='4' y='78' width='60' height='26' fill='#fafafa' stroke='#9e9e9e' stroke-width='0.8'/><text x='34.0' y='95.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>남섬</text><rect x='64' y='78' width='280' height='26' fill='#fff' stroke='#9e9e9e' stroke-width='0.8'/><text x='204.0' y='95.0' font-size='11' fill='#222' text-anchor='middle'>다양한 빙하 지형이 발달</text><rect x='4' y='104' width='60' height='26' fill='#fafafa' stroke='#9e9e9e' stroke-width='0.8'/><text x='34.0' y='121.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>강수</text><rect x='64' y='104' width='280' height='26' fill='#fff' stroke='#9e9e9e' stroke-width='0.8'/><text x='204.0' y='121.0' font-size='11' fill='#222' text-anchor='middle'>일 년 내내 비가 고르게 내림</text><rect x='4' y='130' width='60' height='26' fill='#fafafa' stroke='#9e9e9e' stroke-width='0.8'/><text x='34.0' y='147.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>기온</text><rect x='64' y='130' width='280' height='26' fill='#fff' stroke='#9e9e9e' stroke-width='0.8'/><text x='204.0' y='147.0' font-size='11' fill='#222' text-anchor='middle'>연교차가 작은 온대 기후</text></svg>",
+    "caption": "모둠 발표 자료를 정리한 표"
+   }
+  },
+  {
+   "id": "u6-Q05-a",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "오스트레일리아의 기후와 인구 분포",
+   "source": "교과서 p.111",
+   "question": "지도의 (가), (나) 지점에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉡, ㉣",
+    "㉢, ㉣",
+    "㉠, ㉡, ㉢",
+    "㉠, ㉡, ㉣",
+    "㉡, ㉢, ㉣"
+   ],
+   "answer": 1,
+   "explanation": "(가)는 강수량이 적은 내륙의 건조 기후, (나)는 온대 기후의 해안이므로 ㉡과 ㉣이 옳아요.",
+   "choiceExplanations": [
+    "정답. (가)는 강수량이 적은 내륙의 건조 기후, (나)는 온대 기후의 해안이므로 ㉡과 ㉣이 옳아요.",
+    "㉢은 옳지 않은 진술이에요. (나)는 바다에 접한 남동부 해안 지역이에요. 내륙이 아니에요. ㉡은 옳은 진술인데 빠졌어요. 막대 그래프에서 (가)가 (나)보다 훨씬 낮고, 내륙은 건조 기후예요.",
+    "㉠은 옳지 않은 진술이에요. (가)는 대륙 안쪽의 내륙이고 강수량이 매우 적어 건조 기후가 나타나요. ㉢은 옳지 않은 진술이에요. (나)는 바다에 접한 남동부 해안 지역이에요. 내륙이 아니에요. ㉣은 옳은 진술인데 빠졌어요. 남동부 해안은 온대 기후이고 인구가 많이 모여 살아요.",
+    "㉠은 옳지 않은 진술이에요. (가)는 대륙 안쪽의 내륙이고 강수량이 매우 적어 건조 기후가 나타나요.",
+    "㉢은 옳지 않은 진술이에요. (나)는 바다에 접한 남동부 해안 지역이에요. 내륙이 아니에요."
+   ],
+   "detail": "그래프에서 (가)의 연 강수량은 280mm로 (나)의 1,200mm보다 훨씬 적어요. 강수량이 적은 내륙은 건조 기후가 나타나요.\n(나)는 지도에서 남동쪽 바닷가에 있고 온대 기후가 나타나며, 큰 도시가 발달해 인구 밀도가 높아요.\n지도의 위치(내륙/해안)와 그래프의 값(강수량)을 함께 읽어야 기후를 판단할 수 있어요.",
+   "tip": "내륙 = 건조·강수량 적음, 남동부 해안 = 온대·인구 밀도 높음.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "오스트레일리아의 기후 분포",
+     "head": [
+      "지역",
+      "기후"
+     ],
+     "rows": [
+      [
+       "강수량이 적은 내륙",
+       "건조 기후"
+      ],
+      [
+       "남동부 해안",
+       "온대 기후(인구 밀도 높음)"
+      ],
+      [
+       "적도와 가까운 북부",
+       "열대 기후"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "〈보기〉",
+   "passage": "그래프 값은 이해를 돕기 위해 지은 모식도 값이다.\n〈보기〉\n㉠ (가) 지역은 열대 기후가 나타난다.\n㉡ (가) 지역은 (나)보다 강수량이 적은 내륙의 건조 기후 지역이다.\n㉢ (나) 지역은 내륙에 있어 인구 밀도가 낮다.\n㉣ (나) 지역은 온대 기후가 나타나며 인구 밀도가 높다.",
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 250' font-family='sans-serif'><rect width='360' height='250' fill='#fff'/><rect x='0' y='0' width='232' height='250' fill='#e3f2fd'/><polygon points='152.5,15.4 157.5,34.2 166.5,39.9 171.0,62.7 182.5,71.2 192.5,82.7 206.0,96.9 207.5,115.1 205.0,131.1 196.0,147.6 190.0,165.3 175.0,172.7 162.5,173.3 147.5,172.7 137.5,159.6 130.0,153.9 127.5,142.5 117.5,152.8 110.0,139.7 95.0,134.0 70.0,138.5 57.5,147.1 40.0,148.2 29.0,153.9 15.0,149.9 17.5,134.0 14.0,114.0 7.5,102.6 10.0,79.8 22.5,72.4 45.0,62.7 51.5,51.3 65.0,37.1 77.5,34.2 87.5,39.9 92.5,25.7 102.5,19.9 120.0,22.8 123.5,22.8 120.0,34.2 117.5,39.9 125.0,48.5 137.5,54.1 147.5,45.6 147.5,25.7' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='165.0,187.0 181.5,187.5 180.0,199.5 172.5,202.9 166.0,196.7' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><circle cx='105.0' cy='91.2' r='3.8' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='113.0' y='86.2' font-size='12' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가)</text><circle cx='196.0' cy='147.6' r='3.8' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='170.0' y='161.6' font-size='12' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(나)</text><text x='6' y='14' font-size='10' fill='#555' text-anchor='start'>N ↑</text><text x='316' y='16' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>연 강수량(mm)</text><line x1='276' y1='205.0' x2='354' y2='205.0' stroke='#ddd' stroke-width='0.8'/><text x='272' y='208.5' font-size='9' fill='#444' text-anchor='end'>0</text><line x1='276' y1='163.8' x2='354' y2='163.8' stroke='#ddd' stroke-width='0.8'/><text x='272' y='167.2' font-size='9' fill='#444' text-anchor='end'>500</text><line x1='276' y1='122.5' x2='354' y2='122.5' stroke='#ddd' stroke-width='0.8'/><text x='272' y='126.0' font-size='9' fill='#444' text-anchor='end'>1,000</text><line x1='276' y1='81.2' x2='354' y2='81.2' stroke='#ddd' stroke-width='0.8'/><text x='272' y='84.8' font-size='9' fill='#444' text-anchor='end'>1,500</text><line x1='276' y1='40.0' x2='354' y2='40.0' stroke='#ddd' stroke-width='0.8'/><text x='272' y='43.5' font-size='9' fill='#444' text-anchor='end'>2,000</text><line x1='276' y1='40' x2='276' y2='205' stroke='#444' stroke-width='1.2'/><line x1='276' y1='205' x2='354' y2='205' stroke='#444' stroke-width='1.2'/><rect x='288.7' y='181.9' width='20' height='23.1' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='298.7' y='178.9' font-size='9' fill='#222' text-anchor='middle'>280</text><text x='298.7' y='221' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold'>(가)</text><rect x='321.3' y='106.0' width='20' height='99.0' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='331.3' y='103.0' font-size='9' fill='#222' text-anchor='middle'>1,200</text><text x='331.3' y='221' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold'>(나)</text></svg>",
+    "caption": "오스트레일리아 두 지점의 위치와 연 강수량을 나타낸 모식도(실제 관측값 아님)"
+   }
+  },
+  {
+   "id": "u6-Q05-b",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "오스트레일리아의 기후와 인구 분포",
+   "source": "교과서 p.111",
+   "question": "지도의 (가)~(다) 지점에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉢",
+    "㉠, ㉣",
+    "㉠, ㉡, ㉢",
+    "㉠, ㉢, ㉣",
+    "㉡, ㉢, ㉣"
+   ],
+   "answer": 4,
+   "explanation": "(가)는 열대, (나)는 건조, (다)는 온대이므로 ㉠㉢㉣이 옳아요.",
+   "choiceExplanations": [
+    "㉣은 옳은 진술인데 빠졌어요. 그래프에서 (나)의 연 강수량이 가장 적고 내륙은 건조 기후예요.",
+    "㉢은 옳은 진술인데 빠졌어요. (다)는 남동부 해안으로 온대 기후이고 큰 도시가 발달해 있어요.",
+    "㉡은 옳지 않은 진술이에요. (나)는 대륙 한가운데 내륙이고 강수량이 매우 적어 인구 밀도가 높지 않아요. ㉣은 옳은 진술인데 빠졌어요. 그래프에서 (나)의 연 강수량이 가장 적고 내륙은 건조 기후예요.",
+    "정답. (가)는 열대, (나)는 건조, (다)는 온대이므로 ㉠㉢㉣이 옳아요.",
+    "㉡은 옳지 않은 진술이에요. (나)는 대륙 한가운데 내륙이고 강수량이 매우 적어 인구 밀도가 높지 않아요. ㉠은 옳은 진술인데 빠졌어요. (가)는 대륙 북쪽 끝, 적도와 가까운 곳으로 열대 기후예요."
+   ],
+   "detail": "(가)는 적도와 가까운 북부라 열대 기후, (다)는 남동부 해안이라 온대 기후예요. 두 곳 모두 강수량이 많게 표시되어 있어요.\n(나)는 내륙에 있고 막대가 가장 낮아 건조 기후예요. 해안이 아니라 내륙이므로 인구 밀도가 높다는 ㉡은 틀려요.\n오스트레일리아에서는 해안 지역에 인구와 도시가 몰려 있어요.",
+   "tip": "북부 = 열대, 내륙 = 건조, 남동부 해안 = 온대·인구 밀도 높음.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "오스트레일리아의 기후 분포",
+     "head": [
+      "위치",
+      "기후"
+     ],
+     "rows": [
+      [
+       "적도와 가까운 북부",
+       "열대"
+      ],
+      [
+       "강수량이 적은 내륙",
+       "건조"
+      ],
+      [
+       "남동부 해안",
+       "온대"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "〈보기〉",
+   "passage": "그래프 값은 이해를 돕기 위해 지은 모식도 값이다.\n〈보기〉\n㉠ (가) 지역은 적도와 가까워 열대 기후가 나타난다.\n㉡ (나) 지역은 해안에서 가까워 인구 밀도가 높다.\n㉢ (다) 지역은 온대 기후가 나타나며 많은 사람이 모여 산다.\n㉣ (나) 지역은 강수량이 매우 적은 건조 기후이다.",
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 250' font-family='sans-serif'><rect width='360' height='250' fill='#fff'/><rect x='0' y='0' width='232' height='250' fill='#e3f2fd'/><polygon points='152.5,15.4 157.5,34.2 166.5,39.9 171.0,62.7 182.5,71.2 192.5,82.7 206.0,96.9 207.5,115.1 205.0,131.1 196.0,147.6 190.0,165.3 175.0,172.7 162.5,173.3 147.5,172.7 137.5,159.6 130.0,153.9 127.5,142.5 117.5,152.8 110.0,139.7 95.0,134.0 70.0,138.5 57.5,147.1 40.0,148.2 29.0,153.9 15.0,149.9 17.5,134.0 14.0,114.0 7.5,102.6 10.0,79.8 22.5,72.4 45.0,62.7 51.5,51.3 65.0,37.1 77.5,34.2 87.5,39.9 92.5,25.7 102.5,19.9 120.0,22.8 123.5,22.8 120.0,34.2 117.5,39.9 125.0,48.5 137.5,54.1 147.5,45.6 147.5,25.7' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='165.0,187.0 181.5,187.5 180.0,199.5 172.5,202.9 166.0,196.7' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><circle cx='95.0' cy='25.7' r='3.8' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='103.0' y='20.7' font-size='12' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가)</text><circle cx='105.0' cy='91.2' r='3.8' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='113.0' y='95.2' font-size='12' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(나)</text><circle cx='196.0' cy='147.6' r='3.8' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='170.0' y='161.6' font-size='12' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(다)</text><text x='6' y='14' font-size='10' fill='#555' text-anchor='start'>N ↑</text><text x='316' y='16' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>연 강수량(mm)</text><line x1='276' y1='205.0' x2='354' y2='205.0' stroke='#ddd' stroke-width='0.8'/><text x='272' y='208.5' font-size='9' fill='#444' text-anchor='end'>0</text><line x1='276' y1='163.8' x2='354' y2='163.8' stroke='#ddd' stroke-width='0.8'/><text x='272' y='167.2' font-size='9' fill='#444' text-anchor='end'>500</text><line x1='276' y1='122.5' x2='354' y2='122.5' stroke='#ddd' stroke-width='0.8'/><text x='272' y='126.0' font-size='9' fill='#444' text-anchor='end'>1,000</text><line x1='276' y1='81.2' x2='354' y2='81.2' stroke='#ddd' stroke-width='0.8'/><text x='272' y='84.8' font-size='9' fill='#444' text-anchor='end'>1,500</text><line x1='276' y1='40.0' x2='354' y2='40.0' stroke='#ddd' stroke-width='0.8'/><text x='272' y='43.5' font-size='9' fill='#444' text-anchor='end'>2,000</text><line x1='276' y1='40' x2='276' y2='205' stroke='#444' stroke-width='1.2'/><line x1='276' y1='205' x2='354' y2='205' stroke='#444' stroke-width='1.2'/><rect x='280.5' y='64.8' width='20' height='140.2' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='290.5' y='61.8' font-size='9' fill='#222' text-anchor='middle'>1,700</text><text x='290.5' y='221' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold'>(가)</text><rect x='305.0' y='181.9' width='20' height='23.1' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='315.0' y='178.9' font-size='9' fill='#222' text-anchor='middle'>280</text><text x='315.0' y='221' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold'>(나)</text><rect x='329.5' y='106.0' width='20' height='99.0' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='339.5' y='103.0' font-size='9' fill='#222' text-anchor='middle'>1,200</text><text x='339.5' y='221' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold'>(다)</text></svg>",
+    "caption": "오스트레일리아 세 지점의 위치와 연 강수량을 나타낸 모식도(실제 관측값 아님)"
+   }
+  },
+  {
+   "id": "u6-Q06-a",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "남반구와 계절",
+   "source": "교과서 p.110",
+   "question": "서아는 1월 초 우리나라가 한겨울일 때 가족과 오스트레일리아로 여행을 떠난다. 서아가 가방에 넣으면 가장 알맞은 물건끼리 짝지은 것은?",
+   "choices": [
+    "두꺼운 외투, 털장갑, 목도리",
+    "스키복, 방한 장화, 핫팩, 털장갑",
+    "털모자, 패딩 조끼, 담요",
+    "두꺼운 담요, 보온병, 귀마개",
+    "반팔 옷, 선글라스, 자외선 차단제"
+   ],
+   "answer": 5,
+   "explanation": "오스트레일리아는 우리나라와 계절이 반대여서 1월은 더운 여름이므로 여름용 준비물이 알맞아요.",
+   "choiceExplanations": [
+    "우리나라 겨울 날씨만 떠올린 선택이에요. 이 시기 오스트레일리아는 한겨울이 아니에요.",
+    "겨울 스포츠용 준비물이에요. 여행지가 눈이 쌓이는 계절이 아니어서 알맞지 않아요.",
+    "추위를 막는 물건이에요. 여행지의 기온이 높은 시기라 필요하지 않아요.",
+    "방한용품이에요. 우리나라와 같은 계절이라고 생각했을 때의 준비물이에요.",
+    "정답. 오스트레일리아는 우리나라와 계절이 반대여서 1월은 더운 여름이므로 여름용 준비물이 알맞아요."
+   ],
+   "detail": "오스트레일리아는 남반구에 있어 북반구에 있는 우리나라와 계절이 반대로 나타나요.\n그래서 우리나라가 겨울인 1월에는 오스트레일리아가 여름이라 반팔 옷과 햇빛을 가리는 물건이 필요해요.\n여행지의 위치(어느 반구인지)를 먼저 떠올리면 준비물을 쉽게 고를 수 있어요.",
+   "tip": "우리나라가 겨울 = 남반구는 여름. 반구가 다르면 계절이 반대예요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "반구와 계절",
+     "text": "북반구와 남반구는 계절이 서로 반대로 나타나요. 한쪽이 겨울이면 다른 쪽은 여름이에요."
+    }
+   ]
+  },
+  {
+   "id": "u6-Q06-b",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "남반구와 계절",
+   "source": "교과서 p.110",
+   "question": "다음 대화에서 민준이의 궁금증을 풀 수 있는 설명으로 알맞은 것은?",
+   "choices": [
+    "남반구에 있어 우리나라와 계절이 반대로 나타나기 때문이다.",
+    "적도에 가까워 일 년 내내 기온이 높기 때문이다.",
+    "해류의 영향으로 겨울에도 바닷물이 따뜻하고 날씨가 포근하기 때문이다.",
+    "사막 기후라서 비가 거의 오지 않기 때문이다.",
+    "위도가 높아 12월에 낮이 길어지기 때문이다."
+   ],
+   "answer": 1,
+   "explanation": "남반구의 오스트레일리아는 우리나라와 계절이 반대여서 12월이 한여름이에요.",
+   "choiceExplanations": [
+    "정답. 남반구의 오스트레일리아는 우리나라와 계절이 반대여서 12월이 한여름이에요.",
+    "그곳은 적도와 거리가 멀어 계절에 따른 기온 차이가 있어요.",
+    "따뜻한 해류가 있어도 12월 오스트레일리아가 여름인 까닭은 남반구에 있어 북반구와 계절이 반대이기 때문이에요.",
+    "그곳은 사막이 아니에요. 기후 유형이 이유가 아니에요.",
+    "남반구의 12월에 낮이 긴 것은 맞지만 그곳은 위도가 높은 곳이 아니에요. 이유는 낮의 길이가 아니라 두 지역의 계절이 반대라는 점이에요."
+   ],
+   "detail": "대화에서 우리나라는 12월에 눈이 오는 한겨울인데 사촌이 사는 곳 사람들은 수영복 차림이에요. 같은 달인데 계절이 정반대라는 뜻이에요.\n오스트레일리아는 남반구, 우리나라는 북반구에 있어 계절이 반대로 나타나요.\n그래서 12월이면 그곳은 여름이고, 크리스마스를 해변에서 보내는 풍경이 나타나요.",
+   "tip": "같은 달에 계절이 다르면 반구가 다른 것이에요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "반구와 계절",
+     "text": "북반구가 겨울이면 남반구는 여름이에요. 오스트레일리아와 뉴질랜드는 남반구에 있어요."
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "민준: 지금 우리나라는 12월이라 눈이 오는데, 시드니에 사는 사촌이 크리스마스에 해변에서 수영복을 입고 찍은 사진을 보내 줬어.\n도현: 같은 12월인데 왜 그렇게 다를까?"
+  },
+  {
+   "id": "u6-Q07-a",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "오스트레일리아와 아시아의 상호연계",
+   "source": "교과서 p.112, p.113",
+   "question": "자료에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉢",
+    "㉠, ㉣",
+    "㉠, ㉡, ㉢",
+    "㉠, ㉢, ㉣",
+    "㉡, ㉢, ㉣"
+   ],
+   "answer": 4,
+   "explanation": "㉠㉢㉣이 옳아요. ㉡은 공업 발달이 미약하다는 사실과 맞지 않아요.",
+   "choiceExplanations": [
+    "㉣은 옳은 진술인데 빠졌어요. 그림에서 중국으로 향하는 화살표가 가장 굵어요.",
+    "㉢은 옳은 진술인데 빠졌어요. 제철 같은 공업이 발달한 아시아 국가들이 자원을 많이 필요로 해요.",
+    "㉡은 옳지 않은 진술이에요. 공업 발달이 미약해서 자원을 밖으로 수출해요. ㉣은 옳은 진술인데 빠졌어요. 그림에서 중국으로 향하는 화살표가 가장 굵어요.",
+    "정답. ㉠㉢㉣이 옳아요. ㉡은 공업 발달이 미약하다는 사실과 맞지 않아요.",
+    "㉡은 옳지 않은 진술이에요. 공업 발달이 미약해서 자원을 밖으로 수출해요. ㉠은 옳은 진술인데 빠졌어요. 화살표가 인도·중국·우리나라·일본 같은 아시아 쪽으로 향해요."
+   ],
+   "detail": "그림은 철광석·석탄 산지에서 아시아 여러 나라로 화살표가 뻗는 모식도예요. 유럽 쪽 화살표는 가늘고 점선이에요.\n오스트레일리아는 천연자원이 풍부하지만 공업 발달이 미약하고, 공업이 발달한 아시아 국가는 천연자원 수요가 커서 수출이 많아요.\n그림에서 화살표가 가장 굵은 곳은 중국이라 ㉣도 그림으로 확인돼요.",
+   "tip": "자원 풍부·공업 미약인 나라 → 공업 발달·수요 큰 나라로 화살표가 가요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "자원 이동의 이유",
+     "head": [
+      "구분",
+      "특징"
+     ],
+     "rows": [
+      [
+       "수출하는 나라",
+       "천연자원 풍부, 공업 발달 미약"
+      ],
+      [
+       "수입하는 나라",
+       "공업 발달, 천연자원 수요 큼"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "〈보기〉",
+   "passage": "철광석·석탄 이동 모식도. 화살표가 굵을수록 이동량이 많다.\n〈보기〉\n㉠ 오스트레일리아의 철광석과 석탄은 주로 아시아의 여러 나라로 수출된다.\n㉡ 오스트레일리아는 공업이 크게 발달해 원료를 모두 자국에서 쓴다.\n㉢ 자원을 많이 수입하는 나라들은 공업이 발달해 천연자원의 수요가 크다.\n㉣ 화살표가 가장 굵은 도착지는 중국이다.",
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 262' font-family='sans-serif'><defs><marker id='arO' markerWidth='8' markerHeight='8' refX='6' refY='4' orient='auto'><path d='M0,0 L8,4 L0,8 z' fill='#6d4c41'/></marker></defs><rect width='360' height='262' fill='#fff'/><rect width='360' height='262' fill='#e3f2fd'/><polygon points='111.5,158.9 114.5,169.8 119.9,173.1 122.6,186.3 129.5,191.2 135.5,197.8 143.6,206.1 144.5,216.7 143.0,225.9 137.6,235.5 134.0,245.7 125.0,250.0 117.5,250.3 108.5,250.0 102.5,242.4 98.0,239.1 96.5,232.5 90.5,238.4 86.0,230.8 77.0,227.6 62.0,230.2 54.5,235.1 44.0,235.8 37.4,239.1 29.0,236.8 30.5,227.6 28.4,216.0 24.5,209.4 26.0,196.2 33.5,191.9 47.0,186.3 50.9,179.7 59.0,171.4 66.5,169.8 72.5,173.1 75.5,164.8 81.5,161.6 92.0,163.2 94.1,163.2 92.0,169.8 90.5,173.1 95.0,178.1 102.5,181.3 108.5,176.4 108.5,164.8' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><text x='110' y='259' font-size='11' fill='#555' text-anchor='middle'>오스트레일리아</text><circle cx='85' cy='205' r='4' fill='#6d4c41' stroke='#fff' stroke-width='1'/><text x='85' y='224' font-size='10' fill='#6d4c41' text-anchor='middle' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>철광석·석탄 산지</text><circle cx='45' cy='70' r='5' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='45' y='60' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold'>인도</text><line x1='85' y1='202' x2='45' y2='79' stroke='#6d4c41' stroke-width='2' marker-end='url(#arO)' stroke-opacity='0.8'/><circle cx='120' cy='44' r='5' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='120' y='34' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold'>중국</text><line x1='85' y1='202' x2='120' y2='53' stroke='#6d4c41' stroke-width='10' marker-end='url(#arO)' stroke-opacity='0.8'/><circle cx='205' cy='56' r='5' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='205' y='46' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold'>우리나라</text><line x1='85' y1='202' x2='205' y2='65' stroke='#6d4c41' stroke-width='3.5' marker-end='url(#arO)' stroke-opacity='0.8'/><circle cx='285' cy='68' r='5' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='285' y='58' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold'>일본</text><line x1='85' y1='202' x2='285' y2='77' stroke='#6d4c41' stroke-width='5' marker-end='url(#arO)' stroke-opacity='0.8'/><circle cx='322' cy='225' r='5' fill='#555' stroke='#fff' stroke-width='1'/><text x='322' y='247' font-size='11' fill='#555' text-anchor='middle' font-weight='bold'>유럽</text><line x1='100' y1='208' x2='312' y2='224' stroke='#6d4c41' stroke-width='1' stroke-dasharray='3 3' marker-end='url(#arO)'/><text x='6' y='14' font-size='10' fill='#555' text-anchor='start'>화살표 굵기 = 이동량(모식)</text></svg>",
+    "caption": "오스트레일리아의 철광석·석탄이 이동하는 방향과 양을 나타낸 모식도(실제 수치 아님)"
+   }
+  },
+  {
+   "id": "u6-Q07-b",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "오스트레일리아와 아시아의 상호연계",
+   "source": "교과서 p.112, p.113",
+   "question": "자료에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉡",
+    "㉡, ㉣",
+    "㉢, ㉣",
+    "㉠, ㉡, ㉣",
+    "㉡, ㉢, ㉣"
+   ],
+   "answer": 2,
+   "explanation": "㉡과 ㉣이 옳아요. 무역 상대가 영국·미국에서 가까운 아시아·태평양 연안으로 바뀌었어요.",
+   "choiceExplanations": [
+    "㉠은 옳지 않은 진술이에요. 과거 그래프에서 가장 긴 막대는 영국·미국(45%)이에요. ㉣은 옳은 진술인데 빠졌어요. 가까운 아시아·태평양 연안 국가와 무역을 확대한 결과예요.",
+    "정답. ㉡과 ㉣이 옳아요. 무역 상대가 영국·미국에서 가까운 아시아·태평양 연안으로 바뀌었어요.",
+    "㉢은 옳지 않은 진술이에요. 영국·미국은 45%에서 10%로 줄었어요. ㉡은 옳은 진술인데 빠졌어요. 오늘날 그래프에서 아시아·태평양이 60%로 가장 길어요.",
+    "㉠은 옳지 않은 진술이에요. 과거 그래프에서 가장 긴 막대는 영국·미국(45%)이에요.",
+    "㉢은 옳지 않은 진술이에요. 영국·미국은 45%에서 10%로 줄었어요."
+   ],
+   "detail": "그래프에서 과거에는 영국·미국이 45%로 가장 컸고, 오늘날에는 아시아·태평양 연안이 60%로 가장 커요.\n오스트레일리아는 과거(그래프의 윗부분)에 영국·미국과 무역이 많았어요. 그러나 제2차 세계 대전 이후 영국의 경제 영향력이 줄고 유럽 국가들이 통합 기구를 만들면서 유럽과의 무역이 줄었어요.\n그래서 지리적으로 가까운 아시아·태평양 연안 국가들과 무역을 확대했고, 오늘날(그래프의 아랫부분)에는 그 비중이 가장 커졌어요.",
+   "tip": "무역 상대의 중심 이동: 영국·미국 → 가까운 아시아·태평양 연안.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "무역 상대의 변화",
+     "head": [
+      "시기",
+      "중심 상대"
+     ],
+     "rows": [
+      [
+       "과거",
+       "영국, 미국"
+      ],
+      [
+       "오늘날",
+       "아시아·태평양 연안 국가"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "〈보기〉",
+   "passage": "오스트레일리아의 무역 상대 변화를 나타낸 모식도이다.\n〈보기〉\n㉠ 과거에는 아시아·태평양 연안 국가와의 무역 비중이 가장 컸다.\n㉡ 오늘날 무역 비중이 가장 큰 곳은 아시아·태평양 연안 국가이다.\n㉢ 오늘날 영국·미국과의 무역 비중은 과거보다 커졌다.\n㉣ 이러한 변화는 지리적으로 가까운 국가와 무역을 확대했기 때문이다.",
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 262' font-family='sans-serif'><rect width='360' height='262' fill='#fff'/><text x='8' y='14' font-size='11.5' fill='#222' text-anchor='start' font-weight='bold'>과거</text><text x='94' y='36' font-size='11' fill='#222' text-anchor='end'>영국·미국</text><rect x='100' y='24' width='135.0' height='15' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='239.0' y='36' font-size='10' fill='#222' text-anchor='start'>45%</text><text x='94' y='60' font-size='11' fill='#222' text-anchor='end'>영국 외 유럽</text><rect x='100' y='48' width='45.0' height='15' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='149.0' y='60' font-size='10' fill='#222' text-anchor='start'>15%</text><text x='94' y='84' font-size='11' fill='#222' text-anchor='end'>아시아·태평양</text><rect x='100' y='72' width='60.0' height='15' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='164.0' y='84' font-size='10' fill='#222' text-anchor='start'>20%</text><text x='94' y='108' font-size='11' fill='#222' text-anchor='end'>기타</text><rect x='100' y='96' width='60.0' height='15' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='164.0' y='108' font-size='10' fill='#222' text-anchor='start'>20%</text><line x1='100' y1='21' x2='100' y2='116' stroke='#444'/><text x='8' y='140' font-size='11.5' fill='#222' text-anchor='start' font-weight='bold'>오늘날</text><text x='94' y='162' font-size='11' fill='#222' text-anchor='end'>영국·미국</text><rect x='100' y='150' width='30.0' height='15' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='134.0' y='162' font-size='10' fill='#222' text-anchor='start'>10%</text><text x='94' y='186' font-size='11' fill='#222' text-anchor='end'>영국 외 유럽</text><rect x='100' y='174' width='36.0' height='15' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='140.0' y='186' font-size='10' fill='#222' text-anchor='start'>12%</text><text x='94' y='210' font-size='11' fill='#222' text-anchor='end'>아시아·태평양</text><rect x='100' y='198' width='180.0' height='15' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='284.0' y='210' font-size='10' fill='#222' text-anchor='start'>60%</text><text x='94' y='234' font-size='11' fill='#222' text-anchor='end'>기타</text><rect x='100' y='222' width='54.0' height='15' fill='#42a5f5' stroke='#1565c0' stroke-width='0.8'/><text x='158.0' y='234' font-size='10' fill='#222' text-anchor='start'>18%</text><line x1='100' y1='147' x2='100' y2='242' stroke='#444'/><text x='8' y='254' font-size='10' fill='#444' text-anchor='start'>가로 막대 끝의 값 = 무역 비중(%), 각 시기 합계 100%</text></svg>",
+    "caption": "오스트레일리아의 무역 상대별 비중 변화를 나타낸 모식도(실제 수치 아님)"
+   }
+  },
+  {
+   "id": "u6-Q08-a",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "농축산물 수출",
+   "source": "교과서 p.108, p.112",
+   "question": "그래프를 보고 오스트레일리아가 밀을 수출할 때 얻는 이점으로 가장 알맞은 것은?",
+   "choices": [
+    "수확하는 시기가 북반구 국가와 겹쳐 같은 시기에 팔 수 있다.",
+    "북반구 국가들이 밀을 수확하지 않는 때에 수확해 팔 수 있다.",
+    "한 해에 두 번 수확할 수 있어 생산량이 가장 많다.",
+    "수확이 끝난 뒤 곧바로 팔 필요가 없어 보관 비용이 줄어든다.",
+    "수확 시기가 달라 북반구 국가에는 밀을 팔 수 없다."
+   ],
+   "answer": 2,
+   "explanation": "북반구 국가의 수확이 없는 때에 오스트레일리아가 수확해 수출할 수 있어 유리해요.",
+   "choiceExplanations": [
+    "그래프에서 오스트레일리아의 수확 달은 북반구 두 나라의 수확 달과 겹치지 않아요.",
+    "정답. 북반구 국가의 수확이 없는 때에 오스트레일리아가 수확해 수출할 수 있어 유리해요.",
+    "11~12월과 1~2월은 12월에서 1월로 이어지는 하나의 수확기라서 한 해에 두 번 수확하는 것이 아니에요.",
+    "그래프로는 보관 비용을 알 수 없고 교과서가 말하는 이점도 아니에요.",
+    "시기가 다른 것은 오히려 북반구에 팔기 유리한 조건이에요."
+   ],
+   "detail": "그래프에서 북반구 국가 A·B는 6~9월에 수확하고 오스트레일리아는 11월~이듬해 2월에 수확해요. 두 시기가 겹치지 않아요.\n북반구 국가들이 밀을 수확하지 못하는 때에 오스트레일리아가 수확한 밀을 내놓으면 시장에서 경제적으로 이득을 얻을 수 있어요.\n막대가 칠해진 달만 비교하면 돼요. 오스트레일리아의 11~12월과 1~2월은 12월에서 1월로 이어지는 하나의 수확기예요. 막대 길이에서 생산량을 읽으면 안 돼요.",
+   "tip": "수확 달이 겹치지 않는다 = 다른 나라가 팔지 않는 때에 팔 수 있다.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "밀 수확 시기 비교",
+     "head": [
+      "구분",
+      "수확하는 달"
+     ],
+     "rows": [
+      [
+       "북반구 국가 A·B",
+       "6~9월"
+      ],
+      [
+       "오스트레일리아",
+       "11월~이듬해 2월"
+      ]
+     ]
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 176' font-family='sans-serif'><rect width='360' height='176' fill='#fff'/><text x='8' y='16' font-size='11.5' fill='#222' text-anchor='start' font-weight='bold'>월별 밀 수확 시기 (모식도)</text><line x1='118' y1='46' x2='118' y2='150' stroke='#e0e0e0'/><line x1='138' y1='46' x2='138' y2='150' stroke='#e0e0e0'/><line x1='158' y1='46' x2='158' y2='150' stroke='#e0e0e0'/><line x1='178' y1='46' x2='178' y2='150' stroke='#e0e0e0'/><line x1='198' y1='46' x2='198' y2='150' stroke='#e0e0e0'/><line x1='218' y1='46' x2='218' y2='150' stroke='#e0e0e0'/><line x1='238' y1='46' x2='238' y2='150' stroke='#e0e0e0'/><line x1='258' y1='46' x2='258' y2='150' stroke='#e0e0e0'/><line x1='278' y1='46' x2='278' y2='150' stroke='#e0e0e0'/><line x1='298' y1='46' x2='298' y2='150' stroke='#e0e0e0'/><line x1='318' y1='46' x2='318' y2='150' stroke='#e0e0e0'/><line x1='338' y1='46' x2='338' y2='150' stroke='#e0e0e0'/><line x1='358' y1='46' x2='358' y2='150' stroke='#e0e0e0'/><text x='128.0' y='40' font-size='10' fill='#444' text-anchor='middle'>1</text><text x='148.0' y='40' font-size='10' fill='#444' text-anchor='middle'>2</text><text x='168.0' y='40' font-size='10' fill='#444' text-anchor='middle'>3</text><text x='188.0' y='40' font-size='10' fill='#444' text-anchor='middle'>4</text><text x='208.0' y='40' font-size='10' fill='#444' text-anchor='middle'>5</text><text x='228.0' y='40' font-size='10' fill='#444' text-anchor='middle'>6</text><text x='248.0' y='40' font-size='10' fill='#444' text-anchor='middle'>7</text><text x='268.0' y='40' font-size='10' fill='#444' text-anchor='middle'>8</text><text x='288.0' y='40' font-size='10' fill='#444' text-anchor='middle'>9</text><text x='308.0' y='40' font-size='10' fill='#444' text-anchor='middle'>10</text><text x='328.0' y='40' font-size='10' fill='#444' text-anchor='middle'>11</text><text x='348.0' y='40' font-size='10' fill='#444' text-anchor='middle'>12</text><text x='110' y='40' font-size='10' fill='#444' text-anchor='end'>월</text><text x='110' y='66' font-size='11' fill='#222' text-anchor='end'>국가 A(북반구)</text><rect x='239' y='52' width='18' height='18' fill='#f9a825' stroke='#e65100' stroke-width='0.8'/><rect x='259' y='52' width='18' height='18' fill='#f9a825' stroke='#e65100' stroke-width='0.8'/><rect x='279' y='52' width='18' height='18' fill='#f9a825' stroke='#e65100' stroke-width='0.8'/><text x='110' y='100' font-size='11' fill='#222' text-anchor='end'>국가 B(북반구)</text><rect x='219' y='86' width='18' height='18' fill='#f9a825' stroke='#e65100' stroke-width='0.8'/><rect x='239' y='86' width='18' height='18' fill='#f9a825' stroke='#e65100' stroke-width='0.8'/><rect x='259' y='86' width='18' height='18' fill='#f9a825' stroke='#e65100' stroke-width='0.8'/><text x='110' y='134' font-size='11' fill='#222' text-anchor='end'>오스트레일리아</text><rect x='319' y='120' width='18' height='18' fill='#f9a825' stroke='#e65100' stroke-width='0.8'/><rect x='339' y='120' width='18' height='18' fill='#f9a825' stroke='#e65100' stroke-width='0.8'/><rect x='119' y='120' width='18' height='18' fill='#f9a825' stroke='#e65100' stroke-width='0.8'/><rect x='139' y='120' width='18' height='18' fill='#f9a825' stroke='#e65100' stroke-width='0.8'/><text x='8' y='168' font-size='10' fill='#444' text-anchor='start'>칠해진 달 = 밀을 수확하는 달</text></svg>",
+    "caption": "월별 밀 수확 시기를 나타낸 모식도(실제 국가별 정확한 달이 아님)"
+   }
+  },
+  {
+   "id": "u6-Q08-b",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "농축산물 수출",
+   "source": "교과서 p.108, p.112",
+   "question": "그래프와 다음 대화를 바탕으로 뉴질랜드에 대해 옳게 말한 것은?",
+   "choices": [
+    "광물과 연료 수출이 전체의 절반 이상을 차지한다.",
+    "기타 품목이 가장 큰 비중을 차지한다.",
+    "농축산물 수출이 절반을 넘고 양털·소고기·과일이 중요하다.",
+    "농축산물과 기타 품목의 비중이 같다.",
+    "공업 제품이 수출의 대부분을 차지하며 농산물 수출은 거의 없다."
+   ],
+   "answer": 3,
+   "explanation": "뉴질랜드는 농산물 수출이 전체 수출의 절반 이상이고 주요 수출품은 양털·소고기·과일이에요.",
+   "choiceExplanations": [
+    "그래프에서 광물·연료는 14%로 작은 부분이에요.",
+    "그래프에서 기타는 30%로 농축산물 56%보다 작아요.",
+    "정답. 뉴질랜드는 농산물 수출이 전체 수출의 절반 이상이고 주요 수출품은 양털·소고기·과일이에요.",
+    "56%와 30%로 서로 달라요.",
+    "농산물 수출이 가장 큰 비중이라 사실과 달라요."
+   ],
+   "detail": "그래프에서 농축산물은 56%로 전체의 절반을 넘고, 광물·연료(14%)와 기타(30%)보다 커요.\n교과서도 뉴질랜드는 농산물 수출이 전체 수출의 절반 이상이며 양털, 소고기, 과일 등이 주요 수출품이라고 설명해요.\n그래프의 가장 긴 구간을 찾아 세 부분의 크기를 비교하면 돼요.",
+   "tip": "수출 구성에서 가장 긴 구간을 찾고, 뉴질랜드 = 농축산물이 중심이라는 점을 기억해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "뉴질랜드의 주요 수출품",
+     "head": [
+      "구분",
+      "예"
+     ],
+     "rows": [
+      [
+       "농축산물",
+       "양털, 소고기, 과일"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "민수: 뉴질랜드는 양을 많이 키우는 나라라고 들었어.\n지아: 그럼 뉴질랜드는 무엇을 가장 많이 수출하는지 그래프로 확인해 보자.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 140' font-family='sans-serif'><rect width='360' height='140' fill='#fff'/><text x='8' y='16' font-size='11.5' fill='#222' text-anchor='start' font-weight='bold'>뉴질랜드의 수출 구성 (모식도)</text><rect x='20.0' y='36' width='179.2' height='34' fill='#2e7d32' stroke='#fff' stroke-width='1.5'/><text x='109.6' y='58' font-size='12' fill='#fff' text-anchor='middle' font-weight='bold'>56%</text><text x='109.6' y='90' font-size='11' fill='#222' text-anchor='middle'>농축산물</text><rect x='199.2' y='36' width='44.8' height='34' fill='#bdbdbd' stroke='#fff' stroke-width='1.5'/><text x='221.6' y='58' font-size='12' fill='#222' text-anchor='middle' font-weight='bold'>14%</text><text x='221.6' y='90' font-size='11' fill='#222' text-anchor='middle'>광물·연료</text><rect x='244.0' y='36' width='96.0' height='34' fill='#ffcc80' stroke='#fff' stroke-width='1.5'/><text x='292.0' y='58' font-size='12' fill='#222' text-anchor='middle' font-weight='bold'>30%</text><text x='292.0' y='90' font-size='11' fill='#222' text-anchor='middle'>기타</text><text x='20' y='124' font-size='10' fill='#444' text-anchor='start'>구성 비율의 합계는 100%이며 실제 수치가 아님</text></svg>",
+    "caption": "뉴질랜드의 수출 구성을 나타낸 모식도(실제 수치 아님)"
+   }
+  },
+  {
+   "id": "u6-Q09-a",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "해양 쓰레기 문제",
+   "source": "교과서 p.115",
+   "question": "윗글의 내용으로 옳지 않은 것은?",
+   "choices": [
+    "하천이나 배수구를 거쳐 바다로 흘러든 쓰레기가 포함된다.",
+    "어업 활동 중에 버려진 그물 같은 쓰레기도 포함된다.",
+    "(가)의 쓰레기는 해류를 따라 빠져나가 쌓이지 않는다.",
+    "쓰레기 가운데 많은 부분을 플라스틱이 차지하고 있다.",
+    "(가)는 바람과 해류의 순환으로 쓰레기가 모인 곳이다."
+   ],
+   "answer": 3,
+   "explanation": "(가)는 바람과 해류의 순환으로 쓰레기가 한곳에 모여 쓰레기 지대를 이룬 곳이에요.",
+   "choiceExplanations": [
+    "조사 기록의 첫째 줄에 있는 내용이에요. 옳은 설명이에요.",
+    "조사 기록의 둘째 줄에 있는 내용이에요. 옳은 설명이에요.",
+    "정답. (가)는 바람과 해류의 순환으로 쓰레기가 한곳에 모여 쓰레기 지대를 이룬 곳이에요.",
+    "조사 기록의 셋째 줄에 있는 내용이에요. 옳은 설명이에요.",
+    "조사 기록의 넷째 줄과 지도의 화살표가 가리키는 내용이에요. 옳은 설명이에요."
+   ],
+   "detail": "지도의 화살표는 북태평양에서 해류가 크게 돌아 흐르는 모습이에요. 그 한가운데인 (가)에 쓰레기가 모여 있어요.\n그래서 쓰레기가 해류를 따라 빠져나간다는 선택지는 지도의 흐름과 조사 기록 모두와 어긋나요.\n해양 쓰레기는 육지에서 흘러온 것과 어업 중 버려진 것이 섞여 있고, 바람과 해류의 순환으로 한곳에 모이면 거대한 쓰레기 지대가 돼요.",
+   "tip": "해류가 도는 한가운데 = 쓰레기가 모이는 곳.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "해양 쓰레기의 종류",
+     "head": [
+      "출처",
+      "예"
+     ],
+     "rows": [
+      [
+       "육지에서 떠내려옴",
+       "하천·배수구를 통해 흘러든 쓰레기"
+      ],
+      [
+       "바다에서 발생",
+       "어업 중 버려진 그물 등"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "조사 기록",
+   "passage": "[조사 기록]\n- 쓰레기 가운데에는 하천과 배수구를 타고 바다로 흘러온 것이 있다.\n- 어업 활동 중에 버려진 그물 같은 쓰레기도 있다.\n- 쓰레기 가운데 많은 부분이 플라스틱이다.\n- 이 쓰레기들은 바람과 해류의 순환을 따라 (가)에 모인다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 250' font-family='sans-serif'><defs><marker id='arG' markerWidth='8' markerHeight='8' refX='6' refY='4' orient='auto'><path d='M0,0 L8,4 L0,8 z' fill='#1565c0'/></marker></defs><rect width='360' height='250' fill='#fff'/><rect width='360' height='250' fill='#e3f2fd'/><polygon points='0,0 60,0 52,40 36,90 46,140 30,190 0,190' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='360,0 300,0 306,38 322,80 312,130 328,185 360,185' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><text x='26' y='70' font-size='11' fill='#555' text-anchor='middle'>아시아</text><text x='332' y='70' font-size='10.5' fill='#555' text-anchor='middle'>북아메리카</text><path d='M88,115 A97,62 0 0 1 185,53 A97,62 0 0 1 282,115 A97,62 0 0 1 185,177 A97,62 0 0 1 92,126' fill='none' stroke='#1565c0' stroke-width='3' marker-end='url(#arG)'/><circle cx='185' cy='115' r='22' fill='#ffe0b2' stroke='#e65100' stroke-width='1.5' stroke-dasharray='3 2'/><text x='185' y='120' font-size='12' fill='#b71c1c' text-anchor='middle' font-weight='bold'>(가)</text><text x='185' y='28' font-size='11' fill='#1a237e' text-anchor='middle' font-weight='bold'>북태평양 (모식도)</text><text x='185' y='214' font-size='10' fill='#444' text-anchor='middle'>화살표 = 해류가 흐르는 방향</text></svg>",
+    "caption": "북태평양 해류의 흐름을 나타낸 모식도"
+   }
+  },
+  {
+   "id": "u6-Q09-b",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "해양 쓰레기 문제",
+   "source": "교과서 p.115",
+   "question": "해양 쓰레기에 대한 설명으로 옳지 않은 것은?",
+   "choices": [
+    "해양 쓰레기에는 육지에서 떠내려온 것과 어업 중 버려진 것이 모두 있다.",
+    "플라스틱은 자연 분해가 거의 되지 않은 채 바다를 떠돈다.",
+    "미세 플라스틱은 크기가 너무 작아 걷어 내기가 쉽지 않다.",
+    "플라스틱은 바다에 들어가면 곧 분해되어 바다에 오래 남지 않는다.",
+    "해양 쓰레기는 극단적인 경우 선박의 안전사고까지 일으킬 수 있다."
+   ],
+   "answer": 4,
+   "explanation": "플라스틱은 자연 분해가 거의 되지 않아 오랫동안 바다를 떠돌아요.",
+   "choiceExplanations": [
+    "해양 쓰레기의 종류를 바르게 설명했어요. 옳은 설명이에요.",
+    "플라스틱의 가장 큰 문제점이에요. 옳은 설명이에요.",
+    "크기가 매우 작아 수거하기 어려워요. 옳은 설명이에요.",
+    "정답. 플라스틱은 자연 분해가 거의 되지 않아 오랫동안 바다를 떠돌아요.",
+    "인명과 재산 피해를 가져올 수 있어요. 옳은 설명이에요."
+   ],
+   "detail": "해양 쓰레기에는 육지에서 흘러온 것과 바다에서 버려진 것이 있고, 많은 부분이 플라스틱이에요.\n플라스틱은 자연 분해가 거의 되지 않아서 오래 바다에 남아 해양 생물을 위협해요. 바다의 낮은 수온과 염분은 분해 시간을 더 늘려요.\n그래서 플라스틱이 곧 분해되어 사라진다는 설명은 사실과 반대예요.",
+   "tip": "플라스틱 = 잘 분해되지 않아 오래 남는다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "플라스틱의 특징",
+     "text": "자연 분해가 거의 되지 않고, 쪼개지고 찢어진 채로 바다를 떠돌아요."
+    }
+   ]
+  },
+  {
+   "id": "u6-Q10-a",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "해수면 상승 문제",
+   "source": "교과서 p.116",
+   "question": "자료의 점선처럼 해수면이 높아질 때 이 섬나라에서 나타날 수 있는 피해로 옳은 것은?",
+   "choices": [
+    "지하수의 양이 늘어 마실 물이 풍부해진다.",
+    "섬의 면적이 넓어져 농사지을 수 있는 땅이 늘어난다.",
+    "바닷물이 맑아져 항구 이용이 쉬워진다.",
+    "비가 줄어 가뭄 피해가 가장 크게 나타난다.",
+    "바닷물이 지하수로 스며들어 마실 물이 부족해진다."
+   ],
+   "answer": 5,
+   "explanation": "낮은 섬에 바닷물이 스며들면 지하수가 짜져 식수가 부족해져요.",
+   "choiceExplanations": [
+    "바닷물이 들어오면 지하수가 오히려 짜져서 마실 수 없게 돼요.",
+    "해수면이 오르면 낮은 땅이 물에 잠겨 면적이 줄어요.",
+    "해수면 상승과 바닷물의 맑기는 관계가 없고 교과서가 말하는 피해도 아니에요.",
+    "비가 줄어드는 것은 해수면 상승 때문이 아니에요.",
+    "정답. 낮은 섬에 바닷물이 스며들면 지하수가 짜져 식수가 부족해져요."
+   ],
+   "detail": "자료의 섬나라는 해발 고도가 1m 미만으로 낮고 지하수를 마시는 물로 써요. 해수면이 점선까지 오르면 섬의 아래쪽이 바닷물과 맞닿아요.\n그러면 바닷물의 염분이 지하수에 스며들어 식수가 부족해지고 농작물도 소금기 피해를 입어요.\n이처럼 해발 고도가 낮은 섬나라는 해수면 상승의 영향을 크게 받아요.",
+   "tip": "해발 고도가 낮은 섬 + 해수면 상승 = 지하수에 염분, 식수 부족.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "낮은 섬나라의 피해",
+     "head": [
+      "대상",
+      "피해"
+     ],
+     "rows": [
+      [
+       "지하수",
+       "염분이 스며들어 식수 부족"
+      ],
+      [
+       "농작물",
+       "염해(소금기) 피해"
+      ],
+      [
+       "국토",
+       "바닷물에 잠길 위기"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "기사",
+   "passage": "[신문 기사] 태평양의 한 섬나라는 대부분의 국토가 해발 고도 1m 미만이다. 주민들은 지하수를 마시는 물로 쓰고 바나나 같은 작물을 키워 왔다. 그런데 바닷물의 높이가 해마다 조금씩 올라가고 있다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 230' font-family='sans-serif'><defs><marker id='arI' markerWidth='8' markerHeight='8' refX='6' refY='4' orient='auto'><path d='M0,0 L8,4 L0,8 z' fill='#c62828'/></marker></defs><rect width='360' height='230' fill='#fff'/><rect x='0' y='120' width='360' height='110' fill='#bbdefb'/><text x='10' y='140' font-size='11' fill='#1a237e' text-anchor='start'>바다</text><polygon points='110,120 125,108 145,100 215,100 235,108 250,120' fill='#d7ccc8' stroke='#6d4c41' stroke-width='1.2' stroke-linejoin='round' /><ellipse cx='180' cy='128' rx='48' ry='9' fill='#4fc3f7' fill-opacity='0.75' stroke='#0277bd' stroke-width='1'/><text x='180' y='131' font-size='10' fill='#01579b' text-anchor='middle' font-weight='bold'>지하수</text><line x1='20' y1='120' x2='340' y2='120' stroke='#1565c0' stroke-width='1.5'/><text x='346' y='135' font-size='10' fill='#1565c0' text-anchor='end'>현재 해수면</text><line x1='20' y1='92' x2='340' y2='92' stroke='#c62828' stroke-width='1.2' stroke-dasharray='5 3'/><text x='346' y='86' font-size='10' fill='#c62828' text-anchor='end'>해수면이 올라간 경우</text><line x1='282' y1='92' x2='282' y2='120' stroke='#444'/><line x1='277' y1='120' x2='287' y2='120' stroke='#444'/><line x1='277' y1='92' x2='287' y2='92' stroke='#444'/><text x='291' y='110' font-size='10' fill='#444' text-anchor='start'>1m</text><rect x='160' y='72' width='3' height='28' fill='#6d4c41'/><circle cx='161' cy='66' r='11' fill='#43a047'/><rect x='200' y='80' width='3' height='20' fill='#6d4c41'/><circle cx='201' cy='75' r='9' fill='#66bb6a'/><text x='180' y='44' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>섬나라 (단면 모식도)</text><text x='180' y='212' font-size='10' fill='#444' text-anchor='middle'>섬에서 가장 높은 곳도 해발 1m 미만</text></svg>",
+    "caption": "해수면 변화에 따른 낮은 섬나라의 단면 모식도"
+   }
+  },
+  {
+   "id": "u6-Q10-b",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "해수면 상승 문제",
+   "source": "교과서 p.116",
+   "question": "(가)~(라)를 해수면 상승이 일어나는 순서대로 나열한 것은?",
+   "choices": [
+    "(다) → (라) → (나) → (가)",
+    "(나) → (다) → (라) → (가)",
+    "(다) → (나) → (가) → (라)",
+    "(라) → (다) → (나) → (가)",
+    "(다) → (나) → (라) → (가)"
+   ],
+   "answer": 5,
+   "explanation": "기온 상승 → 빙하가 녹음 → 해수면 상승 → 국토가 잠길 위기 순서예요.",
+   "choiceExplanations": [
+    "빙하가 녹기 전에 해수면이 오르는 것은 순서가 맞지 않아요. 해수면 상승은 빙하가 녹은 결과예요.",
+    "기온이 오르기 전에 빙하가 녹을 수는 없어요. 원인인 기온 상승이 먼저예요.",
+    "국토가 잠길 위기는 해수면이 오른 뒤에 나타나는 결과예요.",
+    "해수면 상승이 가장 먼저 일어나는 것이 아니에요. 기온 상승이 출발점이에요.",
+    "정답. 기온 상승 → 빙하가 녹음 → 해수면 상승 → 국토가 잠길 위기 순서예요."
+   ],
+   "detail": "기후변화로 지구의 평균 기온이 오르는 것이 출발점이에요(다).\n그러면 극지방과 고산 지역의 빙하가 녹아(나) 바닷물의 높이가 점점 높아지고(라), 낮은 섬나라의 국토가 바닷물에 잠겨 국가가 사라질 위기에 놓여요(가).\n원인에서 결과로 이어지는 흐름이므로 결과에 해당하는 (가)는 맨 마지막이에요.",
+   "tip": "원인(기온 상승) → 빙하 → 해수면 → 침수 위기.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "해수면 상승의 흐름",
+     "head": [
+      "단계",
+      "내용"
+     ],
+     "rows": [
+      [
+       "1",
+       "지구 평균 기온 상승"
+      ],
+      [
+       "2",
+       "극지방·고산 지역 빙하가 녹음"
+      ],
+      [
+       "3",
+       "해수면 상승"
+      ],
+      [
+       "4",
+       "섬나라 국토가 잠길 위기"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "자료",
+   "passage": "기후변화로 나타나는 일들이 (가)~(라)에 섞여 있다.\n(가) 섬나라의 국토가 바닷물에 잠겨 국가가 사라질 위기에 놓인다.\n(나) 극지방과 고산 지역의 빙하가 녹는다.\n(다) 지구의 평균 기온이 상승한다.\n(라) 바닷물의 높이가 점점 높아진다.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u6-Q11-a",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 2,
+   "concept": "산호 백화 현상",
+   "source": "교과서 p.114",
+   "question": "윗글에서 설명하는 현상으로 알맞은 것은?",
+   "choices": [
+    "백화 현상",
+    "적조 현상",
+    "녹조 현상",
+    "염해 현상",
+    "냉해 현상"
+   ],
+   "answer": 1,
+   "explanation": "바닷물의 온도가 올라가 산호가 하얗게 죽는 현상은 백화 현상이에요.",
+   "choiceExplanations": [
+    "정답. 바닷물의 온도가 올라가 산호가 하얗게 죽는 현상은 백화 현상이에요.",
+    "적조는 식물성 플랑크톤이 지나치게 늘어 바닷물이 붉게 변하는 현상이에요.",
+    "녹조는 녹조류가 늘어 물빛이 녹색이 되는 현상으로 주로 강이나 호수에서 나타나요.",
+    "염해는 소금기 때문에 농작물이 입는 피해예요. 산호가 하얗게 변하는 현상과는 달라요.",
+    "냉해는 저온으로 농작물이 입는 피해예요. 윗글은 바닷물이 따뜻해진 상황이에요."
+   ],
+   "detail": "윗글에서 산호가 하얗게 변해 죽어 있고, 그 까닭이 바닷물이 따뜻해졌기 때문이라고 설명해요.\n이처럼 지구 온난화로 바닷물의 온도가 올라가 산호가 하얗게 죽는 현상을 백화 현상이라고 해요.\n적조·녹조·염해·냉해는 모두 다른 현상이므로 현상이 일어나는 장소와 대상을 구분해서 기억해요.",
+   "tip": "하얗게 죽는 산호 = 백화 현상(바닷물 온도 상승이 원인).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "백화 현상",
+     "text": "바닷물의 온도가 올라가 산호가 하얗게 죽는 현상이에요."
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "피지섬에서 스노클링을 했다. 알록달록한 산호 사이에 하얗게 변해 죽어 있는 산호가 있었다. 아빠는 바닷물이 점점 따뜻해져서 산호가 이렇게 죽어 가는 것이라고 하셨다."
+  },
+  {
+   "id": "u6-Q11-b",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 2,
+   "concept": "산호 백화 현상",
+   "source": "교과서 p.114",
+   "question": "윗글에서 말하는 이 현상이 일어나는 까닭으로 알맞은 것은?",
+   "choices": [
+    "지구 온난화로 바닷물의 온도가 올라갔기 때문이다.",
+    "바닷물이 차가워져 산호가 얼어 버렸기 때문이다.",
+    "산호 주변에 사는 물고기가 줄어들었기 때문이다.",
+    "산호가 햇빛을 너무 적게 받아 자라지 못했기 때문이다.",
+    "바닷가에 사람이 너무 많이 모였기 때문이다."
+   ],
+   "answer": 1,
+   "explanation": "백화 현상은 지구 온난화로 바닷물의 온도가 올라가서 산호가 하얗게 죽는 현상이에요.",
+   "choiceExplanations": [
+    "정답. 백화 현상은 지구 온난화로 바닷물의 온도가 올라가서 산호가 하얗게 죽는 현상이에요.",
+    "바닷물이 차가워진 것이 아니라 따뜻해진 것이 원인이에요.",
+    "물고기 수가 줄어서 산호가 하얗게 되는 것이 아니에요. 바닷물이 따뜻해진 것이 원인이에요.",
+    "햇빛이 부족해서 하얗게 되는 것이 아니에요. 산호가 하얗게 죽는 것은 바닷물 온도가 올라서예요.",
+    "사람이 많이 모인다고 산호가 하얗게 죽지는 않아요. 직접 원인은 지구 온난화로 오른 바닷물의 온도예요."
+   ],
+   "detail": "윗글은 산호가 하얗게 죽는 백화 현상을 설명해요.\n이 현상은 지구 온난화로 바닷물의 온도가 올라가면서 산호가 죽어 하얗게 변하는 것이에요.\n바닷물의 온도 변화가 핵심 원인이라는 점이 중요해요.",
+   "tip": "백화 현상의 원인 = 바닷물 온도 상승.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "백화 현상의 원인",
+     "text": "지구 온난화로 바닷물의 온도가 올라가 산호가 하얗게 죽어요."
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "바닷속을 구경하다 보니 하얗게 죽은 산호가 보였다. 아빠는 이런 현상을 백화 현상이라고 하셨다."
+  },
+  {
+   "id": "u6-Q12-a",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "환경 문제 해결을 위한 실천",
+   "source": "교과서 p.117",
+   "question": "(가)~(마) 중 환경 문제를 해결하려는 실천과 성격이 나머지와 다른 하나는?",
+   "choices": [
+    "(가)",
+    "(나)",
+    "(다)",
+    "(라)",
+    "(마)"
+   ],
+   "answer": 2,
+   "explanation": "(나)는 쓰레기를 늘리는 습관이고 나머지는 환경 문제를 줄이려는 실천이에요.",
+   "choiceExplanations": [
+    "(가) 비닐봉지 쓰레기를 줄이는 실천이에요.",
+    "정답. (나)는 쓰레기를 늘리는 습관이고 나머지는 환경 문제를 줄이려는 실천이에요.",
+    "(다) 에너지 사용을 줄이는 실천이에요.",
+    "(라) 전기를 절약하는 실천이에요.",
+    "(마) 쓰레기를 줄이는 실천(플로깅)이에요."
+   ],
+   "detail": "나머지 넷은 쓰레기를 줄이거나 전기·에너지를 아끼는, 환경 문제를 줄이는 실천이에요.\n반면 일회용 컵을 매번 새로 받는 습관은 쓰레기를 계속 늘려 해양 쓰레기 문제의 원인이 돼요.\n이렇게 '문제를 줄이는 행동'과 '문제를 키우는 행동'으로 나누어 보면 성격이 다른 하나를 찾을 수 있어요.",
+   "tip": "행동이 쓰레기·에너지를 줄이는가 늘리는가를 먼저 나눠요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "생활 속 실천 예",
+     "text": "휴대용 컵 이용, 장바구니 사용, 자전거 이용, 전기 절약, 플로깅(달리면서 쓰레기 줍기) 등이에요."
+    }
+   ],
+   "passageTitle": "자료",
+   "passage": "다음은 어느 학생의 하루 생활 습관 카드이다.\n(가) 장을 볼 때 장바구니를 가지고 간다.\n(나) 음료를 살 때마다 일회용 컵을 새로 받는다.\n(다) 가까운 거리는 자전거를 타고 다닌다.\n(라) 쓰지 않는 전기 기구의 플러그를 뽑아 둔다.\n(마) 달리면서 길에 떨어진 쓰레기를 줍는다.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u6-Q12-b",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "환경 문제 해결을 위한 실천",
+   "source": "교과서 p.117",
+   "question": "(가)~(마) 중 환경 문제를 해결하려는 실천과 성격이 나머지와 다른 하나는?",
+   "choices": [
+    "(가)",
+    "(나)",
+    "(다)",
+    "(라)",
+    "(마)"
+   ],
+   "answer": 2,
+   "explanation": "(나)는 쓰레기를 늘리는 습관이고 나머지는 환경 문제를 줄이려는 실천이에요.",
+   "choiceExplanations": [
+    "(가) 불필요한 소비와 쓰레기를 줄이는 실천이에요.",
+    "정답. (나)는 쓰레기를 늘리는 습관이고 나머지는 환경 문제를 줄이려는 실천이에요.",
+    "(다) 교과서가 제시한 환경 문제 해결 실천 방안의 하나(천연 섬유로 만든 옷 구매하기)예요.",
+    "(라) 일회용 컵 쓰레기를 줄이는 실천이에요.",
+    "(마) 쓰레기 줄이기를 실천하는 행동이에요."
+   ],
+   "detail": "나머지 넷은 소비를 줄이거나 쓰레기를 줄이는 방향의 실천이에요.\n반면 배달 음식을 시킬 때마다 플라스틱 용기를 새로 받는 습관은 플라스틱 쓰레기를 계속 늘려요.\n행동의 결과가 환경 문제를 줄이는지 키우는지를 기준으로 하나만 다른 것을 찾아요.",
+   "tip": "'줄이는 행동' 넷과 '늘리는 행동' 하나로 가르면 쉬워요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "실천 방안",
+     "text": "필요한 물건만 사기, 전기 절약하기, 쓰레기 줄이기 등 평소 생활 습관을 고치는 작은 실천이에요."
+    }
+   ],
+   "passageTitle": "자료",
+   "passage": "다음은 학급 환경 실천 다짐 카드이다.\n(가) 꼭 필요한 물건만 골라서 산다.\n(나) 배달 음식을 시킬 때마다 플라스틱 용기를 새로 받는다.\n(다) 천연 섬유로 만든 옷을 구매한다.\n(라) 휴대용 컵을 가지고 다닌다.\n(마) 쓰레기를 줄이는 방법을 가족과 함께 실천한다.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u6-Q13-a",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "북극과 남극의 구분",
+   "source": "교과서 p.109, p.120",
+   "question": "지도의 (가), (나)에 대한 설명으로 옳지 않은 것은?",
+   "choices": [
+    "(가)는 바다가 꽁꽁 얼어 있는 지역이다.",
+    "(나)는 한반도의 약 60배나 되는 대륙이다.",
+    "(가)는 대륙이고 (나)는 바다이다.",
+    "(가) 주변에는 소수의 원주민이 거주한다.",
+    "(나)는 사람이 살기 불리해 연구자가 일시적으로 머문다."
+   ],
+   "answer": 3,
+   "explanation": "북극은 바다, 남극은 대륙이므로 (가)와 (나)의 설명이 서로 바뀌었어요.",
+   "choiceExplanations": [
+    "(가)는 가운데가 바다인 북극이에요. 옳은 설명이에요.",
+    "(나)는 대륙인 남극이에요. 옳은 설명이에요.",
+    "정답. 북극은 바다, 남극은 대륙이므로 (가)와 (나)의 설명이 서로 바뀌었어요.",
+    "북극해 주변에는 소수의 원주민이 살아요. 옳은 설명이에요.",
+    "남극은 사람이 살기 불리하고 과학 연구를 위해 일시적으로 머물러요. 옳은 설명이에요."
+   ],
+   "detail": "지도에서 (가)는 가운데가 바다(파란색)이고 둘레를 대륙이 둘러싸고 있어요. 이 모양은 북극이에요.\n(나)는 가운데가 넓은 육지(흰색)로 이루어져 있어요. 이것이 남극 대륙이에요.\n그래서 '(가)는 대륙, (나)는 바다'는 거꾸로 된 설명이에요. 북극은 바다, 남극은 대륙이라는 차이를 꼭 기억해요.",
+   "tip": "북극 = 바다(북극해), 남극 = 대륙.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "북극과 남극의 차이",
+     "head": [
+      "구분",
+      "북극",
+      "남극"
+     ],
+     "rows": [
+      [
+       "지형",
+       "바다",
+       "대륙"
+      ],
+      [
+       "사람",
+       "소수의 원주민",
+       "살기 불리함"
+      ]
+     ]
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 196' font-family='sans-serif'><rect width='360' height='196' fill='#fff'/><circle cx='90' cy='98' r='70.0' fill='#f3f0e6' stroke='#555'/><polygon points='90.0,131.2 83.6,134.2 76.6,134.9 69.9,132.9 64.7,128.1 61.8,121.6 61.2,114.6 62.0,108.2 63.2,102.7 63.8,98.0 63.2,93.3 62.0,87.8 61.2,81.4 61.8,74.4 64.7,67.9 69.9,63.1 76.6,61.1 83.6,61.8 90.0,64.8 95.2,68.7 99.3,72.5 103.1,75.3 107.5,77.2 112.8,78.9 118.8,81.4 124.5,85.4 128.7,91.2 130.2,98.0 128.7,104.8 124.5,110.6 118.8,114.6 112.8,117.1 107.5,118.8 103.1,120.7 99.3,123.5 95.2,127.3' fill='#e3f2fd' stroke='#555' stroke-width='1' stroke-linejoin='round' /><polygon points='69.9,91.9 77.9,91.0 83.9,87.4 82.8,78.3 78.0,65.1 58.5,60.5 55.1,68.8 61.3,77.9' fill='#f3f0e6' stroke='#555' stroke-width='1' stroke-linejoin='round' /><circle cx='90' cy='98' r='41.1' fill='none' stroke='#c62828' stroke-width='1.2' stroke-dasharray='4 3'/><circle cx='90' cy='98' r='2.5' fill='#c62828'/><text x='90' y='191' font-size='13' fill='#b71c1c' text-anchor='middle' font-weight='bold'>(가)</text><circle cx='270' cy='98' r='70.0' fill='#e3f2fd' stroke='#555'/><polygon points='270.0,64.8 276.2,63.1 282.7,63.2 288.8,65.4 293.8,69.6 297.1,75.2 298.8,81.4 299.2,87.4 299.0,92.9 298.9,98.0 299.0,103.1 299.2,108.6 298.8,114.6 297.1,120.8 293.8,126.4 288.8,130.6 282.7,132.8 276.2,132.9 270.0,131.2 264.6,128.6 259.9,125.7 255.6,123.0 251.1,120.6 246.2,118.0 241.2,114.6 236.7,110.1 233.5,104.4 232.4,98.0 233.5,91.6 218.6,79.3 224.5,71.8 231.5,65.7 238.7,60.7 255.6,73.0 259.9,70.3 264.6,67.4' fill='#fafafa' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><circle cx='270' cy='98' r='41.1' fill='none' stroke='#c62828' stroke-width='1.2' stroke-dasharray='4 3'/><circle cx='270' cy='98' r='2.5' fill='#c62828'/><text x='270' y='191' font-size='13' fill='#b71c1c' text-anchor='middle' font-weight='bold'>(나)</text><text x='180' y='12' font-size='10' fill='#444' text-anchor='middle'>붉은 점선 = 극지방의 경계선, 가운데 점 = 극점 (모식도)</text></svg>",
+    "caption": "북극을 중심으로 한 지도(가)와 남극을 중심으로 한 지도(나)의 모식도"
+   }
+  },
+  {
+   "id": "u6-Q13-b",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "북극과 남극의 구분",
+   "source": "교과서 p.109, p.120",
+   "question": "표의 (가), (나)에 대한 설명으로 옳지 않은 것은?",
+   "choices": [
+    "(가)는 지구의 북쪽 끝에 있다.",
+    "(나)는 대륙으로 이루어져 있다.",
+    "(가)는 얼음 덮인 대륙이다.",
+    "(가)에는 북극곰이 서식한다.",
+    "(나)는 사람이 거주하기 어렵다."
+   ],
+   "answer": 3,
+   "explanation": "표에서 (가)의 지형은 바다이므로 (가)를 대륙이라고 한 설명이 옳지 않아요.",
+   "choiceExplanations": [
+    "표의 위치 칸에 같은 내용이 있어요. 옳은 설명이에요.",
+    "표의 지형 칸에 같은 내용이 있어요. 옳은 설명이에요.",
+    "정답. 표에서 (가)의 지형은 바다이므로 (가)를 대륙이라고 한 설명이 옳지 않아요.",
+    "표의 동물 칸에 같은 내용이 있어요. 옳은 설명이에요.",
+    "표의 주민 칸에 같은 내용이 있어요. 옳은 설명이에요."
+   ],
+   "detail": "표의 지형 칸에서 (가)는 바다, (나)는 대륙이라고 되어 있어요.\n그러므로 (가)가 대륙이라는 설명은 표와 맞지 않아요. 나머지 설명은 위치·지형·동물·주민 칸에서 그대로 확인돼요.\n북극(바다)과 남극(대륙)의 지형 차이를 먼저 확인하면 가장 빨리 풀려요.",
+   "tip": "표에서 가장 먼저 지형 칸을 확인해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "지형의 차이",
+     "text": "북극은 북극해라는 바다, 남극은 대륙이에요."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 162' font-family='sans-serif'><rect width='348' height='162' fill='#fff'/><text x='4' y='16' font-size='11.5' fill='#222' text-anchor='start' font-weight='bold'>극지방 비교표</text><rect x='4' y='26' width='60' height='26' fill='#e3f2fd' stroke='#9e9e9e' stroke-width='0.8'/><text x='34.0' y='43.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>구분</text><rect x='64' y='26' width='140' height='26' fill='#e3f2fd' stroke='#9e9e9e' stroke-width='0.8'/><text x='134.0' y='43.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>(가)</text><rect x='204' y='26' width='140' height='26' fill='#e3f2fd' stroke='#9e9e9e' stroke-width='0.8'/><text x='274.0' y='43.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>(나)</text><rect x='4' y='52' width='60' height='26' fill='#fafafa' stroke='#9e9e9e' stroke-width='0.8'/><text x='34.0' y='69.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>위치</text><rect x='64' y='52' width='140' height='26' fill='#fff' stroke='#9e9e9e' stroke-width='0.8'/><text x='134.0' y='69.0' font-size='11' fill='#222' text-anchor='middle'>지구의 북쪽 끝</text><rect x='204' y='52' width='140' height='26' fill='#fff' stroke='#9e9e9e' stroke-width='0.8'/><text x='274.0' y='69.0' font-size='11' fill='#222' text-anchor='middle'>지구의 남쪽 끝</text><rect x='4' y='78' width='60' height='26' fill='#fafafa' stroke='#9e9e9e' stroke-width='0.8'/><text x='34.0' y='95.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>지형</text><rect x='64' y='78' width='140' height='26' fill='#fff' stroke='#9e9e9e' stroke-width='0.8'/><text x='134.0' y='95.0' font-size='11' fill='#222' text-anchor='middle'>바다</text><rect x='204' y='78' width='140' height='26' fill='#fff' stroke='#9e9e9e' stroke-width='0.8'/><text x='274.0' y='95.0' font-size='11' fill='#222' text-anchor='middle'>대륙</text><rect x='4' y='104' width='60' height='26' fill='#fafafa' stroke='#9e9e9e' stroke-width='0.8'/><text x='34.0' y='121.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>주민</text><rect x='64' y='104' width='140' height='26' fill='#fff' stroke='#9e9e9e' stroke-width='0.8'/><text x='134.0' y='121.0' font-size='11' fill='#222' text-anchor='middle'>소수의 원주민</text><rect x='204' y='104' width='140' height='26' fill='#fff' stroke='#9e9e9e' stroke-width='0.8'/><text x='274.0' y='121.0' font-size='11' fill='#222' text-anchor='middle'>사람이 거주하기 어려움</text><rect x='4' y='130' width='60' height='26' fill='#fafafa' stroke='#9e9e9e' stroke-width='0.8'/><text x='34.0' y='147.0' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>동물</text><rect x='64' y='130' width='140' height='26' fill='#fff' stroke='#9e9e9e' stroke-width='0.8'/><text x='134.0' y='147.0' font-size='11' fill='#222' text-anchor='middle'>북극곰</text><rect x='204' y='130' width='140' height='26' fill='#fff' stroke='#9e9e9e' stroke-width='0.8'/><text x='274.0' y='147.0' font-size='11' fill='#222' text-anchor='middle'>펭귄</text></svg>",
+    "caption": "극지방 두 지역을 비교한 표"
+   }
+  },
+  {
+   "id": "u6-Q14-a",
+   "slot": "Q14",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "북극의 지리적 중요성",
+   "source": "교과서 p.121",
+   "question": "자료와 〈보기〉를 바탕으로 북극의 지리적 중요성에 대해 옳게 설명한 것만을 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉡",
+    "㉠, ㉣",
+    "㉠, ㉡, ㉢",
+    "㉠, ㉡, ㉣",
+    "㉡, ㉢, ㉣"
+   ],
+   "answer": 4,
+   "explanation": "북극 지역을 지나는 항로가 거리를 줄여 주고 에너지 자원도 있으므로 ㉠㉡㉣이 옳아요.",
+   "choiceExplanations": [
+    "㉣은 옳은 진술인데 빠졌어요. 북극에는 아직 발견되지 않은 석유·천연가스 등이 많이 매장되어 있어요.",
+    "㉡은 옳은 진술인데 빠졌어요. (가)가 약 13,000km, (나)가 약 21,000km로 (가)가 훨씬 짧아요.",
+    "㉢은 옳지 않은 진술이에요. 북극은 유럽·아시아·북아메리카의 주요 도시를 짧은 거리로 연결하는 항공 교통의 중심지예요. ㉣은 옳은 진술인데 빠졌어요. 북극에는 아직 발견되지 않은 석유·천연가스 등이 많이 매장되어 있어요.",
+    "정답. 북극 지역을 지나는 항로가 거리를 줄여 주고 에너지 자원도 있으므로 ㉠㉡㉣이 옳아요.",
+    "㉢은 옳지 않은 진술이에요. 북극은 유럽·아시아·북아메리카의 주요 도시를 짧은 거리로 연결하는 항공 교통의 중심지예요. ㉠은 옳은 진술인데 빠졌어요. (가)는 북극 지역을 지나는 파란 실선이에요."
+   ],
+   "detail": "자료에서 파란 실선 (가)는 북극 지역을 지나고, 점선 (나)는 남쪽을 돌아가요. 숫자를 비교하면 (가)가 훨씬 짧아요.\n그래서 북극 지역을 거치는 항로는 아시아와 유럽을 잇는 최단 해운 항로로 주목받아요.\n또 북극에는 석유, 천연가스, 가스 하이드레이트 같은 에너지 자원이 매장되어 있어요. 북극은 항공 교통의 중심지이기도 해요.",
+   "tip": "북극 = 짧은 항로 + 에너지 자원. 거리 숫자는 자료에서 직접 비교해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "북극의 지리적 중요성",
+     "head": [
+      "분야",
+      "내용"
+     ],
+     "rows": [
+      [
+       "교통",
+       "북극 지역을 거치는 최단 해운 항로"
+      ],
+      [
+       "자원",
+       "석유·천연가스 등 에너지 자원 매장"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "〈보기〉",
+   "passage": "아시아와 유럽을 잇는 두 항로 (모식도)\n〈보기〉\n㉠ (가) 항로는 북극 지역을 지나 유럽과 아시아를 잇는다.\n㉡ (가) 항로를 이용하면 (나) 항로보다 운항 거리를 크게 줄일 수 있다.\n㉢ 북극은 주요 도시와 멀리 떨어져 있어 항공 교통에는 쓰이지 않는다.\n㉣ 북극에는 석유와 천연가스 등 에너지 자원이 매장되어 있다.",
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 250' font-family='sans-serif'><defs><marker id='arR' markerWidth='8' markerHeight='8' refX='6' refY='4' orient='auto'><path d='M0,0 L8,4 L0,8 z' fill='#1565c0'/></marker></defs><rect width='360' height='250' fill='#fff'/><rect width='360' height='250' fill='#e3f2fd'/><polygon points='0,120 60,120 62,250 0,250' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><polygon points='300,120 360,120 360,250 298,250' fill='#f3f0e6' stroke='#555' stroke-width='1.2' stroke-linejoin='round' /><text x='30' y='190' font-size='12' fill='#555' text-anchor='middle' font-weight='bold'>유럽</text><text x='330' y='190' font-size='12' fill='#555' text-anchor='middle' font-weight='bold'>아시아</text><text x='180' y='30' font-size='11' fill='#455a64' text-anchor='middle'>북극 지역</text><path d='M62,128 C90,60 270,60 298,128' fill='none' stroke='#1565c0' stroke-width='3' marker-end='url(#arR)'/><path d='M62,215 C100,240 260,240 298,215' fill='none' stroke='#e65100' stroke-width='3' stroke-dasharray='7 4' marker-end='url(#arR)'/><text x='180' y='88' font-size='11' fill='#1565c0' text-anchor='middle' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가) 항로  약 13,000km</text><text x='180' y='227' font-size='11' fill='#e65100' text-anchor='middle' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(나) 항로  약 21,000km</text><text x='180' y='150' font-size='10' fill='#444' text-anchor='middle'>※ 거리 수치는 모식도용 가상 값</text></svg>",
+    "caption": "유럽과 아시아를 잇는 두 항로를 비교한 모식도(거리는 가상 값)"
+   }
+  },
+  {
+   "id": "u6-Q14-b",
+   "slot": "Q14",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "북극의 지리적 중요성",
+   "source": "교과서 p.121",
+   "question": "자료와 〈보기〉를 바탕으로 북극의 지리적 중요성을 옳게 설명한 것만을 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉢",
+    "㉠, ㉣",
+    "㉠, ㉡, ㉢",
+    "㉠, ㉢, ㉣",
+    "㉡, ㉢, ㉣"
+   ],
+   "answer": 4,
+   "explanation": "㉠㉢㉣이 옳아요. 북극은 항공·해운 교통과 에너지 자원 면에서 중요해요.",
+   "choiceExplanations": [
+    "㉣은 옳은 진술인데 빠졌어요. 북극 지역을 지나면 운항 거리를 크게 단축할 수 있어요.",
+    "㉢은 옳은 진술인데 빠졌어요. 북극에는 아직 발견되지 않은 에너지 자원이 많이 매장되어 있어요.",
+    "㉡은 옳지 않은 진술이에요. 북극은 유럽·아시아·북아메리카의 주요 도시를 짧은 거리로 연결하는 항공 교통의 중심지예요. ㉣은 옳은 진술인데 빠졌어요. 북극 지역을 지나면 운항 거리를 크게 단축할 수 있어요.",
+    "정답. ㉠㉢㉣이 옳아요. 북극은 항공·해운 교통과 에너지 자원 면에서 중요해요.",
+    "㉡은 옳지 않은 진술이에요. 북극은 유럽·아시아·북아메리카의 주요 도시를 짧은 거리로 연결하는 항공 교통의 중심지예요. ㉠은 옳은 진술인데 빠졌어요. 자료의 가상 값으로 북극 상공 노선은 약 9,000km, 기존 노선은 약 12,000km라서 북극 상공 노선이 짧아요."
+   ],
+   "detail": "자료에서 파란 실선은 북극 상공을 지나는 노선이고 회색 점선은 남쪽으로 돌아가는 기존 노선이에요. (가)~(나) 사이 거리는 북극 상공 노선이 약 9,000km, 기존 노선이 약 12,000km라서 북극 상공 노선이 짧아요(평면 그림의 곡선 모양이 아니라 적힌 거리 값으로 비교해요).\n그래서 북극은 유럽·아시아·북아메리카를 짧은 거리로 연결하는 항공 교통의 중심지예요.\n북극 지역을 거쳐 아시아와 유럽을 잇는 해운 항로도 주목받고, 석유·천연가스 같은 에너지 자원도 매장돼 있어요.",
+   "tip": "북극 = 짧은 거리의 항공·해운 교통 + 에너지 자원.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "북극의 지리적 중요성",
+     "head": [
+      "분야",
+      "내용"
+     ],
+     "rows": [
+      [
+       "항공",
+       "세 대륙의 주요 도시를 짧게 연결"
+      ],
+      [
+       "해운",
+       "북극 지역을 거치는 최단 항로"
+      ],
+      [
+       "자원",
+       "석유·천연가스 등 에너지 자원"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "〈보기〉",
+   "passage": "세 대륙의 도시를 연결하는 노선 (모식도)\n〈보기〉\n㉠ (가)와 (나) 도시를 북극 상공으로 이으면 남쪽 노선보다 거리가 짧다.\n㉡ 북극은 주요 도시와 멀리 떨어져 항공 교통에 이용되지 않는다.\n㉢ 북극에는 석유, 천연가스, 가스 하이드레이트 등 에너지 자원이 매장되어 있다.\n㉣ 북극 지역을 거쳐 아시아와 유럽을 잇는 항로가 최단 해운 항로로 주목받는다.",
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 272' font-family='sans-serif'><rect width='360' height='272' fill='#fff'/><circle cx='180' cy='120' r='52' fill='#e3f2fd' stroke='#90caf9' stroke-width='1.5'/><text x='180' y='148' font-size='13' fill='#1a237e' text-anchor='middle' font-weight='bold'>북극</text><path d='M60,205 Q180,262 300,205' fill='none' stroke='#9e9e9e' stroke-width='2' stroke-dasharray='5 4'/><path d='M64,200 Q130,90 178,42' fill='none' stroke='#1565c0' stroke-width='2.2'/><path d='M296,200 Q230,90 182,42' fill='none' stroke='#1565c0' stroke-width='2.2'/><path d='M64,200 Q180,46 296,200' fill='none' stroke='#1565c0' stroke-width='2.8'/><circle cx='60' cy='205' r='6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><circle cx='300' cy='205' r='6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><circle cx='180' cy='38' r='6' fill='#b71c1c' stroke='#fff' stroke-width='1'/><text x='180' y='178' font-size='10.5' fill='#1565c0' text-anchor='middle' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가)~(나) 북극 상공 노선 약 9,000km</text><text x='180' y='250' font-size='10.5' fill='#616161' text-anchor='middle' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가)~(나) 기존 노선(남쪽으로 돌아감) 약 12,000km</text><text x='60' y='226' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>(가) 유럽의 도시</text><text x='300' y='226' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>(나) 아시아의 도시</text><text x='180' y='22' font-size='11' fill='#222' text-anchor='middle' font-weight='bold'>(다) 북아메리카의 도시</text><text x='180' y='267' font-size='9.5' fill='#1565c0' text-anchor='middle'>파란 실선 = 북극 상공 노선, 회색 점선 = 기존 노선 (모식도, 거리는 가상 값)</text></svg>",
+    "caption": "북극 상공을 지나는 노선과 기존 노선을 비교한 모식도"
+   }
+  },
+  {
+   "id": "u6-Q15-a",
+   "slot": "Q15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "남극의 지리적 중요성",
+   "source": "교과서 p.121",
+   "question": "자료를 보고 한 학생이 남극에 대해 쓴 글이다. 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉡",
+    "㉠, ㉢",
+    "㉡, ㉢",
+    "㉠, ㉡, ㉢",
+    "㉠, ㉡, ㉣"
+   ],
+   "answer": 1,
+   "explanation": "㉠과 ㉡이 옳아요. 남극은 기지·빙하 연구로 중요해요.",
+   "choiceExplanations": [
+    "정답. ㉠과 ㉡이 옳아요. 남극은 기지·빙하 연구로 중요해요.",
+    "㉢은 옳지 않은 진술이에요. 남극에는 다양한 해양 생물이 살아서 해양 생태계 연구의 장으로 가치가 커요. ㉡은 옳은 진술인데 빠졌어요. 오랫동안 쌓인 빙하 속 물질로 과거와 현재의 기후변화를 알 수 있어요.",
+    "㉢은 옳지 않은 진술이에요. 남극에는 다양한 해양 생물이 살아서 해양 생태계 연구의 장으로 가치가 커요. ㉠은 옳은 진술인데 빠졌어요. 자료의 ■ 표시가 우리나라 과학 기지이고, 세종·장보고 과학 기지가 남극에 있어요.",
+    "㉢은 옳지 않은 진술이에요. 남극에는 다양한 해양 생물이 살아서 해양 생태계 연구의 장으로 가치가 커요.",
+    "㉣은 옳지 않은 진술이에요. 남극에는 석탄·철광석 등 인류에게 필요한 많은 자원이 매장되어 있어요."
+   ],
+   "detail": "자료의 ■는 우리나라가 남극에 세운 과학 기지(세종 과학 기지, 장보고 과학 기지)를 나타내요. 세계 각국이 남극에서 기후·해양·지질·생물 분야를 연구해요.\n빙하 속에 오랫동안 쌓인 물질을 연구하면 지구의 기후변화를 알 수 있어서 남극이 중요해요.\n㉢은 해양 생물이 서식한다는 사실과, ㉣은 석탄·철광석 등이 매장되어 있다는 사실과 달라요.",
+   "tip": "남극 = 과학 기지 + 빙하(기후변화) + 해양 생태계 연구.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "남극의 지리적 중요성",
+     "head": [
+      "분야",
+      "내용"
+     ],
+     "rows": [
+      [
+       "기후변화 연구",
+       "빙하 속 물질 연구"
+      ],
+      [
+       "해양 생태계",
+       "다양한 해양 생물 서식"
+      ],
+      [
+       "과학 기지",
+       "우리나라는 세종·장보고 과학 기지"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "〈보기〉",
+   "passage": "남극 지역의 지도 (모식도)\n〈보기〉\n㉠ (가)와 (나)는 우리나라가 세운 과학 기지가 있는 곳이다.\n㉡ 남극은 빙하 속 물질을 연구해 지구의 기후변화를 알 수 있는 곳이다.\n㉢ 남극은 해양 생물이 거의 없어 생태계 연구가 불가능하다.\n㉣ 남극은 보호 구역이라 어떤 자원도 매장되어 있지 않다.",
+   "fixedOrder": true,
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 250' font-family='sans-serif'><rect width='360' height='250' fill='#fff'/><circle cx='180' cy='128' r='108.0' fill='#e3f2fd' stroke='#555'/><polygon points='180.0,76.7 185.6,74.9 191.5,73.9 197.5,74.0 203.5,75.3 209.0,77.7 213.9,81.3 218.0,85.8 221.1,91.0 223.2,96.6 224.4,102.3 225.0,108.0 225.0,113.4 224.8,118.5 224.6,123.3 224.6,128.0 224.6,132.7 224.8,137.5 225.0,142.6 225.0,148.0 224.4,153.6 223.2,159.4 221.1,165.0 218.0,170.2 213.9,174.7 209.0,178.3 203.5,180.7 197.5,182.0 191.5,182.1 185.6,181.1 180.0,179.3 174.9,176.9 170.2,174.3 165.8,171.6 161.7,169.0 157.7,166.6 153.6,164.3 149.3,162.1 144.8,159.7 140.2,156.9 135.6,153.7 131.2,149.7 127.4,145.1 124.5,139.8 122.6,134.0 121.9,128.0 122.6,122.0 124.5,116.2 99.2,101.7 104.1,94.2 109.9,87.5 116.2,81.6 122.8,76.5 129.5,71.9 153.6,91.7 157.7,89.4 161.7,87.0 165.8,84.4 170.2,81.7 174.9,79.1' fill='#fafafa' stroke='#555' stroke-width='1.5' stroke-linejoin='round' /><circle cx='180' cy='128' r='63.5' fill='none' stroke='#c62828' stroke-width='1.2' stroke-dasharray='4 3'/><text x='180' y='132' font-size='12' fill='#555' text-anchor='middle' font-weight='bold'>남극 지역</text><rect x='113.6' y='80.1' width='9' height='9' fill='#b71c1c' stroke='#fff'/><text x='109.1' y='88.6' font-size='12' fill='#b71c1c' text-anchor='end' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(가)</text><rect x='189.1' y='174.4' width='9' height='9' fill='#b71c1c' stroke='#fff'/><text x='202.6' y='182.9' font-size='12' fill='#b71c1c' text-anchor='start' font-weight='bold' stroke='#fff' stroke-width='3' paint-order='stroke' stroke-linejoin='round'>(나)</text><text x='8' y='14' font-size='10' fill='#444' text-anchor='start'>붉은 점선 = 남극권,  붉은 네모 = 우리나라 과학 기지(위치는 모식)</text></svg>",
+    "caption": "남극 지역과 우리나라 과학 기지의 위치를 나타낸 모식도"
+   }
+  },
+  {
+   "id": "u6-Q15-b",
+   "slot": "Q15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "남극의 지리적 중요성",
+   "source": "교과서 p.121",
+   "question": "발표 자료를 읽고 남극에 대해 옳게 설명한 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "㉠, ㉢",
+    "㉢, ㉣",
+    "㉠, ㉡, ㉢",
+    "㉠, ㉡, ㉣",
+    "㉠, ㉢, ㉣"
+   ],
+   "answer": 5,
+   "explanation": "㉠㉢㉣이 옳아요. 남극은 기후변화·해양 생태계 연구와 과학 기지 활동으로 중요해요.",
+   "choiceExplanations": [
+    "㉣은 옳은 진술인데 빠졌어요. 자료의 셋째 문장에 있는 내용이에요.",
+    "㉠은 옳은 진술인데 빠졌어요. 발표 자료의 마지막 문장에 있는 내용이에요.",
+    "㉡은 옳지 않은 진술이에요. 자료에 우리나라가 세종·장보고 과학 기지를 세워 연구한다고 나와요. ㉣은 옳은 진술인데 빠졌어요. 자료의 셋째 문장에 있는 내용이에요.",
+    "㉡은 옳지 않은 진술이에요. 자료에 우리나라가 세종·장보고 과학 기지를 세워 연구한다고 나와요. ㉢은 옳은 진술인데 빠졌어요. 자료에 크릴새우·어류·물개·고래 등 많은 해양 생물이 산다고 나와요.",
+    "정답. ㉠㉢㉣이 옳아요. 남극은 기후변화·해양 생태계 연구와 과학 기지 활동으로 중요해요."
+   ],
+   "detail": "발표 자료에서 우리나라는 남극에 세종·장보고 과학 기지를 세워 연구한다고 했으므로 연구가 금지되어 있다는 ㉡은 틀려요.\n빙하 속에 오랫동안 쌓인 물질을 연구하면 지구의 기후변화를 알 수 있고, 다양한 해양 생물이 살아서 해양 생태계 연구의 장으로 가치가 커요.\n우리나라는 남극을 평화적으로 이용하고 과학 연구의 자유를 보장하는 남극 조약에 가입했어요.",
+   "tip": "남극 = 빙하(기후변화) + 해양 생태계 + 과학 기지·남극 조약.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "남극 연구 분야",
+     "head": [
+      "분야",
+      "내용"
+     ],
+     "rows": [
+      [
+       "기후변화",
+       "빙하 속 물질 연구"
+      ],
+      [
+       "해양 생태계",
+       "다양한 해양 생물 서식"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "발표 자료 · 〈보기〉",
+   "passage": "[학생 발표 자료] 우리나라는 남극에 세종 과학 기지와 장보고 과학 기지를 세워 빙하와 오존층 등을 연구한다. 남극에는 크릴새우, 다양한 어류, 물개, 고래 등 많은 해양 생물이 산다. 우리나라는 남극을 평화적으로 이용하고 과학 연구의 자유를 보장하는 남극 조약에도 가입했다. 오랫동안 쌓인 빙하 속 물질을 연구하면 지구의 기후변화를 알 수 있다고 한다.\n〈보기〉\n㉠ 오랫동안 쌓인 빙하 속 물질을 연구하면 지구의 기후변화를 알 수 있다.\n㉡ 남극에서는 과학 연구가 금지되어 있어 과학 기지를 세울 수 없다.\n㉢ 남극에는 다양한 해양 생물이 살아서 해양 생태계 연구의 장으로 가치가 크다.\n㉣ 우리나라는 남극을 평화적으로 이용하고 과학 연구의 자유를 보장하는 남극 조약에 가입했다.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u6-Q16-a",
+   "slot": "Q16",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "극지 개발을 둘러싼 이해관계",
+   "source": "교과서 p.122",
+   "question": "(가)~(다)의 입장을 주체와 바르게 연결한 것은?",
+   "choices": [
+    "(가) 기업가, (나) 환경 운동가, (다) 원주민",
+    "(가) 원주민, (나) 기업가, (다) 환경 운동가",
+    "(가) 환경 운동가, (나) 원주민, (다) 기업가",
+    "(가) 원주민, (나) 환경 운동가, (다) 기업가",
+    "(가) 기업가, (나) 원주민, (다) 환경 운동가"
+   ],
+   "answer": 5,
+   "explanation": "(가)는 개발의 이익을 강조한 기업가, (나)는 생존 위협을 말한 원주민, (다)는 환경 파괴를 우려한 환경 운동가예요.",
+   "choiceExplanations": [
+    "(나)는 실제로 원주민(삶터와 생존의 위협을 강조)인데 환경 운동가로 연결했어요. (다)는 실제로 환경 운동가(환경 파괴를 우려)인데 원주민으로 연결했어요.",
+    "(가)는 실제로 기업가(개발의 이익을 강조)인데 원주민으로 연결했어요. (나)는 실제로 원주민(삶터와 생존의 위협을 강조)인데 기업가로 연결했어요.",
+    "(가)는 실제로 기업가(개발의 이익을 강조)인데 환경 운동가로 연결했어요. (다)는 실제로 환경 운동가(환경 파괴를 우려)인데 기업가로 연결했어요.",
+    "(가)는 실제로 기업가(개발의 이익을 강조)인데 원주민으로 연결했어요. (나)는 실제로 원주민(삶터와 생존의 위협을 강조)인데 환경 운동가로 연결했어요. (다)는 실제로 환경 운동가(환경 파괴를 우려)인데 기업가로 연결했어요.",
+    "정답. (가)는 개발의 이익을 강조한 기업가, (나)는 생존 위협을 말한 원주민, (다)는 환경 파괴를 우려한 환경 운동가예요."
+   ],
+   "detail": "(가)는 개발로 얻는 경제적 이익과 인류의 풍요를 이유로 개발을 지지하므로 기업가예요.\n(나)는 조상 대대로 살아온 삶터와 생존이 위협받는다고 하므로 원주민이에요.\n(다)는 개발이 환경을 되돌릴 수 없이 파괴할 수 있다고 걱정하므로 환경 운동가예요. 같은 개발이라도 이해관계에 따라 주장이 달라요.",
+   "tip": "이익 강조 = 기업가, 생존 위협 = 원주민, 환경 파괴 우려 = 환경 운동가.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "개발을 둘러싼 입장",
+     "head": [
+      "주체",
+      "입장"
+     ],
+     "rows": [
+      [
+       "기업가",
+       "개발이 인류에 보탬이 됨"
+      ],
+      [
+       "원주민",
+       "개발이 생존을 위협함"
+      ],
+      [
+       "환경 운동가",
+       "개발이 환경을 파괴함"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "토론회 발언",
+   "passage": "북극 개발 토론회에서 나온 발언이다.\n(가) 개발은 큰 경제적 이익을 낳아 인류의 삶을 풍요롭게 할 수 있으니 계속해야 합니다.\n(나) 우리는 조상 대대로 이곳에서 사냥하며 살아왔는데, 개발이 이어지면 우리의 생존이 위협받습니다.\n(다) 개발 과정에서 사고가 일어나면 환경은 되돌릴 수 없을 만큼 파괴될 수 있습니다.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u6-Q16-b",
+   "slot": "Q16",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "극지 개발을 둘러싼 이해관계",
+   "source": "교과서 p.122",
+   "question": "(가)~(다)의 입장을 주체와 바르게 연결한 것은?",
+   "choices": [
+    "(가) 원주민, (나) 환경 운동가, (다) 기업가",
+    "(가) 원주민, (나) 기업가, (다) 환경 운동가",
+    "(가) 환경 운동가, (나) 원주민, (다) 기업가",
+    "(가) 기업가, (나) 원주민, (다) 환경 운동가",
+    "(가) 환경 운동가, (나) 기업가, (다) 원주민"
+   ],
+   "answer": 1,
+   "explanation": "(가)는 전통 생활의 침해를 말한 원주민, (나)는 생태계 파괴를 우려한 환경 운동가, (다)는 이익을 강조한 기업가예요.",
+   "choiceExplanations": [
+    "정답. (가)는 전통 생활의 침해를 말한 원주민, (나)는 생태계 파괴를 우려한 환경 운동가, (다)는 이익을 강조한 기업가예요.",
+    "(나)는 실제로 환경 운동가(생태계 파괴를 우려)인데 기업가로 연결했어요. (다)는 실제로 기업가(개발의 이익을 강조)인데 환경 운동가로 연결했어요.",
+    "(가)는 실제로 원주민(삶터·전통 생활의 침해를 강조)인데 환경 운동가로 연결했어요. (나)는 실제로 환경 운동가(생태계 파괴를 우려)인데 원주민으로 연결했어요.",
+    "(가)는 실제로 원주민(삶터·전통 생활의 침해를 강조)인데 기업가로 연결했어요. (나)는 실제로 환경 운동가(생태계 파괴를 우려)인데 원주민으로 연결했어요. (다)는 실제로 기업가(개발의 이익을 강조)인데 환경 운동가로 연결했어요.",
+    "(가)는 실제로 원주민(삶터·전통 생활의 침해를 강조)인데 환경 운동가로 연결했어요. (나)는 실제로 환경 운동가(생태계 파괴를 우려)인데 기업가로 연결했어요. (다)는 실제로 기업가(개발의 이익을 강조)인데 원주민으로 연결했어요."
+   ],
+   "detail": "(가)는 건설 때문에 사냥터와 전통 생활 방식이 방해받는다고 하므로 그곳에 살아온 원주민이에요.\n(나)는 관광객 증가로 얼음 지대가 오염되고 생태계가 파괴된다고 걱정하므로 환경 운동가예요.\n(다)는 일자리와 소득을 늘릴 수 있다고 하므로 기업가예요. 한 개발 사업에도 입장이 서로 달라요.",
+   "tip": "이익·일자리 = 기업가, 삶터·전통 침해 = 원주민, 생태계 파괴 = 환경 운동가.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "개발을 둘러싼 입장",
+     "head": [
+      "주체",
+      "관심"
+     ],
+     "rows": [
+      [
+       "기업가",
+       "경제적 이익"
+      ],
+      [
+       "원주민",
+       "삶터와 생존"
+      ],
+      [
+       "환경 운동가",
+       "환경 보호"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "공청회 발언",
+   "passage": "북극 연안에 항구와 숙소를 짓는 개발 사업을 두고 열린 공청회 발언이다.\n(가) 공사가 시작되면서 우리가 대대로 사냥하던 곳을 쓸 수 없게 되어 전통 생활이 흔들리고 있습니다.\n(나) 관광객이 늘면 얼음 지대가 오염되어 생태계가 파괴될 수 있습니다.\n(다) 이 사업은 일자리와 소득을 늘려 지역 경제를 키울 수 있습니다.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u6-S01-a",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "플라스틱 해양 쓰레기의 피해",
+   "source": "교과서 p.115, p.125",
+   "question": "윗글을 읽고, 해양 쓰레기 가운데 플라스틱이 해양 생물을 거쳐 사람에게까지 영향을 미치는 과정을 두 문장으로 서술하시오.",
+   "answerHint": "(단, '먹이 사슬'을 사용하여 두 문장으로 쓸 것)",
+   "modelAnswer": "해양 생물이 잘게 부서진 미세 플라스틱을 먹이로 착각해 먹는다. 이렇게 몸에 쌓인 플라스틱은 먹이 사슬을 따라 더 큰 동물을 거쳐 결국 사람의 식탁에까지 올라온다.",
+   "explanation": "모범 답안: 해양 생물이 잘게 부서진 미세 플라스틱을 먹이로 착각해 먹는다. 이렇게 몸에 쌓인 플라스틱은 먹이 사슬을 따라 더 큰 동물을 거쳐 결국 사람의 식탁에까지 올라온다. (근거: 교과서 p.115)",
+   "rubric": [
+    {
+     "criterion": "해양 생물이 (미세) 플라스틱을 먹거나 삼킨다고 씀 (허용: 먹다·삼키다·섭취. '먹이로 착각'까지 쓰면 2점, 먹는 내용만 쓰면 1점)",
+     "points": 2,
+     "tip": "첫 단계는 해양 생물의 몸속으로 플라스틱이 들어가는 것이에요. '먹이로 착각'은 교과서 p.115의 설명이지만 필수는 아니고, 쓰면 2점, 먹는 내용만 써도 1점이에요."
+    },
+    {
+     "criterion": "'먹이 사슬'을 사용함 (허용: '먹이사슬' 붙여 쓰기)",
+     "points": 1,
+     "tip": "조건 낱말 '먹이 사슬'(붙여 쓴 '먹이사슬' 포함)을 쓰지 않으면 이 항목은 0점이에요."
+    },
+    {
+     "criterion": "더 큰 동물을 거쳐 사람에게까지 영향을 미친다고 씀 (허용: 큰 물고기·큰 동물을 거쳐 사람의 식탁·수산물까지)",
+     "points": 2,
+     "tip": "작은 생물 → 큰 동물 → 사람으로 이어지는 흐름을 써요. 큰 동물만 쓰고 사람을 빼면 1점이에요."
+    }
+   ],
+   "detail": "정답 근거: 기사에서 미세 플라스틱이 작은 물고기, 큰 물고기, 시장에서 파는 수산물에서 차례로 발견돼요. 미세 플라스틱은 해양 생물이 먹이로 착각해 먹고, 그 생물을 먹는 더 큰 동물을 거쳐 사람에게까지 이어져요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: '플라스틱이 해양 생물을 괴롭힌다'처럼 과정 없이 결과만 쓰면 감점이에요. 문장이 한 개이거나 세 개 이상이면 조건 위반이에요.",
+   "tip": "'플라스틱을 먹음 → 연결된 먹이 관계를 따라 이동 → 사람'의 세 단계로 쓰면 돼요. '먹이로 착각'을 쓰면 더 정확해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "미세 플라스틱",
+     "text": "플라스틱이 분해되는 과정에서 생긴 매우 작은 조각이에요. 크기가 작아 걷어 내기 어려워요."
+    }
+   ],
+   "passageTitle": "보기",
+   "passage": "[연구 기사 발췌] 바다에 떠 있는 플라스틱 쓰레기는 약 3,500만 톤이라고 한다. 연구팀은 잘게 부서진 미세 플라스틱이 작은 물고기의 위에서 발견되었고, 이 물고기를 잡아먹는 큰 물고기의 몸에서도 발견되었다고 밝혔다. 시장에서 파는 수산물에서도 같은 조각이 나왔다."
+  },
+  {
+   "id": "u6-S01-b",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "플라스틱 해양 쓰레기의 피해",
+   "source": "교과서 p.115, p.125",
+   "question": "윗글을 읽고, 해양 쓰레기 가운데 플라스틱이 해양 생물을 거쳐 사람에게까지 영향을 미치는 과정을 두 문장으로 서술하시오.",
+   "answerHint": "(단, '먹이 사슬'을 사용하여 두 문장으로 쓸 것)",
+   "modelAnswer": "플랑크톤 같은 작은 생물이 미세 플라스틱을 먹이로 착각해 먹는다. 이 플라스틱은 먹이 사슬을 따라 물고기 같은 더 큰 동물에게 쌓이고 결국 사람이 먹는 수산물까지 이어진다.",
+   "explanation": "모범 답안: 플랑크톤 같은 작은 생물이 미세 플라스틱을 먹이로 착각해 먹는다. 이 플라스틱은 먹이 사슬을 따라 물고기 같은 더 큰 동물에게 쌓이고 결국 사람이 먹는 수산물까지 이어진다. (근거: 교과서 p.115)",
+   "rubric": [
+    {
+     "criterion": "작은 해양 생물이 (미세) 플라스틱을 먹거나 삼킨다고 씀 (허용: 먹다·삼키다·섭취. '먹이로 착각'까지 쓰면 2점, 먹는 내용만 쓰면 1점)",
+     "points": 2,
+     "tip": "첫 단계는 작은 생물의 몸속으로 플라스틱이 들어가는 것이에요. '먹이로 착각'은 교과서 p.115의 설명이지만 필수는 아니에요."
+    },
+    {
+     "criterion": "'먹이 사슬'을 사용함 (허용: '먹이사슬' 붙여 쓰기)",
+     "points": 1,
+     "tip": "조건 낱말 '먹이 사슬'(붙여 쓴 '먹이사슬' 포함)을 쓰지 않으면 이 항목은 0점이에요."
+    },
+    {
+     "criterion": "더 큰 동물을 거쳐 사람의 식탁까지 영향을 미친다고 씀 (허용: 큰 물고기·큰 동물을 거쳐 사람·수산물까지)",
+     "points": 2,
+     "tip": "큰 동물과 사람까지 이어지는 흐름을 써요. 큰 동물만 쓰고 사람을 빼면 1점이에요."
+    }
+   ],
+   "detail": "정답 근거: 조사 보고에서 플랑크톤, 작은 물고기, 참치, 식탁의 수산물 순서로 같은 조각이 계속 발견돼요. 먹이로 착각한 미세 플라스틱이 이동하며 사람에게 이어져요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: '바다가 오염된다'처럼 결과만 쓰면 감점이에요. 문장이 한 개이거나 세 개 이상이면 조건 위반이에요.",
+   "tip": "'작은 생물이 먹음 → 이어진 먹이 관계로 이동 → 사람 식탁' 순서로 쓰면 돼요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "해양 쓰레기와 사람",
+     "text": "바다의 쓰레기는 해양 생물을 거쳐 다시 우리에게 돌아올 수 있어요."
+    }
+   ],
+   "passageTitle": "보기",
+   "passage": "[조사 보고] 한 해안 마을의 바닷물을 조사했더니 아주 작은 플라스틱 조각이 플랑크톤에서 발견되었다. 이를 먹는 작은 물고기, 그 물고기를 먹는 참치, 그리고 식당에서 내놓은 수산물에서도 같은 조각이 계속 나왔다."
+  }
+ ]
+}
