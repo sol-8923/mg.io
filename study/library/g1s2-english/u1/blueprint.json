@@ -1,0 +1,131 @@
+{
+ "unitName": "과거 시제와 독해: 한글의 탄생",
+ "basis": "default",
+ "analysis": "기출 없음 — 중학교 내신 영어 일반형 적용(어휘·어법·대화·독해·문장 배열의 선택형, 조건 영작·오류 고쳐 쓰기의 서술형). 샘플 단원평가 크기(12문항, 100점).",
+ "timeLimitMin": 25,
+ "totalPoints": 100,
+ "variantsPerSlot": 2,
+ "slots": [
+  {
+   "id": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "어휘",
+   "intent": "지문에 나오는 어휘의 뜻·유의어 고르기"
+  },
+  {
+   "id": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "동사의 과거형",
+   "intent": "불규칙·규칙 동사의 과거형 판별"
+  },
+  {
+   "id": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "be동사의 과거형",
+   "intent": "was/were 선택 (시간 표현 단서)"
+  },
+  {
+   "id": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "일반동사의 과거형",
+   "intent": "did not / Did 뒤의 동사원형, 과거형 부정문·의문문"
+  },
+  {
+   "id": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "어법 판단",
+   "intent": "어법상 틀린(또는 옳은) 문장 고르기"
+  },
+  {
+   "id": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "대화 표현",
+   "intent": "과거에 한 일을 묻고 답하는 대화 완성"
+  },
+  {
+   "id": "Q07",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 6,
+   "concept": "독해: 내용 일치",
+   "intent": "지문의 내용과 일치하는(일치하지 않는) 것 고르기"
+  },
+  {
+   "id": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 6,
+   "concept": "독해: 지칭과 주제",
+   "intent": "대명사 지칭 또는 글의 제목 고르기"
+  },
+  {
+   "id": "Q09",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 6,
+   "concept": "독해: 글의 흐름과 어법",
+   "intent": "문장 배열 또는 〈보기〉 어법 합답형"
+  },
+  {
+   "id": "Q10",
+   "type": "short",
+   "difficulty": "하",
+   "points": 6,
+   "concept": "동사 과거형 쓰기",
+   "intent": "괄호 안 동사를 알맞은 과거형으로 쓰기"
+  },
+  {
+   "id": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 20,
+   "concept": "조건 영작",
+   "intent": "우리말을 조건에 맞게 영어로 쓰기"
+  },
+  {
+   "id": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 20,
+   "concept": "오류 고쳐 쓰기",
+   "intent": "시제 오류가 있는 문장을 바르게 고쳐 쓰기"
+  }
+ ],
+ "totalQuestions": 12,
+ "types": {
+  "mc": 9,
+  "short": 1,
+  "essay": 2
+ },
+ "difficulty": {
+  "하": 3,
+  "중": 6,
+  "상": 3
+ },
+ "concepts": {
+  "어휘": 1,
+  "동사의 과거형": 1,
+  "be동사의 과거형": 1,
+  "일반동사의 과거형": 1,
+  "어법 판단": 1,
+  "대화 표현": 1,
+  "독해: 내용 일치": 1,
+  "독해: 지칭과 주제": 1,
+  "독해: 글의 흐름과 어법": 1,
+  "동사 과거형 쓰기": 1,
+  "조건 영작": 1,
+  "오류 고쳐 쓰기": 1
+ }
+}
