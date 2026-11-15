@@ -169,7 +169,7 @@ for q in qs:
         if _JOSA_C.search(text): E("%s %s: 조사 오류 '㉡로' 꼴 — 원문자 ㉠㉡㉢㉤… 뒤에는 '으로'(㉣만 '로')" % (q["id"], fname))
         for m in _JOSA_H.finditer(text):
             w = m.group(1)
-            if _has_batchim_not_rieul(w[-1]) and norm(w[-1:] + "로") not in ("진로", "경로", "항로", "통로", "활로", "수로", "도로", "정로"):
+            if _has_batchim_not_rieul(w[-1]) and norm(w[-1:] + "로") not in ("진로", "경로", "항로", "통로", "활로", "수로", "도로", "정로", "근로", "노로"):
                 word = norm(w + "로")
                 if not any(word[-k:] in full for k in (3, 4) if len(word) >= k):
                     W("%s %s: 조사 오류 의심 '%s' — 받침 뒤 '로'(→ '으로')이거나 원문에 없는 합성어" % (q["id"], fname, (w + "로")))
@@ -202,3 +202,26 @@ for q in qs:
     txt = " ".join([f[1] for f in fields(q)] + [ref_text(r) for r in (q.get("refs") or [])])
     m = re.search(r"(지도서|교사용)", txt)
     if m: E("%s: 학생이 보는 풀이·참고 자료에 '%s'가 나옴 — 근거는 학생 교과서 쪽수로만(교사용·지도서는 제작자용)" % (q["id"], m.group(1)))
+
+# ── R-M. 풀이가 다른 문항·변형을 가리킴('앞의 문항') — 시험지에는 슬롯당 변형 하나만 들어감 ──
+for q in qs:
+    txt = " ".join(f[1] for f in fields(q) if f[0] in ("explanation", "detail", "tip") or f[0].startswith("choiceExplanations"))
+    m = re.search(r"(앞의 문항|앞 문항|위 문항|이전 문항|다음 문항|같은 슬롯|다른 변형|변형 [ab]|[0-9]번 문항|앞선 (?:표|그림|문항|자료|사례)|앞의 (?:표|그림|자료|사례)|이전 (?:표|그림|자료|사례)|(?:표|그림|자료|기호)의? ?위치가 바뀌|이번 그림)", txt)
+    if m: E("%s: 풀이가 다른 문항·변형을 가리킴 '%s' — 시험지에는 슬롯당 변형 하나만 들어가므로 이 문항만으로 읽히게" % (q["id"], m.group(1)))
+
+# ── R-N. 섞이는 보기가 다른 보기를 가리킴('위의', '앞의', '이런 활동') ────
+_REF_E = re.compile(r"(?<![가-힣])(위의|앞의|위 보기|앞 보기|앞서 말한|바로 위)")
+_REF_W = re.compile(r"(?<![가-힣])(이런|이와 같은|이와 같이)")
+for q in qs:
+    if q["type"] != "mc" or q.get("fixedOrder"): continue
+    for i, c in enumerate(q["choices"]):
+        m = _REF_E.search(c)
+        if m: E("%s: 섞이는 보기[%d]가 다른 보기를 가리킴 '%s' — 보기 순서가 바뀌면 의미를 잃음(그 보기만으로 읽히게)" % (q["id"], i, m.group(1))); break
+        m = _REF_W.search(c)
+        if m: W("%s: 섞이는 보기[%d]의 '%s' — 다른 보기를 가리키는 말이면 순서가 바뀌어 의미를 잃음(장면·지문을 가리키는 말이면 무시)" % (q["id"], i, m.group(1))); break
+
+# ── R-O. 어색한 조사 병기 '은(는)·을(를)·이(가)' (해설 템플릿) ────
+_PAR = re.compile(r"[가-힣㉠-㉿]\((?:는|를|가|은|을|이)\)")
+for q in qs:
+    n = sum(len(_PAR.findall(f[1])) for f in fields(q) if f[1])
+    if n: W("%s: 조사 병기('은(는)' 등) %d곳 — 받침을 판정해 정확한 조사로" % (q["id"], n))
