@@ -31,6 +31,8 @@ var ICONS = {
   soc:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="13"/><path d="M7 20h26M20 7c-5 5-5 21 0 26M20 7c5 5 5 21 0 26"/></svg>',
   his:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M11 8h20v20a4 4 0 0 1-4 4H9"/><path d="M11 8a3 3 0 0 0-3 3v17a4 4 0 0 0 4 4"/><path d="M15 15h11M15 21h11"/></svg>'
 };
+ICONS.chat='<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h32a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H22l-9 8v-8H8a3 3 0 0 1-3-3V13a3 3 0 0 1 3-3z"/><path d="M14 20h20M14 27h12"/></svg>';
+ICONS.photo='<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="38" height="28" rx="4"/><circle cx="17" cy="21" r="3.5"/><path d="M6 36l11-9 9 7 6-5 11 8"/></svg>';
 ICONS.meron='<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="25"/><path d="M18 23l8 4-8 4M46 23l-8 4 8 4"/><ellipse cx="13.5" cy="38" rx="4" ry="2.6" fill="#f6c4cb" stroke="none" opacity=".55"/><ellipse cx="50.5" cy="38" rx="4" ry="2.6" fill="#f6c4cb" stroke="none" opacity=".55"/><path d="M33 43v8.5a4.6 4.6 0 0 0 9.2 0V41.5" fill="#f6c4cb" stroke="#f6c4cb"/><path d="M37.6 47v4.5" stroke="#d98a96" stroke-width="1.8"/><path d="M21 40q11 7 22 0"/><path d="M54 13l4-3M57 20h5M53 6l1.5-4"/></svg>';
 function emblem(sub){
   var s=(SUBJECTS[sub]||{}).e;
@@ -89,7 +91,7 @@ function removeNav(){ if(S.nav){ S.nav.remove(); S.nav=null; } }
 
 /* ───────── 라우터 ───────── */
 function route(){
-  stopTimer(); removeNav(); closeModals();
+  stopTimer(); removeNav(); closeModals(); if(S.chatUnsub){ S.chatUnsub(); S.chatUnsub=null; }
   var p=location.hash.replace(/^#\/?/,'').split('/').filter(Boolean).map(decodeURIComponent);
   var a=p[0], b=p[1];
   var done=function(){ window.scrollTo(0,0); };
@@ -102,6 +104,7 @@ function route(){
     if(a==='book') return renderBook(b).then(done);
     if(a==='stats') return renderStats(b).then(done);
     if(a==='plan') return renderPlan(b), done();
+    if(a==='chat') return renderChat(), done();
     if(a==='quiz') return S.exam&&!S.exam.done ? (renderQ(),done()) : go('#/exam');
     if(a==='result') return S.exam&&S.exam.done ? (renderResult(),done()) : go('#/exam');
     if(a==='review') return renderReview(parseInt(b||'1',10));
@@ -149,6 +152,7 @@ function renderHome(){
     ]),
     h('div',{class:'sec-title'},['오늘의 우리 집',h('a',{class:'more',href:'#/plan'},['일정표 열기 →'])]),
     todayPlan(),
+    chatCard(),
     h('div',{class:'sec-title'},['공부방']),
     miniDashboard(),
     h('nav',{class:'menu study'},MENUS.map(function(m){
@@ -1445,6 +1449,141 @@ function renderStats(param){
       ]));
     });
   }).catch(renderError);
+}
+
+/* ═════════ 가족 채팅 (Firestore 실시간) ═════════
+ * 컬렉션 chat/{자동id}: {who:'dad'|'mom'|'min', text, img?(JPEG data URL), at:밀리초}. 규칙은 firestore.rules 참고.
+ * 사진은 기기에서 줄여(긴 변 1000px, JPEG) 글자 데이터로 문서에 함께 저장한다(유료 저장소 불필요). */
+var CHAT_PEOPLE={dad:{n:'아빠',c:'#2a4468'},mom:{n:'엄마',c:'#a8456b'},min:{n:'민겸',c:'#2f6b52'}};
+var FB={p:null,db:null};
+function loadFB(){
+  if(FB.p) return FB.p;
+  var f=CFG.firebase; if(!f) return (FB.p=Promise.reject(new Error('firebase 설정 없음')));
+  function s(src){ return new Promise(function(res,rej){ var e=document.createElement('script'); e.src=src; e.onload=res; e.onerror=function(){ rej(new Error('Firebase를 불러오지 못했어요')); }; document.head.appendChild(e); }); }
+  var B='https://www.gstatic.com/firebasejs/10.12.2/';
+  var ready=(window.firebase&&firebase.firestore)?Promise.resolve():s(B+'firebase-app-compat.js').then(function(){ return s(B+'firebase-firestore-compat.js'); });
+  FB.p=ready.then(function(){ if(!firebase.apps.length) firebase.initializeApp({projectId:f.projectId,apiKey:f.apiKey}); FB.db=firebase.firestore(); return FB.db; });
+  FB.p.catch(function(){ FB.p=null; });
+  return FB.p;
+}
+function chatWho(){ try{ var w=localStorage.getItem('mg-chat-who'); return CHAT_PEOPLE[w]?w:null; }catch(e){ return null; } }
+function setChatWho(w){ try{ localStorage.setItem('mg-chat-who',w); }catch(e){} }
+function chatSeen(){ try{ return +localStorage.getItem('mg-chat-seen')||0; }catch(e){ return 0; } }
+function setChatSeen(t){ try{ localStorage.setItem('mg-chat-seen',String(t)); }catch(e){} }
+function chatTime(at){ var d=new Date(at), hh=d.getHours(), ap=hh<12?'오전':'오후'; hh=hh%12||12; var m=d.getMinutes(); return ap+' '+hh+':'+(m<10?'0':'')+m; }
+function chatDay(at){ var d=new Date(at), ds=['일','월','화','수','목','금','토']; return d.getFullYear()+'년 '+(d.getMonth()+1)+'월 '+d.getDate()+'일 '+ds[d.getDay()]+'요일'; }
+
+/* 사진 줄이기: 긴 변 1000px, 크기가 크면 화질·크기를 더 낮춘다 (글자 70만 자 이하) */
+function shrinkImage(file){
+  return new Promise(function(res,rej){
+    var url=URL.createObjectURL(file), im=new Image();
+    im.onload=function(){
+      URL.revokeObjectURL(url);
+      var max=1000, q=0.72, out='';
+      for(var i=0;i<6;i++){
+        var sc=Math.min(1,max/Math.max(im.naturalWidth,im.naturalHeight)), c=document.createElement('canvas');
+        c.width=Math.max(1,Math.round(im.naturalWidth*sc)); c.height=Math.max(1,Math.round(im.naturalHeight*sc));
+        var cx=c.getContext('2d'); cx.fillStyle='#fff'; cx.fillRect(0,0,c.width,c.height); cx.drawImage(im,0,0,c.width,c.height);
+        out=c.toDataURL('image/jpeg',q);
+        if(out.length<=700000) return res(out);
+        max=Math.round(max*0.8); q=Math.max(0.5,q-0.07);
+      }
+      rej(new Error('사진이 너무 커요'));
+    };
+    im.onerror=function(){ URL.revokeObjectURL(url); rej(new Error('이 사진은 열 수 없어요. 다른 사진을 골라 주세요')); };
+    im.src=url;
+  });
+}
+
+function pickWho(onpick){
+  var m;
+  var btns=Object.keys(CHAT_PEOPLE).map(function(k){
+    var p=CHAT_PEOPLE[k];
+    return h('button',{class:'who-btn',style:'--wc:'+p.c,onclick:function(){ setChatWho(k); m.close(); onpick(k); }},[p.n]);
+  });
+  m=openModal([h('h2',{style:'margin:0 0 6px',text:'누구세요?'}),h('p',{class:'muted',style:'margin:0 0 14px',text:'이 기기에서는 선택한 사람으로 대화해요. 나중에 바꿀 수도 있어요.'}),h('div',{class:'who-row'},btns)]);
+}
+
+function chatCard(){
+  var cnt=h('span',{class:'count',style:'display:none'});
+  var card=h('nav',{class:'menu family'},[h('a',{class:'mcard',href:'#/chat',style:'--mc:#7a5a3a'},[
+    h('div',{class:'ic',html:ICONS.chat}),h('div',{},[h('h3',{text:'가족 채팅'}),h('p',{text:'엄마·아빠·민겸이 사진과 글을 실시간으로 주고받아요.'})]),cnt,h('span',{class:'go',text:'›'})])]);
+  loadFB().then(function(db){ return db.collection('chat').orderBy('at','desc').limit(1).get(); }).then(function(snap){
+    if(snap.empty) return;
+    var d=snap.docs[0].data(), me=chatWho();
+    if(d.at>chatSeen() && d.who!==me && document.body.contains(cnt)){ cnt.textContent='NEW'; cnt.style.display=''; }
+  }).catch(function(){});
+  return card;
+}
+
+function renderChat(){
+  var app=$app(), me=chatWho(), last=[];
+  var list=h('div',{class:'chat-list',role:'log','aria-live':'polite'});
+  var status=h('div',{class:'chat-status',text:'불러오는 중…'});
+  var whoLbl=h('button',{class:'chat-who',onclick:function(){ pickWho(function(){ renderChat(); }); }});
+  function paintWho(){ var p=CHAT_PEOPLE[me]; whoLbl.innerHTML=''; whoLbl.appendChild(p?h('span',{style:'color:'+p.c,text:'나: '+p.n}):h('span',{text:'누구세요?'})); whoLbl.appendChild(h('span',{class:'chg',text:' · 바꾸기'})); }
+  paintWho();
+  var ta=h('textarea',{rows:'1',maxlength:'500',placeholder:'메시지를 입력하세요','aria-label':'메시지'});
+  var file=h('input',{type:'file',accept:'image/*',class:'hidden'});
+  var sendBtn=h('button',{class:'primary chat-send'},['보내기']);
+  var photoBtn=h('button',{class:'chat-photo','aria-label':'사진 보내기',html:ICONS.photo});
+  var busy=false;
+  function setBusy(b,msg){ busy=b; sendBtn.disabled=b; photoBtn.disabled=b; status.textContent=msg||''; status.style.display=msg?'':'none'; }
+  function ensureWho(fn){ if(me) return fn(); pickWho(function(k){ me=k; paintWho(); paint(last); fn(); }); }
+  function post(doc){
+    setBusy(true,'보내는 중…');
+    return loadFB().then(function(db){ return db.collection('chat').add(doc); })
+      .then(function(){ setBusy(false); })
+      .catch(function(e){ setBusy(false); toast('보내지 못했어요. 인터넷을 확인해 주세요'); throw e; });
+  }
+  function autoH(){ ta.style.height='auto'; ta.style.height=Math.min(120,ta.scrollHeight)+'px'; }
+  function send(){
+    var t=ta.value.trim(); if(!t||busy) return;
+    ensureWho(function(){ post({who:me,text:t,at:Date.now()}).then(function(){ ta.value=''; autoH(); },function(){}); });
+  }
+  ta.addEventListener('input',autoH);
+  ta.addEventListener('keydown',function(e){ if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing&&matchMedia('(pointer:fine)').matches){ e.preventDefault(); send(); } });
+  sendBtn.addEventListener('click',send);
+  photoBtn.addEventListener('click',function(){ ensureWho(function(){ file.value=''; file.click(); }); });
+  file.addEventListener('change',function(){
+    var f=file.files&&file.files[0]; if(!f) return;
+    setBusy(true,'사진을 줄이는 중…');
+    shrinkImage(f).then(function(img){ return post({who:me,text:ta.value.trim(),img:img,at:Date.now()}).then(function(){ ta.value=''; autoH(); }); })
+      .catch(function(e){ setBusy(false); if(e&&e.message&&!/인터넷|Firebase/.test(e.message)&&e.name!=='FirebaseError') toast(e.message); });
+  });
+  var page=h('div',{class:'page chat-page'},[
+    h('div',{class:'topbar'},[h('a',{class:'btn back',href:'#/'},['← 홈']),h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:'가족 채팅'})]),whoLbl]),
+    h('div',{class:'chat-wrap'},[list,status,h('div',{class:'chat-bar'},[photoBtn,ta,sendBtn]),file])
+  ]);
+  app.appendChild(page);
+  function paint(docs){
+    last=docs;
+    var near=list.scrollHeight-list.scrollTop-list.clientHeight<140, first=!list.childNodes.length;
+    list.innerHTML='';
+    if(!docs.length){ list.appendChild(h('div',{class:'chat-empty',text:'아직 대화가 없어요. 첫 인사를 남겨 보세요!'})); return; }
+    var day='';
+    docs.forEach(function(x){
+      var d=x.data, dk=chatDay(d.at);
+      if(dk!==day){ day=dk; list.appendChild(h('div',{class:'chat-day',text:dk})); }
+      var mine=d.who===me, p=CHAT_PEOPLE[d.who]||{n:'?',c:'#666'};
+      var bub=h('div',{class:'bub'+(d.img?' has-img':'')},[
+        d.img?h('img',{src:d.img,alt:'보낸 사진',onclick:function(){ openModal([h('img',{src:d.img,alt:'사진 크게 보기',style:'width:100%;border-radius:10px;display:block'})]); }}):null,
+        d.text?h('div',{class:'t',text:d.text}):null]);
+      var meta=h('div',{class:'meta'},[chatTime(d.at)+(x.pending?' · 보내는 중':'')]);
+      if(mine&&!x.pending) meta.appendChild(h('button',{class:'del',onclick:function(){ if(confirm('이 메시지를 지울까요? 모두에게서 사라져요.')) x.ref.delete().catch(function(){ toast('지우지 못했어요'); }); }},['삭제']));
+      list.appendChild(h('div',{class:'msg '+(mine?'me':'other'),style:'--pc:'+p.c},[mine?null:h('div',{class:'name',text:p.n}),h('div',{class:'row'},[bub,meta])]));
+    });
+    if(first||near) list.scrollTop=list.scrollHeight;
+  }
+  if(!me) pickWho(function(k){ me=k; paintWho(); paint(last); });
+  loadFB().then(function(db){
+    status.style.display='none';
+    S.chatUnsub=db.collection('chat').orderBy('at','desc').limit(40).onSnapshot(function(snap){
+      var docs=snap.docs.map(function(d){ return {ref:d.ref,data:d.data(),pending:d.metadata.hasPendingWrites}; }).reverse();
+      paint(docs);
+      if(docs.length) setChatSeen(Math.max(chatSeen(),docs[docs.length-1].data.at));
+    },function(){ status.style.display=''; status.textContent='대화를 불러오지 못했어요. 인터넷이나 접근 설정을 확인해 주세요.'; });
+  }).catch(function(e){ status.textContent='대화를 불러오지 못했어요: '+(e&&e.message||''); });
 }
 
 /* ───────── 시작 ───────── */
