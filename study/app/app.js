@@ -850,17 +850,58 @@ function noticePopup(list){
     list.forEach(function(p){ try{ localStorage.setItem(seenKey(p[0]),p[1].updatedAt); }catch(e){} }); m.close();
   }},['확인했어요'])])]));
 }
-function noticeEditor(w,onSaved){
-  var c=Notice.who[w], err=h('div',{class:'err'});
-  var pw=h('input',{type:'password',inputmode:'numeric',autocomplete:'off',maxlength:'10',placeholder:'비밀번호',class:'pw'});
+/* 비밀번호(아빠·엄마): 알림 쓰기와 채팅 사람 선택에 같이 쓴다. 기본값은 Notice.who[].pw, 바꾸면 Firestore secrets/{dad|mom}.pw에 저장돼 모든 기기에 적용된다.
+ * 요청대로 암호화 없이 단순 비교하며, 중요한 비밀번호가 아니라는 전제다. */
+var Pw={
+  url:function(w){ var f=CFG.firebase; return 'https://firestore.googleapis.com/v1/projects/'+encodeURIComponent(f.projectId)+'/databases/(default)/documents/secrets/'+w+'?key='+encodeURIComponent(f.apiKey); },
+  get:function(w){
+    var def=Notice.who[w].pw; if(!Notice.shared()) return Promise.resolve(def);
+    return fetch(this.url(w),{cache:'no-store'}).then(function(r){ return r.ok?r.json():null; }).then(function(d){ var v=d&&d.fields&&d.fields.pw&&d.fields.pw.stringValue; return v||def; }).catch(function(){ return def; });
+  },
+  set:function(w,prev,pw){
+    return fetch(this.url(w)+'&updateMask.fieldPaths=pw&updateMask.fieldPaths=prev',{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:{pw:{stringValue:pw},prev:{stringValue:prev}}})})
+      .then(function(r){ if(!r.ok) throw new Error('save'); });
+  }
+};
+function pwPrompt(w,o){
+  var err=h('div',{class:'err'});
+  var pw=h('input',{type:'password',inputmode:'numeric',autocomplete:'off',maxlength:'12',placeholder:'비밀번호',class:'pw'});
   function check(){
-    if(pw.value!==c.pw){ err.textContent='비밀번호가 달라요'; m.box.classList.remove('shake'); void m.box.offsetWidth; m.box.classList.add('shake'); pw.select(); return; }
-    m.close(); writeStep();
+    Pw.get(w).then(function(cur){
+      if(pw.value!==cur){ err.textContent='비밀번호가 달라요'; m.box.classList.remove('shake'); void m.box.offsetWidth; m.box.classList.add('shake'); pw.select(); return; }
+      m.close(); o.onok();
+    });
   }
   pw.addEventListener('keydown',function(e){ if(e.key==='Enter') check(); });
-  var m=openModal([h('h2',{style:'margin:0 0 6px',text:c.label}),h('p',{class:'muted',style:'margin:0 0 12px',text:'알림을 쓰려면 비밀번호를 입력하세요.'}),pw,err,
-    h('div',{class:'row',style:'justify-content:flex-end;margin-top:14px'},[h('button',{onclick:function(){ m.close(); }},['취소']),h('button',{class:'primary',onclick:check},['확인'])])]);
+  var m=openModal([h('h2',{style:'margin:0 0 6px',text:o.title}),h('p',{class:'muted',style:'margin:0 0 12px',text:o.desc}),pw,err,
+    h('div',{class:'row',style:'justify-content:space-between;margin-top:14px'},[h('button',{onclick:function(){ m.close(); changePw(w); }},['비밀번호 바꾸기']),
+      h('span',{class:'row',style:'gap:8px'},[h('button',{onclick:function(){ m.close(); if(o.oncancel) o.oncancel(); }},['취소']),h('button',{class:'primary',onclick:check},['확인'])])])]);
   setTimeout(function(){ pw.focus(); },30);
+}
+function changePw(w){
+  var label=(Notice.who[w]||{}).label||'', who=(CHAT_PEOPLE[w]||{}).n||w;
+  var cur=h('input',{type:'password',inputmode:'numeric',autocomplete:'off',maxlength:'12',placeholder:'지금 비밀번호',class:'pw'});
+  var n1=h('input',{type:'password',inputmode:'numeric',autocomplete:'off',maxlength:'12',placeholder:'새 비밀번호 (4~12자)',class:'pw',style:'margin-top:8px'});
+  var n2=h('input',{type:'password',inputmode:'numeric',autocomplete:'off',maxlength:'12',placeholder:'새 비밀번호 한 번 더',class:'pw',style:'margin-top:8px'});
+  var err=h('div',{class:'err'});
+  function save(){
+    Pw.get(w).then(function(c){
+      if(cur.value!==c) return err.textContent='지금 비밀번호가 달라요';
+      if(n1.value.length<4||n1.value.length>12) return err.textContent='새 비밀번호는 4~12자로 써 주세요';
+      if(n1.value!==n2.value) return err.textContent='새 비밀번호 두 개가 달라요';
+      if(!Notice.shared()) return err.textContent='공유 설정이 없어 바꿀 수 없어요';
+      return Pw.set(w,c,n1.value).then(function(){ m.close(); toast(who+' 비밀번호를 바꿨어요 (알림·채팅에 모두 적용)'); },function(){ err.textContent='바꾸지 못했어요. 인터넷을 확인해 주세요'; });
+    });
+  }
+  n2.addEventListener('keydown',function(e){ if(e.key==='Enter') save(); });
+  var m=openModal([h('h2',{style:'margin:0 0 6px',text:who+' 비밀번호 바꾸기'}),h('p',{class:'muted',style:'margin:0 0 12px',text:'알림 쓰기와 채팅에 같은 비밀번호를 써요.'}),cur,n1,n2,err,
+    h('div',{class:'row',style:'justify-content:flex-end;margin-top:14px'},[h('button',{onclick:function(){ m.close(); }},['취소']),h('button',{class:'primary',onclick:save},['바꾸기'])])]);
+  setTimeout(function(){ cur.focus(); },30);
+}
+
+function noticeEditor(w,onSaved){
+  var c=Notice.who[w];
+  pwPrompt(w,{title:c.label,desc:'알림을 쓰려면 비밀번호를 입력하세요.',onok:function(){ writeStep(); }});
   function writeStep(){
     Notice.get(w).catch(function(){ return null; }).then(function(cur){
       var ta=h('textarea',{maxlength:'300',placeholder:'민겸이에게 하고 싶은 말을 남겨 주세요'}); ta.value=cur&&cur.text||'';
@@ -1514,12 +1555,18 @@ function claimWho(k){
     });
   });
 }
+function chatOK(k){ try{ return !!(JSON.parse(localStorage.getItem('mg-chat-ok'))||{})[k]; }catch(e){ return false; } }
+function setChatOK(k){ try{ var o=JSON.parse(localStorage.getItem('mg-chat-ok'))||{}; o[k]=1; localStorage.setItem('mg-chat-ok',JSON.stringify(o)); }catch(e){} }
 function pickWho(onpick){
   var m, tags={};
   var btns=Object.keys(CHAT_PEOPLE).map(function(k){
     var p=CHAT_PEOPLE[k], tag=h('span',{class:'who-tag'}); tags[k]=tag;
-    return h('button',{class:'who-btn',style:'--wc:'+p.c,onclick:function(){
+    function go1(){
       claimWho(k).then(function(ok){ if(!ok) return; setChatWho(k); syncToken(); m.close(); onpick(k); },function(){ toast('선택하지 못했어요. 인터넷을 확인해 주세요'); });
+    }
+    return h('button',{class:'who-btn',style:'--wc:'+p.c,onclick:function(){
+      if(k==='min'||chatOK(k)) return go1();
+      pwPrompt(k,{title:p.n+' 확인',desc:'이 기기에서 처음 한 번만 비밀번호를 입력해요.',onok:function(){ setChatOK(k); go1(); }});
     }},[h('span',{text:p.n}),tag]);
   });
   m=openModal([h('h2',{style:'margin:0 0 6px',text:'누구세요?'}),h('p',{class:'muted',style:'margin:0 0 14px',text:'한 사람은 한 기기에서만 쓸 수 있어요. 나중에 바꿀 수도 있어요.'}),h('div',{class:'who-row'},btns)]);

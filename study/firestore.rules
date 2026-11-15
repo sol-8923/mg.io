@@ -59,6 +59,17 @@ service cloud.firestore {
         && request.resource.data.at is number;
       allow delete: if dev.size() <= 40;
     }
+    match /secrets/{who} {
+      allow get: if who in ['dad', 'mom'];
+      allow create: if false;   // 기본 비밀번호 문서는 이미 만들어 두었다
+      allow update: if who in ['dad', 'mom']
+        && request.resource.data.keys().hasOnly(['pw', 'prev'])
+        && request.resource.data.pw is string
+        && request.resource.data.prev is string
+        && request.resource.data.pw.size() >= 4 && request.resource.data.pw.size() <= 12
+        && request.resource.data.prev == resource.data.pw;
+      allow delete: if false;
+    }
     match /{document=**} { allow read, write: if false; }
   }
 }
