@@ -1,2 +1,2 @@
-{ "verdict": "PASS", "round": 9, "date": "2026-11-15", "reviewers": ["format", "content", "overall", "explanation"],
-  "note": "4중 검수 만장일치. 지문 규칙 적용 후 재검수(내용 8라운드, 형식·오답풀이 8라운드 최종 확인, 종합 9라운드). 종합 검수의 난이도 지적은 기록만(예외 규칙)." }
+{ "verdict": "PASS", "round": 3, "date": "2026-11-15", "reviewers": ["format", "content", "overall", "explanation"],
+  "note": "새 기출 기준(27슬롯·100점)으로 재제작. 4중 검수 만장일치(1라운드 전원 반려→2라운드 내용만 통과→3라운드 4개 모두 PASS). 기출 15개 변환 포함. 종합 검수의 난이도 지적은 기록만." }
