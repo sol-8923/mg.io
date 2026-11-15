@@ -261,6 +261,17 @@ def sync_cover(book):
                 if dst.stat().st_size > 800_000:
                     print(f"  ⚠ [{book['id']}] 표지 이미지가 {dst.stat().st_size // 1000}KB로 큽니다 (800KB 이하로 줄이면 앱이 빨리 열려요)")
                 return f"{book['id']}/{dst.name}?v={int(dst.stat().st_mtime)}"
+    # 파일 이름이 '표지'·'cover'가 아니어도(예: 서점에서 받은 해시 이름) 폴더에 이미지가 딱 하나면 그것을 표지로 쓴다
+    imgs = sorted(f for f in src_dir.iterdir() if f.is_file() and f.suffix.lower() in COVER_EXT)
+    if len(imgs) == 1:
+        import shutil
+        dst = dst_dir / ("cover" + imgs[0].suffix.lower())
+        shutil.copy2(imgs[0], dst)
+        if dst.stat().st_size > 800_000:
+            print(f"  ⚠ [{book['id']}] 표지 이미지가 {dst.stat().st_size // 1000}KB로 큽니다 (800KB 이하로 줄이면 앱이 빨리 열려요)")
+        return f"{book['id']}/{dst.name}?v={int(dst.stat().st_mtime)}"
+    if len(imgs) > 1:
+        print(f"  ⚠ [{book['id']}] 이미지가 {len(imgs)}개라 표지를 고를 수 없어요. 표지 파일 이름을 '표지.jpg'로 바꿔 주세요")
     return None
 
 
