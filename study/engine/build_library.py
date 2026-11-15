@@ -27,6 +27,18 @@ CIRCLED = re.compile(r"[①②③④⑤⑥⑦⑧]")
 BAD_SVG = re.compile(r"<script|\son\w+\s*=|javascript:|<foreignObject|href\s*=\s*[\"']https?:", re.I)
 
 
+# 과목별 배점 상한(점): 화곡중 1학년 2학기 기출의 문항별 최대 배점. 선택형=객관식, 단답형=서답형 단답·소문항, 서술형=서술·논술 한 문항.
+# 국어 객관 4·서답 6 / 영어 객관 5·서술 6 / 수학 객관 6·서술 10 / 과학 객관 5·서술 10 / 사회 객관 5(서술 없음) / 도덕 객관 4·논술 20
+PTS_LIMITS = {
+    "국어": {"mc": 4, "short": 6, "essay": 6},
+    "영어": {"mc": 5, "short": 6, "essay": 6},
+    "수학": {"mc": 6, "short": 5, "essay": 10},
+    "과학": {"mc": 5, "short": 5, "essay": 10},
+    "사회": {"mc": 5, "short": 5, "essay": 8},
+    "도덕": {"mc": 4, "short": 5, "essay": 20},
+    "_default": {"mc": 5, "short": 5, "essay": 10},
+}
+
 def norm(s):
     return re.sub(r"[\s.,·・'\"‘’“”()\[\]{}~\-_/!?]", "", str(s)).lower()
 
@@ -204,12 +216,15 @@ def build_book(bdir, errors, warns, info):
             elif n < target:
                 warns.append(f"{tagu} 슬롯 {s['id']} 변형 {n}개 (목표 {target}개)")
         # ── 내신 현실성 점검 (경고만, 개정안 R1·R4 — docs/내신-적합성-검토와-개정안.md) ──
-        for t_, lim, label in (("mc", 5, "선택형"), ("short", 5, "단답형"), ("essay", 10, "서술형")):
+        # 배점 상한은 과목별 기출(화곡중 1-2, 2023~2025)의 최대 배점에서 도출한 값 (docs/subjects/<과목>.md 0번 절). 기출 없는 과목은 기본값.
+        lims = PTS_LIMITS.get(meta.get("subject"), PTS_LIMITS["_default"])
+        for t_, label in (("mc", "선택형"), ("short", "단답형"), ("essay", "서술형")):
+            lim = lims[t_]
             big = [x for x in slots if x.get("type") == t_ and x.get("points", 0) > lim]
             if big:
-                warns.append(f"{tagu} {label} {len(big)}슬롯의 배점이 {lim}점을 넘음(내신은 선택형 3~5점, 단답 3~4점, 서술형 4~8점 권장): " + ", ".join(f"{x['id']}={x['points']}점" for x in big[:4]))
+                warns.append(f"{tagu} {label} {len(big)}슬롯의 배점이 {lim}점을 넘음({meta.get('subject')} 기출 최대 배점 기준): " + ", ".join(f"{x['id']}={x['points']}점" for x in big[:4]))
         n_essay = sum(1 for x in slots if x.get("type") == "essay")
-        if not meta.get("sample") and (len(slots) < 15 or n_essay < 3):
+        if not meta.get("sample") and bp.get("profile") != "past-exam" and (len(slots) < 15 or n_essay < 3):   # profile=past-exam: 기출 비율(단답 위주 서답형)을 따르는 설계도는 서술형 3문항 권장 면제
             warns.append(f"{tagu} 정식 단원은 15~20슬롯, 서술형 3~5문항을 권장(현재 {len(slots)}슬롯, 서술형 {n_essay}문항)")
         mcq = [q for q in qs if q.get("type") == "mc" and not q.get("fixedOrder") and isinstance(q.get("answer"), int) and isinstance(q.get("choices"), list) and len(q["choices"]) >= 2]
         if len(mcq) >= 8:
