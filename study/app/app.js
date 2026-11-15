@@ -1526,6 +1526,32 @@ function pickWho(onpick){
   loadFB().then(function(db){ Object.keys(CHAT_PEOPLE).forEach(function(k){ whoRef(db,k).get().then(function(d){ if(d.exists&&d.data().device!==devId()) tags[k].textContent='다른 기기 사용 중'; }); }); }).catch(function(){});
 }
 
+/* 새 메시지 알림: 이 기기에서 앱(탭)이 열려 있는 동안 브라우저 알림을 띄운다. 앱을 완전히 닫으면 올 수 없다(그러려면 서버가 필요). */
+var NOTIF={on:false,last:0};
+function notifSupported(){ return 'Notification' in window; }
+function notifGranted(){ return notifSupported()&&Notification.permission==='granted'; }
+function showChatNotif(v){
+  var p=CHAT_PEOPLE[v.who]||{n:'가족'}, body=p.n+': '+(v.text||'사진을 보냈어요'), opt={body:body,tag:'mg-chat',icon:undefined,renotify:true};
+  var fallback=function(){ try{ var n=new Notification('가족 채팅',{body:body,tag:'mg-chat'}); n.onclick=function(){ window.focus(); location.hash='#/chat'; n.close(); }; }catch(e){} };
+  if('serviceWorker' in navigator) navigator.serviceWorker.getRegistration().then(function(r){ if(r) r.showNotification('가족 채팅',opt); else fallback(); },fallback); else fallback();
+}
+function startChatWatch(){
+  if(NOTIF.on||!notifGranted()||!CFG.firebase) return;
+  NOTIF.on=true;
+  if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function(){});
+  loadFB().then(function(db){
+    var first=true;
+    db.collection('chat').orderBy('at','desc').limit(1).onSnapshot(function(snap){
+      var d=snap.docs[0]; if(!d) return; var v=d.data();
+      if(first){ first=false; NOTIF.last=v.at; return; }
+      if(v.at>NOTIF.last && !d.metadata.hasPendingWrites){
+        NOTIF.last=v.at;
+        if(v.who!==chatWho() && chatWho() && (document.hidden||location.hash.indexOf('#/chat')!==0)) showChatNotif(v);
+      }
+    },function(){ NOTIF.on=false; });
+  }).catch(function(){ NOTIF.on=false; });
+}
+
 function chatCard(){
   var cnt=h('span',{class:'count',style:'display:none'});
   var card=h('nav',{class:'menu family'},[h('a',{class:'mcard',href:'#/chat',style:'--mc:#7a5a3a'},[
@@ -1549,7 +1575,7 @@ function renderChat(){
   var file=h('input',{type:'file',accept:'image/*',class:'hidden'});
   var sendBtn=h('button',{class:'primary chat-send'},['보내기']);
   var photoBtn=h('button',{class:'chat-photo','aria-label':'사진 보내기',html:ICONS.photo});
-  var busy=false;
+  var busy=false, reads={}, onVis=null;
   function setBusy(b,msg){ busy=b; sendBtn.disabled=b; photoBtn.disabled=b; status.textContent=msg||''; status.style.display=msg?'':'none'; }
   function ensureWho(fn){ if(me) return fn(); pickWho(function(k){ me=k; paintWho(); paint(last); fn(); }); }
   function post(doc){
@@ -1573,9 +1599,19 @@ function renderChat(){
     shrinkImage(f).then(function(img){ return post({who:me,text:ta.value.trim(),img:img,at:Date.now()}).then(function(){ ta.value=''; autoH(); }); })
       .catch(function(e){ setBusy(false); if(e&&e.message&&!/인터넷|Firebase/.test(e.message)&&e.name!=='FirebaseError') toast(e.message); });
   });
+  function notifBar(){
+    if(!notifSupported()||Notification.permission==='granted') return null;
+    var bar=h('div',{class:'chat-notif'});
+    if(Notification.permission==='denied'){ bar.appendChild(h('span',{text:'알림이 꺼져 있어요. 브라우저 설정에서 이 사이트의 알림을 허용해 주세요.'})); return bar; }
+    bar.appendChild(h('span',{text:'새 메시지를 알림으로 받을까요? (앱을 열어 둔 동안)'}));
+    bar.appendChild(h('button',{class:'primary',onclick:function(){
+      Notification.requestPermission().then(function(r){ if(r==='granted'){ bar.remove(); toast('알림을 켰어요'); startChatWatch(); } else { bar.textContent='알림을 허용하지 않았어요.'; } });
+    }},['알림 켜기']));
+    return bar;
+  }
   var page=h('div',{class:'page chat-page'},[
     h('div',{class:'topbar'},[h('a',{class:'btn back',href:'#/'},['← 홈']),h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:'가족 채팅'})]),whoLbl]),
-    h('div',{class:'chat-wrap'},[list,status,h('div',{class:'chat-bar'},[photoBtn,ta,sendBtn]),file])
+    h('div',{class:'chat-wrap'},[notifBar(),list,status,h('div',{class:'chat-bar'},[photoBtn,ta,sendBtn]),file])
   ]);
   app.appendChild(page);
   function paint(docs){
@@ -1592,12 +1628,18 @@ function renderChat(){
         d.img?h('img',{src:d.img,alt:'보낸 사진',onclick:function(){ openModal([h('img',{src:d.img,alt:'사진 크게 보기',style:'width:100%;border-radius:10px;display:block'})]); }}):null,
         d.text?h('div',{class:'t',text:d.text}):null]);
       var meta=h('div',{class:'meta'},[chatTime(d.at)+(x.pending?' · 보내는 중':'')]);
+      if(mine&&!x.pending){ var rd=Object.keys(CHAT_PEOPLE).filter(function(k){ return k!==me&&(reads[k]||0)>=d.at; }); if(rd.length) meta.appendChild(h('span',{class:'read',text:rd.length===2?'모두 읽음':CHAT_PEOPLE[rd[0]].n+' 읽음'})); }
       if(mine&&!x.pending) meta.appendChild(h('button',{class:'del',onclick:function(){ if(confirm('이 메시지를 지울까요? 모두에게서 사라져요.')) x.ref.delete().catch(function(){ toast('지우지 못했어요'); }); }},['삭제']));
       list.appendChild(h('div',{class:'msg '+(mine?'me':'other'),style:'--pc:'+p.c},[mine?null:h('div',{class:'name',text:p.n}),h('div',{class:'row'},[bub,meta])]));
     });
     if(first||near) list.scrollTop=list.scrollHeight;
   }
   if(!me) pickWho(function(k){ me=k; paintWho(); paint(last); });
+  function markRead(db){
+    if(!me||document.hidden||!last.length) return;
+    var t=0; last.forEach(function(x){ if(!x.pending&&x.data.at>t) t=x.data.at; });
+    if(t>(reads[me]||0)){ reads[me]=t; db.collection('chatread').doc(me).set({at:t}).catch(function(){}); }
+  }
   function dropped(){ clearChatWho(); toast('다른 기기에서 '+CHAT_PEOPLE[me].n+'(으)로 접속해서 선택이 풀렸어요'); renderChat(); }
   loadFB().then(function(db){
     if(!me) return db;
@@ -1610,13 +1652,16 @@ function renderChat(){
     var unW=me?whoRef(db,me).onSnapshot(function(d){ if(d.exists&&d.data().device!==devId()) dropped(); }):null;
     var unC=db.collection('chat').orderBy('at','desc').limit(40).onSnapshot(function(snap){
       var docs=snap.docs.map(function(d){ return {ref:d.ref,data:d.data(),pending:d.metadata.hasPendingWrites}; }).reverse();
-      paint(docs);
+      paint(docs); markRead(db);
       if(docs.length) setChatSeen(Math.max(chatSeen(),docs[docs.length-1].data.at));
     },function(){ status.style.display=''; status.textContent='대화를 불러오지 못했어요. 인터넷이나 접근 설정을 확인해 주세요.'; });
-    S.chatUnsub=function(){ unC(); if(unW) unW(); };
+    var unR=db.collection('chatread').onSnapshot(function(snap){ snap.forEach(function(d){ reads[d.id]=(d.data()||{}).at||0; }); paint(last); },function(){});
+    onVis=function(){ markRead(db); }; document.addEventListener('visibilitychange',onVis);
+    S.chatUnsub=function(){ unC(); unR(); if(unW) unW(); document.removeEventListener('visibilitychange',onVis); };
   }).catch(function(e){ if(e&&e.dropped) return dropped(); status.textContent='대화를 불러오지 못했어요: '+(e&&e.message||''); });
 }
 
 /* ───────── 시작 ───────── */
+startChatWatch();
 route();
 })();

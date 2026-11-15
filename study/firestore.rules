@@ -42,6 +42,13 @@ service cloud.firestore {
         && request.resource.data.at is number;
       allow delete: if who in ['dad', 'mom', 'min'];
     }
+    match /chatread/{who} {
+      allow read: if who in ['dad', 'mom', 'min'];
+      allow create, update: if who in ['dad', 'mom', 'min']
+        && request.resource.data.keys().hasOnly(['at'])
+        && request.resource.data.at is number;
+      allow delete: if false;
+    }
     match /{document=**} { allow read, write: if false; }
   }
 }

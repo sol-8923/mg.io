@@ -81,3 +81,5 @@ python -m http.server               # http://localhost:8000
 - 데이터: Firestore `chat/{자동id}` = `{who, text, img?, at}`. 규칙은 `firestore.rules`의 `chat` 항목(글 500자, 사진 70만 자 제한, 수정 불가, 누구나 읽기·쓰기·삭제). 로그인이 없으므로 주소를 공유하지 않는 전제다.
 - 규칙은 `firebase deploy --only firestore:rules --project mg-study`로 배포해야 동작한다.
 - **한 사람은 한 기기에서만**: 고른 사람은 Firestore `chatwho/{dad|mom|min}` = `{device, at}`에 기기 번호로 기록된다. 다른 기기에서 같은 사람을 고르면 '이 기기로 옮길까요?'를 묻고, 옮기면 원래 기기는 선택이 풀려 다시 고르게 된다. '바꾸기'를 누르면 선택이 풀려 다른 기기가 쓸 수 있다. 로그인이 없는 가족용 잠금이라 보안 기능은 아니다.
+- **읽음 표시**: 선택한 사람이 채팅 화면을 보고 있으면 Firestore `chatread/{dad|mom|min}` = `{at}`에 '여기까지 읽음' 시각이 기록되고, 내가 보낸 글 아래에 '아빠 읽음' / '모두 읽음'이 뜬다.
+- **새 메시지 알림**: 채팅 화면의 '알림 켜기'로 브라우저 알림을 허용하면, 그 기기에서 앱(탭)이 열려 있는 동안 새 메시지가 오면 알림이 뜬다(`sw.js`). 앱을 완전히 닫았을 때의 푸시 알림은 서버(Cloud Functions, 유료 Blaze 요금제)가 필요해 아직 없다. iPhone은 홈 화면에 추가한 앱에서만 알림이 된다.

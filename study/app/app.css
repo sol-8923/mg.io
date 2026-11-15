@@ -562,3 +562,6 @@ a.door:focus-visible{outline-offset:6px}
 .who-btn:active{transform:scale(.96)}
 .who-btn{flex-direction:column;gap:4px}
 .who-tag{font-size:.7rem;font-weight:600;color:var(--muted);min-height:1em}
+.chat-notif{display:flex;align-items:center;gap:10px;justify-content:space-between;padding:8px 12px;font-size:.85rem;background:rgba(181,134,46,.14);border-bottom:1px solid var(--line)}
+.chat-notif button{min-height:36px;padding:4px 14px;flex:none}
+.msg .read{color:var(--accent,#2f6b52);font-weight:700}
