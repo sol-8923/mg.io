@@ -18,3 +18,6 @@ desktop.ini
 drafts/
 
 # 교과서 표지 이미지(library/*/cover.*)는 사용자 결정(2026-11-15)에 따라 올린다: 주소를 공유하지 않는 가족용 사이트
+
+# 샘플 책(2026-11-15에 library에서 옮김): 내 PC에만 보관, GitHub에는 올리지 않는다
+samples/
