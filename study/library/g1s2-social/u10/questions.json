@@ -1427,6 +1427,247 @@
    "passage": "〈◇◇군 신문 기사〉\n◇◇군은 문을 닫은 학교 건물을 도서관으로 바꿀지 정하기 위해 주민들이 직접 찬성과 반대의 뜻을 표로 밝히게 하였다. 군은 참여한 주민 과반수가 찬성하면 도서관 공사를 시작하겠다고 밝혔다."
   },
   {
+   "id": "u10-P21-a",
+   "slot": "P21",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "선거의 기능",
+   "source": "교과서 p.183 (2025 2학기 기말 21번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-21",
+   "question": "선거의 기능에 대한 설명으로 옳지 않은 것은?",
+   "choices": [
+    "대표자를 뽑는 기능을 한다.",
+    "대표자에게 합법적이고 정당한 권한을 준다.",
+    "대표자가 책임 정치를 할 수 있도록 통제한다.",
+    "국민이 직접 국정 운영을 할 수 있도록 도와준다.",
+    "국민이 투표권을 행사하며 정치에 참여하게 한다."
+   ],
+   "answer": 4,
+   "explanation": "선거는 국민을 대신할 대표를 뽑는 과정이므로, 국민이 직접 국정을 운영하게 한다는 설명은 선거의 기능이 아니다.",
+   "choiceExplanations": [
+    "대표자를 뽑는 것은 선거의 가장 기본적인 기능이에요.",
+    "공식적인 절차를 거쳐 국민의 자발적인 지지를 받은 대표자에게 합법적이고 정당한 권한이 주어지므로 선거의 기능이에요.",
+    "국민은 역할을 잘 수행하지 못한 대표자를 다음 선거에서 뽑지 않을 수 있어서, 선거는 대표자가 책임 정치를 하도록 통제하는 기능을 해요.",
+    "정답. 선거는 대의 민주주의에서 국민을 대신할 대표를 뽑는 과정이에요. 국정을 운영하는 일은 선출된 대표가 맡으므로 국민이 직접 운영하게 한다는 설명은 선거의 기능이 아니에요.",
+    "국민은 대표자를 뽑으려고 투표권을 행사하며 정치에 참여하므로 선거의 기능이에요."
+   ],
+   "detail": "교과서는 대의 민주주의에서 국민을 대신할 대표를 뽑는 과정을 선거라고 설명해요. 선거의 기능은 대표자를 뽑는 것, 대표자에게 합법적이고 정당한 권한을 주는 것, 대표자를 통제하고 교체해 책임 정치를 하게 하는 것, 국민이 정치에 참여하게 하는 것이에요. 선거로 뽑힌 대표가 국정을 맡으므로 국민이 직접 국정을 운영하게 한다는 설명은 이 기능에 들어 있지 않아요.",
+   "tip": "선거 = 대표 선출·정당성 부여·통제·참여. 국민이 직접 운영은 아님.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "정답 근거",
+     "text": "선거는 대의 민주주의에서 국민을 대신할 대표를 뽑는 과정이에요. 대표자 선출, 대표자에게 정당성 부여, 대표자 통제와 교체, 국민의 정치 참여의 기능을 해요(교과서 p.183)."
+    }
+   ]
+  },
+  {
+   "id": "u10-P23-a",
+   "slot": "P23",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "선거 과정에서 정당의 활동",
+   "source": "교과서 p.186 (2025 2학기 기말 23번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-23",
+   "question": "선거 과정에서의 정당의 활동에 대한 설명으로 옳지 않은 것은?",
+   "choices": [
+    "결정된 여러 가지 정책을 공식적으로 집행한다.",
+    "선거에 출마할 후보자를 추천한다.",
+    "정당의 활동은 정치 사회화 기능을 한다.",
+    "국민의 의견을 반영하여 정책을 만들어 공약으로 제시한다.",
+    "국민에게 정당의 이념, 정책 내용 등을 알리고 지지를 호소한다."
+   ],
+   "answer": 1,
+   "explanation": "결정된 정책을 공식적으로 집행하는 것은 정부의 일이고, 정당은 후보자 추천, 공약 제시, 정책 홍보와 지지 호소를 한다.",
+   "choiceExplanations": [
+    "정답. 결정된 정책을 실제로 실행에 옮기는 것은 국가기관인 정부의 역할이에요. 정당은 선거 과정에서 후보자를 추천하고 공약을 알리는 활동을 하므로 이 설명은 정당의 활동이 아니에요.",
+    "선거에 출마할 후보자를 내세우는 정당의 활동이에요.",
+    "정당이 국민에게 정책을 알리고 지지를 호소하는 활동은 정치에 대한 국민의 관심과 참여를 이끌어 정치 사회화 기능을 해요.",
+    "정당은 국민의 의견을 반영한 정책을 만들어 공약으로 제시해요.",
+    "정당은 정책 설명회, 토론회, 공청회 등에서 국민에게 이념과 정책 내용을 알리고 지지를 호소해요."
+   ],
+   "detail": "교과서는 정당이 선거에서 후보자를 추천하고, 국민의 의견을 반영한 정책을 만들어 공약으로 제시한다고 설명해요. 또 정책 설명회, 토론회, 공청회 등에서 국민에게 정당의 이념과 정책 내용을 알리고 지지를 호소해요. 이런 활동은 국민의 관심과 참여를 이끌어 정치 사회화 기능을 해요. 결정된 정책을 공식적으로 집행하는 일은 정부가 하므로 정당의 활동이 아니에요.",
+   "tip": "정당은 추천·공약·홍보, 집행은 정부.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "정답 근거",
+     "text": "정당은 선거에 후보자를 추천하고 국민들의 의견을 반영한 정책을 만들어 공약으로 제시해요. 정책 설명회, 토론회, 공청회 등에서 이념과 정책 내용을 알리고 지지를 호소해 정치 사회화 기능을 해요(교과서 p.186)."
+    }
+   ]
+  },
+  {
+   "id": "u10-P26-a",
+   "slot": "P26",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "정치과정의 단계와 정치 주체",
+   "source": "교과서 p.191 (2025 2학기 기말 26번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-26",
+   "question": "<보기>는 정치과정의 단계를 나타낸 것이다. ㉠~㉢에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "㉠은 개인, 이익 집단, 시민단체이다.",
+    "㉠은 다양한 이익을 집약한다.",
+    "㉡은 국민이다.",
+    "㉡은 이익 집단과 시민단체이다.",
+    "㉢은 국회이다."
+   ],
+   "answer": 1,
+   "fixedOrder": true,
+   "explanation": "㉠은 다양한 이익을 표출하는 단계의 주체로 개인이나 집단(이익 집단, 시민단체)이다.",
+   "choiceExplanations": [
+    "정답. 그림에서 ㉠은 다양한 이익 표출 단계의 주체예요. 개인이나 집단이 다양한 가치와 이익을 표출하고, 이익 집단과 시민단체도 자신의 요구를 표출하는 정치 주체예요.",
+    "다양한 이익을 집약하는 것은 바로 다음 단계인 이익 집약이에요. 이 일은 언론과 정당이 하고, ㉠은 이익을 처음 드러내는 단계의 주체예요.",
+    "㉡은 정책 결정 단계예요. 교과서는 국회와 정부가 집약된 이익을 바탕으로 정책을 수립하고 결정한다고 설명해요. 국민은 정책을 평가하는 단계의 주체예요.",
+    "㉡은 정책 결정 단계라서 국회와 정부 같은 국가기관이 맡아요. 이익 집단과 시민단체는 이익을 표출하는 단계의 주체예요.",
+    "㉢은 정책 평가 단계예요. 교과서는 국민이 정책을 평가하고 수정을 요구한다고 설명해요. 국회는 정책 결정 단계에 참여해요."
+   ],
+   "detail": "그림의 정치과정은 다양한 이익 표출, 이익 집약, 정책 결정, 정책 집행, 정책 평가의 순서예요. 교과서는 개인이나 집단이 다양한 가치와 이익을 표출하면 언론과 정당이 이를 집약하고, 국회와 정부가 정책을 결정하며, 정부가 집행하고 국민이 평가한다고 설명해요. 그래서 ㉠은 이익을 표출하는 개인과 집단이고, ㉡은 국회와 정부 같은 국가기관, ㉢은 국민이에요. 이익 집단과 시민단체도 자신의 요구를 표출하는 정치 주체이므로 ㉠에 들어가요.",
+   "tip": "표출(개인·집단) → 집약(언론·정당) → 결정(국회·정부) → 집행(정부) → 평가(국민).",
+   "figure": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 200\" role=\"img\" aria-label=\"정치과정의 단계 도식 ㉠~㉢\"><defs><marker id=\"ah\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 z\" fill=\"#374151\"/></marker></defs><rect x=\"14\" y=\"40\" width=\"100\" height=\"86\" rx=\"6\" fill=\"#fff\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><path d=\"M14,76 L14,46 Q14,40 20,40 L108,40 Q114,40 114,46 L114,76 Z\" fill=\"#d1d5db\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"64.0\" y=\"54.5\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">다양한</text><text x=\"64.0\" y=\"71.3\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">이익 표출</text><text x=\"64.0\" y=\"106.0\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">㉠</text><rect x=\"126\" y=\"40\" width=\"100\" height=\"86\" rx=\"6\" fill=\"#fff\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><path d=\"M126,76 L126,46 Q126,40 132,40 L220,40 Q226,40 226,46 L226,76 Z\" fill=\"#d1d5db\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"176.0\" y=\"62.9\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">이익 집약</text><text x=\"176.0\" y=\"106.0\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">언론, 정당 등</text><rect x=\"238\" y=\"40\" width=\"100\" height=\"86\" rx=\"6\" fill=\"#fff\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><path d=\"M238,76 L238,46 Q238,40 244,40 L332,40 Q338,40 338,46 L338,76 Z\" fill=\"#d1d5db\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"288.0\" y=\"62.9\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">정책 결정</text><text x=\"288.0\" y=\"106.0\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">㉡</text><rect x=\"350\" y=\"40\" width=\"100\" height=\"86\" rx=\"6\" fill=\"#fff\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><path d=\"M350,76 L350,46 Q350,40 356,40 L444,40 Q450,40 450,46 L450,76 Z\" fill=\"#d1d5db\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"400.0\" y=\"62.9\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">정책 집행</text><text x=\"400.0\" y=\"106.0\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">정부</text><rect x=\"462\" y=\"40\" width=\"100\" height=\"86\" rx=\"6\" fill=\"#fff\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><path d=\"M462,76 L462,46 Q462,40 468,40 L556,40 Q562,40 562,46 L562,76 Z\" fill=\"#d1d5db\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"512.0\" y=\"62.9\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">정책 평가</text><text x=\"512.0\" y=\"106.0\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">㉢</text><line x1=\"116\" y1=\"83\" x2=\"123\" y2=\"83\" stroke=\"#374151\" stroke-width=\"3\" marker-end=\"url(#ah)\"/><line x1=\"228\" y1=\"83\" x2=\"235\" y2=\"83\" stroke=\"#374151\" stroke-width=\"3\" marker-end=\"url(#ah)\"/><line x1=\"340\" y1=\"83\" x2=\"347\" y2=\"83\" stroke=\"#374151\" stroke-width=\"3\" marker-end=\"url(#ah)\"/><line x1=\"452\" y1=\"83\" x2=\"459\" y2=\"83\" stroke=\"#374151\" stroke-width=\"3\" marker-end=\"url(#ah)\"/><polyline points=\"512.0,128 512.0,158 64.0,158 64.0,132\" fill=\"none\" stroke=\"#374151\" stroke-width=\"2\" stroke-dasharray=\"2 3\" marker-end=\"url(#ah)\"/><rect x=\"250\" y=\"146\" width=\"100\" height=\"24\" rx=\"5\" fill=\"#6b7280\"/><text x=\"300\" y=\"163\" font-size=\"13\" text-anchor=\"middle\" fill=\"#ffffff\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">환류(피드백)</text></svg>",
+    "caption": "<보기> 정치과정의 단계(그림)"
+   },
+   "refs": [
+    {
+     "kind": "text",
+     "title": "정답 근거",
+     "text": "개인이나 집단이 다양한 가치와 이익을 표출하면 언론과 정당이 이를 집약하고, 국회와 정부가 정책을 결정하며, 정부가 집행해요. 국민은 정책을 평가하고 수정을 요구하고, 그 평가는 다시 정치과정에 반영돼요(교과서 p.191)."
+    }
+   ]
+  },
+  {
+   "id": "u10-P27-a",
+   "slot": "P27",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "지방 자치의 의미와 중요성",
+   "source": "교과서 p.193 (2025 2학기 기말 27번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-27",
+   "passageTitle": "제도 이름과 <보기>",
+   "passage": "• 민주주의의 학교\n• 풀뿌리 민주주의\n\n(가) 민주주의 기초를 다지고 발전시킬 수 있다.\n(나) 중앙 정부에 권력이 집중되도록 한다.\n(다) 지역 주민이 주체가 되어 지역의 문제를 해결한다.\n(라) 모든 지역의 정책을 일률적으로 통일시켜서 일관성 있는 행정을 집행하게 한다.",
+   "question": "다음과 같이 불리는 제도에 대한 설명으로 옳은 것을 <보기>에서 모두 고른 것은?",
+   "choices": [
+    "(가), (나)",
+    "(가), (다)",
+    "(나), (다)",
+    "(나), (라)",
+    "(다), (라)"
+   ],
+   "answer": 2,
+   "fixedOrder": true,
+   "explanation": "'민주주의의 학교', '풀뿌리 민주주의'로 불리는 지방 자치 제도는 주민이 주체가 되어 지역의 문제를 해결하고 민주주의의 기초를 다진다.",
+   "choiceExplanations": [
+    "(가)는 맞지만 (나)가 틀려요. 지방 자치는 지역 주민이 자기 지역의 일을 스스로 처리하는 제도라서 중앙 정부에 권력이 집중되는 것과 반대예요.",
+    "정답. '민주주의의 학교', '풀뿌리 민주주의'는 지방 자치 제도를 부르는 말이에요. 주민이 주체가 되어 지역의 문제를 해결하면서 민주주의를 배우고 실천하고(다), 주민의 자발적인 정치 참여로 민주주의의 기초를 다지고 발전시킬 수 있어요(가).",
+    "(다)는 맞지만 (나)가 틀려요. 지방 자치는 권력을 중앙 정부에 모으는 제도가 아니라 지역 주민이 지역의 일을 스스로 처리하는 제도예요.",
+    "(나)와 (라) 모두 틀려요. 중앙 정부에 권력을 집중시키거나 모든 지역의 정책을 통일시키는 것은 지역 주민이 자기 지역의 일을 스스로 처리하는 지방 자치와 반대예요.",
+    "(다)는 맞지만 (라)가 틀려요. 지방 자치는 지역 실정에 맞게 지역 일을 처리하는 제도라서 모든 지역의 정책을 일률적으로 통일시키는 것과 맞지 않아요."
+   ],
+   "detail": "교과서는 일정한 지역에 사는 주민들이 그 지역의 일을 스스로 처리하는 것을 지방 자치라고 설명해요. 지방 자치는 주민이 주체가 되어 지역의 문제를 해결하면서 민주주의를 배우고 실천한다는 뜻에서 '민주주의의 학교'라고 불려요. 또 지역 주민의 자발적인 정치 참여로 민주주의의 기초를 다지고 발전시킨다는 점에서 '풀뿌리 민주주의'라고도 불려요. 그래서 (가)와 (다)가 옳아요. 중앙 정부에 권력을 집중시키거나 정책을 통일시킨다는 (나)와 (라)는 지방 자치와 반대되는 내용이에요.",
+   "tip": "민주주의의 학교·풀뿌리 민주주의 = 주민이 스스로 지역 일을 처리하는 지방 자치.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "정답 근거",
+     "text": "지방 자치 제도는 주민이 주체가 되어 지역의 문제를 해결하면서 민주주의를 배우고 실천한다고 하여 '민주주의의 학교', 지역 주민의 자발적인 정치 참여로 민주주의의 기초를 다지고 발전시킨다고 하여 '풀뿌리 민주주의'라고 불려요(교과서 p.193)."
+    }
+   ]
+  },
+  {
+   "id": "u10-P28-a",
+   "slot": "P28",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "지방 의회와 지방 자치 단체장의 역할",
+   "source": "교과서 p.193 (2025 2학기 기말 28번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-28",
+   "passageTitle": "<보기>",
+   "passage": "(가) ㉠은 지방 자치 단체가 사용할 예산을 심의·의결한다.\n(나) ㉠은 지역의 각종 행정 사무를 처리한다.\n(다) ㉡은 지방 자치 단체를 대표한다.\n(라) ㉡은 지방 자치 단체의 행정 사무를 감사한다.",
+   "question": "위 자료의 ㉠, ㉡에 대한 설명으로 옳은 것을 <보기>에서 모두 고른 것은?",
+   "choices": [
+    "(가), (나)",
+    "(가), (다)",
+    "(나), (다)",
+    "(나), (라)",
+    "(다), (라)"
+   ],
+   "answer": 2,
+   "fixedOrder": true,
+   "explanation": "의결 기관인 ㉠(지방 의회)은 예산을 심의·의결하고, 집행 기관인 ㉡(지방 자치 단체장)은 지방 자치 단체를 대표한다.",
+   "choiceExplanations": [
+    "(가)는 맞지만 (나)가 틀려요. 지역의 각종 행정 사무를 처리하는 것은 집행 기관인 지방 자치 단체장의 일이에요. 의결 기관인 ㉠은 논의하고 결정하는 일을 해요.",
+    "정답. ㉠은 의결 기관인 지방 의회로, 지방 자치 단체가 사용할 예산을 심의·의결해요(가). ㉡은 집행 기관인 지방 자치 단체장으로, 지방 자치 단체를 대표해요(다).",
+    "(다)는 맞지만 (나)가 틀려요. 행정 사무를 처리하는 일은 ㉡의 일이라서 ㉠에게 붙인 (나)는 틀려요.",
+    "(나)와 (라) 모두 틀려요. 행정 사무를 처리하는 일은 ㉡이 하고, 행정 사무를 감사하는 일은 ㉠이 해서 두 진술 모두 기관을 바꿔 썼어요.",
+    "(다)는 맞지만 (라)가 틀려요. 지방 자치 단체의 행정 사무를 감사하는 것은 ㉡이 아니라 ㉠이 하는 일이에요."
+   ],
+   "detail": "그림에서 ㉠은 지역 주민이 선거로 뽑는 의결 기관이고, ㉡은 역시 주민이 뽑는 집행 기관이에요. 교과서는 지방 자치 단체가 의결 기관인 지방 의회와 집행 기관인 지방 자치 단체장으로 구성된다고 설명해요. 지방 의회는 조례를 제정·개정·폐지하고 예산을 심의·의결하며 행정 사무를 감사해요. 지방 자치 단체장은 지방 자치 단체를 대표하고 각종 행정 사무를 처리하며 예산을 집행해요. 그래서 (가)와 (다)만 옳아요.",
+   "tip": "의회는 조례·예산·감사, 단체장은 대표·행정 사무·집행.",
+   "figure": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 540 230\" role=\"img\" aria-label=\"지방 자치 단체의 구성 도식 ㉠ ㉡\"><defs><marker id=\"ah\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 z\" fill=\"#374151\"/></marker></defs><rect x=\"20\" y=\"14\" width=\"200\" height=\"80\" rx=\"6\" fill=\"#fff\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><path d=\"M20,48 L20,20 Q20,14 26,14 L214,14 Q220,14 220,20 L220,48 Z\" fill=\"#9ca3af\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"120.0\" y=\"35.9\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">의결 기관</text><text x=\"120.0\" y=\"76.0\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">㉠</text><rect x=\"320\" y=\"14\" width=\"200\" height=\"80\" rx=\"6\" fill=\"#fff\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><path d=\"M320,48 L320,20 Q320,14 326,14 L514,14 Q520,14 520,20 L520,48 Z\" fill=\"#9ca3af\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"420.0\" y=\"35.9\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">집행 기관</text><text x=\"420.0\" y=\"76.0\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">㉡</text><rect x=\"20\" y=\"170\" width=\"500\" height=\"44\" rx=\"8\" fill=\"#e5e7eb\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"270\" y=\"198\" font-size=\"17\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">지역 주민</text><line x1=\"120\" y1=\"166\" x2=\"120\" y2=\"100\" stroke=\"#374151\" stroke-width=\"5\" marker-end=\"url(#ah)\"/><text x=\"134\" y=\"140\" font-size=\"15\" text-anchor=\"start\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">선거</text><line x1=\"420\" y1=\"166\" x2=\"420\" y2=\"100\" stroke=\"#374151\" stroke-width=\"5\" marker-end=\"url(#ah)\"/><text x=\"434\" y=\"140\" font-size=\"15\" text-anchor=\"start\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">선거</text></svg>",
+    "caption": "지방 자치 단체의 구성(그림)"
+   },
+   "refs": [
+    {
+     "kind": "text",
+     "title": "정답 근거",
+     "text": "지방 의회(의결 기관)는 조례를 제정·개정·폐지하고, 예산을 심의·의결하며, 행정 사무를 감사해요. 지방 자치 단체장(집행 기관)은 지방 자치 단체를 대표하고 각종 행정 사무를 처리하며 예산을 집행해요(교과서 p.193)."
+    }
+   ]
+  },
+  {
+   "id": "u10-P29-a",
+   "slot": "P29",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 2,
+   "concept": "조례",
+   "source": "교과서 p.193 (2025 2학기 기말 29번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-29",
+   "question": "위 자료의 ㉠이 지역의 일을 논의하여 지역 실정에 맞도록 제정하는 법의 명칭으로 옳은 것은?",
+   "choices": [
+    "규칙",
+    "법률",
+    "조례",
+    "학칙",
+    "헌법"
+   ],
+   "answer": 3,
+   "explanation": "지방 의회가 지역 실정에 맞게 제정하는 법은 조례이다.",
+   "choiceExplanations": [
+    "규칙은 지방 자치 단체장이 조례를 실행하는 데 필요하게 만드는 것이에요. 지방 의회가 지역 실정에 맞도록 제정하는 법이 아니에요.",
+    "법률은 국가기관인 국회가 제정해요. 지방 의회가 지역의 일을 논의하여 만드는 법과는 달라요.",
+    "정답. 조례는 지방 사무를 운영하려고 각 지방 의회가 제정하는 법이에요. 지방 의회는 지역의 일을 논의하여 지역 실정에 맞는 조례를 제정·개정하거나 폐지해요.",
+    "학칙은 학교가 정한 규칙이에요. 지방 자치 단체의 의결 기관이 만드는 법이 아니에요.",
+    "헌법은 국가의 최고법이에요. 지방 의회가 지역 실정에 맞게 제정하는 법이 아니에요."
+   ],
+   "detail": "그림의 ㉠은 지방 자치 단체의 의결 기관인 지방 의회예요. 교과서는 지방 의회가 지역의 일을 논의하여 지역 실정에 맞는 조례를 제정·개정하거나 폐지한다고 설명해요. 조례는 지방 사무를 운영하기 위하여 각 지방 의회가 제정하는 법이에요. 그래서 ㉠이 제정하는 법의 명칭은 조례예요.",
+   "tip": "지방 의회가 만드는 법 = 조례.",
+   "figure": {
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 540 230\" role=\"img\" aria-label=\"지방 자치 단체의 구성 도식 ㉠ ㉡\"><defs><marker id=\"ah\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 z\" fill=\"#374151\"/></marker></defs><rect x=\"20\" y=\"14\" width=\"200\" height=\"80\" rx=\"6\" fill=\"#fff\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><path d=\"M20,48 L20,20 Q20,14 26,14 L214,14 Q220,14 220,20 L220,48 Z\" fill=\"#9ca3af\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"120.0\" y=\"35.9\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">의결 기관</text><text x=\"120.0\" y=\"76.0\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">㉠</text><rect x=\"320\" y=\"14\" width=\"200\" height=\"80\" rx=\"6\" fill=\"#fff\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><path d=\"M320,48 L320,20 Q320,14 326,14 L514,14 Q520,14 520,20 L520,48 Z\" fill=\"#9ca3af\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"420.0\" y=\"35.9\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">집행 기관</text><text x=\"420.0\" y=\"76.0\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">㉡</text><rect x=\"20\" y=\"170\" width=\"500\" height=\"44\" rx=\"8\" fill=\"#e5e7eb\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"270\" y=\"198\" font-size=\"17\" text-anchor=\"middle\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">지역 주민</text><line x1=\"120\" y1=\"166\" x2=\"120\" y2=\"100\" stroke=\"#374151\" stroke-width=\"5\" marker-end=\"url(#ah)\"/><text x=\"134\" y=\"140\" font-size=\"15\" text-anchor=\"start\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">선거</text><line x1=\"420\" y1=\"166\" x2=\"420\" y2=\"100\" stroke=\"#374151\" stroke-width=\"5\" marker-end=\"url(#ah)\"/><text x=\"434\" y=\"140\" font-size=\"15\" text-anchor=\"start\" fill=\"#111827\" font-family=\"'Malgun Gothic','Apple SD Gothic Neo',sans-serif\">선거</text></svg>",
+    "caption": "지방 자치 단체의 구성(그림)"
+   },
+   "refs": [
+    {
+     "kind": "text",
+     "title": "정답 근거",
+     "text": "조례는 지방 사무를 운영하기 위하여 각 지방 의회가 제정하는 법이에요. 지방 의회는 지역의 일을 논의하여 지역 실정에 맞는 조례를 제정·개정하거나 폐지해요(교과서 p.193)."
+    }
+   ]
+  },
+  {
    "id": "u10-P06-a",
    "slot": "P06",
    "type": "mc",
