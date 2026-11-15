@@ -1218,11 +1218,11 @@ function dashShareData(S2,scope){
 }
 function shareStats(){
   var mm=location.hash.match(/^#\/stats\/(.+)$/), bookId=mm?decodeURIComponent(mm[1]):'';
-  var S2=computeStats(bookId||undefined);
+  var S2=computeStats(statScope(bookId)||undefined);
   if(!S2.tests){ toast('공유할 시험 기록이 아직 없어요'); return; }
   Data.catalogP().catch(function(){ return {books:[]}; }).then(function(cat){
-    var scope='전체'; cat.books.forEach(function(b){ if(b.id===bookId) scope=bookLabel(b); });
-    openShare('공부 기록',function(){ return MGShare.dashboard(dashShareData(S2,scope)); });
+    var scope=statScope(bookId)||'전체';
+    openShare('공부 기록'+(scope==='전체'?'':' · '+scope),function(){ return MGShare.dashboard(dashShareData(S2,scope)); });
   });
 }
 
@@ -1240,8 +1240,14 @@ function group(items,keyFn){
   var g={}; items.forEach(function(it){ var k=keyFn(it); if(k==null||k==='') return; (g[k]=g[k]||{key:k,n:0,ok:0}); g[k].n++; g[k].ok+=it.ok; });
   return Object.keys(g).map(function(k){ var v=g[k]; v.acc=v.ok/v.n; return v; });
 }
-function computeStats(bookId){
-  var H=allHistory().filter(function(e){ return !bookId||e.bookId===bookId; });
+var SUBJ_BY_SUFFIX={korean:'국어',english:'영어',math:'수학',science:'과학',social:'사회',history:'역사',ethics:'도덕','tech-home':'기술·가정',info:'정보',hanmun:'한문'};
+function subjectOfBook(id){ var m=/^g\d+s\d+-(.+)$/.exec(id||''); return (m&&SUBJ_BY_SUFFIX[m[1]])||id; }
+/* 통계 범위: 과목 이름('수학') 또는 책 id. 비우면 전체 */
+function statScope(param){ if(!param) return ''; return SUBJECTS[param]?param:subjectOfBook(param); }
+function computeStats(scope){
+  var bookId=scope;
+  var inScope=function(id){ return !scope||subjectOfBook(id)===scope||id===scope; };
+  var H=allHistory().filter(function(e){ return inScope(e.bookId); });
   var S2={H:H,tests:H.length,solved:0,avg:null,best:null,last:null,dur:0,items:[],days:{},acc:null,streak:0,week:0};
   var sum=0, prac=[], exam=[];
   H.forEach(function(e){
@@ -1262,11 +1268,13 @@ function computeStats(bookId){
   S2.byDiff=group(S2.items,function(i){ return i.d; });
   S2.byType=group(S2.items,function(i){ return TYPE_NAME[i.t]||i.t; });
   S2.byUnit=group(S2.items,function(i){ return i.u?i.bookId+'|'+i.u:null; });
-  S2.byBook={};
+  S2.byBook={}; S2.bySubject={};
   H.forEach(function(e){ var b=S2.byBook[e.bookId]=S2.byBook[e.bookId]||{tests:0,sum:0,best:0,last:0}; var s=e.max?e.got/e.max*100:0; b.tests++; b.sum+=s; b.best=Math.max(b.best,s); b.last=s; });
   group(S2.items,function(i){ return i.bookId; }).forEach(function(g){ if(S2.byBook[g.key]) S2.byBook[g.key].acc=g.acc; });
+  H.forEach(function(e){ var k=subjectOfBook(e.bookId), b=S2.bySubject[k]=S2.bySubject[k]||{tests:0,sum:0,best:0,last:0}; var sc=e.max?e.got/e.max*100:0; b.tests++; b.sum+=sc; b.best=Math.max(b.best,sc); b.last=sc; });
+  group(S2.items,function(i){ return subjectOfBook(i.bookId); }).forEach(function(g){ if(S2.bySubject[g.key]) S2.bySubject[g.key].acc=g.acc; });
   var books=Store.load().books, learning=0, mastered=0, wrong=[];
-  for(var id in books){ if(bookId&&id!==bookId) continue; for(var q in books[id].notes){ var n=books[id].notes[q]; if(n.mastered) mastered++; else { learning++; wrong.push(n); } } }
+  for(var id in books){ if(!inScope(id)) continue; for(var q in books[id].notes){ var n=books[id].notes[q]; if(n.mastered) mastered++; else { learning++; wrong.push(n); } } }
   S2.learning=learning; S2.mastered=mastered;
   S2.topWrong=wrong.sort(function(a,b){ return b.wrongCount-a.wrongCount||(a.lastWrongAt<b.lastWrongAt?1:-1); }).slice(0,5);
   return S2;
@@ -1343,15 +1351,20 @@ function miniDashboard(){
 }
 
 /* 대시보드 페이지 */
-function renderStats(bookId){
+function renderStats(param){
+  var bookId=statScope(param);
   var app=$app(), page=h('div',{class:'page'}); app.appendChild(page); app.appendChild(themeBtn());
   page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:'#/'},['← 홈']),h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:'공부 기록'})]),h('button',{class:'share-btn',onclick:shareStats},['공유'])]));
   return Data.catalogP().catch(function(){ return {books:[]}; }).then(function(cat){
     var labels={}; cat.books.forEach(function(b){ labels[b.id]=bookLabel(b); });
     var used={}; allHistory().forEach(function(e){ used[e.bookId]=1; });
     var ids=Object.keys(used);
-    page.appendChild(h('div',{class:'ntabs',style:'flex-wrap:wrap'},[h('button',{class:!bookId?'on':'',onclick:function(){ go('#/stats'); }},['전체'])].concat(ids.map(function(id){
-      return h('button',{class:bookId===id?'on':'',onclick:function(){ go('#/stats/'+encodeURIComponent(id)); }},[labels[id]||id]); }))));
+    var subjUsed={}; ids.forEach(function(id){ subjUsed[subjectOfBook(id)]=1; });
+    var subjTabs=Object.keys(SUBJECTS).filter(function(k){ return subjUsed[k]; }).concat(Object.keys(subjUsed).filter(function(k){ return !SUBJECTS[k]; }));
+    var multi=ids.filter(function(id){ return !bookId||subjectOfBook(id)===bookId; }).length>1;
+    function unitPrefix(id){ return !bookId?subjectOfBook(id)+' · ':(multi?(labels[id]||'').replace(/ [^ ]+$/,'')+' · ':''); }
+    page.appendChild(h('div',{class:'ntabs',style:'flex-wrap:wrap'},[h('button',{class:!bookId?'on':'',onclick:function(){ go('#/stats'); }},['전체'])].concat(subjTabs.map(function(k){
+      return h('button',{class:bookId===k?'on':'',onclick:function(){ go('#/stats/'+encodeURIComponent(k)); }},[k]); }))));
     var S2=computeStats(bookId);
     if(!S2.tests){ page.appendChild(h('div',{class:'card'},[h('p',{class:'muted',text:'아직 푼 시험이 없어요. 시험을 풀면 여기에 기록이 쌓여요.'}),h('a',{class:'btn primary',href:'#/exam'},['✏️ 시험 보러 가기'])])); return; }
     // 단원 이름 불러오기
@@ -1376,9 +1389,15 @@ function renderStats(bookId){
         h('div',{class:'card'},[h('h3',{text:'공부 달력 (최근 12주)'}),heatmap(S2.days)]),
         h('div',{class:'card'},[h('h3',{text:'연습 vs 실전'}),h('div',{class:'kpis'},[kpi('연습 평균',S2.pracAvg==null?'–':Math.round(S2.pracAvg)+'점',S2.pracN+'회'),kpi('실전 평균',S2.examAvg==null?'–':Math.round(S2.examAvg)+'점',S2.examN+'회')]),
           h('p',{class:'muted',style:'font-size:.88rem;margin:10px 0 0',text:S2.pracAvg!=null&&S2.examAvg!=null?(S2.examAvg<S2.pracAvg-10?'실전에서 점수가 많이 떨어져요. 시간을 재고 푸는 연습을 늘려 보세요.':'연습과 실전 점수 차이가 크지 않아요. 좋아요!'):'연습과 실전을 모두 풀면 비교해 줘요.'})]),
-        !bookId?h('div',{class:'card wide'},[h('h3',{text:'과목별 성적'}),h('table',{},[h('thead',{},[h('tr',{},[h('th',{text:'과목'}),h('th',{class:'n',text:'시험'}),h('th',{class:'n',text:'평균'}),h('th',{class:'n',text:'최근'}),h('th',{class:'n',text:'최고'}),h('th',{class:'n',text:'정답률'})])]),
-          h('tbody',{},Object.keys(S2.byBook).map(function(id){ var b=S2.byBook[id]; return h('tr',{},[h('td',{},[h('a',{href:'#/stats/'+encodeURIComponent(id),text:labels[id]||id})]),h('td',{class:'n',text:String(b.tests)}),h('td',{class:'n',text:Math.round(b.sum/b.tests)+''}),h('td',{class:'n',text:Math.round(b.last)+''}),h('td',{class:'n',text:Math.round(b.best)+''}),h('td',{class:'n',text:pct(b.acc)})]); }))])]):null,
-        h('div',{class:'card'},[h('h3',{text:'단원별 정답률'}),barRows(S2.byUnit.map(function(u){ return {label:(bookId?'':(labels[u.key.split('|')[0]]||'').replace(/^\d학년 \d학기 /,'')+' · ')+(unitName[u.key]||u.key.split('|')[1]),n:u.n,ok:u.ok,acc:u.acc}; }).sort(function(a,b){ return a.acc-b.acc; }))]),
+        (function(){
+          var rows=!bookId?Object.keys(S2.bySubject).map(function(k){ return {name:k,href:'#/stats/'+encodeURIComponent(k),b:S2.bySubject[k]}; })
+            :(multi?Object.keys(S2.byBook).map(function(id){ return {name:labels[id]||id,href:null,b:S2.byBook[id]}; }):null);
+          if(!rows) return null;
+          rows.sort(function(x,y){ return x.name<y.name?-1:1; });
+          return h('div',{class:'card wide'},[h('h3',{text:!bookId?'과목별 성적':bookId+' 학기별 성적'}),h('table',{},[h('thead',{},[h('tr',{},[h('th',{text:!bookId?'과목':'학기'}),h('th',{class:'n',text:'시험'}),h('th',{class:'n',text:'평균'}),h('th',{class:'n',text:'최근'}),h('th',{class:'n',text:'최고'}),h('th',{class:'n',text:'정답률'})])]),
+            h('tbody',{},rows.map(function(r){ var b=r.b; return h('tr',{},[h('td',{},[r.href?h('a',{href:r.href,text:r.name}):r.name]),h('td',{class:'n',text:String(b.tests)}),h('td',{class:'n',text:Math.round(b.sum/b.tests)+''}),h('td',{class:'n',text:Math.round(b.last)+''}),h('td',{class:'n',text:Math.round(b.best)+''}),h('td',{class:'n',text:pct(b.acc)})]); }))])]);
+        })(),
+        h('div',{class:'card'},[h('h3',{text:'단원별 정답률'}),barRows(S2.byUnit.map(function(u){ return {label:unitPrefix(u.key.split('|')[0])+(unitName[u.key]||u.key.split('|')[1]),n:u.n,ok:u.ok,acc:u.acc}; }).sort(function(a,b){ return a.acc-b.acc; }))]),
         h('div',{class:'card'},[h('h3',{text:'취약 개념 TOP 5'}),h('p',{class:'legend-note',text:'2문항 이상 푼 개념 중 정답률이 낮은 순'}),
           barRows(S2.byConcept.filter(function(c){ return c.n>=2; }).sort(function(a,b){ return a.acc-b.acc||b.n-a.n; }).slice(0,5).map(function(c){ return {label:c.key,n:c.n,ok:c.ok,acc:c.acc}; }),'2문항 이상 푼 개념이 아직 없어요.')]),
         h('div',{class:'card'},[h('h3',{text:'강한 개념 TOP 3'}),
