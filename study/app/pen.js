@@ -65,14 +65,13 @@ function renderDock(){
   }
   var act=!hand;
   dock.innerHTML=
-    btn('data-a="pen" aria-pressed="'+(act&&tool==='pen')+'" aria-label="펜" title="펜"',I.pen)+
+    btn('data-a="toggle" class="main" aria-pressed="true" aria-label="펜 접기" title="누르면 접고 원래 화면으로 (그린 건 그대로)"',I.pen)+
     ['red','blue','green'].map(function(c){ return btn('class="dot" data-c="'+c+'" aria-label="'+COLOR_NAMES[c]+'" aria-pressed="'+(c===color&&act&&tool==='pen')+'"','<i style="background:'+COLORS[c]+'"></i>'); }).join('')+
     '<span class="sep"></span>'+
     btn('data-a="eraser" aria-pressed="'+(act&&tool==='eraser')+'" aria-label="지우개" title="지우개"',I.eraser)+
     btn('data-a="hand" aria-pressed="'+hand+'" aria-label="펜 끄고 넘기기" title="펜을 잠시 끄고 화면 넘기기"',I.hand+'<span>넘기기</span>')+
     btn('data-a="clear" class="clr" aria-label="전체 지우기" title="이 화면 전체 지우기"',I.trash)+
-    '<span class="sep"></span>'+
-    btn('data-a="toggle" aria-label="펜 닫기" title="닫기"',I.close);
+    '';
 }
 function onDock(e){
   var b=e.target.closest('button'); if(!b) return;
@@ -103,6 +102,8 @@ function makeCanvas(doc,host){
   var c=doc.createElement('canvas'); c.className='pen-cv off'; c.setAttribute('aria-label','필기 영역');
   c.addEventListener('pointerdown',down); c.addEventListener('pointermove',move);
   c.addEventListener('pointerup',up); c.addEventListener('pointercancel',up);
+  /* 슬라이드는 손가락 가로 쓸기로 장을 넘긴다. 필기 중에는 그 이벤트가 슬라이드에 닿지 않게 막는다 */
+  ['touchstart','touchmove','touchend','touchcancel'].forEach(function(t){ c.addEventListener(t,function(e){ e.stopPropagation(); },{passive:true}); });
   host.appendChild(c); cv=c; cvHost=host; ctx=c.getContext('2d');
 }
 function dropCanvas(){ if(cv&&cv.parentNode) cv.parentNode.removeChild(cv); cv=null; cvHost=null; ctx=null; }
