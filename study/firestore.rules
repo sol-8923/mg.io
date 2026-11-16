@@ -70,6 +70,16 @@ service cloud.firestore {
         && request.resource.data.prev == resource.data.pw;
       allow delete: if false;
     }
+    // 공부 기록·필기 백업: 문서 이름이 "백업 코드(20자 무작위)-번호"라서 코드를 아는 기기만 읽는다(목록 조회 금지, 삭제 금지).
+    match /backups/{id} {
+      allow get: if id.size() >= 22 && id.size() <= 26;
+      allow create, update: if id.size() >= 22 && id.size() <= 26
+        && request.resource.data.keys().hasOnly(['d', 'at'])
+        && request.resource.data.d is string
+        && request.resource.data.d.size() <= 250000
+        && request.resource.data.at is string;
+      allow list, delete: if false;
+    }
     match /{document=**} { allow read, write: if false; }
   }
 }

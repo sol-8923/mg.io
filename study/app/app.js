@@ -140,7 +140,7 @@ var Snd=(function(){
   var bufs={}, loading={}, lastCustom=0;
   function stamp(){ lastCustom=Date.now(); }
   function load(name){ if(bufs[name]||loading[name]) return; var c=ac(); if(!c) return; loading[name]=1;
-    fetch('app/snd/'+name+'.ogg?v=20261117h').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
+    fetch('app/snd/'+name+'.ogg?v=20261117i').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
       .then(function(ab){ return new Promise(function(ok,no){ c.decodeAudioData(ab,ok,no); }); })
       .then(function(b){ bufs[name]=b; },function(){ loading[name]=0; }); }
   function play(name,vol){ var c=ac(); if(!c) return true; var b=bufs[name]; if(!b){ load(name); return false; }
@@ -272,7 +272,7 @@ function forceRefresh(btn){
   if(btn){ btn.disabled=true; btn.textContent='…'; }
   var urls=[location.pathname];
   Array.prototype.forEach.call(document.querySelectorAll('script[src],link[rel=stylesheet][href]'),function(e){ var u=e.src||e.href; if(u.indexOf(location.origin)===0) urls.push(u); });
-  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117h'); });
+  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117i'); });
   var jobs=[];
   try{ if(window.caches) jobs.push(caches.keys().then(function(ks){ return Promise.all(ks.map(function(k){ return caches.delete(k); })); })); }catch(e){}
   try{ if(navigator.serviceWorker) jobs.push(navigator.serviceWorker.getRegistration().then(function(r){ return r&&r.update(); })); }catch(e){}
@@ -539,31 +539,119 @@ function renderShelf(kind,sem){
     var rt; window.onresize=function(){ clearTimeout(rt); rt=setTimeout(function(){ if(document.body.contains(cs)) layout(); },150); };
   }).catch(renderError);
 }
+/* ───────── 백업: 파일 + 클라우드(Firebase) ─────────
+ * 공부 기록(mg-study:v1)과 펜 필기(mg-study:ink:v1)는 이 기기 브라우저에만 저장되므로, 내보내기 때 같이 클라우드에도 올려 둔다.
+ * 로그인이 없어서 "백업 코드"(20자 무작위, 이 기기에 저장 + 내보낸 파일 안에 기록)를 아는 사람만 읽을 수 있다. 규칙: firestore.rules의 backups.
+ * Firestore 문서 하나는 1MB 한도라 글자 20만 자씩 잘라 {코드}-0, -1 … 로 올리고, 마지막에 목록표 {코드}-m을 올린다. */
+var Cloud=(function(){
+  var CH=200000, MAXP=60, CK='mg-study:backup-code', AK='mg-study:backup-at', AL='abcdefghjkmnpqrstuvwxyz23456789';
+  function norm(c){ return String(c||'').toLowerCase().replace(/[^a-z0-9]/g,''); }
+  function validCode(c){ return /^[a-z0-9]{20}$/.test(c); }
+  function newCode(){ var a=new Uint8Array(20), s=''; (window.crypto||window.msCrypto).getRandomValues(a); for(var i=0;i<20;i++) s+=AL.charAt(a[i]%AL.length); return s; }
+  function getCode(){ var c=''; try{ c=norm(localStorage.getItem(CK)); }catch(e){} return validCode(c)?c:''; }
+  function setCode(c){ try{ localStorage.setItem(CK,c); }catch(e){} }
+  function ensureCode(){ var c=getCode(); if(!c){ c=newCode(); setCode(c); } return c; }
+  function show(c){ return c.toUpperCase().replace(/(.{4})(?=.)/g,'$1-'); }
+  function url(id){ var f=CFG.firebase; return 'https://firestore.googleapis.com/v1/projects/'+encodeURIComponent(f.projectId)+'/databases/(default)/documents/backups/'+encodeURIComponent(id)+'?key='+encodeURIComponent(f.apiKey); }
+  function put(id,d){
+    return fetch(url(id),{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:{d:{stringValue:d},at:{stringValue:new Date().toISOString()}}})})
+      .then(function(r){ if(!r.ok) throw new Error('put '+r.status); });
+  }
+  function get(id){
+    return fetch(url(id),{cache:'no-store'}).then(function(r){
+      if(r.status===404||r.status===403) return null;
+      if(!r.ok) throw new Error('get '+r.status);
+      return r.json().then(function(j){ return j.fields&&j.fields.d?j.fields.d.stringValue:null; });
+    });
+  }
+  function seq(list,fn){ return list.reduce(function(p,x,i){ return p.then(function(){ return fn(x,i); }); },Promise.resolve()); }
+  return {
+    shared:function(){ return Notice.shared(); },
+    code:getCode, ensureCode:ensureCode, setCode:setCode, norm:norm, validCode:validCode, show:show,
+    last:function(){ try{ return localStorage.getItem(AK)||''; }catch(e){ return ''; } },
+    /* payload를 올린다. 조각을 먼저 다 올리고 목록표를 마지막에 올려서, 중간에 끊겨도 이전 백업이 깨지지 않는다 */
+    upload:function(payload){
+      var code=ensureCode(), s=JSON.stringify(payload), n=Math.max(1,Math.ceil(s.length/CH)), idx=[];
+      if(n>MAXP) return Promise.reject(new Error('too big'));
+      for(var i=0;i<n;i++) idx.push(i);
+      return seq(idx,function(i){ return put(code+'-'+i,s.slice(i*CH,(i+1)*CH)); })
+        .then(function(){ return put(code+'-m',JSON.stringify({n:n,len:s.length,at:new Date().toISOString()})); })
+        .then(function(){ try{ localStorage.setItem(AK,new Date().toISOString()); }catch(e){} return {parts:n,chars:s.length}; });
+    },
+    /* 코드로 내려받는다. 없으면 null */
+    download:function(code){
+      return get(code+'-m').then(function(m){
+        if(!m) return null;
+        var meta=JSON.parse(m), idx=[], parts=[];
+        for(var i=0;i<meta.n;i++) idx.push(i);
+        return seq(idx,function(i){ return get(code+'-'+i).then(function(d){ if(d==null) throw new Error('missing'); parts.push(d); }); })
+          .then(function(){ var s=parts.join(''); if(s.length!==meta.len) throw new Error('length'); return JSON.parse(s); });
+      });
+    }
+  };
+})();
+/* 백업 내용을 이 기기에 합친다(지우거나 덮어쓰지 않고, 더 최신인 것·없는 것만 더한다) */
+function mergeBackup(inc){
+  var d=Store.load(), strokes=0;
+  for(var id in (inc.books||{})){
+    var src=inc.books[id], dst=Store.book(id);
+    for(var q in (src.seen||{})) dst.seen[q]=Math.max(dst.seen[q]||0,src.seen[q]);
+    for(var n in (src.notes||{})){ var a=dst.notes[n], b=src.notes[n]; if(!a||(b.lastWrongAt||'')>(a.lastWrongAt||'')||b.wrongCount>a.wrongCount) dst.notes[n]=b; }
+    dst.history=(dst.history||[]).concat(src.history||[]).sort(function(x,y){ return x.at<y.at?-1:1; }).slice(-80);
+  }
+  Store.save();
+  if(inc.ink&&window.Pen&&Pen.merge) strokes=Pen.merge(inc.ink);
+  if(inc.code&&!Cloud.code()&&Cloud.validCode(Cloud.norm(inc.code))) Cloud.setCode(Cloud.norm(inc.code));   // 이 기기에 코드가 없으면 파일에 적힌 코드를 이어서 쓴다
+  return strokes;
+}
+function backupPayload(){
+  var inc=JSON.parse(JSON.stringify(Store.load()));   // books는 맨 위에 그대로 둬서 예전 앱·예전 파일과도 호환
+  inc.ink=(window.Pen&&Pen.dump)?Pen.dump():{}; inc.code=Cloud.ensureCode(); inc.exportedAt=new Date().toISOString(); inc.ver=2;
+  return inc;
+}
 function backupCard(){
+  var status=h('p',{class:'muted',style:'margin:10px 0 0;font-size:.88rem;line-height:1.6'});
+  function paint(){
+    var c=Cloud.code(), at=Cloud.last();
+    status.textContent=(c?'백업 코드: '+Cloud.show(c):'백업 코드: 첫 내보내기 때 만들어져요')+' · '+(at?'마지막 클라우드 백업: '+new Date(at).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'numeric',minute:'2-digit'}):'클라우드 백업 아직 없음');
+  }
+  paint();
+  function restoreFrom(inc){ var st=mergeBackup(inc); paint(); toast('가져왔어요'+(st?' (필기 '+st+'획 포함)':'')); route(); }
   var file=h('input',{type:'file',accept:'application/json',class:'hidden',onchange:function(e){
     var f=e.target.files[0]; if(!f) return;
     f.text().then(function(t){
       var inc=JSON.parse(t); if(!inc||!inc.books) throw new Error('형식');
-      var d=Store.load();
-      for(var id in inc.books){
-        var src=inc.books[id], dst=Store.book(id);
-        for(var q in (src.seen||{})) dst.seen[q]=Math.max(dst.seen[q]||0,src.seen[q]);
-        for(var n in (src.notes||{})){ var a=dst.notes[n], b=src.notes[n]; if(!a||(b.lastWrongAt||'')>(a.lastWrongAt||'')||b.wrongCount>a.wrongCount) dst.notes[n]=b; }
-        dst.history=(dst.history||[]).concat(src.history||[]).sort(function(x,y){ return x.at<y.at?-1:1; }).slice(-80);
-      }
-      Store.save(); toast('가져왔어요'); route();
+      restoreFrom(inc);
     }).catch(function(){ toast('백업 파일을 읽지 못했어요'); });
+    e.target.value='';
   }});
+  var upBtn=h('button',{onclick:function(){
+    var data=backupPayload();
+    var blob=new Blob([JSON.stringify(data)],{type:'application/json'});
+    var a=h('a',{href:URL.createObjectURL(blob),download:'민겸-백업-'+new Date().toISOString().slice(0,10)+'.json'}); document.body.appendChild(a); a.click(); a.remove();
+    if(!Cloud.shared()){ toast('파일로 저장했어요 (클라우드 설정이 없어 파일만)'); paint(); return; }
+    upBtn.disabled=true; upBtn.textContent='클라우드 백업 중…';
+    Cloud.upload(data).then(function(){ toast('파일 저장 + 클라우드 백업 완료'); },function(err){
+      toast(err&&err.message==='too big'?'파일은 저장했지만 필기가 너무 커서 클라우드에는 못 올렸어요':'파일은 저장했지만 클라우드 백업은 실패했어요 (인터넷 확인)');
+    }).then(function(){ upBtn.disabled=false; upBtn.textContent='⬇ 내보내기'; paint(); });
+  }},['⬇ 내보내기']);
+  var cloudBtn=h('button',{onclick:function(){
+    if(!Cloud.shared()){ toast('클라우드 설정이 없어요'); return; }
+    var def=Cloud.code()?Cloud.show(Cloud.code()):'';
+    var inp=window.prompt('백업 코드를 입력하세요 (이 기기의 코드가 미리 적혀 있어요)',def); if(inp===null) return;
+    var code=Cloud.norm(inp); if(!Cloud.validCode(code)){ toast('백업 코드 형식이 맞지 않아요 (영문·숫자 20자)'); return; }
+    cloudBtn.disabled=true; cloudBtn.textContent='불러오는 중…';
+    Cloud.download(code).then(function(inc){
+      if(!inc||!inc.books){ toast('이 코드의 백업을 찾지 못했어요'); return; }
+      if(!Cloud.code()) Cloud.setCode(code);
+      restoreFrom(inc);
+    },function(){ toast('클라우드에서 불러오지 못했어요 (인터넷 확인)'); }).then(function(){ cloudBtn.disabled=false; cloudBtn.textContent='☁ 클라우드에서 복원'; });
+  }},['☁ 클라우드에서 복원']);
   return h('div',{class:'card',style:'margin-top:22px'},[
-    h('h3',{style:'font-size:1.05rem',text:'다른 기기로 옮기기'}),
-    h('p',{class:'muted',style:'margin:4px 0 12px;font-size:.92rem',text:'오답노트는 이 기기에 저장돼요. 탭과 폰을 같이 쓰려면 한쪽에서 내보내고 다른 쪽에서 가져오세요.'}),
-    h('div',{class:'row'},[
-      h('button',{onclick:function(){
-        var blob=new Blob([JSON.stringify(Store.load())],{type:'application/json'});
-        var a=h('a',{href:URL.createObjectURL(blob),download:'민겸-오답노트-'+new Date().toISOString().slice(0,10)+'.json'}); document.body.appendChild(a); a.click(); a.remove();
-      }},['⬇ 내보내기']),
-      h('button',{onclick:function(){ file.click(); }},['⬆ 가져오기']), file
-    ])
+    h('h3',{style:'font-size:1.05rem',text:'백업 · 다른 기기로 옮기기'}),
+    h('p',{class:'muted',style:'margin:4px 0 12px;font-size:.92rem',text:'오답노트·시험 기록·펜 필기는 이 기기에만 저장돼요. 내보내기를 누르면 파일로 저장하고, 인터넷이 되면 클라우드에도 함께 백업해요. 다른 기기에서는 파일을 가져오거나 백업 코드로 복원하세요.'}),
+    h('div',{class:'row'},[upBtn,h('button',{onclick:function(){ file.click(); }},['⬆ 가져오기']),cloudBtn,file]),
+    status
   ]);
 }
 

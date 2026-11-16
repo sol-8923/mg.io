@@ -232,5 +232,20 @@ function teardown(){
   if(dock&&dock.parentNode) dock.parentNode.removeChild(dock); dock=null;
 }
 
-window.Pen={ show:show, hide:hide };
+/* 백업: 전체 필기 내보내기 / 가져온 필기 합치기(같은 획은 한 번만) */
+function sig(s){ var p=s.p; return s.c+'|'+p.length+'|'+p[0]+'|'+p[p.length-1]; }
+function dump(){ return JSON.parse(JSON.stringify(store)); }
+function merge(inc){
+  var add=0; if(!inc||typeof inc!=='object') return 0;
+  for(var k in inc){
+    var src=inc[k]; if(!Array.isArray(src)||!src.length) continue;
+    var dst=store[k]||(store[k]=[]), seen={};
+    dst.forEach(function(s){ seen[sig(s)]=1; });
+    src.forEach(function(s){ if(!s||!Array.isArray(s.p)||!s.p.length) return; var g=sig(s); if(!seen[g]){ seen[g]=1; dst.push(s); add++; } });
+    if(!dst.length) delete store[k];
+  }
+  if(add){ save(); redraw(); }
+  return add;
+}
+window.Pen={ show:show, hide:hide, dump:dump, merge:merge };
 })();
