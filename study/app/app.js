@@ -93,7 +93,7 @@ function removeNav(){ if(S.nav){ S.nav.remove(); S.nav=null; } }
 
 /* ───────── 라우터 ───────── */
 function route(){
-  stopTimer(); removeNav(); closeModals(); if(S.chatUnsub){ S.chatUnsub(); S.chatUnsub=null; }
+  Pen.hide(); stopTimer(); removeNav(); closeModals(); if(S.chatUnsub){ S.chatUnsub(); S.chatUnsub=null; }
   var p=location.hash.replace(/^#\/?/,'').split('/').filter(Boolean).map(decodeURIComponent);
   var a=p[0], b=p[1];
   Mus.onRoute(a);
@@ -596,10 +596,16 @@ function renderSummaryUnit(id,uid){
   return Data.bookP(id).then(function(book){
     var u=book.units.filter(function(x){return x.id===uid;})[0];
     if(!u||!u.slides){ go('#/summary/'+encodeURIComponent(id)); return; }
+    var fr=h('iframe',{class:'sum-frame',src:'library/'+encodeURIComponent(id)+'/'+u.slides,title:unitFull(book,u)});
     app.appendChild(h('div',{class:'sum-view'},[
       h('div',{class:'sum-bar'},[h('a',{class:'btn back',href:'#/summary/'+encodeURIComponent(id)},['← 단원 목록']),h('span',{class:'sum-title',text:bookLabel(book)+' · '+unitFull(book,u)})]),
-      h('iframe',{class:'sum-frame',src:'library/'+encodeURIComponent(id)+'/'+u.slides,title:unitFull(book,u)})
+      fr
     ]));
+    /* 슬라이드마다 필기를 따로 저장: 지금 보이는 슬라이드 번호를 키에 붙인다 */
+    Pen.show(function(){
+      var n=0; try{ var ss=[].slice.call(fr.contentDocument.querySelectorAll('.slide')); n=Math.max(0,ss.indexOf(fr.contentDocument.querySelector('.slide.active'))); }catch(e){}
+      return 'sum:'+id+'/'+uid+'#'+n;
+    },fr);
   }).catch(renderError);
 }
 function renderBook(id){
@@ -782,7 +788,7 @@ function passageEl(q){ if(!q.passage) return null; return h('div',{class:'passag
 
 function renderQ(){
   var E=S.exam, app=$app(), q=E.qs[E.idx], n=E.qs.length, practice=E.mode==='practice', locked=practice&&!!E.checked[q.id];
-  var page=h('div',{class:'page'}); app.appendChild(page);
+  var page=h('div',{class:'page'}); app.appendChild(page); Pen.show('quiz:'+q.id);
   var left=E.mode==='exam'&&E.timeLimitMin?E.timeLimitMin*60-(Date.now()-E.startAt)/1000:null;
   page.appendChild(h('div',{class:'qtop'},[
     h('div',{class:'row'},[
@@ -1004,7 +1010,7 @@ function renderReview(n){
   if(!S.review){ var lr=Store.load().lastReview; if(lr) S.review=lr; else return go('#/'); }
   var R=S.review, total=R.items.length; n=Math.min(Math.max(1,n||1),total);
   var it=R.items[n-1], q=it.q, a=it.ans, self=it.self||{};
-  var app=$app(), page=h('div',{class:'page'}); app.appendChild(page); app.appendChild(themeBtn());
+  var app=$app(), page=h('div',{class:'page'}); app.appendChild(page); app.appendChild(themeBtn()); Pen.show('review:'+q.id);
   var dots=h('div',{class:'dots'});
   R.items.forEach(function(_,i){ dots.appendChild(h('button',{class:i===n-1?'cur':'',onclick:function(){ go('#/review/'+(i+1)); },'aria-label':(i+1)+'번째 오답'},[String(i+1)])); });
   page.appendChild(h('div',{class:'rv-head'},[
