@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오세아니아와 극지방 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --bg: #14301f;
+    --bg-2: #1c4029;
+    --bg-3: #0f2517;
+    --ink: #f3ead3;
+    --ink-dim: #c9c3a8;
+    --brass: #c9a24b;
+    --warn: #e08a6a;
+    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0a1a10;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 84px;
+    font-size: 27px;
+    line-height: 1.5;
+    background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
+        var(--bg);
+}
+.slide::before {
+    content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none;
+}
+.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
+.card.warn { border-color: rgba(224,138,106,.6); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
+table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+.g5 .card, .g4 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+.svgbox { display: flex; justify-content: center; align-items: center; }
+.svgbox svg { width: 100%; height: auto; }
+
+/* 표지 */
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
+.cover .kicker { font-size: 30px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
+.cover h1 span { color: var(--brass); }
+.cover p { font-size: 34px; color: var(--ink-dim); }
+.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+
+/* 등장 효과 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+    .slide::before { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 20px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr !important; }
+    .card, .g5 .card, .g4 .card { padding: 14px 16px; font-size: 17px !important; }
+    .card li, .card p { font-size: inherit !important; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px !important; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1. 표지 === -->
+<section class="slide cover active">
+    <div class="kicker reveal">1학년 2학기 사회 · 6단원 요약 정리</div>
+    <h1 class="reveal">오세아니아와 <span>극지방</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">오세아니아 · 태평양의 환경 문제 · 극지방의 중요성과 개발</p>
+</section>
+
+<!-- === 2. 국가와 도시 === -->
+<section class="slide">
+    <div class="kicker">1 발전 가능성이 큰 오세아니아</div>
+    <h2>오세아니아의 국가와 주요 도시 <small>p.109~111</small></h2>
+    <div class="card hl reveal" style="margin-bottom:22px">
+        <p><b>남반구</b>에 있는 오세아니아는 동쪽으로 <b>태평양</b>, 서쪽으로 <b>인도양</b>과 맞닿고 태평양의 크고 작은 섬을 포함한다. <b>오스트레일리아·뉴질랜드</b>와 태평양의 <b>작은 섬나라들</b>로 이루어진다.</p>
+    </div>
+    <div class="grid g3">
+        <div class="card reveal">
+            <h3>섬나라 예</h3>
+            <p><b>투발루, 피지, 키리바시</b></p>
+        </div>
+        <div class="card reveal">
+            <h3>오스트레일리아 도시</h3>
+            <p>시드니·멜버른·캔버라·브리즈번</p>
+        </div>
+        <div class="card reveal">
+            <h3>뉴질랜드 도시</h3>
+            <p>웰링턴·오클랜드 등</p>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <p>주요 도시들은 <b>기후가 온화한 해안 지역</b>에 있다.</p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3. 자연환경 === -->
+<section class="slide">
+    <div class="kicker">1 발전 가능성이 큰 오세아니아</div>
+    <h2>오세아니아의 자연환경 <small>p.110~111</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>오스트레일리아</h3>
+            <ul class="l" style="font-size:25px">
+                <li>국토 대부분이 <b>사막</b>.</li>
+                <li>동부 해안에 남북으로 긴 <b>그레이트디바이딩산맥</b>.</li>
+                <li>산맥 서쪽 중앙부에 <b>대찬정 분지</b>.</li>
+                <li>북동부 해안에 세계 최대 산호초 군락 <b>대보초</b>.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>뉴질랜드</h3>
+            <ul class="l" style="font-size:25px">
+                <li><b>북섬</b>과 <b>남섬</b>.</li>
+                <li>북섬 : 지각이 불안정해 <b>지진·화산 활동</b>이 잦음.</li>
+                <li>남섬 : 다양한 <b>빙하 지형</b> 발달.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:22px">
+        <div class="card reveal">
+            <h3>기후</h3>
+            <ul class="l" style="font-size:24px">
+                <li>오스트레일리아 남동부 해안 <b>온대</b>(인구 밀도 높음), 강수량 적은 내륙 <b>건조</b>, 적도 가까운 북부 <b>열대</b>.</li>
+                <li>뉴질랜드 : 일 년 내내 비가 고르게 내리고 기온 연교차가 작은 <b>온대</b>.</li>
+            </ul>
+        </div>
+        <div class="card warn reveal">
+            <h3>계절</h3>
+            <p>남반구의 오스트레일리아·뉴질랜드는 북반구와 <b>계절이 반대</b>다.</p>
+        </div>
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4. 세계와의 상호연계 === -->
+<section class="slide">
+    <div class="kicker">1 발전 가능성이 큰 오세아니아</div>
+    <h2>세계와의 상호연계 ① 자원과 농목업 <small>p.112</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>오스트레일리아</h3>
+            <ul class="l" style="font-size:25px">
+                <li>에너지·광물 자원이 풍부하나 <b>공업 발달은 미약</b>.</li>
+                <li>공업이 발달한 아시아 국가의 수요가 커서 <b>철광석·석탄</b>이 우리나라·중국·일본 등으로 수출. 철광석 수출액은 총수출액의 약 20%.</li>
+                <li>밀·소고기·양털·유제품을 생산하는 <b>농목업</b> 국가, 생산품의 3분의 2가량 수출.</li>
+                <li>남반구라 <b>11월~이듬해 2월</b> 밀을 수확해 북반구 주요 수출국과 수확 시기가 다름.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>뉴질랜드</h3>
+            <ul class="l" style="font-size:25px">
+                <li><b>농산물 수출</b>이 전체 수출의 절반 이상.</li>
+                <li>주요 수출품 : <b>양털·소고기·과일</b>.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5. 무역 변화와 RCEP === -->
+<section class="slide">
+    <div class="kicker">1 발전 가능성이 큰 오세아니아</div>
+    <h2>세계와의 상호연계 ② 무역 상대국의 변화 <small>p.113</small></h2>
+    <div class="grid g2 reveal" style="align-items:stretch">
+        <div class="card hl">
+            <h3>오스트레일리아</h3>
+            <p style="font-size:25px">과거 <b>영국·미국</b>과 무역량이 많았음 → 제2차 세계 대전 이후 영국의 경제 영향력 축소, 유럽 국가 통합 기구 결성으로 유럽과의 무역이 줄어 → 가까운 <b>아시아·태평양 연안 국가</b>와 무역 확대.</p>
+        </div>
+        <div class="card">
+            <h3>뉴질랜드</h3>
+            <p style="font-size:25px">전통적으로 <b>영국</b>과 유대. 오늘날 무역 상대국 다양화, 오스트레일리아와 경제 협력, <b>아시아와 교역 확대</b>.</p>
+        </div>
+    </div>
+    <div class="card hl reveal" style="margin-top:24px">
+        <h3>RCEP</h3>
+        <p><b>동남아시아 10개국 + 대한민국·중국·일본·오스트레일리아·뉴질랜드</b> 15개국의 지역 내 <b>자유 무역 협정</b> (GDP·인구 각 약 30%).</p>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6. 태평양 환경 문제 ① === -->
+<section class="slide">
+    <div class="kicker">2 태평양 지역의 환경 문제와 해결 방안</div>
+    <h2>산호 백화 현상과 해양 쓰레기 <small>p.114~115</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>산호 백화 현상</h3>
+            <p style="font-size:28px"><b>지구 온난화</b>로 바닷물 온도가 올라 산호가 하얗게 죽는 것.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>해양 쓰레기</h3>
+            <ul class="l" style="font-size:25px">
+                <li>육지에서 버려져 떠내려온 것부터 어업 중 버려진 것까지. 많은 부분이 <b>플라스틱</b>, 자연 분해가 거의 안 됨.</li>
+                <li><b>미세 플라스틱</b>은 먹이로 착각해 먹고 먹이 사슬을 타고 더 큰 동물·인간에게 영향.</li>
+                <li>선박 안전사고 가능.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <p><b>북태평양</b>에 바람·해류 순환으로 쓰레기가 모여 <b>거대한 쓰레기 지대</b>가 형성된다. 바다에 떠 있는 플라스틱은 약 3,500만 톤.</p>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7. 해수면 상승 === -->
+<section class="slide">
+    <div class="kicker">2 태평양 지역의 환경 문제와 해결 방안</div>
+    <h2>해수면 상승과 섬나라의 위기 <small>p.116</small></h2>
+    <div class="grid g4 reveal" style="margin-bottom:22px">
+        <div class="card step"><span class="no">1</span><br>기후변화로 지구 <b>평균 기온 상승</b></div>
+        <div class="card step"><span class="no">2</span><br>극지방·고산 지역 <b>빙하가 녹음</b></div>
+        <div class="card step"><span class="no">3</span><br><b>해수면 상승</b></div>
+        <div class="card step hl"><span class="no">4</span><br>투발루·키리바시 등 <b>국토 침수 위기</b></div>
+    </div>
+    <div class="card warn reveal">
+        <h3>투발루의 피해</h3>
+        <ul class="l">
+            <li>대부분 국토가 <b>해발 1m 미만</b>.</li>
+            <li>지하수에 염분이 스며들어 <b>식수 부족</b>, 농작물 염해, 바나나 재배지 감소.</li>
+            <li>주민 이주로 <b>국가 지위</b>가 위협받음.</li>
+        </ul>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8. 해결 방안 === -->
+<section class="slide">
+    <div class="kicker">2 태평양 지역의 환경 문제와 해결 방안</div>
+    <h2>환경 문제의 해결 방안 <small>p.117</small></h2>
+    <div class="card hl reveal" style="margin-bottom:22px">
+        <p style="font-size:30px">필요한 물건만 사기, 전기 절약, 쓰레기 줄이기 등 <b>생활 습관</b>을 고치고, <b>세계시민으로서 적극 참여</b>한다.</p>
+    </div>
+    <div class="card reveal">
+        <h3>실천 방안 예</h3>
+        <ul class="l">
+            <li><b>휴대용 컵</b> 사용, <b>천연 섬유</b> 옷, <b>자전거</b> 이용</li>
+            <li><b>전기 절약</b>, <b>장바구니</b> 사용, <b>플로깅</b></li>
+        </ul>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3>정리</h3>
+        <p>산호 백화 = 지구 온난화(수온 상승) / 해양 쓰레기 = 플라스틱·미세 플라스틱 / 해수면 상승 = 빙하가 녹아 섬나라 침수</p>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9. 북극과 남극 비교 === -->
+<section class="slide">
+    <div class="kicker">3 극지방의 지리적 중요성과 지역 개발</div>
+    <h2>극지방과 북극·남극의 특징 <small>p.109, 120, 121</small></h2>
+    <div class="card hl reveal" style="margin-bottom:22px">
+        <p><b>극지방</b> : 북극과 남극을 포함한 그 주변 지역.</p>
+    </div>
+    <table class="t reveal" style="font-size:25px">
+        <tr><th style="width:15%">구분</th><th style="width:36%">북극</th><th>남극</th></tr>
+        <tr><td>모습</td><td><b>바다(북극해)</b>로 꽁꽁 얼어 있음. 한대 기후, 북극곰</td><td>한반도의 약 <b>60배</b>인 <b>대륙</b>. 가장 추운 곳, 펭귄</td></tr>
+        <tr><td>중요성</td><td>유럽·아시아·북아메리카 주요 도시를 짧은 거리로 연결하는 <b>항공 교통</b>의 중심지, 북극해를 거쳐 아시아와 유럽을 잇는 최단 <b>해운 항로(북동 항로)</b>, 신약·신소재 개발, 석유·천연가스·가스 하이드레이트 등 <b>에너지 자원</b></td><td>석탄·철광석 등 <b>자원</b> 매장, 빙하 속 물질 연구로 <b>기후변화</b>를 알 수 있음, 해양 생물 서식으로 <b>해양 생태계</b> 연구 가치, 각국 과학 기지에서 기후·해양·지질·생물 연구</td></tr>
+    </table>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10. 우리나라의 극지 활동 === -->
+<section class="slide">
+    <div class="kicker">3 극지방의 지리적 중요성과 지역 개발</div>
+    <h2>우리나라의 극지 활동 <small>p.121</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>북극</h3>
+            <ul class="l">
+                <li><b>1999년</b> 북극 탐사 시작</li>
+                <li><b>다산 과학 기지</b></li>
+                <li>쇄빙 연구선 <b>아라온호</b></li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>남극</h3>
+            <ul class="l">
+                <li><b>세종·장보고</b> 과학 기지</li>
+                <li>남극을 평화적으로 이용하고 과학 연구의 자유를 보장하는 <b>남극 조약</b> 가입</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3>짝 맞추기</h3>
+        <p>북극 = 다산 과학 기지·아라온호 / 남극 = 세종·장보고 과학 기지·남극 조약</p>
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11. 극지 개발과 갈등 === -->
+<section class="slide">
+    <div class="kicker">3 극지방의 지리적 중요성과 지역 개발</div>
+    <h2>극지 개발과 갈등 <small>p.122</small></h2>
+    <div class="card reveal" style="margin-bottom:22px">
+        <p>극지방의 정치적·경제적 중요성이 커지고 <b>기후변화로 개발이 활발</b>해지면서 우려도 증가. 북극에는 전 세계 <b>석유의 약 13%, 천연가스의 약 30%</b>가 매장되어 있고, 북극해 인접국이 영유권을 주장하며 이해관계가 갈등한다.</p>
+    </div>
+    <div class="grid g3">
+        <div class="card hl reveal">
+            <h3>기업가</h3>
+            <p>자원이 <b>인류에 보탬</b>이 된다.</p>
+        </div>
+        <div class="card warn reveal">
+            <h3>원주민</h3>
+            <p>개발이 <b>생태계를 파괴</b>하고 <b>생존을 위협</b>한다.</p>
+        </div>
+        <div class="card warn reveal">
+            <h3>환경 운동가</h3>
+            <p>석유 개발로 <b>환경이 더 파괴</b>될 수 있다.</p>
+        </div>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12. 헷갈리기 쉬운 것 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>구분하기</h2>
+    <div class="grid g2" style="grid-template-columns:1.3fr 1fr">
+        <table class="t reveal" style="font-size:25px">
+            <tr><th>구분</th><th>A</th><th>B</th></tr>
+            <tr><td>뉴질랜드 섬</td><td>북섬 : 지진·화산 잦음</td><td>남섬 : 빙하 지형</td></tr>
+            <tr><td>극지방</td><td>북극 : 바다(북극해)</td><td>남극 : 대륙(한반도의 약 60배)</td></tr>
+            <tr><td>극지 기지</td><td>북극 : 다산 과학 기지</td><td>남극 : 세종·장보고 과학 기지</td></tr>
+            <tr><td>무역 변화</td><td>과거 : 영국·미국</td><td>현재 : 아시아·태평양 연안 국가</td></tr>
+        </table>
+        <div class="card warn reveal">
+            <h3>이렇게 외우자</h3>
+            <ul class="l" style="font-size:25px">
+                <li>오세아니아는 <b>남반구</b> → 계절이 북반구와 반대.</li>
+                <li>오스트레일리아 수출 : <b>철광석·석탄</b>(아시아), 농목업 생산품.</li>
+                <li>RCEP : 동남아 10개국 + 한·중·일·호주·뉴질랜드 = 15개국.</li>
+                <li>해수면 상승 : 빙하가 녹음 → 투발루·키리바시 침수.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">12</div>
+</section>
+
+<!-- === 13. 꼭 기억할 것 === -->
+<section class="slide">
+    <div class="kicker">꼭 기억할 것</div>
+    <h2>핵심 정리</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l" style="font-size:25px">
+                <li>오세아니아 = 오스트레일리아·뉴질랜드 + 태평양 <b>섬나라</b>(투발루·피지·키리바시). 남반구라 <b>계절이 반대</b>.</li>
+                <li>오스트레일리아 : 사막, 그레이트디바이딩산맥·대찬정 분지·대보초, <b>철광석·석탄</b> 수출, 농목업. 뉴질랜드 : 북섬(지진·화산)·남섬(빙하).</li>
+                <li>무역 상대국이 영국·미국에서 <b>아시아·태평양</b>으로 변화, <b>RCEP</b>.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l" style="font-size:25px">
+                <li>태평양 환경 문제 : <b>산호 백화 현상</b>(온난화), <b>해양 쓰레기</b>(플라스틱·미세 플라스틱), <b>해수면 상승</b>(투발루 침수).</li>
+                <li>극지방 : 북극(바다)·남극(대륙)의 중요성(항로·자원·기후 연구), 우리나라의 기지와 <b>남극 조약</b>.</li>
+                <li>극지 개발 : 기업가 / 원주민 / 환경 운동가의 <b>입장 차이</b>.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">13</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 13</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+</body>
+</html>

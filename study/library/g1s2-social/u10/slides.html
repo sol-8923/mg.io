@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정치과정과 시민 참여 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --bg: #14301f;
+    --bg-2: #1c4029;
+    --bg-3: #0f2517;
+    --ink: #f3ead3;
+    --ink-dim: #c9c3a8;
+    --brass: #c9a24b;
+    --warn: #e08a6a;
+    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0a1a10;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 84px;
+    font-size: 27px;
+    line-height: 1.5;
+    background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
+        var(--bg);
+}
+.slide::before {
+    content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none;
+}
+.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
+.card.warn { border-color: rgba(224,138,106,.6); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
+table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+.g4 .card, .g5 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+.svgbox { text-align: center; }
+.svgbox svg { width: 100%; height: auto; }
+
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
+.cover .kicker { font-size: 30px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
+.cover h1 span { color: var(--brass); }
+.cover p { font-size: 34px; color: var(--ink-dim); }
+.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+    .slide::before { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 20px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr; }
+    .card, .g4 .card, .g5 .card { padding: 14px 16px; font-size: 17px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1. 표지 === -->
+<section class="slide cover active">
+    <div class="kicker reveal">1학년 2학기 사회 · 10단원 요약 정리</div>
+    <h1 class="reveal">정치과정과 <span>시민 참여</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">선거와 민주 정치 · 정치 주체의 역할과 정치과정 · 지방 자치와 시민 참여</p>
+</section>
+
+<!-- === 2. 단원 개요 === -->
+<section class="slide">
+    <div class="kicker">단원 개요</div>
+    <h2>시민은 정치에 어떻게 참여할까 <small>교과서 p.182~199</small></h2>
+    <div class="grid g3">
+        <div class="card hl reveal">
+            <h3>1. 선거와 민주 정치</h3>
+            <p class="ref">p.182~186</p>
+            <ul class="l">
+                <li>선거의 의미와 기능</li>
+                <li>선거의 기본 원칙</li>
+                <li>유권자·정당의 활동</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>2. 정치 주체와 정치과정</h3>
+            <p class="ref">p.187~191</p>
+            <ul class="l">
+                <li>정치 주체의 종류와 역할</li>
+                <li>정치과정의 단계</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>3. 지방 자치와 시민 참여</h3>
+            <p class="ref">p.192~195</p>
+            <ul class="l">
+                <li>지방 자치의 의미</li>
+                <li>지방 자치 단체의 구성</li>
+                <li>주민 참여 방법</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>공부 방법 (일반사회 · 정치)</h3>
+        <p>사례를 읽고 <b>어떤 원칙·주체·단계인지 판별</b>하는 문제가 중심이다. 선거 4원칙, 정치 주체별 역할, 정치과정 순서를 정확히 외운다.</p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3. 선거의 의미와 기능 === -->
+<section class="slide">
+    <div class="kicker">1 선거와 민주 정치</div>
+    <h2>선거의 의미와 기능 <small>p.183</small></h2>
+    <div class="card hl reveal" style="margin-bottom:22px">
+        <b>선거</b> : 대의 민주주의에서 국민을 대신할 <b>대표를 뽑는 과정</b>. 국민이 정치과정에 참여하는 가장 기본적이고 대표적인 방법이라 "<b>민주주의의 꽃</b>"이라고도 한다.
+    </div>
+    <h3>선거의 기능 4가지</h3>
+    <div class="grid g4 reveal">
+        <div class="card step"><span class="no">1</span><br><b>대표자를 뽑는다</b><br>(가장 기본 기능)</div>
+        <div class="card step"><span class="no">2</span><br>대표자에게 <b>정당성</b>을 부여한다. 공식 절차를 거쳐 자발적 지지를 받은 대표자에게 합법적·정당한 권한이 주어진다.</div>
+        <div class="card step"><span class="no">3</span><br>대표자를 <b>통제하고 교체</b>한다. 역할을 잘 못한 대표자나 그 정당의 후보자를 다음 선거에서 뽑지 않을 수 있다 (책임 정치).</div>
+        <div class="card step"><span class="no">4</span><br>국민이 <b>정치에 참여</b>하게 한다. 투표권 행사, 정책·공약을 알아보며 정책 결정 과정에 참여한다.</div>
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4. 선거 과정 6단계 === -->
+<section class="slide">
+    <div class="kicker">1 선거와 민주 정치</div>
+    <h2>우리나라의 선거 과정 6단계 <small>p.183</small></h2>
+    <div class="grid g3 reveal">
+        <div class="card step"><span class="no">1</span><br><h3>선거인 명부 작성</h3>시·군·구의 장이 관할 구역 주민 등록자를 조사해 투표할 수 있는 사람의 명단을 만든다.</div>
+        <div class="card step"><span class="no">2</span><br><h3>후보자 등록</h3>대표가 되기를 원하는 사람이 관할 선거구 선거 관리 위원회에 서면으로 신청한다.</div>
+        <div class="card step"><span class="no">3</span><br><h3>선거 운동</h3>정해진 기간에 거리 유세, 후보자 토론 등을 한다.</div>
+        <div class="card step"><span class="no">4</span><br><h3>투표</h3>유권자가 정해진 날짜에 지정된 투표소에서 투표한다.</div>
+        <div class="card step"><span class="no">5</span><br><h3>개표 및 당선인 결정</h3>투표함을 개표소로 옮겨 투표용지를 확인하고 후보자·정당별 득표수를 계산한다.</div>
+        <div class="card step"><span class="no">6</span><br><h3>당선증 발급</h3>당선인이 선거 관리 위원회에서 당선증을 받고 일정 기간 대표자로서 일한다.</div>
+    </div>
+    <div class="card hl reveal" style="margin-top:24px">
+        <b>암기</b> 선거인 명부 작성 → 후보자 등록 → 선거 운동 → 투표 → 개표 및 당선인 결정 → 당선증 발급
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5. 선거의 기본 원칙 === -->
+<section class="slide">
+    <div class="kicker">1 선거와 민주 정치</div>
+    <h2>선거의 기본 원칙 4가지 <small>p.184 · 헌법 규정</small></h2>
+    <table class="t reveal">
+        <tr><th style="width:17%">원칙</th><th style="width:43%">뜻</th><th>위반 사례 (활동)</th></tr>
+        <tr><td>보통 선거</td><td>성별·인종·재산·학력 등에 관계없이 일정한 나이 이상의 모든 국민에게 선거권을 준다</td><td>전학 온 지 얼마 안 된 친구는 투표 불가 / 재산·성별에 따라 선거권 제한</td></tr>
+        <tr><td>평등 선거</td><td>모든 사람이 행사하는 표의 개수와 가치가 같다</td><td>성적이 좋으면 두 표를 줌</td></tr>
+        <tr><td>직접 선거</td><td>선거권을 가진 사람이 직접 투표한다</td><td>결석한 친구를 대신해 투표</td></tr>
+        <tr><td>비밀 선거</td><td>어느 후보자에게 투표했는지 다른 사람이 알지 못하도록 보장한다</td><td>손을 들어 투표</td></tr>
+    </table>
+    <div class="card reveal" style="margin-top:24px">
+        <b>선거</b> = 대표를 뽑는 것 / <b>투표</b> = 선거를 하거나 찬성·반대를 결정할 때 투표용지에 의사를 표시하는 것
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6. 유권자와 정당 === -->
+<section class="slide">
+    <div class="kicker">1 선거와 민주 정치</div>
+    <h2>유권자와 정당의 활동 <small>p.185~186</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>유권자의 활동</h3>
+            <ul class="l">
+                <li><b>유권자</b> : 선거할 권리를 가진 사람.</li>
+                <li>선거 공보·선거 벽보·정당 누리집·정책 토론회 등을 보며 정당과 후보자의 <b>공약을 비교·분석</b>하고, 자신이 지향하는 가치·신념을 구현해 줄 후보자에게 투표한다.</li>
+                <li>후보자의 <b>자질과 능력</b>을 살펴 올바른 대표자를 뽑는다.</li>
+                <li>투표 참여 캠페인, 정책·공약 제안으로 <b>올바른 선거 문화</b>를 만든다.</li>
+            </ul>
+            <p class="ref">선거 공보 = 후보자의 사진·성명·기호·경력·공약·소속 정당 정책 등을 실은 인쇄물</p>
+        </div>
+        <div class="card reveal">
+            <h3>정당의 활동</h3>
+            <ul class="l">
+                <li><b>정당</b> : 비슷한 정치적 입장을 가진 사람들이 공공의 이익을 실현하고 <b>정치권력을 획득</b>하고자 만든 집단.</li>
+                <li><b>여당</b> : 대통령을 배출해 정권을 잡은 정당 / <b>야당</b> : 여당을 제외한 나머지 정당.</li>
+                <li><b>공천</b> : 정당이 선거에 출마할 후보자를 공식적으로 추천하는 것.</li>
+                <li>정책을 공약으로 제시, 설명회·토론회·공청회에서 이념·정책을 알려 정치에 대한 관심과 참여를 유도하는 <b>정치 사회화 기능</b>.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7. 정치 주체 개념과 국가기관 === -->
+<section class="slide">
+    <div class="kicker">2 정치 주체의 역할과 정치과정</div>
+    <h2>정치 주체와 국가기관 <small>p.188~189</small></h2>
+    <div class="card hl reveal" style="margin-bottom:22px">
+        <b>정치 주체</b> : 자신의 이익이나 가치에 따라 다양한 의견·요구를 표출하고 공동체의 의사 결정에 영향력을 행사하는 개인이나 집단. 종류 : <b>국가기관(국회·정부·법원), 정당, 이익 집단, 시민단체, 언론, 개인</b> 등.
+    </div>
+    <div class="grid g3 reveal">
+        <div class="card"><h3>국회</h3>국민의 요구를 반영해 <b>법률을 제정·개정·폐지</b>한다.</div>
+        <div class="card"><h3>정부</h3>법을 기반으로 정책을 구체적으로 <b>만들고 집행</b>한다.</div>
+        <div class="card"><h3>법원</h3>정책 집행 중 발생한 분쟁·갈등을 <b>재판</b>으로 해결한다.</div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>정당</h3>
+        <p>국민의 다양한 의견·요구를 수렴해 <b>여론을 집약</b>하고 법 제정·정책에 반영하려 노력한다. 정책 집행 과정에서 국가기관을 지지하거나 비판하며 새 정책·수정 정책을 제시한다.</p>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8. 이익 집단·시민단체·언론·개인 === -->
+<section class="slide">
+    <div class="kicker">2 정치 주체의 역할과 정치과정</div>
+    <h2>이익 집단·시민단체·언론·개인 <small>p.188~189</small></h2>
+    <table class="t reveal" style="font-size:25px">
+        <tr><th style="width:15%">주체</th><th>역할</th></tr>
+        <tr><td>이익 집단</td><td>이해관계를 같이하는 사람들이 국회·정부에 압력을 행사해 자신의 <b>특수한 이익</b>을 실현하려고 만든 단체. 전문 지식으로 해결책을 제시하기도 하나, 집단 이익만 지나치게 추구하면 공공의 이익과 충돌해 혼란을 줄 수 있다.</td></tr>
+        <tr><td>시민단체</td><td><b>공익</b>을 실현하고자 시민들이 자발적으로 만든 단체. 시민의 정치 참여 유도·여론 형성·대안 제시, 국가기관이 하는 일을 <b>감시·비판</b>한다.</td></tr>
+        <tr><td>언론</td><td>신문·텔레비전·인터넷으로 정치과정 정보 제공, 정책 해설·의견 제시, 다른 정치 주체의 활동을 감시·비판. 여론 형성에 주도적이므로 <b>공정하고 객관적인 보도</b>를 해야 한다.</td></tr>
+        <tr><td>개인</td><td>선거·투표로 영향력 행사, 행정 기관에 청원·민원 제기, 언론사·SNS에 의견 표현, 서명 운동·집회 참여.</td></tr>
+    </table>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9. 정치과정 === -->
+<section class="slide">
+    <div class="kicker">2 정치 주체의 역할과 정치과정</div>
+    <h2>정치과정의 단계 <small>p.190~191, 198</small></h2>
+    <div class="card hl reveal" style="margin-bottom:20px">
+        <b>정치과정</b> : 정치 주체의 다양한 요구를 수렴하고 갈등을 조정하여 민주적이고 합리적인 절차에 따라 <b>정책을 결정·집행</b>하는 과정. 다양한 가치와 이익이 조정되면서 <b>사회 통합과 발전</b>을 이룰 수 있다.
+    </div>
+    <div class="grid g5 reveal">
+        <div class="card step"><span class="no">1</span><br><b>이익 표출</b><br>개인·집단이 요구를 드러냄</div>
+        <div class="card step"><span class="no">2</span><br><b>이익 집약</b><br><b>언론과 정당</b>이 모아 요약</div>
+        <div class="card step"><span class="no">3</span><br><b>정책 결정</b><br><b>국회와 정부</b>가 수립·결정</div>
+        <div class="card step"><span class="no">4</span><br><b>정책 집행</b><br><b>정부</b>가 집행</div>
+        <div class="card step"><span class="no">5</span><br><b>정책 평가</b><br><b>국민</b>이 평가·수정 요구</div>
+    </div>
+    <div class="card reveal" style="margin-top:20px">
+        <h3>어린이 보호 구역 사례 (p.190)</h3>
+        <p>학부모·시민단체의 요구(이익 표출) → 방송사의 취재·보도(이익 집약) → 국회의 법 개정안 통과(정책 결정) → 정부의 단속(정책 집행) → 시행 후 불편 민원(정책 평가). 평가는 다시 이익 표출 등 정치과정에 반영된다(환류). <span class="ref">집약 = 여럿을 한군데로 모아서 요약하는 것</span></p>
+    </div>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10. 지방 자치 === -->
+<section class="slide">
+    <div class="kicker">3 지방 자치와 시민 참여</div>
+    <h2>지방 자치와 지방 자치 단체 <small>p.193</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>지방 자치</h3>
+            <p>일정한 지역에 사는 <b>주민들이 그 지역의 일을 스스로 처리</b>하는 것. 우리나라는 지방 자치 제도를 시행한다.</p>
+            <ul class="l" style="margin-top:10px">
+                <li>주민이 주체가 되어 지역 문제를 해결하며 민주주의를 배우고 실천 → <b>'민주주의의 학교'</b></li>
+                <li>주민의 자발적 정치 참여로 민주주의의 기초를 다지고 발전 → <b>'풀뿌리 민주주의'</b></li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>지방 자치 단체의 종류</h3>
+            <div class="svgbox"><svg viewBox="0 0 560 330" role="img" aria-label="지방 자치 단체는 광역과 기초로 나뉘고 각각 지방 의회와 단체장으로 구성된다">
+                <rect x="170" y="5" width="220" height="50" rx="8" fill="#0f2517" stroke="#c9a24b" stroke-width="2"/>
+                <text x="280" y="38" text-anchor="middle" font-size="26" font-weight="700" fill="#c9a24b">지방 자치 단체</text>
+                <line x1="280" y1="55" x2="280" y2="75" stroke="#c9a24b" stroke-width="2"/>
+                <line x1="130" y1="75" x2="430" y2="75" stroke="#c9a24b" stroke-width="2"/>
+                <line x1="130" y1="75" x2="130" y2="95" stroke="#c9a24b" stroke-width="2"/>
+                <line x1="430" y1="75" x2="430" y2="95" stroke="#c9a24b" stroke-width="2"/>
+                <rect x="10" y="95" width="240" height="115" rx="8" fill="#1c4029" stroke="#c9a24b"/>
+                <text x="130" y="125" text-anchor="middle" font-size="26" font-weight="700" fill="#f3ead3">광역 자치 단체</text>
+                <text x="130" y="158" text-anchor="middle" font-size="22" fill="#c9c3a8">특별시·광역시·도</text>
+                <text x="130" y="188" text-anchor="middle" font-size="22" fill="#c9c3a8">특별자치도·특별자치시</text>
+                <rect x="310" y="95" width="240" height="115" rx="8" fill="#1c4029" stroke="#c9a24b"/>
+                <text x="430" y="125" text-anchor="middle" font-size="26" font-weight="700" fill="#f3ead3">기초 자치 단체</text>
+                <text x="430" y="170" text-anchor="middle" font-size="24" fill="#c9c3a8">시·군·구</text>
+                <line x1="280" y1="210" x2="280" y2="235" stroke="#c9a24b" stroke-width="2" stroke-dasharray="5 4"/>
+                <rect x="40" y="240" width="220" height="75" rx="8" fill="#0f2517" stroke="#c9a24b"/>
+                <text x="150" y="270" text-anchor="middle" font-size="24" font-weight="700" fill="#c9a24b">지방 의회</text>
+                <text x="150" y="300" text-anchor="middle" font-size="21" fill="#f3ead3">의결 기관</text>
+                <rect x="300" y="240" width="220" height="75" rx="8" fill="#0f2517" stroke="#c9a24b"/>
+                <text x="410" y="270" text-anchor="middle" font-size="24" font-weight="700" fill="#c9a24b">단체장</text>
+                <text x="410" y="300" text-anchor="middle" font-size="21" fill="#f3ead3">집행 기관</text>
+            </svg></div>
+        </div>
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11. 지방 의회와 단체장 === -->
+<section class="slide">
+    <div class="kicker">3 지방 자치와 시민 참여</div>
+    <h2>지방 의회와 지방 자치 단체장 <small>p.193, 195</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>지방 의회 (의결 기관)</h3>
+            <ul class="l">
+                <li>지역 실정에 맞는 <b>조례</b>를 제정·개정·폐지한다.</li>
+                <li><b>예산</b>을 심의·의결한다.</li>
+                <li>행정 사무 <b>감사</b>를 한다.</li>
+            </ul>
+            <p class="ref">조례 = 지방의 사무를 운영하기 위해 각 지방 의회가 제정하는 법</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>지방 자치 단체장 (집행 기관)</h3>
+            <ul class="l">
+                <li>지방 자치 단체를 <b>대표</b>한다.</li>
+                <li>각종 <b>행정 사무</b>를 처리한다.</li>
+                <li>지방 의회가 결정한 조례를 실행하는 데 필요한 <b>규칙</b>을 제정하고 <b>예산을 집행</b>한다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3>헷갈리지 말 것 (p.195)</h3>
+        <p>"지방 자치 단체장은 조례를 만들고 예산을 의결한다" (X) → 조례 제정과 예산 의결은 <b>지방 의회</b>의 일이다. 단체장은 조례를 <b>실행</b>하고 예산을 <b>집행</b>한다.</p>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12. 주민 참여 방법 === -->
+<section class="slide">
+    <div class="kicker">3 지방 자치와 시민 참여</div>
+    <h2>지역사회 문제 해결을 위한 시민 참여 <small>p.194~195</small></h2>
+    <div class="card hl reveal" style="margin-bottom:20px">
+        <b>가장 기본</b> : <b>지방 선거</b> (지방 자치 단체장·지방 의회 의원 선출). 이 밖에 집회·서명·공청회로 의견을 표현하고 여론을 형성한다.
+    </div>
+    <div class="grid g2">
+        <div class="card reveal"><h3>주민 투표제</h3>지역의 중요한 사항·정책을 <b>주민의 투표로 직접 결정</b>한다.</div>
+        <div class="card reveal"><h3>주민 소환제</h3>지방 자치 단체장·지방 의회 의원(비례 대표 제외) 및 교육감의 <b>해임 여부를 투표로 결정</b>한다.</div>
+        <div class="card reveal"><h3>주민 청원제</h3>지역 행정에 관한 요구 사항을 <b>문서로 직접 제출</b>한다.</div>
+        <div class="card reveal"><h3>주민 참여 예산제</h3>지방 자치 단체의 <b>예산 편성 과정</b>에 주민이 직접 참여한다.</div>
+    </div>
+    <div class="card reveal" style="margin-top:20px">
+        <b>자세</b> 지방 자치 제도의 발전은 시민의 적극적 관심과 참여에 달려 있다. 지역 문제 해결과 발전에 관심을 갖고 <b>자발적으로 참여하려는 자세</b>가 필요하다.
+    </div>
+    <div class="pg">12</div>
+</section>
+
+<!-- === 13. 꼭 기억할 것 === -->
+<section class="slide">
+    <div class="kicker">꼭 기억할 것</div>
+    <h2>핵심 암기 정리</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>선거의 기능 4가지</b> : 대표자 선출 / 정당성 부여 / 통제·교체 / 정치 참여.</li>
+                <li><b>선거 과정</b> : 선거인 명부 → 후보자 등록 → 선거 운동 → 투표 → 개표·당선인 결정 → 당선증 발급.</li>
+                <li><b>선거 4원칙</b> : 보통·평등·직접·비밀.</li>
+                <li><b>정당</b> : 공천, 공약 제시, 정치 사회화 기능. 여당(정권) / 야당(나머지).</li>
+                <li><b>정치 주체</b> : 국가기관(국회·정부·법원), 정당, 이익 집단, 시민단체, 언론, 개인.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>정치과정</b> : 이익 표출 → 이익 집약(언론·정당) → 정책 결정(국회·정부) → 정책 집행(정부) → 정책 평가(국민).</li>
+                <li><b>지방 자치</b> = 민주주의의 학교, 풀뿌리 민주주의. 광역(특별시·광역시·도 등) / 기초(시·군·구).</li>
+                <li><b>지방 의회</b> : 조례·예산·감사 / <b>단체장</b> : 대표·행정 사무·규칙·예산 집행.</li>
+                <li><b>주민 참여</b> : 지방 선거, 주민 투표·소환·청원·참여 예산제.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">13</div>
+</section>
+
+<!-- === 14. 헷갈리기 쉬운 것 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>구분하기와 자주 하는 오해</h2>
+    <div class="grid g2" style="grid-template-columns:1.25fr 1fr">
+        <table class="t reveal" style="font-size:25px">
+            <tr><th>구분</th><th>A</th><th>B</th></tr>
+            <tr><td>이익 집단 vs 시민단체</td><td>구성원의 <b>특수한 이익</b> 실현</td><td><b>공익</b> 실현</td></tr>
+            <tr><td>여당 vs 야당</td><td>대통령을 배출한 정당</td><td>여당을 제외한 정당</td></tr>
+            <tr><td>주민 투표 vs 소환</td><td>중요 정책을 직접 결정</td><td>단체장·의원 해임 여부 결정</td></tr>
+            <tr><td>이익 표출 vs 집약</td><td>요구를 드러냄</td><td>언론·정당이 모아 요약</td></tr>
+        </table>
+        <div class="card warn reveal">
+            <h3>이렇게 오해하지 말자</h3>
+            <ul class="l" style="font-size:25px">
+                <li>손을 들어 투표는 평등 선거 위반 (X) → <b>비밀 선거</b> 위반.</li>
+                <li>대신 투표는 보통 선거 위반 (X) → <b>직접 선거</b> 위반.</li>
+                <li>단체장이 조례를 만든다 (X) → <b>지방 의회</b>.</li>
+                <li>선거의 기능은 대표 선출뿐 (X) → 정당성 부여·통제·참여도 있다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">14</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 14</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+</body>
+</html>

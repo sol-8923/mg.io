@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>일상생활과 법 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --bg: #14301f;
+    --bg-2: #1c4029;
+    --bg-3: #0f2517;
+    --ink: #f3ead3;
+    --ink-dim: #c9c3a8;
+    --brass: #c9a24b;
+    --warn: #e08a6a;
+    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0a1a10;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 84px;
+    font-size: 27px;
+    line-height: 1.5;
+    background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
+        var(--bg);
+}
+.slide::before {
+    content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none;
+}
+.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
+.card.warn { border-color: rgba(224,138,106,.6); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
+table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+.g4 .card, .g5 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+.svgbox { text-align: center; }
+.svgbox svg { width: 100%; height: auto; }
+
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
+.cover .kicker { font-size: 30px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
+.cover h1 span { color: var(--brass); }
+.cover p { font-size: 34px; color: var(--ink-dim); }
+.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+    .slide::before { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 20px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr; }
+    .card, .g4 .card, .g5 .card { padding: 14px 16px; font-size: 17px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1. 표지 === -->
+<section class="slide cover active">
+    <div class="kicker reveal">1학년 2학기 사회 · 11단원 요약 정리</div>
+    <h1 class="reveal">일상생활과 <span>법</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">법의 의미와 목적 · 법의 종류와 사회법 · 재판의 의미와 공정한 재판</p>
+</section>
+
+<!-- === 2. 단원 개요 === -->
+<section class="slide">
+    <div class="kicker">단원 개요</div>
+    <h2>법은 우리 삶에 어떻게 닿아 있을까 <small>교과서 p.200~217</small></h2>
+    <div class="grid g3">
+        <div class="card hl reveal">
+            <h3>1. 법의 의미와 목적</h3>
+            <p class="ref">p.202~205</p>
+            <ul class="l">
+                <li>법과 도덕</li>
+                <li>법의 역할과 정의</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>2. 법의 종류와 사회법</h3>
+            <p class="ref">p.206~209</p>
+            <ul class="l">
+                <li>헌법·민법·형법</li>
+                <li>사회법의 등장과 종류</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>3. 재판과 공정한 재판</h3>
+            <p class="ref">p.210~215</p>
+            <ul class="l">
+                <li>민사·형사 재판</li>
+                <li>공정한 재판을 위한 제도</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>일상에서 만나는 법의 예 (p.203)</h3>
+        <p><b>도로 교통법</b>(안전한 등교), <b>교육 기본법</b>(수업), <b>학교 급식법</b>(급식), <b>저작권법</b>(음악 구매)</p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3. 법과 도덕 === -->
+<section class="slide">
+    <div class="kicker">1 법의 의미와 목적</div>
+    <h2>사회 규범 : 법과 도덕 <small>p.203</small></h2>
+    <div class="card reveal" style="margin-bottom:22px">
+        <b>사회 규범</b> : 사회 구성원이 지켜야 할 행위의 기준. 대표적으로 <b>법</b>과 <b>도덕</b>이 있다.
+    </div>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>도덕</h3>
+            <p>인간이 마땅히 지켜야 할 도리. 개인의 <b>양심</b>에 바탕을 두고 <b>행위의 동기</b>를 중요시한다.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>법</h3>
+            <p>사회 질서를 유지하고 정의를 실현하고자 <b>국가가 만든</b> 사회 규범. <b>강제성</b>을 가지므로 지키지 않으면 국가로부터 제재를 받으며, 겉으로 드러나는 <b>행위와 그 결과</b>를 중요시한다.</p>
+        </div>
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4. 법과 도덕 비교 표 === -->
+<section class="slide">
+    <div class="kicker">1 법의 의미와 목적</div>
+    <h2>법과 도덕의 특징 비교 <small>p.203</small></h2>
+    <table class="t reveal">
+        <tr><th style="width:22%">구분</th><th style="width:39%">법</th><th>도덕</th></tr>
+        <tr><td>규율 대상</td><td>행위의 <b>결과</b></td><td>행위의 <b>동기</b></td></tr>
+        <tr><td>특성</td><td><b>강제성</b></td><td><b>자율성</b></td></tr>
+        <tr><td>위반하는 경우</td><td>국가에 의한 <b>제재</b></td><td>양심의 가책·사회적 비난</td></tr>
+        <tr><td>목적</td><td><b>정의</b>의 실현</td><td><b>선</b>의 실현</td></tr>
+    </table>
+    <div class="card hl reveal" style="margin-top:28px">
+        <b>암기</b> 법 = 결과·강제성·국가 제재·정의 / 도덕 = 동기·자율성·양심의 가책·선
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5. 법의 역할과 정의 === -->
+<section class="slide">
+    <div class="kicker">1 법의 의미와 목적</div>
+    <h2>법의 역할과 정의의 실현 <small>p.204</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>법의 역할</h3>
+            <p>지켜야 하는 행동과 하면 안 되는 행동의 <b>기준</b>을 알려 준다.</p>
+            <ul class="l" style="margin-top:10px">
+                <li><b>분쟁</b>을 예방하고 해결한다.</li>
+                <li><b>범죄</b>로부터 사람들을 보호한다.</li>
+                <li><b>사회 질서</b>를 유지한다.</li>
+                <li><b>인간다운 삶</b>을 위한 권리를 보호한다.</li>
+                <li>소수 집단·개인이 아닌 사회 전체의 이익(<b>공공복리</b>)을 추구한다.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>법이 궁극적으로 추구하는 것 : 정의</h3>
+            <p><b>정의로운 사회</b>란 다음과 같은 사회이다.</p>
+            <ul class="l" style="margin-top:10px">
+                <li>모든 사람이 <b>인간답게 살 권리</b>를 보장받는다.</li>
+                <li>공평하게 <b>기회</b>를 얻는다.</li>
+                <li><b>공정하게 경쟁</b>하고 능력·노력에 따른 <b>정당한 대가</b>를 받는다.</li>
+            </ul>
+            <p class="dim" style="margin-top:8px">법은 정의로운 사회를 실현하는 중요한 장치 중 하나이다.</p>
+        </div>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6. 법의 종류 === -->
+<section class="slide">
+    <div class="kicker">2 법의 종류와 사회법</div>
+    <h2>헌법·민법·형법 <small>p.207</small></h2>
+    <div class="grid g3">
+        <div class="card hl reveal">
+            <h3>헌법</h3>
+            <p>국가의 가장 기본이 되는 <b>최상위법</b>. 모든 국민이 누려야 할 <b>기본권</b>을 규정하고 <b>국가기관의 구성 방법과 권한</b>을 담는다.</p>
+            <p class="dim" style="margin-top:8px">우리나라의 모든 법은 헌법에 어긋나지 않아야 한다.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>민법</h3>
+            <p>일반적인 <b>개인 간의 법률관계</b>를 규율하는 법. 가족 관계의 권리·의무, 재산에 대한 권리 등.</p>
+            <p class="dim" style="margin-top:8px">개인 간 다툼을 해결하는 주요 기준이다.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>형법</h3>
+            <p><b>범죄</b>에 해당하는 행위와 그에 부과할 <b>형벌</b>을 규정하는 법.</p>
+            <p class="dim" style="margin-top:8px">범죄를 처벌해 질서를 유지하고 모두가 안전하게 살게 한다.</p>
+        </div>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7. 사회법 === -->
+<section class="slide">
+    <div class="kicker">2 법의 종류와 사회법</div>
+    <h2>사회법의 등장과 종류 <small>p.208</small></h2>
+    <div class="card warn reveal" style="margin-bottom:20px">
+        <h3>등장 배경과 목적</h3>
+        <p>과거에는 근로 조건이 나빠도 자유로운 계약으로 보아 국가가 개입하지 않았다. 그러나 산업화·자본주의 발달로 <b>빈부 격차</b>가 커지고 근로 조건이 악화되는 등 사회문제가 심각해지자 <b>국가가 개인 간의 관계에 개입</b>하는 사회법이 등장했다. <b>목적</b> : 사회적 약자를 비롯한 모든 국민의 <b>인간다운 삶 보장</b>.</p>
+    </div>
+    <div class="grid g3 reveal">
+        <div class="card"><h3>노동법</h3>근로 조건 규정, 근로자와 사용자 사이의 <b>근로관계</b> 규율<br><span class="ref">근로 기준법, 노동조합 및 노동관계 조정법, 최저 임금법</span></div>
+        <div class="card"><h3>경제법</h3>기업 간 <b>공정한 경쟁</b> 유도, <b>소비자의 권리·이익</b> 보호<br><span class="ref">독점 규제 및 공정 거래에 관한 법률, 소비자 기본법</span></div>
+        <div class="card"><h3>사회 보장법</h3>실업·고령·빈곤·질병 등 어려움을 겪는 사람 <b>지원</b><br><span class="ref">사회 보장 기본법, 국민 기초 생활 보장법, 국민 연금법</span></div>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8. 재판과 민사·형사 === -->
+<section class="slide">
+    <div class="kicker">3 재판의 의미와 공정한 재판</div>
+    <h2>재판의 의미와 민사·형사 재판 <small>p.211~213</small></h2>
+    <div class="card hl reveal" style="margin-bottom:20px">
+        <b>재판</b> : 법원에서 구체적 사건에 대하여 일정한 절차를 거쳐 <b>법적 판단</b>을 내리는 일. 헌법(제27조)은 국민 누구나 <b>재판을 받을 권리</b>를 보장한다. 법의 공정한 적용으로 정의 실현·권리 보장·질서 유지. 재판은 시간과 비용이 많이 들어 재판 없이 푸는 방법도 있다.
+    </div>
+    <div class="grid g2">
+        <div class="card reveal">
+            <h3>민사 재판</h3>
+            <p><b>개인 간</b> 관계에서 생긴 분쟁 해결.</p>
+            <ul class="l" style="margin-top:8px">
+                <li>참여 : <b>원고</b>(소송을 제기), <b>피고</b>(소송을 당함), 판사, 소송 대리인(변호사)</li>
+                <li>절차 : 소장 제출 → 답변서 제출 → 증거 제출 → 재판·판결</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>형사 재판</h3>
+            <p><b>범죄 행위</b>가 대상.</p>
+            <ul class="l" style="margin-top:8px">
+                <li>참여 : 판사, <b>검사</b>(기소·처벌 요구), <b>피고인</b>, <b>변호인</b>(피고인 편에서 변호)</li>
+                <li>절차 : 고소·고발·인지·자수 → 수사 → 기소 → 재판·판결</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9. 공정한 재판 제도 === -->
+<section class="slide">
+    <div class="kicker">3 재판의 의미와 공정한 재판</div>
+    <h2>공정한 재판을 위한 제도 <small>p.214</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>제도 4가지</h3>
+            <ul class="l">
+                <li><b>사법권의 독립</b> : 법관이 헌법과 법률에 의해 양심에 따라 독립하여 심판. 외부 간섭 차단·법관 신분 보장.</li>
+                <li><b>공개 재판주의</b> : 원칙적으로 재판 과정을 일반 시민에게도 공개.</li>
+                <li><b>증거 재판주의</b> : 구체적 증거에 의해서만 판결.</li>
+                <li><b>심급 제도</b> : 여러 번 재판 (3심제가 원칙).</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>3심제</h3>
+            <div class="svgbox"><svg viewBox="0 0 520 330" role="img" aria-label="1심 지방 법원, 항소하여 2심, 상고하여 3심 대법원">
+                <rect x="10" y="10" width="500" height="80" rx="8" fill="#0f2517" stroke="#c9a24b"/>
+                <text x="260" y="45" text-anchor="middle" font-size="26" font-weight="700" fill="#c9a24b">1심</text>
+                <text x="260" y="76" text-anchor="middle" font-size="23" fill="#f3ead3">지방 법원</text>
+                <line x1="260" y1="90" x2="260" y2="120" stroke="#c9a24b" stroke-width="3"/>
+                <polygon points="248,118 272,118 260,136" fill="#c9a24b"/>
+                <text x="285" y="118" font-size="23" fill="#c9c3a8">항소</text>
+                <rect x="10" y="136" width="500" height="80" rx="8" fill="#0f2517" stroke="#c9a24b"/>
+                <text x="260" y="171" text-anchor="middle" font-size="26" font-weight="700" fill="#c9a24b">2심</text>
+                <text x="260" y="202" text-anchor="middle" font-size="23" fill="#f3ead3">지방 법원 합의부 또는 고등 법원</text>
+                <line x1="260" y1="216" x2="260" y2="246" stroke="#c9a24b" stroke-width="3"/>
+                <polygon points="248,244 272,244 260,262" fill="#c9a24b"/>
+                <text x="285" y="244" font-size="23" fill="#c9c3a8">상고</text>
+                <rect x="10" y="262" width="500" height="62" rx="8" fill="#1c4029" stroke="#c9a24b" stroke-width="2"/>
+                <text x="260" y="302" text-anchor="middle" font-size="25" font-weight="700" fill="#f3ead3">3심 대법원 (최종 확정)</text>
+            </svg></div>
+        </div>
+    </div>
+    <div class="card hl reveal" style="margin-top:20px">
+        <b>정리</b> 대법원 판결은 <b>최종 확정 판결</b>이다. 항소·상고를 하지 않으면 판결이 확정된다.
+    </div>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10. 꼭 기억할 것 === -->
+<section class="slide">
+    <div class="kicker">꼭 기억할 것</div>
+    <h2>핵심 암기 정리</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>법</b> = 국가가 만든 사회 규범. 강제성, 행위의 결과, 국가의 제재, 목적은 <b>정의</b>.</li>
+                <li><b>도덕</b> = 양심, 행위의 동기, 자율성, 양심의 가책·사회적 비난, 목적은 <b>선</b>.</li>
+                <li><b>법의 역할</b> : 행동 기준 제시, 분쟁 예방·해결, 범죄 보호, 질서 유지, 권리 보호, 공공복리.</li>
+                <li><b>헌법</b>(최상위법·기본권·국가기관) / <b>민법</b>(개인 간 법률관계) / <b>형법</b>(범죄와 형벌).</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>사회법</b> : 산업화로 빈부 격차·근로 조건 악화 → 국가 개입. 노동법·경제법·사회 보장법.</li>
+                <li><b>민사 재판</b> : 원고·피고, 소장 → 답변서 → 증거 → 판결.</li>
+                <li><b>형사 재판</b> : 검사가 기소, 피고인·변호인. 수사 → 기소 → 재판.</li>
+                <li><b>공정한 재판</b> : 사법권의 독립, 공개 재판주의, 증거 재판주의, 심급 제도(3심제 : 지방 법원 → 항소 → 상고 → 대법원).</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11. 헷갈리기 쉬운 것 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>구분하기와 자주 하는 오해</h2>
+    <div class="grid g2" style="grid-template-columns:1.25fr 1fr">
+        <table class="t reveal" style="font-size:25px">
+            <tr><th>구분</th><th>A</th><th>B</th></tr>
+            <tr><td>민법 vs 형법</td><td>개인 간 법률관계(가족·재산)</td><td>범죄와 형벌</td></tr>
+            <tr><td>원고 vs 피고</td><td>소송을 제기한 사람</td><td>소송을 당한 사람</td></tr>
+            <tr><td>검사 vs 변호인</td><td>기소하고 처벌 요구</td><td>피고인 편에서 변호</td></tr>
+            <tr><td>항소 vs 상고</td><td>1심 → 2심</td><td>2심 → 3심 대법원</td></tr>
+        </table>
+        <div class="card warn reveal">
+            <h3>이렇게 오해하지 말자</h3>
+            <ul class="l" style="font-size:25px">
+                <li>법은 행위의 동기를 중요시 (X) → <b>행위의 결과</b>. 동기는 도덕.</li>
+                <li>법은 자율성을 가진다 (X) → <b>강제성</b>.</li>
+                <li>사회법은 개인의 자유 계약에 국가가 개입하지 않는다 (X) → <b>국가가 개입</b>.</li>
+                <li>형사 재판의 당사자는 원고·피고 (X) → 검사·피고인.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 11</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+</body>
+</html>

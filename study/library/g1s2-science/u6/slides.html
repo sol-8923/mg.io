@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기체의 성질 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --bg: #14301f;
+    --bg-2: #1c4029;
+    --bg-3: #0f2517;
+    --ink: #f3ead3;
+    --ink-dim: #c9c3a8;
+    --brass: #c9a24b;
+    --warn: #e08a6a;
+    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0a1a10;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 84px;
+    font-size: 27px;
+    line-height: 1.5;
+    /* 칠판 느낌: 은은한 빛 번짐 + 가는 격자 */
+    background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
+        var(--bg);
+}
+.slide::before { /* 황동 테두리 */
+    content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none;
+}
+.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
+.card.warn { border-color: rgba(224,138,106,.6); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
+table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+/* 순서 카드 (줄거리 흐름, 5단계) */
+.g5 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+
+/* 표지 */
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
+.cover .kicker { font-size: 30px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
+.cover h1 span { color: var(--brass); }
+.cover p { font-size: 34px; color: var(--ink-dim); }
+.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+
+/* 등장 효과 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+    .slide::before { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 20px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g5 { grid-template-columns: 1fr; }
+    .card, .g5 .card { padding: 14px 16px; font-size: 17px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 4px; }
+}
+
+/* 도식·확장 */
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.svgbox { background: var(--bg-3); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 10px; }
+.svgbox svg { display: block; width: 100%; height: auto; max-height: none; }
+.svgbox svg text { fill: #f3ead3; font-family: 'Noto Sans KR','Malgun Gothic',sans-serif; font-size: 24px; }
+.svgbox svg text.b { fill: #c9a24b; font-weight: 700; }
+.svgbox svg text.w { fill: #e08a6a; font-weight: 700; }
+.big { font-size: 34px; line-height: 1.6; }
+@media (max-width: 820px) and (orientation: portrait) { .g4 { grid-template-columns: 1fr; } .big { font-size: 20px; } .svgbox svg text { font-size: 24px; } }
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1 === -->
+<section class="slide cover active">
+    <div class="kicker reveal">1학년 2학기 과학 · 6단원 요약 정리</div>
+    <h1 class="reveal">기체의 <span>성질</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">압력 · 보일 법칙 · 샤를 법칙</p>
+</section>
+
+<!-- === 2 === -->
+<section class="slide">
+    <div class="kicker">단원 개요</div>
+    <h2>기체의 압력과 부피, 온도와 부피 <small>교과서 p.191~222</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>1 기체의 압력과 부피</h3>
+            <ul class="l">
+                <li>압력 <span class="ref">(p.195)</span></li>
+                <li>기체의 압력 <span class="ref">(p.196~197)</span></li>
+                <li>기체의 압력과 부피 관계 : <b>보일 법칙</b> <span class="ref">(p.198~201)</span></li>
+                <li>생활 속의 보일 법칙 <span class="ref">(p.202~203)</span></li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>2 기체의 온도와 부피</h3>
+            <ul class="l">
+                <li>기체의 온도와 부피 관계 : <b>샤를 법칙</b> <span class="ref">(p.208~211)</span></li>
+                <li>생활 속의 샤를 법칙 <span class="ref">(p.212~215)</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>이 단원에서 쓰는 범위</h3>
+        <p>학생용 교과서 기준으로 정리한다. 압력의 단위(N/m², Pa)와 계산식, 절대 온도, 부피-온도 비례식은 <b>교과서 범위 밖</b>이다.</p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3 === -->
+<section class="slide">
+    <div class="kicker">1 · 압력</div>
+    <h2>압력이란 <small>p.194~195</small></h2>
+    <div class="card hl reveal" style="margin-bottom:22px">
+        <p class="big">일정한 <b>넓이</b>에 작용하는 <b>힘의 크기</b>를 <b>압력</b>이라고 한다.</p>
+    </div>
+    <div class="grid g2">
+        <div class="card reveal">
+            <h3>힘의 크기가 같을 때</h3>
+            <p>힘이 작용하는 넓이가 <b>좁을수록</b> 압력이 <b>커진다</b>.</p>
+            <h3 style="margin-top:18px">넓이가 같을 때</h3>
+            <p>힘의 크기가 <b>클수록</b> 압력이 <b>커진다</b>.</p>
+        </div>
+        <div class="card reveal">
+            <h3>예</h3>
+            <ul class="l">
+                <li><b>설피</b>를 덧신으면 눈에 닿는 넓이가 넓어져 압력이 작아져서 발이 잘 빠지지 않는다.</li>
+                <li>풍선을 <b>바늘</b>로 누르면 넓이가 좁아 압력이 커져서 터진다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:22px">
+        <h3>탐구 (p.194)</h3>
+        <p>물이 든 페트병을 점토 위에 세워, 힘의 크기(물의 양)와 넓이(바로/뒤집어 세움)에 따라 점토가 눌리는 깊이를 비교한다.</p>
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4 === -->
+<section class="slide">
+    <div class="kicker">1 · 기체의 압력</div>
+    <h2>기체의 압력 <small>p.196~197</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li>기체 입자는 끊임없이 빠르게 움직이면서 용기(풍선)의 안쪽 벽에 <b>충돌</b>하여 힘을 가한다.</li>
+                <li>기체 입자가 주위에 충돌하면서 일정한 넓이에 작용하는 힘의 크기를 <b>기체의 압력(기압)</b>이라고 한다.</li>
+                <li>입자가 모든 방향으로 움직이므로 기체의 압력은 <b>모든 방향</b>으로 작용한다.</li>
+            </ul>
+        </div>
+        <div class="svgbox reveal">
+            <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <defs><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c9a24b"/></marker></defs>
+                <ellipse cx="400" cy="200" rx="300" ry="160" fill="rgba(201,162,75,.08)" stroke="#c9a24b" stroke-width="4"/>
+                <g fill="#e8c76a"><circle cx="330" cy="150" r="16"/><circle cx="470" cy="250" r="16"/><circle cx="400" cy="210" r="16"/><circle cx="290" cy="250" r="16"/><circle cx="500" cy="150" r="16"/></g>
+                <g stroke="#e08a6a" stroke-width="4" marker-end="url(#m)"><line x1="330" y1="150" x2="230" y2="100"/><line x1="470" y1="250" x2="560" y2="300"/><line x1="500" y1="150" x2="590" y2="110"/><line x1="290" y1="250" x2="215" y2="285"/></g>
+                <text class="b" x="400" y="388" text-anchor="middle">입자가 벽에 충돌 → 모든 방향으로 압력</text>
+            </svg>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:22px">
+        <div class="card reveal"><h3>이용</h3><p><b>에어 잭</b> : 공기 주머니에 기체를 넣으면 부풀어 자동차를 들어 올림. <b>흡착판</b> : 대기의 기체 입자가 충돌해 벽 쪽으로 미는 힘.</p></div>
+        <div class="card warn reveal"><h3>오해 주의</h3><p>기체의 압력은 중력 때문에 아래쪽으로만 작용한다 (X) → <b>모든 방향</b>.</p></div>
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5 === -->
+<section class="slide">
+    <div class="kicker">1 · 보일 법칙</div>
+    <h2>압력과 부피는 반비례 <small>p.198~201</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>보일 법칙</h3>
+            <p class="big">일정한 <b>온도</b>에서 일정량의 기체의 압력과 부피는 서로 <b>반비례</b>한다.</p>
+            <ul class="l" style="margin-top:12px">
+                <li>피스톤을 안으로 밀면 부피 <b>작아지고</b> 압력 <b>커진다</b>.</li>
+                <li>밖으로 당기면 부피 <b>커지고</b> 압력 <b>작아진다</b>.</li>
+                <li><b>반비례</b> : 한 값이 2배, 3배 …로 커질 때 다른 값이 1/2배, 1/3배 …로 작아지는 관계.</li>
+            </ul>
+        </div>
+        <div class="svgbox reveal">
+            <svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="#f3ead3" stroke-width="2" fill="none"><path d="M100 30 L100 370 L770 370"/></g>
+                <text x="110" y="40">부피(mL)</text><text x="560" y="415">압력(기압)</text>
+                <polyline points="217,60 230,90 295,180 360,225 490,270 620,292 724,304" fill="none" stroke="#c9a24b" stroke-width="5"/>
+                <g fill="#e8c76a"><circle cx="230" cy="90" r="9"/><circle cx="360" cy="225" r="9"/><circle cx="620" cy="292" r="9"/></g>
+                <text x="250" y="86">0.5기압 · 60 mL</text><text x="380" y="215">1.0기압 · 30 mL</text><text x="470" y="335">2.0기압 · 15 mL</text>
+            </svg>
+        </div>
+    </div>
+    <div class="card hl reveal" style="margin-top:22px">
+        그래프(p.200) : 0.5기압 60 mL, 1.0기압 30 mL, 2.0기압 15 mL. 압력과 부피를 <b>곱한 값</b>이 같다 (탐구 p.199).
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6 === -->
+<section class="slide">
+    <div class="kicker">1 · 보일 법칙의 입자 모형</div>
+    <h2>왜 반비례일까 <small>p.201</small></h2>
+    <div class="svgbox reveal">
+        <svg viewBox="0 0 1700 330" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#c9a24b" stroke-width="3" fill="rgba(201,162,75,.07)"><rect x="40" y="50" width="760" height="190" rx="8"/><rect x="900" y="50" width="400" height="190" rx="8"/></g>
+            <text class="b" x="420" y="34" text-anchor="middle">부피 큼 : 충돌 횟수 적음, 압력 작음</text>
+            <text class="b" x="1100" y="34" text-anchor="middle">부피 작음 : 충돌 횟수 많음</text>
+            <g fill="#e8c76a"><circle cx="150" cy="110" r="14"/><circle cx="330" cy="190" r="14"/><circle cx="520" cy="100" r="14"/><circle cx="650" cy="180" r="14"/><circle cx="960" cy="100" r="14"/><circle cx="1030" cy="190" r="14"/><circle cx="1130" cy="120" r="14"/><circle cx="1200" cy="200" r="14"/></g>
+            <text x="420" y="290" text-anchor="middle">입자 수는 같다</text><text x="1100" y="290" text-anchor="middle">입자 수는 같다</text>
+        </svg>
+    </div>
+    <div class="grid g2" style="margin-top:22px">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li>온도가 일정하면 기체 <b>입자의 수는 변하지 않는다</b>.</li>
+                <li>외부 압력이 커져 부피가 작아지면 입자가 움직일 공간이 줄어 벽에 <b>충돌하는 횟수가 늘어나</b> 압력이 커진다.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <ul class="l">
+                <li>부피가 커지면 충돌 횟수가 줄어 압력이 작아진다.</li>
+                <li>기체의 부피는 <b>외부 압력과 기체의 압력이 같아질 때까지</b> 변한다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7 === -->
+<section class="slide">
+    <div class="kicker">1 · 생활 속의 보일 법칙</div>
+    <h2>생활 속의 보일 법칙 <small>p.198, 202~203</small></h2>
+    <table class="t reveal">
+        <tr><th style="width:28%">사례</th><th>설명</th></tr>
+        <tr><td>운동화 밑창 공기 주머니</td><td>외부 압력이 가해지면 부피가 작아지며 충격을 줄인다.</td></tr>
+        <tr><td>CNG 버스, 점핑 볼</td><td>CNG는 큰 압력으로 부피를 줄여 저장. 점핑 볼은 올라타면 부피가 줄어 압력이 커져 다시 튀어 오른다.</td></tr>
+        <tr><td>비행기 이륙 시 귀</td><td>대기압이 낮아져 고막 안쪽 공기의 부피가 늘어 귀가 먹먹해진다.</td></tr>
+        <tr><td>잠수부의 날숨 기포</td><td>수면에 가까울수록 <b>수압</b>이 낮아져 기포의 부피가 점점 커진다.</td></tr>
+        <tr><td>높은 산의 과자 봉지</td><td>압력에 따라 기체의 부피가 크게 변해 봉지가 부풀어 오른다.</td></tr>
+    </table>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8 === -->
+<section class="slide">
+    <div class="kicker">2 · 샤를 법칙</div>
+    <h2>온도가 높아지면 부피가 커진다 <small>p.208~211</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>샤를 법칙</h3>
+            <p class="big">일정한 <b>압력</b>에서 일정량의 기체 부피는 온도 변화에 따라 <b>일정하게</b> 커지거나 작아진다.</p>
+            <ul class="l" style="margin-top:12px">
+                <li>온도 <b>높아지면</b> 부피 <b>커지고</b>, <b>낮아지면</b> 부피 <b>작아진다</b>.</li>
+                <li>부피가 변하는 정도는 <b>기체의 종류와 관계없이 같다</b>.</li>
+            </ul>
+        </div>
+        <div class="svgbox reveal">
+            <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="#f3ead3" stroke-width="2" fill="none"><path d="M100 30 L100 360 L770 360"/></g>
+                <text x="110" y="40">부피</text><text x="640" y="405">온도</text>
+                <line x1="130" y1="320" x2="720" y2="80" stroke="#c9a24b" stroke-width="5"/>
+                <text class="b" x="440" y="230" text-anchor="middle">직선으로 증가</text>
+            </svg>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:22px">
+        <h3>탐구 (p.208~209)</h3>
+        <p>색소를 섞은 글리세롤이 든 피펫과 유리병으로 장치를 만들어 뜨거운 물에 담근다. 물이 식으면 글리세롤이 피펫 관 속으로 빨려 들어간다 (기체 부피 감소).</p>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9 === -->
+<section class="slide">
+    <div class="kicker">2 · 샤를 법칙의 입자 모형</div>
+    <h2>온도와 입자 운동 <small>p.211</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>온도가 높아지면</h3>
+            <ul class="l">
+                <li>기체 입자의 <b>수는 변하지 않는다</b>.</li>
+                <li>입자 운동이 활발해져 벽에 충돌하는 <b>횟수와 세기</b>가 늘어 부피가 <b>커진다</b>.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>온도가 낮아지면</h3>
+            <ul class="l">
+                <li>입자 운동이 둔해져 충돌 <b>횟수와 세기</b>가 줄어 부피가 <b>작아진다</b>.</li>
+                <li>외부 압력과 기체의 압력이 같아질 때까지 부피가 변한다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3>오해 주의</h3>
+        <p>온도가 높아지면 기체 입자의 <b>크기·개수·질량</b>이 커진다 (X) → 입자의 <b>운동이 활발해질 뿐</b>이다. <span class="ref">(p.211)</span></p>
+    </div>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10 === -->
+<section class="slide">
+    <div class="kicker">2 · 생활 속의 샤를 법칙</div>
+    <h2>생활 속의 샤를 법칙 <small>p.208, 212~213</small></h2>
+    <table class="t reveal">
+        <tr><th style="width:28%">사례</th><th>설명</th></tr>
+        <tr><td>냉장고에 넣은 페트병</td><td>온도가 낮아져 기체 부피가 줄어 찌그러진다.</td></tr>
+        <tr><td>열기구</td><td>기체를 가열하면 부피가 커져 일부 기체가 밖으로 밀려 나와 가벼워져 떠오른다.</td></tr>
+        <tr><td>햇빛 아래 과자 봉지</td><td>온도가 높아져 부피가 커져 부풀어 오른다.</td></tr>
+        <tr><td>추운 날 자동차 타이어</td><td>속 기체의 부피가 작아져 수축한다.</td></tr>
+        <tr><td>찌그러진 탁구공</td><td>뜨거운 물에 담그면 속 기체 부피가 커져 원래 모양으로 펴진다.</td></tr>
+        <tr><td>뜨거운 음식 그릇</td><td>그릇 밑 기체의 부피가 온도에 따라 변해 스스로 움직인다.</td></tr>
+    </table>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11 === -->
+<section class="slide">
+    <div class="kicker">꼭 외울 것</div>
+    <h2>핵심 암기 4가지</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>압력</b> = 일정한 넓이에 작용하는 힘의 크기. 넓이 작을수록, 힘 클수록 압력 커짐.</li>
+                <li><b>기체의 압력</b> = 입자가 벽에 충돌하며 가하는 힘. <b>모든 방향</b>으로 작용.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>보일 법칙</b> : 온도 일정, 압력과 부피 <b>반비례</b> (충돌 횟수로 설명).</li>
+                <li><b>샤를 법칙</b> : 압력 일정, 온도 ↑ → 부피 ↑ (입자 운동·충돌 횟수·충돌 세기로 설명).</li>
+            </ul>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card reveal">
+            <h3>보일 법칙 입자 설명</h3>
+            <p>입자 수 불변. 부피가 작아지면 입자가 움직일 공간이 줄어 벽에 <b>충돌하는 횟수가 늘어</b> 압력이 커진다.</p>
+        </div>
+        <div class="card reveal">
+            <h3>샤를 법칙 입자 설명</h3>
+            <p>입자 수 불변. 온도가 높아지면 운동이 활발해져 충돌 <b>횟수와 세기</b>가 늘어 부피가 커진다.</p>
+        </div>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>보일 법칙 vs 샤를 법칙</h2>
+    <div class="grid g2" style="grid-template-columns:1.25fr 1fr">
+        <table class="t reveal" style="font-size:25px">
+            <tr><th>구분</th><th>보일 법칙</th><th>샤를 법칙</th></tr>
+            <tr><td>일정한 것</td><td>온도, 기체의 양</td><td>압력, 기체의 양</td></tr>
+            <tr><td>바뀌는 조건</td><td>압력(부피)</td><td>온도</td></tr>
+            <tr><td>입자 운동 빠르기</td><td>변하지 않음</td><td>온도에 따라 변함</td></tr>
+            <tr><td>입자 수</td><td>변하지 않음</td><td>변하지 않음</td></tr>
+            <tr><td>설명</td><td>부피 변화 → 충돌 횟수 변화</td><td>온도 변화 → 충돌 횟수·세기 변화</td></tr>
+        </table>
+        <div class="card warn reveal">
+            <h3>이렇게 오해하지 말자</h3>
+            <ul class="l" style="font-size:25px">
+                <li>온도가 높아지면 입자의 크기·개수·질량이 커진다 (X) → 운동만 활발해짐.</li>
+                <li>압력이 커지면 입자 운동이 빨라진다 (X) → 보일 법칙은 온도 일정, 운동 빠르기 불변.</li>
+                <li>기체의 압력은 아래쪽으로만 (X) → 모든 방향.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">12</div>
+</section>
+
+<!-- === 13 === -->
+<section class="slide">
+    <div class="kicker">시험 포인트</div>
+    <h2>이렇게 나온다</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>객관식 · 합답</h3>
+            <ul class="l">
+                <li>압력·부피 그래프(곡선) 읽기, 압력×부피 값이 같은 두 점 찾기</li>
+                <li>입자 모형에서 "변하는 것/변하지 않는 것" 합답 (부피·입자 수·운동 속도·충돌 횟수)</li>
+                <li>생활 현상 분류 : <b>보일 / 샤를</b> (기포, 과자 봉지, 귀 먹먹, 타이어, 탁구공, 열기구)</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>마지막 점검</h3>
+            <ul class="l">
+                <li>'온도 일정'인지 '압력 일정'인지 먼저 확인했는가?</li>
+                <li>설명에 <b>충돌 횟수</b>(샤를은 충돌 세기도)를 넣었는가?</li>
+                <li>입자의 <b>수</b>는 변하지 않는다고 썼는가?</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">13</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 13</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+</body>
+</html>

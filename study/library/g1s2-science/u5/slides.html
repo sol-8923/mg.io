@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>힘의 작용 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --bg: #14301f;
+    --bg-2: #1c4029;
+    --bg-3: #0f2517;
+    --ink: #f3ead3;
+    --ink-dim: #c9c3a8;
+    --brass: #c9a24b;
+    --warn: #e08a6a;
+    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0a1a10;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 84px;
+    font-size: 27px;
+    line-height: 1.5;
+    /* 칠판 느낌: 은은한 빛 번짐 + 가는 격자 */
+    background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
+        var(--bg);
+}
+.slide::before { /* 황동 테두리 */
+    content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none;
+}
+.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
+.card.warn { border-color: rgba(224,138,106,.6); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
+table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+/* 순서 카드 (줄거리 흐름, 5단계) */
+.g5 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+
+/* 표지 */
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
+.cover .kicker { font-size: 30px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
+.cover h1 span { color: var(--brass); }
+.cover p { font-size: 34px; color: var(--ink-dim); }
+.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+
+/* 등장 효과 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+    .slide::before { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 20px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g5 { grid-template-columns: 1fr; }
+    .card, .g5 .card { padding: 14px 16px; font-size: 17px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 4px; }
+}
+
+/* 도식·확장 */
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.svgbox { background: var(--bg-3); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 10px; }
+.svgbox svg { display: block; width: 100%; height: auto; max-height: none; }
+.svgbox svg text { fill: #f3ead3; font-family: 'Noto Sans KR','Malgun Gothic',sans-serif; font-size: 24px; }
+.svgbox svg text.b { fill: #c9a24b; font-weight: 700; }
+.svgbox svg text.w { fill: #e08a6a; font-weight: 700; }
+.big { font-size: 34px; line-height: 1.6; }
+@media (max-width: 820px) and (orientation: portrait) { .g4 { grid-template-columns: 1fr; } .big { font-size: 20px; } .svgbox svg text { font-size: 24px; } }
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1 === -->
+<section class="slide cover active">
+    <div class="kicker reveal">1학년 2학기 과학 · 5단원 요약 정리</div>
+    <h1 class="reveal">힘의 <span>작용</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">여러 가지 힘 · 알짜힘 · 힘과 운동 · 힘의 이용</p>
+</section>
+
+<!-- === 2 === -->
+<section class="slide">
+    <div class="kicker">단원 개요</div>
+    <h2>힘은 모양과 운동을 바꾼다 <small>교과서 p.151~190</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>1. 여러 가지 힘 <span class="ref">(p.154~169)</span></h3>
+            <ul class="l">
+                <li>힘의 표현과 평형</li>
+                <li><b>중력</b> → <b>탄성력</b> → <b>마찰력</b> → <b>부력</b></li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>2. 힘과 우리 생활 <span class="ref">(p.174~183)</span></h3>
+            <ul class="l">
+                <li><b>알짜힘</b></li>
+                <li><b>힘과 운동</b></li>
+                <li>여러 가지 힘의 이용</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3>자주 하는 오해</h3>
+        <p>"힘이 났다(기운)"는 과학에서의 힘이 아니다. 과학에서의 힘은 물체의 <b>모양이나 운동 상태를 변화시키는 원인</b>이다.</p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3 === -->
+<section class="slide">
+    <div class="kicker">1. 여러 가지 힘 · 힘의 표현과 평형</div>
+    <h2>힘의 3요소와 화살표 <small>p.154~155</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>힘이란</h3>
+            <p>물체의 <b>모양이나 운동 상태를 변화시키는 원인</b>. 운동 상태는 물체의 <b>속력과 운동 방향</b>을 나타낸다.</p>
+            <h3 style="margin-top:18px">힘의 3요소</h3>
+            <p><b>크기, 방향, 작용점</b>을 함께 표시한다. 크기·방향이 같아도 작용점이 다르면 모양이나 운동 상태가 달라질 수 있다. 단위는 주로 <b>N(뉴턴)</b>.</p>
+        </div>
+        <div class="svgbox reveal">
+            <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c9a24b"/></marker></defs>
+                <rect x="120" y="150" width="180" height="120" fill="rgba(243,234,211,.15)" stroke="#f3ead3" stroke-width="3"/>
+                <line x1="300" y1="210" x2="700" y2="210" stroke="#c9a24b" stroke-width="8" marker-end="url(#a)"/>
+                <circle cx="300" cy="210" r="9" fill="#e08a6a"/>
+                <text class="w" x="300" y="260" text-anchor="middle">작용점</text>
+                <text class="b" x="500" y="185" text-anchor="middle">화살표 길이 = 크기</text>
+                <text class="b" x="560" y="120" text-anchor="middle">화살표 방향 = 힘의 방향</text>
+                <text x="400" y="340" text-anchor="middle">시작점 = 작용점</text>
+            </svg>
+        </div>
+    </div>
+    <div class="card hl reveal" style="margin-top:24px">
+        <b>힘의 평형</b> 한 물체에 <b>같은 크기의 두 힘이 같은 직선상에서 서로 반대 방향</b>으로 작용하는 경우. 예) 줄다리기에서 줄이 어느 쪽으로도 움직이지 않는다.
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4 === -->
+<section class="slide">
+    <div class="kicker">1. 여러 가지 힘 · 중력</div>
+    <h2>중력, 무게, 질량 <small>p.156~158</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>중력과 무게</h3>
+            <ul class="l">
+                <li><b>중력</b> : 지구가 물체를 끌어당기는 힘. 방향은 <b>지구 중심 방향</b>.</li>
+                <li><b>무게</b> : 물체에 작용하는 중력의 크기. 단위는 <b>N</b>.</li>
+                <li>천체마다 중력이 달라 무게도 다르다. <b>달의 중력은 지구의 약 1/6</b>.</li>
+            </ul>
+            <h3 style="margin-top:16px">계산 예</h3>
+            <p>지구에서 질량 1 kg의 무게는 약 <b>9.8 N</b>. 무게는 질량에 비례한다. 300 g 사과 : 지구 <b>2.94 N</b>, 달 <b>0.49 N</b>.</p>
+        </div>
+        <div class="card reveal">
+            <h3>무게 vs 질량</h3>
+            <table class="t" style="font-size:25px">
+                <tr><th></th><th>무게</th><th>질량</th></tr>
+                <tr><td>뜻</td><td>중력의 크기</td><td>물체의 고유한 양</td></tr>
+                <tr><td>단위</td><td>N</td><td>kg, g</td></tr>
+                <tr><td>장소</td><td>달에서 지구의 약 1/6</td><td>변하지 않음</td></tr>
+            </table>
+            <p class="dim" style="margin-top:14px">"달에 가면 질량이 줄어든다" (X) → 무게만 약 1/6.</p>
+        </div>
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5 === -->
+<section class="slide">
+    <div class="kicker">1. 여러 가지 힘 · 탄성력</div>
+    <h2>탄성력 <small>p.160~163</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>탄성과 탄성력</h3>
+            <ul class="l">
+                <li><b>탄성</b> : 변형된 물체가 원래 모양으로 되돌아가려는 성질.</li>
+                <li><b>탄성력</b> : 되돌아가려는 힘. 방향은 변형된 물체가 <b>원래 모양으로 되돌아가려는 방향</b>.</li>
+                <li>크기는 <b>변형 정도(늘어난 길이)에 비례</b>한다.</li>
+                <li>이용 : <b>용수철저울</b>, 체중계 등.</li>
+            </ul>
+        </div>
+        <div class="svgbox reveal">
+            <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="#f3ead3" stroke-width="2" fill="none"><path d="M90 30 L90 360 L760 360"/></g>
+                <text x="100" y="40">탄성력(N)</text><text x="560" y="405">늘어난 길이(cm)</text>
+                <line x1="90" y1="360" x2="640" y2="60" stroke="#c9a24b" stroke-width="5"/>
+                <g fill="#e8c76a"><circle cx="258" cy="268" r="9"/><circle cx="423" cy="178" r="9"/><circle cx="588" cy="88" r="9"/></g>
+                <text x="258" y="390" text-anchor="middle">2</text><text x="423" y="390" text-anchor="middle">4</text><text x="588" y="390" text-anchor="middle">6</text>
+                <text x="60" y="275" text-anchor="end">1</text><text x="60" y="185" text-anchor="end">2</text><text x="60" y="95" text-anchor="end">3</text>
+            </svg>
+        </div>
+    </div>
+    <div class="card hl reveal" style="margin-top:24px">
+        <b>계산 예</b> 용수철이 2 cm 늘어날 때 탄성력이 1 N이면, 4 cm 늘어날 때 <b>2 N</b>, 6 cm 늘어날 때 <b>3 N</b>. <span class="warn" style="color:var(--warn)">탄성력은 늘어난 길이에 반비례한다 (X) → 비례.</span>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6 === -->
+<section class="slide">
+    <div class="kicker">1. 여러 가지 힘 · 마찰력과 부력</div>
+    <h2>마찰력과 부력 <small>p.164~169</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>마찰력</h3>
+            <ul class="l">
+                <li>두 물체의 접촉면 사이에서 물체의 <b>운동을 방해하는 힘</b>.</li>
+                <li>운동하는 물체에서는 <b>운동 방향과 반대</b>로 작용.</li>
+                <li>물체의 <b>무게가 무거울수록</b>, <b>접촉면이 거칠수록</b> 커진다.</li>
+                <li>작은 힘으로 당겨도 움직이지 않는 것은 마찰력이 작용하기 때문. 5 N으로 밀어도 정지해 있으면 마찰력도 <b>5 N</b> (힘의 평형).</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>부력</h3>
+            <ul class="l">
+                <li>액체나 기체 속 물체가 받는, <b>중력과 반대 방향(위쪽)</b>으로 밀어 올리는 힘.</li>
+                <li>배가 뜸 = 물의 부력, 헬륨 풍선이 올라감 = 공기의 부력.</li>
+                <li>측정 : 부력 = <b>물에 잠기기 전 값 − 잠겼을 때 값</b> (힘 센서).</li>
+                <li><b>잠긴 부분의 부피가 클수록</b> 부력이 커진다.</li>
+                <li>떠서 정지한 배는 <b>중력과 부력이 평형</b>.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:22px">
+        <div class="card warn reveal"><p>마찰력은 항상 운동 방향과 같다 (X) → <b>반대 방향</b>.</p></div>
+        <div class="card warn reveal"><p>부력은 물속에서만 작용한다 (X) → <b>기체 속</b>(헬륨 풍선)에서도 작용.</p></div>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7 === -->
+<section class="slide">
+    <div class="kicker">2. 힘과 우리 생활 · 알짜힘</div>
+    <h2>알짜힘 구하기 <small>p.174~175</small></h2>
+    <div class="card reveal" style="margin-bottom:20px"><b>알짜힘</b> : 한 물체에 여러 힘이 동시에 작용할 때 모든 힘을 합한 힘.</div>
+    <div class="svgbox reveal">
+        <svg viewBox="0 0 1700 330" xmlns="http://www.w3.org/2000/svg">
+            <defs><marker id="b2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c9a24b"/></marker><marker id="w2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e08a6a"/></marker></defs>
+            <g fill="rgba(243,234,211,.15)" stroke="#f3ead3" stroke-width="3"><rect x="220" y="80" width="100" height="70"/><rect x="780" y="80" width="100" height="70"/><rect x="1340" y="80" width="100" height="70"/></g>
+            <g stroke="#c9a24b" stroke-width="7"><line x1="320" y1="115" x2="480" y2="115" marker-end="url(#b2)"/><line x1="220" y1="115" x2="110" y2="115" marker-end="url(#b2)"/><line x1="880" y1="115" x2="1040" y2="115" marker-end="url(#b2)"/><line x1="780" y1="115" x2="710" y2="115" marker-end="url(#b2)"/><line x1="1440" y1="115" x2="1540" y2="115" marker-end="url(#b2)"/><line x1="1340" y1="115" x2="1240" y2="115" marker-end="url(#b2)"/></g>
+            <text class="b" x="270" y="215" text-anchor="middle">방향이 같으면 합</text><text x="270" y="255" text-anchor="middle">방향도 같음</text>
+            <text class="b" x="830" y="215" text-anchor="middle">반대이면 차</text><text x="830" y="255" text-anchor="middle">큰 힘의 방향</text>
+            <text class="w" x="1390" y="215" text-anchor="middle">크기 같고 반대이면 0</text><text x="1390" y="255" text-anchor="middle">힘의 평형</text>
+        </svg>
+    </div>
+    <div class="card hl reveal" style="margin-top:20px">
+        <b>알짜힘이 0</b>이면 힘의 평형 상태 → 속력·운동 방향 변화 없음. 정지한 물체는 계속 정지, 운동하는 물체는 <b>일정한 방향·속력</b>으로 운동 (예: 무빙워크). <span class="ref">(p.175)</span>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8 === -->
+<section class="slide">
+    <div class="kicker">2. 힘과 우리 생활 · 힘과 운동</div>
+    <h2>알짜힘과 운동 상태 <small>p.176~179</small></h2>
+    <div class="card reveal" style="margin-bottom:20px">알짜힘이 0이 아니면 운동 상태(<b>속력 또는 운동 방향</b>)가 변한다. <span class="ref">(p.177)</span></div>
+    <table class="t reveal">
+        <tr><th style="width:36%">운동 방향과 알짜힘의 방향</th><th>운동 상태 변화</th><th style="width:30%">예 (p.179)</th></tr>
+        <tr><td>같은 방향</td><td><b>속력 증가</b></td><td rowspan="2" style="vertical-align:middle">속력만 변함 : 낙하 놀이 기구</td></tr>
+        <tr><td>반대 방향</td><td><b>속력 감소</b></td></tr>
+        <tr><td>항상 수직 (일정 크기)</td><td><b>운동 방향만</b> 변함</td><td>대관람차 (일정한 속력의 원운동)</td></tr>
+        <tr><td>비스듬함</td><td>속력·운동 방향 <b>모두</b> 변함</td><td>그네</td></tr>
+        <tr><td>0</td><td>변화 없음 (정지 또는 일정한 속력·방향)</td><td>책상 위 책, 무빙워크</td></tr>
+    </table>
+    <div class="grid g2" style="margin-top:20px">
+        <div class="card warn reveal"><p>정지해 있으면 힘이 작용하지 않는다 (X) → 힘이 평형이라 <b>알짜힘이 0</b>일 뿐.</p></div>
+        <div class="card warn reveal"><p>속도가 일정하면 힘이 작용한다 (X) → <b>알짜힘 0</b>.</p></div>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9 === -->
+<section class="slide">
+    <div class="kicker">2. 힘과 우리 생활 · 여러 가지 힘의 이용</div>
+    <h2>힘의 이용 <small>p.180~183</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>힘의 평형 사례 (p.180)</h3>
+            <ul class="l">
+                <li>책상 위 시계 : 중력 = 떠받치는 힘</li>
+                <li>물에 뜬 튜브 : 부력 = 중력</li>
+                <li>문 고정 장치 : 문이 닫히려는 힘 = 마찰력</li>
+            </ul>
+            <h3 style="margin-top:16px">장난감 잠수함 (p.181)</h3>
+            <p>풍선에 공기를 넣으면 집기병 속 물이 빠져나가 <b>부력 &gt; 무게</b>가 되어 뜬다. 가라앉아 있을 때는 부력 &lt; 무게.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>힘의 종류별 이용 (p.182~183)</h3>
+            <table class="t" style="font-size:25px">
+                <tr><td>마찰력</td><td>아기 양말 바닥 고무, 병따개 고무 (미끄럼 방지). 윤활유로 줄임</td></tr>
+                <tr><td>부력</td><td>수중 카메라를 부피 큰 가벼운 물체로 감쌈</td></tr>
+                <tr><td>탄성력</td><td>키보드 용수철, 자전거 안장 용수철 (충격 흡수)</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10 === -->
+<section class="slide">
+    <div class="kicker">꼭 외울 것</div>
+    <h2>핵심 암기 4가지</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>힘</b> = 모양·운동 상태(속력, 운동 방향) 변화의 원인. 3요소 : <b>크기·방향·작용점</b>. 단위 N.</li>
+                <li><b>평형</b> = 같은 크기, 반대 방향, 같은 직선. <b>알짜힘</b> = 힘의 합 (같은 방향 합, 반대 차). 알짜힘 0 → 운동 상태 불변.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>중력</b>(방향 : 지구 중심), <b>무게</b>(N, 장소에 따라 변함) vs <b>질량</b>(kg, 불변). 달 중력 = 지구의 1/6. 1 kg = 9.8 N.</li>
+                <li><b>탄성력</b> : 되돌아가려는 방향, 변형 길이에 비례. <b>마찰력</b> : 운동 반대, 무게·거칠기 클수록 큼. <b>부력</b> : 위쪽, 잠긴 부피 클수록 큼.</li>
+            </ul>
+        </div>
+    </div>
+    <table class="t reveal" style="margin-top:24px">
+        <tr><th style="width:24%">계산</th><th>방법</th></tr>
+        <tr><td>달에서의 무게</td><td>지구에서의 무게의 <b>1/6</b> (300 g 사과 : 2.94 N → 0.49 N)</td></tr>
+        <tr><td>탄성력</td><td>늘어난 길이에 <b>비례</b> (2 cm에 1 N이면 4 cm에 2 N, 6 cm에 3 N)</td></tr>
+        <tr><td>부력</td><td>물에 잠기기 전 값 − 잠겼을 때 값</td></tr>
+        <tr><td>알짜힘</td><td>같은 방향이면 합, 반대 방향이면 차 (단위 N)</td></tr>
+    </table>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>구분하기와 자주 하는 오해</h2>
+    <div class="grid g2">
+        <table class="t reveal" style="font-size:25px">
+            <tr><th>구분</th><th>무게</th><th>질량</th></tr>
+            <tr><td>뜻</td><td>중력의 크기</td><td>고유한 양</td></tr>
+            <tr><td>단위</td><td>N</td><td>kg, g</td></tr>
+            <tr><td>달에서</td><td>지구의 약 1/6</td><td>변하지 않음</td></tr>
+            <tr><td>알짜힘 0</td><td colspan="2">정지 또는 일정한 속력·방향으로 운동</td></tr>
+        </table>
+        <div class="card warn reveal">
+            <h3>이렇게 오해하지 말자</h3>
+            <ul class="l" style="font-size:25px">
+                <li>달에 가면 질량이 줄어든다 (X) → 무게만 1/6.</li>
+                <li>마찰력은 운동 방향과 같다 (X) → <b>반대</b>.</li>
+                <li>탄성력은 늘어난 길이에 반비례 (X) → <b>비례</b>.</li>
+                <li>부력은 물속에서만 (X) → 기체 속에서도.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12 === -->
+<section class="slide">
+    <div class="kicker">시험 포인트</div>
+    <h2>이렇게 나온다</h2>
+    <div class="grid g3">
+        <div class="card hl reveal">
+            <h3>합답</h3>
+            <ul class="l">
+                <li>힘의 3요소·평형 조건</li>
+                <li>무게/질량 비교(표)</li>
+                <li>탄성력 그래프</li>
+                <li>마찰력 실험 비교</li>
+                <li>부력 측정값 해석</li>
+                <li>운동 방향과 알짜힘 관계</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>계산 (단위 포함)</h3>
+            <ul class="l">
+                <li>용수철 늘어난 길이·탄성력 비례</li>
+                <li>달에서의 무게 (1/6)</li>
+                <li>부력 = 공기 중 값 − 물속 값</li>
+                <li>알짜힘 (합·차)</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>서술형</h3>
+            <ul class="l">
+                <li>'중력·부력·잠긴 부피' : 배가 뜨는 까닭</li>
+                <li>'알짜힘·마찰력' : 굴러가던 공이 멈춤</li>
+                <li>힘의 이용 장치의 까닭</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px"><h3>마지막 점검</h3><p>계산 답에 <b>단위(N, cm 등)</b>를 붙였는가? 힘의 방향을 함께 썼는가?</p></div>
+    <div class="pg">12</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 12</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+</body>
+</html>

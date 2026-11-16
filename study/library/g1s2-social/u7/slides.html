@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인간과 사회생활 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --bg: #14301f;
+    --bg-2: #1c4029;
+    --bg-3: #0f2517;
+    --ink: #f3ead3;
+    --ink-dim: #c9c3a8;
+    --brass: #c9a24b;
+    --warn: #e08a6a;
+    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0a1a10;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 84px;
+    font-size: 27px;
+    line-height: 1.5;
+    background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
+        var(--bg);
+}
+.slide::before {
+    content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none;
+}
+.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
+.card.warn { border-color: rgba(224,138,106,.6); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
+table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+.g4 .card, .g5 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+.svgbox { text-align: center; }
+.svgbox svg { width: 100%; height: auto; }
+
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
+.cover .kicker { font-size: 30px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
+.cover h1 span { color: var(--brass); }
+.cover p { font-size: 34px; color: var(--ink-dim); }
+.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+    .slide::before { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 20px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr; }
+    .card, .g4 .card, .g5 .card { padding: 14px 16px; font-size: 17px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1. 표지 === -->
+<section class="slide cover active">
+    <div class="kicker reveal">1학년 2학기 사회 · 7단원 요약 정리</div>
+    <h1 class="reveal">인간과 <span>사회생활</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">사회화와 자아 정체성 · 사회적 지위와 역할 · 사회의 갈등과 차별</p>
+</section>
+
+<!-- === 2. 단원 개요 === -->
+<section class="slide">
+    <div class="kicker">단원 개요</div>
+    <h2>사회 속에서 살아가는 인간 <small>교과서 p.126~143</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>단원 구성</h3>
+            <ul class="l">
+                <li><span class="tag">01</span><b>사회화와 자아 정체성</b> (p.128~131)</li>
+                <li><span class="tag">02</span><b>사회적 지위와 역할</b> (p.132~135)</li>
+                <li><span class="tag">03</span><b>우리 사회의 갈등과 차별</b> (p.136~141)</li>
+                <li><span class="tag">마무리</span>단원 마무리 (p.142~143)</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>핵심 질문</h3>
+            <ul class="l">
+                <li>인간은 어떻게 <b>사회적 존재</b>로 성장하는가?</li>
+                <li>사회 속에서 나는 어떤 <b>지위</b>와 <b>역할</b>을 갖는가?</li>
+                <li>집단 사이의 <b>편견·차별</b>은 왜 생기고 어떻게 해결하는가?</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>공부 방법 (일반사회 단원)</h3>
+        <p>사례(대화·기사·학생 발언)를 읽고 <b>알맞은 개념을 고르는</b> 방식으로 나온다. 개념의 뜻과 구분 기준을 정확히 익힌다.</p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3. 사회화의 의미 === -->
+<section class="slide">
+    <div class="kicker">01 사회화와 자아 정체성</div>
+    <h2>사회화의 의미 <small>p.129</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>본능과 사회에서 익힌 방식</h3>
+            <ul class="l">
+                <li>인간은 배고픔·반가움 같은 <b>본능적 욕구와 감정</b>을 갖는다.</li>
+                <li>그러나 이를 표현하는 방식은 자신이 속한 사회에서 익힌 <b>관습과 규범</b>을 따른다.</li>
+            </ul>
+            <h3 style="margin-top:20px">사회화</h3>
+            <p>한 개인이 다른 사람들과 <b>상호 작용</b>하며 사회 구성원으로 살아가는 데 필요한 <b>언어, 규범, 지식, 가치관</b> 등을 배워 나가는 과정. 사회화를 거치며 사회적 존재로 성장한다.</p>
+        </div>
+        <div class="card reveal">
+            <h3>용어 풀이</h3>
+            <ul class="l">
+                <li><b>관습</b> : 어떤 사회에서 오랫동안 지켜 내려와 구성원들이 널리 인정하는 질서나 풍습</li>
+                <li><b>규범</b> : 인간이 행동하거나 판단할 때 마땅히 따르고 지켜야 할 가치 판단의 기준</li>
+                <li><b>상호 작용</b> : 둘 이상의 구성원이나 집단이 서로 영향을 주고받는 과정</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4. 사회화의 기능 === -->
+<section class="slide">
+    <div class="kicker">01 사회화와 자아 정체성</div>
+    <h2>사회화의 기능 <small>p.129 · 개인적 / 사회적</small></h2>
+    <table class="t reveal">
+        <tr><th style="width:18%">차원</th><th>기능</th></tr>
+        <tr><td>개인적</td><td>사회생활에 필요한 행동 양식과 규범을 익히고 <b>사회에 적응</b>해 구성원으로 성장한다. 자신만의 <b>독특한 개성과 자아</b>를 형성한다. 어느 사회에서 성장했는지에 따라 사람의 특성이 달라질 수 있다.</td></tr>
+        <tr><td>사회적</td><td>구성원이 한 사회의 규범과 가치를 <b>공유</b>하게 하고, 이를 <b>다음 세대에 전달</b>해 사회를 유지·발전시킨다.</td></tr>
+    </table>
+    <div class="card hl reveal" style="margin-top:28px">
+        <b>구분 요령</b> '적응·개성·자아 형성' → 개인적 기능 / '규범·가치 공유, 다음 세대에 전달, 사회 유지·발전' → 사회적 기능
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5. 사회화 과정과 기관 === -->
+<section class="slide">
+    <div class="kicker">01 사회화와 자아 정체성</div>
+    <h2>사회화 과정과 사회화 기관 <small>p.130</small></h2>
+    <div class="card reveal" style="margin-bottom:22px">
+        사회화는 특정 시기가 아니라 <b>일생에 걸쳐</b> 이루어지며, 가정·또래 집단·학교·직장·미디어 같은 <b>사회화 기관</b>의 영향을 받는다.
+    </div>
+    <div class="grid g4 reveal">
+        <div class="card step"><span class="no">1</span><br><h3>유아기 · 가정</h3>언어를 포함한 <b>기초적인 생활 습관</b>을 배운다.</div>
+        <div class="card step"><span class="no">2</span><br><h3>아동기 · 또래 집단</h3>놀이하며 다른 사람과 함께 생활하는 데 필요한 <b>태도와 규칙</b>을 배운다.</div>
+        <div class="card step"><span class="no">3</span><br><h3>청소년기 · 학교</h3>사회생활에 필요한 <b>지식·기술·규범·가치</b>를 체계적으로 배운다.</div>
+        <div class="card step"><span class="no">4</span><br><h3>성인 · 직장 등</h3>새로운 <b>지식과 기술, 삶의 태도</b>를 배운다.</div>
+    </div>
+    <div class="card hl reveal" style="margin-top:22px">
+        <b>미디어</b>에서도 생활에 필요한 지식과 정보를 얻으며 사회화가 이루어진다.
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6. 자아 정체성 === -->
+<section class="slide">
+    <div class="kicker">01 사회화와 자아 정체성</div>
+    <h2>자아 정체성과 미디어 <small>p.130</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>자아 정체성</h3>
+            <p>다양한 사회적 관계에서 다른 사람들과 구별되는 <b>자신만의 고유성</b>을 깨닫고, 자신의 성격·가치관·관심 영역 등을 분명하게 이해한 상태. 사회화 과정을 거치며 형성한다.</p>
+            <h3 style="margin-top:20px">건전한 자아 정체성</h3>
+            <p>자신의 <b>현재 모습을 점검</b>하고 앞으로 어떤 삶을 살고 싶은지 <b>끊임없이 탐색</b>한다.</p>
+        </div>
+        <div class="card reveal">
+            <h3>미디어의 영향</h3>
+            <ul class="l">
+                <li>미디어의 영향력이 점차 <b>커지고</b> 있다.</li>
+                <li><b>긍정</b> : 인상 깊은 모습을 본보기로 삼아 건전한 자아 정체성 형성의 <b>계기</b>가 되기도 한다.</li>
+                <li><b>부정</b> : 이상적인 미의 기준으로 삼아 무리한 감량을 하는 등 부정적 영향도 줄 수 있다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card hl reveal" style="margin-top:24px">
+        <b>자세</b> 미디어 정보를 <b>비판적으로 검토·분별해</b> 받아들이는 자세가 필요하다.
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7. 사회적 지위 === -->
+<section class="slide">
+    <div class="kicker">02 사회적 지위와 역할</div>
+    <h2>사회적 지위 <small>p.133</small></h2>
+    <div class="card reveal" style="margin-bottom:22px">
+        <b>사회적 지위</b> : 한 개인이 자신이 속한 사회나 집단 내에서 가지는 <b>위치</b>.
+    </div>
+    <table class="t reveal">
+        <tr><th style="width:17%">구분</th><th style="width:45%">뜻</th><th>예</th></tr>
+        <tr><td>귀속 지위</td><td>개인의 의지와 노력에 상관없이 <b>태어나면서부터</b> 갖게 되는 지위</td><td>아들, 오빠, 신분 (지도서: 아들·딸·오빠·여동생)</td></tr>
+        <tr><td>성취 지위</td><td>개인의 <b>선택이나 노력</b>으로 갖는 지위</td><td>학생, 선생님, 직업</td></tr>
+    </table>
+    <div class="card hl reveal" style="margin-top:24px">
+        <b>변화</b> 전통 사회에서는 신분 같은 <b>귀속 지위</b>의 영향력이 컸으나, 현대 사회에서는 직업 같은 <b>성취 지위</b>의 중요성이 커졌다.
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8. 사회적 역할 === -->
+<section class="slide">
+    <div class="kicker">02 사회적 지위와 역할</div>
+    <h2>사회적 역할 <small>p.133</small></h2>
+    <div class="card hl reveal" style="margin-bottom:22px">
+        <b>사회적 역할</b> : 사회적 지위에 따라 사회적으로 <b>기대되는 행동 양식</b>.
+    </div>
+    <div class="grid g2">
+        <div class="card reveal">
+            <h3>역할 수행의 모습</h3>
+            <ul class="l">
+                <li>같은 역할이라도 수행 방식은 <b>개인마다</b> 다를 수 있고 사회적 평가도 달라질 수 있다.</li>
+                <li>충실히 수행하면 <b>보상</b>, 제대로 수행하지 못하면 <b>비난이나 처벌 등 제재</b>를 받기도 한다.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>역할이 달라지는 까닭</h3>
+            <ul class="l">
+                <li>개인의 특성뿐 아니라 <b>개인이 속한 사회의 특성</b>에 따라 차이가 난다.</li>
+                <li><b>사회 변화</b>에 따라 기존 지위에 기대되는 역할의 내용이 바뀌기도 한다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9. 역할 갈등 === -->
+<section class="slide">
+    <div class="kicker">02 사회적 지위와 역할</div>
+    <h2>역할 갈등과 대응 방안 <small>p.134~135</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>역할 갈등</h3>
+            <p>사람은 여러 집단에 동시에 속해 <b>여러 지위·역할</b>을 갖는다. 이 역할들이 서로 <b>충돌</b>해 어떤 역할을 우선 수행할지 갈등을 겪는 것.</p>
+            <ul class="l" style="margin-top:12px">
+                <li>원만히 해결하지 못하면 심리적 불안, 사회적 관계 악화 등 혼란에 빠질 수 있다.</li>
+                <li>사회가 복잡해질수록 지위가 많아져 역할 갈등도 많아진다. 누구나 겪을 수 있다.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>대응 방안</h3>
+            <ul class="l">
+                <li><span class="tag">개인</span>갈등의 <b>원인을 명확히</b> 하고 <b>우선순위</b>를 고려해 <b>중요한 것부터</b> 수행한다.</li>
+                <li><span class="tag">개인</span>여러 역할의 중요성을 비교해 타협점을 찾고, 관련된 사람들과 <b>대화로 이해</b>를 구한다.</li>
+                <li><span class="tag">사회</span>여러 사람이 비슷한 갈등을 겪으면 <b>제도 변화</b>가 필요하다. (예 : 직장 내 보육 시설 확충, 늘봄학교·근로 시간 단축·육아 휴직 제도 확대)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3>헷갈리지 말 것</h3>
+        <p>'중요하지 <b>않은</b> 것부터 수행한다'는 틀린 내용이다. 중요한 것부터 수행한다.</p>
+    </div>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10. 내집단·외집단·편견·차별 === -->
+<section class="slide">
+    <div class="kicker">03 우리 사회의 갈등과 차별</div>
+    <h2>내집단·외집단, 편견과 차별 <small>p.137~138</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>사회 집단</h3>
+            <p>두 명 이상이 모여 소속감을 갖고 지속적으로 상호 작용하는 집단.</p>
+            <ul class="l" style="margin-top:10px">
+                <li><b>내집단</b> : 자신이 속해 있으면서 소속감과 안정감을 느끼는 집단.</li>
+                <li><b>외집단</b> : 소속되어 있지 않고 소속감을 느끼지 않는 집단.</li>
+                <li>사람들은 외집단보다 내집단 구성원에 대해 정보를 <b>더 많이</b> 갖고 <b>더 긍정적인</b> 감정을 느낀다.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>편견 → 차별</h3>
+            <ul class="l">
+                <li><b>편견</b> : 공정하지 못하고 한쪽으로 치우친 생각. 낯선 외집단을 만나 부족한 정보로 빠르게 판단하다 생긴다.</li>
+                <li><b>차별</b> : 부정적 편견이 있는 집단에 속한다는 이유만으로 개인을 부정적으로 평가하며 <b>부당하게 대우</b>하는 것.</li>
+                <li><b>고정 관념</b> : 잘 변하지 않는 의식, 또는 어떤 집단 사람들에 대한 지나치게 일반화된 생각.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card hl reveal" style="margin-top:24px">
+        <b>흐름</b> 외집단과의 만남 → 부족한 정보 → <b>편견</b> → <b>차별</b>. 차별로 이어지기 쉬운 편견을 극복하려는 노력이 필요하다.
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11. 갈등과 차별 문제 === -->
+<section class="slide">
+    <div class="kicker">03 우리 사회의 갈등과 차별</div>
+    <h2>우리 사회의 갈등과 차별 <small>p.138</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>갈등과 차별의 영향</h3>
+            <ul class="l">
+                <li>여러 집단이 서로 다른 가치를 추구하거나 경쟁하는 과정에서 <b>갈등</b>을 겪을 수 있다.</li>
+                <li>사회는 갈등을 <b>합리적으로 조정·해결</b>하는 과정에서 발전한다.</li>
+                <li>구성원을 차별하는 행위나 그로 인한 갈등은 구성원 간 <b>신뢰를 약화</b>하고 <b>소통을 어렵게</b> 한다.</li>
+                <li>편견과 차별이 나타나는 곳에서는 누구도 <b>자유와 안전</b>을 보장받기 어렵다.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>주요 차별 문제</h3>
+            <ul class="l">
+                <li><b>외국인 차별</b> : 국적·인종이 다르다는 이유로 낮은 임금·열악한 환경.</li>
+                <li><b>성차별</b> : 성 역할 편견·고정 관념이 차별로 이어짐.</li>
+                <li><b>장애인 차별</b> : 고용 차별, 이동권 미보장.</li>
+                <li><b>지역 차별</b> 등.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12. 시민의 자질 === -->
+<section class="slide">
+    <div class="kicker">03 우리 사회의 갈등과 차별</div>
+    <h2>갈등과 차별에 대처하는 시민의 자질 <small>p.139</small></h2>
+    <table class="t reveal">
+        <tr><th style="width:21%">자질</th><th>내용</th></tr>
+        <tr><td>다름을 이해하기</td><td>내가 속하지 않은 집단 구성원과 만나 이야기하고 협력해 보기, 다른 사람에 관한 책·영화·다큐멘터리 보기 → <b>편견이 줄어든다</b>.</td></tr>
+        <tr><td>갈등과 차별에 대응하기</td><td>집단 간 이해관계 차이로 갈등이 생기면 서로의 차이를 <b>존중하며 조정</b>한다. 차별을 찾아내고 <b>문제를 제기</b>할 수 있는 시민 의식을 갖는다.</td></tr>
+    </table>
+    <div class="grid g3 reveal" style="margin-top:24px">
+        <div class="card"><h3>외국인 차별</h3>외교부와 유네스코가 인종 차별 반대 활동으로 시민 참여 유도</div>
+        <div class="card"><h3>성차별</h3>직장에서 성차별적 언행 <b>예방 교육</b></div>
+        <div class="card"><h3>장애인 차별</h3>버스 경사판 등 <b>범용 디자인</b> 적용 공공시설 확대</div>
+    </div>
+    <div class="card hl reveal" style="margin-top:24px">
+        <b>범용 디자인(유니버설 디자인)</b> 성별·연령·국적·장애 유무와 상관없이 누구나 손쉽게 쓸 수 있는 제품과 사용 환경을 만드는 디자인
+    </div>
+    <div class="pg">12</div>
+</section>
+
+<!-- === 13. 꼭 기억할 것 === -->
+<section class="slide">
+    <div class="kicker">꼭 기억할 것</div>
+    <h2>핵심 암기 정리</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>사회화</b> = 상호 작용하며 언어·규범·지식·가치관을 배우는 과정. 기능 : 개인(적응·개성·자아) / 사회(규범·가치 공유, 다음 세대 전달).</li>
+                <li><b>사회화 기관</b> : 유아기 가정 → 아동기 또래 집단 → 청소년기 학교 → 성인 직장 등. 미디어도 영향.</li>
+                <li><b>자아 정체성</b> = 자신만의 고유성을 깨닫고 성격·가치관·관심을 이해한 상태. 미디어는 비판적으로 받아들인다.</li>
+                <li><b>귀속 지위</b>(태어날 때부터) / <b>성취 지위</b>(선택·노력).</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>사회적 역할</b> = 지위에 따라 기대되는 행동 양식. 사회 변화에 따라 내용이 바뀐다.</li>
+                <li><b>역할 갈등</b> = 여러 역할이 충돌. 개인은 원인 파악·<b>중요한 것부터</b>, 사회는 <b>제도 변화</b>.</li>
+                <li><b>내집단 / 외집단</b>, <b>편견</b>(치우친 생각) → <b>차별</b>(부당한 대우).</li>
+                <li>시민의 자질 : <b>다름을 이해</b>하기, 갈등·차별에 <b>대응</b>하기. 장애인 차별 → <b>범용 디자인</b>.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">13</div>
+</section>
+
+<!-- === 14. 헷갈리기 쉬운 것 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>구분하기와 자주 하는 오해</h2>
+    <div class="grid g2" style="grid-template-columns:1.25fr 1fr">
+        <table class="t reveal" style="font-size:25px">
+            <tr><th>구분</th><th>A</th><th>B</th></tr>
+            <tr><td>귀속 vs 성취 지위</td><td>태어나면서부터 (아들·오빠·신분)</td><td>선택·노력으로 (학생·직업)</td></tr>
+            <tr><td>사회화의 기능</td><td>개인적 : 적응·개성·자아 형성</td><td>사회적 : 규범 공유·다음 세대 전달</td></tr>
+            <tr><td>내집단 vs 외집단</td><td>소속감·안정감을 느끼는 집단</td><td>소속되지 않고 소속감이 없는 집단</td></tr>
+            <tr><td>편견 vs 차별</td><td>치우친 <b>생각</b></td><td>부당하게 대우하는 <b>행위</b></td></tr>
+        </table>
+        <div class="card warn reveal">
+            <h3>이렇게 오해하지 말자</h3>
+            <ul class="l" style="font-size:25px">
+                <li>역할 갈등은 중요하지 않은 것부터 해결 (X) → <b>중요한 것부터</b>.</li>
+                <li>사회화는 청소년기까지만 (X) → <b>일생에 걸쳐</b> 이루어진다.</li>
+                <li>미디어는 그대로 믿는다 (X) → <b>비판적으로 검토·분별</b>.</li>
+                <li>역할 갈등은 특별한 사람만 겪는다 (X) → 누구나 겪을 수 있다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">14</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 14</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+</body>
+</html>

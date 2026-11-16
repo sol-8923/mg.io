@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>좌표평면과 그래프 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --bg: #14301f;
+    --bg-2: #1c4029;
+    --bg-3: #0f2517;
+    --ink: #f3ead3;
+    --ink-dim: #c9c3a8;
+    --brass: #c9a24b;
+    --warn: #e08a6a;
+    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0a1a10;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 84px;
+    font-size: 27px;
+    line-height: 1.5;
+    background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
+        var(--bg);
+}
+.slide::before { content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none; }
+.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
+.card.warn { border-color: rgba(224,138,106,.6); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+.fm { font-family: var(--font-display); font-weight: 700; font-size: 44px; text-align: center; color: var(--ink); background: var(--bg-3); border: 1px solid rgba(201,162,75,.5); border-radius: 10px; padding: 12px 18px; margin: 10px 0; }
+.fig { display: block; margin: 0 auto; }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
+table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+.g5 .card, .g4 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
+.cover .kicker { font-size: 30px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
+.cover h1 span { color: var(--brass); }
+.cover p { font-size: 34px; color: var(--ink-dim); }
+.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면) === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+    .slide::before { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 20px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr; }
+    .card, .g5 .card, .g4 .card { padding: 14px 16px; font-size: 17px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .fm { font-size: 24px; }
+    .fig { width: 100%; height: auto; }
+    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1. 표지 === -->
+<section class="slide cover active">
+    <div class="kicker reveal">1학년 2학기 수학 · 4단원 요약 정리</div>
+    <h1 class="reveal">좌표평면과 <span>그래프</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">순서쌍과 좌표 · 그래프 · 정비례 · 반비례</p>
+</section>
+
+<!-- === 2. 단원 개요 === -->
+<section class="slide">
+    <div class="kicker">단원 개요</div>
+    <h2>점을 나타내고, 관계를 그린다 <small>교과서 p.108~137</small></h2>
+    <div class="grid g4">
+        <div class="card hl step reveal"><span class="no">1</span><br><h3>4.1 순서쌍과 좌표</h3>순서쌍·좌표로 평면 위의 점을 나타낸다. <span class="ref">p110</span></div>
+        <div class="card hl step reveal"><span class="no">2</span><br><h3>4.2 그래프</h3>상황을 그래프로 나타내고 읽는다. <span class="ref">p114</span></div>
+        <div class="card hl step reveal"><span class="no">3</span><br><h3>4.3 정비례</h3>표·식·그래프로 나타낸다. <b>y=ax</b> <span class="ref">p120</span></div>
+        <div class="card hl step reveal"><span class="no">4</span><br><h3>4.4 반비례</h3>표·식·그래프로 나타낸다. <b>y=a/x</b> <span class="ref">p126</span></div>
+    </div>
+    <div class="card reveal" style="margin-top:28px">
+        <h3>용어 한눈에 보기</h3>
+        <p><b>좌표</b> 수직선 위 점에 대응하는 수 · <b>순서쌍</b> 순서를 정해 짝 지은 두 수 · <b>변수</b> 변하는 값을 나타내는 문자 · <b>그래프</b> 변화나 상태를 좌표평면 위에 점·직선·곡선으로 나타낸 그림</p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3. 순서쌍과 좌표 === -->
+<section class="slide">
+    <div class="kicker">4.1 순서쌍과 좌표</div>
+    <h2>수직선에서 좌표평면으로 <small>p110~111</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>수직선 위의 좌표</h3>
+            <ul class="l">
+                <li>점에 대응하는 수를 그 점의 <b>좌표</b>라 한다.</li>
+                <li>수 a가 점 P의 좌표이면 <b>P(a)</b>로 쓴다.</li>
+            </ul>
+            <h3 style="margin-top:20px">순서쌍</h3>
+            <ul class="l">
+                <li>두 수의 순서를 정하여 짝 지은 것.</li>
+                <li>(18, 79)와 (79, 18)은 <b>순서가 다르다</b> → 다른 순서쌍.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>좌표평면의 구성 요소</h3>
+            <ul class="l">
+                <li>두 수직선을 점 O에서 수직으로 만나게 그린다.</li>
+                <li><b>x축</b>(가로), <b>y축</b>(세로) → 통틀어 <b>좌표축</b></li>
+                <li>만나는 점 O = <b>원점</b>, 좌표축이 정해진 평면 = <b>좌표평면</b></li>
+                <li>점 P의 좌표 <b>P(a, b)</b>: a는 <b>x좌표</b>, b는 <b>y좌표</b></li>
+                <li>원점은 (0, 0)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card hl reveal">
+            <h3>좌표축 위의 점</h3>
+            <p><b>x축 위의 점</b> → y좌표가 <b>0</b><br><b>y축 위의 점</b> → x좌표가 <b>0</b></p>
+        </div>
+        <div class="card warn reveal">
+            <h3>헷갈리지 말 것</h3>
+            <p>(a, b)와 (b, a)를 같은 점으로 생각하지 않는다. 순서가 바뀌면 <b>다른 점</b>이다.</p>
+        </div>
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4. 사분면 === -->
+<section class="slide">
+    <div class="kicker">4.1 순서쌍과 좌표</div>
+    <h2>사분면과 좌표의 부호 <small>p112</small></h2>
+    <div class="grid g2" style="grid-template-columns:600px 1fr;align-items:center">
+        <div class="card reveal">
+            <svg class="fig" viewBox="0 0 560 480" width="560" height="480" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR,sans-serif">
+                <line x1="10" y1="240" x2="550" y2="240" stroke="#c9c3a8" stroke-width="3"/>
+                <line x1="280" y1="10" x2="280" y2="470" stroke="#c9c3a8" stroke-width="3"/>
+                <text x="526" y="272" fill="#f3ead3" font-size="26">x</text>
+                <text x="294" y="34" fill="#f3ead3" font-size="26">y</text>
+                <text x="250" y="268" fill="#c9c3a8" font-size="22">O</text>
+                <text x="360" y="130" fill="#c9a24b" font-size="28" text-anchor="middle" font-weight="700">제1사분면</text>
+                <text x="360" y="166" fill="#f3ead3" font-size="26" text-anchor="middle">(+, +)</text>
+                <text x="200" y="130" fill="#c9a24b" font-size="28" text-anchor="middle" font-weight="700">제2사분면</text>
+                <text x="200" y="166" fill="#f3ead3" font-size="26" text-anchor="middle">(−, +)</text>
+                <text x="200" y="350" fill="#c9a24b" font-size="28" text-anchor="middle" font-weight="700">제3사분면</text>
+                <text x="200" y="386" fill="#f3ead3" font-size="26" text-anchor="middle">(−, −)</text>
+                <text x="360" y="350" fill="#c9a24b" font-size="28" text-anchor="middle" font-weight="700">제4사분면</text>
+                <text x="360" y="386" fill="#f3ead3" font-size="26" text-anchor="middle">(+, −)</text>
+            </svg>
+        </div>
+        <div>
+            <div class="card hl reveal">
+                <h3>사분면별 (x좌표, y좌표)의 부호</h3>
+                <table class="t">
+                    <tr><th>사분면</th><th>x좌표</th><th>y좌표</th></tr>
+                    <tr><td>제1사분면</td><td>+</td><td>+</td></tr>
+                    <tr><td>제2사분면</td><td>−</td><td>+</td></tr>
+                    <tr><td>제3사분면</td><td>−</td><td>−</td></tr>
+                    <tr><td>제4사분면</td><td>+</td><td>−</td></tr>
+                </table>
+            </div>
+            <div class="card warn reveal" style="margin-top:20px">
+                <h3>주의</h3>
+                <p>좌표축은 평면을 네 부분으로 나눈다. <b>좌표축 위의 점은 어느 사분면에도 속하지 않는다.</b></p>
+            </div>
+        </div>
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5. 그래프 === -->
+<section class="slide">
+    <div class="kicker">4.2 그래프의 뜻과 표현</div>
+    <h2>그래프 읽기 <small>p115~117, p133</small></h2>
+    <div class="grid g2" style="grid-template-columns:1fr 640px;align-items:center">
+        <div>
+            <div class="card hl reveal">
+                <h3>그래프란</h3>
+                <p>여러 가지 상황이나 자료를 분석하여 <b>변화나 상태를 한눈에</b> 알아볼 수 있도록 좌표평면 위에 점, 직선, 곡선 등으로 나타낸 그림.</p>
+            </div>
+            <div class="card reveal" style="margin-top:20px">
+                <h3>읽는 방법</h3>
+                <ul class="l">
+                    <li>시간에 따라 변하는 높이·이동 거리 등을 그래프로 나타낸다.</li>
+                    <li><b>증가</b>·<b>일정</b>·<b>감소</b> 구간을 구분해 읽는다.</li>
+                    <li>거리-시간 그래프에서 <b>수평 구간은 멈춰 있는 구간</b>이다.</li>
+                    <li>반복되는 모양이 있으면 <b>반복되는 모양과 그 횟수</b>를 찾는다.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card reveal">
+            <svg class="fig" viewBox="0 0 580 460" width="580" height="460" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR,sans-serif">
+                <line x1="50" y1="410" x2="560" y2="410" stroke="#c9c3a8" stroke-width="3"/>
+                <line x1="50" y1="30" x2="50" y2="410" stroke="#c9c3a8" stroke-width="3"/>
+                <text x="500" y="446" fill="#f3ead3" font-size="24">시간</text>
+                <text x="60" y="30" fill="#f3ead3" font-size="24">거리</text>
+                <polyline points="50,410 190,230 340,230 480,90" fill="none" stroke="#c9a24b" stroke-width="5"/>
+                <polyline points="480,90 545,160" fill="none" stroke="#e08a6a" stroke-width="5"/>
+                <text x="70" y="290" fill="#f3ead3" font-size="24">증가</text>
+                <text x="225" y="212" fill="#f3ead3" font-size="24">일정(멈춤)</text>
+                <text x="400" y="190" fill="#f3ead3" font-size="24">증가</text>
+                <text x="470" y="200" fill="#e08a6a" font-size="24">감소</text>
+            </svg>
+            <p class="dim" style="text-align:center">모양을 설명하기 위한 예시 그림</p>
+        </div>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6. 정비례 === -->
+<section class="slide">
+    <div class="kicker">4.3 정비례와 그 그래프</div>
+    <h2>정비례 y=ax <small>p120~124</small></h2>
+    <div class="grid g3" style="grid-template-columns:1fr 1fr 480px;align-items:start">
+        <div>
+            <div class="card hl reveal">
+                <h3>정비례의 뜻</h3>
+                <p><b>변수</b>(변하는 값을 나타내는 문자) x의 값이 2배, 3배, 4배, …로 변할 때 y도 2배, 3배, 4배, …로 변하면 x와 y는 <b>정비례</b>한다.</p>
+                <div class="fm">y = ax <span style="font-size:28px">(a≠0)</span></div>
+            </div>
+        </div>
+        <div>
+            <div class="card reveal">
+                <h3>그래프의 특징</h3>
+                <ul class="l">
+                    <li>x가 수 전체일 때 <b>원점을 지나는 직선</b></li>
+                    <li><b>a&gt;0</b> → 제1·3사분면</li>
+                    <li><b>a&lt;0</b> → 제2·4사분면</li>
+                    <li>|a|가 클수록 <b>y축에 가깝고</b>, 작을수록 <b>x축에 가깝다</b></li>
+                </ul>
+            </div>
+            <div class="card hl reveal" style="margin-top:20px">
+                <h3>그리는 순서</h3>
+                <p>① 원점 ② x=1일 때의 점 등 다른 한 점 ③ 두 점을 직선으로 잇는다.</p>
+            </div>
+        </div>
+        <div class="card reveal" style="padding:10px">
+            <svg class="fig" viewBox="0 0 480 440" width="460" height="422" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR,sans-serif"><line x1="10" y1="220" x2="470" y2="220" stroke="#c9c3a8" stroke-width="2"/><line x1="240" y1="10" x2="240" y2="430" stroke="#c9c3a8" stroke-width="2"/><text x="454" y="248" fill="#f3ead3" font-size="24">x</text><text x="250" y="28" fill="#f3ead3" font-size="24">y</text><text x="216" y="246" fill="#c9c3a8" font-size="22">O</text><line x1="173" y1="422" x2="307" y2="18" stroke="#e08a6a" stroke-width="4"/><line x1="38" y1="422" x2="442" y2="18" stroke="#c9a24b" stroke-width="4"/><line x1="29" y1="290" x2="451" y2="150" stroke="#f3ead3" stroke-width="4"/><line x1="38" y1="18" x2="442" y2="422" stroke="#8fb3d9" stroke-width="4" stroke-dasharray="8 6"/><text x="308" y="40" fill="#e08a6a" font-size="24">y=3x</text><text x="386" y="36" fill="#c9a24b" font-size="24">y=x</text><text x="381" y="145" fill="#f3ead3" font-size="24">y=⅓x</text><text x="385" y="396" fill="#8fb3d9" font-size="24">y=−x</text></svg>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:20px">
+        <b>오해 주의</b> y=x+1처럼 x가 늘 때 y도 느는 관계를 모두 정비례라고 하지 않는다. 정비례는 <b>y=ax</b> 꼴이며 <b>y/x의 값이 일정(=a)</b>하다.
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7. 반비례 === -->
+<section class="slide">
+    <div class="kicker">4.4 반비례와 그 그래프</div>
+    <h2>반비례 y=a/x <small>p126~129, p133</small></h2>
+    <div class="grid g3" style="grid-template-columns:1fr 1fr 480px;align-items:start">
+        <div>
+            <div class="card hl reveal">
+                <h3>반비례의 뜻</h3>
+                <p>x의 값이 2배, 3배, 4배, …로 변할 때 y의 값이 <b>1/2배, 1/3배, 1/4배, …</b>로 변하면 x와 y는 <b>반비례</b>한다.</p>
+                <div class="fm">y = a/x <span style="font-size:28px">(a≠0)</span></div>
+                <p>반비례하면 <b>xy의 값이 항상 일정</b>(=a)하다.</p>
+            </div>
+        </div>
+        <div>
+            <div class="card reveal">
+                <h3>그래프의 특징</h3>
+                <ul class="l">
+                    <li>x가 0을 제외한 수 전체일 때, 두 좌표축에 점점 가까워지며 한없이 뻗는 <b>한 쌍의 매끄러운 곡선</b></li>
+                    <li>좌표축과는 <b>만나지 않는다</b></li>
+                    <li><b>a&gt;0</b> → 제1·3사분면, <b>a&lt;0</b> → 제2·4사분면</li>
+                </ul>
+            </div>
+            <div class="card hl reveal" style="margin-top:20px">
+                <h3>정수 좌표인 점 (응용)</h3>
+                <p>x·y좌표가 모두 정수인 점은 <b>a의 약수끼리 짝지은 쌍</b>이다. a&gt;0이면 부호가 같아 제1·3사분면에 같은 개수.</p>
+            </div>
+        </div>
+        <div class="card reveal" style="padding:10px">
+            <svg class="fig" viewBox="0 0 480 440" width="460" height="422" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR,sans-serif"><line x1="10" y1="220" x2="470" y2="220" stroke="#c9c3a8" stroke-width="2"/><line x1="240" y1="10" x2="240" y2="430" stroke="#c9c3a8" stroke-width="2"/><text x="454" y="248" fill="#f3ead3" font-size="24">x</text><text x="250" y="28" fill="#f3ead3" font-size="24">y</text><text x="216" y="246" fill="#c9c3a8" font-size="22">O</text><polyline points="277,13 284,44 306,102 328,132 372,161 416,176 447,183" fill="none" stroke="#c9a24b" stroke-width="4"/><polyline points="203,427 196,396 174,338 152,308 108,279 64,264 33,257" fill="none" stroke="#c9a24b" stroke-width="4"/><polyline points="277,427 284,396 306,338 328,308 372,279 416,264 447,257" fill="none" stroke="#e08a6a" stroke-width="4"/><polyline points="203,13 196,44 174,102 152,132 108,161 64,176 33,183" fill="none" stroke="#e08a6a" stroke-width="4"/><text x="340" y="120" fill="#c9a24b" font-size="24">y=4/x</text><text x="340" y="330" fill="#e08a6a" font-size="24">y=−4/x</text></svg>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:20px">
+        <b>오해 주의</b> 반비례 그래프가 좌표축과 만난다고 생각하지 않는다. 곡선은 축에 한없이 가까워질 뿐 <b>만나지 않는다</b>.
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8. 비교 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>정비례 vs 반비례</h2>
+    <table class="t reveal">
+        <tr><th style="width:22%">구분</th><th style="width:39%">정비례</th><th>반비례</th></tr>
+        <tr><td>식</td><td><b>y = ax</b></td><td><b>y = a/x</b></td></tr>
+        <tr><td>x가 2배일 때 y</td><td>2배</td><td>1/2배</td></tr>
+        <tr><td>그래프</td><td>원점을 지나는 <b>직선</b></td><td><b>한 쌍의 곡선</b> (좌표축과 만나지 않음)</td></tr>
+        <tr><td>일정한 값</td><td><b>y/x</b> (=a)</td><td><b>xy</b> (=a)</td></tr>
+        <tr><td>a&gt;0 / a&lt;0</td><td colspan="2">a&gt;0 이면 <b>제1·3사분면</b>, a&lt;0 이면 <b>제2·4사분면</b> (둘 다 같다)</td></tr>
+    </table>
+    <div class="grid g2" style="margin-top:26px">
+        <div class="card warn reveal">
+            <h3>자주 하는 오해</h3>
+            <ul class="l">
+                <li>(a, b)와 (b, a)를 같은 점으로 본다.</li>
+                <li>좌표축 위의 점을 어떤 사분면에 넣는다.</li>
+            </ul>
+        </div>
+        <div class="card warn reveal">
+            <h3>자주 하는 오해</h3>
+            <ul class="l">
+                <li>반비례 그래프가 좌표축과 만난다고 본다.</li>
+                <li>x가 늘 때 y도 느는 관계를 모두 정비례로 본다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9. 시험 포인트 === -->
+<section class="slide">
+    <div class="kicker">시험 포인트</div>
+    <h2>이렇게 나온다</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>좌표와 그래프</h3>
+            <ul class="l">
+                <li>좌표·사분면 판단 (합답)</li>
+                <li><b>사분면 부호</b> 조건으로 범위 구하기</li>
+                <li>좌표평면 위 <b>도형의 넓이</b></li>
+                <li>그래프 해석 (증가·일정·감소, 반복 모양)</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>정비례·반비례</h3>
+            <ul class="l">
+                <li>정비례·반비례 <b>식 구하기·판별</b></li>
+                <li>y=ax, y=a/x 그래프 위 점으로 값 구하기, 도형의 넓이</li>
+                <li>문장제 관계식 세우기</li>
+                <li>반비례 그래프 위의 <b>정수 좌표 점의 개수</b> (a의 약수 쌍 세기)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>마지막 점검</h3>
+        <p>순서쌍의 <b>순서</b>를 지켰는가? 정비례는 <b>y/x</b>, 반비례는 <b>xy</b>가 일정함을 이용했는가? a의 <b>부호</b>로 지나는 사분면을 판단했는가?</p>
+    </div>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10. 꼭 기억할 것 === -->
+<section class="slide">
+    <div class="kicker">꼭 기억할 것</div>
+    <h2>핵심 암기 5가지</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>사분면 부호</b> : 제1 (+,+), 제2 (−,+), 제3 (−,−), 제4 (+,−)</li>
+                <li><b>좌표축 위의 점</b>은 어느 사분면에도 속하지 않는다.</li>
+                <li><b>정비례 y=ax</b>의 그래프는 원점을 지나는 직선, <b>반비례 y=a/x</b>의 그래프는 한 쌍의 매끄러운 곡선.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>a&gt;0</b>이면 제1·3사분면, <b>a&lt;0</b>이면 제2·4사분면.</li>
+                <li>정비례는 <b>y/x가 일정</b>(=a), 반비례는 <b>xy가 일정</b>(=a).</li>
+                <li>원점 (0, 0) · x축 위 y좌표 0 · y축 위 x좌표 0.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">10</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 10</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+</body>
+</html>

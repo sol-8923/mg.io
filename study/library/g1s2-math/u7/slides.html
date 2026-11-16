@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>입체도형의 성질 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --bg: #14301f;
+    --bg-2: #1c4029;
+    --bg-3: #0f2517;
+    --ink: #f3ead3;
+    --ink-dim: #c9c3a8;
+    --brass: #c9a24b;
+    --warn: #e08a6a;
+    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0a1a10;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 84px;
+    font-size: 27px;
+    line-height: 1.5;
+    background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
+        var(--bg);
+}
+.slide::before { content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none; }
+.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
+.card.warn { border-color: rgba(224,138,106,.6); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+.fm { font-family: var(--font-display); font-weight: 700; font-size: 44px; text-align: center; color: var(--ink); background: var(--bg-3); border: 1px solid rgba(201,162,75,.5); border-radius: 10px; padding: 12px 18px; margin: 10px 0; }
+.fig { display: block; margin: 0 auto; }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
+table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+.g5 .card, .g4 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
+.cover .kicker { font-size: 30px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
+.cover h1 span { color: var(--brass); }
+.cover p { font-size: 34px; color: var(--ink-dim); }
+.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면) === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+    .slide::before { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 20px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr !important; }
+    .card, .g5 .card, .g4 .card { padding: 14px 16px; font-size: 17px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .fm { font-size: 24px; }
+    .fig { width: 100%; height: auto; }
+    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1. 표지 === -->
+<section class="slide cover active">
+    <div class="kicker reveal">1학년 2학기 수학 · 7단원 요약 정리</div>
+    <h1 class="reveal">입체도형의 <span>성질</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">다면체 · 회전체 · 기둥과 뿔의 겉넓이·부피 · 구</p>
+</section>
+
+<!-- === 2. 단원 개요 === -->
+<section class="slide">
+    <div class="kicker">단원 개요</div>
+    <h2>다면체에서 구까지 <small>교과서 p.208~237</small></h2>
+    <div class="grid g5">
+        <div class="card hl step reveal"><span class="no">1</span><br><b>7.1 다면체</b><br>다면체·각뿔대·정다면체 <span class="ref">p210</span></div>
+        <div class="card hl step reveal"><span class="no">2</span><br><b>7.2 회전체</b><br>회전축, 단면의 성질 <span class="ref">p215</span></div>
+        <div class="card hl step reveal"><span class="no">3</span><br><b>7.3 겉넓이</b><br>기둥·뿔의 겉넓이 <span class="ref">p219</span></div>
+        <div class="card hl step reveal"><span class="no">4</span><br><b>7.4 부피</b><br>기둥·뿔의 부피 <span class="ref">p224</span></div>
+        <div class="card hl step reveal"><span class="no">5</span><br><b>7.5 구</b><br>구의 겉넓이와 부피 <span class="ref">p229</span></div>
+    </div>
+    <div class="card reveal" style="margin-top:28px">
+        <h3>용어 한눈에 보기</h3>
+        <p><b>다면체</b> 다각형인 면으로만 둘러싸인 입체도형 · <b>회전체</b> 평면도형을 한 직선(회전축)을 축으로 1회전 시킬 때 생기는 입체도형 · <b>단면</b> 입체도형을 평면으로 자를 때 생기는 면 · <b>밑넓이</b> 한 밑면의 넓이 · <b>옆넓이</b> 옆면 전체의 넓이</p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3. 다면체 === -->
+<section class="slide">
+    <div class="kicker">7.1 다면체</div>
+    <h2>다면체와 각뿔대 <small>p210~211</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>다면체</h3>
+            <ul class="l">
+                <li>다각형인 면으로만 둘러싸인 입체도형 (각기둥, 각뿔 등)</li>
+                <li>면이 4개, 5개, 6개, …이면 각각 <b>사면체, 오면체, 육면체, …</b></li>
+                <li>다각형 = <b>면</b>, 다각형의 변 = <b>모서리</b>, 다각형의 꼭짓점 = <b>꼭짓점</b></li>
+            </ul>
+            <div class="card warn" style="margin-top:12px">
+                <b>주의</b> 원기둥·원뿔은 곡면이 있어 <b>다면체가 아니다</b>.
+            </div>
+        </div>
+        <div class="card reveal">
+            <h3>각뿔대</h3>
+            <ul class="l">
+                <li>각뿔을 밑면에 평행한 평면으로 잘랐을 때 <b>각뿔이 아닌 쪽</b></li>
+                <li>평행한 두 면 = <b>밑면</b>, 나머지 = <b>옆면</b>(사다리꼴)</li>
+                <li><b>높이</b> : 두 밑면에 수직인 선분의 길이</li>
+                <li>밑면의 모양에 따라 삼각뿔대, 사각뿔대, …</li>
+            </ul>
+            <h3 style="margin-top:14px">단면</h3>
+            <p>각뿔을 밑면에 평행하게 자른 단면은 밑면과 <b>모양이 같고 크기만 작은</b> 다각형.</p>
+        </div>
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4. 다면체의 개수 === -->
+<section class="slide">
+    <div class="kicker">7.1 다면체</div>
+    <h2>n각형 기준 면·모서리·꼭짓점의 수 <small>p214 일반화</small></h2>
+    <table class="t reveal">
+        <tr><th style="width:20%">입체도형</th><th>면</th><th>모서리</th><th>꼭짓점</th><th>옆면의 모양</th></tr>
+        <tr><td>n각기둥</td><td><b>n+2</b></td><td><b>3n</b></td><td><b>2n</b></td><td>직사각형</td></tr>
+        <tr><td>n각뿔</td><td><b>n+1</b></td><td><b>2n</b></td><td><b>n+1</b></td><td>삼각형</td></tr>
+        <tr><td>n각뿔대</td><td><b>n+2</b></td><td><b>3n</b></td><td><b>2n</b></td><td>사다리꼴</td></tr>
+    </table>
+    <div class="grid g2" style="margin-top:26px">
+        <div class="card hl reveal">
+            <h3>이해하는 방법</h3>
+            <ul class="l">
+                <li>각기둥 : 밑면 2개 + 옆면 n개 → 면 n+2</li>
+                <li>각뿔 : 밑면 1개 + 옆면 n개 → 면 n+1</li>
+                <li>각뿔대는 각기둥과 면·모서리·꼭짓점의 수가 같다.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>검산 (모서리·꼭짓점·면 관계)</h3>
+            <p>각기둥 : 2n − 3n + (n+2) = <b>2</b><br>각뿔 : (n+1) − 2n + (n+1) = <b>2</b></p>
+            <p class="dim">(꼭짓점 − 모서리 + 면 = 2 로 맞는지 확인하는 용도)</p>
+        </div>
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5. 정다면체 === -->
+<section class="slide">
+    <div class="kicker">7.1 다면체</div>
+    <h2>정다면체 5가지 <small>p212~213</small></h2>
+    <div class="card hl reveal">
+        <h3>정다면체의 조건</h3>
+        <p>① 모든 면이 <b>합동인 정다각형</b> ② 각 꼭짓점에 모인 <b>면의 개수가 같다</b>. 이를 만족하는 다면체는 <b>다섯 가지뿐</b>이다.</p>
+    </div>
+    <table class="t reveal" style="margin-top:24px">
+        <tr><th style="width:30%">면의 모양</th><th>정다면체</th></tr>
+        <tr><td>정삼각형</td><td><b>정사면체 · 정팔면체 · 정이십면체</b> (3가지)</td></tr>
+        <tr><td>정사각형</td><td><b>정육면체</b></td></tr>
+        <tr><td>정오각형</td><td><b>정십이면체</b></td></tr>
+    </table>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card reveal">
+            <h3>이름 읽는 법</h3>
+            <p>정사면체(면 4개) · 정육면체(6개) · 정팔면체(8개) · 정십이면체(12개) · 정이십면체(20개) : 이름이 곧 <b>면의 개수</b>.</p>
+        </div>
+        <div class="card warn reveal">
+            <h3>시험에서</h3>
+            <p>정다면체 5종의 <b>면의 모양</b>과 <b>한 꼭짓점에 모인 면의 개수</b>를 교과서(p212~213)의 표로 확인해 외운다.</p>
+        </div>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6. 회전체 === -->
+<section class="slide">
+    <div class="kicker">7.2 회전체</div>
+    <h2>회전체와 단면의 성질 <small>p215~217</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>회전체</h3>
+            <p>평면도형을 한 직선을 축으로 <b>1회전</b> 시킬 때 생기는 입체도형. 그 직선이 <b>회전축</b>.</p>
+            <table class="t" style="margin-top:12px;font-size:25px">
+                <tr><th>평면도형</th><th>회전체</th></tr>
+                <tr><td>직사각형</td><td>원기둥</td></tr>
+                <tr><td>직각삼각형</td><td>원뿔</td></tr>
+                <tr><td>반원</td><td>구</td></tr>
+                <tr><td>사다리꼴</td><td>원뿔대</td></tr>
+            </table>
+            <p class="dim" style="margin-top:8px">원뿔대 : 원뿔을 밑면에 평행한 평면으로 자를 때 원뿔이 아닌 쪽.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>회전체의 성질 (p216)</h3>
+            <ul class="l">
+                <li><span class="tag">①</span>회전축에 <b>수직</b>인 평면으로 자른 단면은 <b>원</b></li>
+                <li><span class="tag">②</span>회전축을 <b>포함</b>하는 평면으로 자른 단면은 모두 <b>합동</b>이고, 회전축을 대칭축으로 하는 <b>선대칭도형</b></li>
+            </ul>
+            <div class="card warn" style="margin-top:14px">
+                <b>헷갈리지 말 것</b> 수직 → 원 / 포함 → 합동인 선대칭도형. 서로 바꿔 쓰지 않는다.
+            </div>
+        </div>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7. 겉넓이 === -->
+<section class="slide">
+    <div class="kicker">7.3 기둥과 뿔의 겉넓이</div>
+    <h2>겉넓이 = 밑넓이 + 옆넓이 <small>p219~221</small></h2>
+    <div class="grid g2" style="grid-template-columns:1fr 520px;align-items:start">
+        <div>
+            <div class="card hl reveal">
+                <h3>공식</h3>
+                <div class="fm" style="font-size:36px">기둥 = (밑넓이)×2 + (옆넓이)</div>
+                <div class="fm" style="font-size:36px">뿔 = (밑넓이) + (옆넓이)</div>
+                <p class="dim">밑넓이 = 한 밑면의 넓이, 옆넓이 = 옆면 전체의 넓이</p>
+            </div>
+            <div class="card reveal" style="margin-top:20px">
+                <h3>옆면의 모양</h3>
+                <ul class="l">
+                    <li><b>원기둥</b>의 옆면 : 직사각형 (가로 = <b>밑면의 둘레</b>), 각기둥은 직사각형 여러 개</li>
+                    <li><b>원뿔</b>의 옆면 : 부채꼴, 옆넓이 = ½ × <b>모선</b> × (밑면의 둘레)</li>
+                    <li><b>모선</b> : 꼭짓점과 밑면의 원 위의 한 점을 이은 선분</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card reveal">
+            <svg class="fig" viewBox="0 0 440 400" width="440" height="400" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR,sans-serif">
+                <circle cx="150" cy="55" r="45" fill="rgba(201,162,75,.2)" stroke="#c9a24b" stroke-width="3"/>
+                <rect x="40" y="105" width="360" height="130" fill="rgba(243,234,211,.08)" stroke="#f3ead3" stroke-width="3"/>
+                <circle cx="150" cy="285" r="45" fill="rgba(201,162,75,.2)" stroke="#c9a24b" stroke-width="3"/>
+                <text x="205" y="62" fill="#c9a24b" font-size="22">밑넓이 πr²</text>
+                <text x="205" y="292" fill="#c9a24b" font-size="22">밑넓이 πr²</text>
+                <text x="70" y="160" fill="#f3ead3" font-size="22">옆면 : 직사각형</text>
+                <text x="70" y="195" fill="#c9c3a8" font-size="22">가로 = 밑면의 둘레 2πr</text>
+                <text x="70" y="226" fill="#c9c3a8" font-size="22">세로 = 높이</text>
+            </svg>
+            <p style="margin-top:6px">원기둥의 전개도 : 밑면 2개 + 직사각형 1개 → 겉넓이 = 2πr² + (밑면의 둘레)×(높이)</p>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:20px">
+        <b>오해 주의</b> 원뿔의 옆넓이를 구할 때 높이를 모선 대신 쓰지 않는다. <b>모선의 길이</b>를 써야 한다.
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8. 부피 === -->
+<section class="slide">
+    <div class="kicker">7.4 기둥과 뿔의 부피</div>
+    <h2>기둥과 뿔의 부피 <small>p224~226</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>기둥의 부피</h3>
+            <div class="fm">(밑넓이) × (높이)</div>
+        </div>
+        <div class="card hl reveal">
+            <h3>뿔의 부피</h3>
+            <div class="fm">⅓ × (밑넓이) × (높이)</div>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card reveal">
+            <h3>뿔과 기둥의 관계</h3>
+            <p>뿔의 부피는 <b>밑면이 합동이고 높이가 같은 기둥</b> 부피의 <b>⅓</b>이다.</p>
+            <table class="t" style="margin-top:12px">
+                <tr><th>기둥의 부피</th><th>뿔의 부피</th></tr>
+                <tr><td>V</td><td>⅓ V</td></tr>
+            </table>
+        </div>
+        <div class="card warn reveal">
+            <h3>자주 하는 실수</h3>
+            <ul class="l">
+                <li>뿔의 부피에서 <b>⅓을 빠뜨린다</b>.</li>
+                <li>겉넓이는 밑넓이를 기둥에서 <b>2번</b>, 뿔에서 <b>1번</b> 더한다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9. 구 === -->
+<section class="slide">
+    <div class="kicker">7.5 구의 겉넓이와 부피</div>
+    <h2>구의 겉넓이와 부피 <small>p229~230</small></h2>
+    <div class="grid g3" style="grid-template-columns:1fr 1fr 420px;align-items:start">
+        <div class="card hl reveal">
+            <h3>겉넓이</h3>
+            <div class="fm" style="font-size:40px">4πr²</div>
+            <p>구와 반지름이 같은 <b>원의 넓이(πr²)의 4배</b></p>
+            <h3 style="margin-top:16px">반구의 겉넓이</h3>
+            <p>곡면 2πr² + 밑면 πr² = <b>3πr²</b></p>
+        </div>
+        <div class="card hl reveal">
+            <h3>부피</h3>
+            <div class="fm" style="font-size:40px">4/3 πr³</div>
+            <p>밑면의 반지름 r, 높이 2r인 <b>원기둥 부피의 ⅔</b></p>
+            <p class="dim" style="margin-top:6px">검산 : 원기둥 πr²×2r = 2πr³ → 2πr³ × ⅔ = 4/3 πr³</p>
+        </div>
+        <div class="card reveal">
+            <svg class="fig" viewBox="0 0 320 280" width="320" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR,sans-serif">
+                <rect x="60" y="20" width="200" height="200" fill="none" stroke="#f3ead3" stroke-width="3"/>
+                <circle cx="160" cy="120" r="100" fill="rgba(201,162,75,.25)" stroke="#c9a24b" stroke-width="4"/>
+                <line x1="160" y1="120" x2="260" y2="120" stroke="#e08a6a" stroke-width="3"/>
+                <text x="200" y="112" fill="#e08a6a" font-size="24" font-weight="700">r</text>
+                <text x="268" y="130" fill="#c9c3a8" font-size="22">2r</text>
+                <text x="64" y="256" fill="#c9c3a8" font-size="22">구를 꼭 맞게 넣은 원기둥</text>
+            </svg>
+        </div>
+    </div>
+    <div class="card hl reveal" style="margin-top:22px">
+        <h3>반지름이 k배가 되면</h3>
+        <p>공식에서 r만 k배로 바꾸어 확인한다 → 겉넓이는 <b>k²배</b>, 부피는 <b>k³배</b> <span class="ref">(p229~230)</span></p>
+    </div>
+    <div class="card warn reveal" style="margin-top:20px">
+        <b>오해 주의</b> 구의 부피에서 <b>4/3</b>을 빠뜨리지 않는다.
+    </div>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10. 헷갈리기 쉬운 것 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>기둥 · 뿔 · 뿔대 비교</h2>
+    <table class="t reveal">
+        <tr><th style="width:22%">비교</th><th>기둥</th><th>뿔</th><th>뿔대</th></tr>
+        <tr><td>옆면의 모양</td><td>직사각형</td><td>삼각형</td><td>사다리꼴</td></tr>
+        <tr><td>모서리 수 (n각형)</td><td>3n</td><td>2n</td><td>3n</td></tr>
+        <tr><td>회전체</td><td>원기둥 (직사각형)</td><td>원뿔 (직각삼각형)</td><td>원뿔대 (사다리꼴)</td></tr>
+    </table>
+    <div class="card warn reveal" style="margin-top:26px">
+        <h3>이렇게 오해하지 말자</h3>
+        <ul class="l">
+            <li>원기둥·원뿔도 다면체이다 (X) → <b>곡면이 있어</b> 다면체가 아니다.</li>
+            <li>회전축을 포함하는 단면과 수직인 단면을 바꿔 쓴다 (X) → <b>수직은 원, 포함은 합동인 선대칭도형</b>.</li>
+            <li>뿔의 부피에서 ⅓을, 구의 부피에서 4/3을 빠뜨린다 (X).</li>
+            <li>원뿔 옆넓이에 높이를 쓴다 (X) → <b>모선의 길이</b>를 쓴다.</li>
+        </ul>
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11. 시험 포인트 === -->
+<section class="slide">
+    <div class="kicker">시험 포인트</div>
+    <h2>이렇게 나온다</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>반복 출제</h3>
+            <ul class="l">
+                <li><b>정다면체·다면체</b>의 개수 성질</li>
+                <li><b>회전체</b>의 겉넓이·부피</li>
+                <li>원뿔을 굴려 생기는 도형, <b>원기둥 속 구</b></li>
+                <li>전개도·접기 (상 문항)</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>형식</h3>
+            <ul class="l">
+                <li>〈보기〉 합답 (회전체 단면, 다면체 분류)</li>
+                <li>그림이 딸린 <b>값 구하기</b>가 많다.</li>
+                <li>값은 <b>π · 분수 · cm² · cm³</b> 형태로 쓴다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>마지막 점검</h3>
+        <p>겉넓이는 <b>밑넓이를 몇 번</b> 더했는가? 뿔의 부피에 <b>⅓</b>을 곱했는가? 단위를 <b>cm² / cm³</b>로 구분했는가?</p>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12. 꼭 기억할 것 === -->
+<section class="slide">
+    <div class="kicker">꼭 기억할 것</div>
+    <h2>핵심 암기 4가지</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>정다면체 5종</b>의 면의 모양과 한 꼭짓점에 모인 면의 개수</li>
+                <li><b>회전체의 두 가지 단면 성질</b> : 수직 → 원 / 포함 → 합동인 선대칭도형</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>겉넓이</b> : 기둥 = 밑넓이×2+옆넓이 / 뿔 = 밑넓이+옆넓이 / 구 = <b>4πr²</b></li>
+                <li><b>부피</b> : 기둥 = 밑넓이×높이 / 뿔 = ⅓×밑넓이×높이 / 구 = <b>4/3 πr³</b></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">12</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 12</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+</body>
+</html>

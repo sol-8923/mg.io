@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아프리카 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --bg: #14301f;
+    --bg-2: #1c4029;
+    --bg-3: #0f2517;
+    --ink: #f3ead3;
+    --ink-dim: #c9c3a8;
+    --brass: #c9a24b;
+    --warn: #e08a6a;
+    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0a1a10;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 84px;
+    font-size: 27px;
+    line-height: 1.5;
+    background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
+        var(--bg);
+}
+.slide::before {
+    content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none;
+}
+.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
+.card.warn { border-color: rgba(224,138,106,.6); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
+table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+.g5 .card, .g4 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+.svgbox { display: flex; justify-content: center; align-items: center; }
+.svgbox svg { width: 100%; height: auto; }
+
+/* 표지 */
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
+.cover .kicker { font-size: 30px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
+.cover h1 span { color: var(--brass); }
+.cover p { font-size: 34px; color: var(--ink-dim); }
+.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+
+/* 등장 효과 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+    .slide::before { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 20px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr !important; }
+    .card, .g5 .card, .g4 .card { padding: 14px 16px; font-size: 17px !important; }
+    .card li, .card p { font-size: inherit !important; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px !important; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1. 표지 === -->
+<section class="slide cover active">
+    <div class="kicker reveal">1학년 2학기 사회 · 4단원 요약 정리</div>
+    <h1 class="reveal"><span>아프리카</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">자연환경 · 문화와 지역 잠재력 · 지속가능한 발전</p>
+</section>
+
+<!-- === 2. 위치와 지역 구분 === -->
+<section class="slide">
+    <div class="kicker">1 국가 및 주요 도시와 자연환경</div>
+    <h2>아프리카의 위치와 지역 구분 <small>p.71, 73</small></h2>
+    <div class="card reveal" style="margin-bottom:22px">
+        <p>아시아 다음으로 큰 대륙. <b>북반구와 남반구에 걸쳐</b> 있고 서쪽은 <b>대서양</b>, 동쪽은 <b>인도양</b>에 접한다.</p>
+    </div>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>북부 아프리카</h3>
+            <p style="font-size:30px"><b>이집트, 알제리, 모로코</b> 등</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>중·남부 아프리카</h3>
+            <p style="font-size:30px"><b>나이지리아, 케냐, 남아프리카 공화국, 탄자니아</b> 등</p>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <p style="font-size:30px;text-align:center"><b>사하라 사막</b>을 기준으로 북부와 중·남부를 구분한다.</p>
+        <p class="dim" style="text-align:center">'사하라'는 '불모지'라는 뜻의 아랍어에서 유래했다.</p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3. 주요 도시 === -->
+<section class="slide">
+    <div class="kicker">1 국가 및 주요 도시와 자연환경</div>
+    <h2>아프리카의 주요 도시 <small>p.72~73</small></h2>
+    <table class="t reveal" style="font-size:25px">
+        <tr><th style="width:27%">도시(국가)</th><th>특색</th></tr>
+        <tr><td>나이로비(케냐)</td><td>케냐의 수도. <b>정보 기술(IT) 산업</b>이 발달. 나이로비 국립 공원에서 사파리 체험</td></tr>
+        <tr><td>라고스(나이지리아)</td><td><b>철도와 항만</b>이 발달, 국가 수입 물량의 80%가 들어오는 경제 중심지. 금융·상업 중심지</td></tr>
+        <tr><td>요하네스버그(남아공)</td><td><b>금융과 상업 중심지</b>로 발전하는 도시</td></tr>
+        <tr><td>케이프타운(남아공)</td><td>남서쪽 해안 도시, <b>입법 수도</b>. 유럽과 아시아를 잇는 <b>무역항</b>으로 성장</td></tr>
+        <tr><td>카이로(이집트)</td><td>이집트의 수도. 아프리카·서남아시아·유럽을 잇는 요지. <b>고대 이집트 문명</b> 유물·유적</td></tr>
+        <tr><td>잔지바르(탄자니아)</td><td>오래된 <b>유적지</b>가 있어 관광객이 방문</td></tr>
+    </table>
+    <p class="ref reveal" style="margin-top:14px">오늘날 여러 국가에서 <b>도시화가 빠르게 진행</b>되고 주요 도시를 중심으로 해외 기업 진출이 활발하다.</p>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4. 지형 === -->
+<section class="slide">
+    <div class="kicker">1 국가 및 주요 도시와 자연환경</div>
+    <h2>아프리카의 지형 <small>p.74~75</small></h2>
+    <div class="card hl reveal" style="margin-bottom:22px">
+        <p>북서부 <b>아틀라스산맥</b>, 동부 <b>에티오피아고원</b>, 남부 <b>드라켄즈버그산맥</b>을 제외하면 대체로 평탄하다.</p>
+    </div>
+    <div class="grid g2">
+        <div class="card reveal">
+            <h3>사막·평야·분지</h3>
+            <ul class="l">
+                <li>북부 : <b>사하라 사막</b> (세계에서 가장 큰 사막, 모래 언덕·자갈·바위)</li>
+                <li>중·남부 : <b>기니만 연안의 평야</b>, <b>콩고강 유역의 분지</b></li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>하천·호수·산</h3>
+            <ul class="l" style="font-size:25px">
+                <li>대하천 : <b>나일강, 나이저강, 콩고강</b>. 나일강은 적도 근처에서 발원해 여러 국경을 지나 지중해로 흐른다.</li>
+                <li>큰 호수 : <b>빅토리아호</b>(아프리카에서 가장 큰 호수, 케냐·우간다·탄자니아), 탕가니카호</li>
+                <li><b>킬리만자로산</b> : 아프리카에서 가장 높은 산, 화산 활동으로 형성</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:22px">
+        <p>킬리만자로산은 '세계에서 가장 높은 산'이 아니라 <b>아프리카에서 가장 높은 산</b>이다.</p>
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5. 기후 === -->
+<section class="slide">
+    <div class="kicker">1 국가 및 주요 도시와 자연환경</div>
+    <h2>아프리카의 기후 <small>p.74</small></h2>
+    <div class="grid g2" style="grid-template-columns:.7fr 1.3fr">
+        <div class="card reveal">
+            <div class="svgbox">
+                <svg viewBox="0 0 360 520" style="width:auto;height:520px" role="img" aria-label="아프리카 기후를 북부 중부 남부로 나눈 모식도">
+                    <rect x="20" y="10" width="320" height="150" rx="10" fill="#a8743f"/>
+                    <text x="180" y="75" text-anchor="middle" font-size="30" font-weight="700" fill="#f3ead3">북부</text>
+                    <text x="180" y="115" text-anchor="middle" font-size="26" fill="#f3ead3">건조 (연안 일부 온대)</text>
+                    <rect x="20" y="170" width="320" height="180" rx="10" fill="#2f7d46"/>
+                    <text x="180" y="235" text-anchor="middle" font-size="30" font-weight="700" fill="#f3ead3">중부 (적도)</text>
+                    <text x="180" y="275" text-anchor="middle" font-size="26" fill="#f3ead3">열대 (우림·사바나)</text>
+                    <rect x="20" y="360" width="320" height="150" rx="10" fill="#a8743f"/>
+                    <text x="180" y="425" text-anchor="middle" font-size="30" font-weight="700" fill="#f3ead3">남부</text>
+                    <text x="180" y="465" text-anchor="middle" font-size="26" fill="#f3ead3">건조 또는 온대</text>
+                </svg>
+            </div>
+            <p class="ref" style="text-align:center">모식도</p>
+        </div>
+        <div>
+            <table class="t reveal" style="font-size:25px">
+                <tr><th style="width:20%">구분</th><th>기후</th></tr>
+                <tr><td>북부</td><td>대부분 <b>건조 기후</b>, 지중해 연안 일부는 <b>온대 기후</b></td></tr>
+                <tr><td>중부</td><td><b>적도</b>가 지나는 지역 중심으로 <b>열대 기후</b>. 콩고 분지·기니만 연안은 빽빽한 숲 <b>열대 우림</b>, 그 주변은 초원 <b>사바나</b></td></tr>
+                <tr><td>남부</td><td><b>건조 기후 또는 온대 기후</b></td></tr>
+            </table>
+            <div class="card reveal" style="margin-top:20px;font-size:24px">
+                열대 기후 = 열대 우림(일 년 내내 기온 높고 습함)·열대 사바나(건기·우기 뚜렷)·열대 몬순(강수량 많고 짧은 건기)
+            </div>
+        </div>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6. 종교·예술 문화 === -->
+<section class="slide">
+    <div class="kicker">2 문화와 지역 잠재력</div>
+    <h2>아프리카의 종교와 예술 문화 <small>p.77</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>종교 문화</h3>
+            <ul class="l">
+                <li><b>북부</b> : 주로 <b>이슬람교</b>가 발달, 주민 일상생활에 많은 영향.</li>
+                <li><b>중·남부</b> : 유럽인의 식민지 개척 과정에서 <b>크리스트교</b> 전파. <b>토속 신앙</b>은 과거보다 비율이 감소했지만 일부 지역에서 여전히 영향.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>예술 문화</h3>
+            <ul class="l" style="font-size:25px">
+                <li>여러 <b>부족 사회의 전통문화</b>에 영향을 받아 발달.</li>
+                <li>전통 음악은 다른 대륙 음악과 융합되어 <b>재즈, 탱고</b> 등으로 발전. <b>젬베, 칼림바</b> 등 전통 악기가 세계로 전파. 다양한 리듬의 타악기 연주.</li>
+                <li>부족마다 독특한 <b>조각상, 가면</b> → 유럽으로 전파되어 서양 미술(피카소의 화풍 등)에 영향. 조각상은 각 지역 환경에 따라 다양한 모습.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7. 지역 잠재력 === -->
+<section class="slide">
+    <div class="kicker">2 문화와 지역 잠재력</div>
+    <h2>아프리카의 지역 잠재력 <small>p.78~79</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>에너지 자원</h3>
+            <p><b>석탄·석유·천연가스</b> 풍부. 석유 생산이 많은 국가는 나이지리아·알제리·앙골라.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>광물 자원</h3>
+            <p>중·남부에 <b>금·구리·코발트·다이아몬드</b>. 남아공은 <b>백금·크롬·망간</b> 세계 생산 점유율 1위.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>신·재생 에너지</h3>
+            <p>일조량이 많아 <b>태양광</b> 유리, 대하천 지나는 지역은 <b>수력</b> 자원 풍부.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>관광 자원</h3>
+            <p>다양한 동물·아름다운 자연 → <b>사파리</b>, 고대 문화 → 유적 체험. 탄자니아는 <b>세렝게티 국립 공원·잔지바르 유적</b>으로 관광 산업 발달.</p>
+        </div>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8. 인구와 통합 노력 === -->
+<section class="slide">
+    <div class="kicker">2 문화와 지역 잠재력</div>
+    <h2>인구와 통합 노력 <small>p.71, 78~79</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>인구</h3>
+            <ul class="l">
+                <li>아시아 다음으로 인구가 많음. 다른 대륙보다 <b>평균 연령이 낮고 출생률이 높다</b>.</li>
+                <li>→ 풍부한 <b>노동력</b>과 규모가 큰 <b>소비 시장</b>.</li>
+                <li>에티오피아 : 2023년 기준 아프리카 두 번째 인구, 유소년층·청장년층 비율이 높음.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>통합 노력</h3>
+            <ul class="l">
+                <li><b>아프리카 연합(AU)</b> : 정치적·경제적·사회적 통합 지향, 2002년 결성. 2023년 9월 EU에 이어 G20의 두 번째 지역 단체 회원국.</li>
+                <li><b>아프리카 대륙 자유 무역 지대(AfCFTA)</b> : 대륙 내 <b>관세를 없애</b> 무역을 활성화, 경제적 통합과 성장.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3>헷갈리지 말 것</h3>
+        <p>아프리카는 세계에서 인구가 가장 많은 대륙이 아니라 <b>아시아 다음</b>이다.</p>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9. 지속가능한 발전 === -->
+<section class="slide">
+    <div class="kicker">3 지속가능한 발전을 위한 노력</div>
+    <h2>지속가능한 발전과 아프리카의 노력 <small>p.80~81</small></h2>
+    <div class="card hl reveal" style="margin-bottom:20px">
+        <p style="font-size:27px"><b>지속가능한 발전</b> : 미래 세대가 사용할 자원·환경 등을 해치지 않으면서 <b>현재 세대와 미래 세대를 함께 발전</b>시키는 것. 자원 고갈·환경 파괴에 대응해 등장, 이후 사회적 불평등·사회 통합 영역으로 목표 확대. 국제 연합(UN)은 <b>2015년 17가지 지속가능발전 목표(SDGs)</b>를 채택, 2030년까지 추진.</p>
+    </div>
+    <div class="grid g2">
+        <div class="card reveal">
+            <h3>AU의 어젠다 2063</h3>
+            <p style="font-size:25px"><b>기반 시설 확충, 친환경 에너지 개발, 정치 및 사회 환경 개선</b> 등을 제시, <b>아프리카의 주체적인</b> 지속가능한 발전 강조.</p>
+        </div>
+        <div class="card reveal">
+            <h3>지역 사례</h3>
+            <ul class="l" style="font-size:24px">
+                <li><b>보츠와나</b> : 다이아몬드 이익을 의료·교육·도로 등 공공사업에 투자, 광물 의존도 낮춤.</li>
+                <li><b>남아공</b> : 탄소 중립 정책, 태양광·풍력 비율 확대, 스마트 시티.</li>
+                <li><b>르완다</b> : 드론 의약품 배송. <b>감비아</b> 나우 : 비닐봉지 재활용 지갑.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10. 세계 주체 간 협력 === -->
+<section class="slide">
+    <div class="kicker">3 지속가능한 발전을 위한 노력</div>
+    <h2>세계 주체 간 협력 <small>p.82</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>정부 간 국제기구</h3>
+            <p><b>국가</b>를 회원으로 하며 국제적 목적을 위해 활동.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>국제 비정부 기구</h3>
+            <p><b>개인·민간 단체</b>를 회원으로 하며 공공의 이익을 위해 활동.</p>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card reveal">
+            <h3>그 밖의 주체</h3>
+            <p>개별 국가, 기업, 개인.</p>
+            <p style="margin-top:10px">국제 사회는 교육·의료·사회 기반 시설 등에서 <b>공적 개발 원조(ODA)</b>를 제공한다.</p>
+        </div>
+        <div class="card reveal">
+            <h3>협력 사례</h3>
+            <ul class="l">
+                <li>정보 기술 기업의 <b>인공지능 연구 센터</b> 설립(가나)</li>
+                <li>국제 비정부 기구의 <b>모자 보건 사업</b>(탄자니아)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11. 세계시민의 실천 === -->
+<section class="slide">
+    <div class="kicker">3 지속가능한 발전을 위한 노력</div>
+    <h2>세계시민의 실천 <small>p.83</small></h2>
+    <div class="card reveal" style="margin-bottom:22px">
+        <p>객관적 정보로 아프리카를 이해하고 <b>이웃으로 바라본다</b>. 비영리 단체 등이 문화 체험·인식 개선 교육을 제공한다.</p>
+    </div>
+    <div class="grid g3">
+        <div class="card hl reveal">
+            <h3>공정 무역</h3>
+            <p style="font-size:25px">개발 도상국 원료·제품에 <b>정당한 값</b>을 치러 생산자의 경제적·생태적 환경을 개선하려는 무역. 예: 에티오피아 커피, 코트디부아르 카카오, 케냐 장미·말리 면화.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>공정 여행</h3>
+            <p style="font-size:25px"><b>여행지의 환경을 보호</b>하고 현지 여행 문화를 존중하며 주민들에게 정당한 비용을 치르는 여행.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>적정 기술</h3>
+            <p style="font-size:25px">한 지역사회의 문제를 <b>사회적·문화적·환경적 조건을 고려</b>해 해결하는 기술. 삶의 질 향상이 목적.</p>
+        </div>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12. 헷갈리기 쉬운 것 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>구분하기</h2>
+    <div class="grid g2" style="grid-template-columns:1.3fr 1fr">
+        <table class="t reveal" style="font-size:25px">
+            <tr><th>구분</th><th>A</th><th>B</th></tr>
+            <tr><td>지역·종교</td><td>북부 : 이슬람교</td><td>중·남부 : 크리스트교(식민지 개척 과정), 토속 신앙 일부</td></tr>
+            <tr><td>지역·기후</td><td>북부 : 건조(연안 일부 온대)</td><td>중부 : 열대(우림·사바나)</td></tr>
+            <tr><td>국제기구</td><td>정부 간 국제기구 : 국가 회원</td><td>국제 비정부 기구 : 개인·민간 단체 회원</td></tr>
+            <tr><td>실천</td><td>공정 무역 : 정당한 값</td><td>공정 여행 : 여행지 환경 보호·주민에게 정당한 비용</td></tr>
+        </table>
+        <div class="card warn reveal">
+            <h3>이렇게 외우자</h3>
+            <ul class="l" style="font-size:25px">
+                <li>킬리만자로 = <b>아프리카</b>에서 가장 높은 산.</li>
+                <li>잠재력 4유형 : <b>에너지·광물·신재생·관광</b>.</li>
+                <li>인구 : 아시아 다음, 평균 연령 낮고 출생률 높음 → 노동력·소비 시장.</li>
+                <li>AU = 통합 지향 / AfCFTA = 관세 없애 무역 활성화.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">12</div>
+</section>
+
+<!-- === 13. 꼭 기억할 것 === -->
+<section class="slide">
+    <div class="kicker">꼭 기억할 것</div>
+    <h2>핵심 정리</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l" style="font-size:25px">
+                <li><b>사하라 사막</b> 기준 북부 / 중·남부 구분과 <b>기후·종교의 짝</b>.</li>
+                <li>지형 : 아틀라스·에티오피아고원·드라켄즈버그, 나일강·나이저강·콩고강, 빅토리아호, 킬리만자로산.</li>
+                <li>지역 잠재력 유형 : <b>에너지·광물·신재생 에너지·관광</b>.</li>
+                <li>인구 구조 : 평균 연령 낮고 출생률 높음 → 노동력·소비 시장. AU와 AfCFTA.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l" style="font-size:25px">
+                <li><b>지속가능한 발전</b>의 의미, UN SDGs(2015), AU <b>어젠다 2063</b>과 지역 사례.</li>
+                <li>협력 주체 : 정부 간 국제기구 / 국제 비정부 기구 / 개별 국가·기업·개인, <b>ODA</b>.</li>
+                <li>세계시민의 실천 : <b>공정 무역 · 공정 여행 · 적정 기술</b>.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">13</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 13</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+</body>
+</html>

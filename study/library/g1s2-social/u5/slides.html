@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아메리카 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --bg: #14301f;
+    --bg-2: #1c4029;
+    --bg-3: #0f2517;
+    --ink: #f3ead3;
+    --ink-dim: #c9c3a8;
+    --brass: #c9a24b;
+    --warn: #e08a6a;
+    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0a1a10;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 84px;
+    font-size: 27px;
+    line-height: 1.5;
+    background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
+        var(--bg);
+}
+.slide::before {
+    content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none;
+}
+.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
+.card.warn { border-color: rgba(224,138,106,.6); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
+table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+.g5 .card, .g4 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+.svgbox { display: flex; justify-content: center; align-items: center; }
+.svgbox svg { width: 100%; height: auto; }
+
+/* 표지 */
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
+.cover .kicker { font-size: 30px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
+.cover h1 span { color: var(--brass); }
+.cover p { font-size: 34px; color: var(--ink-dim); }
+.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+
+/* 등장 효과 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+    .slide::before { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 20px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr !important; }
+    .card, .g5 .card, .g4 .card { padding: 14px 16px; font-size: 17px !important; }
+    .card li, .card p { font-size: inherit !important; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px !important; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1. 표지 === -->
+<section class="slide cover active">
+    <div class="kicker reveal">1학년 2학기 사회 · 5단원 요약 정리</div>
+    <h1 class="reveal"><span>아메리카</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">자연환경 · 민족과 인종의 문화 · 초국적 기업</p>
+</section>
+
+<!-- === 2. 지역 구분 === -->
+<section class="slide">
+    <div class="kicker">1 국가 및 주요 도시와 자연환경</div>
+    <h2>아메리카의 지역 구분 <small>p.93</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>지리적 구분</h3>
+            <p style="font-size:30px"><b>파나마 지협</b>을 경계로<br>북아메리카 / 남아메리카</p>
+            <p class="dim" style="margin-top:10px">지협 = 두 육지를 잇는 좁고 잘록한 땅</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>문화적 구분</h3>
+            <p style="font-size:30px"><b>리오그란데강</b>을 기준으로<br>앵글로아메리카 / 라틴 아메리카</p>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card reveal">
+            <h3>북아메리카</h3>
+            <p>미국, 캐나다, 멕시코, 카리브해 연안 국가들</p>
+        </div>
+        <div class="card reveal">
+            <h3>남아메리카</h3>
+            <p>브라질, 아르헨티나, 콜롬비아, 페루 등</p>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3>구분하기</h3>
+        <p>지리적 구분의 경계 = <b>파나마 지협</b> / 문화적 구분의 경계 = <b>리오그란데강</b></p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3. 북아메리카 주요 도시 === -->
+<section class="slide">
+    <div class="kicker">1 국가 및 주요 도시와 자연환경</div>
+    <h2>주요 도시 ① 캐나다·미국 <small>p.93, 96</small></h2>
+    <table class="t reveal" style="font-size:25px">
+        <tr><th style="width:24%">도시(국가)</th><th>특색</th></tr>
+        <tr><td>토론토(캐나다)</td><td>정치·경제·문화의 중심지. 인구의 <b>50% 이상이 이민자</b>, 200여 민족이 130여 개 언어·사투리 사용</td></tr>
+        <tr><td>몬트리올(캐나다)</td><td><b>프랑스 문화</b>가 발달, 다양한 국제 행사</td></tr>
+        <tr><td>뉴욕(미국)</td><td>정치·경제·금융 중심, <b>월가</b>를 중심으로 세계 경제의 중심 역할, <b>국제 연합(UN) 본부</b></td></tr>
+        <tr><td>로스앤젤레스(미국)</td><td>다양한 <b>문화 산업</b>(대중문화·영화) 발달</td></tr>
+        <tr><td>시카고(미국)</td><td>과거 <b>공업</b> 발달로 발전</td></tr>
+        <tr><td>휴스턴(미국)</td><td><b>석유 산업과 항공·우주 산업</b>의 발달로 성장</td></tr>
+    </table>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4. 중남부 주요 도시 === -->
+<section class="slide">
+    <div class="kicker">1 국가 및 주요 도시와 자연환경</div>
+    <h2>주요 도시 ② 멕시코·남아메리카 <small>p.93</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>멕시코시티(멕시코)</h3>
+            <p>멕시코의 수도, 해발 약 <b>2,200m</b>, 과거 <b>아스테카 문명</b>의 중심지.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>쿠스코(페루)</h3>
+            <p><b>잉카 문명</b>의 유산을 간직한 도시.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>상파울루(브라질)</h3>
+            <p>남아메리카에서 <b>인구가 가장 많은 도시</b>, 남아메리카 <b>금융의 중심지</b>.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>쿠리치바(브라질)·아바나(쿠바)</h3>
+            <p><b>생태 도시</b>로 주목.</p>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3>짝 맞추기</h3>
+        <p>멕시코시티 = 아스테카 / 쿠스코 = 잉카 / 상파울루 = 남아메리카 금융 / 휴스턴 = 석유·항공·우주 / 뉴욕 = UN 본부</p>
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5. 지형 === -->
+<section class="slide">
+    <div class="kicker">1 국가 및 주요 도시와 자연환경</div>
+    <h2>아메리카의 지형 <small>p.94~95</small></h2>
+    <div class="card hl reveal" style="margin-bottom:20px">
+        <p>대륙 <b>서쪽</b> : 높고 험준한 산지 / <b>동쪽</b> : 오랜 기간 침식을 받은 낮은 산지나 고원 / <b>가운데</b> : 평지·분지</p>
+    </div>
+    <table class="t reveal" style="font-size:25px">
+        <tr><th style="width:20%">구분</th><th style="width:20%">서쪽</th><th style="width:20%">동쪽</th><th>가운데</th></tr>
+        <tr><td>북아메리카</td><td><b>로키산맥</b>(남북)</td><td><b>애팔래치아산맥</b></td><td><b>대평원</b>, 미국 중부를 남북으로 흐르는 <b>미시시피강</b></td></tr>
+        <tr><td>남아메리카</td><td><b>안데스산맥</b>(남북)</td><td><b>브라질고원</b></td><td><b>아마존강</b>이 흐르는 <b>아마존 분지</b></td></tr>
+    </table>
+    <div class="grid g2" style="margin-top:20px">
+        <div class="card reveal" style="font-size:24px"><b>로키산맥</b> 서부 산맥·화산 지형·빙하 지형 / <b>그랜드 캐니언</b> 강의 침식으로 생긴 협곡·세계 자연 유산</div>
+        <div class="card reveal" style="font-size:24px"><b>아마존 열대림</b> 세계 최대 열대림·지구의 허파 / <b>우유니 사막</b> 소금 사막·고산 지대·세계적인 리튬 매장지</div>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6. 기후 === -->
+<section class="slide">
+    <div class="kicker">1 국가 및 주요 도시와 자연환경</div>
+    <h2>아메리카의 기후 <small>p.94</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>북아메리카</h3>
+            <ul class="l">
+                <li>북부 : 주로 <b>냉대·한대</b></li>
+                <li>미국 남동부 : <b>온대</b></li>
+                <li>대륙 내부·서부 : <b>건조</b></li>
+                <li>멕시코 남부·카리브해 : <b>열대</b></li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>남아메리카</h3>
+            <ul class="l">
+                <li><b>적도</b> 중심 열대, 남부 일부 온대.</li>
+                <li>적도 주변 <b>안데스 산지</b>는 <b>고산 기후</b> → 키토, 보고타 등 <b>고산 도시</b> 발달.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>기후와 생활</h3>
+        <ul class="l">
+            <li><b>그린란드</b>(한대 기후) : 여름에 얼었던 땅이 녹아 건물이 무너질 수 있어 기둥을 깊이 박아 띄워 짓는 <b>고상 가옥</b>.</li>
+            <li><b>보고타</b> : 고산 지역이라 덥고 습한 지역보다 쾌적.</li>
+        </ul>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7. 앵글로아메리카 인구 === -->
+<section class="slide">
+    <div class="kicker">2 다양한 민족과 인종으로 구성된 아메리카</div>
+    <h2>앵글로아메리카의 인구 특징 <small>p.96~97</small></h2>
+    <div class="grid g4 reveal" style="margin-bottom:22px">
+        <div class="card step"><span class="no">1</span><br>유럽인 이주 전부터 <b>원주민</b> 거주</div>
+        <div class="card step"><span class="no">2</span><br>16세기 말 <b>영국인</b>이 식민 지배·개척</div>
+        <div class="card step"><span class="no">3</span><br>유럽 각지 이민자 유입, 유럽인이 아프리카에서 <b>흑인 노예</b> 이주</div>
+        <div class="card step"><span class="no">4</span><br>오늘날 <b>히스패닉</b> 유입, 아시아 등에서 경제적 이유로 이주민 유입</div>
+    </div>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>용어</h3>
+            <ul class="l" style="font-size:25px">
+                <li><b>앵글로</b> = 앵글로 색슨족에서, <b>라틴</b> = 라틴족에서 유래.</li>
+                <li><b>히스패닉</b> = 에스파냐어를 모국어로 쓰며 미국에 거주하는 라틴 아메리카 출신. 독자적 문화.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>로스앤젤레스 사례</h3>
+            <ul class="l" style="font-size:24px">
+                <li>한인 거주 지역(한인 식품점·세탁소)</li>
+                <li>1781년 에스파냐인이 정착한 멕시코 음식·공예품 거리</li>
+                <li>일본계 이민자 거리(일본 캐릭터·일식)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8. 라틴 아메리카 인구 === -->
+<section class="slide">
+    <div class="kicker">2 다양한 민족과 인종으로 구성된 아메리카</div>
+    <h2>라틴 아메리카의 인구 특징 <small>p.97</small></h2>
+    <div class="grid g4 reveal" style="margin-bottom:22px">
+        <div class="card step"><span class="no">1</span><br><b>마야·아스테카·잉카</b> 문명 발달, 유럽인 침입으로 대부분 파괴</div>
+        <div class="card step"><span class="no">2</span><br>16세기부터 <b>에스파냐인</b>이 브라질을 제외한 대부분 지역, <b>포르투갈인</b>이 브라질을 식민 지배</div>
+        <div class="card step"><span class="no">3</span><br>유럽인이 <b>흑인을 노예</b>로 이주시켜 부족한 노동력 보충</div>
+        <div class="card step hl"><span class="no">4</span><br><b>원주민, 유럽계, 아프리카계, 혼혈인</b> 등으로 구성</div>
+    </div>
+    <div class="card warn reveal">
+        <h3>헷갈리지 말 것</h3>
+        <p><b>에스파냐</b> = 브라질을 제외한 대부분 지역 / <b>포르투갈</b> = 브라질. 프리다 칼로 「버스」(1929)는 다양한 민족·인종을 보여 주는 작품이다.</p>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9. 문화 혼종성 === -->
+<section class="slide">
+    <div class="kicker">2 다양한 민족과 인종으로 구성된 아메리카</div>
+    <h2>문화 혼종성 <small>p.98~99</small></h2>
+    <div class="card hl reveal" style="margin-bottom:20px">
+        <p style="font-size:27px"><b>문화 혼종성</b> : 기존 문화와 외래문화가 만나 기존 문화 정체성이 약화되거나, 두 문화가 섞여 <b>새 문화가 만들어지는 현상</b>. 아메리카는 원주민·유럽계·아프리카계 문화가 혼합된 독특한 문화를 가진다.</p>
+    </div>
+    <table class="t reveal" style="font-size:24px">
+        <tr><th style="width:20%">사례</th><th>혼합된 요소</th></tr>
+        <tr><td>과달루페 성모상</td><td>멕시코, 가톨릭 도입 과정에서 피부색 변화</td></tr>
+        <tr><td>탱고</td><td>아프리카 춤·리듬 + 유럽 악기</td></tr>
+        <tr><td>햄버거</td><td>독일인의 함부르크 스테이크 변형</td></tr>
+        <tr><td>리우 카니발</td><td>크리스트교 사순절 + 원주민 전통 + 아프리카 타악기 리듬·춤</td></tr>
+        <tr><td>야구, 재즈·힙합</td><td>유럽·아프리카 문화 + 아메리카 문화. 힙합은 1970년대 후반 뉴욕 빈민가의 흑인·히스패닉 청소년</td></tr>
+    </table>
+    <p class="ref reveal" style="margin-top:12px">아메리카 문화는 세계로 전파되어 새 문화 형성에 영향을 준다.</p>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10. 초국적 기업 === -->
+<section class="slide">
+    <div class="kicker">3 아메리카의 초국적 기업</div>
+    <h2>초국적 기업의 의미와 공간적 분업 <small>p.101</small></h2>
+    <div class="card hl reveal" style="margin-bottom:20px">
+        <p style="font-size:26px"><b>초국적 기업</b> : 본사가 있는 국가를 포함해 해외 여러 국가에 <b>자회사·지사·연구소·생산 공장</b> 등을 운영하며 전 세계를 대상으로 생산·판매하는 기업. 농업·제조업뿐 아니라 서비스업(OTT 등)에서도 발달. 미국에 많고 브라질·멕시코에서도 성장.</p>
+        <p style="margin-top:8px;font-size:26px"><b>발달 배경</b> : 교통·통신의 발달, <b>세계 무역 기구(WTO)</b>의 등장, <b>자유 무역 협정(FTA)</b>의 확대(수입품 관세를 없애거나 낮추는 협정).</p>
+    </div>
+    <div class="grid g3">
+        <div class="card reveal"><h3>본사</h3><p style="font-size:25px">정보·자본 확보가 유리한 지역</p></div>
+        <div class="card reveal"><h3>연구소</h3><p style="font-size:25px">고급 인력이 많은 지역</p></div>
+        <div class="card reveal"><h3>생산 공장</h3><p style="font-size:25px">지가·임금이 싸고 시장과 가까운 지역 (고도 기술 공장은 고급 인력 지역에도)</p></div>
+    </div>
+    <p class="ref reveal" style="margin-top:12px"><b>공간적 분업</b> : 경영 효율·이윤 극대화를 위해 기능을 나눔. 본사에 권한이 집중되지 않고 자회사가 동등한 지위로 수평 연결.</p>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11. 입지 이전과 지역 변화 === -->
+<section class="slide">
+    <div class="kicker">3 아메리카의 초국적 기업</div>
+    <h2>기업의 이전과 지역 변화 <small>p.102~103</small></h2>
+    <div class="card reveal" style="margin-bottom:20px">
+        <p style="font-size:26px"><b>해외 이전 까닭</b> : 생산 비용 절감, 판매 시장 확보(수요 많은 국가), 세금 혜택·정부 지원 등 유리한 조건. 예) 멕시코 = 소비 시장이 큰 미국과 가깝고 저임금 노동력이 풍부해 <b>자동차 공장</b> 입지.</p>
+    </div>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>들어선 지역</h3>
+            <ul class="l" style="font-size:25px">
+                <li>산업 단지 조성·<b>일자리</b>·기술 이전·관련 산업 발달·경제 활성화</li>
+                <li>환경 오염</li>
+            </ul>
+        </div>
+        <div class="card warn reveal">
+            <h3>빠져나간 지역</h3>
+            <ul class="l" style="font-size:25px">
+                <li>산업 기반 약화·<b>실업률 상승</b>·인구 감소·경제 침체</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:20px">
+        <p style="font-size:25px"><b>디트로이트</b> : 1950년대 최대 공업 도시 → 20세기 후반 공장이 낮은 임금을 찾아 멕시코 등으로 이전 → 침체 → 정부·시의 기업 유치 정책으로 재도약 시도.</p>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12. 실리콘 밸리 === -->
+<section class="slide">
+    <div class="kicker">3 아메리카의 초국적 기업</div>
+    <h2>실리콘 밸리 <small>p.102</small></h2>
+    <div class="card hl reveal" style="margin-bottom:24px">
+        <p style="font-size:30px"><b>샌프란시스코·새너제이 일대</b>의 <b>첨단 기술 연구 단지</b>.</p>
+    </div>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>성장 까닭</h3>
+            <ul class="l">
+                <li>주변 <b>대학</b>의 인재 배출</li>
+                <li><b>기업과 학교의 협력</b></li>
+                <li>미국의 <b>큰 시장</b></li>
+            </ul>
+        </div>
+        <div class="card warn reveal">
+            <h3>부작용</h3>
+            <ul class="l">
+                <li><b>집값·임대료 급등</b></li>
+                <li><b>교통 혼잡</b></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">12</div>
+</section>
+
+<!-- === 13. 헷갈리기 쉬운 것 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>구분하기</h2>
+    <div class="grid g2" style="grid-template-columns:1.3fr 1fr">
+        <table class="t reveal" style="font-size:25px">
+            <tr><th>구분</th><th>A</th><th>B</th></tr>
+            <tr><td>대륙 구분</td><td>지리적 : 파나마 지협</td><td>문화적 : 리오그란데강</td></tr>
+            <tr><td>지형(서→동)</td><td>서쪽 : 로키·안데스(높고 험준)</td><td>동쪽 : 애팔래치아·브라질고원(낮음)</td></tr>
+            <tr><td>식민 지배</td><td>에스파냐 : 브라질 제외 대부분</td><td>포르투갈 : 브라질</td></tr>
+            <tr><td>공장 이전</td><td>들어선 지역 : 일자리·경제 활성화</td><td>빠져나간 지역 : 실업·인구 감소</td></tr>
+        </table>
+        <div class="card warn reveal">
+            <h3>이렇게 외우자</h3>
+            <ul class="l" style="font-size:25px">
+                <li>서쪽이 높고 <b>동쪽은 낮다</b>(오랜 침식).</li>
+                <li>문화 혼종성 = 섞여서 <b>새 문화</b>가 생김.</li>
+                <li>아메리카 문화는 세계로 전파되어 새 문화 형성에 <b>영향</b>을 준다.</li>
+                <li>실리콘 밸리 = 성장(대학·협력·시장) + 부작용(집값·교통).</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">13</div>
+</section>
+
+<!-- === 14. 꼭 기억할 것 === -->
+<section class="slide">
+    <div class="kicker">꼭 기억할 것</div>
+    <h2>핵심 정리</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l" style="font-size:25px">
+                <li><b>파나마 지협</b>(지리적) / <b>리오그란데강</b>(문화적) 구분, 앵글로아메리카·라틴 아메리카.</li>
+                <li>지형 : 서쪽 로키·안데스, 동쪽 애팔래치아·브라질고원, 가운데 대평원·아마존 분지. 안데스 <b>고산 기후</b>·고산 도시.</li>
+                <li>주요 도시 짝 : 토론토(이민자), 뉴욕(UN·월가), 휴스턴, 멕시코시티(아스테카), 쿠스코(잉카), 상파울루.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l" style="font-size:25px">
+                <li>인구 : 앵글로아메리카(영국 식민·이민자·흑인 노예·히스패닉) / 라틴 아메리카(에스파냐·포르투갈 식민·원주민·유럽계·아프리카계·혼혈).</li>
+                <li><b>문화 혼종성</b> 사례 : 탱고·햄버거·리우 카니발·재즈·힙합.</li>
+                <li><b>초국적 기업</b> : 의미, 발달 배경(교통·통신, WTO, FTA), <b>공간적 분업</b>, 이전과 지역 변화, 실리콘 밸리.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">14</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 14</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+</body>
+</html>

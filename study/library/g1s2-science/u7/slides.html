@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>태양계 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --bg: #14301f;
+    --bg-2: #1c4029;
+    --bg-3: #0f2517;
+    --ink: #f3ead3;
+    --ink-dim: #c9c3a8;
+    --brass: #c9a24b;
+    --warn: #e08a6a;
+    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0a1a10;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 84px;
+    font-size: 27px;
+    line-height: 1.5;
+    /* 칠판 느낌: 은은한 빛 번짐 + 가는 격자 */
+    background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
+        var(--bg);
+}
+.slide::before { /* 황동 테두리 */
+    content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none;
+}
+.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
+.card.warn { border-color: rgba(224,138,106,.6); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
+table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+/* 순서 카드 (줄거리 흐름, 5단계) */
+.g5 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+
+/* 표지 */
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
+.cover .kicker { font-size: 30px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
+.cover h1 span { color: var(--brass); }
+.cover p { font-size: 34px; color: var(--ink-dim); }
+.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+
+/* 등장 효과 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+    .slide::before { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 20px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g5 { grid-template-columns: 1fr; }
+    .card, .g5 .card { padding: 14px 16px; font-size: 17px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 4px; }
+}
+
+/* 도식·확장 */
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.svgbox { background: var(--bg-3); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 10px; }
+.svgbox svg { display: block; width: 100%; height: auto; max-height: none; }
+.svgbox svg text { fill: #f3ead3; font-family: 'Noto Sans KR','Malgun Gothic',sans-serif; font-size: 24px; }
+.svgbox svg text.b { fill: #c9a24b; font-weight: 700; }
+.svgbox svg text.w { fill: #e08a6a; font-weight: 700; }
+.big { font-size: 34px; line-height: 1.6; }
+@media (max-width: 820px) and (orientation: portrait) { .g4 { grid-template-columns: 1fr; } .big { font-size: 20px; } .svgbox svg text { font-size: 24px; } }
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1 === -->
+<section class="slide cover active">
+    <div class="kicker reveal">1학년 2학기 과학 · 7단원 요약 정리</div>
+    <h1 class="reveal"><span>태양계</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">태양계 구성과 태양 활동 · 지구와 달의 운동 · 일식과 월식</p>
+</section>
+
+<!-- === 2 === -->
+<section class="slide">
+    <div class="kicker">단원 개요</div>
+    <h2>태양계와 지구·달의 운동 <small>교과서 p.223~265</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>1 태양계 구성과 태양 활동</h3>
+            <ul class="l">
+                <li>태양계 구성원 <span class="ref">(p.226~227)</span></li>
+                <li>행성 분류와 특징 <span class="ref">(p.228~231)</span></li>
+                <li>태양과 태양 활동 <span class="ref">(p.232~237)</span></li>
+                <li>천체 관측 <span class="ref">(p.238~239)</span></li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>2 지구와 달의 운동</h3>
+            <ul class="l">
+                <li>지구 자전과 일주 운동 <span class="ref">(p.244~247)</span></li>
+                <li>지구 공전과 별자리 변화 <span class="ref">(p.248~251)</span></li>
+                <li>달의 위상 변화 <span class="ref">(p.252~254)</span></li>
+                <li>일식과 월식 <span class="ref">(p.256~259)</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3 === -->
+<section class="slide">
+    <div class="kicker">1 · 태양계 구성원</div>
+    <h2>태양계의 구성 <small>p.226~227, 231</small></h2>
+    <div class="card hl reveal" style="margin-bottom:22px">
+        <b>태양계</b> : 태양을 포함하여 태양 주위를 공전하는 천체들과 이들이 차지하는 공간. 구성 천체는 <b>태양, 행성, 왜소 행성, 소행성, 위성, 혜성</b>.
+    </div>
+    <div class="grid g2">
+        <div class="card reveal">
+            <ul class="l">
+                <li><b>태양</b> : 태양계에서 <b>스스로 빛을 내는 유일한 별</b>. 태양계 전체 질량의 대부분.</li>
+                <li><b>행성</b> : 8개, 태양 주위를 공전.</li>
+                <li><b>위성</b> : 행성 주위를 공전하는 천체.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <ul class="l">
+                <li><b>왜소 행성</b> : 행성과 비슷하지만 크기와 질량이 행성보다 작은 천체.</li>
+                <li><b>소행성</b> : 크기가 작고 모양이 다양한 천체.</li>
+                <li><b>혜성</b> : 태양과 가까워질 때 긴 꼬리가 나타남. 얼음과 먼지로 되어 있음.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4 === -->
+<section class="slide">
+    <div class="kicker">1 · 행성의 분류</div>
+    <h2>지구형 행성 vs 목성형 행성 <small>p.228~229</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>지구형 행성</h3>
+            <p><b>수성, 금성, 지구, 화성</b></p>
+            <ul class="l" style="margin-top:8px">
+                <li>질량과 반지름이 <b>작다</b></li>
+                <li>표면이 단단한 <b>암석</b></li>
+                <li>위성 수가 없거나 적고 <b>고리가 없다</b></li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>목성형 행성</h3>
+            <p><b>목성, 토성, 천왕성, 해왕성</b></p>
+            <ul class="l" style="margin-top:8px">
+                <li>질량과 반지름이 <b>크다</b></li>
+                <li>표면이 <b>기체</b></li>
+                <li><b>고리</b>가 있고 위성 수가 많다</li>
+            </ul>
+        </div>
+    </div>
+    <table class="t reveal" style="margin-top:22px;font-size:24px">
+        <tr><th>지구=1</th><th>수성</th><th>금성</th><th>지구</th><th>화성</th><th>목성</th><th>토성</th><th>천왕성</th><th>해왕성</th></tr>
+        <tr><td>질량</td><td>0.06</td><td>0.82</td><td>1</td><td></td><td>317.83</td><td>95.16</td><td>14.54</td><td>17.15</td></tr>
+        <tr><td>반지름</td><td>0.38</td><td></td><td>1</td><td>0.53</td><td>11.21</td><td>9.45</td><td>4.01</td><td>3.88</td></tr>
+        <tr><td>위성 수</td><td>0</td><td>0</td><td>1</td><td>2</td><td>95</td><td>146</td><td>27</td><td></td></tr>
+    </table>
+    <p class="ref" style="margin-top:8px">빈칸은 교과서 표에서 학생이 채우는 칸이다.</p>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5 === -->
+<section class="slide">
+    <div class="kicker">1 · 행성의 특징</div>
+    <h2>행성별 특징 <small>p.230~231</small></h2>
+    <div class="grid g4">
+        <div class="card hl reveal" style="font-size:25px"><h3>수성</h3>대기가 거의 없어 낮밤 표면 온도 차이 약 <b>600 ℃</b>, 운석 충돌구 많음</div>
+        <div class="card hl reveal" style="font-size:25px"><h3>금성</h3>크기·질량이 지구와 비슷, <b>이산화 탄소</b>의 두꺼운 대기, 표면 온도 매우 높음</div>
+        <div class="card hl reveal" style="font-size:25px"><h3>지구</h3>질소·산소 등의 대기, <b>액체 상태의 물</b>, 다양한 생명체</div>
+        <div class="card hl reveal" style="font-size:25px"><h3>화성</h3>암석과 붉은색 토양, 거대한 화산, 물이 흘렀던 흔적, 극지방 흰색 <b>극관</b>(드라이아이스와 얼음)</div>
+    </div>
+    <div class="grid g4" style="margin-top:24px">
+        <div class="card hl reveal" style="font-size:25px"><h3>목성</h3><b>가장 큰 행성</b>, 주로 수소와 헬륨, 가로줄 무늬와 <b>대적점</b>(대기의 소용돌이), 희미한 고리, 많은 위성</div>
+        <div class="card hl reveal" style="font-size:25px"><h3>토성</h3><b>두 번째로 큰 행성</b>, 대기의 줄무늬, 얼음과 암석으로 이루어진 뚜렷한 고리</div>
+        <div class="card hl reveal" style="font-size:25px"><h3>천왕성</h3><b>청록색</b>, 자전축과 공전 궤도면이 거의 나란함</div>
+        <div class="card hl reveal" style="font-size:25px"><h3>해왕성</h3><b>가장 바깥쪽</b> 행성, 대기의 소용돌이인 <b>대흑점</b></div>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6 === -->
+<section class="slide">
+    <div class="kicker">1 · 태양과 태양 활동</div>
+    <h2>태양의 표면과 대기 <small>p.232~234</small></h2>
+    <div class="grid g2" style="grid-template-columns:1fr 1.2fr">
+        <div class="svgbox reveal">
+            <svg viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="260" cy="280" r="250" fill="rgba(224,138,106,.15)" stroke="#e08a6a" stroke-width="3" stroke-dasharray="10 8"/>
+                <circle cx="260" cy="280" r="190" fill="rgba(224,138,106,.45)" stroke="#e08a6a" stroke-width="3"/>
+                <circle cx="260" cy="280" r="150" fill="#e8c76a" stroke="#c9a24b" stroke-width="4"/>
+                <circle cx="230" cy="260" r="16" fill="#5a3a10"/><circle cx="290" cy="310" r="12" fill="#5a3a10"/>
+                <g stroke="#f3ead3" stroke-width="2"><line x1="400" y1="280" x2="520" y2="280"/><line x1="440" y1="170" x2="520" y2="130"/><line x1="410" y1="60" x2="520" y2="40"/></g>
+                <text class="b" x="525" y="288">광구</text><text class="w" x="525" y="138">채층</text><text x="525" y="48">코로나</text>
+                <text x="215" y="360" style="fill:#14301f;font-size:24px">흑점</text>
+            </svg>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>광구</b> : 밝게 보이는 둥근 표면, 약 <b>6000 ℃</b>. <b>쌀알 무늬</b>(광구 아래 대류 : 고온 물질이 올라오는 곳은 밝고 식어 내려가는 곳은 어두움)와 <b>흑점</b>(주변보다 약 2000 ℃ 낮아 어둡게 보임)이 관측된다.</li>
+                <li>흑점의 위치 변화로 태양이 <b>자전</b>함을 안다. 활동이 활발할수록 흑점 수가 많고 약 <b>11년 주기</b>로 변한다.</li>
+                <li><b>채층</b> : 광구 바로 위 붉은색 대기층. <b>코로나</b> : 채층 위로 넓게 뻗은 대기층, <b>100만 ℃ 이상</b>.</li>
+                <li>평소엔 광구가 밝아 볼 수 없고 <b>개기 일식</b> 때 관측. 활동이 활발할수록 코로나가 커진다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7 === -->
+<section class="slide">
+    <div class="kicker">1 · 태양과 태양 활동</div>
+    <h2>태양 활동과 지구에 미치는 영향 <small>p.233~236</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>태양 활동 현상</h3>
+            <ul class="l">
+                <li><b>홍염</b> : 고온의 물질이 채층을 뚫고 수십만 km 코로나층까지 솟아오르는 불꽃 덩어리 기둥.</li>
+                <li><b>플레어</b> : 흑점 부근에서 폭발이 일어나 채층의 일부가 수 분~수 시간 내 급격히 밝아지며 빛을 내는 현상.</li>
+            </ul>
+            <h3 style="margin-top:16px">활동이 활발하면</h3>
+            <p>흑점 수 증가, 홍염·플레어 자주 발생, 코로나가 커져 <b>태양풍</b>(태양에서 오는 전기를 띤 입자의 흐름)이 강해진다.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>지구에 미치는 영향 (p.235~236)</h3>
+            <ul class="l">
+                <li>무선 통신 장애 (<b>델린저 현상</b>), <b>자기 폭풍</b></li>
+                <li><b>오로라</b>가 더 넓은 지역에서 강하게 발생</li>
+                <li>인공위성 성능 저하</li>
+                <li>항공 : 비행기가 북극 부근 운항 불가</li>
+                <li>전력 장비 손상 (정전)</li>
+            </ul>
+            <p class="ref" style="margin-top:8px">국가기상위성센터에서 우주 기상을 예보한다.</p>
+        </div>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8 === -->
+<section class="slide">
+    <div class="kicker">1 · 천체 관측</div>
+    <h2>천체 망원경과 태양 관측 <small>p.238~239</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>천체 망원경</h3>
+            <p>멀리 있는 천체의 빛을 모아 확대한다.</p>
+            <ul class="l" style="margin-top:10px">
+                <li><b>달</b> : 운석 충돌구, <b>고지</b>(밝고 울퉁불퉁), <b>바다</b>(어둡고 평평)</li>
+                <li>목성의 줄무늬, 토성의 고리 관측 가능</li>
+            </ul>
+        </div>
+        <div class="card warn reveal">
+            <h3>태양 관측 주의</h3>
+            <ul class="l">
+                <li>망원경으로 직접 보면 <b>실명 위험</b>.</li>
+                <li>반드시 <b>투영판</b>이나 <b>태양 필터</b>를 사용한다. 이때 <b>흑점</b>을 관측한다.</li>
+                <li>관측 시 <b>파인더 렌즈 뚜껑은 덮어</b> 막는다.</li>
+            </ul>
+        </div>
+    </div>
+    <table class="t reveal" style="margin-top:24px">
+        <tr><th style="width:26%">관측 대상</th><th>볼 수 있는 것</th></tr>
+        <tr><td>달</td><td>운석 충돌구, 고지(밝고 울퉁불퉁), 바다(어둡고 평평)</td></tr>
+        <tr><td>목성 / 토성</td><td>줄무늬 / 고리</td></tr>
+        <tr><td>태양</td><td>투영판·태양 필터로 <b>흑점</b> 관측</td></tr>
+    </table>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9 === -->
+<section class="slide">
+    <div class="kicker">2 · 지구 자전</div>
+    <h2>자전과 별의 일주 운동 <small>p.244~247</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>자전</b> : 지구가 자전축을 중심으로 하루에 한 바퀴씩 일정한 속도로 회전 (<b>서→동</b>, 북극성 쪽에서 보면 시계 반대 방향).</li>
+                <li><b>일주 운동</b> : 천체가 하루에 한 바퀴씩 <b>동→서</b>로 도는 것처럼 보이는 <b>겉보기 운동</b>. 지구 자전 때문. 태양·달·별 모두 일주 운동.</li>
+                <li>별은 북극성을 중심으로 <b>1시간에 15°</b>씩 회전.</li>
+                <li><b>남중</b> : 하루 중 천체가 정남쪽에서 가장 높이 떠 있을 때.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>우리나라에서 보이는 모습 (p.247)</h3>
+            <table class="t" style="font-size:25px">
+                <tr><td>북쪽 하늘</td><td>북극성 중심 시계 반대 방향 원</td></tr>
+                <tr><td>동쪽 하늘</td><td>오른쪽으로 비스듬히 떠오름</td></tr>
+                <tr><td>남쪽 하늘</td><td>지평선과 거의 나란하게 동→서</td></tr>
+                <tr><td>서쪽 하늘</td><td>오른쪽으로 비스듬히 짐</td></tr>
+            </table>
+            <p class="dim" style="margin-top:10px">북극성을 바라보면 오른쪽이 동쪽.</p>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:22px">별이 움직인다 (X) → 지구 자전 때문에 보이는 <b>겉보기 운동</b>이다.</div>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10 === -->
+<section class="slide">
+    <div class="kicker">2 · 지구 공전</div>
+    <h2>공전과 별자리 변화 <small>p.248~251</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>공전</b> : 지구가 태양 주위를 1년에 한 바퀴 (<b>서→동</b>). 공전 때문에 계절에 따라 별자리 위치가 달라진다.</li>
+                <li><b>태양의 연주 운동</b> : 별자리 사이를 서→동으로 이동해 1년 후 제자리로 돌아오는 것처럼 보이는 태양의 겉보기 운동. 지구의 공전 방향과 같은 <b>서→동</b>.</li>
+                <li>해가 진 직후 서쪽 하늘을 15일 간격으로 관측하면 별자리는 태양 기준 동→서, 태양은 별자리 기준 서→동으로 이동 (공전에 의한 겉보기 운동).</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>황도</b> : 태양이 연주 운동하며 별자리 사이를 지나는 길.</li>
+                <li><b>황도 12궁</b> : 황도 부근 12개의 대표 별자리.</li>
+                <li>태양 쪽 별자리는 태양과 함께 뜨고 지므로 볼 수 없고, <b>태양 반대쪽 별자리</b>는 한밤중 남쪽 하늘에서 볼 수 있다.</li>
+            </ul>
+            <table class="t" style="font-size:24px;margin-top:10px">
+                <tr><th>월</th><th>태양 쪽</th><th>한밤중</th></tr>
+                <tr><td>9월</td><td>사자자리</td><td>물병자리</td></tr>
+                <tr><td>12월</td><td>전갈자리</td><td>황소자리</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11 === -->
+<section class="slide">
+    <div class="kicker">2 · 달의 위상 변화</div>
+    <h2>달의 위상 <small>p.252~254</small></h2>
+    <div class="grid g2" style="grid-template-columns:1fr 1.1fr">
+        <div class="svgbox reveal">
+            <svg viewBox="0 0 700 540" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="350" cy="270" r="50" fill="#2d6bb3" stroke="#f3ead3" stroke-width="2"/>
+                <text x="350" y="278" text-anchor="middle">지구</text>
+                <ellipse cx="350" cy="270" rx="250" ry="200" fill="none" stroke="#c9a24b" stroke-width="2" stroke-dasharray="8 8"/>
+                <g fill="#f3ead3"><circle cx="100" cy="270" r="26"/><circle cx="350" cy="470" r="26"/><circle cx="600" cy="270" r="26"/><circle cx="350" cy="70" r="26"/></g>
+                <text class="b" x="100" y="225" text-anchor="middle">삭</text>
+                <text class="b" x="350" y="525" text-anchor="middle">상현</text>
+                <text class="b" x="600" y="225" text-anchor="middle">망</text>
+                <text class="b" x="350" y="40" text-anchor="middle">하현</text>
+                <text class="w" x="20" y="330">햇빛 →</text>
+            </svg>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l" style="font-size:25px">
+                <li>달은 스스로 빛을 내지 못하고 <b>햇빛을 반사</b>하여 밝게 보인다.</li>
+                <li>달이 지구 주위를 <b>공전</b>(북극 하늘에서 볼 때 시계 반대 방향, 약 한 달 주기)해 햇빛이 비치는 부분이 달라지는 것이 <b>위상 변화</b>.</li>
+                <li><b>삭</b> : 달이 지구와 태양 사이, 보이지 않음 (음력 1일경)</li>
+                <li><b>상현달</b> : 삭→망 과정의 반달, 오른쪽이 둥글다 (음력 7~8일경)</li>
+                <li><b>망</b> : 지구를 중심으로 달이 태양 반대쪽, 보름달 (음력 15일경)</li>
+                <li><b>하현달</b> : 망→삭 과정의 반달, 왼쪽이 둥글다 (음력 22~23일경)</li>
+                <li>삭~상현 사이 = 초승달, 하현~삭 사이 = 그믐달</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12 === -->
+<section class="slide">
+    <div class="kicker">2 · 일식과 월식</div>
+    <h2>일식과 월식 <small>p.256~259</small></h2>
+    <div class="svgbox reveal">
+        <svg viewBox="0 0 1700 300" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="70" r="40" fill="#e8c76a"/><circle cx="500" cy="70" r="20" fill="#f3ead3"/><circle cx="700" cy="70" r="30" fill="#2d6bb3"/>
+            <text class="b" x="850" y="78">일식 :</text><text x="970" y="78">태양 – 달 – 지구 순, 달이 삭</text>
+            <circle cx="100" cy="220" r="40" fill="#e8c76a"/><circle cx="500" cy="220" r="30" fill="#2d6bb3"/><circle cx="700" cy="220" r="20" fill="#a39b86"/>
+            <path d="M525 200 L800 190 L800 250 L525 240 Z" fill="rgba(0,0,0,.45)"/>
+            <text class="b" x="850" y="228">월식 :</text><text x="970" y="228">태양 – 지구 – 달 순, 달이 망</text>
+            <text x="100" y="135" text-anchor="middle">태양</text><text x="500" y="125" text-anchor="middle">달</text><text x="700" y="125" text-anchor="middle">지구</text>
+            <text x="500" y="290" text-anchor="middle">지구</text><text x="700" y="290" text-anchor="middle">달</text>
+        </svg>
+    </div>
+    <div class="grid g2" style="margin-top:20px">
+        <div class="card hl reveal" style="font-size:25px">
+            <h3>일식</h3>
+            <p>달이 태양의 일부 또는 전체를 가리는 현상. 완전히 가려지면 <b>개기 일식</b>, 일부만 가려지면 <b>부분 일식</b>. 태양은 <b>오른쪽</b>부터 가려지기 시작.</p>
+        </div>
+        <div class="card hl reveal" style="font-size:25px">
+            <h3>월식</h3>
+            <p>달이 지구의 그림자 속에 들어가 일부 또는 전체가 보이지 않는 현상. 일부만 들어가면 <b>부분 월식</b>, 완전히 들어가면 <b>개기 월식</b>(달이 붉게 보임). 달의 <b>왼쪽</b>부터 어두워지기 시작.</p>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:20px;font-size:25px">개기 월식 때 달이 붉게 보이는 까닭 : <b>지구 대기</b> 때문에 햇빛의 붉은색 빛만 달에 비치기 때문이다. <span class="ref">월식은 달이 태양을 가린다 (X) → 지구 그림자에 들어감.</span></div>
+    <div class="pg">12</div>
+</section>
+
+<!-- === 13 === -->
+<section class="slide">
+    <div class="kicker">꼭 외울 것</div>
+    <h2>핵심 암기 5가지</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>지구형</b>(수·금·지·화) = 작고 암석 / <b>목성형</b>(목·토·천·해) = 크고 기체, 고리·위성 많음.</li>
+                <li><b>태양</b> 표면 : 광구(쌀알 무늬·흑점), 대기 : 채층·코로나 (홍염·플레어는 활동 현상). 흑점 수 주기 약 <b>11년</b>.</li>
+                <li>태양 관측은 <b>투영판·태양 필터</b>.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li>별의 <b>일주 운동</b> = 지구 자전, 1시간 15°, 동→서. 태양의 <b>연주 운동</b> = 지구 공전, 서→동.</li>
+                <li><b>삭</b>(일식)·<b>망</b>(월식), <b>상현</b>(7~8일)·<b>하현</b>(22~23일).</li>
+            </ul>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card reveal">
+            <h3>태양 활동이 활발하면</h3>
+            <p>흑점 수 증가, 홍염·플레어 자주 발생, 코로나가 커져 <b>태양풍</b>이 강해진다 → 무선 통신 장애(델린저 현상), 자기 폭풍, 오로라, 인공위성 성능 저하, 정전.</p>
+        </div>
+        <div class="card reveal">
+            <h3>달</h3>
+            <p>스스로 빛을 내지 못하고 <b>햇빛을 반사</b>. 달이 지구 주위를 <b>공전</b>하여 햇빛이 비치는 부분이 달라지는 것이 위상 변화. 개기 월식 때 붉게 보이는 까닭은 지구 대기 때문.</p>
+        </div>
+    </div>
+    <div class="pg">13</div>
+</section>
+
+<!-- === 14 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>구분하기와 자주 하는 오해</h2>
+    <div class="grid g2" style="grid-template-columns:1.35fr 1fr">
+        <table class="t reveal" style="font-size:24px">
+            <tr><th>구분</th><th>A</th><th>B</th></tr>
+            <tr><td>일주 / 연주 운동</td><td>하루 한 바퀴, 동→서, 자전</td><td>1년 한 바퀴, 서→동, 공전</td></tr>
+            <tr><td>일식 / 월식</td><td>삭, 태양-달-지구, 오른쪽부터 가려짐</td><td>망, 태양-지구-달, 왼쪽부터 어두워짐</td></tr>
+            <tr><td>상현 / 하현</td><td>삭→망, 오른쪽이 둥긂, 7~8일</td><td>망→삭, 왼쪽이 둥긂, 22~23일</td></tr>
+            <tr><td>채층 / 코로나</td><td>광구 바로 위 붉은 층</td><td>채층 위로 넓게, 100만 ℃ 이상</td></tr>
+            <tr><td>홍염 / 플레어</td><td>가스가 코로나층까지 솟는 기둥</td><td>채층 일부가 급격히 밝아지는 폭발</td></tr>
+        </table>
+        <div class="card warn reveal">
+            <h3>이렇게 오해하지 말자</h3>
+            <ul class="l" style="font-size:25px">
+                <li>달이 스스로 빛난다 (X) → 햇빛을 <b>반사</b>.</li>
+                <li>별이 움직인다 (X) → 자전 때문에 보이는 겉보기 운동.</li>
+                <li>월식은 달이 태양을 가린다 (X) → 지구 그림자에 들어감.</li>
+                <li>목성형 행성은 단단한 땅이 있다 (X) → 표면이 기체.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">14</div>
+</section>
+
+<!-- === 15 === -->
+<section class="slide">
+    <div class="kicker">시험 포인트</div>
+    <h2>이렇게 나온다</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>객관식 · 합답</h3>
+            <ul class="l">
+                <li>행성 표(질량·반지름·위성 수) 해석, 지구형/목성형 분류</li>
+                <li>태양 대기·표면 현상 구분, 흑점 수 그래프와 지구 영향</li>
+                <li>일주 운동 방향·각도 계산 (15°/시간), 별자리 가시 시기 (황도 12궁)</li>
+                <li>달의 위치-위상-음력 날짜, 일식·월식 배치 그림</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>서술형</h3>
+            <ul class="l">
+                <li>용어 포함 서술 (태양풍·통신 장애)</li>
+                <li>그림 기호 + 이유</li>
+            </ul>
+            <h3 style="margin-top:20px">마지막 점검</h3>
+            <p>자전/공전, 일식/월식의 <b>방향·배치·달의 위상(삭/망)</b>을 짝지어 정확히 썼는가?</p>
+        </div>
+    </div>
+    <div class="pg">15</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 15</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+</body>
+</html>

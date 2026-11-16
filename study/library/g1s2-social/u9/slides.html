@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>민주주의와 시민 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --bg: #14301f;
+    --bg-2: #1c4029;
+    --bg-3: #0f2517;
+    --ink: #f3ead3;
+    --ink-dim: #c9c3a8;
+    --brass: #c9a24b;
+    --warn: #e08a6a;
+    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0a1a10;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 84px;
+    font-size: 27px;
+    line-height: 1.5;
+    background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
+        var(--bg);
+}
+.slide::before {
+    content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none;
+}
+.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
+h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
+.card.warn { border-color: rgba(224,138,106,.6); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
+table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+.g4 .card, .g5 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+.svgbox { text-align: center; }
+.svgbox svg { width: 100%; height: auto; }
+
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
+.cover .kicker { font-size: 30px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
+.cover h1 span { color: var(--brass); }
+.cover p { font-size: 34px; color: var(--ink-dim); }
+.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+    .slide::before { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 20px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr; }
+    .card, .g4 .card, .g5 .card { padding: 14px 16px; font-size: 17px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1. 표지 === -->
+<section class="slide cover active">
+    <div class="kicker reveal">1학년 2학기 사회 · 9단원 요약 정리</div>
+    <h1 class="reveal"><span>민주주의</span>와 시민</h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">정치와 민주주의 · 민주주의의 발전 · 민주주의의 발전 과제</p>
+</section>
+
+<!-- === 2. 단원 개요 === -->
+<section class="slide">
+    <div class="kicker">단원 개요</div>
+    <h2>민주주의는 어떻게 만들어졌나 <small>교과서 p.162~179</small></h2>
+    <div class="grid g3">
+        <div class="card hl reveal">
+            <h3>01 정치와 민주주의</h3>
+            <p class="ref">p.164~167</p>
+            <ul class="l">
+                <li>정치의 의미와 역할</li>
+                <li>민주주의의 의미·필요성</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>02 민주주의의 발전</h3>
+            <p class="ref">p.168~173</p>
+            <ul class="l">
+                <li>고대·근대·현대 민주주의</li>
+                <li>우리나라 민주화 운동</li>
+                <li>이념과 기본 원리</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>03 발전 과제</h3>
+            <p class="ref">p.174~177</p>
+            <ul class="l">
+                <li>현대 민주주의의 특징·과제</li>
+                <li>제도적 방안과 시민의 역할</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>공부 방법 (일반사회 · 정치)</h3>
+        <p>사례를 읽고 <b>개념을 고르거나</b>, 표·연표를 보고 시대별 차이를 구분하는 문제가 중심이다. 용어의 정의를 정확히 익힌다.</p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3. 정치의 의미와 역할 === -->
+<section class="slide">
+    <div class="kicker">01 정치와 민주주의</div>
+    <h2>정치의 의미와 역할 <small>p.165</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>좁은 의미의 정치</h3>
+            <p><b>정치권력</b>을 획득하고 행사하는 활동.</p>
+            <p class="dim" style="margin-top:8px">예) 국회에서 법률을 만들거나 고치는 활동, 정부가 정책을 마련하여 집행하는 활동.</p>
+            <p class="ref" style="margin-top:8px">정치권력 = 국가가 정치적 기능을 수행하고자 행사하는 힘</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>넓은 의미의 정치</h3>
+            <p>사회 구성원 간의 대립과 갈등을 <b>조정하여 합의</b>를 이루게 하는 과정.</p>
+            <p class="dim" style="margin-top:8px">예) 가족회의나 학급 회의로 의견을 조율하여 문제를 해결하는 활동.</p>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>정치의 역할</h3>
+        <ul class="l">
+            <li>사회에는 사람들이 가지고 싶어 하는 것이 충분하지 않고, 중요하게 생각하는 가치도 달라서 <b>대립과 갈등</b>이 생긴다.</li>
+            <li>해결되지 않으면 공동체가 혼란스러워지거나 구성원의 안정적인 생활이 어려워질 수 있다.</li>
+            <li>정치는 갈등을 조정해 합리적으로 해결함으로써 <b>사회를 통합하고 사회 질서를 유지</b>한다.</li>
+        </ul>
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4. 민주주의의 의미와 태도 === -->
+<section class="slide">
+    <div class="kicker">01 정치와 민주주의</div>
+    <h2>민주주의의 의미와 민주적 태도 <small>p.166~167</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>민주주의의 의미</h3>
+            <ul class="l">
+                <li>권력을 가진 소수가 아니라 <b>모든 국민이 국가의 주인</b>으로서 권리를 갖고 나라를 다스리는 <b>정치 형태</b>.</li>
+                <li>일상생활의 문제를 모든 사람이 <b>자유롭고 평등한 입장</b>에서 민주적으로 해결하려는 <b>생활 방식</b>이기도 하다.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>민주적 해결에 필요한 태도</h3>
+            <ul class="l">
+                <li><b>관용</b>, <b>비판</b>, <b>타협</b> 등의 태도.</li>
+                <li>결정 방안으로 <b>다수결의 원칙</b>을 활용할 수 있다.</li>
+                <li>다수의 의견에 따르더라도 <b>소수의 의견을 존중</b>해야 한다.</li>
+            </ul>
+            <p class="ref" style="margin-top:8px">관용 = 자신과 다른 가치관이나 사고 방식을 인정하고 포용하는 태도 / 다수결의 원칙 = 다수의 의견을 따르는 것</p>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3>헷갈리지 말 것</h3>
+        <p>"소수 의견은 신경 쓰지 않아도 된다" (X) → 다수결을 따르더라도 <b>소수의 의견을 존중</b>한다.</p>
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5. 민주주의의 필요성 === -->
+<section class="slide">
+    <div class="kicker">01 정치와 민주주의</div>
+    <h2>민주주의는 왜 필요한가 <small>p.166</small></h2>
+    <div class="grid g3">
+        <div class="card warn reveal">
+            <h3>소수에게 권력이 집중되면</h3>
+            <p>공동체 의사가 소수에 의해 결정되어 <b>다수의 권리가 침해</b>될 수 있다.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>국민이 참여하면</h3>
+            <p>국민이 <b>직접 또는 간접적으로</b> 중요한 의사 결정에 참여해 <b>국민의 뜻에 따른 정치</b>를 실현할 수 있다.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>일상에서</h3>
+            <p>일상의 문제를 직접 해결하며 모두가 <b>주인으로서의 삶</b>을 누릴 수 있다.</p>
+        </div>
+    </div>
+    <div class="card hl reveal" style="margin-top:28px">
+        <b>결론</b> 모두의 <b>인간답고 행복한 삶</b>을 보장하려면 민주주의가 필요하다.
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6. 시대별 민주주의 === -->
+<section class="slide">
+    <div class="kicker">02 민주주의의 발전</div>
+    <h2>시대별 민주주의 <small>p.169~170</small></h2>
+    <table class="t reveal" style="font-size:24px">
+        <tr><th style="width:11%">시대</th><th style="width:48%">운영</th><th>참여 자격·한계</th></tr>
+        <tr><td>고대 아테네</td><td>도시 국가의 시민이 <b>민회</b>에 참여해 대화·토론으로 결정. 추첨하거나 돌아가면서 공직을 맡고 대부분 임기 1년. <b>직접 민주주의</b></td><td>시민권이 <b>성인 남성</b>에게만 있어 여성·외국인·노예는 참여 불가 → 제한적 민주주의</td></tr>
+        <tr><td>근대</td><td><b>자연권 사상·사회 계약설</b>의 영향을 받은 <b>근대 시민 혁명</b>(영국 명예혁명, 미국 독립 혁명, 프랑스 혁명)으로 다시 등장. 상공업으로 부를 쌓은 시민 계급이 주도. 의회 중심의 <b>대의 민주주의</b></td><td>성별·신분·재산 등으로 제한. 일정 규모 이상 토지 소유자나 일정 금액 이상 세금을 내는 귀족·상공업자만 선거권. 여성·노동자·농민은 불가 → 제한된 민주주의</td></tr>
+        <tr><td>현대</td><td>근대 이후 배제된 여성·노동자·농민이 참정권 투쟁. <b>20세기 중반</b> 대부분의 민주 국가에서 일정한 나이 이상의 모든 국민에게 선거권을 주는 <b>보통 선거 제도</b> 확립</td><td>성별·신분·재산 등에 관계없이 모든 사회 구성원이 정치 참여 권리</td></tr>
+    </table>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7. 용어와 우리나라 민주화 운동 === -->
+<section class="slide">
+    <div class="kicker">02 민주주의의 발전</div>
+    <h2>용어와 우리나라 민주화 운동 <small>p.169~171</small></h2>
+    <div class="card reveal" style="margin-bottom:22px">
+        <ul class="l">
+            <li><b>자연권 사상</b> : 모든 인간은 태어나면서부터 누구에게도 빼앗길 수 없는 기본적 권리를 부여받았다는 사상.</li>
+            <li><b>사회 계약설</b> : 국가는 자연권을 보장받으려는 개인들의 합의로 만들어졌다는 사상.</li>
+            <li><b>대의 민주주의</b> : 시민들이 선출한 대표를 통해 정치과정에 참여하는 정치 형태.</li>
+        </ul>
+    </div>
+    <div class="grid g3 reveal">
+        <div class="card step"><span class="no" style="width:auto;border-radius:99px;padding:0 18px">1960</span><br><h3>4·19 혁명</h3>독재 정치와 <b>3·15 부정 선거</b>에 항의한 학생·시민.</div>
+        <div class="card step"><span class="no" style="width:auto;border-radius:99px;padding:0 18px">1980</span><br><h3>5·18 민주화 운동</h3>군사 독재 정권에 맞서 민주주의를 지키려는 <b>광주</b> 시민·학생의 의지. 아시아 여러 나라 민주화 운동에도 영향.</div>
+        <div class="card step"><span class="no" style="width:auto;border-radius:99px;padding:0 18px">1987</span><br><h3>6월 민주 항쟁</h3>독재 반대, <b>대통령 직선제</b> 요구 → 국민이 직접 대통령을 뽑게 됨.</div>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8. 민주주의의 이념 === -->
+<section class="slide">
+    <div class="kicker">02 민주주의의 발전</div>
+    <h2>민주주의의 이념 <small>p.172</small></h2>
+    <div class="card hl reveal" style="margin-bottom:22px">
+        <b>목표 : 인간의 존엄성 실현</b> (모든 사람이 인간이라는 이유만으로 존중받아야 함). 이를 위해 <b>자유와 평등</b>이 보장되어야 하고, 둘은 조화와 균형을 이루어야 한다.
+    </div>
+    <div class="grid g2">
+        <div class="card reveal">
+            <h3>자유</h3>
+            <p>국가나 다른 사람에게 구속받지 않고 자신이 원하는 대로 판단하여 행동할 수 있는 것.</p>
+            <p class="dim" style="margin-top:8px">현대에는 부당한 간섭을 받지 않을 뿐 아니라 국가의 정책 결정 과정에 <b>참여할 자유</b>, 국가에 <b>인간다운 삶을 요구할 수 있는 자유</b>가 강조된다.</p>
+        </div>
+        <div class="card reveal">
+            <h3>평등</h3>
+            <p>성별·인종·재산·신분 등을 이유로 부당하게 차별받지 않고 <b>동등하게 대우</b>받는 것.</p>
+            <p class="dim" style="margin-top:8px">기회가 균등해도 차이로 평등이 실현되지 못하면, 현대에는 이를 적극 고려해 <b>실질적 평등</b>을 누리도록 제도를 마련한다. (예 : 장애인 의무 고용 제도)</p>
+        </div>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9. 기본 원리 === -->
+<section class="slide">
+    <div class="kicker">02 민주주의의 발전</div>
+    <h2>민주주의의 기본 원리 4가지 <small>p.173</small></h2>
+    <table class="t reveal">
+        <tr><th style="width:19%">원리</th><th style="width:56%">뜻</th><th>사례</th></tr>
+        <tr><td>국민 주권</td><td><b>주권</b>(국가 의사를 결정하는 최고의 권력)이 국민에게 있으므로 모든 국가 권력은 국민의 동의와 지지를 바탕으로 형성·행사</td><td>선거로 대표 선출</td></tr>
+        <tr><td>국민 자치</td><td>국민이 스스로 나라를 다스려야 함. 대부분 대의 민주주의, 우리나라는 국민 투표 등으로 직접 의사 결정 참여 가능</td><td>국민 투표 등</td></tr>
+        <tr><td>입헌주의</td><td>최고법인 <b>헌법</b>에 따라 국가기관을 구성하고 국가를 운영. 권력 남용 방지·자유와 권리 보장</td><td>헌법 소원 (침해된 기본권을 헌법 재판으로 구제)</td></tr>
+        <tr><td>권력 분립</td><td>국가 권력을 서로 독립된 기관이 나누어 맡게 함. <b>견제와 균형</b>으로 권력 남용 방지</td><td>우리나라 권력 분립</td></tr>
+    </table>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10. 현대 민주주의의 특징과 과제 === -->
+<section class="slide">
+    <div class="kicker">03 민주주의의 발전 과제</div>
+    <h2>현대 민주주의의 특징과 과제 <small>p.175</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>특징</h3>
+            <ul class="l">
+                <li>국가 규모가 커지고 사회 현상이 복잡해져 <b>대부분의 국가가 대의 민주주의</b>를 실시한다.</li>
+                <li>복지 요구가 늘며 <b>행정부의 역할이 커지고 전문성도 높아졌다</b>.</li>
+                <li><b>전자 민주주의</b>가 활발해져 시민이 더 쉽게 정보를 접하고 여론 형성에 참여한다.</li>
+            </ul>
+            <p class="ref">전자 민주주의 = 정보 통신 기술을 활용해 시민이 직접 정치에 참여하는 형태</p>
+        </div>
+        <div class="card warn reveal">
+            <h3>과제</h3>
+            <ul class="l">
+                <li>전문성을 갖춘 대표를 선거로 뽑기 쉽지 않다.</li>
+                <li>다원화된 사회에서 대표가 시민의 다양한 가치·이익을 정확히 반영하기 어렵다.</li>
+                <li>시민 의사가 제대로 반영되지 않으면 <b>정치 불신·정치적 무관심</b>이 생긴다.</li>
+                <li>자기 이익만을 위해 정치에 참여하면 다른 사람의 자유와 권리를 해치고 민주주의 발전을 가로막는다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11. 발전을 위한 제도적 방안 === -->
+<section class="slide">
+    <div class="kicker">03 민주주의의 발전 과제</div>
+    <h2>발전을 위한 제도적 방안 <small>p.176</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>제도적 방안</h3>
+            <ul class="l">
+                <li><b>공정한 선거 제도</b> 확립</li>
+                <li>국민이 직접 결정하는 <b>국민 투표·국민 발안·국민 소환</b>으로 대의 민주주의 보완</li>
+                <li>정책에 의견을 제안하고 평가하는 <b>공청회·청원</b> 운영</li>
+                <li><b>공동체 토론</b> 활성화</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>용어 풀이</h3>
+            <ul class="l">
+                <li><b>국민 투표</b> : 국가의 중대한 사항을 주권자인 국민이 직접 투표로 결정</li>
+                <li><b>국민 발안</b> : 일정 수의 유권자가 중요한 법안이나 의안을 제안할 수 있는 제도</li>
+                <li><b>국민 소환</b> : 선거로 뽑은 공직자를 임기 전에 국민의 투표로 그만두게 하는 제도</li>
+                <li><b>청원</b> : 국민이 법률 개정이나 공무원 징계 요구 등을 국가기관에 문서로 청구하는 것</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>국회의 국민 동의 청원</h3>
+        <p>시민이 누리집에 청원서를 올려 일정 기간 일정 수 이상 동의를 받으면 국회 담당 위원회가 처리한다.</p>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12. 시민의 역할 === -->
+<section class="slide">
+    <div class="kicker">03 민주주의의 발전 과제</div>
+    <h2>민주주의 발전을 위한 시민의 역할 <small>p.176</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>시민의 자세</h3>
+            <ul class="l">
+                <li>문제에 관심을 두고 <b>적극 참여</b>하는 자세</li>
+                <li><b>합리적 의사 결정 능력</b></li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>사회적 쟁점 해결에 참여하며</h3>
+            <ul class="l">
+                <li><b>여론의 형성 및 전달</b></li>
+                <li><b>입법 요구</b>, 정책 대안 제시</li>
+                <li>국가 권력의 남용 <b>감시 및 비판</b></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <b>효과</b> 이러한 활동으로 <b>대의 민주주의의 한계를 보완</b>한다.
+    </div>
+    <div class="pg">12</div>
+</section>
+
+<!-- === 13. 꼭 기억할 것 === -->
+<section class="slide">
+    <div class="kicker">꼭 기억할 것</div>
+    <h2>핵심 암기 정리</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>좁은 의미 정치</b> = 정치권력 획득·행사 / <b>넓은 의미 정치</b> = 갈등 조정·합의. 역할 : 사회 통합, 질서 유지.</li>
+                <li><b>민주주의</b> = 모든 국민이 주인. 관용·비판·타협, 다수결 + <b>소수 의견 존중</b>.</li>
+                <li><b>고대 아테네</b> 직접 민주주의(성인 남성만) → <b>근대</b> 대의 민주주의(재산 등 제한) → <b>현대</b> 보통 선거(20세기 중반).</li>
+                <li><b>민주화 운동</b> : 4·19 혁명(1960), 5·18(1980), 6월 민주 항쟁(1987, 직선제).</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li>목표 <b>인간의 존엄성</b> → <b>자유와 평등</b>의 조화.</li>
+                <li><b>기본 원리</b> : 국민 주권·국민 자치·입헌주의·권력 분립.</li>
+                <li>현대 : 대의 민주주의, 행정부 역할 확대, 전자 민주주의. 과제 : 정치 불신·무관심.</li>
+                <li>제도 : <b>국민 투표·발안·소환, 공청회·청원</b>. 시민 : 여론 형성·입법 요구·권력 감시·비판.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">13</div>
+</section>
+
+<!-- === 14. 헷갈리기 쉬운 것 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>구분하기와 자주 하는 오해</h2>
+    <div class="grid g2" style="grid-template-columns:1.25fr 1fr">
+        <table class="t reveal" style="font-size:25px">
+            <tr><th>구분</th><th>A</th><th>B</th></tr>
+            <tr><td>좁은 vs 넓은 정치</td><td>정치권력 획득·행사 (국회 입법, 정부 정책)</td><td>갈등 조정·합의 (학급 회의)</td></tr>
+            <tr><td>직접 vs 대의</td><td>시민이 민회에서 직접 결정</td><td>선출한 대표를 통해 참여</td></tr>
+            <tr><td>국민 발안 vs 소환</td><td>법안·의안을 제안</td><td>공직자를 임기 전에 그만두게 함</td></tr>
+            <tr><td>자유 vs 평등</td><td>구속받지 않고 판단·행동</td><td>부당한 차별 없이 동등한 대우</td></tr>
+        </table>
+        <div class="card warn reveal">
+            <h3>이렇게 오해하지 말자</h3>
+            <ul class="l" style="font-size:25px">
+                <li>다수결이면 소수 의견은 무시 (X) → <b>소수 존중</b>.</li>
+                <li>고대 아테네는 모든 사람이 참여 (X) → <b>성인 남성</b>만.</li>
+                <li>근대에 모든 국민이 선거권 (X) → <b>보통 선거는 20세기 중반</b> 확립.</li>
+                <li>자기 이익만 위한 참여도 발전에 도움 (X) → 오히려 가로막음.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">14</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 14</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+</body>
+</html>
