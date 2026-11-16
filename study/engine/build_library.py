@@ -254,7 +254,7 @@ def build_book(bdir, errors, warns, info):
         errors.append(f"[{bdir.name}] 중복 문항 id: {dup}")
     if not units:
         errors.append(f"[{bdir.name}] 단원이 없음")
-    book = {"id": bdir.name, **{k: meta.get(k) for k in ("grade", "semester", "subject", "color", "description", "sample", "exam") if meta.get(k) is not None},
+    book = {"id": bdir.name, **{k: meta.get(k) for k in ("grade", "semester", "subject", "color", "description", "sample", "exam", "textbookUnits") if meta.get(k) is not None},
             "units": units, "questions": questions}
     return book
 

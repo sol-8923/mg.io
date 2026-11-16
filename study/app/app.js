@@ -462,11 +462,24 @@ function renderSummaryBook(id){
   return Data.bookP(id).then(function(book){
     page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:semBack('summary',book)},['← 책장']),h('div',{},[h('div',{class:'crumb',text:'요약 정리'}),h('h1',{text:bookLabel(book)})])]));
     var list=h('div',{class:'card'});
-    book.units.forEach(function(u,i){
-      list.appendChild(u.slides
-        ?h('a',{class:'btn sum-unit',href:'#/summary/'+encodeURIComponent(id)+'/'+encodeURIComponent(u.id),onclick:function(){ Snd.page(); }},['📘 '+unitLabel(book,u,i)+' '+u.name])
-        :h('div',{class:'btn sum-unit off',text:unitLabel(book,u,i)+' '+u.name+' (준비 중)'}));
-    });
+    /* 교과서 전체 단원 목록(textbookUnits)이 있으면 그 번호·이름 그대로 보여 주고, 아직 안 만든 단원은 '준비 중'으로 둔다 */
+    var tb=book.textbookUnits;
+    if(tb&&tb.length){
+      var roman=(book.subject==='사회'||book.subject==='과학');
+      tb.forEach(function(t){
+        var built=book.units.filter(function(u){ var m=/(\d+)/.exec(u.id||''); return m&&parseInt(m[1],10)===t.no; })[0];
+        var label=(roman?(ROMANS[t.no]||t.no):t.no)+'.';
+        list.appendChild(built&&built.slides
+          ?h('a',{class:'btn sum-unit',href:'#/summary/'+encodeURIComponent(id)+'/'+encodeURIComponent(built.id),onclick:function(){ Snd.page(); }},['📘 '+label+' '+t.name])
+          :h('div',{class:'btn sum-unit off',text:label+' '+t.name+' (준비 중)'}));
+      });
+    } else {
+      book.units.forEach(function(u,i){
+        list.appendChild(u.slides
+          ?h('a',{class:'btn sum-unit',href:'#/summary/'+encodeURIComponent(id)+'/'+encodeURIComponent(u.id),onclick:function(){ Snd.page(); }},['📘 '+unitLabel(book,u,i)+' '+u.name])
+          :h('div',{class:'btn sum-unit off',text:unitLabel(book,u,i)+' '+u.name+' (준비 중)'}));
+      });
+    }
     page.appendChild(list);
   }).catch(renderError);
 }
