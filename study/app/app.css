@@ -606,11 +606,7 @@ a.door.shake{animation:doorShake .45s}
 .book.notebook .pages{display:none}
 .book.notebook .cover{inset:0;border-radius:5px 11px 11px 5px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.14),0 12px 18px -10px rgba(35,20,8,.7),0 2px 3px rgba(0,0,0,.22)}
 .book.notebook.has-img .cover::after{background:linear-gradient(90deg,rgba(0,0,0,.30) 0,rgba(0,0,0,.08) 9%,rgba(255,255,255,.10) 12%,rgba(255,255,255,0) 18%,rgba(0,0,0,0) 90%,rgba(0,0,0,.14) 100%)}
-.book.notebook .spiral{position:absolute;left:-3.2%;top:5%;bottom:5%;width:12%;z-index:2;pointer-events:none;
-  background:
-    repeating-linear-gradient(180deg,transparent 0 7px,rgba(60,62,70,.95) 7px 8px,#e3e6ec 8px 10px,#9aa0aa 10px 12px,rgba(60,62,70,.9) 12px 13px,transparent 13px 21px);
-  border-radius:6px;filter:drop-shadow(1px 2px 1.5px rgba(0,0,0,.35))}
-.book.notebook .spiral::after{content:'';position:absolute;left:62%;right:-6%;top:0;bottom:0;
-  background:radial-gradient(circle at 50% 50%,rgba(20,20,24,.7) 0 2.4px,transparent 3.4px) 0 0/100% 21px repeat-y}
-.book.notebook .elastic{position:absolute;right:9%;top:-1%;bottom:-1%;width:3.4%;z-index:2;pointer-events:none;
-  background:linear-gradient(90deg,rgba(0,0,0,.35),rgba(34,34,38,.82) 32%,rgba(0,0,0,.5));box-shadow:1px 0 3px rgba(0,0,0,.3);border-radius:2px}
+.book.notebook .spiral{position:absolute;left:-4.5%;top:4%;bottom:4%;width:15%;z-index:2;pointer-events:none;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 33'><defs><linearGradient id='w' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23ffffff'/><stop offset='.45' stop-color='%23c9ced6'/><stop offset='1' stop-color='%236f7682'/></linearGradient><radialGradient id='h' cx='.5' cy='.45' r='.6'><stop offset='0' stop-color='%23101216'/><stop offset='1' stop-color='%2335383f'/></radialGradient></defs><ellipse cx='34' cy='16.5' rx='4.2' ry='3.3' fill='url(%23h)'/><ellipse cx='34' cy='15.6' rx='4.2' ry='2.4' fill='none' stroke='%23000' stroke-opacity='.35' stroke-width='.8'/><path d='M5 24.5 C13 11 26 9.5 36 15.2' fill='none' stroke='%23000' stroke-opacity='.28' stroke-width='4' stroke-linecap='round'/><path d='M5 23 C13 9.5 26 8 36 13.8' fill='none' stroke='url(%23w)' stroke-width='3.1' stroke-linecap='round'/><path d='M7 21.6 C14 10.4 25 9.2 33.5 13.6' fill='none' stroke='%23fff' stroke-opacity='.85' stroke-width='.9' stroke-linecap='round'/><path d='M33 14.6 Q35.5 16 36.8 18' fill='none' stroke='%232a2d33' stroke-width='1.6' stroke-linecap='round'/></svg>") 0 0/100% auto repeat-y;filter:drop-shadow(0 1px 1px rgba(0,0,0,.28))}
+.book.notebook .elastic{position:absolute;right:9%;top:-.6%;bottom:-.6%;width:2.6%;z-index:2;pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,255,255,.14),rgba(40,40,46,.86) 35%,rgba(10,10,12,.7));box-shadow:1px 0 2px rgba(0,0,0,.28);border-radius:1.5px}
