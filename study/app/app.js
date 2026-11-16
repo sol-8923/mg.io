@@ -220,7 +220,7 @@ document.addEventListener('click',function(e){
  * 브라우저 규칙상 화면을 처음 누른 뒤에 시작한다. 🎵 버튼으로 켜고 끈다(이 기기에 저장). */
 var Mus=(function(){
   var TRACKS=['aquarium','icicles-melting','isolation-waltz','la-citadelle','lovely-piano-song','night-in-venice','nostalgic-piano','pond','romantic-inspiration','shining-stars','celebrated-minuet','amazing-grace'].map(function(n){ return 'app/music/'+n+'.ogg'; });   /* 가사 없는 잔잔한 클래식풍 12곡, 음량은 같게 맞춰 두었다 */
-  var VOL=0.15, FADE_IN=1.8, FADE_OUT=1.0;
+  var VOL=0.15, FADE_IN=1.0, FADE_OUT=0.6;
   var STUDY={room:1,exam:1,summary:1,notes:1,stats:1,book:1,quiz:1,result:1,review:1};
   var ctx=null, gain=null, lp=null, el=null, idx=Math.floor(Math.random()*TRACKS.length), fresh=true, wantOn=true, inStudy=false, started=false, stopT=null;
   try{ wantOn=localStorage.getItem('mg-study:music')!=='off'; }catch(e){}
