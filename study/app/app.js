@@ -96,6 +96,7 @@ function route(){
   stopTimer(); removeNav(); closeModals(); if(S.chatUnsub){ S.chatUnsub(); S.chatUnsub=null; }
   var p=location.hash.replace(/^#\/?/,'').split('/').filter(Boolean).map(decodeURIComponent);
   var a=p[0], b=p[1];
+  Mus.onRoute(a);
   var done=function(){ window.scrollTo(0,0); };
   try{
     if(!a) return renderHome(), done();
@@ -214,6 +215,53 @@ document.addEventListener('click',function(e){
     if(el.classList.contains('back')||/^(←|‹)/.test(tx)||/^(나가기|뒤로|닫기|취소)/.test(tx)) Snd.back(); else Snd.pop();
   },0);
 },false);
+/* ───────── 배경 음악(은은한 뉴에이지, CC0 음원 app/music) ─────────
+ * 홈·톡방·일정 등에서 잔잔하게 흐르고, 공부방(공부방·시험·요약·오답노트·공부 기록·문제 풀이)에 들어가면 서서히 줄어들며 꺼진다.
+ * 브라우저 규칙상 화면을 처음 누른 뒤에 시작한다. 🎵 버튼으로 켜고 끈다(이 기기에 저장). */
+var Mus=(function(){
+  var TRACKS=['app/music/contemplation.mp3','app/music/ambient-loop.ogg','app/music/heavenly-loop.ogg'];
+  var VOL=0.15, FADE_IN=3, FADE_OUT=1.8;
+  var STUDY={room:1,exam:1,summary:1,notes:1,stats:1,book:1,quiz:1,result:1,review:1};
+  var ctx=null, gain=null, lp=null, el=null, idx=Math.floor(Math.random()*TRACKS.length), wantOn=true, inStudy=false, started=false, stopT=null;
+  try{ wantOn=localStorage.getItem('mg-study:music')!=='off'; }catch(e){}
+  function ensure(){
+    if(el) return true;
+    var C=window.AudioContext||window.webkitAudioContext; if(!C) return false;
+    try{
+      ctx=new C(); el=new Audio(); el.preload='auto'; el.crossOrigin='anonymous';
+      var src=ctx.createMediaElementSource(el); lp=ctx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=3800; lp.Q.value=0.4;
+      gain=ctx.createGain(); gain.gain.value=0; src.connect(lp); lp.connect(gain); gain.connect(ctx.destination);
+      el.addEventListener('ended',function(){ idx=(idx+1)%TRACKS.length; el.src=TRACKS[idx]; if(shouldPlay()) el.play().catch(function(){}); });
+      el.src=TRACKS[idx];
+    }catch(e){ el=null; return false; }
+    return true;
+  }
+  function shouldPlay(){ return wantOn&&!inStudy&&started&&!document.hidden; }
+  function ramp(to,sec){ if(!gain) return; var t=ctx.currentTime; gain.gain.cancelScheduledValues(t); gain.gain.setValueAtTime(gain.gain.value,t); gain.gain.linearRampToValueAtTime(to,t+sec); }
+  function sync(){
+    if(!el&&!shouldPlay()) return;
+    if(!ensure()) return;
+    clearTimeout(stopT);
+    if(shouldPlay()){
+      if(ctx.state==='suspended') ctx.resume();
+      if(el.paused) el.play().catch(function(){});
+      ramp(VOL,FADE_IN);
+    } else {
+      ramp(0,FADE_OUT);
+      stopT=setTimeout(function(){ if(!shouldPlay()&&el&&!el.paused) el.pause(); },FADE_OUT*1000+150);
+    }
+  }
+  function firstGesture(){ if(started) return; started=true; sync(); }
+  ['pointerdown','keydown','touchstart'].forEach(function(ev){ document.addEventListener(ev,firstGesture,{once:true,passive:true}); });
+  document.addEventListener('visibilitychange',function(){ sync(); });
+  return {
+    get on(){ return wantOn; },
+    onRoute:function(seg){ var was=inStudy; inStudy=!!STUDY[seg||'']; if(was!==inStudy) sync(); },
+    toggle:function(){ wantOn=!wantOn; try{ localStorage.setItem('mg-study:music',wantOn?'on':'off'); }catch(e){} started=true; sync(); return wantOn; },
+    study:function(){ return inStudy; }
+  };
+})();
+
 function themeBtn(){
   var sb=h('button',{class:'theme-btn sound-btn',title:'효과음 켜기/끄기','aria-label':'효과음 켜기 또는 끄기','aria-pressed':String(Snd.on),onclick:function(){
     sb.textContent=Snd.toggle()?'🔊':'🔇'; sb.setAttribute('aria-pressed',String(Snd.on));
@@ -224,7 +272,11 @@ function themeBtn(){
     r.setAttribute('data-theme',dark?'light':'dark');
     try{ localStorage.setItem('mg-study:theme',r.getAttribute('data-theme')); }catch(e){}
   }},['🌓']);
-  return h('div',{class:'dock'},[sb,tb]);
+  var mb=h('button',{class:'theme-btn music-btn',title:'배경 음악 켜기/끄기 (공부방에서는 꺼져요)','aria-label':'배경 음악 켜기 또는 끄기','aria-pressed':String(Mus.on),onclick:function(){
+    var on=Mus.toggle(); mb.classList.toggle('off',!on); mb.setAttribute('aria-pressed',String(on));
+  }},['🎵']);
+  mb.classList.toggle('off',!Mus.on);
+  return h('div',{class:'dock'},[mb,sb,tb]);
 }
 
 /* 교실 문 안쪽: 원근감 있는 방 + 조금 떨어진 곳의 책장(SVG, 문마다 책 배치가 다르다) */
