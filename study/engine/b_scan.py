@@ -15,6 +15,8 @@ for book in sorted(os.listdir(lib)):
             f = []
             txt = " ".join(str(x) for x in [q.get("explanation"), q.get("detail"), q.get("tip")] + list(q.get("choiceExplanations") or []))
             if "은(는)" in txt or "이(가)" in txt or "을(를)" in txt or "와(과)" in txt: f.append("조사병기")
+            vis = " ".join(str(x) for x in [q.get("passage"), q.get("question")] + list(q.get("choices") or []))
+            if q.get("origin") != "past-exam" and re.search(r"(?:을/를|은/는|이/가|와/과|으로/로|을\(를\)|은\(는\)|이\(가\))", vis): f.append("지문조사병기")
             if q.get("detail") and len(sents(q["detail"])) < 3: f.append("detail3문장미만")
             if CIRC.search(" ".join(str(x) for x in [q.get("explanation")] + list(q.get("choiceExplanations") or []))): f.append("번호언급")
             ceL = list(q.get("choiceExplanations") or [])

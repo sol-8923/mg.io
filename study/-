@@ -1,0 +1,555 @@
+[
+ {
+  "book": "g1s2-math",
+  "unit": "u4",
+  "id": "u4-P25m03-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u4",
+  "id": "u4-P25m21-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u4",
+  "id": "u4-Q01-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u4",
+  "id": "u4-Q02-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u4",
+  "id": "u4-Q02-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u4",
+  "id": "u4-Q03-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u4",
+  "id": "u4-Q03-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u4",
+  "id": "u4-Q04-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u4",
+  "id": "u4-Q04-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u4",
+  "id": "u4-Q08-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u4",
+  "id": "u4-Q08-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u4",
+  "id": "u4-Q09-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-P25m05-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-P25m11-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-P25m13-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-P25m16-a",
+  "flags": [
+   "detail3문장미만",
+   "번호언급"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-P25m19-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-Q01-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-Q03-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-Q04-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-Q07-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-Q07-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-Q08-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-Q08-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u5",
+  "id": "u5-Q10-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u7",
+  "id": "u7-P24g03-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u7",
+  "id": "u7-P25g08-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u7",
+  "id": "u7-Q05-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u7",
+  "id": "u7-Q05-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u7",
+  "id": "u7-Q06-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u7",
+  "id": "u7-Q06-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-math",
+  "unit": "u7",
+  "id": "u7-Q07-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u4",
+  "id": "u4-Q13-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u4",
+  "id": "u4-Q13-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u4",
+  "id": "u4-Q15-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u4",
+  "id": "u4-Q15-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u4",
+  "id": "u4-P23M11-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u4",
+  "id": "u4-P24K05-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u4",
+  "id": "u4-P25M06-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-P25M08-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-P25M13-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-P25M14-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-Q05-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-Q05-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-Q06-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-Q06-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-Q08-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-Q09-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-Q11-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-Q13-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-Q15-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-Q15-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u5",
+  "id": "u5-Q16-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u6",
+  "id": "u6-P25M12-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-P25K14-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-P25K15-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-P25K16-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-P25K17-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-P25K20-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-P25K21-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-P25K23-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-Q01-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-Q01-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-Q05-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-Q05-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-T01-a",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-science",
+  "unit": "u7",
+  "id": "u7-T01-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-social",
+  "unit": "u10",
+  "id": "u10-Q11-b",
+  "flags": [
+   "detail3문장미만"
+  ]
+ },
+ {
+  "book": "g1s2-social",
+  "unit": "u12",
+  "id": "u12-Q06-b",
+  "flags": [
+   "번호언급"
+  ]
+ }
+]
