@@ -588,3 +588,12 @@ a.door.shake{animation:doorShake .45s}
 .sum-bar{display:flex;align-items:center;gap:12px;padding:8px 12px}
 .sum-title{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .sum-frame{flex:1;width:100%;border:0}
+
+/* 공부방 입구 */
+.room-entry{padding:14px 18px 14px 20px}
+.room-pic{flex:none;width:150px}
+.room-pic svg{display:block;width:100%;height:auto}
+.room-entry h3{font-size:1.4rem}
+.room-entry:hover .room-pic svg{filter:brightness(1.04)}
+@media (max-width:520px){ .room-pic{width:104px} }
+.modelink{color:var(--muted);font-size:.85rem;text-decoration:underline}

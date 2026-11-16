@@ -8,11 +8,15 @@
 
 /* ───────── 설정: 홈 메뉴 (여기에 추가하면 홈에 카드가 생김) ───────── */
 var MENUS = [
-  { id:'exam',  color:'#2f6b52', icon:'exam',  title:'시험으로 풀어보기', desc:'학년·학기·과목을 고르면 들어갈 때마다 새로운 시험을 볼 수 있어요.', href:'#/exam' },
-  { id:'summary', color:'#b07a1f', icon:'summary', title:'요약 정리', desc:'학년·학기·과목을 고르면 단원별 요약 슬라이드를 볼 수 있어요.', href:'#/summary' },
+  { id:'summary', color:'#2f6b52', icon:'summary', title:'요약 정리', desc:'학년·학기·과목을 고르면 단원별 요약 슬라이드를 볼 수 있어요.', href:'#/summary' },
+  { id:'exam',  color:'#b07a1f', icon:'exam',  title:'시험으로 풀어보기', desc:'학년·학기·과목을 고르면 들어갈 때마다 새로운 시험을 볼 수 있어요.', href:'#/exam' },
   { id:'notes', color:'#a8362c', icon:'notes', title:'오답노트', desc:'틀린 문제만 모아 다시 풀어요. 두 번 연속 맞히면 졸업!', href:'#/notes' },
   { id:'stats', color:'#2a4468', icon:'chart', title:'공부 기록', desc:'시험 횟수·점수 추이·공부 달력·취약 개념을 한눈에 봐요.', href:'#/stats' }
 ];
+/* 홈 화면 방식: 'room'(공부방 입구 -> 별도 페이지) / 'classic'(예전: 홈에 메뉴 카드가 바로 보임).
+ * 화면 맨 아래 링크로 언제든 바꿀 수 있고, 선택은 이 기기에 저장된다. */
+function homeMode(){ try{ return localStorage.getItem('mg-study:home')==='classic'?'classic':'room'; }catch(e){ return 'room'; } }
+function setHomeMode(m){ try{ localStorage.setItem('mg-study:home',m); }catch(e){} }
 var SUBJECTS = {
   '국어':{c:'#9b3a32',e:'ko'}, '영어':{c:'#2d5a8c',e:'en'}, '수학':{c:'#2a3f66',e:'math'}, '과학':{c:'#2f6b52',e:'sci'},
   '사회':{c:'#b0672a',e:'soc'}, '역사':{c:'#6b4a2f',e:'his'}, '도덕':{c:'#7a5a8c',e:'eth'}, '기술·가정':{c:'#4f7a7a',e:'tech'},
@@ -99,6 +103,7 @@ function route(){
   var done=function(){ window.scrollTo(0,0); };
   try{
     if(!a) return renderHome(), done();
+    if(a==='room') return renderRoom(), done();
     if(a==='summary') return (p[2]?renderSummaryUnit(b,p[2]):isSem(b)?renderShelf('summary',b):b?renderSummaryBook(b):renderDoors('summary')).then(done);
     if(a==='exam') return (isSem(b)?renderShelf('exam',b):renderDoors('exam')).then(done);
     if(a==='notes' && !b) return renderDoors('notes').then(done);
@@ -225,6 +230,51 @@ function roomSvg(seed){
 }
 
 /* ═════════ 홈 ═════════ */
+/* 공부방 메뉴 카드(+ 요약 대시보드): 예전 홈과 공부방 페이지가 같이 쓴다 */
+function studyCards(learning){
+  return h('nav',{class:'menu study'},MENUS.map(function(m){
+    return h('a',{class:'mcard',href:m.href,style:'--mc:'+m.color},[
+      h('div',{class:'ic',html:ICONS[m.icon]||''}),
+      h('div',{},[h('h3',{text:m.title}),h('p',{text:m.desc})]),
+      m.id==='notes'&&learning?h('span',{class:'count',text:String(learning)}):null,
+      h('span',{class:'go',text:'›'})
+    ]);
+  }));
+}
+function studyMenus(learning){
+  return h('div',{},[h('div',{class:'sec-title'},['공부방']),miniDashboard(),studyCards(learning)]);
+}
+/* 홈의 '공부방' 입구: 누르면 공부방 페이지로 들어간다 */
+function studyEntrance(learning){
+  var art='<rect x="6" y="6" width="208" height="138" rx="12" fill="var(--paper2)" stroke="var(--line)" stroke-width="2"/>'+
+    '<rect x="6" y="104" width="208" height="40" fill="color-mix(in srgb,var(--mc) 16%,transparent)"/>'+
+    '<rect x="22" y="26" width="70" height="86" rx="3" fill="color-mix(in srgb,var(--mc) 30%,var(--paper))" stroke="var(--mc)" stroke-width="2"/>'+
+    '<g stroke="var(--mc)" stroke-width="2"><line x1="22" y1="55" x2="92" y2="55"/><line x1="22" y1="84" x2="92" y2="84"/></g>'+
+    '<g fill="#a8362c"><rect x="28" y="32" width="8" height="21"/><rect x="38" y="36" width="8" height="17"/></g><g fill="#2a4468"><rect x="50" y="34" width="9" height="19"/><rect x="62" y="30" width="8" height="23"/></g>'+
+    '<g fill="#b07a1f"><rect x="30" y="62" width="9" height="20"/><rect x="42" y="66" width="8" height="16"/></g><g fill="#2f6b52"><rect x="60" y="60" width="9" height="22"/><rect x="72" y="64" width="8" height="18"/></g>'+
+    '<g fill="#7a5a3a"><rect x="108" y="76" width="92" height="9" rx="2"/><rect x="114" y="85" width="7" height="26"/><rect x="187" y="85" width="7" height="26"/></g>'+
+    '<rect x="130" y="62" width="30" height="14" rx="2" fill="#fffdf8" stroke="var(--mc)" stroke-width="2"/><line x1="145" y1="62" x2="145" y2="76" stroke="var(--mc)" stroke-width="2"/>'+
+    '<g stroke="#7a5a3a" stroke-width="3" stroke-linecap="round"><line x1="178" y1="76" x2="178" y2="56"/><line x1="178" y1="56" x2="168" y2="48"/></g><path d="M158 50l16-6 6 12z" fill="#b07a1f"/>';
+  var pic=h('div',{class:'room-pic'});
+  pic.innerHTML='<svg viewBox="0 0 220 150" aria-hidden="true">'+art+'</svg>';
+  var el=h('a',{class:'mcard room-entry',href:'#/room',style:'--mc:#2f6b52',onclick:function(){ Snd.door(); }},[
+    pic,
+    h('div',{},[h('h3',{text:'공부방'}),h('p',{text:'요약 정리 · 시험 · 오답노트 · 공부 기록이 모여 있는 방이에요. 들어가 볼까요?'})]),
+    learning?h('span',{class:'count',text:String(learning)}):null,
+    h('span',{class:'go',text:'›'})
+  ]);
+  return h('div',{},[h('div',{class:'sec-title'},['공부방']),el]);
+}
+function renderRoom(){
+  var app=$app(), learning=0, books=Store.load().books; for(var id in books){ learning+=noteCounts(id).learning; }
+  var page=h('div',{class:'page'},[
+    h('div',{class:'topbar'},[h('a',{class:'btn back',href:'#/'},['← 홈']),h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:'공부방'})])]),
+    miniDashboard(),
+    studyCards(learning),
+    h('div',{class:'foot'},[h('a',{href:'#/',class:'modelink',onclick:function(e){ e.preventDefault(); setHomeMode('classic'); go('#/'); }},['예전 홈 화면으로 되돌리기'])])
+  ]);
+  app.appendChild(page); app.appendChild(themeBtn());
+}
 function renderHome(){
   var app=$app(), d=new Date();
   var days=['일','월','화','수','목','금','토'];
@@ -244,17 +294,9 @@ function renderHome(){
     h('div',{class:'sec-title'},['오늘의 우리 집',h('a',{class:'more',href:'#/plan'},['일정표 열기 →'])]),
     todayPlan(),
     chatCard(),
-    h('div',{class:'sec-title'},['공부방']),
-    miniDashboard(),
-    h('nav',{class:'menu study'},MENUS.map(function(m){
-      return h('a',{class:'mcard',href:m.href,style:'--mc:'+m.color},[
-        h('div',{class:'ic',html:ICONS[m.icon]||''}),
-        h('div',{},[h('h3',{text:m.title}),h('p',{text:m.desc})]),
-        m.id==='notes'&&learning?h('span',{class:'count',text:String(learning)}):null,
-        h('span',{class:'go',text:'›'})
-      ]);
-    })),
-    h('div',{class:'foot',text:'공부 기록은 이 기기에, 일정과 알림은 가족 모두와 함께 저장돼요'})
+    homeMode()==='classic'?studyMenus(learning):studyEntrance(learning),
+    h('div',{class:'foot',text:'공부 기록은 이 기기에, 일정과 알림은 가족 모두와 함께 저장돼요'}),
+    h('div',{class:'foot'},[h('a',{href:'#/',class:'modelink',onclick:function(e){ e.preventDefault(); setHomeMode(homeMode()==='classic'?'room':'classic'); route(); }},[homeMode()==='classic'?'새 공부방 화면으로 보기':'예전 홈 화면으로 보기'])])
   ]);
   app.appendChild(page); app.appendChild(themeBtn());
 }
