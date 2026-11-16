@@ -177,6 +177,13 @@ var Snd=(function(){
         o.type='sine'; o.frequency.value=nt[0]; f.type='lowpass'; f.frequency.value=3200;
         var s0=t+nt[1]; g.gain.setValueAtTime(0.0001,s0); g.gain.exponentialRampToValueAtTime(v,s0+0.012); g.gain.exponentialRampToValueAtTime(0.0001,s0+0.34);
         o.connect(f); f.connect(g); g.connect(c.destination); o.start(s0); o.stop(s0+0.38); }); },
+    /* 띠로링: 가족 톡방에 들어갈 때 — 새 메시지 띠링보다 한 단계 높고 세 음이 살짝 올라가는 소리 */
+    chatEnter:function(){ if(!on) return; var c=ac(); if(!c) return; var t=c.currentTime; stamp();
+      [[659,0],[880,0.09],[1319,0.18]].forEach(function(nt){
+        var o=c.createOscillator(), g=c.createGain(), f=c.createBiquadFilter();
+        o.type='sine'; o.frequency.value=nt[0]; f.type='lowpass'; f.frequency.value=3200;
+        var s0=t+nt[1]; g.gain.setValueAtTime(0.0001,s0); g.gain.exponentialRampToValueAtTime(0.075,s0+0.012); g.gain.exponentialRampToValueAtTime(0.0001,s0+0.28);
+        o.connect(f); f.connect(g); g.connect(c.destination); o.start(s0); o.stop(s0+0.32); }); },
     stamped:function(){ return Date.now()-lastCustom<80; },
     /* 문 여는 소리: 낮은 삐걱임 + 바람 섞인 소리 */
     doorSynth:function(){ var c=ac(); if(!c) return; var t=c.currentTime;
@@ -200,6 +207,7 @@ var Snd=(function(){
 document.addEventListener('click',function(e){
   var el=e.target&&e.target.closest?e.target.closest('button,a,label,[role=button],.mcard,.btn,.choice,.nitem,input'):null;
   if(!el||el.disabled||el.classList.contains('sound-btn')) return;
+  if(el.getAttribute&&el.getAttribute('href')==='#/chat'){ Snd.chatEnter(); return; }
   setTimeout(function(){
     if(Snd.stamped()) return;
     var tx=(el.textContent||'').trim();
