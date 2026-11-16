@@ -219,10 +219,10 @@ document.addEventListener('click',function(e){
  * 홈·톡방·일정 등에서 잔잔하게 흐르고, 공부방(공부방·시험·요약·오답노트·공부 기록·문제 풀이)에 들어가면 서서히 줄어들며 꺼진다.
  * 브라우저 규칙상 화면을 처음 누른 뒤에 시작한다. 🎵 버튼으로 켜고 끈다(이 기기에 저장). */
 var Mus=(function(){
-  var TRACKS=['app/music/sunset-plains.ogg','app/music/contemplation.mp3'];   /* 5분 30초 + 2분, 두 곡의 음량은 같게 맞춰 두었다 */
+  var TRACKS=['aquarium','icicles-melting','isolation-waltz','la-citadelle','lovely-piano-song','night-in-venice','nostalgic-piano','pond','romantic-inspiration','shining-stars','celebrated-minuet','amazing-grace'].map(function(n){ return 'app/music/'+n+'.ogg'; });   /* 가사 없는 잔잔한 클래식풍 12곡, 음량은 같게 맞춰 두었다 */
   var VOL=0.15, FADE_IN=1.8, FADE_OUT=1.0;
   var STUDY={room:1,exam:1,summary:1,notes:1,stats:1,book:1,quiz:1,result:1,review:1};
-  var ctx=null, gain=null, lp=null, el=null, idx=0, wantOn=true, inStudy=false, started=false, stopT=null;
+  var ctx=null, gain=null, lp=null, el=null, idx=Math.floor(Math.random()*TRACKS.length), fresh=true, wantOn=true, inStudy=false, started=false, stopT=null;
   try{ wantOn=localStorage.getItem('mg-study:music')!=='off'; }catch(e){}
   function ensure(){
     if(el) return true;
@@ -231,11 +231,12 @@ var Mus=(function(){
       ctx=new C(); el=new Audio(); el.preload='auto'; el.crossOrigin='anonymous';
       var src=ctx.createMediaElementSource(el); lp=ctx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=3800; lp.Q.value=0.4;
       gain=ctx.createGain(); gain.gain.value=0; src.connect(lp); lp.connect(gain); gain.connect(ctx.destination);
-      el.addEventListener('ended',function(){ idx=(idx+1)%TRACKS.length; el.src=TRACKS[idx]; if(shouldPlay()) el.play().catch(function(){}); });
+      el.addEventListener('ended',function(){ pickNew(); if(shouldPlay()) el.play().catch(function(){}); });
       el.src=TRACKS[idx];
     }catch(e){ el=null; return false; }
     return true;
   }
+  function pickNew(){ var n; do{ n=Math.floor(Math.random()*TRACKS.length); }while(TRACKS.length>1&&n===idx); idx=n; if(el) el.src=TRACKS[idx]; }
   function shouldPlay(){ return wantOn&&!inStudy&&started&&!document.hidden; }
   function ramp(to,sec){ if(!gain) return; var t=ctx.currentTime; gain.gain.cancelScheduledValues(t); gain.gain.setValueAtTime(gain.gain.value,t); gain.gain.linearRampToValueAtTime(to,t+sec); }
   function sync(){
@@ -244,11 +245,11 @@ var Mus=(function(){
     clearTimeout(stopT);
     if(shouldPlay()){
       if(ctx.state==='suspended') ctx.resume();
-      if(el.paused) el.play().catch(function(){});
+      if(el.paused){ if(fresh){ fresh=false; pickNew(); } el.play().catch(function(){}); }
       ramp(VOL,FADE_IN);
     } else {
       ramp(0,FADE_OUT);
-      stopT=setTimeout(function(){ if(!shouldPlay()&&el&&!el.paused) el.pause(); },FADE_OUT*1000+150);
+      stopT=setTimeout(function(){ if(!shouldPlay()&&el&&!el.paused){ el.pause(); if(!document.hidden) fresh=true; } },FADE_OUT*1000+150);
     }
   }
   function firstGesture(){ if(started) return; started=true; sync(); }

@@ -1,3 +1,6 @@
-# 배경 음악 출처 (모두 CC0, 퍼블릭 도메인 — OpenGameArt.org)
-- sunset-plains.ogg — "Sunset Plains" (원본 WAV 63MB를 OGG로 압축, 음량 낮춤, 앞뒤 3초 페이드) https://opengameart.org/content/sunset-plains
-- contemplation.mp3 — "Contemplation" (Joth) https://opengameart.org/content/contemplation-0
+# 배경 음악 출처 (모두 CC0 1.0 퍼블릭 도메인 — FreePD.com)
+FreePD(https://freepd.com, 현재 사이트는 닫힘)의 CC0 곡을 그 미러(https://a.ocv.me/pub/stuff/music/freepd/)에서 받았다. 출처 표기 의무는 없다.
+가사 없는 잔잔한 곡 12개를 골라 앱에서 쓰기 좋게 OGG로 압축하고 음량을 맞춰 앞뒤에 짧은 페이드를 넣었다.
+- aquarium(Aquarium) · icicles-melting(Icicles Melting) · isolation-waltz(Isolation Waltz) · la-citadelle(La Citadelle)
+- lovely-piano-song(Lovely Piano Song) · night-in-venice(Night in Venice) · nostalgic-piano(Nostalgic Piano) · pond(Pond)
+- romantic-inspiration(Romantic Inspiration) · shining-stars(Shining Stars) · celebrated-minuet(The Celebrated Minuet for Piano) · amazing-grace(Amazing Grace)
