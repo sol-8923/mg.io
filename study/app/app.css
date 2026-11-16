@@ -596,4 +596,3 @@ a.door.shake{animation:doorShake .45s}
 .room-entry h3{font-size:1.4rem}
 .room-entry:hover .room-pic svg{filter:brightness(1.04)}
 @media (max-width:520px){ .room-pic{width:104px} }
-.modelink{color:var(--muted);font-size:.85rem;text-decoration:underline}
