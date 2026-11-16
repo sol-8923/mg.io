@@ -9,6 +9,7 @@
 /* ───────── 설정: 홈 메뉴 (여기에 추가하면 홈에 카드가 생김) ───────── */
 var MENUS = [
   { id:'exam',  color:'#2f6b52', icon:'exam',  title:'시험으로 풀어보기', desc:'학년·학기·과목을 고르면 들어갈 때마다 새로운 시험을 볼 수 있어요.', href:'#/exam' },
+  { id:'summary', color:'#b07a1f', icon:'summary', title:'요약 정리', desc:'학년·학기·과목을 고르면 단원별 요약 슬라이드를 볼 수 있어요.', href:'#/summary' },
   { id:'notes', color:'#a8362c', icon:'notes', title:'오답노트', desc:'틀린 문제만 모아 다시 풀어요. 두 번 연속 맞히면 졸업!', href:'#/notes' },
   { id:'stats', color:'#2a4468', icon:'chart', title:'공부 기록', desc:'시험 횟수·점수 추이·공부 달력·취약 개념을 한눈에 봐요.', href:'#/stats' }
 ];
@@ -31,6 +32,7 @@ var ICONS = {
   soc:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="13"/><path d="M7 20h26M20 7c-5 5-5 21 0 26M20 7c5 5 5 21 0 26"/></svg>',
   his:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M11 8h20v20a4 4 0 0 1-4 4H9"/><path d="M11 8a3 3 0 0 0-3 3v17a4 4 0 0 0 4 4"/><path d="M15 15h11M15 21h11"/></svg>'
 };
+ICONS.summary='<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="36" height="25" rx="3"/><path d="M12 16h14M12 22h10"/><path d="M30 27l3-5 3 3 3-6"/><path d="M24 33v6M16 41h16"/></svg>';
 ICONS.chat='<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h32a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H22l-9 8v-8H8a3 3 0 0 1-3-3V13a3 3 0 0 1 3-3z"/><path d="M14 20h20M14 27h12"/></svg>';
 ICONS.photo='<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="38" height="28" rx="4"/><circle cx="17" cy="21" r="3.5"/><path d="M6 36l11-9 9 7 6-5 11 8"/></svg>';
 ICONS.meron='<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="25"/><path d="M18 23l8 4-8 4M46 23l-8 4 8 4"/><ellipse cx="13.5" cy="38" rx="4" ry="2.6" fill="#f6c4cb" stroke="none" opacity=".55"/><ellipse cx="50.5" cy="38" rx="4" ry="2.6" fill="#f6c4cb" stroke="none" opacity=".55"/><path d="M33 43v8.5a4.6 4.6 0 0 0 9.2 0V41.5" fill="#f6c4cb" stroke="#f6c4cb"/><path d="M37.6 47v4.5" stroke="#d98a96" stroke-width="1.8"/><path d="M21 40q11 7 22 0"/><path d="M54 13l4-3M57 20h5M53 6l1.5-4"/></svg>';
@@ -97,6 +99,7 @@ function route(){
   var done=function(){ window.scrollTo(0,0); };
   try{
     if(!a) return renderHome(), done();
+    if(a==='summary') return (p[2]?renderSummaryUnit(b,p[2]):isSem(b)?renderShelf('summary',b):b?renderSummaryBook(b):renderDoors('summary')).then(done);
     if(a==='exam') return (isSem(b)?renderShelf('exam',b):renderDoors('exam')).then(done);
     if(a==='notes' && !b) return renderDoors('notes').then(done);
     if(a==='notes' && isSem(b)) return renderShelf('notes',b).then(done);
@@ -312,11 +315,12 @@ function isSem(x){ return /^g\d+s\d+$/.test(x||''); }
 function semKey(b){ return 'g'+b.grade+'s'+b.semester; }
 function semBack(kind,b){ return '#/'+kind+(b&&b.grade&&b.semester&&b.grade!=='?'?'/'+semKey(b):''); }
 /* 교실 문: 학년·학기를 고르는 화면 */
+var KIND_TITLE={exam:'시험으로 풀어보기',summary:'요약 정리',notes:'오답노트'};
 function renderDoors(kind){
   var app=$app(), page=h('div',{class:'page'});
   page.appendChild(h('div',{class:'topbar'},[
     h('a',{class:'btn back',href:'#/'},['← 홈']),
-    h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:kind==='exam'?'시험으로 풀어보기':'오답노트'})])
+    h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:KIND_TITLE[kind]})])
   ]));
   page.appendChild(h('p',{class:'muted',style:'margin:-6px 0 14px',text:'들어갈 교실을 골라 보세요. 학년과 학기 문을 열면 그 학기 교과서가 나와요.'}));
   var hall=h('div',{class:'hall'}); page.appendChild(hall);
@@ -354,9 +358,9 @@ function renderShelf(kind,sem){
   var gs=/^g(\d+)s(\d+)$/.exec(sem), semText=gs?gs[1]+'학년 '+gs[2]+'학기':'';
   page.appendChild(h('div',{class:'topbar'},[
     h('a',{class:'btn back',href:'#/'+kind},['← 교실 고르기']),
-    h('div',{},[h('div',{class:'crumb',text:(kind==='exam'?'시험으로 풀어보기':'오답노트')}),h('h1',{text:semText})])
+    h('div',{},[h('div',{class:'crumb',text:KIND_TITLE[kind]}),h('h1',{text:semText})])
   ]));
-  page.appendChild(h('p',{class:'muted',style:'margin:-6px 0 14px',text:kind==='exam'?'풀고 싶은 교과서를 눌러 보세요. 누를 때마다 새로운 시험을 볼 수 있어요.':'교과서별로 틀린 문제가 모여 있어요. 빨간 숫자는 아직 학습 중인 문제 수예요.'}));
+  page.appendChild(h('p',{class:'muted',style:'margin:-6px 0 14px',text:kind==='summary'?'요약을 보고 싶은 교과서를 눌러 보세요. 단원별 요약 슬라이드가 나와요.':kind==='exam'?'풀고 싶은 교과서를 눌러 보세요. 누를 때마다 새로운 시험을 볼 수 있어요.':'교과서별로 틀린 문제가 모여 있어요. 빨간 숫자는 아직 학습 중인 문제 수예요.'}));
   var cs=h('div',{class:'bookcase'}); page.appendChild(cs);
   if(kind==='notes') page.appendChild(backupCard());
   app.appendChild(page); app.appendChild(themeBtn());
@@ -374,7 +378,7 @@ function renderShelf(kind,sem){
             badge: kind==='notes'?nc.learning:0,
             dim: kind==='notes' && !nc.learning && !nc.mastered,
             caption: kind==='notes' ? ('학습 중 '+nc.learning+' · 졸업 '+nc.mastered) : null,
-            onpick:function(){ go(kind==='exam'?'#/book/'+encodeURIComponent(b.id):'#/notes/'+encodeURIComponent(b.id)); }
+            onpick:function(){ go(kind==='exam'?'#/book/'+encodeURIComponent(b.id):kind==='summary'?'#/summary/'+encodeURIComponent(b.id):'#/notes/'+encodeURIComponent(b.id)); }
           }));
         });
         cs.appendChild(row);
@@ -413,6 +417,31 @@ function backupCard(){
 }
 
 /* ═════════ 책 (시험 범위 고르기) ═════════ */
+/* 요약 정리: 교과서의 단원 목록 → 슬라이드 보기 */
+function renderSummaryBook(id){
+  var app=$app(), page=h('div',{class:'page'}); app.appendChild(page); app.appendChild(themeBtn());
+  return Data.bookP(id).then(function(book){
+    page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:semBack('summary',book)},['← 책장']),h('div',{},[h('div',{class:'crumb',text:'요약 정리'}),h('h1',{text:bookLabel(book)})])]));
+    var list=h('div',{class:'card'});
+    book.units.forEach(function(u,i){
+      list.appendChild(u.slides
+        ?h('a',{class:'btn sum-unit',href:'#/summary/'+encodeURIComponent(id)+'/'+encodeURIComponent(u.id),onclick:function(){ Snd.page(); }},['📘 '+(i+1)+'. '+u.name])
+        :h('div',{class:'btn sum-unit off',text:(i+1)+'. '+u.name+' (준비 중)'}));
+    });
+    page.appendChild(list);
+  }).catch(renderError);
+}
+function renderSummaryUnit(id,uid){
+  var app=$app();
+  return Data.bookP(id).then(function(book){
+    var u=book.units.filter(function(x){return x.id===uid;})[0];
+    if(!u||!u.slides){ go('#/summary/'+encodeURIComponent(id)); return; }
+    app.appendChild(h('div',{class:'sum-view'},[
+      h('div',{class:'sum-bar'},[h('a',{class:'btn back',href:'#/summary/'+encodeURIComponent(id)},['← 단원 목록']),h('span',{class:'sum-title',text:bookLabel(book)+' · '+u.name})]),
+      h('iframe',{class:'sum-frame',src:'library/'+encodeURIComponent(id)+'/'+u.slides,title:u.name})
+    ]));
+  }).catch(renderError);
+}
 function renderBook(id){
   var app=$app(), page=h('div',{class:'page'}); app.appendChild(page); app.appendChild(themeBtn());
   return Data.bookP(id).then(function(book){
@@ -446,7 +475,7 @@ function renderBook(id){
         h('a',{class:'btn',href:'#/notes/'+encodeURIComponent(id)},['📒 이 과목 오답노트']),
         book.units.some(function(u){return u.slides;})?h('h3',{style:'font-size:1.05rem;margin-top:20px',text:'요약 정리'}):null,
         h('div',{class:'row',style:'margin-top:8px'},book.units.filter(function(u){return u.slides;}).map(function(u){
-          return h('a',{class:'btn',href:'library/'+encodeURIComponent(id)+'/'+u.slides},['📘 '+u.name]);
+          return h('a',{class:'btn',href:'#/summary/'+encodeURIComponent(id)+'/'+encodeURIComponent(u.id)},['📘 '+u.name]);
         }))
       ])
     ]));

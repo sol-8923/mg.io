@@ -580,3 +580,11 @@ a.door:focus-visible{outline-offset:6px}
 a.door.shake{animation:doorShake .45s}
 @keyframes doorShake{0%,100%{transform:translateX(0)}15%{transform:translateX(-4px)}30%{transform:translateX(4px)}45%{transform:translateX(-3px)}60%{transform:translateX(3px)}80%{transform:translateX(-1px)}}
 @media (prefers-reduced-motion:reduce){a.door.shake{animation:none}}
+
+/* 요약 정리 */
+.sum-unit{display:block;text-align:left;margin:8px 0;text-decoration:none}
+.sum-unit.off{opacity:.5}
+.sum-view{position:fixed;inset:0;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);z-index:5}
+.sum-bar{display:flex;align-items:center;gap:12px;padding:8px 12px}
+.sum-title{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sum-frame{flex:1;width:100%;border:0}
