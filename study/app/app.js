@@ -153,7 +153,7 @@ var Snd=(function(){
   return {
     get on(){ return on; },
     toggle:function(){ on=!on; try{ localStorage.setItem('mg-study:sound',on?'on':'off'); }catch(e){} if(on) this.page(); return on; },
-    door:function(){ if(!on) return; if(!play('door-open',0.55)) this.doorSynth(); },
+    door:function(){ if(!on) return; if(!play('door-open',0.25)) this.doorSynth(); },
     locked:function(){ if(!on) return; play('door-locked',0.5); },
     page:function(){ if(!on) return; var n=[4,5,6,8][Math.floor(Math.random()*4)]; if(!play('page'+n,0.42)) this.pageSynth(); },
     /* 뽁: 가볍고 작은 물방울 소리 (모든 클릭) */
@@ -186,16 +186,13 @@ var Snd=(function(){
         var s0=t+nt[1]; g.gain.setValueAtTime(0.0001,s0); g.gain.exponentialRampToValueAtTime(0.075,s0+0.012); g.gain.exponentialRampToValueAtTime(0.0001,s0+0.28);
         o.connect(f); f.connect(g); g.connect(c.destination); o.start(s0); o.stop(s0+0.32); }); },
     stamped:function(){ return Date.now()-lastCustom<80; },
-    /* 문 여는 소리: 낮은 삐걱임 + 바람 섞인 소리 */
+    /* 문 여는 소리(녹음 파일이 없을 때만): 털컥 — 손잡이 걸쇠가 풀리는 짧은 딸깍 + 나무 문이 낮게 덜컹. 쇳소리가 나지 않게 고음은 깎는다 */
     doorSynth:function(){ var c=ac(); if(!c) return; var t=c.currentTime;
-      var o=c.createOscillator(), f=c.createBiquadFilter(), g=c.createGain();
-      o.type='sawtooth'; o.frequency.setValueAtTime(95,t); o.frequency.linearRampToValueAtTime(150,t+0.22); o.frequency.linearRampToValueAtTime(110,t+0.45);
-      f.type='bandpass'; f.frequency.value=520; f.Q.value=6; env(g,t,0.05,0.08,0.5);
-      o.connect(f); f.connect(g); g.connect(c.destination); o.start(t); o.stop(t+0.55);
-      var n=noise(c,0.5), nf=c.createBiquadFilter(), ng=c.createGain(); nf.type='lowpass'; nf.frequency.value=900; env(ng,t,0.03,0.12,0.5);
-      n.connect(nf); nf.connect(ng); ng.connect(c.destination); n.start(t);
-      var k=c.createOscillator(), kg=c.createGain(); k.type='sine'; k.frequency.setValueAtTime(180,t+0.38); k.frequency.exponentialRampToValueAtTime(70,t+0.5); env(kg,t+0.38,0.12,0.01,0.14); /* 문틀에 닿는 작은 소리 */
-      k.connect(kg); kg.connect(c.destination); k.start(t+0.38); k.stop(t+0.55); },
+      [[0,0.55,420],[0.09,0.9,240]].forEach(function(p){ var s0=t+p[0];
+        var n=noise(c,0.1), f=c.createBiquadFilter(), g=c.createGain(); f.type='lowpass'; f.frequency.value=p[2]*3; env(g,s0,0.12*p[1],0.004,0.07);
+        n.connect(f); f.connect(g); g.connect(c.destination); n.start(s0); n.stop(s0+0.1);
+        var o=c.createOscillator(), og=c.createGain(); o.type='sine'; o.frequency.setValueAtTime(p[2],s0); o.frequency.exponentialRampToValueAtTime(p[2]*0.45,s0+0.1); env(og,s0,0.16*p[1],0.004,0.12);
+        o.connect(og); og.connect(c.destination); o.start(s0); o.stop(s0+0.14); }); },
     /* 종이 넘기는 소리: 고음 쪽 잡음이 쓱 지나감 */
     pageSynth:function(){ var c=ac(); if(!c) return; var t=c.currentTime;
       [0,0.11].forEach(function(dt,i){ var n=noise(c,0.3), f=c.createBiquadFilter(), g=c.createGain();
