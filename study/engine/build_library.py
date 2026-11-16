@@ -156,7 +156,12 @@ def build_book(bdir, errors, warns, info):
         if not meta.get(k):
             errors.append(f"[{bdir.name}] meta.{k} 없음")
     units, questions, ids = [], [], Counter()
-    for udir in sorted(p for p in bdir.iterdir() if p.is_dir() and (p / "blueprint.json").exists()):
+    # 단원 폴더는 숫자 순서로(u2 다음에 u10이 오도록): 문자열 정렬이면 u1, u10, u11, u12, u2 … 로 꼬인다
+    import re as _re
+    def _unit_key(p):
+        m = _re.search(r"(\d+)", p.name)
+        return (int(m.group(1)) if m else 10**6, p.name)
+    for udir in sorted((p for p in bdir.iterdir() if p.is_dir() and (p / "blueprint.json").exists()), key=_unit_key):
         bp = load(udir / "blueprint.json")
         qpath = udir / "questions.json"
         qs = load(qpath).get("questions", []) if qpath.exists() else []

@@ -451,6 +451,12 @@ function backupCard(){
 
 /* ═════════ 책 (시험 범위 고르기) ═════════ */
 /* 요약 정리: 교과서의 단원 목록 → 슬라이드 보기 */
+/* 교과서 단원 번호: u<번호>의 숫자를 쓰고, 사회·과학은 교과서처럼 로마 숫자로 */
+var ROMANS=['','Ⅰ','Ⅱ','Ⅲ','Ⅳ','Ⅴ','Ⅵ','Ⅶ','Ⅷ','Ⅸ','Ⅹ','Ⅺ','Ⅻ'];
+function unitLabel(book,u,i){
+  var m=/(\d+)/.exec(u.id||''), n=m?parseInt(m[1],10):(i+1);
+  return (book.subject==='사회'||book.subject==='과학')?(ROMANS[n]||String(n))+'.':n+'.';
+}
 function renderSummaryBook(id){
   var app=$app(), page=h('div',{class:'page'}); app.appendChild(page); app.appendChild(themeBtn());
   return Data.bookP(id).then(function(book){
@@ -458,8 +464,8 @@ function renderSummaryBook(id){
     var list=h('div',{class:'card'});
     book.units.forEach(function(u,i){
       list.appendChild(u.slides
-        ?h('a',{class:'btn sum-unit',href:'#/summary/'+encodeURIComponent(id)+'/'+encodeURIComponent(u.id),onclick:function(){ Snd.page(); }},['📘 '+(i+1)+'. '+u.name])
-        :h('div',{class:'btn sum-unit off',text:(i+1)+'. '+u.name+' (준비 중)'}));
+        ?h('a',{class:'btn sum-unit',href:'#/summary/'+encodeURIComponent(id)+'/'+encodeURIComponent(u.id),onclick:function(){ Snd.page(); }},['📘 '+unitLabel(book,u,i)+' '+u.name])
+        :h('div',{class:'btn sum-unit off',text:unitLabel(book,u,i)+' '+u.name+' (준비 중)'}));
     });
     page.appendChild(list);
   }).catch(renderError);
