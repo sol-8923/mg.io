@@ -1,0 +1,156 @@
+/* 스킨(화면 테마) 스타일 — 스킨마다 :root[data-skin="…"] 에 색·글꼴 변수를 덮어쓰고, 칠판 영역(.hero)을 그림으로 바꾼다.
+ * 클래스룸(data-skin="class")은 아무것도 덮어쓰지 않는다(app.css 그대로).
+ * app.css 뒤에 불러오므로 같은 특이도에서는 이 파일이 이긴다. 칠판 영역의 그림 요소(.dc)는 app/skins.js 가 넣는다.
+ * 슬라이드(iframe)는 교과서 표지 컨셉이라 건드리지 않는다. */
+
+/* ───────── 스킨 고르기 창(모든 스킨 공통) ───────── */
+.skin-list{display:grid;gap:10px;margin-top:12px}
+.skin-opt{display:flex;align-items:center;gap:12px;text-align:left;width:100%;padding:10px 12px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit;cursor:pointer;min-height:0}
+.skin-opt[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.skin-opt .sw{display:flex;flex:none;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.skin-opt .sw i{display:block;width:16px;height:40px}
+.skin-opt b{display:block;font-size:1rem;line-height:1.3}
+.skin-opt small{display:block;font-size:.8rem;color:var(--muted);line-height:1.4}
+
+/* ───────── 그림 요소 공통 ───────── */
+.dc{position:absolute;z-index:0;pointer-events:none;display:block}
+.dc svg{display:block;width:100%;height:100%}
+
+/* ───────── 바꾼 스킨 공통(칠판 영역을 풍경으로) ───────── */
+:root[data-skinned] .hero{box-shadow:none;color:var(--chalk);padding-bottom:var(--hero-pb,110px)}
+:root[data-skinned] .hero::after,:root[data-skinned] .hero .chalk-line,:root[data-skinned] .hero .noisy{display:none}
+:root[data-skinned] .hero h1{color:var(--chalk);text-shadow:none}
+:root[data-skinned] .hero .hero-top,:root[data-skinned] .hero .notes{position:relative;z-index:2}
+:root[data-skinned] .note{background:var(--note-bg,rgba(255,255,255,.6));border-radius:12px;padding:8px 10px 10px}
+:root[data-skinned] .note:hover{background:var(--note-bg-h,rgba(255,255,255,.78))}
+:root[data-skinned] .note .nb{color:var(--chalk)}
+:root[data-skinned] .note .nb.empty,:root[data-skinned] .note .nd{color:var(--muted)}
+:root[data-skinned] .note.mom .nt .chalk{color:var(--chalk-pink)}
+:root[data-skinned] .note .chalk{text-shadow:none}
+:root[data-skinned] .note .nt{border-image:repeating-linear-gradient(90deg,var(--chalk) 0 9px,transparent 9px 13px) 1;opacity:.75}
+:root[data-skinned] .notes .divider{border-left-color:var(--line)}
+@media (max-width:480px){ :root[data-skinned] .notes .divider{border-top-color:var(--line)} }
+:root[data-skinned] .board-refresh{color:var(--chalk)}
+:root[data-skinned] .pop-note .nd{color:var(--muted)}
+:root[data-skinned] .pop-note.mom b{color:var(--chalk-pink)}
+
+/* ═════════ ② 스터디 노트 ═════════ */
+:root[data-skin="note"]{
+  --paper:#fbf8f0; --paper2:#f1ecde; --card:#ffffff; --ink:#2b2d42; --muted:#7a7d8c; --line:#cfd6e8;
+  --board:#fffdf6; --board2:#fffdf6; --chalk:#2b2d42; --chalk-blue:#3a5bd9; --chalk-pink:#d6336c;
+  --green:#1f9d55; --navy:#3a5bd9; --brass:#e0a82e; --red:#d6336c; --accent:#3a5bd9; --accent-soft:#e6ebfb;
+  --ok:#1f9d55; --ok-soft:#dcf4e5; --bad:#d6336c; --bad-soft:#fde6ee; --warn:#b07a00; --warn-soft:#fff3cc;
+  --wood1:#d9b982; --wood2:#b8935a; --case:#f3ecd9; --case2:#e8dfc6; --sat:#3a5bd9;
+  --radius:8px; --shadow:0 1px 0 #cfd6e8,3px 3px 0 #e4e8f4;
+  --serif:"Gowun Dodum",system-ui,sans-serif; --sans:"Gowun Dodum",Pretendard,system-ui,sans-serif;
+  --hero-pb:96px; --note-bg:rgba(255,246,168,.7); --note-bg-h:rgba(255,246,168,.9);
+}
+:root[data-skin="note"] .hero{border-radius:6px;border:1px solid #cfd6e8;border-left:8px solid #e0457b;
+  background:linear-gradient(#cfd6e8 1px,transparent 1px) 0 0/18px 18px,linear-gradient(90deg,#cfd6e8 1px,transparent 1px) 0 0/18px 18px,#fffdf6}
+:root[data-skin="note"] .hero::before{content:"";position:absolute;top:4px;right:34px;width:70px;height:20px;background:rgba(255,200,87,.75);transform:rotate(4deg);z-index:1}
+:root[data-skin="note"] .hero h1{display:inline-block;padding:0 6px;margin-left:-6px;background:linear-gradient(transparent 58%,#fff176 58%)}
+:root[data-skin="note"] .note.mom{background:rgba(255,224,234,.78)}
+:root[data-skin="note"] .note.mom:hover{background:rgba(255,224,234,.95)}
+:root[data-skin="note"] .note.dad{transform:rotate(-.5deg)} :root[data-skin="note"] .note.mom{transform:rotate(.5deg)}
+:root[data-skin="note"] .dc-sticker{right:16px;bottom:14px;width:62px;height:62px;border-radius:50%;background:#ffe35a;border:4px solid #fff;box-shadow:0 2px 7px rgba(43,45,66,.28),inset 0 -6px 0 rgba(255,170,0,.25);transform:rotate(-9deg);display:grid;place-items:center}
+:root[data-skin="note"] .dc-sticker svg{width:48px;height:48px}
+:root[data-skin="note"] .dc-sticker::after{content:"";position:absolute;right:-5px;bottom:-5px;width:20px;height:20px;background:linear-gradient(135deg,#fffdf6 50%,#e7dfc6 50%);border-radius:0 0 12px 0;box-shadow:-1px -1px 2px rgba(0,0,0,.12)}
+
+/* ═════════ ⑤ 숲속 언덕 ═════════ */
+:root[data-skin="forest"]{
+  --paper:#eef2e6; --paper2:#e5ebd9; --card:#fbfcf6; --ink:#263228; --muted:#6b7a68; --line:#d3dcc6;
+  --board:#d6e8c6; --board2:#f1f6e1; --chalk:#26402c; --chalk-blue:#2b5f8f; --chalk-pink:#b5485f;
+  --green:#4f7a4a; --navy:#2b5f8f; --brass:#b07d2e; --red:#b5532f; --accent:#4f7a4a; --accent-soft:#e1edd6;
+  --ok:#3f8a52; --ok-soft:#e0f0e0; --bad:#b5532f; --bad-soft:#f6e3da; --warn:#9a6a10; --warn-soft:#f6ecd0;
+  --wood1:#a38559; --wood2:#765a35; --case:#e3ead6; --case2:#d3ddc3; --sat:#2b5f8f;
+  --radius:14px; --shadow:0 1px 2px rgba(40,70,40,.06),0 6px 18px rgba(40,70,40,.08);
+  --serif:"Gowun Batang",serif; --sans:"Gowun Dodum",Pretendard,system-ui,sans-serif;
+  --hero-pb:104px; --note-bg:rgba(255,255,255,.62); --note-bg-h:rgba(255,255,255,.8);
+}
+:root[data-skin="forest"] .hero{border-radius:20px;
+  background:radial-gradient(ellipse 65% 96px at 14% 100%,#2f4d36 99%,transparent 100%),radial-gradient(ellipse 55% 84px at 88% 100%,#436b48 99%,transparent 100%),linear-gradient(#d6e8c6,#f1f6e1)}
+:root[data-skin="forest"] .dc-sun{top:10px;right:14px;width:64px;height:64px}
+:root[data-skin="forest"] .dc-trees{left:26px;bottom:0;width:110px;height:56px}
+
+/* ═════════ ⑦ 우주 천문대 ═════════ */
+:root[data-skin="space"]{
+  color-scheme:dark;
+  --paper:#0a0919; --paper2:#100e26; --card:#14122c; --ink:#ece9ff; --muted:#9a95c7; --line:#2a2550;
+  --board:#171044; --board2:#0b0a1a; --chalk:#f2efff; --chalk-blue:#8fe9e1; --chalk-pink:#ffb4d6;
+  --green:#5ee0d6; --navy:#8fb0e6; --brass:#ffd86b; --red:#ff8fc2; --accent:#5ee0d6; --accent-soft:#12303a;
+  --ok:#5fd39a; --ok-soft:#12301f; --bad:#ff8fa6; --bad-soft:#3a1a2a; --warn:#ffd86b; --warn-soft:#3a3010;
+  --wood1:#3a3480; --wood2:#25205a; --case:#17143a; --case2:#110f27; --sat:#8fb0e6;
+  --radius:12px; --shadow:none;
+  --serif:"IBM Plex Sans KR",Pretendard,system-ui,sans-serif; --sans:"IBM Plex Sans KR",Pretendard,system-ui,sans-serif;
+  --hero-pb:116px; --note-bg:rgba(8,6,28,.62); --note-bg-h:rgba(8,6,28,.8);
+}
+:root[data-skin="space"] .hero{border-radius:14px;border:1px solid #302b66;
+  background:radial-gradient(circle at 80% 18%,rgba(255,120,200,.26),transparent 40%),radial-gradient(circle at 12% 95%,rgba(94,224,214,.2),transparent 45%),linear-gradient(#05041a,#171044 60%,#3a2a78)}
+:root[data-skin="space"] .hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(1px 1px at 12px 20px,#fff,transparent),radial-gradient(1.3px 1.3px at 90px 66px,#cfe3ff,transparent),radial-gradient(1px 1px at 150px 14px,#fff,transparent),
+  radial-gradient(1px 1px at 52px 118px,#ffeab8,transparent),radial-gradient(1.2px 1.2px at 178px 150px,#fff,transparent),radial-gradient(1px 1px at 120px 96px,#ffc9e6,transparent);background-size:200px 170px}
+:root[data-skin="space"] .hero::after{display:block;content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(115deg,transparent 28%,rgba(184,176,255,.14) 46%,transparent 64%)}
+:root[data-skin="space"] .dc-const{top:12px;right:100px;width:104px;height:86px}
+:root[data-skin="space"] .dc-moon{top:12px;right:10px;width:84px;height:84px}
+:root[data-skin="space"] .dc-mount{left:0;right:0;bottom:0;width:100%;height:90px}
+:root[data-skin="space"] .dc-dome{left:18px;bottom:16px;width:96px;height:76px}
+:root[data-skin="space"] .dc-trees{left:132px;bottom:14px;width:80px;height:40px}
+:root[data-skin="space"] .note{border:1px solid #2f2a63}
+:root[data-skin="space"] .hero h1{text-shadow:0 0 14px rgba(20,10,60,.9)}
+:root[data-skin="space"] .hero .kicker{color:#8fe9e1;opacity:1;letter-spacing:.14em}
+
+/* ═════════ ⑧ 바닷가 ═════════ */
+:root[data-skin="sea"]{
+  --paper:#fbf4e2; --paper2:#f3e9cf; --card:#fffdf6; --ink:#0f3a4f; --muted:#5d8091; --line:#ead9ae;
+  --board:#bfeaf6; --board2:#fff1cf; --chalk:#0b3248; --chalk-blue:#0b5f86; --chalk-pink:#c0394f;
+  --green:#1aa37a; --navy:#0f8fb8; --brass:#d99a1c; --red:#e0674a; --accent:#0f8fb8; --accent-soft:#d9f0f9;
+  --ok:#1aa37a; --ok-soft:#dcf3ea; --bad:#d6513a; --bad-soft:#fde8e2; --warn:#a9700a; --warn-soft:#fbefcf;
+  --wood1:#c9a86a; --wood2:#a07f44; --case:#f1e4c0; --case2:#e8d6a8; --sat:#0f8fb8;
+  --radius:18px; --shadow:0 4px 10px -6px rgba(15,100,140,.35);
+  --serif:"Gowun Dodum",system-ui,sans-serif; --sans:"Gowun Dodum",Pretendard,system-ui,sans-serif;
+  --hero-pb:132px; --note-bg:rgba(255,255,255,.66); --note-bg-h:rgba(255,255,255,.85);
+}
+:root[data-skin="sea"] .hero{border-radius:22px;background:linear-gradient(#63c0e8,#bfeaf6 70%,#fff1cf)}
+:root[data-skin="sea"] .hero h1{text-shadow:0 1px 0 rgba(255,255,255,.55)}
+:root[data-skin="sea"] .dc-sky{top:4px;left:34%;width:200px;height:60px}
+:root[data-skin="sea"] .dc-sun{top:4px;right:12px;width:90px;height:90px}
+:root[data-skin="sea"] .dc-band{left:0;right:0;bottom:0;width:100%;height:100px}
+:root[data-skin="sea"] .dc-boat{right:26%;bottom:92px;width:40px;height:34px}
+:root[data-skin="sea"] .dc-shells{left:16px;bottom:4px;width:90px;height:30px}
+:root[data-skin="sea"] .dc-carve{right:18px;bottom:3px;width:54px;height:54px}
+
+/* ═════════ ⑪ 레트로 게임기 ═════════ */
+:root[data-skin="arcade"]{
+  color-scheme:dark;
+  --paper:#100b24; --paper2:#160f33; --card:#1b1440; --ink:#f2eaff; --muted:#a79cd6; --line:#4a3a9a;
+  --board:#1a1040; --board2:#160f36; --chalk:#f2eaff; --chalk-blue:#39ffec; --chalk-pink:#ff9ccb;
+  --green:#39ff88; --navy:#39d5ff; --brass:#ffe14a; --red:#ff4fa3; --accent:#ffe14a; --accent-soft:#2a2150;
+  --ok:#39ff88; --ok-soft:#10301f; --bad:#ff5c8a; --bad-soft:#3a1530; --warn:#ffe14a; --warn-soft:#3a3210;
+  --wood1:#5a3fc0; --wood2:#2a1a63; --case:#1d1642; --case2:#140f2e; --sat:#39d5ff;
+  --radius:4px; --shadow:0 0 12px rgba(108,76,255,.4);
+  --serif:"Do Hyeon",Pretendard,system-ui,sans-serif;
+  --hero-pb:150px; --note-bg:rgba(16,11,36,.72); --note-bg-h:rgba(16,11,36,.88);
+}
+:root[data-skin="arcade"] button,:root[data-skin="arcade"] .btn,:root[data-skin="arcade"] .modal{border-radius:3px}
+:root[data-skin="arcade"] .hero{border-radius:0;margin:3px;border:0;
+  background:linear-gradient(#150d38,#1a1040 55%,rgba(26,16,64,0)),conic-gradient(#2d1c6c 25%,#241657 0 50%,#2d1c6c 0 75%,#241657 0) 0 0/8px 8px;
+  box-shadow:0 -3px 0 #ff4fa3,0 3px 0 #ff4fa3,-3px 0 0 #ff4fa3,3px 0 0 #ff4fa3,0 0 18px rgba(255,79,163,.5)}
+:root[data-skin="arcade"] .hero h1{font-weight:400;font-size:clamp(2rem,6.6vw,3.2rem);color:#fff;text-shadow:3px 3px 0 #ff4fa3,0 0 14px rgba(57,255,236,.55)}
+:root[data-skin="arcade"] .hero .kicker{font:400 .55rem/1.5 "Press Start 2P",monospace;color:#39ffec;opacity:1;letter-spacing:.04em;text-shadow:2px 2px 0 #000}
+:root[data-skin="arcade"] .hero .date{text-shadow:2px 2px 0 #000;color:#e9e0ff}
+:root[data-skin="arcade"] .note{box-shadow:0 -2px 0 #6c4cff,0 2px 0 #6c4cff,-2px 0 0 #6c4cff,2px 0 0 #6c4cff;border-radius:0}
+:root[data-skin="arcade"] .dc-hud{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;font:400 .5rem/1 "Press Start 2P",monospace;color:#fff;text-shadow:2px 2px 0 #000}
+:root[data-skin="arcade"] .dc-hud .hi{color:#ffe14a}
+:root[data-skin="arcade"] .dc-hud .hp svg{display:block;height:18px;width:auto}
+:root[data-skin="arcade"] .dc-moon{top:44px;right:16px;width:56px;height:56px}
+:root[data-skin="arcade"] .dc-city{left:0;right:0;bottom:34px;height:64px;background-repeat:repeat-x;background-size:340px 64px;background-position:left bottom}
+:root[data-skin="arcade"] .dc-ground{left:0;right:0;bottom:0;height:34px;background-size:24px 16px;border-top:4px solid #39ff88}
+:root[data-skin="arcade"] .dc-kid{left:22px;bottom:34px;width:40px;height:48px}
+:root[data-skin="arcade"] .dc-coins{left:96px;bottom:78px;width:96px;height:24px}
+:root[data-skin="arcade"] .dc-block{right:18%;bottom:92px;width:44px;height:44px}
+@media (max-width:520px){ :root[data-skin="arcade"] .dc-block{right:10%} }
+
+/* ───────── 어두운 스킨: 공부방 카드의 어두운 포인트색(인라인 --mc)을 밝게 ───────── */
+:root[data-skin="space"] .mcard .ic,:root[data-skin="arcade"] .mcard .ic{filter:brightness(2.2) saturate(1.15)}
+:root[data-skin="space"] .mcard::before,:root[data-skin="arcade"] .mcard::before{filter:brightness(1.7)}
+:root[data-skin="arcade"] .dc-hud{padding-right:34px}

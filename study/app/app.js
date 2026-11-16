@@ -128,7 +128,7 @@ function renderError(e){
 }
 
 /* ───────── 테마 ───────── */
-try{ var th=localStorage.getItem('mg-study:theme'); if(th) document.documentElement.setAttribute('data-theme',th); }catch(e){}
+try{ if(window.Skins) Skins.applyTheme(); else{ var th=localStorage.getItem('mg-study:theme'); if(th) document.documentElement.setAttribute('data-theme',th); } }catch(e){}
 /* ───────── 효과음(파일 없이 브라우저에서 합성) ───────── */
 var Snd=(function(){
   var ctx=null, on=true;
@@ -140,7 +140,7 @@ var Snd=(function(){
   var bufs={}, loading={}, lastCustom=0;
   function stamp(){ lastCustom=Date.now(); }
   function load(name){ if(bufs[name]||loading[name]) return; var c=ac(); if(!c) return; loading[name]=1;
-    fetch('app/snd/'+name+'.ogg?v=20261117o').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
+    fetch('app/snd/'+name+'.ogg?v=20261118b').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
       .then(function(ab){ return new Promise(function(ok,no){ c.decodeAudioData(ab,ok,no); }); })
       .then(function(b){ bufs[name]=b; },function(){ loading[name]=0; }); }
   function play(name,vol){ var c=ac(); if(!c) return true; var b=bufs[name]; if(!b){ load(name); return false; }
@@ -216,7 +216,7 @@ document.addEventListener('click',function(e){
  * 홈·톡방·일정 등에서 잔잔하게 흐르고, 공부방(공부방·시험·요약·오답노트·공부 기록·문제 풀이)에 들어가면 서서히 줄어들며 꺼진다.
  * 브라우저 규칙상 화면을 처음 누른 뒤에 시작한다. 🎵 버튼으로 켜고 끈다(이 기기에 저장). */
 var Mus=(function(){
-  var TRACKS=['aquarium','icicles-melting','isolation-waltz','la-citadelle','lovely-piano-song','nostalgic-piano','pond','romantic-inspiration','shining-stars','celebrated-minuet','champ-de-tournesol','landras-dream','adding-the-sun','magic-in-the-garden','i-guess-what-im-trying-to-say','vivace-momentum'].map(function(n){ return 'app/music/'+n+'.ogg?v=20261117o'; });   /* 가사 없는 잔잔한 곡 16곡, 음량은 같게 맞춰 두었다 */
+  var TRACKS=['aquarium','icicles-melting','isolation-waltz','la-citadelle','lovely-piano-song','nostalgic-piano','pond','romantic-inspiration','shining-stars','celebrated-minuet','champ-de-tournesol','landras-dream','adding-the-sun','magic-in-the-garden','i-guess-what-im-trying-to-say','vivace-momentum'].map(function(n){ return 'app/music/'+n+'.ogg?v=20261118b'; });   /* 가사 없는 잔잔한 곡 16곡, 음량은 같게 맞춰 두었다 */
   var VOL=0.15, FADE_IN=1.0, FADE_OUT=0.6;
   var STUDY={room:1,exam:1,summary:1,notes:1,stats:1,book:1,quiz:1,result:1,review:1};
   var ctx=null, gain=null, lp=null, el=null, idx=Math.floor(Math.random()*TRACKS.length), fresh=true, wantOn=true, inStudy=false, started=false, stopT=null;
@@ -272,12 +272,26 @@ function forceRefresh(btn){
   if(btn){ btn.disabled=true; btn.textContent='…'; }
   var urls=[location.pathname];
   Array.prototype.forEach.call(document.querySelectorAll('script[src],link[rel=stylesheet][href]'),function(e){ var u=e.src||e.href; if(u.indexOf(location.origin)===0) urls.push(u); });
-  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117o'); });
+  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261118b'); });
   var jobs=[];
   try{ if(window.caches) jobs.push(caches.keys().then(function(ks){ return Promise.all(ks.map(function(k){ return caches.delete(k); })); })); }catch(e){}
   try{ if(navigator.serviceWorker) jobs.push(navigator.serviceWorker.getRegistration().then(function(r){ return r&&r.update(); })); }catch(e){}
   urls.forEach(function(u){ jobs.push(fetch(u,{cache:'reload'})); });
   Promise.all(jobs.map(function(j){ return Promise.resolve(j).catch(function(){}); })).then(function(){ location.reload(); });
+}
+
+/* 칠판 영역에 스킨 그림 넣기(클래스룸은 그대로) */
+function decorateHero(hero){ if(window.Skins) Skins.decorate(hero); return hero; }
+/* 스킨 고르기 창 */
+function openSkinPicker(){
+  var cur=Skins.current(), m;
+  var list=h('div',{class:'skin-list'},Skins.list().map(function(s){
+    var sw=h('span',{class:'sw','aria-hidden':'true'},s.swatch.map(function(c){ return h('i',{style:'background:'+c}); }));
+    return h('button',{class:'skin-opt','aria-pressed':String(s.id===cur),onclick:function(){ Skins.set(s.id); m.close(); route(); }},[sw,h('span',{},[h('b',{text:s.name}),h('small',{text:s.desc})])]);
+  }));
+  m=openModal([h('h2',{style:'margin:0',text:'스킨 고르기'}),
+    h('p',{class:'muted',style:'margin:4px 0 0;font-size:.92rem',text:'고른 스킨은 이 기기에만 저장돼요. 교과 정리 슬라이드는 교과서 표지 디자인 그대로예요.'}),list,
+    h('div',{class:'row',style:'justify-content:flex-end;margin-top:14px'},[h('button',{onclick:function(){ m.close(); }},['닫기'])])]);
 }
 
 function themeBtn(){
@@ -294,7 +308,9 @@ function themeBtn(){
     var on=Mus.toggle(); mb.classList.toggle('off',!on); mb.setAttribute('aria-pressed',String(on));
   }},['🎵']);
   mb.classList.toggle('off',!Mus.on);
-  return h('div',{class:'dock'},[mb,sb,tb]);
+  var kb=h('button',{class:'theme-btn skin-btn',title:'스킨 바꾸기','aria-label':'화면 스킨 바꾸기',onclick:function(){ openSkinPicker(); }},['🎨']);
+  var fixed=window.Skins&&Skins.fixedTheme();   // 어두운·밝은 스킨은 밝기를 스킨이 정하므로 밝기 버튼을 숨긴다
+  return h('div',{class:'dock'},fixed?[mb,sb,kb]:[mb,sb,kb,tb]);
 }
 
 /* 교실 문 안쪽: 원근감 있는 방 + 조금 떨어진 곳의 책장(SVG, 문마다 책 배치가 다르다) */
@@ -389,7 +405,7 @@ function renderHome(){
   var learning=0;
   var books=Store.load().books; for(var id in books){ learning+=noteCounts(id).learning; }
   var page=h('div',{class:'page'},[
-    h('header',{class:'hero'},[
+    decorateHero(h('header',{class:'hero'},[
       h('div',{class:'hero-top'},[
         h('div',{class:'kicker',text:'MINGYEOM · STUDY ROOM'}),
         h('h1',{text:'민겸이 공부 공간'}),
@@ -399,7 +415,7 @@ function renderHome(){
       noticeBoard(),
       h('div',{class:'chalk-line'}),
       h('button',{class:'board-refresh',title:'새 버전 받아오기 (캐시 지우고 새로고침)','aria-label':'새 버전 받아오기: 캐시를 지우고 새로고침',onclick:function(e){ forceRefresh(e.currentTarget); }},['↻'])
-    ]),
+    ])),
     h('div',{class:'sec-title'},['오늘의 우리 집',h('a',{class:'more',href:'#/plan'},['일정표 열기 →'])]),
     todayPlan(),
     chatCard(),
