@@ -140,7 +140,7 @@ var Snd=(function(){
   var bufs={}, loading={}, lastCustom=0;
   function stamp(){ lastCustom=Date.now(); }
   function load(name){ if(bufs[name]||loading[name]) return; var c=ac(); if(!c) return; loading[name]=1;
-    fetch('app/snd/'+name+'.ogg?v=20261117b').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
+    fetch('app/snd/'+name+'.ogg?v=20261117c').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
       .then(function(ab){ return new Promise(function(ok,no){ c.decodeAudioData(ab,ok,no); }); })
       .then(function(b){ bufs[name]=b; },function(){ loading[name]=0; }); }
   function play(name,vol){ var c=ac(); if(!c) return true; var b=bufs[name]; if(!b){ load(name); return false; }
@@ -148,14 +148,14 @@ var Snd=(function(){
     f.type='lowpass'; f.frequency.value=2600; f.Q.value=0.5;            /* 날카로운 고음을 깎는다 */
     var t=c.currentTime; g.gain.setValueAtTime(0.0001,t); g.gain.linearRampToValueAtTime(vol,t+0.04);   /* 부드럽게 시작 */
     s.connect(f); f.connect(g); g.connect(c.destination); s.start(); stamp(); return true; }
-  function preload(){ ['door-open','door-locked','page4','page5','page6','page8'].forEach(load); }
+  function preload(){ ['door-open','door-locked','page4','page5','page6'].forEach(load); }
   document.addEventListener('pointerdown',function f(){ document.removeEventListener('pointerdown',f); if(on) preload(); },{once:true});
   return {
     get on(){ return on; },
     toggle:function(){ on=!on; try{ localStorage.setItem('mg-study:sound',on?'on':'off'); }catch(e){} if(on) this.pop(); return on; },
     door:function(){ if(!on) return; if(!play('door-open',0.25)) this.doorSynth(); },
     locked:function(){ if(!on) return; play('door-locked',0.5); },
-    page:function(){ if(!on) return; var n=[4,5,6,8][Math.floor(Math.random()*4)]; if(!play('page'+n,0.42)) this.pageSynth(); },
+    page:function(){ if(!on) return; var n=[4,5,6][Math.floor(Math.random()*3)];   /* page8은 딸깍 소리처럼 들려 뺐다 */ if(!play('page'+n,0.42)) this.pageSynth(); },
     /* 뽁: 가볍고 작은 물방울 소리 (모든 클릭) */
     pop:function(){ if(!on) return; var c=ac(); if(!c) return; var t=c.currentTime;
       var o=c.createOscillator(), g=c.createGain(), f=c.createBiquadFilter();
@@ -272,7 +272,7 @@ function forceRefresh(btn){
   if(btn){ btn.disabled=true; btn.textContent='…'; }
   var urls=[location.pathname];
   Array.prototype.forEach.call(document.querySelectorAll('script[src],link[rel=stylesheet][href]'),function(e){ var u=e.src||e.href; if(u.indexOf(location.origin)===0) urls.push(u); });
-  ['door-open','door-locked','page4','page5','page6','page8'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117b'); });
+  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117c'); });
   var jobs=[];
   try{ if(window.caches) jobs.push(caches.keys().then(function(ks){ return Promise.all(ks.map(function(k){ return caches.delete(k); })); })); }catch(e){}
   try{ if(navigator.serviceWorker) jobs.push(navigator.serviceWorker.getRegistration().then(function(r){ return r&&r.update(); })); }catch(e){}
