@@ -175,16 +175,16 @@ function roomSvg(seed){
    +'<linearGradient id="rs'+seed+'" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b6a3d"/><stop offset="1" stop-color="#d9b676"/></linearGradient>'
    +'<radialGradient id="rv'+seed+'" cx=".5" cy=".42" r=".75"><stop offset=".45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".62"/></radialGradient>'
    +'<radialGradient id="rl'+seed+'" cx=".5" cy=".38" r=".5"><stop offset="0" stop-color="#fff6d6" stop-opacity=".6"/><stop offset="1" stop-color="#fff6d6" stop-opacity="0"/></radialGradient></defs>'
-   +'<polygon points="0,0 120,0 120,170 0,170" fill="#3a2a18"/>'
-   +'<polygon points="0,0 120,0 94,30 26,30" fill="#a98a5c"/>'                       /* 천장 */
-   +'<polygon points="0,0 26,30 26,118 0,170" fill="url(#rs'+seed+')"/>'              /* 왼쪽 벽 */
-   +'<polygon points="120,0 94,30 94,118 120,170" fill="#a78556"/>'                  /* 오른쪽 벽 */
-   +'<rect x="26" y="30" width="68" height="88" fill="url(#rw'+seed+')"/>'            /* 안쪽 벽 */
-   +'<polygon points="26,118 94,118 120,170 0,170" fill="url(#rf'+seed+')"/>';        /* 바닥 */
-  for(var i=1;i<6;i++){ var x0=26+i*68/6, x1=-20+i*160/6; o+='<line x1="'+x0+'" y1="118" x2="'+x1+'" y2="170" stroke="#2c1a0a" stroke-opacity=".35" stroke-width=".5"/>'; }   /* 마루 결 */
-  o+='<polygon points="52,170 68,170 64,134 56,134" fill="#a33b3b" fill-opacity=".55"/>';                                 /* 복도 러그 */
+   +'<rect width="120" height="170" fill="#3a2a18"/>'
+   +'<rect x="0" y="0" width="120" height="122" fill="url(#rw'+seed+')"/>'              /* 뒷벽(양옆으로 열린 넓은 공간) */
+   +'<rect x="0" y="0" width="120" height="7" fill="#8a6b3e"/><rect x="0" y="7" width="120" height="1.5" fill="#000" fill-opacity=".25"/>'   /* 천장 몰딩 */
+   +'<rect x="0" y="116" width="120" height="6" fill="#e9dcc0"/><rect x="0" y="121" width="120" height="1.2" fill="#000" fill-opacity=".3"/>'  /* 걸레받이 */
+   +'<polygon points="0,122 120,122 120,170 0,170" fill="url(#rf'+seed+')"/>';           /* 마루 바닥 */
+  for(var i=-4;i<=12;i++){ var x0=60+(i*10-60)*0.22, x1=i*10-60+60; o+='<line x1="'+(60+(i*10-60)*0.35).toFixed(1)+'" y1="122" x2="'+(60+(i*10-60)*1.35).toFixed(1)+'" y2="170" stroke="#2c1a0a" stroke-opacity=".32" stroke-width=".5"/>'; }   /* 마루 결 */
+  o+='<line x1="0" y1="134" x2="120" y2="134" stroke="#2c1a0a" stroke-opacity=".22" stroke-width=".4"/><line x1="0" y1="150" x2="120" y2="150" stroke="#2c1a0a" stroke-opacity=".22" stroke-width=".4"/>'
+   +'<ellipse cx="60" cy="140" rx="46" ry="9" fill="#a33b3b" fill-opacity=".5"/><ellipse cx="60" cy="140" rx="38" ry="6.5" fill="none" stroke="#e9c97a" stroke-opacity=".5" stroke-width=".7"/>'; /* 러그 */
   /* 책장 */
-  var bx=34, bw=52, by=36, bh=80, rows=4, rh=(bh-4)/rows;
+  var bx=32, bw=56, by=36, bh=82, rows=4, rh=(bh-4)/rows;
   o+='<rect x="'+(bx-2)+'" y="'+(by-2)+'" width="'+(bw+4)+'" height="'+(bh+3)+'" fill="#3f2a14"/>'
    +'<rect x="'+bx+'" y="'+by+'" width="'+bw+'" height="'+(bh-1)+'" fill="#24160a"/>';
   for(var r=0;r<rows;r++){
@@ -203,7 +203,7 @@ function roomSvg(seed){
     o+='<rect x="'+bx+'" y="'+base+'" width="'+bw+'" height="2" fill="#6b4520"/><rect x="'+bx+'" y="'+(base+2)+'" width="'+bw+'" height="1.2" fill="#000" fill-opacity=".4"/>';
   }
   o+='<rect x="'+(bx-2)+'" y="'+(by-2)+'" width="'+(bw+4)+'" height="'+(bh+3)+'" fill="none" stroke="#5a3a17" stroke-width="1.6"/>'
-   +'<ellipse cx="60" cy="119" rx="34" ry="3" fill="#000" fill-opacity=".35"/>'                                                    /* 책장 그림자 */
+   +'<ellipse cx="60" cy="122" rx="38" ry="3" fill="#000" fill-opacity=".4"/>'                                                    /* 책장 그림자 */
    +'<rect width="120" height="170" fill="url(#rl'+seed+')"/><rect width="120" height="170" fill="url(#rv'+seed+')"/></svg>';
   return o;
 }
