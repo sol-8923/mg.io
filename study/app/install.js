@@ -49,7 +49,7 @@
     var box = document.createElement('div');
     box.className = 'inst';
     box.setAttribute('role', 'dialog');
-    box.innerHTML = '<img src="icons/icon-192.png" alt=""><div><b>앱처럼 쓰려면</b><span></span></div><div class="iact"></div>';
+    box.innerHTML = '<img src="icons/icon-192.png?v=2" alt=""><div><b>앱처럼 쓰려면</b><span></span></div><div class="iact"></div>';
     box.querySelector('span').textContent = text;
     var act = box.querySelector('.iact');
     if (withInstall) {
