@@ -276,6 +276,27 @@ body.editing [contenteditable] { outline: 2px dashed var(--pt); }
     .step .no { float: left; margin: 0 12px 0 0; }
     .cover .rule, .cover .copy:has(h1 > span:only-child) .rule { width: 138px; }
 }
+/* ===== 검수 정리 v4 (폰 화면) ===== */
+@media (max-width: 1100px) and (orientation: portrait) {
+    /* 인라인으로 박힌 큰 글자 크기가 카드·표 글자와 따로 노는 것을 막는다 */
+    .slide:not(.cover) :is(p, ul, ol, li, div, span, td, th, b)[style*="font-size"]:not(.fm):not(.fm *):not(.tag):not(.no) { font-size: inherit !important; }
+    /* 연도 알약(1960 등)이 제목을 가리지 않게 */
+    .card.step:has(.no[style*="width:auto"]) { padding-left: 22px !important; }
+    .card.step .no[style*="width:auto"] { position: static !important; display: inline-flex; margin: 0 0 8px; }
+    .card.step:has(.no[style*="width:auto"]) .no + br { display: none; }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+    /* 폰에서는 줄바꿈 금지 구절이 칸 밖으로 밀려나지 않게 */
+    span.nw { white-space: normal; }
+    /* 표를 행 단위 카드로 쌓아 오른쪽 열이 잘리지 않게 */
+    .slide table.stack, .slide table.stack tbody, .slide table.stack tr, .slide table.stack td, .slide table.stack th { display: block; width: auto !important; box-sizing: border-box; }
+    .slide table.stack { border: 0 !important; background: transparent !important; box-shadow: none !important; }
+    .slide table.stack tr.hrow { display: none; }
+    .slide table.stack tr { margin: 0 0 12px; border: 2px solid rgba(0,0,0,.14); border-radius: 12px; overflow: hidden; background: #fff; }
+    .slide table.stack td, .slide table.stack th { border: 0 !important; border-top: 1px solid rgba(0,0,0,.09) !important; padding: 8px 14px !important; text-align: left; white-space: normal !important; font-size: 16px !important; }
+    .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
+    .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
+}
 </style>
 
 </head>
@@ -648,7 +669,7 @@ body.editing [contenteditable] { outline: 2px dashed var(--pt); }
     <h2>구분하기</h2>
     <div class="grid g2" style="grid-template-columns:1.3fr 1fr">
         <table class="t reveal" style="font-size:25px">
-            <tr><th>구분</th><th>A</th><th>B</th></tr>
+            <tr><th>비교 항목</th><th>앞의 개념</th><th>뒤의 개념</th></tr>
             <tr><td>위치</td><td>절대적: <span class="nw">위도·경도·대륙·해양</span>, 거의 안 바뀜</td><td>상대적: 주변 국가와의 관계, 바뀜</td></tr>
             <tr><td>규모</td><td>세계적: 국경을 넘음, 초국적 기업</td><td><span class="nw">국가·지역적</span>: 지역 축제, 앱 주문</td></tr>
             <tr><td>세계화 vs 지역화</td><td>경계를 넘어 전 세계로 <b>확대</b></td><td>지역적인 것이 세계적 <b>가치</b>를 가짐</td></tr>
@@ -805,6 +826,32 @@ body.editing [contenteditable] { outline: 2px dashed var(--pt); }
     }
     new MutationObserver(upd).observe(count, { childList: true, characterData: true, subtree: true });
     upd();
+})();
+</script>
+<script>
+/* 폰 화면용: 표 머리 글을 각 칸에 붙여 두면(data-label) CSS가 행 단위 카드로 쌓아 보여 준다 */
+(function(){
+  document.querySelectorAll('.slide table').forEach(function(t){
+    var rows=[].slice.call(t.rows); if(rows.length<2) return;
+    var hr=rows[0]; if(![].every.call(hr.cells,function(c){return c.tagName==='TH';})) return;
+    var labels=[], col=0;
+    [].forEach.call(hr.cells,function(c){ var n=c.colSpan||1; for(var k=0;k<n;k++) labels[col++]=c.textContent.replace(/\s+/g,' ').trim(); });
+    hr.classList.add('hrow');
+    var busy=[];
+    rows.slice(1).forEach(function(r){
+      var c=0;
+      [].forEach.call(r.cells,function(cell){
+        while(busy[c]>0){ c++; }
+        if(c>0 && labels[c]) cell.setAttribute('data-label',labels[c]);
+        var rs=cell.rowSpan||1, cs=cell.colSpan||1;
+        for(var k=0;k<cs;k++){ if(rs>1) busy[c+k]=rs; }
+        c+=cs;
+      });
+      for(var i=0;i<busy.length;i++){ if(busy[i]>0 && !(busy[i]===undefined)) { /* 아래에서 감소 */ } }
+      busy=busy.map(function(v){ return v>0 ? v-1 : 0; });
+    });
+    t.classList.add('stack');
+  });
 })();
 </script>
 </body>

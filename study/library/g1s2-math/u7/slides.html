@@ -247,6 +247,27 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
 @media (max-width: 560px) and (orientation: portrait) {
     .scrollx::before { content: "\2190  옆으로 밀어서 보기  \2192"; display: block; text-align: center; font-size: 14px; color: var(--ink-dim); margin-bottom: 4px; }
 }
+/* ===== 검수 정리 v4 (폰 화면) ===== */
+@media (max-width: 1100px) and (orientation: portrait) {
+    /* 인라인으로 박힌 큰 글자 크기가 카드·표 글자와 따로 노는 것을 막는다 */
+    .slide:not(.cover) :is(p, ul, ol, li, div, span, td, th, b)[style*="font-size"]:not(.fm):not(.fm *):not(.tag):not(.no) { font-size: inherit !important; }
+    /* 연도 알약(1960 등)이 제목을 가리지 않게 */
+    .card.step:has(.no[style*="width:auto"]) { padding-left: 22px !important; }
+    .card.step .no[style*="width:auto"] { position: static !important; display: inline-flex; margin: 0 0 8px; }
+    .card.step:has(.no[style*="width:auto"]) .no + br { display: none; }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+    /* 폰에서는 줄바꿈 금지 구절이 칸 밖으로 밀려나지 않게 */
+    span.nw { white-space: normal; }
+    /* 표를 행 단위 카드로 쌓아 오른쪽 열이 잘리지 않게 */
+    .slide table.stack, .slide table.stack tbody, .slide table.stack tr, .slide table.stack td, .slide table.stack th { display: block; width: auto !important; box-sizing: border-box; }
+    .slide table.stack { border: 0 !important; background: transparent !important; box-shadow: none !important; }
+    .slide table.stack tr.hrow { display: none; }
+    .slide table.stack tr { margin: 0 0 12px; border: 2px solid rgba(0,0,0,.14); border-radius: 12px; overflow: hidden; background: #fff; }
+    .slide table.stack td, .slide table.stack th { border: 0 !important; border-top: 1px solid rgba(0,0,0,.09) !important; padding: 8px 14px !important; text-align: left; white-space: normal !important; font-size: 16px !important; }
+    .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
+    .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
+}
 </style>
 </head>
 <body>
@@ -538,16 +559,22 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
             <p class="dim" style="margin-top:6px">검산&nbsp;: <span class="nw">원기둥 πr²×2r = 2πr³</span> → <span class="nw">2πr³ × ⅔ = 4/3 πr³</span></p>
         </div>
         <div class="card reveal" style="align-self:stretch;display:flex;flex-direction:column;justify-content:center">
-            <svg class="fig" viewBox="0 0 340 280" width="340" height="280" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR,sans-serif">
-                <rect x="60" y="20" width="200" height="200" fill="none" stroke="#2A2018" stroke-width="3"/>
-                <circle cx="160" cy="120" r="100" fill="rgba(245,138,75,.25)" stroke="#C2410C" stroke-width="4"/>
-                <line x1="160" y1="120" x2="260" y2="120" stroke="#17766A" stroke-width="3"/>
-                <text x="200" y="112" fill="#17766A" font-size="24" font-weight="700">r</text>
-                <g stroke="#5A4636" stroke-width="2"><line x1="264" y1="20" x2="296" y2="20"/><line x1="264" y1="220" x2="296" y2="220"/><line x1="286" y1="22" x2="286" y2="218"/></g>
-                <polygon points="286,20 280,34 292,34" fill="#5A4636"/><polygon points="286,220 280,206 292,206" fill="#5A4636"/>
-                <text x="298" y="128" fill="#5A4636" font-size="22">2r</text>
-                <text x="64" y="256" fill="#5A4636" font-size="22">구를 꼭 맞게 넣은 원기둥</text>
+            <svg class="fig" viewBox="0 0 340 290" width="340" height="290" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR,sans-serif">
+                <path d="M60 40 L60 240 A100 24 0 0 0 260 240 L260 40" fill="rgba(245,138,75,.10)" stroke="#2A2018" stroke-width="3"/>
+                <ellipse cx="160" cy="40" rx="100" ry="24" fill="#FFF3E4" stroke="#2A2018" stroke-width="3"/>
+                <circle cx="160" cy="140" r="100" fill="rgba(245,138,75,.32)" stroke="#C2410C" stroke-width="4"/>
+                <path d="M60 140 A100 24 0 0 0 260 140" fill="none" stroke="#C2410C" stroke-width="2.5"/>
+                <path d="M60 140 A100 24 0 0 1 260 140" fill="none" stroke="#C2410C" stroke-width="2" stroke-dasharray="6 5"/>
+                <line x1="160" y1="140" x2="260" y2="140" stroke="#17766A" stroke-width="3.5"/>
+                <circle cx="160" cy="140" r="4.5" fill="#17766A"/>
+                <text x="200" y="128" fill="#17766A" font-size="24" font-weight="700">r</text>
+                <text x="104" y="200" fill="#9A3412" font-size="22" font-weight="700">구</text>
+                <text x="64" y="274" fill="#2A2018" font-size="20" font-weight="700">원기둥</text>
+                <g stroke="#5A4636" stroke-width="2"><line x1="268" y1="40" x2="300" y2="40"/><line x1="268" y1="240" x2="300" y2="240"/><line x1="290" y1="42" x2="290" y2="238"/></g>
+                <polygon points="290,40 284,54 296,54" fill="#5A4636"/><polygon points="290,240 284,226 296,226" fill="#5A4636"/>
+                <text x="302" y="148" fill="#5A4636" font-size="22">2r</text>
             </svg>
+            <p style="margin:10px 4px 0;text-align:center"><b>구가 원기둥 안에 꼭 맞게</b> 들어 있어요.<br>구는 원기둥의 위·아래·옆면에 모두 닿아요.<br><span class="dim">(옆에서 본 모양)</span></p>
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:22px">
@@ -741,6 +768,32 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
     tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
     tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
     tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+<script>
+/* 폰 화면용: 표 머리 글을 각 칸에 붙여 두면(data-label) CSS가 행 단위 카드로 쌓아 보여 준다 */
+(function(){
+  document.querySelectorAll('.slide table').forEach(function(t){
+    var rows=[].slice.call(t.rows); if(rows.length<2) return;
+    var hr=rows[0]; if(![].every.call(hr.cells,function(c){return c.tagName==='TH';})) return;
+    var labels=[], col=0;
+    [].forEach.call(hr.cells,function(c){ var n=c.colSpan||1; for(var k=0;k<n;k++) labels[col++]=c.textContent.replace(/\s+/g,' ').trim(); });
+    hr.classList.add('hrow');
+    var busy=[];
+    rows.slice(1).forEach(function(r){
+      var c=0;
+      [].forEach.call(r.cells,function(cell){
+        while(busy[c]>0){ c++; }
+        if(c>0 && labels[c]) cell.setAttribute('data-label',labels[c]);
+        var rs=cell.rowSpan||1, cs=cell.colSpan||1;
+        for(var k=0;k<cs;k++){ if(rs>1) busy[c+k]=rs; }
+        c+=cs;
+      });
+      for(var i=0;i<busy.length;i++){ if(busy[i]>0 && !(busy[i]===undefined)) { /* 아래에서 감소 */ } }
+      busy=busy.map(function(v){ return v>0 ? v-1 : 0; });
+    });
+    t.classList.add('stack');
+  });
 })();
 </script>
 </body>
