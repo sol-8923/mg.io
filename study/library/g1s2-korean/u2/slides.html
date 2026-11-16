@@ -244,6 +244,26 @@ svg.dia .d { font-size: 29px; }
     svg.dia text { font-size: 32px; }
     svg.dia .d { font-size: 29px; }
 }
+
+/* ===== 검수 정리 v3 ===== */
+/* 줄바꿈: 짧은 구절·숫자+단위·'용어 :'는 줄 중간에서 끊지 않는다 (table.t.nw 와 충돌하지 않게 span 한정) */
+span.nw { white-space: nowrap; }
+.slide p, .slide li, .slide td, .slide th, .card { text-wrap: pretty; }
+/* 진행 표시: 쪽수 칸 폭 고정 → 두 자리 쪽수에서도 컨트롤 막대가 흔들리지 않는다 */
+#count { min-width: 76px; width: 76px; text-align: center; font-variant-numeric: tabular-nums; }
+/* 긴 안내 한 줄 카드(u2 8번)를 눈에 띄게 */
+.card.note { margin: 22px 0; background: #fff6cc; border-color: #f0d25a; box-shadow: 0 6px 0 #f0d25a; border-left: 14px solid var(--pink-soft); }
+.card.note p.dim { color: var(--ink); }
+/* 한 줄 요약 카드: 줄 길이 균형 */
+.card.sum { text-wrap: balance; }
+@media (max-width: 820px) and (orientation: portrait) {
+    /* 가로로 밀어 보는 다이어그램 안내 */
+    .dia-wrap::before { content: "← 옆으로 밀어서 보기 →"; display: block; position: sticky; left: 0; width: 100%; box-sizing: border-box; text-align: center; font-family: var(--font-body); font-size: 15px; font-weight: 700; color: var(--ink-dim); padding: 4px 0 8px; }
+    /* 카드 안 확대 글자는 모바일에서 한 크기로 통일 */
+    .card p[style*="font-size:34px"], .card p[style*="font-size:32px"], .card p[style*="font-size:30px"] { font-size: 17px !important; line-height: 1.6 !important; }
+    table.t, table.t td, table.t th { font-size: 16px !important; }
+}
+
 </style>
 </head>
 <body>
@@ -309,10 +329,10 @@ svg.dia .d { font-size: 29px; }
         <use href="#hole" fill="none" stroke="#fff" stroke-width="5" opacity=".9"/>
     </svg>
     <div class="cv-text">
-        <div class="kicker reveal">1학년 2학기 국어 · 2단원 요약 정리</div>
+        <div class="kicker reveal">1학년 2학기 <span class="nw">국어 ·</span> 2단원 요약 정리</div>
         <h1 class="reveal">다채로운 <span>단어</span></h1>
         <div class="rule reveal"></div>
-        <p class="reveal">단어의 짜임과 새말 · 어휘의 양상과 쓰임</p>
+        <p class="reveal">단어의 짜임과 <span class="nw">새말 ·</span> 어휘의 양상과 쓰임</p>
     </div>
 </section>
 
@@ -329,26 +349,26 @@ svg.dia .d { font-size: 29px; }
             <h3 style="margin-top:20px">핵심 내용</h3>
             <ul class="l">
                 <li>단어와 형태소, 형태소의 종류</li>
-                <li>어근과 접사, 단일어·합성어·파생어</li>
+                <li>어근과 접사, <span class="nw">단일어·합성어·파생어</span></li>
                 <li>새말의 형성 방법과 다듬기</li>
             </ul>
         </div>
         <div class="card hl reveal">
             <h3>02 어휘의 양상과 쓰임</h3>
             <ul class="l">
-                <li>학습 목표: <b>세대·분야·매체</b>에 따른 어휘의 양상과 쓰임을 분석하고, 다양한 집단과 사회의 언어에 <b>관용적 태도</b>를 지닌다. <span class="ref">(p.89)</span></li>
+                <li>학습 목표: <b><span class="nw">세대·분야·매체</span></b>에 따른 어휘의 양상과 쓰임을 분석하고, 다양한 집단과 사회의 언어에 <b>관용적 태도</b>를 지닌다. <span class="ref">(p.89)</span></li>
             </ul>
             <h3 style="margin-top:20px">핵심 내용</h3>
             <ul class="l">
                 <li>세대에 따른 어휘, 분야에 따른 전문어</li>
-                <li>매체(인터넷)에 따른 어휘와 바람직한 태도</li>
+                <li><span class="nw">매체(인터넷)에</span> 따른 어휘와 바람직한 태도</li>
             </ul>
         </div>
     </div>
     <div class="grid g2" style="margin-top:24px">
         <div class="card reveal">
             <h3>교과 역량</h3>
-            <p>비판적·창의적 사고 역량, 공동체·대인 관계 역량 <span class="ref">(p.69)</span></p>
+            <p><span class="nw">비판적·창의적</span> 사고 역량, <span class="nw">공동체·대인</span> 관계 역량 <span class="ref">(p.69)</span></p>
         </div>
         <div class="card reveal">
             <h3>용어 (p.88)</h3>
@@ -366,12 +386,12 @@ svg.dia .d { font-size: 29px; }
         <div class="card hl reveal">
             <h3>단어</h3>
             <p><b>홀로 쓰일 수 있는 가장 작은 말의 단위.</b> 또는 홀로 쓸 수 있는 말에 붙어 앞말과 쉽게 분리되는 말(<b>조사</b>).</p>
-            <p class="dim" style="margin-top:12px">예) '감나무가 크다.' → 단어 <b>감나무 / 가 / 크다</b>. 조사 '가'는 홀로 쓰일 수 없지만 앞말과 쉽게 분리되므로 단어로 인정한다.</p>
+            <p class="dim" style="margin-top:12px">예) '감나무가 크다.' → 단어 <b><span class="nw">감나무 /</span> <span class="nw">가 /</span> 크다</b>. 조사 '가'는 홀로 쓰일 수 없지만 앞말과 쉽게 분리되므로 단어로 인정한다.</p>
         </div>
         <div class="card hl reveal">
             <h3>형태소</h3>
             <p><b>뜻을 가진 가장 작은 말의 단위.</b> 더 나누면 뜻이 사라지거나 본래 뜻과 관계없는 말이 된다.</p>
-            <p class="dim" style="margin-top:12px">예) '감나무' = 감 + 나무, '크다' = 크- + -다, '책가방이 무겁다' = 책 / 가방 / 이 / 무겁- / -다.</p>
+            <p class="dim" style="margin-top:12px">예) '감나무' = 감 + 나무, '크다' = 크- + -다, '책가방이 무겁다' = <span class="nw">책 /</span> <span class="nw">가방 /</span> <span class="nw">이 /</span> <span class="nw">무겁- /</span> -다.</p>
         </div>
     </div>
     <div class="card reveal" style="margin-top:24px">
@@ -394,7 +414,7 @@ svg.dia .d { font-size: 29px; }
 <!-- === 4. 형태소의 종류 === -->
 <section class="slide">
     <div class="kicker">01 단어의 짜임과 새말</div>
-    <h2>형태소의 종류 <small>예문 '바다가 넓다' · p.74</small></h2>
+    <h2>형태소의 종류 <small>예문 '바다가 <span class="nw">넓다' ·</span> p.74</small></h2>
     <table class="t reveal">
         <tr><th style="width:20%">기준</th><th style="width:17%">종류</th><th>뜻</th><th style="width:22%">예</th></tr>
         <tr><td rowspan="2">자립성의 유무</td><td>자립 형태소</td><td>홀로 쓰일 수 있는 형태소</td><td>바다</td></tr>
@@ -440,7 +460,7 @@ svg.dia .d { font-size: 29px; }
             <p>-꾼, -질, -쟁이</p>
         </div>
     </div>
-    <div class="reveal" style="margin-top:22px">
+    <div class="reveal dia-wrap" style="margin-top:22px">
     <svg class="dia" viewBox="0 0 1728 410" role="img" aria-label="단어의 종류 분류도">
         <g stroke="#1d5fd1" stroke-width="3" fill="none">
             <path d="M864 74 L390 150"/><path d="M864 74 L1300 150"/>
@@ -482,7 +502,7 @@ svg.dia .d { font-size: 29px; }
             <h3>합성어의 여러 모습</h3>
             <ul class="l">
                 <li>어근과 어근을 합할 때 <b>모습이 바뀌기도</b> 한다: 나뭇잎(나무+잎), 소나무(솔+나무).</li>
-                <li>동작·상태를 나타내는 단어끼리도 합성어: 돌아오다, 건너뛰다, 높푸르다(높다+푸르다), 검붉다(검다+붉다).</li>
+                <li><span class="nw">동작·상태를</span> 나타내는 단어끼리도 합성어: 돌아오다, 건너뛰다, 높푸르다(높다+푸르다), 검붉다(검다+붉다).</li>
             </ul>
         </div>
         <div class="card reveal">
@@ -503,7 +523,7 @@ svg.dia .d { font-size: 29px; }
     <div class="kicker">01 단어의 짜임과 새말</div>
     <h2>새말과 형성 방법 <small>p.80~83</small></h2>
     <div class="card hl reveal" style="margin-bottom:22px">
-        <b>새말</b> 새로운 사물이나 개념을 표현하려고 <b>새로 만들어 사용하는 말</b>. 외국어를 그대로 가져온 외래어, 외래어를 우리말로 <b>순화(다듬은)한 말</b>도 새말에 포함된다. 예) 와이파이(외국어에서 가져온 새말), 댓글('리플'을 순화한 새말)
+        <b>새말</b> 새로운 사물이나 개념을 표현하려고 <b>새로 만들어 사용하는 말</b>. 외국어를 그대로 가져온 외래어, 외래어를 우리말로 <b><span class="nw">순화(다듬은)한</span> 말</b>도 새말에 포함된다. 예) 와이파이(외국어에서 가져온 새말), 댓글('리플'을 순화한 새말)
     </div>
     <table class="t reveal" style="font-size:26px">
         <tr><th style="width:36%">새말의 형성 방법</th><th style="width:26%">설명</th><th>예</th></tr>
@@ -535,10 +555,10 @@ svg.dia .d { font-size: 29px; }
             </ul>
         </div>
     </div>
-    <div class="card reveal" style="margin:24px 0"><p class="dim">널리 쓰이면 표준국어대사전에 실리기도 하고, 잠깐 유행하다 사라지기도 한다.</p></div>
+    <div class="card note reveal"><p class="dim">널리 쓰이면 표준국어대사전에 실리기도 하고, 잠깐 유행하다 사라지기도 한다.</p></div>
     <div class="card hl reveal">
         <h3>외국어에서 가져온 새말 다듬기 (p.82~83)</h3>
-        <p>'오픈 스페이스(Open Space)'는 2022년 6월 국립국어원이 <b>'열린 쉼터'</b>로 다듬을 것을 제안했다. '캘리그래피'는 <b>'멋글씨'</b>(멋+글씨, 합성어)로 다듬었다.</p>
+        <p>'오픈 스페이스(Open Space)'는 2022년 6월 국립국어원이 <b>'열린 쉼터'</b>로 다듬을 것을 제안했다. '캘리그래피'는 <b>'멋글씨'</b>(멋+글씨, <span class="nw">합성어)로</span> 다듬었다.</p>
         <div class="grid g3" style="margin-top:16px">
             <div class="card step"><span class="no">1</span><br>우리말 <b>단어의 짜임</b>을 고려하기</div>
             <div class="card step"><span class="no">2</span><br>되도록 <b>짧고 명확한</b> 표현으로 다듬기</div>
@@ -551,7 +571,7 @@ svg.dia .d { font-size: 29px; }
 <!-- === 9. 세대·분야 어휘 === -->
 <section class="slide">
     <div class="kicker">02 어휘의 양상과 쓰임</div>
-    <h2>세대·분야에 따른 어휘 <small>p.90~95</small></h2>
+    <h2><span class="nw">세대·분야에</span> 따른 어휘 <small>p.90~95</small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>세대에 따른 어휘</h3>
@@ -566,10 +586,10 @@ svg.dia .d { font-size: 29px; }
         <div class="card hl reveal">
             <h3>분야에 따른 어휘: 전문어</h3>
             <ul class="l">
-                <li>각 분야에서 일을 효과적으로 하려고 쓰는 말. 예) 피겨 스케이팅의 쇼트 프로그램·트리플 점프·살코 점프, 법정의 변론·원고·피고·기각.</li>
-                <li>주로 <b>외국어·외래어·한자어</b>로 이루어짐.</li>
+                <li>각 분야에서 일을 효과적으로 하려고 쓰는 말. 예) 피겨 스케이팅의 쇼트 <span class="nw">프로그램·트리플</span> <span class="nw">점프·살코</span> 점프, 법정의 <span class="nw">변론·원고·피고·기각.</span></li>
+                <li>주로 <b><span class="nw">외국어·외래어·한자어</span></b>로 이루어짐.</li>
                 <li>뜻이 <b>명확하고 구체적</b>이어서 내용을 빠르고 정확하게 전달.</li>
-                <li>표준국어대사전에서 법률 분야 전문어는 뜻풀이 앞에 『법률』로 표시.</li>
+                <li>표준국어대사전에서 법률 분야 전문어는 뜻풀이 앞에 <span class="nw">『법률』로</span> 표시.</li>
             </ul>
         </div>
     </div>
@@ -592,23 +612,23 @@ svg.dia .d { font-size: 29px; }
     <h2>매체에 따른 어휘: 인터넷 언어 <small>p.96~99</small></h2>
     <table class="t reveal">
         <tr><th style="width:19%">특성</th><th style="width:36%">설명</th><th>예</th></tr>
-        <tr><td>간편하게 쓰기</td><td>글자를 입력하는 시간과 노력을 줄여 빠르고 쉽게 씀</td><td>세젤예(세상에서 제일 예쁜), ㅇㅈ(인정)처럼 초성만, 서술어 줄이기, 소리 나는 대로 적기</td></tr>
-        <tr><td>생생하게 쓰기</td><td>의성어·의태어를 쓰거나 음절을 반복해 생동감 있게 씀</td><td>헉!, 절레절레, 제에에에발</td></tr>
-        <tr><td>재미있게 쓰기</td><td>의도적으로 글자를 잘못 쓰거나 영문자·숫자를 이용해 바꿔 씀</td><td>쵝오!, Aㅏ…, 1도 모르겠다</td></tr>
+        <tr><td>간편하게 쓰기</td><td>글자를 입력하는 시간과 노력을 줄여 빠르고 쉽게 씀</td><td>세젤예(세상에서 제일 예쁜), <span class="nw">ㅇㅈ(인정)처럼</span> 초성만, 서술어 줄이기, 소리 나는 대로 적기</td></tr>
+        <tr><td>생생하게 쓰기</td><td><span class="nw">의성어·의태어를</span> 쓰거나 음절을 반복해 생동감 있게 씀</td><td>헉!, 절레절레, 제에에에발</td></tr>
+        <tr><td>재미있게 쓰기</td><td>의도적으로 글자를 잘못 쓰거나 <span class="nw">영문자·숫자를</span> 이용해 바꿔 씀</td><td>쵝오!, Aㅏ…, 1도 모르겠다</td></tr>
     </table>
     <div class="grid g2" style="margin-top:24px">
         <div class="card hl reveal">
             <h3>태도</h3>
             <ul class="l">
                 <li>무분별하게 쓰지 말고 <b>소통 상황과 대상을 고려</b>한다.</li>
-                <li>학교 누리집 공지 댓글(모두가 함께 보는 공간)에서 '하준'은 정중하게 건의, '윤서'는 'ㅋㅋ', '조음', '넘', '개선ㄱㄱ'을 써서 공간의 특성에 맞지 않았다.</li>
+                <li>학교 누리집 공지 댓글(모두가 함께 보는 <span class="nw">공간)에서</span> '하준'은 정중하게 건의, '윤서'는 'ㅋㅋ', '조음', '넘', '개선ㄱㄱ'을 써서 공간의 특성에 맞지 않았다.</li>
             </ul>
         </div>
         <div class="card reveal">
             <h3>그 밖에</h3>
             <ul class="l">
-                <li>이모티콘(그림말), 사진, 영상 등 시각적·청각적 요소도 언어의 일부로 의미를 풍부하게 한다.</li>
-                <li>같은 세대라도 매체를 자주 쓰는지에 따라 어휘가 다를 수 있다. 다른 어휘도 <b>인정하고 존중</b>(관용)한다.</li>
+                <li>이모티콘(그림말), 사진, 영상 등 <span class="nw">시각적·청각적</span> 요소도 언어의 일부로 의미를 풍부하게 한다.</li>
+                <li>같은 세대라도 매체를 자주 쓰는지에 따라 어휘가 다를 수 있다. 다른 어휘도 <b>인정하고 존중</b><span class="nw">(관용)한다.</span></li>
             </ul>
         </div>
     </div>
@@ -623,16 +643,16 @@ svg.dia .d { font-size: 29px; }
         <div class="card hl reveal">
             <ul class="l">
                 <li><b>단어</b> = 홀로 쓰이는 가장 작은 말의 단위 + <b>조사</b>. <b>형태소</b> = 뜻을 가진 가장 작은 말의 단위.</li>
-                <li><b>형태소 종류</b> : 자립/의존(홀로 쓰이나?) × 실질/형식(실질적 의미가 있나?).</li>
-                <li><b>어근</b>(실질적 의미) · <b>접사</b>(어근에 붙어 뜻을 제한). 단일어 / 합성어(어근+어근) / 파생어(접사+어근).</li>
-                <li><b>새말 형성</b> : 합성·파생(기존 방법), 첫 글자 결합·일부 결합(새로운 방법). 다듬을 때: 짜임 고려, 짧고 명확, 본래 의미.</li>
+                <li><span class="nw"><b>형태소 종류</b> :</span> 자립/의존(홀로 쓰이나?) × 실질/형식(실질적 의미가 있나?).</li>
+                <li><b>어근</b>(실질적 <span class="nw">의미) ·</span> <b>접사</b>(어근에 붙어 뜻을 제한). <span class="nw">단일어 /</span> <span class="nw">합성어(어근+어근) /</span> 파생어(접사+어근).</li>
+                <li><span class="nw"><b>새말 형성</b> :</span> <span class="nw">합성·파생(기존</span> 방법), 첫 글자 <span class="nw">결합·일부</span> 결합(새로운 방법). 다듬을 때: 짜임 고려, 짧고 명확, 본래 의미.</li>
             </ul>
         </div>
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>세대</b> : 노년층 한자어·예의 표현, 청소년층 줄임말·외래어. 태도: 차이 인정, 상대가 이해할 어휘.</li>
-                <li><b>전문어</b> : 외국어·외래어·한자어, 뜻이 명확·구체 → 정확하고 빠른 전달. 일반인에게는 풀어서.</li>
-                <li><b>인터넷 언어</b> : 간편하게·생생하게·재미있게 쓰기. 태도: 소통 상황과 대상 고려.</li>
+                <li><span class="nw"><b>세대</b> :</span> 노년층 <span class="nw">한자어·예의</span> 표현, 청소년층 <span class="nw">줄임말·외래어.</span> 태도: 차이 인정, 상대가 이해할 어휘.</li>
+                <li><span class="nw"><b>전문어</b> :</span> <span class="nw">외국어·외래어·한자어,</span> 뜻이 <span class="nw">명확·구체</span> → 정확하고 빠른 전달. 일반인에게는 풀어서.</li>
+                <li><span class="nw"><b>인터넷 언어</b> :</span> 간<span class="nw">편하게·생생하게·재미있</span>게 쓰기. 태도: 소통 상황과 대상 고려.</li>
             </ul>
         </div>
     </div>
@@ -650,14 +670,14 @@ svg.dia .d { font-size: 29px; }
             <tr><td>자립 vs 실질</td><td>홀로 쓰일 수 있나</td><td>실질적 의미가 있나 (별개 기준)</td></tr>
             <tr><td>어근 vs 접사</td><td>실질적 의미를 나타냄</td><td>어근에 붙어 뜻을 제한</td></tr>
             <tr><td>합성어 vs 파생어</td><td>어근 + 어근 (밤나무)</td><td>접사 + 어근 (햇밤)</td></tr>
-            <tr><td>새말 형성</td><td>합성·파생 (기존 방법)</td><td>첫 글자·일부 결합 (새로운 방법)</td></tr>
+            <tr><td>새말 형성</td><td><span class="nw">합성·파생</span> (기존 방법)</td><td>첫 <span class="nw">글자·일부</span> 결합 (새로운 방법)</td></tr>
         </table>
         <div class="card warn reveal">
             <h3>이렇게 오해하지 말자</h3>
             <ul class="l" style="font-size:25px">
                 <li>조사는 단어가 아니다 (X) → 앞말과 쉽게 분리되어 <b>단어로 인정</b>.</li>
                 <li>어근만으로는 단어를 못 이룬다 (X) → 어근은 <b>홀로 단어</b>를 이룰 수 있다(접사는 못 이룸).</li>
-                <li>새말은 합성·파생으로 못 만든다 (X) → 합성·파생 새말도 있다.</li>
+                <li>새말은 <span class="nw">합성·파생으로</span> 못 만든다 (X) → <span class="nw">합성·파생</span> 새말도 있다.</li>
                 <li>순화한 말은 새말이 아니다 (X) → 새말에 <b>포함</b>.</li>
                 <li>전문어는 일반인이 쉽게 이해한다 (X) → 일반인에게는 낯설어 <b>풀어서</b> 말한다.</li>
             </ul>
@@ -672,12 +692,12 @@ svg.dia .d { font-size: 29px; }
     <h2>이렇게 나온다</h2>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>객관식 · 이해</h3>
+            <h3><span class="nw">객관식 ·</span> 이해</h3>
             <ul class="l">
-                <li>문장을 <b>단어/형태소</b>로 나누기, 형태소 개수, 자립/의존·실질/형식 분류(예시 문장 제시)</li>
-                <li><b>어근·접사</b> 구분, 단일어/합성어/파생어 구분, 접두사·접미사 파생어, 합성어의 어근 모습 변화</li>
-                <li>새말의 개념과 형성 방법 분류(아점·라볶이·누리꾼·그림말 등), 새말 다듬기의 고려점(오픈 스페이스 → 열린 쉼터)</li>
-                <li>세대·분야·매체별 어휘 특성과 바람직한 태도(뉴스·사례·대화 자료)</li>
+                <li>문장을 <b>단어/형태소</b>로 나누기, 형태소 개수, <span class="nw">자립/의존·실질/형식</span> 분류(예시 문장 제시)</li>
+                <li><b><span class="nw">어근·접사</span></b> 구분, 단일어/합성어/파생어 구분, <span class="nw">접두사·접미사</span> 파생어, 합성어의 어근 모습 변화</li>
+                <li>새말의 개념과 형성 방법 분류<span class="nw">(아점·라볶이·누리꾼·그림말</span> 등), 새말 다듬기의 고려점(오픈 스페이스 → 열린 쉼터)</li>
+                <li><span class="nw">세대·분야·매체별</span> 어휘 특성과 바람직한 <span class="nw">태도(뉴스·사례·대화</span> 자료)</li>
             </ul>
         </div>
         <div class="card hl reveal">
@@ -688,7 +708,7 @@ svg.dia .d { font-size: 29px; }
                 <li>어휘를 대하는 태도, 인터넷 언어를 고쳐 쓰기</li>
             </ul>
             <h3 style="margin-top:22px">마지막 점검</h3>
-            <p>형태소는 <b>기본형</b>으로 나눴는가? 자립/의존과 실질/형식을 <b>따로</b> 분류했는가? 합성어·파생어를 어근과 접사로 구별했는가?</p>
+            <p>형태소는 <b>기본형</b>으로 나눴는가? 자립/의존과 실질/형식을 <b>따로</b> 분류했는가? <span class="nw">합성어·파생어를</span> 어근과 접사로 구별했는가?</p>
         </div>
     </div>
     <div class="pg">13</div>
@@ -700,7 +720,7 @@ svg.dia .d { font-size: 29px; }
 <div class="deck-controls" id="controls">
     <button id="prev" aria-label="이전">&#9664;</button>
     <span class="trk"><i id="bar"></i></span>
-    <span id="count">1 / 13</span>
+    <span id="count"><span class="nw">1 /</span> 13</span>
     <button id="next" aria-label="다음">&#9654;</button>
 </div>
 

@@ -242,6 +242,70 @@ table.t th b, table.t th strong { color: inherit; }
     .card:not(.warn) { border-top-width: 4px; }
     .slide .pg { display: block; width: max-content; margin: 10px 0 0 auto; font-size: 14px; padding: 3px 12px 4px; }
 }
+
+/* ===== 검수 정리 v3 ===== */
+/* 1) 줄바꿈: 짧은 구절(단어·단어, 괄호 안 구절)은 줄 중간에서 끊기지 않게, 고아(한두 글자만 남는 줄) 완화 */
+.nw { white-space: nowrap; }
+.slide p, .slide li, .slide td, .slide th, .slide h3, .slide .card { text-wrap: pretty; }
+
+/* 2) 쪽번호 컨트롤: 두 자리 쪽수에서도 막대가 흔들리지 않게 폭 고정 */
+#count { min-width: 80px; font-variant-numeric: tabular-nums; }
+
+/* 3) 모바일 보정 */
+.swipe-hint { display: none; }
+@media (max-width: 820px) and (orientation: portrait) {
+    /* 가로로 밀어야 보이는 SVG 위에 안내 문구 (.swipe-hint) */
+    .swipe-hint { display: block; text-align: center; font-size: 14px; font-weight: 700; color: var(--ink-dim); margin: 0 0 6px; }
+    /* 표 글자는 16px 이상 */
+    table.t, table.t th, table.t td { font-size: 16px !important; }
+    /* 번호 카드: 번호 원을 글 왼쪽에 두고 가로 배치 */
+    .card.step { position: relative; min-height: 72px; padding-left: 66px !important; }
+    .card.step .no { position: absolute; left: 14px; top: 12px; margin: 0; }
+    .card.step .no + br { display: none; }
+    .card.step > h3:first-of-type { margin-top: 0; }
+}
+
+/* ===== 검수 정리 v3 (단원별 조정) ===== */
+/* 같은 줄 카드 높이 맞춤 */
+.fx-st .grid { align-items: stretch; }
+/* 오해 표 장: 표를 슬라이드 폭에 맞추고, 오해 카드는 아래에 2단으로 */
+.fx-mis { grid-template-columns: 1fr !important; gap: 22px; }
+.fx-mis table.t { table-layout: fixed; width: 100%; }
+.fx-mis table.t th:nth-child(1) { width: 21%; }
+.fx-mis table.t th:nth-child(2), .fx-mis table.t th:nth-child(3) { width: 39.5%; }
+.fx-mis table.t td:first-child { white-space: normal; }
+.fx-mis .card.warn ul.l { column-count: 2; column-gap: 48px; }
+.fx-mis .card.warn ul.l li { break-inside: avoid; }
+@media (max-width: 820px) and (orientation: portrait) {
+    .fx-mis table.t { table-layout: auto; }
+    .fx-mis table.t th:nth-child(n) { width: auto; }
+    .fx-mis table.t td:first-child { white-space: normal; }
+    .fx-mis .card.warn ul.l { column-count: 1; font-size: inherit !important; }
+}
+
+/* u10 8번 제목: 가운뎃점 간격 */
+h2 .dot { margin: 0 .16em; }
+/* 보조 설명을 별도 줄로 */
+.fx-ref { display: block; margin-top: 10px; }
+/* u11 6번: 보조 설명을 카드 아래쪽에 맞춰 줄 정렬 */
+.fx-col .card.hl { display: flex; flex-direction: column; }
+.fx-col .card.hl p.dim { margin-top: auto !important; padding-top: 10px; }
+/* u11 9번: 왼쪽 카드 글자와 간격 키움 */
+.fx-s9 .grid .card.hl { display: flex; flex-direction: column; }
+.fx-s9 .grid .card.hl ul.l { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; font-size: 1.18em; }
+.fx-s9 .grid .card.hl ul.l li { margin-bottom: 0; }
+/* 문장 단위로 줄을 나눈 카드 */
+.fx-ln { display: block; margin-top: 10px; }
+.fx-ln:first-child { margin-top: 0; }
+.fx-lh { line-height: 1.6; }
+/* 번호 카드 글줄 균형 */
+.card.step { text-wrap: balance; }
+@media (max-width: 820px) and (orientation: portrait) {
+    table.t td, table.t th { text-wrap: balance; }
+    .fx-s9 .grid .card.hl ul.l { font-size: inherit; display: block; }
+    .fx-s9 .grid .card.hl ul.l li { margin-bottom: 8px; }
+    .cover p { text-wrap: balance; }
+}
 </style>
 
 </head>
@@ -316,10 +380,10 @@ table.t th b, table.t th strong { color: inherit; }
 <g stroke="#2f7d46" stroke-width="4" stroke-linecap="round" opacity=".7"><path d="M1040 1000 l-6 -26 M1050 1000 l2 -30 M1060 1000 l8 -24"/><path d="M1700 960 l-6 -24 M1710 960 l3 -28"/></g>
 </svg>
     <div class="copy">
-    <div class="kicker reveal">1학년 2학기 사회 · 7단원 요약 정리</div>
+    <div class="kicker reveal">1학년 2학기 사회 · 7단원 요약 정리</div>
     <h1 class="reveal">인간과 <span>사회생활</span></h1>
     <div class="rule reveal"></div>
-    <p class="reveal">사회화와 자아 정체성 · 사회적 지위와 역할 · 사회의 갈등과 차별</p>
+    <p class="reveal">사회화와 자아 정체성 · 사회적 지위와 역할 · 사회의 갈등과 차별</p>
     </div>
     <div class="sign" aria-hidden="true"><div class="board">7<small>단원</small></div><div class="post"></div></div>
 </section>
@@ -332,10 +396,10 @@ table.t th b, table.t th strong { color: inherit; }
         <div class="card hl reveal">
             <h3>단원 구성</h3>
             <ul class="l">
-                <li><span class="tag">01</span><b>사회화와 자아 정체성</b> (p.128~131)</li>
-                <li><span class="tag">02</span><b>사회적 지위와 역할</b> (p.132~135)</li>
-                <li><span class="tag">03</span><b>우리 사회의 갈등과 차별</b> (p.136~141)</li>
-                <li><span class="tag">마무리</span>단원 마무리 (p.142~143)</li>
+                <li><span class="tag">1.</span><b>사회화와 자아 정체성</b> <span class="nw">(p.128~131)</span></li>
+                <li><span class="tag">2.</span><b>사회적 지위와 역할</b> <span class="nw">(p.132~135)</span></li>
+                <li><span class="tag">3.</span><b>우리 사회의 갈등과 차별</b> <span class="nw">(p.136~141)</span></li>
+                <li><span class="tag">마무리</span>단원 마무리 <span class="nw">(p.142~143)</span></li>
             </ul>
         </div>
         <div class="card reveal">
@@ -343,37 +407,37 @@ table.t th b, table.t th strong { color: inherit; }
             <ul class="l">
                 <li>인간은 어떻게 <b>사회적 존재</b>로 성장하는가?</li>
                 <li>사회 속에서 나는 어떤 <b>지위</b>와 <b>역할</b>을 갖는가?</li>
-                <li>집단 사이의 <b>편견·차별</b>은 왜 생기고 어떻게 해결하는가?</li>
+                <li>집단 사이의 <b><span class="nw">편견⁠·차별</span></b>은 왜 생기고 어떻게 해결하는가?</li>
             </ul>
         </div>
     </div>
     <div class="card reveal" style="margin-top:24px">
-        <h3>공부 방법 (일반사회 단원)</h3>
-        <p>사례(대화·기사·학생 발언)를 읽고 <b>알맞은 개념을 고르는</b> 방식으로 나온다. 개념의 뜻과 구분 기준을 정확히 익힌다.</p>
+        <h3>공부 방법 <span class="nw">(일반사회 단원)</span></h3>
+        <p><span class="nw">사례(대화⁠·기사⁠·학생 발언)를</span> 읽고 <b>알맞은 개념을 고르는</b> 방식으로 나온다. 개념의 뜻과 구분 기준을 정확히 익힌다.</p>
     </div>
     <div class="pg">2</div>
 </section>
 
 <!-- === 3. 사회화의 의미 === -->
 <section class="slide" style="--z:1.3">
-    <div class="kicker">01 사회화와 자아 정체성</div>
+    <div class="kicker">1 사회화와 자아 정체성</div>
     <h2>사회화의 의미 <small>p.129</small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>본능과 사회에서 익힌 방식</h3>
             <ul class="l">
-                <li>인간은 배고픔·반가움 같은 <b>본능적 욕구와 감정</b>을 갖는다.</li>
+                <li>인간은 <span class="nw">배고픔⁠·반가움</span> 같은 <b>본능적 욕구와 감정</b>을 갖는다.</li>
                 <li>그러나 이를 표현하는 방식은 자신이 속한 사회에서 익힌 <b>관습과 규범</b>을 따른다.</li>
             </ul>
             <h3 style="margin-top:20px">사회화</h3>
-            <p>한 개인이 다른 사람들과 <b>상호 작용</b>하며 사회 구성원으로 살아가는 데 필요한 <b>언어, 규범, 지식, 가치관</b> 등을 배워 나가는 과정. 사회화를 거치며 사회적 존재로 성장한다.</p>
+            <p>한 개인이 다른 사람들과 <b>상호 작용</b>하며 사회 구성원으로 살아가는 데 필요한 <b>언어, 규범, 지식, 가치관</b> 등을 배워 나가는 과정. 사회화를 거치며 사회적 존재로 성장한다.</p>
         </div>
         <div class="card reveal">
             <h3>용어 풀이</h3>
             <ul class="l">
-                <li><b>관습</b> : 어떤 사회에서 오랫동안 지켜 내려와 구성원들이 널리 인정하는 질서나 풍습</li>
-                <li><b>규범</b> : 인간이 행동하거나 판단할 때 마땅히 따르고 지켜야 할 가치 판단의 기준</li>
-                <li><b>상호 작용</b> : 둘 이상의 구성원이나 집단이 서로 영향을 주고받는 과정</li>
+                <li><b>관습</b> : 어떤 사회에서 오랫동안 지켜 내려와 구성원들이 널리 인정하는 질서나 풍습</li>
+                <li><b>규범</b> : 인간이 행동하거나 판단할 때 마땅히 따르고 지켜야 할 가치 판단의 기준</li>
+                <li><b>상호 작용</b> : 둘 이상의 구성원이나 집단이 서로 영향을 주고받는 과정</li>
             </ul>
         </div>
     </div>
@@ -382,31 +446,31 @@ table.t th b, table.t th strong { color: inherit; }
 
 <!-- === 4. 사회화의 기능 === -->
 <section class="slide" style="--z:1.3">
-    <div class="kicker">01 사회화와 자아 정체성</div>
-    <h2>사회화의 기능 <small>p.129 · 개인적 / 사회적</small></h2>
+    <div class="kicker">1 사회화와 자아 정체성</div>
+    <h2>사회화의 기능 <small>p.129 · 개인적 / 사회적</small></h2>
     <table class="t reveal">
         <tr><th style="width:18%">차원</th><th>기능</th></tr>
-        <tr><td>개인적</td><td>사회생활에 필요한 행동 양식과 규범을 익히고 <b>사회에 적응</b>해 구성원으로 성장한다. 자신만의 <b>독특한 개성과 자아</b>를 형성한다. 어느 사회에서 성장했는지에 따라 사람의 특성이 달라질 수 있다.</td></tr>
-        <tr><td>사회적</td><td>구성원이 한 사회의 규범과 가치를 <b>공유</b>하게 하고, 이를 <b>다음 세대에 전달</b>해 사회를 유지·발전시킨다.</td></tr>
+        <tr><td>개인적</td><td>사회생활에 필요한 행동 양식과 규범을 익히고 <b>사회에 적응</b>해 구성원으로 성장한다. 자신만의 <b>독특한 개성과 자아</b>를 형성한다. 어느 사회에서 성장했는지에 따라 사람의 특성이 달라질 수 있다.</td></tr>
+        <tr><td>사회적</td><td>구성원이 한 사회의 규범과 가치를 <b>공유</b>하게 하고, 이를 <b>다음 세대에 전달</b>해 사회를 <span class="nw">유지⁠·발전시킨다.</span></td></tr>
     </table>
     <div class="card hl reveal" style="margin-top:28px">
-        <b>구분 요령</b> '적응·개성·자아 형성' → 개인적 기능 / '규범·가치 공유, 다음 세대에 전달, 사회 유지·발전' → 사회적 기능
+        <b>구분 요령</b> <span class="nw">'적응⁠·개성⁠·자아</span> 형성' → 개인적 기능 / <span class="nw">'규범⁠·가치</span> 공유, 다음 세대에 전달, 사회 <span class="nw">유지⁠·발전'</span> → 사회적 기능
     </div>
     <div class="pg">4</div>
 </section>
 
 <!-- === 5. 사회화 과정과 기관 === -->
 <section class="slide" style="--z:1.3">
-    <div class="kicker">01 사회화와 자아 정체성</div>
+    <div class="kicker">1 사회화와 자아 정체성</div>
     <h2>사회화 과정과 사회화 기관 <small>p.130</small></h2>
     <div class="card reveal" style="margin-bottom:22px">
-        사회화는 특정 시기가 아니라 <b>일생에 걸쳐</b> 이루어지며, 가정·또래 집단·학교·직장·미디어 같은 <b>사회화 기관</b>의 영향을 받는다.
+        사회화는 특정 시기가 아니라 <b>일생에 걸쳐</b> 이루어지며, <span class="nw">가정⁠·또래</span> <span class="nw">집단⁠·학교⁠·직장⁠·미디어</span> 같은 <b>사회화 기관</b>의 영향을 받는다.
     </div>
     <div class="grid g4 reveal">
-        <div class="card step"><span class="no">1</span><br><h3>유아기 · 가정</h3>언어를 포함한 <b>기초적인 생활 습관</b>을 배운다.</div>
-        <div class="card step"><span class="no">2</span><br><h3>아동기 · 또래 집단</h3>놀이하며 다른 사람과 함께 생활하는 데 필요한 <b>태도와 규칙</b>을 배운다.</div>
-        <div class="card step"><span class="no">3</span><br><h3>청소년기 · 학교</h3>사회생활에 필요한 <b>지식·기술·규범·가치</b>를 체계적으로 배운다.</div>
-        <div class="card step"><span class="no">4</span><br><h3>성인 · 직장 등</h3>새로운 <b>지식과 기술, 삶의 태도</b>를 배운다.</div>
+        <div class="card step"><span class="no">1</span><br><h3>유아기 · 가정</h3>언어를 포함한 <b>기초적인 생활 습관</b>을 배운다.</div>
+        <div class="card step"><span class="no">2</span><br><h3>아동기 · 또래 집단</h3>놀이하며 다른 사람과 함께 생활하는 데 필요한 <b>태도와 규칙</b>을 배운다.</div>
+        <div class="card step"><span class="no">3</span><br><h3>청소년기 · 학교</h3>사회생활에 필요한 <b><span class="nw">지식⁠·기술⁠·규범⁠·가치</span></b>를 체계적으로 배운다.</div>
+        <div class="card step"><span class="no">4</span><br><h3>성인 · 직장 등</h3>새로운 <b>지식과 기술, 삶의 태도</b>를 배운다.</div>
     </div>
     <div class="card hl reveal" style="margin-top:22px">
         <b>미디어</b>에서도 생활에 필요한 지식과 정보를 얻으며 사회화가 이루어진다.
@@ -416,12 +480,12 @@ table.t th b, table.t th strong { color: inherit; }
 
 <!-- === 6. 자아 정체성 === -->
 <section class="slide" style="--z:1.3">
-    <div class="kicker">01 사회화와 자아 정체성</div>
+    <div class="kicker">1 사회화와 자아 정체성</div>
     <h2>자아 정체성과 미디어 <small>p.130</small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>자아 정체성</h3>
-            <p>다양한 사회적 관계에서 다른 사람들과 구별되는 <b>자신만의 고유성</b>을 깨닫고, 자신의 성격·가치관·관심 영역 등을 분명하게 이해한 상태. 사회화 과정을 거치며 형성한다.</p>
+            <p>다양한 사회적 관계에서 다른 사람들과 구별되는 <b>자신만의 고유성</b>을 깨닫고, 자신의 <span class="nw">성격⁠·가치관⁠·관심</span> 영역 등을 분명하게 이해한 상태. 사회화 과정을 거치며 형성한다.</p>
             <h3 style="margin-top:20px">건전한 자아 정체성</h3>
             <p>자신의 <b>현재 모습을 점검</b>하고 앞으로 어떤 삶을 살고 싶은지 <b>끊임없이 탐색</b>한다.</p>
         </div>
@@ -429,28 +493,28 @@ table.t th b, table.t th strong { color: inherit; }
             <h3>미디어의 영향</h3>
             <ul class="l">
                 <li>미디어의 영향력이 점차 <b>커지고</b> 있다.</li>
-                <li><b>긍정</b> : 인상 깊은 모습을 본보기로 삼아 건전한 자아 정체성 형성의 <b>계기</b>가 되기도 한다.</li>
-                <li><b>부정</b> : 이상적인 미의 기준으로 삼아 무리한 감량을 하는 등 부정적 영향도 줄 수 있다.</li>
+                <li><b>긍정</b> : 인상 깊은 모습을 본보기로 삼아 건전한 자아 정체성 형성의 <b>계기</b>가 되기도 한다.</li>
+                <li><b>부정</b> : 이상적인 미의 기준으로 삼아 무리한 감량을 하는 등 부정적 영향도 줄 수 있다.</li>
             </ul>
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:24px">
-        <b>자세</b> 미디어 정보를 <b>비판적으로 검토·분별해</b> 받아들이는 자세가 필요하다.
+        <b>자세</b> 미디어 정보를 <b>비판적으로 <span class="nw">검토⁠·분별해</span></b> 받아들이는 자세가 필요하다.
     </div>
     <div class="pg">6</div>
 </section>
 
 <!-- === 7. 사회적 지위 === -->
 <section class="slide" style="--z:1.3">
-    <div class="kicker">02 사회적 지위와 역할</div>
+    <div class="kicker">2 사회적 지위와 역할</div>
     <h2>사회적 지위 <small>p.133</small></h2>
     <div class="card reveal" style="margin-bottom:22px">
-        <b>사회적 지위</b> : 한 개인이 자신이 속한 사회나 집단 내에서 가지는 <b>위치</b>.
+        <b>사회적 지위</b> : 한 개인이 자신이 속한 사회나 집단 내에서 가지는 <b>위치</b>.
     </div>
     <table class="t reveal">
         <tr><th style="width:17%">구분</th><th style="width:45%">뜻</th><th>예</th></tr>
-        <tr><td>귀속 지위</td><td>개인의 의지와 노력에 상관없이 <b>태어나면서부터</b> 갖게 되는 지위</td><td>아들, 오빠, 신분 (지도서: 아들·딸·오빠·여동생)</td></tr>
-        <tr><td>성취 지위</td><td>개인의 <b>선택이나 노력</b>으로 갖는 지위</td><td>학생, 선생님, 직업</td></tr>
+        <tr><td>귀속 지위</td><td>개인의 의지와 노력에 상관없이 <b>태어나면서부터</b> 갖게 되는 지위</td><td>아들, 오빠, 신분 (지도서: <span class="nw">아들⁠·딸⁠·오빠⁠·여동생)</span></td></tr>
+        <tr><td>성취 지위</td><td>개인의 <b>선택이나 노력</b>으로 갖는 지위</td><td>학생, 선생님, 직업</td></tr>
     </table>
     <div class="card hl reveal" style="margin-top:24px">
         <b>변화</b> 전통 사회에서는 신분 같은 <b>귀속 지위</b>의 영향력이 컸으나, 현대 사회에서는 직업 같은 <b>성취 지위</b>의 중요성이 커졌다.
@@ -460,24 +524,24 @@ table.t th b, table.t th strong { color: inherit; }
 
 <!-- === 8. 사회적 역할 === -->
 <section class="slide" style="--z:1.3">
-    <div class="kicker">02 사회적 지위와 역할</div>
+    <div class="kicker">2 사회적 지위와 역할</div>
     <h2>사회적 역할 <small>p.133</small></h2>
     <div class="card hl reveal" style="margin-bottom:22px">
-        <b>사회적 역할</b> : 사회적 지위에 따라 사회적으로 <b>기대되는 행동 양식</b>.
+        <b>사회적 역할</b> : 사회적 지위에 따라 사회적으로 <b>기대되는 행동 양식</b>.
     </div>
     <div class="grid g2">
         <div class="card reveal">
             <h3>역할 수행의 모습</h3>
             <ul class="l">
-                <li>같은 역할이라도 수행 방식은 <b>개인마다</b> 다를 수 있고 사회적 평가도 달라질 수 있다.</li>
-                <li>충실히 수행하면 <b>보상</b>, 제대로 수행하지 못하면 <b>비난이나 처벌 등 제재</b>를 받기도 한다.</li>
+                <li>같은 역할이라도 수행 방식은 <b>개인마다</b> 다를 수 있고 사회적 평가도 달라질 수 있다.</li>
+                <li>충실히 수행하면 <b>보상</b>, 제대로 수행하지 못하면 <b>비난이나 처벌 등 제재</b>를 받기도 한다.</li>
             </ul>
         </div>
         <div class="card reveal">
             <h3>역할이 달라지는 까닭</h3>
             <ul class="l">
-                <li>개인의 특성뿐 아니라 <b>개인이 속한 사회의 특성</b>에 따라 차이가 난다.</li>
-                <li><b>사회 변화</b>에 따라 기존 지위에 기대되는 역할의 내용이 바뀌기도 한다.</li>
+                <li>개인의 특성뿐 아니라 <b>개인이 속한 사회의 특성</b>에 따라 차이가 난다.</li>
+                <li><b>사회 변화</b>에 따라 기존 지위에 기대되는 역할의 내용이 바뀌기도 한다.</li>
             </ul>
         </div>
     </div>
@@ -486,15 +550,15 @@ table.t th b, table.t th strong { color: inherit; }
 
 <!-- === 9. 역할 갈등 === -->
 <section class="slide" style="--z:1.225">
-    <div class="kicker">02 사회적 지위와 역할</div>
+    <div class="kicker">2 사회적 지위와 역할</div>
     <h2>역할 갈등과 대응 방안 <small>p.134~135</small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>역할 갈등</h3>
-            <p>사람은 여러 집단에 동시에 속해 <b>여러 지위·역할</b>을 갖는다. 이 역할들이 서로 <b>충돌</b>해 어떤 역할을 우선 수행할지 갈등을 겪는 것.</p>
+            <p>사람은 여러 집단에 동시에 속해 <b>여러 <span class="nw">지위⁠·역할</span></b>을 갖는다. 이 역할들이 서로 <b>충돌</b>해 어떤 역할을 우선 수행할지 갈등을 겪는 것.</p>
             <ul class="l" style="margin-top:12px">
-                <li>원만히 해결하지 못하면 심리적 불안, 사회적 관계 악화 등 혼란에 빠질 수 있다.</li>
-                <li>사회가 복잡해질수록 지위가 많아져 역할 갈등도 많아진다. 누구나 겪을 수 있다.</li>
+                <li>원만히 해결하지 못하면 심리적 불안, 사회적 관계 악화 등 혼란에 빠질 수 있다.</li>
+                <li>사회가 복잡해질수록 지위가 많아져 역할 갈등도 많아진다. 누구나 겪을 수 있다.</li>
             </ul>
         </div>
         <div class="card reveal">
@@ -502,37 +566,37 @@ table.t th b, table.t th strong { color: inherit; }
             <ul class="l">
                 <li><span class="tag">개인</span>갈등의 <b>원인을 명확히</b> 하고 <b>우선순위</b>를 고려해 <b>중요한 것부터</b> 수행한다.</li>
                 <li><span class="tag">개인</span>여러 역할의 중요성을 비교해 타협점을 찾고, 관련된 사람들과 <b>대화로 이해</b>를 구한다.</li>
-                <li><span class="tag">사회</span>여러 사람이 비슷한 갈등을 겪으면 <b>제도 변화</b>가 필요하다. (예 : 직장 내 보육 시설 확충, 늘봄학교·근로 시간 단축·육아 휴직 제도 확대)</li>
+                <li><span class="tag">사회</span>여러 사람이 비슷한 갈등을 겪으면 <b>제도 변화</b>가 필요하다. (예 : 직장 내 보육 시설 확충, <span class="nw">늘봄학교⁠·근로</span> 시간 <span class="nw">단축⁠·육아</span> 휴직 제도 확대)</li>
             </ul>
         </div>
     </div>
     <div class="card warn reveal" style="margin-top:24px">
         <h3>헷갈리지 말 것</h3>
-        <p>'중요하지 <b>않은</b> 것부터 수행한다'는 틀린 내용이다. 중요한 것부터 수행한다.</p>
+        <p>'중요하지 <b>않은</b> 것부터 수행한다'는 틀린 내용이다. 중요한 것부터 수행한다.</p>
     </div>
     <div class="pg">9</div>
 </section>
 
-<!-- === 10. 내집단·외집단·편견·차별 === -->
+<!-- === 10. 내집단⁠·외집단⁠·편견⁠·차별 === -->
 <section class="slide" style="--z:1.225">
-    <div class="kicker">03 우리 사회의 갈등과 차별</div>
-    <h2>내집단·외집단, 편견과 차별 <small>p.137~138</small></h2>
+    <div class="kicker">3 우리 사회의 갈등과 차별</div>
+    <h2><span class="nw">내집단⁠·외집단,</span> 편견과 차별 <small>p.137~138</small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>사회 집단</h3>
-            <p>두 명 이상이 모여 소속감을 갖고 지속적으로 상호 작용하는 집단.</p>
+            <p>두 명 이상이 모여 소속감을 갖고 지속적으로 상호 작용하는 집단.</p>
             <ul class="l" style="margin-top:10px">
-                <li><b>내집단</b> : 자신이 속해 있으면서 소속감과 안정감을 느끼는 집단.</li>
-                <li><b>외집단</b> : 소속되어 있지 않고 소속감을 느끼지 않는 집단.</li>
+                <li><b>내집단</b> : 자신이 속해 있으면서 소속감과 안정감을 느끼는 집단.</li>
+                <li><b>외집단</b> : 소속되어 있지 않고 소속감을 느끼지 않는 집단.</li>
                 <li>사람들은 외집단보다 내집단 구성원에 대해 정보를 <b>더 많이</b> 갖고 <b>더 긍정적인</b> 감정을 느낀다.</li>
             </ul>
         </div>
         <div class="card reveal">
             <h3>편견 → 차별</h3>
             <ul class="l">
-                <li><b>편견</b> : 공정하지 못하고 한쪽으로 치우친 생각. 낯선 외집단을 만나 부족한 정보로 빠르게 판단하다 생기기도 한다.</li>
-                <li><b>차별</b> : 부정적 편견이 있는 집단에 속한다는 이유만으로 개인을 부정적으로 평가하며 <b>부당하게 대우</b>하는 것.</li>
-                <li><b>고정 관념</b> : 잘 변하지 않는 의식, 또는 어떤 집단 사람들에 대한 지나치게 일반화된 생각.</li>
+                <li><b>편견</b> : 공정하지 못하고 한쪽으로 치우친 생각. 낯선 외집단을 만나 부족한 정보로 빠르게 판단하다 생기기도 한다.</li>
+                <li><b>차별</b> : 부정적 편견이 있는 집단에 속한다는 이유만으로 개인을 부정적으로 평가하며 <b>부당하게 대우</b>하는 것.</li>
+                <li><b>고정 관념</b> : 잘 변하지 않는 의식, 또는 어떤 집단 사람들에 대한 지나치게 일반화된 생각.</li>
             </ul>
         </div>
     </div>
@@ -544,24 +608,24 @@ table.t th b, table.t th strong { color: inherit; }
 
 <!-- === 11. 갈등과 차별 문제 === -->
 <section class="slide" style="--z:1.3">
-    <div class="kicker">03 우리 사회의 갈등과 차별</div>
+    <div class="kicker">3 우리 사회의 갈등과 차별</div>
     <h2>우리 사회의 갈등과 차별 <small>p.138</small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>갈등과 차별의 영향</h3>
             <ul class="l">
-                <li>여러 집단이 서로 다른 가치를 추구하거나 경쟁하는 과정에서 <b>갈등</b>을 겪을 수 있다.</li>
-                <li>사회는 갈등을 <b>합리적으로 조정·해결</b>하는 과정에서 발전한다.</li>
+                <li>여러 집단이 서로 다른 가치를 추구하거나 경쟁하는 과정에서 <b>갈등</b>을 겪을 수 있다.</li>
+                <li>사회는 갈등을 <b>합리적으로 <span class="nw">조정⁠·해결</span></b>하는 과정에서 발전한다.</li>
                 <li>구성원을 차별하는 행위나 그로 인한 갈등은 구성원 간 <b>신뢰를 약화</b>하고 <b>소통을 어렵게</b> 한다.</li>
-                <li>편견과 차별이 나타나는 곳에서는 누구도 <b>자유와 안전</b>을 보장받기 어렵다.</li>
+                <li>편견과 차별이 나타나는 곳에서는 누구도 <b>자유와 안전</b>을 보장받기 어렵다.</li>
             </ul>
         </div>
         <div class="card reveal">
             <h3>주요 차별 문제</h3>
             <ul class="l">
-                <li><b>외국인 차별</b> : 국적·인종이 다르다는 이유로 낮은 임금·열악한 환경.</li>
-                <li><b>성차별</b> : 성 역할 편견·고정 관념이 차별로 이어짐.</li>
-                <li><b>장애인 차별</b> : 고용 차별, 이동권 미보장.</li>
+                <li><b>외국인 차별</b> : <span class="nw">국적⁠·인종이</span> 다르다는 이유로 낮은 <span class="nw">임금⁠·열악한</span> 환경.</li>
+                <li><b>성차별</b> : 성 역할 <span class="nw">편견⁠·고정</span> 관념이 차별로 이어짐.</li>
+                <li><b>장애인 차별</b> : 고용 차별, 이동권 미보장.</li>
                 <li><b>지역 차별</b> 등.</li>
             </ul>
         </div>
@@ -571,12 +635,12 @@ table.t th b, table.t th strong { color: inherit; }
 
 <!-- === 12. 시민의 자질 === -->
 <section class="slide" style="--z:1.125">
-    <div class="kicker">03 우리 사회의 갈등과 차별</div>
+    <div class="kicker">3 우리 사회의 갈등과 차별</div>
     <h2>갈등과 차별에 대처하는 시민의 자질 <small>p.139</small></h2>
     <table class="t reveal">
         <tr><th style="width:21%">자질</th><th>내용</th></tr>
-        <tr><td>다름을 이해하기</td><td>내가 속하지 않은 집단 구성원과 만나 이야기하고 협력해 보기, 다른 사람에 관한 책·영화·다큐멘터리 보기 → <b>편견이 줄어든다</b>.</td></tr>
-        <tr><td>갈등과 차별에 대응하기</td><td>집단 간 이해관계 차이로 갈등이 생기면 서로의 차이를 <b>존중하며 조정</b>한다. 차별을 찾아내고 <b>문제를 제기</b>할 수 있는 시민 의식을 갖는다.</td></tr>
+        <tr><td>다름을 이해하기</td><td>내가 속하지 않은 집단 구성원과 만나 이야기하고 협력해 보기, 다른 사람에 관한 <span class="nw">책⁠·영화⁠·다큐멘터리</span> 보기 → <b>편견이 줄어든다</b>.</td></tr>
+        <tr><td>갈등과 차별에 대응하기</td><td>집단 간 이해관계 차이로 갈등이 생기면 서로의 차이를 <b>존중하며 조정</b>한다. 차별을 찾아내고 <b>문제를 제기</b>할 수 있는 시민 의식을 갖는다.</td></tr>
     </table>
     <div class="grid g3 reveal" style="margin-top:24px">
         <div class="card"><h3>외국인 차별</h3>외교부와 유네스코가 인종 차별 반대 활동으로 시민 참여 유도</div>
@@ -584,7 +648,7 @@ table.t th b, table.t th strong { color: inherit; }
         <div class="card"><h3>장애인 차별</h3>버스 경사판 등 <b>범용 디자인</b> 적용 공공시설 확대</div>
     </div>
     <div class="card hl reveal" style="margin-top:24px">
-        <b>범용 디자인(유니버설 디자인)</b> 성별·연령·국적·장애 유무와 상관없이 누구나 손쉽게 쓸 수 있는 제품과 사용 환경을 만드는 디자인
+        <b>범용 <span class="nw">디자인(유니버설 디자인)</span></b> <span class="nw">성별⁠·연령⁠·국적⁠·장애</span> 유무와 상관없이 누구나 손쉽게 쓸 수 있는 제품과 사용 환경을 만드는 디자인
     </div>
     <div class="pg">12</div>
 </section>
@@ -596,18 +660,18 @@ table.t th b, table.t th strong { color: inherit; }
     <div class="grid g2">
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>사회화</b> = 상호 작용하며 언어·규범·지식·가치관을 배우는 과정. 기능 : 개인(적응·개성·자아) / 사회(규범·가치 공유, 다음 세대 전달).</li>
-                <li><b>사회화 기관</b> : 유아기 가정 → 아동기 또래 집단 → 청소년기 학교 → 성인 직장 등. 미디어도 영향.</li>
-                <li><b>자아 정체성</b> = 자신만의 고유성을 깨닫고 성격·가치관·관심을 이해한 상태. 미디어는 비판적으로 받아들인다.</li>
-                <li><b>귀속 지위</b>(태어날 때부터) / <b>성취 지위</b>(선택·노력).</li>
+                <li><b>사회화</b> = 상호 작용하며 <span class="nw">언어⁠·규범⁠·지식⁠·가치관을</span> 배우는 과정. 기능 : <span class="nw">개인(적응⁠·개성⁠·자아)</span> / <span class="nw">사회(규범⁠·가치</span> 공유, 다음 세대 전달).</li>
+                <li><b>사회화 기관</b> : 유아기 가정 → 아동기 또래 집단 → 청소년기 학교 → 성인 직장 등. 미디어도 영향.</li>
+                <li><b>자아 정체성</b> = 자신만의 고유성을 깨닫고 <span class="nw">성격⁠·가치관⁠·관심을</span> 이해한 상태. 미디어는 비판적으로 받아들인다.</li>
+                <li><b>귀속 지위</b><span class="nw">(태어날 때부터)</span> / <b>성취 지위</b><span class="nw">(선택⁠·노력).</span></li>
             </ul>
         </div>
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>사회적 역할</b> = 지위에 따라 기대되는 행동 양식. 사회 변화에 따라 내용이 바뀐다.</li>
-                <li><b>역할 갈등</b> = 여러 역할이 충돌. 개인은 원인 파악·<b>중요한 것부터</b>, 사회는 <b>제도 변화</b>.</li>
-                <li><b>내집단 / 외집단</b>, <b>편견</b>(치우친 생각) → <b>차별</b>(부당한 대우).</li>
-                <li>시민의 자질 : <b>다름을 이해</b>하기, 갈등·차별에 <b>대응</b>하기. 장애인 차별 → <b>범용 디자인</b>.</li>
+                <li><b>사회적 역할</b> = 지위에 따라 기대되는 행동 양식. 사회 변화에 따라 내용이 바뀐다.</li>
+                <li><b>역할 갈등</b> = 여러 역할이 충돌. 개인은 원인 <span class="nw">파악⁠·⁠</span><b>중요한 것부터</b>, 사회는 <b>제도 변화</b>.</li>
+                <li><b>내집단 / 외집단</b>, <b>편견</b><span class="nw">(치우친 생각)</span> → <b>차별</b><span class="nw">(부당한 대우).</span></li>
+                <li>시민의 자질 : <b>다름을 이해</b>하기, <span class="nw">갈등⁠·차별에</span> <b>대응</b>하기. 장애인 차별 → <b>범용 디자인</b>.</li>
             </ul>
         </div>
     </div>
@@ -615,24 +679,24 @@ table.t th b, table.t th strong { color: inherit; }
 </section>
 
 <!-- === 14. 헷갈리기 쉬운 것 === -->
-<section class="slide" style="--z:1.3">
+<section class="slide" style="--z:1.25">
     <div class="kicker">헷갈리기 쉬운 것</div>
     <h2>구분하기와 자주 하는 오해</h2>
-    <div class="grid g2" style="grid-template-columns:1.25fr 1fr">
+    <div class="grid fx-mis">
         <table class="t reveal" style="font-size:25px">
             <tr><th>비교 항목</th><th>앞의 개념</th><th>뒤의 개념</th></tr>
-            <tr><td>귀속 vs 성취 지위</td><td>태어나면서부터 (아들·오빠·신분)</td><td>선택·노력으로 (학생·직업)</td></tr>
-            <tr><td>사회화의 기능</td><td>개인적 : 적응·개성·자아 형성</td><td>사회적 : 규범 공유·다음 세대 전달</td></tr>
-            <tr><td>내집단 vs 외집단</td><td>소속감·안정감을 느끼는 집단</td><td>소속되지 않고 소속감이 없는 집단</td></tr>
-            <tr><td>편견 vs 차별</td><td>치우친 <b>생각</b></td><td>부당하게 대우하는 <b>행위</b></td></tr>
+            <tr><td>귀속 vs 성취 지위</td><td>태어나면서부터 <span class="nw">(아들⁠·오빠⁠·신분)</span></td><td><span class="nw">선택⁠·노력으로</span> <span class="nw">(학생⁠·직업)</span></td></tr>
+            <tr><td>사회화의 기능</td><td>개인적 : <span class="nw">적응⁠·개성⁠·자아</span> 형성</td><td>사회적 : 규범 <span class="nw">공유⁠·다음</span> 세대 전달</td></tr>
+            <tr><td>내집단 vs 외집단</td><td><span class="nw">소속감⁠·안정감을</span> 느끼는 집단</td><td>소속되지 않고 소속감이 없는 집단</td></tr>
+            <tr><td>편견 vs 차별</td><td>치우친 <b>생각</b></td><td>부당하게 대우하는 <b>행위</b></td></tr>
         </table>
         <div class="card warn reveal">
             <h3>이렇게 오해하지 말자</h3>
             <ul class="l" style="font-size:25px">
-                <li>역할 갈등은 중요하지 않은 것부터 해결 (X) → <b>중요한 것부터</b>.</li>
-                <li>사회화는 청소년기까지만 (X) → <b>일생에 걸쳐</b> 이루어진다.</li>
-                <li>미디어는 그대로 믿는다 (X) → <b>비판적으로 검토·분별</b>.</li>
-                <li>역할 갈등은 특별한 사람만 겪는다 (X) → 누구나 겪을 수 있다.</li>
+                <li>역할 갈등은 중요하지 않은 것부터 해결 <span class="nw">(X)</span> → <b>중요한 것부터</b>.</li>
+                <li>사회화는 청소년기까지만 <span class="nw">(X)</span> → <b>일생에 걸쳐</b> 이루어진다.</li>
+                <li>미디어는 그대로 믿는다 <span class="nw">(X)</span> → <b>비판적으로 <span class="nw">검토⁠·분별</span></b>.</li>
+                <li>역할 갈등은 특별한 사람만 겪는다 <span class="nw">(X)</span> → 누구나 겪을 수 있다.</li>
             </ul>
         </div>
     </div>

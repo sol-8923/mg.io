@@ -258,6 +258,24 @@ body.editing [contenteditable] { outline: 2px dashed var(--pt); }
 .deck-stage > .slide:nth-child(11) { --z: 1.12; }
 .deck-stage > .slide:nth-child(12) { --z: 1.20; }
 .deck-stage > .slide:nth-child(13) { --z: 1.30; }
+/* ===== 검수 정리 v3 ===== */
+/* 줄바꿈: 짧은 구절·숫자+단위·'용어 :'는 줄 중간에서 끊지 않고, 한두 글자 고아 줄을 줄인다 */
+.nw { white-space: nowrap; }
+.slide p, .slide li, .slide td, .slide th, .slide h3 { text-wrap: pretty; }
+/* 쪽번호: 두 자리 쪽수에서 진행 막대가 흔들리지 않게 폭 고정 */
+#count { display: inline-block; min-width: 58px; text-align: center; font-variant-numeric: tabular-nums; }
+/* 표지 점선: 마지막 대시가 잘리지 않는 폭 (대시 34px + 간격 18px 반복) */
+.cover .rule { width: 242px; }
+.cover .copy:has(h1 > span:only-child) .rule { width: 294px; }
+.swipe-hint { display: none; }
+@media (max-width: 820px) and (orientation: portrait) {
+    .swipe-hint { display: block; text-align: center; font-size: 14px; font-weight: 700; color: var(--ink-dim); margin: 0 0 6px; }
+    table.t, table.t th, table.t td { font-size: 16px !important; }
+    .step { display: flow-root; }
+    .step br { display: none; }
+    .step .no { float: left; margin: 0 12px 0 0; }
+    .cover .rule, .cover .copy:has(h1 > span:only-child) .rule { width: 138px; }
+}
 </style>
 
 </head>
@@ -274,8 +292,8 @@ body.editing [contenteditable] { outline: 2px dashed var(--pt); }
 <g class="sky"><g transform="translate(1500 150) scale(1.1)" fill="#fff" opacity=".92"><ellipse cx="0" cy="0" rx="120" ry="38"/><ellipse cx="-50" cy="-26" rx="56" ry="40"/><ellipse cx="30" cy="-40" rx="62" ry="46"/></g><g transform="translate(1790 330) scale(0.8)" fill="#fff" opacity=".92"><ellipse cx="0" cy="0" rx="120" ry="38"/><ellipse cx="-50" cy="-26" rx="56" ry="40"/><ellipse cx="30" cy="-40" rx="62" ry="46"/></g><g transform="translate(1120 90) scale(0.6)" fill="#fff" opacity=".92"><ellipse cx="0" cy="0" rx="120" ry="38"/><ellipse cx="-50" cy="-26" rx="56" ry="40"/><ellipse cx="30" cy="-40" rx="62" ry="46"/></g><g transform="translate(120 420) scale(0.7)" fill="#fff" opacity=".92"><ellipse cx="0" cy="0" rx="120" ry="38"/><ellipse cx="-50" cy="-26" rx="56" ry="40"/><ellipse cx="30" cy="-40" rx="62" ry="46"/></g></g>
 <g><rect x="1450" y="530" width="50" height="100" fill="#b7d4ec"/><rect x="1500" y="480" width="40" height="150" fill="#c3dbef"/><rect x="1540" y="550" width="56" height="80" fill="#aecbe6"/><rect x="1596" y="440" width="44" height="190" fill="#bcd7ee"/><rect x="1640" y="510" width="50" height="120" fill="#aecbe6"/><rect x="1690" y="540" width="40" height="90" fill="#c3dbef"/><rect x="1730" y="490" width="56" height="140" fill="#b7d4ec"/><rect x="1786" y="560" width="40" height="70" fill="#aecbe6"/><rect x="1612" y="402" width="8" height="40" fill="#bcd7ee"/></g>
 <path d="M0 640 Q300 596 640 628 T1260 622 T1920 606 V1080 H0Z" fill="#a8dba0"/>
-<g transform="translate(300 624) scale(.62)"><path d="M-14 0 L-8 -90 L8 -90 L14 0Z" fill="#fff"/><path d="M-10 -90 L0 -108 L10 -90Z" fill="#c9523f"/>
-<g transform="translate(0 -96)" stroke="#fff" stroke-width="9" stroke-linecap="round"><line x1="-4" y1="-4" x2="-60" y2="-64"/><line x1="4" y1="-4" x2="60" y2="64"/><line x1="4" y1="-4" x2="62" y2="-62"/><line x1="-4" y1="4" x2="-60" y2="64"/></g></g><g transform="translate(150 622)"><rect x="0" y="-34" width="64" height="34" fill="#fff"/><path d="M-6 -34 L32 -64 L70 -34Z" fill="#c9523f"/><rect x="26" y="-20" width="12" height="20" fill="#8a5a2b"/></g><g transform="translate(1330 640)"><rect x="0" y="-60" width="130" height="60" fill="#fff"/><path d="M-12 -60 L40 -108 L142 -108 L142 -60Z" fill="#c9523f"/><rect x="18" y="-38" width="22" height="38" fill="#8a5a2b"/><rect x="62" y="-42" width="26" height="22" fill="#9ccbe8"/><rect x="98" y="-42" width="26" height="22" fill="#9ccbe8"/></g><g transform="translate(1290 650) scale(1)"><rect x="-4" y="-10" width="8" height="26" fill="#7d5a30"/><circle cx="0" cy="-34" r="28" fill="#2f8a4a"/></g><g transform="translate(1480 640) scale(0.9)"><rect x="-4" y="-10" width="8" height="26" fill="#7d5a30"/><circle cx="0" cy="-34" r="28" fill="#2f8a4a"/></g><g transform="translate(740 640) scale(0.8)"><rect x="-4" y="-10" width="8" height="26" fill="#7d5a30"/><circle cx="0" cy="-34" r="28" fill="#2f8a4a"/></g><g transform="translate(560 645) scale(0.7)"><rect x="-4" y="-10" width="8" height="26" fill="#7d5a30"/><circle cx="0" cy="-34" r="28" fill="#2f8a4a"/></g>
+<g transform="translate(1868 576) scale(.55)"><path d="M-14 0 L-8 -90 L8 -90 L14 0Z" fill="#fff"/><path d="M-10 -90 L0 -108 L10 -90Z" fill="#c9523f"/>
+<g transform="translate(0 -96)" stroke="#fff" stroke-width="9" stroke-linecap="round"><line x1="-4" y1="-4" x2="-60" y2="-64"/><line x1="4" y1="-4" x2="60" y2="64"/><line x1="4" y1="-4" x2="62" y2="-62"/><line x1="-4" y1="4" x2="-60" y2="64"/></g></g><g transform="translate(1738 608)"><rect x="0" y="-34" width="64" height="34" fill="#fff"/><path d="M-6 -34 L32 -64 L70 -34Z" fill="#c9523f"/><rect x="26" y="-20" width="12" height="20" fill="#8a5a2b"/></g><g transform="translate(1330 640)"><rect x="0" y="-60" width="130" height="60" fill="#fff"/><path d="M-12 -60 L40 -108 L142 -108 L142 -60Z" fill="#c9523f"/><rect x="18" y="-38" width="22" height="38" fill="#8a5a2b"/><rect x="62" y="-42" width="26" height="22" fill="#9ccbe8"/><rect x="98" y="-42" width="26" height="22" fill="#9ccbe8"/></g><g transform="translate(1290 650) scale(1)"><rect x="-4" y="-10" width="8" height="26" fill="#7d5a30"/><circle cx="0" cy="-34" r="28" fill="#2f8a4a"/></g><g transform="translate(1480 640) scale(0.9)"><rect x="-4" y="-10" width="8" height="26" fill="#7d5a30"/><circle cx="0" cy="-34" r="28" fill="#2f8a4a"/></g><g transform="translate(1622 630) scale(0.8)"><rect x="-4" y="-10" width="8" height="26" fill="#7d5a30"/><circle cx="0" cy="-34" r="28" fill="#2f8a4a"/></g><g transform="translate(1668 624) scale(0.7)"><rect x="-4" y="-10" width="8" height="26" fill="#7d5a30"/><circle cx="0" cy="-34" r="28" fill="#2f8a4a"/></g>
 <path d="M0 760 Q500 650 1000 700 T1920 650 V1080 H0Z" fill="#7cc468"/>
 <g transform="translate(1060 706)"><ellipse cx="0" cy="0" rx="30" ry="18" fill="#a85f32"/><rect x="-22" y="10" width="7" height="18" fill="#7d4524"/><rect x="14" y="10" width="7" height="18" fill="#7d4524"/><circle cx="32" cy="-8" r="11" fill="#a85f32"/></g><g transform="translate(1180 736)"><ellipse cx="0" cy="0" rx="22" ry="15" fill="#fff"/><circle cx="20" cy="-3" r="8" fill="#3b3b4a"/><rect x="-12" y="10" width="5" height="12" fill="#3b3b4a"/><rect x="8" y="10" width="5" height="12" fill="#3b3b4a"/></g><g transform="translate(1560 690)"><ellipse cx="0" cy="0" rx="22" ry="15" fill="#fff"/><circle cx="20" cy="-3" r="8" fill="#3b3b4a"/><rect x="-12" y="10" width="5" height="12" fill="#3b3b4a"/><rect x="8" y="10" width="5" height="12" fill="#3b3b4a"/></g>
 <path d="M0 930 C520 900 900 800 1320 700 S1740 580 1920 560 V1080 H0Z" fill="#4fae4e"/>
@@ -332,76 +350,76 @@ body.editing [contenteditable] { outline: 2px dashed var(--pt); }
 <g stroke="#2f7d46" stroke-width="4" stroke-linecap="round" opacity=".7"><path d="M1040 1000 l-6 -26 M1050 1000 l2 -30 M1060 1000 l8 -24"/><path d="M1700 960 l-6 -24 M1710 960 l3 -28"/></g>
 </svg>
     <div class="copy">
-    <div class="kicker reveal">1학년 2학기 사회 · 1단원 요약 정리</div>
+    <div class="kicker reveal"><span class="nw">1학년</span> <span class="nw">2학기</span> 사회 · <span class="nw">1단원</span> 요약 정리</div>
     <h1 class="reveal">세계화 시대, <span>지리의 힘</span></h1>
     <div class="rule reveal"></div>
-    <p class="reveal">위치 · 공간적 상호 작용 · 세계화와 지역화</p>
+    <p class="reveal">위치 · 공간적 상호 작용 · 세계화와 지역화</p>
     </div>
     <div class="sign" aria-hidden="true"><div class="board">1<small>단원</small></div><div class="post"></div></div>
 </section>
 
 <!-- === 2. 단원 개요 === -->
 <section class="slide">
-    <div class="kicker">단원 개요</div>
-    <h2>세계를 지리의 눈으로 본다 <small>교과서 p.6~23</small></h2>
+    <div class="kicker">단원 개요</div>
+    <h2>세계를 지리의 눈으로 본다 <small>교과서 <span class="nw">p.6~23</span></small></h2>
     <div class="grid g3">
         <div class="card hl reveal">
-            <h3><span class="tag">1</span>세계 여러 지역의 특성</h3>
+            <h3><span class="tag">1</span>세계 여러 지역의 특성</h3>
             <ul class="l">
-                <li>위치의 의미와 중요성</li>
-                <li>위치가 자연환경에 미치는 영향</li>
-                <li>자연환경이 인문환경에 미치는 영향</li>
+                <li>위치의 의미와 중요성</li>
+                <li>위치가 자연환경에 미치는 영향</li>
+                <li>자연환경이 인문환경에 미치는 영향</li>
             </ul>
         </div>
         <div class="card hl reveal">
-            <h3><span class="tag">2</span>공간적 상호 작용</h3>
+            <h3><span class="tag">2</span>공간적 상호 작용</h3>
             <ul class="l">
-                <li>교통·통신의 발달이 배경</li>
-                <li>세계적 규모 / 국가·지역적 규모</li>
-                <li>초국적 기업, 해저 케이블</li>
+                <li><span class="nw">교통·통신의</span> 발달이 배경</li>
+                <li>세계적 규모 / <span class="nw">국가·지역적</span> 규모</li>
+                <li>초국적 기업, 해저 케이블</li>
             </ul>
         </div>
         <div class="card hl reveal">
-            <h3><span class="tag">3</span>세계와 지역의 상호 영향</h3>
+            <h3><span class="tag">3</span>세계와 지역의 상호 영향</h3>
             <ul class="l">
-                <li>세계화: 경제·문화의 확대</li>
-                <li>지역화: 지역의 독자적 가치</li>
-                <li>지역화 전략 3가지</li>
+                <li>세계화: <span class="nw">경제·문화의</span> 확대</li>
+                <li>지역화: 지역의 독자적 가치</li>
+                <li>지역화 전략 <span class="nw">3가지</span></li>
             </ul>
         </div>
     </div>
     <div class="card reveal" style="margin-top:24px">
-        <h3>이 단원의 큰 흐름</h3>
-        <p><b>위치</b>에 따라 자연환경·인문환경이 다르다 → 교통·통신이 발달해 지역 간 <b>공간적 상호 작용</b>이 늘었다 → 그 결과 <b>세계화</b>가 일어나고, 이에 맞서 지역은 <b>지역화</b>로 고유한 가치를 키운다.</p>
+        <h3>이 단원의 큰 흐름</h3>
+        <p><b>위치</b>에 따라 <span class="nw">자연환경·인문환경이</span> 다르다 → <span class="nw">교통·통신이</span> 발달해 지역 간 <b>공간적 상호 작용</b>이 늘었다 → 그 결과 <b>세계화</b>가 일어나고, 이에 맞서 지역은 <b>지역화</b>로 고유한 가치를 키운다.</p>
     </div>
     <div class="pg">2</div>
 </section>
 
 <!-- === 3. 위치 === -->
 <section class="slide">
-    <div class="kicker">1 세계 여러 지역의 다양한 특성</div>
-    <h2>위치의 의미와 중요성 <small>p.11</small></h2>
+    <div class="kicker">1 세계 여러 지역의 다양한 특성</div>
+    <h2>위치의 의미와 중요성 <small><span class="nw">p.11</span></small></h2>
     <div class="card hl reveal" style="margin-bottom:24px">
         <ul class="l">
-            <li><b>위치</b> : 일정한 곳에 차지하고 있는 자리. 위치를 알면 그 지역이 어디에 있는지 파악할 수 있다.</li>
-            <li>위치로 <b>자연환경</b>(기후·지형 등)뿐 아니라 <b>인문환경</b>(인구·산업·문화 등)과 생활양식까지 이해할 수 있다.</li>
-            <li>교통·통신이 발달해 위치에 따라 다른 국가와의 <b>무역·국제 관계·문화 교류</b>가 달라질 수 있어 위치가 더욱 중요해졌다.</li>
+            <li><b>위치</b> : 일정한 곳에 차지하고 있는 자리. 위치를 알면 그 지역이 어디에 있는지 파악할 수 있다.</li>
+            <li>위치로 <b>자연환경</b><span class="nw">(기후·지형 등)</span>뿐 아니라 <b>인문환경</b><span class="nw">(인구·산업·문화 등)</span>과 생활양식까지 이해할 수 있다.</li>
+            <li><span class="nw">교통·통신이</span> 발달해 위치에 따라 다른 국가와의 <b><span class="nw">무역·국제</span> <span class="nw">관계·문화</span> 교류</b>가 달라질 수 있어 위치가 더욱 중요해졌다.</li>
         </ul>
     </div>
     <table class="t reveal">
-        <tr><th style="width:20%">구분</th><th style="width:48%">표현 방법</th><th>특징</th></tr>
-        <tr><td>절대적 위치</td><td>지구상의 <b>위도·경도</b>, 또는 <b>대륙·해양</b>으로 표현</td><td><b>거의 바뀌지 않음</b></td></tr>
-        <tr><td>상대적 위치</td><td>주변 국가와의 <b>정치·경제·사회·문화적 관계</b>로 표현</td><td>여러 상황에 따라 <b>바뀜</b></td></tr>
+        <tr><th style="width:20%">구분</th><th style="width:48%">표현 방법</th><th>특징</th></tr>
+        <tr><td>절대적 위치</td><td>지구상의 <b><span class="nw">위도·경도</span></b>, 또는 <b><span class="nw">대륙·해양</span></b>으로 표현</td><td><b>거의 바뀌지 않음</b></td></tr>
+        <tr><td>상대적 위치</td><td>주변 국가와의 <b><span class="nw">정치·경제·사회·문화적</span> 관계</b>로 표현</td><td>여러 상황에 따라 <b>바뀜</b></td></tr>
     </table>
     <div class="pg">3</div>
 </section>
 
 <!-- === 4. 위치와 자연환경 === -->
 <section class="slide">
-    <div class="kicker">1 세계 여러 지역의 다양한 특성</div>
-    <h2>위치가 자연환경에 미치는 영향 <small>p.11</small></h2>
+    <div class="kicker">1 세계 여러 지역의 다양한 특성</div>
+    <h2>위치가 자연환경에 미치는 영향 <small><span class="nw">p.11</span></small></h2>
     <div class="card reveal" style="margin-bottom:22px">
-        <div class="svgbox">
+        <div class="swipe-hint" aria-hidden="true">← 옆으로 밀어서 보기 →</div><div class="svgbox">
             <svg viewBox="0 0 1600 150" role="img" aria-label="적도에서 극지방으로 갈수록 연평균 기온이 낮아지는 모식도">
                 <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#e8743a"/><stop offset="0.5" stop-color="#f2c14e"/><stop offset="1" stop-color="#5aa9e0"/></linearGradient></defs>
                 <rect x="40" y="50" width="1520" height="34" rx="17" fill="url(#g1)"/>
@@ -411,24 +429,24 @@ body.editing [contenteditable] { outline: 2px dashed var(--pt); }
                 <text x="1560" y="128" text-anchor="end" fill="#44557a" font-size="26">극지방</text>
                 <path d="M120 122 H1480" stroke="#1b2f63" stroke-width="3" marker-end="url(#ar)"/>
                 <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1b2f63"/></marker></defs>
-                <text x="800" y="116" text-anchor="middle" fill="#1b2f63" font-size="24">위도가 높아질수록 기온 하강</text>
+                <text x="800" y="106" text-anchor="middle" fill="#1b2f63" font-size="22">위도가 높아질수록 기온 하강</text>
             </svg>
         </div>
     </div>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>내륙과 지각 불안정 지역</h3>
+            <h3>내륙과 지각 불안정 지역</h3>
             <ul class="l">
-                <li>바다에서 먼 <b>내륙</b>은 해안보다 기온의 <b>연교차</b>가 크고 연 강수량이 적다.</li>
-                <li class="dim">연교차 = 가장 더운 달과 가장 추운 달의 평균 기온 차이</li>
-                <li>지각이 불안정한 지역에서는 <b>지진과 화산 활동</b>이 발생하기도 한다.</li>
+                <li>바다에서 먼 <b>내륙</b>은 해안보다 기온의 <b>연교차</b>가 크고 연 강수량이 적다.</li>
+                <li class="dim">연교차 = 가장 더운 달과 가장 추운 달의 평균 기온 차이</li>
+                <li>지각이 불안정한 지역에서는 <b>지진과 화산 활동</b>이 발생하기도 한다.</li>
             </ul>
         </div>
         <div class="card reveal">
             <h3>사례</h3>
             <ul class="l">
-                <li><b>나이로비(케냐)</b> : 적도 부근이지만 <b>해발 고도가 높아</b> 우리나라의 봄과 같은 날씨.</li>
-                <li><b>하얼빈(중국 북부)</b> : 겨울이 매우 추워 쑹화강이 얼어붙고 빙설제가 열린다.</li>
+                <li><b>나이로비<span class="nw">(케냐)</span></b> : 적도 부근이지만 <b>해발 고도가 높아</b> 우리나라의 봄과 같은 날씨.</li>
+                <li><b>하얼빈<span class="nw">(중국 북부)</span></b> : 겨울이 매우 추워 쑹화강이 얼어붙고 빙설제가 열린다.</li>
             </ul>
         </div>
     </div>
@@ -437,127 +455,127 @@ body.editing [contenteditable] { outline: 2px dashed var(--pt); }
 
 <!-- === 5. 자연환경이 인문환경에 === -->
 <section class="slide">
-    <div class="kicker">1 세계 여러 지역의 다양한 특성</div>
-    <h2>자연환경이 인문환경에 미치는 영향 <small>p.11</small></h2>
+    <div class="kicker">1 세계 여러 지역의 다양한 특성</div>
+    <h2>자연환경이 인문환경에 미치는 영향 <small><span class="nw">p.11</span></small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>살기 좋은 환경</h3>
+            <h3>살기 좋은 환경</h3>
             <p style="font-size:30px"><b>기후가 온화</b>하고 <b>하천 주변에 평지가 넓은</b> 지역</p>
             <p style="margin-top:14px">→ 많은 사람이 모여 살며 <b>도시</b>와 여러 <b>산업</b>이 발달한다.</p>
         </div>
         <div class="card reveal">
-            <h3>살기 어려운 환경</h3>
+            <h3>살기 어려운 환경</h3>
             <p style="font-size:30px">지나치게 <b>춥거나 건조</b>한 지역, <b>높은 산지</b></p>
-            <p style="margin-top:14px">→ 거주 인구는 적지만, 자연환경에 적응한 그들만의 <b>의식주 등 생활양식과 문화</b>를 만든다.</p>
+            <p style="margin-top:14px">→ 거주 인구는 적지만, 자연환경에 적응한 그들만의 <b>의식주 등 생활양식과 문화</b>를 만든다.</p>
         </div>
     </div>
     <div class="card reveal" style="margin-top:28px">
-        <h3>관계 정리</h3>
-        <p style="font-size:32px;text-align:center"><b>위치</b> → <b>자연환경</b>(기후·지형) → <b>인문환경</b>(인구·산업·문화) → <b>생활양식</b>(환경에 적응한 의식주)</p>
+        <h3>관계 정리</h3>
+        <p style="font-size:32px;text-align:center"><b>위치</b> → <b>자연환경</b><span class="nw">(기후·지형)</span> → <b>인문환경</b><span class="nw">(인구·산업·문화)</span> → <b>생활양식</b><span class="nw">(환경에 적응한 의식주)</span></p>
     </div>
     <div class="card warn reveal" style="margin-top:24px">
         <h3>구분하기</h3>
-        <p><b>자연환경</b> : 기후·지형 등 / <b>인문환경</b> : 인구·산업·문화 등. 위치로 이 둘을 모두 이해할 수 있다.</p>
+        <p><b>자연환경</b> : <span class="nw">기후·지형</span> 등 / <b>인문환경</b> : <span class="nw">인구·산업·문화</span> 등. 위치로 이 둘을 모두 이해할 수 있다.</p>
     </div>
     <div class="pg">5</div>
 </section>
 
 <!-- === 6. 지역 특성 추론 표 === -->
 <section class="slide">
-    <div class="kicker">1 세계 여러 지역의 다양한 특성</div>
-    <h2>환경에 따라 달라지는 모습 <small>지역 특성 추론 · p.12~13</small></h2>
+    <div class="kicker">1 세계 여러 지역의 다양한 특성</div>
+    <h2>환경에 따라 달라지는 모습 <small>지역 특성 추론 · <span class="nw">p.12~13</span></small></h2>
     <table class="t reveal" style="font-size:25px">
-        <tr><th style="width:38%">환경</th><th>나타나는 모습</th></tr>
-        <tr><td>사막(뜨거운 햇볕·모래 바람)</td><td>온몸을 감싸는 <b>긴 옷</b></td></tr>
-        <tr><td>지각이 불안정해 지진이 잦은 지역</td><td>지진 피해를 줄이려는 <b>목조 구조물(목재 주택)</b></td></tr>
-        <tr><td>일 년 내내 덥고 비가 많은 지역</td><td>음식이 쉽게 상하는 것을 막으려는 <b>향신료·기름에 볶은 요리</b></td></tr>
-        <tr><td>적도 부근 안데스 산지</td><td>주변 저지대와 달리 온화해 일찍부터 <b>고산 도시</b> 발달</td></tr>
-        <tr><td>평원이 발달한 지역</td><td>기계를 이용한 <b>대규모 밀·옥수수 재배</b></td></tr>
-        <tr><td>초원이 넓은 내륙(몽골)</td><td>쉽게 해체·조립하는 <b>이동식 천막집(게르)</b>, 풀 따라 이동하며 가축 기르기</td></tr>
-        <tr><td>북극해 근처(이누이트)</td><td>주변에서 구할 수 있는 <b>눈과 얼음</b>으로 집을 지음</td></tr>
+        <tr><th style="width:38%">환경</th><th>나타나는 모습</th></tr>
+        <tr><td>사막<span class="nw">(뜨거운 햇볕·모래 바람)</span></td><td>온몸을 감싸는 <b>긴 옷</b></td></tr>
+        <tr><td>지각이 불안정해 지진이 잦은 지역</td><td>지진 피해를 줄이려는 <b>목조 구조물<span class="nw">(목재 주택)</span></b></td></tr>
+        <tr><td>일 년 내내 덥고 비가 많은 지역</td><td>음식이 쉽게 상하는 것을 막으려는 <b><span class="nw">향신료·기름에</span> 볶은 요리</b></td></tr>
+        <tr><td>적도 부근 안데스 산지</td><td>주변 저지대와 달리 온화해 일찍부터 <b>고산 도시</b> 발달</td></tr>
+        <tr><td>평원이 발달한 지역</td><td>기계를 이용한 <b>대규모 <span class="nw">밀·옥수수</span> 재배</b></td></tr>
+        <tr><td>초원이 넓은 내륙<span class="nw">(몽골)</span></td><td>쉽게 <span class="nw">해체·조립하는</span> <b>이동식 천막집<span class="nw">(게르)</span></b>, 풀 따라 이동하며 가축 기르기</td></tr>
+        <tr><td>북극해 근처<span class="nw">(이누이트)</span></td><td>주변에서 구할 수 있는 <b>눈과 얼음</b>으로 집을 지음</td></tr>
     </table>
     <div class="pg">6</div>
 </section>
 
 <!-- === 7. 다양성 이해 === -->
 <section class="slide">
-    <div class="kicker">1 세계 여러 지역의 다양한 특성</div>
-    <h2>지역의 다양성을 이해하는 태도 <small>p.13</small></h2>
+    <div class="kicker">1 세계 여러 지역의 다양한 특성</div>
+    <h2>지역의 다양성을 이해하는 태도 <small><span class="nw">p.13</span></small></h2>
     <div class="grid g3">
         <div class="card hl reveal">
-            <h3>농업·음식</h3>
-            <p>작물이 잘 자라는 <b>기후·지형 조건</b>이 달라 농업 형태와 음식 문화가 다르다.</p>
+            <h3><span class="nw">농업·음식</span></h3>
+            <p>작물이 잘 자라는 <b><span class="nw">기후·지형</span> 조건</b>이 달라 농업 형태와 음식 문화가 다르다.</p>
         </div>
         <div class="card hl reveal">
             <h3>건축물</h3>
-            <p>구하기 쉬운 <b>재료</b>가 달라 건축물 형태가 다르다. 종교·전통문화가 건축 양식에 반영되기도 한다.</p>
+            <p>구하기 쉬운 <b>재료</b>가 달라 건축물 형태가 다르다. <span class="nw">종교·전통문화가</span> 건축 양식에 반영되기도 한다.</p>
         </div>
         <div class="card hl reveal">
-            <h3>종교·전통</h3>
+            <h3><span class="nw">종교·전통</span></h3>
             <p>종교와 전통문화가 건축 양식 등 <b>생활 모습</b>에 드러난다.</p>
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:32px">
-        <h3>왜 지역 특성을 알아야 할까</h3>
-        <p style="font-size:32px">세계 여러 지역의 특성을 파악하면 <b>세계시민으로서 지역의 다양성을 공감하고 이해하는 태도</b>를 가질 수 있다.</p>
+        <h3>왜 지역 특성을 알아야 할까</h3>
+        <p style="font-size:32px">세계 여러 지역의 특성을 파악하면 <b>세계시민으로서 지역의 다양성을 공감하고 이해하는 태도</b>를 가질 수 있다.</p>
     </div>
     <div class="pg">7</div>
 </section>
 
 <!-- === 8. 공간적 상호 작용 배경 === -->
 <section class="slide">
-    <div class="kicker">2 세계 각 지역의 공간적 상호 작용</div>
-    <h2>공간적 상호 작용과 그 배경 <small>p.15</small></h2>
+    <div class="kicker">2 세계 각 지역의 공간적 상호 작용</div>
+    <h2>공간적 상호 작용과 그 배경 <small><span class="nw">p.15</span></small></h2>
     <div class="card hl reveal" style="margin-bottom:24px">
-        <p style="font-size:32px"><b>공간적 상호 작용</b> : 지역 간 <b>사람, 물자, 상품과 서비스, 정보</b> 등의 이동과 소통이 이루어지는 것.</p>
+        <p style="font-size:32px"><b>공간적 상호 작용</b> : 지역 간 <b>사람, 물자, 상품과 서비스, 정보</b> 등의 이동과 소통이 이루어지는 것.</p>
     </div>
     <div class="grid g2">
         <div class="card reveal">
-            <h3>교통의 발달</h3>
-            <p>자동차·대형 선박·고속 철도·항공기</p>
-            <p style="margin-top:10px">→ <b>사람·물자</b>의 이동이 더 쉽고 빨라짐 (시간 거리 단축으로 이동 범위 확대)</p>
+            <h3>교통의 발달</h3>
+            <p><span class="nw">자동차·대형</span> <span class="nw">선박·고속</span> <span class="nw">철도·항공기</span></p>
+            <p style="margin-top:10px">→ <b><span class="nw">사람·물자</span></b>의 이동이 더 쉽고 빨라짐 (시간 거리 단축으로 이동 범위 확대)</p>
         </div>
         <div class="card reveal">
-            <h3>통신의 발달</h3>
-            <p>전화 → 위성·인터넷·스마트폰</p>
+            <h3>통신의 발달</h3>
+            <p>전화 → <span class="nw">위성·인터넷·스마트폰</span></p>
             <p style="margin-top:10px">→ <b>정보</b>를 시간과 거리에 관계없이 빠르게 주고받음</p>
         </div>
     </div>
     <div class="card reveal" style="margin-top:24px">
-        <p style="font-size:30px;text-align:center"><b>교통·통신 발달</b> → 지역 간 <b>공간적 상호 작용</b> 증가</p>
+        <p style="font-size:30px;text-align:center"><b><span class="nw">교통·통신</span> 발달</b> → 지역 간 <b>공간적 상호 작용</b> 증가</p>
     </div>
     <div class="pg">8</div>
 </section>
 
 <!-- === 9. 규모와 사례 === -->
 <section class="slide">
-    <div class="kicker">2 세계 각 지역의 공간적 상호 작용</div>
-    <h2>상호 작용의 규모와 사례 <small>p.16~17</small></h2>
+    <div class="kicker">2 세계 각 지역의 공간적 상호 작용</div>
+    <h2>상호 작용의 규모와 사례 <small><span class="nw">p.16~17</span></small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>세계적 규모</h3>
+            <h3>세계적 규모</h3>
             <ul class="l">
-                <li>비행기를 타고 해외여행, 지구 반대편 스포츠 경기를 실시간 시청</li>
+                <li>비행기를 타고 해외여행, 지구 반대편 스포츠 경기를 실시간 시청</li>
                 <li>특정 국가 생산 제품의 전 세계 판매 — 국경을 넘어 이루어짐</li>
-                <li><b>초국적 기업</b>(전 세계에 걸쳐 생산·유통·판매)에서 더욱 활발</li>
+                <li><b>초국적 기업</b>(전 세계에 걸쳐 <span class="nw">생산·유통·판매</span>)에서 더욱 활발</li>
             </ul>
         </div>
         <div class="card reveal">
-            <h3>국가적·지역적 규모</h3>
+            <h3><span class="nw">국가적·지역적</span> 규모</h3>
             <ul class="l">
-                <li>지역 축제에 방문해 특산물 구매</li>
-                <li>스마트폰 앱으로 음식 주문·배달</li>
-                <li>외곽에서 대도시로 출근</li>
+                <li>지역 축제에 방문해 특산물 구매</li>
+                <li>스마트폰 앱으로 음식 <span class="nw">주문·배달</span></li>
+                <li>외곽에서 대도시로 출근</li>
             </ul>
         </div>
     </div>
     <div class="grid g2" style="margin-top:24px">
         <div class="card reveal">
-            <h3>공간적 분업</h3>
-            <p><b>청바지 한 벌</b>에 <b>12개 이상 국가</b>가 원료·부품·노동력을 공급한다. 기업이 커지면 기능이 최적 위치로 분리되는 <b>공간적 분업</b>이 나타난다.</p>
+            <h3>공간적 분업</h3>
+            <p><b>청바지 한 벌</b>에 <b><span class="nw">12개 이상</span> 국가</b>가 <span class="nw">원료·부품·노동력을</span> 공급한다. 기업이 커지면 기능이 최적 위치로 분리되는 <b>공간적 분업</b>이 나타난다.</p>
         </div>
         <div class="card reveal">
-            <h3>통신망과 해저 케이블</h3>
+            <h3>통신망과 해저 케이블</h3>
             <div class="svgbox">
                 <svg viewBox="0 0 700 120" role="img" aria-label="컴퓨터 네트워크 정보 중 해저 케이블 99퍼센트 이상, 인공위성 1퍼센트">
                     <rect x="0" y="10" width="700" height="42" rx="6" fill="#ffffff" stroke="#2b6cb0"/>
@@ -574,26 +592,26 @@ body.editing [contenteditable] { outline: 2px dashed var(--pt); }
 
 <!-- === 10. 세계화 === -->
 <section class="slide">
-    <div class="kicker">3 세계와 지역의 상호 영향과 변화</div>
-    <h2>세계화 <small>p.19</small></h2>
+    <div class="kicker">3 세계와 지역의 상호 영향과 변화</div>
+    <h2>세계화 <small><span class="nw">p.19</span></small></h2>
     <div class="card hl reveal" style="margin-bottom:24px">
-        <p style="font-size:30px"><b>세계화</b> : 정치·경제·사회·문화 등의 인간 활동이 <b>지역·국가의 경계를 넘어 전 세계로 확대</b>되는 현상. 배경은 새 교통수단·통신 기술로 <b>시·공간적 거리가 단축</b>된 것.</p>
+        <p style="font-size:30px"><b>세계화</b> : <span class="nw">정치·경제·사회·문화</span> 등의 인간 활동이 <b><span class="nw">지역·국가의</span> 경계를 넘어 전 세계로 확대</b>되는 현상. 배경은 새 <span class="nw">교통수단·통신</span> 기술로 <b><span class="nw">시·공간적</span> 거리가 단축</b>된 것.</p>
     </div>
     <div class="grid g2">
         <div class="card reveal">
             <h3>경제</h3>
             <ul class="l">
-                <li><b>세계 무역 기구(WTO)</b> 출범, <b>초국적 기업</b> 등장</li>
-                <li><b>상품·자본·노동력</b>이 국가 간 자유롭게 이동</li>
-                <li>전 세계가 거대한 <b>하나의 시장</b>으로 통합</li>
+                <li><b>세계 무역 기구<span class="nw">(WTO)</span></b> 출범, <b>초국적 기업</b> 등장</li>
+                <li><b><span class="nw">상품·자본·노동력</span></b>이 국가 간 자유롭게 이동</li>
+                <li>전 세계가 거대한 <b>하나의 시장</b>으로 통합</li>
             </ul>
         </div>
         <div class="card reveal">
             <h3>문화</h3>
             <ul class="l">
-                <li>음식·의복·음악·스포츠 등이 확산, 같은 문화를 비슷한 시기에 함께 즐김</li>
-                <li>지역 특성에 맞게 지역 문화와 <b>융합</b>하기도 함</li>
-                <li class="dim" style="color:var(--warn)">서구 문화 확산으로 지역 전통문화가 소멸하거나 <b style="color:var(--warn)">정체성이 훼손</b>될 수 있음</li>
+                <li><span class="nw">음식·의복·음악·스포츠</span> 등이 확산, 같은 문화를 비슷한 시기에 함께 즐김</li>
+                <li>지역 특성에 맞게 지역 문화와 <b>융합</b>하기도 함</li>
+                <li class="dim" style="color:var(--warn)">서구 문화 확산으로 지역 전통문화가 소멸하거나 <b style="color:var(--warn)">정체성이 훼손</b>될 수 있음</li>
             </ul>
         </div>
     </div>
@@ -602,23 +620,23 @@ body.editing [contenteditable] { outline: 2px dashed var(--pt); }
 
 <!-- === 11. 지역화 === -->
 <section class="slide">
-    <div class="kicker">3 세계와 지역의 상호 영향과 변화</div>
-    <h2>지역화와 지역화 전략 <small>p.20~21</small></h2>
+    <div class="kicker">3 세계와 지역의 상호 영향과 변화</div>
+    <h2>지역화와 지역화 전략 <small><span class="nw">p.20~21</span></small></h2>
     <div class="card hl reveal" style="margin-bottom:22px">
-        <p style="font-size:29px"><b>지역화</b> : 지역적인 것이 세계적 차원에서 <b>독자적인 가치</b>를 지니게 되는 현상. 세계화로 통합이 빨라지는 가운데 지역이 <b>고유한 전통·특성</b>을 살려 차별화된 경쟁력을 갖추려 노력하는 데서 나타난다.</p>
+        <p style="font-size:29px"><b>지역화</b> : 지역적인 것이 세계적 차원에서 <b>독자적인 가치</b>를 지니게 되는 현상. 세계화로 통합이 빨라지는 가운데 지역이 <b>고유한 <span class="nw">전통·특성</span></b>을 살려 차별화된 경쟁력을 갖추려 노력하는 데서 나타난다.</p>
     </div>
     <table class="t reveal" style="font-size:25px">
         <tr><th style="width:19%">전략</th><th style="width:51%">내용</th><th>사례</th></tr>
-        <tr><td>지역 브랜드</td><td>지역의 상품·서비스·축제 등을 <b>특별한 상표</b>로 인식하게 만드는 전략</td><td>뉴욕 'I ♥ NY'</td></tr>
-        <tr><td>장소 마케팅</td><td>지역의 <b>특정 장소</b>를 매력적인 상품으로 만드는 전략</td><td>-</td></tr>
-        <tr><td>지리적 표시제</td><td>지리적 요인(기후·지형·토양 등)과 관련 있는 상품에 <b>생산지 이름을 상표</b>로 사용하는 제도</td><td>서산 팔봉산 감자</td></tr>
+        <tr><td>지역 브랜드</td><td>지역의 <span class="nw">상품·서비스·축제</span> 등을 <b>특별한 상표</b>로 인식하게 만드는 전략</td><td>뉴욕 'I ♥ NY'</td></tr>
+        <tr><td>장소 마케팅</td><td>지역의 <b>특정 장소</b>를 매력적인 상품으로 만드는 전략</td><td>-</td></tr>
+        <tr><td>지리적 표시제</td><td>지리적 요인<span class="nw">(기후·지형·토양 등)</span>과 관련 있는 상품에 <b>생산지 이름을 상표</b>로 사용하는 제도</td><td>서산 팔봉산 감자</td></tr>
     </table>
     <div class="grid g2" style="margin-top:22px">
         <div class="card reveal" style="padding:16px 24px">
             <b>효과</b> 다른 지역과 차별화된 이미지, <b>관광객 유치</b>, <b>지역 경제 활성화</b>
         </div>
         <div class="card reveal" style="padding:16px 24px">
-            <b>사례</b> 지역 축제(자연환경·역사·특산물, 예: 눈 축제), 음악의 도시 빈, 영화의 도시 칸
+            <b>사례</b> 지역 축제(<span class="nw">자연환경·역사·특산물</span>, 예: 눈 축제), 음악의 도시 빈, 영화의 도시 칸
         </div>
     </div>
     <div class="pg">11</div>
@@ -626,23 +644,23 @@ body.editing [contenteditable] { outline: 2px dashed var(--pt); }
 
 <!-- === 12. 헷갈리기 쉬운 것 === -->
 <section class="slide">
-    <div class="kicker">헷갈리기 쉬운 것</div>
+    <div class="kicker">헷갈리기 쉬운 것</div>
     <h2>구분하기</h2>
     <div class="grid g2" style="grid-template-columns:1.3fr 1fr">
         <table class="t reveal" style="font-size:25px">
             <tr><th>구분</th><th>A</th><th>B</th></tr>
-            <tr><td>위치</td><td>절대적: 위도·경도·대륙·해양, 거의 안 바뀜</td><td>상대적: 주변 국가와의 관계, 바뀜</td></tr>
-            <tr><td>규모</td><td>세계적: 국경을 넘음, 초국적 기업</td><td>국가·지역적: 지역 축제, 앱 주문</td></tr>
-            <tr><td>세계화 vs 지역화</td><td>경계를 넘어 전 세계로 <b>확대</b></td><td>지역적인 것이 세계적 <b>가치</b>를 가짐</td></tr>
-            <tr><td>지역화 전략</td><td>지역 브랜드(상표화), 장소 마케팅(장소를 상품화)</td><td>지리적 표시제(생산지 이름 상표)</td></tr>
+            <tr><td>위치</td><td>절대적: <span class="nw">위도·경도·대륙·해양</span>, 거의 안 바뀜</td><td>상대적: 주변 국가와의 관계, 바뀜</td></tr>
+            <tr><td>규모</td><td>세계적: 국경을 넘음, 초국적 기업</td><td><span class="nw">국가·지역적</span>: 지역 축제, 앱 주문</td></tr>
+            <tr><td>세계화 vs 지역화</td><td>경계를 넘어 전 세계로 <b>확대</b></td><td>지역적인 것이 세계적 <b>가치</b>를 가짐</td></tr>
+            <tr><td>지역화 전략</td><td>지역 브랜드<span class="nw">(상표화),</span> 장소 마케팅<span class="nw">(장소를 상품화)</span></td><td>지리적 표시제<span class="nw">(생산지 이름 상표)</span></td></tr>
         </table>
         <div class="card warn reveal">
-            <h3>이렇게 외우자</h3>
+            <h3>이렇게 외우자</h3>
             <ul class="l" style="font-size:25px">
-                <li>해발 고도가 높으면 적도 부근이어도 <b>온화</b>하다 (나이로비).</li>
-                <li><b>내륙</b> = 연교차 큼, 강수량 적음.</li>
-                <li>세계화로 서구 문화가 확산되면 전통문화의 <b>정체성이 훼손</b>될 수 있다.</li>
-                <li>세계화는 문화의 <b>융합</b>도 낳는다.</li>
+                <li>해발 고도가 높으면 적도 부근이어도 <b>온화</b>하다 <span class="nw">(나이로비).</span></li>
+                <li><b>내륙</b> = 연교차 큼, 강수량 적음.</li>
+                <li>세계화로 서구 문화가 확산되면 전통문화의 <b>정체성이 훼손</b>될 수 있다.</li>
+                <li>세계화는 문화의 <b>융합</b>도 낳는다.</li>
             </ul>
         </div>
     </div>
@@ -651,21 +669,21 @@ body.editing [contenteditable] { outline: 2px dashed var(--pt); }
 
 <!-- === 13. 꼭 기억할 것 === -->
 <section class="slide">
-    <div class="kicker">꼭 기억할 것</div>
+    <div class="kicker">꼭 기억할 것</div>
     <h2>핵심 정리</h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>절대적 위치</b>(위도·경도·대륙·해양, 거의 안 바뀜) ↔ <b>상대적 위치</b>(주변 국가와의 관계, 바뀜).</li>
-                <li>적도 → 극지방으로 갈수록 <b>기온 하강</b> / 내륙은 <b>연교차 큼·강수량 적음</b> / 지각 불안정 → <b>지진·화산</b> / <b>해발 고도</b>가 높으면 적도 부근이어도 온화(나이로비).</li>
-                <li><b>자연환경 → 인문환경 → 생활양식</b> : 환경에 적응한 의식주.</li>
+                <li><b>절대적 위치</b>(<span class="nw">위도·경도·대륙·해양</span>, 거의 안 바뀜) ↔ <b>상대적 위치</b><span class="nw">(주변 국가와의 관계, 바뀜).</span></li>
+                <li>적도 → 극지방으로 갈수록 <b>기온 하강</b> / 내륙은 <b>연교차 <span class="nw">큼·강수량</span> 적음</b> / 지각 불안정 → <b><span class="nw">지진·화산</span></b> / <b>해발 고도</b>가 높으면 적도 부근이어도 온화<span class="nw">(나이로비).</span></li>
+                <li><b>자연환경 → 인문환경 → 생활양식</b> : 환경에 적응한 의식주.</li>
             </ul>
         </div>
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>공간적 상호 작용</b> = 교통·통신 발달의 결과. 세계적 규모 vs 국가·지역적 규모, <b>초국적 기업</b>, 공간적 분업, 해저 케이블 99% 이상.</li>
-                <li><b>세계화</b>(경계를 넘어 확대, WTO·초국적 기업, 문화 융합과 정체성 훼손) ↔ <b>지역화</b>(지역적인 것이 세계적 가치).</li>
-                <li><b>지역화 전략 3가지</b> : 지역 브랜드 / 장소 마케팅 / 지리적 표시제.</li>
+                <li><b>공간적 상호 작용</b> = <span class="nw">교통·통신</span> 발달의 결과. 세계적 규모 vs <span class="nw">국가·지역적</span> 규모, <b>초국적 기업</b>, 공간적 분업, 해저 케이블 <span class="nw">99% 이상.</span></li>
+                <li><b>세계화</b>(경계를 넘어 확대, <span class="nw">WTO·초국적</span> 기업, 문화 융합과 정체성 훼손) ↔ <b>지역화</b><span class="nw">(지역적인 것이 세계적 가치).</span></li>
+                <li><b>지역화 전략 <span class="nw">3가지</span></b> : 지역 브랜드 / 장소 마케팅 / 지리적 표시제.</li>
             </ul>
         </div>
     </div>

@@ -214,6 +214,29 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
     .slide p.sub { font-size: 20px; }
     .card.hl::after { opacity: .4; }
 }
+
+/* ===== 검수 정리 v3 ===== */
+/* 줄바꿈: 짧은 구절·괄호·숫자+단위는 줄 중간에서 끊지 않는다 */
+.nw { white-space: nowrap; }
+.slide li, .slide p, .slide td, .slide th, .slide .card { text-wrap: pretty; }
+/* 쪽번호 컨트롤: 두 자리 쪽수에서도 막대 폭 고정 */
+.deck-controls #count { min-width: 84px; font-variant-numeric: tabular-nums; }
+/* 덧붙임 표시(핵심 암기 N가지 밖의 보조 내용) */
+.slide h3 .tag { font-size: 20px; padding: 0 12px; margin-right: 10px; vertical-align: 4px; }
+.addnote { font-family: var(--font-display); font-size: 28px; color: var(--purple); margin-top: 22px; margin-bottom: 8px; }
+.addnote .tag { font-size: 20px; padding: 0 12px; }
+@media (max-width: 820px) and (orientation: portrait) {
+    /* 가로로 밀어서 보는 그림 위 안내 */
+    .svgbox:not(.fit):has(> svg.wide)::before { content: '← 옆으로 밀어서 보기 →'; display: block; position: sticky; left: 0; text-align: center; font-size: 15px; font-weight: 700; color: var(--brass); padding: 0 0 6px; }
+    /* 일식·월식 그림: 한 화면에 들어오게 오른쪽 여백만 잘라 보여 준다 */
+    .svgbox.fit { overflow: hidden; }
+    .svgbox.fit svg.wide { min-width: 0; max-width: none; width: 141.7%; margin-right: -41.7%; clip-path: inset(0 29.4% 0 0); }
+    .svgbox.fit svg.wide text { font-size: 38px; }
+    .slide h3 .tag { font-size: 13px; padding: 0 8px; margin-right: 6px; vertical-align: 2px; }
+    .slide table.t td:first-child { overflow-wrap: normal; }
+    .addnote { font-size: 19px; margin-top: 14px; }
+    .addnote .tag { font-size: 13px; padding: 0 8px; }
+}
 </style>
 </head>
 <body>
@@ -254,79 +277,79 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 <path d="M-920 1030 Q-300 990 120 1030 Q420 975 620 1010 T1000 990 L2400 990 V1080 H-920Z" fill="#E9DDFB" stroke="#261A52" stroke-width="6"/>
 <ellipse cx="-600" cy="1052" rx="60" ry="10" fill="#D3BFF3"/><ellipse cx="-200" cy="1050" rx="46" ry="9" fill="#D3BFF3"/><ellipse cx="130" cy="1050" rx="60" ry="12" fill="#D3BFF3"/><ellipse cx="780" cy="1046" rx="70" ry="12" fill="#D3BFF3"/>
 </svg>
-    <div class="kicker reveal">1학년 2학기 과학 · 6단원 요약 정리</div>
+    <div class="kicker reveal">1학년 2학기 <span class="nw">과학 · 6단원</span> <span class="nw">요약 정리</span></div>
     <h1 class="reveal">기체의 <span>성질</span></h1>
     <div class="rule reveal"></div>
-    <p class="reveal">압력 · 보일 법칙 · 샤를 법칙</p>
+    <p class="reveal"><span class="nw">압력 · 보일</span> <span class="nw">법칙 · 샤를 법칙</span></p>
 </section>
 
 <!-- === 2 === -->
 <section class="slide" style="--z:1.28">
-    <div class="kicker">단원 개요</div>
-    <h2>기체의 압력과 부피, 온도와 부피 <small>교과서 p.191~222</small></h2>
+    <div class="kicker"><span class="nw">단원 개요</span></div>
+    <h2>기체의 압력과 부피, 온도와 부피 <small>교과서 p.<span class="nw">191~222</span></small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>1 기체의 압력과 부피</h3>
+            <h3>1 기체의 <span class="nw">압력과 부피</span></h3>
             <ul class="l">
-                <li>압력 <span class="ref">(p.195)</span></li>
-                <li>기체의 압력 <span class="ref">(p.196~197)</span></li>
-                <li>기체의 압력과 부피 관계 : <b>보일 법칙</b> <span class="ref">(p.198~201)</span></li>
-                <li>생활 속의 보일 법칙 <span class="ref">(p.202~203)</span></li>
+                <li>압력 <span class="ref"><span class="nw">(p.195)</span></span></li>
+                <li>기체의 압력 <span class="ref"><span class="nw">(p.196~197)</span></span></li>
+                <li>기체의 압력과 부피 <span class="nw">관계 :</span> <b>보일 법칙</b> <span class="ref"><span class="nw">(p.198~201)</span></span></li>
+                <li>생활 속의 보일 법칙 <span class="ref"><span class="nw">(p.202~203)</span></span></li>
             </ul>
         </div>
         <div class="card hl reveal">
-            <h3>2 기체의 온도와 부피</h3>
+            <h3>2 기체의 <span class="nw">온도와 부피</span></h3>
             <ul class="l">
-                <li>기체의 온도와 부피 관계 : <b>샤를 법칙</b> <span class="ref">(p.208~211)</span></li>
-                <li>생활 속의 샤를 법칙 <span class="ref">(p.212~215)</span></li>
+                <li>기체의 온도와 부피 <span class="nw">관계 :</span> <b>샤를 법칙</b> <span class="ref"><span class="nw">(p.208~211)</span></span></li>
+                <li>생활 속의 샤를 법칙 <span class="ref"><span class="nw">(p.212~215)</span></span></li>
             </ul>
         </div>
     </div>
     <div class="card reveal" style="margin-top:24px">
-        <h3>이 단원에서 쓰는 범위</h3>
-        <p>학생용 교과서 기준으로 정리한다. 압력의 단위(N/m², Pa)와 계산식, 절대 온도, 부피-온도 비례식은 <b>교과서 범위 밖</b>이다.</p>
+        <h3>이 단원에서 <span class="nw">쓰는 범위</span></h3>
+        <p>학생용 교과서 기준으로 정리한다. 압력의 <span class="nw">단위(N/m², Pa)와</span> 계산식, 절대 온도, <span class="nw">부피-온도</span> 비례식은 <b>교과서 범위 밖</b>이다.</p>
     </div>
     <div class="pg">2</div>
 </section>
 
 <!-- === 3 === -->
 <section class="slide" style="--z:1.16">
-    <div class="kicker">1 · 압력</div>
-    <h2>압력이란 <small>p.194~195</small></h2>
+    <div class="kicker"><span class="nw">1 · 압력</span></div>
+    <h2>압력이란 <small>p.<span class="nw">194~195</span></small></h2>
     <div class="card hl reveal" style="margin-bottom:22px">
-        <p class="big">일정한 <b>넓이</b>에 작용하는 <b>힘의 크기</b>를 <b>압력</b>이라고 한다.</p>
+        <p class="big">일정한 <b>넓이</b>에 작용하는 <b>힘의 크기</b>를 <b>압력</b><span class="nw">이라고 한다.</span></p>
     </div>
     <div class="grid g2">
         <div class="card reveal">
-            <h3>힘의 크기가 같을 때</h3>
-            <p>힘이 작용하는 넓이가 <b>좁을수록</b> 압력이 <b>커진다</b>.</p>
-            <h3 style="margin-top:18px">넓이가 같을 때</h3>
-            <p>힘의 크기가 <b>클수록</b> 압력이 <b>커진다</b>.</p>
+            <h3>힘의 크기가 <span class="nw">같을 때</span></h3>
+            <p>힘이 작용하는 넓이가 <b>좁을수록</b> 압력이 <span class="nw"><b>커진다</b>.</span></p>
+            <h3 style="margin-top:18px">넓이가 <span class="nw">같을 때</span></h3>
+            <p>힘의 크기가 <b>클수록</b> 압력이 <span class="nw"><b>커진다</b>.</span></p>
         </div>
         <div class="card reveal">
             <h3>예</h3>
             <ul class="l">
-                <li><b>설피</b>를 덧신으면 눈에 닿는 넓이가 넓어져 압력이 작아져서 발이 잘 빠지지 않는다.</li>
-                <li>풍선을 <b>바늘</b>로 누르면 넓이가 좁아 압력이 커져서 터진다.</li>
+                <li><b>설피</b>를 덧신으면 눈에 닿는 넓이가 넓어져 압력이 작아져서 발이 잘 <span class="nw">빠지지 않는다.</span></li>
+                <li>풍선을 <b>바늘</b>로 누르면 넓이가 좁아 압력이 <span class="nw">커져서 터진다.</span></li>
             </ul>
         </div>
     </div>
     <div class="card reveal" style="margin-top:22px">
-        <h3>탐구 (p.194)</h3>
-        <p>물이 든 페트병을 점토 위에 세워, 힘의 크기(물의 양)와 넓이(바로/뒤집어 세움)에 따라 점토가 눌리는 깊이를 비교한다.</p>
+        <h3>탐구 <span class="nw">(p.194)</span></h3>
+        <p>물이 든 페트병을 점토 위에 세워, 힘의 <span class="nw">크기(물의 양)와</span> <span class="nw">넓이(바로/뒤집어 세움)에</span> 따라 점토가 눌리는 깊이를 비교한다.</p>
     </div>
     <div class="pg">3</div>
 </section>
 
 <!-- === 4 === -->
 <section class="slide" style="--z:1.1">
-    <div class="kicker">1 · 기체의 압력</div>
-    <h2>기체의 압력 <small>p.196~197</small></h2>
+    <div class="kicker"><span class="nw">1 · 기체의 압력</span></div>
+    <h2>기체의 압력 <small>p.<span class="nw">196~197</span></small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <ul class="l">
-                <li>기체 입자는 끊임없이 빠르게 움직이면서 용기(풍선)의 안쪽 벽에 <b>충돌</b>하여 힘을 가한다.</li>
-                <li>기체 입자가 주위에 충돌하면서 일정한 넓이에 작용하는 힘의 크기를 <b>기체의 압력(기압)</b>이라고 한다.</li>
+                <li>기체 입자는 끊임없이 빠르게 움직이면서 <span class="nw">용기(풍선)의</span> 안쪽 벽에 <b>충돌</b>하여 <span class="nw">힘을 가한다.</span></li>
+                <li>기체 입자가 주위에 충돌하면서 일정한 넓이에 작용하는 힘의 크기를 <b>기체의 <span class="nw">압력(기압)</span></b><span class="nw">이라고 한다.</span></li>
                 <li>입자가 모든 방향으로 움직이므로 기체의 압력은 <b>모든 방향</b>으로 작용한다.</li>
             </ul>
         </div>
@@ -341,24 +364,24 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
         </div>
     </div>
     <div class="grid g2" style="margin-top:22px">
-        <div class="card reveal"><h3>이용</h3><p><b>에어 잭</b> : 공기 주머니에 기체를 넣으면 부풀어 자동차를 들어 올림. <b>흡착판</b> : 대기의 기체 입자가 충돌해 벽 쪽으로 미는 힘.</p></div>
-        <div class="card warn reveal"><h3>오해 주의</h3><p>기체의 압력은 중력 때문에 아래쪽으로만 작용한다 (X) → <b>모든 방향</b>.</p></div>
+        <div class="card reveal"><h3>이용</h3><p><span class="nw"><b>에어 잭</b> :</span> 공기 주머니에 기체를 넣으면 부풀어 자동차를 들어 올림. <span class="nw"><b>흡착판</b> :</span> 대기의 기체 입자가 충돌해 벽 쪽으로 <span class="nw">미는 힘.</span></p></div>
+        <div class="card warn reveal"><h3><span class="nw">오해 주의</span></h3><p>기체의 압력은 중력 때문에 아래쪽으로만 작용한다 <span class="nw">(X)</span> → <span class="nw"><b>모든 방향</b>.</span></p></div>
     </div>
     <div class="pg">4</div>
 </section>
 
 <!-- === 5 === -->
 <section class="slide" style="--z:1.26">
-    <div class="kicker">1 · 보일 법칙</div>
-    <h2>압력과 부피는 반비례 <small>p.198~201</small></h2>
+    <div class="kicker"><span class="nw">1 · 보일 법칙</span></div>
+    <h2>압력과 부피는 반비례 <small>p.<span class="nw">198~201</span></small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>보일 법칙</h3>
+            <h3><span class="nw">보일 법칙</span></h3>
             <p class="big">일정한 <b>온도</b>에서 일정량의 기체의 압력과 부피는 서로 <b>반비례</b>한다.</p>
             <ul class="l" style="margin-top:12px">
-                <li>피스톤을 안으로 밀면 부피 <b>작아지고</b> 압력 <b>커진다</b>.</li>
-                <li>밖으로 당기면 부피 <b>커지고</b> 압력 <b>작아진다</b>.</li>
-                <li><b>반비례</b> : 한 값이 2배, 3배 …로 커질 때 다른 값이 1/2배, 1/3배 …로 작아지는 관계.</li>
+                <li>피스톤을 안으로 밀면 부피 <b>작아지고</b> 압력 <span class="nw"><b>커진다</b>.</span></li>
+                <li>밖으로 당기면 부피 <b>커지고</b> 압력 <span class="nw"><b>작아진다</b>.</span></li>
+                <li><span class="nw"><b>반비례</b> :</span> 한 값이 2배, 3배 …로 커질 때 다른 값이 <span class="nw">1/2배</span>, <span class="nw">1/3배</span> …로 <span class="nw">작아지는 관계.</span></li>
             </ul>
         </div>
         <div class="svgbox reveal">
@@ -372,14 +395,14 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:22px">
-        그래프(p.200) : 0.5기압 60 mL, 1.0기압 30 mL, 2.0기압 15 mL. 압력과 부피를 <b>곱한 값</b>이 같다 (탐구 p.199).
+        <span class="nw">그래프(p.200) :</span> 0.5기압 <span class="nw">60 mL</span>, 1.0기압 <span class="nw">30 mL</span>, 2.0기압 <span class="nw">15 mL</span>. 압력과 부피를 <b>곱한 값</b>이 같다 <span class="nw">(탐구 p.199)</span>.
     </div>
     <div class="pg">5</div>
 </section>
 
 <!-- === 6 === -->
 <section class="slide" style="--z:1.24">
-    <div class="kicker">1 · 보일 법칙의 입자 모형</div>
+    <div class="kicker"><span class="nw">1 · 보일</span> 법칙의 <span class="nw">입자 모형</span></div>
     <h2>왜 반비례일까 <small>p.201</small></h2>
     <div class="svgbox reveal">
         <svg class="wide" viewBox="0 0 1700 330" xmlns="http://www.w3.org/2000/svg">
@@ -393,8 +416,8 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
     <div class="grid g2" style="margin-top:22px">
         <div class="card hl reveal">
             <ul class="l">
-                <li>온도가 일정하면 기체 <b>입자의 수는 변하지 않는다</b>.</li>
-                <li>외부 압력이 커져 부피가 작아지면 입자가 움직일 공간이 줄어 벽에 <b>충돌하는 횟수가 늘어나</b> 압력이 커진다.</li>
+                <li>온도가 일정하면 기체 <span class="nw"><b>입자의 수는 변하지 않는다</b>.</span></li>
+                <li>외부 압력이 커져 부피가 작아지면 입자가 움직일 공간이 줄어 벽에 <b>충돌하는 횟수가 늘어나</b> <span class="nw">압력이 커진다.</span></li>
             </ul>
         </div>
         <div class="card reveal">
@@ -409,29 +432,29 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 
 <!-- === 7 === -->
 <section class="slide" style="--z:1.5">
-    <div class="kicker">1 · 생활 속의 보일 법칙</div>
-    <h2>생활 속의 보일 법칙 <small>p.198, 202~203</small></h2>
+    <div class="kicker"><span class="nw">1 · 생활</span> 속의 <span class="nw">보일 법칙</span></div>
+    <h2>생활 속의 보일 법칙 <small>p.198, <span class="nw">202~203</span></small></h2>
     <table class="t reveal">
         <tr><th style="width:28%">사례</th><th>설명</th></tr>
-        <tr><td>운동화 밑창 공기 주머니</td><td>외부 압력이 가해지면 부피가 작아지며 충격을 줄인다.</td></tr>
-        <tr><td>CNG 버스, 점핑 볼</td><td>CNG는 큰 압력으로 부피를 줄여 저장. 점핑 볼은 올라타면 부피가 줄어 압력이 커져 다시 튀어 오른다.</td></tr>
-        <tr><td>비행기 이륙 시 귀</td><td>대기압이 낮아져 고막 안쪽 공기의 부피가 늘어 귀가 먹먹해진다.</td></tr>
-        <tr><td>잠수부의 날숨 기포</td><td>수면에 가까울수록 <b>수압</b>이 낮아져 기포의 부피가 점점 커진다.</td></tr>
-        <tr><td>높은 산의 과자 봉지</td><td>압력에 따라 기체의 부피가 크게 변해 봉지가 부풀어 오른다.</td></tr>
+        <tr><td>운동화 밑창 <span class="nw">공기 주머니</span></td><td>외부 압력이 가해지면 부피가 작아지며 <span class="nw">충격을 줄인다.</span></td></tr>
+        <tr><td>CNG 버스, <span class="nw">점핑 볼</span></td><td>CNG는 큰 압력으로 부피를 줄여 저장. 점핑 볼은 올라타면 부피가 줄어 압력이 커져 다시 <span class="nw">튀어 오른다.</span></td></tr>
+        <tr><td>비행기 이륙 <span class="nw">시 귀</span></td><td>대기압이 낮아져 고막 안쪽 공기의 부피가 늘어 귀가 먹먹해진다.</td></tr>
+        <tr><td>잠수부의 <span class="nw">날숨 기포</span></td><td>수면에 가까울수록 <b>수압</b>이 낮아져 기포의 부피가 <span class="nw">점점 커진다.</span></td></tr>
+        <tr><td>높은 산의 <span class="nw">과자 봉지</span></td><td>압력에 따라 기체의 부피가 크게 변해 봉지가 <span class="nw">부풀어 오른다.</span></td></tr>
     </table>
     <div class="pg">7</div>
 </section>
 
 <!-- === 8 === -->
 <section class="slide" style="--z:1">
-    <div class="kicker">2 · 샤를 법칙</div>
-    <h2>온도가 높아지면 부피가 커진다 <small>p.208~211</small></h2>
+    <div class="kicker"><span class="nw">2 · 샤를 법칙</span></div>
+    <h2>온도가 높아지면 부피가 커진다 <small>p.<span class="nw">208~211</span></small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>샤를 법칙</h3>
+            <h3><span class="nw">샤를 법칙</span></h3>
             <p class="big">일정한 <b>압력</b>에서 일정량의 기체 부피는 온도 변화에 따라 <b>일정하게</b> 커지거나 작아진다.</p>
             <ul class="l" style="margin-top:12px">
-                <li>온도 <b>높아지면</b> 부피 <b>커지고</b>, <b>낮아지면</b> 부피 <b>작아진다</b>.</li>
+                <li>온도 <b>높아지면</b> 부피 <b>커지고</b>, <b>낮아지면</b> 부피 <span class="nw"><b>작아진다</b>.</span></li>
                 <li>부피가 변하는 정도는 <b>기체의 종류와 관계없이 같다</b>.</li>
             </ul>
         </div>
@@ -445,81 +468,81 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
         </div>
     </div>
     <div class="card reveal" style="margin-top:22px">
-        <h3>탐구 (p.208~209)</h3>
-        <p>색소를 섞은 글리세롤이 든 피펫과 유리병으로 장치를 만들어 뜨거운 물에 담근다. 물이 식으면 글리세롤이 피펫 관 속으로 빨려 들어간다 (기체 부피 감소).</p>
+        <h3>탐구 <span class="nw">(p.208~209)</span></h3>
+        <p>색소를 섞은 글리세롤이 든 피펫과 유리병으로 장치를 만들어 뜨거운 물에 담근다. 물이 식으면 글리세롤이 피펫 관 속으로 빨려 들어간다 <span class="nw">(기체 부피 감소).</span></p>
     </div>
     <div class="pg">8</div>
 </section>
 
 <!-- === 9 === -->
 <section class="slide" style="--z:1.44">
-    <div class="kicker">2 · 샤를 법칙의 입자 모형</div>
+    <div class="kicker"><span class="nw">2 · 샤를</span> 법칙의 <span class="nw">입자 모형</span></div>
     <h2>온도와 입자 운동 <small>p.211</small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>온도가 높아지면</h3>
             <ul class="l">
-                <li>기체 입자의 <b>수는 변하지 않는다</b>.</li>
-                <li>입자 운동이 활발해져 벽에 충돌하는 <b>횟수와 세기</b>가 늘어 부피가 <b>커진다</b>.</li>
+                <li>기체 입자의 <span class="nw"><b>수는 변하지 않는다</b>.</span></li>
+                <li>입자 운동이 활발해져 벽에 충돌하는 <b>횟수와 세기</b>가 늘어 부피가 <span class="nw"><b>커진다</b>.</span></li>
             </ul>
         </div>
         <div class="card hl reveal">
             <h3>온도가 낮아지면</h3>
             <ul class="l">
-                <li>입자 운동이 둔해져 충돌 <b>횟수와 세기</b>가 줄어 부피가 <b>작아진다</b>.</li>
-                <li>외부 압력과 기체의 압력이 같아질 때까지 부피가 변한다.</li>
+                <li>입자 운동이 둔해져 충돌 <b>횟수와 세기</b>가 줄어 부피가 <span class="nw"><b>작아진다</b>.</span></li>
+                <li>외부 압력과 기체의 압력이 같아질 때까지 <span class="nw">부피가 변한다.</span></li>
             </ul>
         </div>
     </div>
     <div class="card warn reveal" style="margin-top:24px">
-        <h3>오해 주의</h3>
-        <p>온도가 높아지면 기체 입자의 <b>크기·개수·질량</b>이 커진다 (X) → 입자의 <b>운동이 활발해질 뿐</b>이다. <span class="ref">(p.211)</span></p>
+        <h3><span class="nw">오해 주의</span></h3>
+        <p>온도가 높아지면 기체 입자의 <b><span class="nw">크기·개수·질량</span></b>이 커진다 <span class="nw">(X)</span> → 입자의 <b>운동이 활발해질 뿐</b>이다. <span class="ref"><span class="nw">(p.211)</span></span></p>
     </div>
     <div class="pg">9</div>
 </section>
 
 <!-- === 10 === -->
 <section class="slide" style="--z:1.36">
-    <div class="kicker">2 · 생활 속의 샤를 법칙</div>
-    <h2>생활 속의 샤를 법칙 <small>p.208, 212~213</small></h2>
+    <div class="kicker"><span class="nw">2 · 생활</span> 속의 <span class="nw">샤를 법칙</span></div>
+    <h2>생활 속의 샤를 법칙 <small>p.208, <span class="nw">212~213</span></small></h2>
     <table class="t reveal">
         <tr><th style="width:28%">사례</th><th>설명</th></tr>
-        <tr><td>냉장고에 넣은 페트병</td><td>온도가 낮아져 기체 부피가 줄어 찌그러진다.</td></tr>
+        <tr><td>냉장고에 <span class="nw">넣은 페트병</span></td><td>온도가 낮아져 기체 부피가 줄어 찌그러진다.</td></tr>
         <tr><td>열기구</td><td>기체를 가열하면 부피가 커져 일부 기체가 밖으로 밀려 나와 가벼워져 떠오른다.</td></tr>
-        <tr><td>햇빛 아래 과자 봉지</td><td>온도가 높아져 부피가 커져 부풀어 오른다.</td></tr>
-        <tr><td>추운 날 자동차 타이어</td><td>속 기체의 부피가 작아져 수축한다.</td></tr>
-        <tr><td>찌그러진 탁구공</td><td>뜨거운 물에 담그면 속 기체 부피가 커져 원래 모양으로 펴진다.</td></tr>
-        <tr><td>뜨거운 음식 그릇</td><td>그릇 밑 기체의 부피가 온도에 따라 변해 스스로 움직인다.</td></tr>
+        <tr><td>햇빛 아래 <span class="nw">과자 봉지</span></td><td>온도가 높아져 부피가 커져 <span class="nw">부풀어 오른다.</span></td></tr>
+        <tr><td>추운 날 <span class="nw">자동차 타이어</span></td><td>속 기체의 부피가 작아져 수축한다.</td></tr>
+        <tr><td><span class="nw">찌그러진 탁구공</span></td><td>뜨거운 물에 담그면 속 기체 부피가 커져 원래 <span class="nw">모양으로 펴진다.</span></td></tr>
+        <tr><td>뜨거운 <span class="nw">음식 그릇</span></td><td>그릇 밑 기체의 부피가 온도에 따라 변해 스스로 움직인다.</td></tr>
     </table>
     <div class="pg">10</div>
 </section>
 
 <!-- === 11 === -->
 <section class="slide" style="--z:1.38">
-    <div class="kicker">꼭 외울 것</div>
-    <h2>핵심 암기 4가지</h2>
+    <div class="kicker">꼭 <span class="nw">외울 것</span></div>
+    <h2>핵심 <span class="nw">암기 4가지</span></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>압력</b> = 일정한 넓이에 작용하는 힘의 크기. 넓이 작을수록, 힘 클수록 압력 커짐.</li>
-                <li><b>기체의 압력</b> = 입자가 벽에 충돌하며 가하는 힘. <b>모든 방향</b>으로 작용.</li>
+                <li><b>압력</b> = 일정한 넓이에 작용하는 힘의 크기. 넓이 작을수록, 힘 클수록 <span class="nw">압력 커짐.</span></li>
+                <li><b>기체의 압력</b> = 입자가 벽에 충돌하며 가하는 힘. <b>모든 방향</b><span class="nw">으로 작용.</span></li>
             </ul>
         </div>
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>보일 법칙</b> : 온도 일정, 압력과 부피 <b>반비례</b> (충돌 횟수로 설명).</li>
-                <li><b>샤를 법칙</b> : 압력 일정, 온도 ↑ → 부피 ↑ (입자 운동·충돌 횟수·충돌 세기로 설명).</li>
+                <li><span class="nw"><b>보일 법칙</b> :</span> 온도 일정, 압력과 부피 <b>반비례</b> <span class="nw">(충돌 횟수로 설명).</span></li>
+                <li><span class="nw"><b>샤를 법칙</b> :</span> 압력 일정, 온도 ↑ → 부피 ↑ (입자 <span class="nw">운동·충돌</span> <span class="nw">횟수·충돌</span> <span class="nw">세기로 설명).</span></li>
             </ul>
         </div>
     </div>
     <div class="grid g2" style="margin-top:24px">
         <div class="card reveal">
-            <h3>보일 법칙 입자 설명</h3>
-            <p>입자 수 불변. 부피가 작아지면 입자가 움직일 공간이 줄어 벽에 <b>충돌하는 횟수가 늘어</b> 압력이 커진다.</p>
+            <h3><span class="tag">덧붙임</span>보일 법칙 <span class="nw">입자 설명</span></h3>
+            <p>입자 수 불변. 부피가 작아지면 입자가 움직일 공간이 줄어 벽에 <b>충돌하는 횟수가 늘어</b> <span class="nw">압력이 커진다.</span></p>
         </div>
         <div class="card reveal">
-            <h3>샤를 법칙 입자 설명</h3>
-            <p>입자 수 불변. 온도가 높아지면 운동이 활발해져 충돌 <b>횟수와 세기</b>가 늘어 부피가 커진다.</p>
+            <h3><span class="tag">덧붙임</span>샤를 법칙 <span class="nw">입자 설명</span></h3>
+            <p>입자 수 불변. 온도가 높아지면 운동이 활발해져 충돌 <b>횟수와 세기</b>가 늘어 <span class="nw">부피가 커진다.</span></p>
         </div>
     </div>
     <div class="pg">11</div>
@@ -527,23 +550,23 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 
 <!-- === 12 === -->
 <section class="slide" style="--z:1.46">
-    <div class="kicker">헷갈리기 쉬운 것</div>
-    <h2>보일 법칙 vs 샤를 법칙</h2>
+    <div class="kicker">헷갈리기 <span class="nw">쉬운 것</span></div>
+    <h2>보일 법칙 vs <span class="nw">샤를 법칙</span></h2>
     <div class="grid g2" style="grid-template-columns:1.25fr 1fr">
         <table class="t reveal" style="font-size:25px">
-            <tr><th>구분</th><th>보일 법칙</th><th>샤를 법칙</th></tr>
-            <tr><td>일정한 것</td><td>온도, 기체의 양</td><td>압력, 기체의 양</td></tr>
-            <tr><td>바뀌는 조건</td><td>압력(부피)</td><td>온도</td></tr>
-            <tr><td>입자 운동 빠르기</td><td>변하지 않음</td><td>온도에 따라 변함</td></tr>
-            <tr><td>입자 수</td><td>변하지 않음</td><td>변하지 않음</td></tr>
-            <tr><td>설명</td><td>부피 변화 → 충돌 횟수 변화</td><td>온도 변화 → 충돌 횟수·세기 변화</td></tr>
+            <tr><th>구분</th><th><span class="nw">보일 법칙</span></th><th><span class="nw">샤를 법칙</span></th></tr>
+            <tr><td><span class="nw">일정한 것</span></td><td>온도, <span class="nw">기체의 양</span></td><td>압력, <span class="nw">기체의 양</span></td></tr>
+            <tr><td><span class="nw">바뀌는 조건</span></td><td><span class="nw">압력(부피)</span></td><td>온도</td></tr>
+            <tr><td>입자 <span class="nw">운동 빠르기</span></td><td><span class="nw">변하지 않음</span></td><td>온도에 <span class="nw">따라 변함</span></td></tr>
+            <tr><td><span class="nw">입자 수</span></td><td><span class="nw">변하지 않음</span></td><td><span class="nw">변하지 않음</span></td></tr>
+            <tr><td>설명</td><td>부피 변화 → 충돌 <span class="nw">횟수 변화</span></td><td>온도 변화 → 충돌 <span class="nw">횟수·세기 변화</span></td></tr>
         </table>
         <div class="card warn reveal">
-            <h3>이렇게 오해하지 말자</h3>
+            <h3>이렇게 <span class="nw">오해하지 말자</span></h3>
             <ul class="l" style="font-size:25px">
-                <li>온도가 높아지면 입자의 크기·개수·질량이 커진다 (X) → 운동만 활발해짐.</li>
-                <li>압력이 커지면 입자 운동이 빨라진다 (X) → 보일 법칙은 온도 일정, 운동 빠르기 불변.</li>
-                <li>기체의 압력은 아래쪽으로만 (X) → 모든 방향.</li>
+                <li>온도가 높아지면 입자의 <span class="nw">크기·개수·질량이</span> 커진다 <span class="nw">(X)</span> → 운동만 활발해짐.</li>
+                <li>압력이 커지면 입자 운동이 빨라진다 <span class="nw">(X)</span> → 보일 법칙은 온도 일정, 운동 <span class="nw">빠르기 불변.</span></li>
+                <li>기체의 압력은 아래쪽으로만 <span class="nw">(X)</span> → <span class="nw">모든 방향.</span></li>
             </ul>
         </div>
     </div>
@@ -552,23 +575,23 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 
 <!-- === 13 === -->
 <section class="slide" style="--z:1.5">
-    <div class="kicker">시험 포인트</div>
-    <h2>이렇게 나온다</h2>
+    <div class="kicker"><span class="nw">시험 포인트</span></div>
+    <h2><span class="nw">이렇게 나온다</span></h2>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>객관식 · 합답</h3>
+            <h3><span class="nw">객관식 · 합답</span></h3>
             <ul class="l">
-                <li>압력·부피 그래프(곡선) 읽기, 압력×부피 값이 같은 두 점 찾기</li>
-                <li>입자 모형에서 "변하는 것/변하지 않는 것" 합답 (부피·입자 수·운동 속도·충돌 횟수)</li>
-                <li>생활 현상 분류 : <b>보일 / 샤를</b> (기포, 과자 봉지, 귀 먹먹, 타이어, 탁구공, 열기구)</li>
+                <li><span class="nw">압력·부피</span> <span class="nw">그래프(곡선)</span> 읽기, 압력×부피 값이 같은 두 <span class="nw">점 찾기</span></li>
+                <li>입자 모형에서 "변하는 <span class="nw">것/변하지</span> 않는 것" 합답 (<span class="nw">부피·입자</span> <span class="nw">수·운동</span> <span class="nw">속도·충돌 횟수)</span></li>
+                <li>생활 현상 <span class="nw">분류 :</span> <b><span class="nw">보일 / 샤를</span></b> (기포, 과자 봉지, 귀 먹먹, 타이어, <span class="nw">탁구공, 열기구)</span></li>
             </ul>
         </div>
         <div class="card hl reveal">
-            <h3>마지막 점검</h3>
+            <h3><span class="nw">마지막 점검</span></h3>
             <ul class="l">
-                <li>'온도 일정'인지 '압력 일정'인지 먼저 확인했는가?</li>
-                <li>설명에 <b>충돌 횟수</b>(샤를은 충돌 세기도)를 넣었는가?</li>
-                <li>입자의 <b>수</b>는 변하지 않는다고 썼는가?</li>
+                <li><span class="nw">'온도 일정'</span>인지 <span class="nw">'압력 일정'</span>인지 먼저 확인했는가?</li>
+                <li>설명에 <b>충돌 횟수</b><span class="nw">(샤를은 충돌 세기도)를</span> 넣었는가?</li>
+                <li>입자의 <b>수</b>는 변하지 <span class="nw">않는다고 썼는가?</span></li>
             </ul>
         </div>
     </div>

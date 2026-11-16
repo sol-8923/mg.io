@@ -242,6 +242,70 @@ table.t th b, table.t th strong { color: inherit; }
     .card:not(.warn) { border-top-width: 4px; }
     .slide .pg { display: block; width: max-content; margin: 10px 0 0 auto; font-size: 14px; padding: 3px 12px 4px; }
 }
+
+/* ===== 검수 정리 v3 ===== */
+/* 1) 줄바꿈: 짧은 구절(단어·단어, 괄호 안 구절)은 줄 중간에서 끊기지 않게, 고아(한두 글자만 남는 줄) 완화 */
+.nw { white-space: nowrap; }
+.slide p, .slide li, .slide td, .slide th, .slide h3, .slide .card { text-wrap: pretty; }
+
+/* 2) 쪽번호 컨트롤: 두 자리 쪽수에서도 막대가 흔들리지 않게 폭 고정 */
+#count { min-width: 80px; font-variant-numeric: tabular-nums; }
+
+/* 3) 모바일 보정 */
+.swipe-hint { display: none; }
+@media (max-width: 820px) and (orientation: portrait) {
+    /* 가로로 밀어야 보이는 SVG 위에 안내 문구 (.swipe-hint) */
+    .swipe-hint { display: block; text-align: center; font-size: 14px; font-weight: 700; color: var(--ink-dim); margin: 0 0 6px; }
+    /* 표 글자는 16px 이상 */
+    table.t, table.t th, table.t td { font-size: 16px !important; }
+    /* 번호 카드: 번호 원을 글 왼쪽에 두고 가로 배치 */
+    .card.step { position: relative; min-height: 72px; padding-left: 66px !important; }
+    .card.step .no { position: absolute; left: 14px; top: 12px; margin: 0; }
+    .card.step .no + br { display: none; }
+    .card.step > h3:first-of-type { margin-top: 0; }
+}
+
+/* ===== 검수 정리 v3 (단원별 조정) ===== */
+/* 같은 줄 카드 높이 맞춤 */
+.fx-st .grid { align-items: stretch; }
+/* 오해 표 장: 표를 슬라이드 폭에 맞추고, 오해 카드는 아래에 2단으로 */
+.fx-mis { grid-template-columns: 1fr !important; gap: 22px; }
+.fx-mis table.t { table-layout: fixed; width: 100%; }
+.fx-mis table.t th:nth-child(1) { width: 21%; }
+.fx-mis table.t th:nth-child(2), .fx-mis table.t th:nth-child(3) { width: 39.5%; }
+.fx-mis table.t td:first-child { white-space: normal; }
+.fx-mis .card.warn ul.l { column-count: 2; column-gap: 48px; }
+.fx-mis .card.warn ul.l li { break-inside: avoid; }
+@media (max-width: 820px) and (orientation: portrait) {
+    .fx-mis table.t { table-layout: auto; }
+    .fx-mis table.t th:nth-child(n) { width: auto; }
+    .fx-mis table.t td:first-child { white-space: normal; }
+    .fx-mis .card.warn ul.l { column-count: 1; font-size: inherit !important; }
+}
+
+/* u10 8번 제목: 가운뎃점 간격 */
+h2 .dot { margin: 0 .16em; }
+/* 보조 설명을 별도 줄로 */
+.fx-ref { display: block; margin-top: 10px; }
+/* u11 6번: 보조 설명을 카드 아래쪽에 맞춰 줄 정렬 */
+.fx-col .card.hl { display: flex; flex-direction: column; }
+.fx-col .card.hl p.dim { margin-top: auto !important; padding-top: 10px; }
+/* u11 9번: 왼쪽 카드 글자와 간격 키움 */
+.fx-s9 .grid .card.hl { display: flex; flex-direction: column; }
+.fx-s9 .grid .card.hl ul.l { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; font-size: 1.18em; }
+.fx-s9 .grid .card.hl ul.l li { margin-bottom: 0; }
+/* 문장 단위로 줄을 나눈 카드 */
+.fx-ln { display: block; margin-top: 10px; }
+.fx-ln:first-child { margin-top: 0; }
+.fx-lh { line-height: 1.6; }
+/* 번호 카드 글줄 균형 */
+.card.step { text-wrap: balance; }
+@media (max-width: 820px) and (orientation: portrait) {
+    table.t td, table.t th { text-wrap: balance; }
+    .fx-s9 .grid .card.hl ul.l { font-size: inherit; display: block; }
+    .fx-s9 .grid .card.hl ul.l li { margin-bottom: 8px; }
+    .cover p { text-wrap: balance; }
+}
 </style>
 
 </head>
@@ -316,10 +380,10 @@ table.t th b, table.t th strong { color: inherit; }
 <g stroke="#2f7d46" stroke-width="4" stroke-linecap="round" opacity=".7"><path d="M1040 1000 l-6 -26 M1050 1000 l2 -30 M1060 1000 l8 -24"/><path d="M1700 960 l-6 -24 M1710 960 l3 -28"/></g>
 </svg>
     <div class="copy">
-    <div class="kicker reveal">1학년 2학기 사회 · 8단원 요약 정리</div>
+    <div class="kicker reveal">1학년 2학기 사회 · 8단원 요약 정리</div>
     <h1 class="reveal">다양한 <span>문화</span>의 이해</h1>
     <div class="rule reveal"></div>
-    <p class="reveal">문화의 의미와 특징 · 미디어와 문화 · 문화를 이해하는 태도</p>
+    <p class="reveal">문화의 의미와 특징 · 미디어와 문화 · 문화를 이해하는 태도</p>
     </div>
     <div class="sign" aria-hidden="true"><div class="board">8<small>단원</small></div><div class="post"></div></div>
 </section>
@@ -333,18 +397,18 @@ table.t th b, table.t th strong { color: inherit; }
             <h3>1. 문화의 의미와 특징</h3>
             <p class="ref">p.146~150</p>
             <ul class="l">
-                <li>문화의 의미(좁은·넓은)</li>
+                <li>문화의 <span class="nw">의미(좁은⁠·넓은)</span></li>
                 <li>보편성과 특수성</li>
-                <li>문화의 속성 5가지</li>
+                <li>문화의 속성 5가지</li>
             </ul>
         </div>
         <div class="card hl reveal">
             <h3>2. 미디어와 문화</h3>
             <p class="ref">p.151~155</p>
             <ul class="l">
-                <li>미디어의 의미와 변화</li>
-                <li>미디어 속 문화와 정보</li>
-                <li>미디어 올바로 이용하기</li>
+                <li>미디어의 의미와 변화</li>
+                <li>미디어 속 문화와 정보</li>
+                <li>미디어 올바로 이용하기</li>
             </ul>
         </div>
         <div class="card hl reveal">
@@ -352,14 +416,14 @@ table.t th b, table.t th strong { color: inherit; }
             <p class="ref">p.156~161</p>
             <ul class="l">
                 <li>문화의 다양성</li>
-                <li>자문화 중심주의·문화 사대주의</li>
+                <li>자문화 <span class="nw">중심주의⁠·문화</span> 사대주의</li>
                 <li>문화 상대주의</li>
             </ul>
         </div>
     </div>
     <div class="card reveal" style="margin-top:24px">
         <h3>공부 방법</h3>
-        <p>일상 사례를 읽고 <b>어느 속성·태도에 해당하는지 판별</b>하는 문제가 중심이다. 용어의 정의와 서로 구분되는 기준을 정확히 익힌다.</p>
+        <p>일상 사례를 읽고 <b>어느 <span class="nw">속성⁠·태도에</span> 해당하는지 판별</b>하는 문제가 중심이다. 용어의 정의와 서로 구분되는 기준을 정확히 익힌다.</p>
     </div>
     <div class="pg">2</div>
 </section>
@@ -372,23 +436,23 @@ table.t th b, table.t th strong { color: inherit; }
         <div class="card reveal">
             <h3>좁은 의미</h3>
             <ul class="l">
-                <li>교양 있거나 세련된 모습('<b>문화 시민</b>')을 나타낼 때.</li>
-                <li><b>문학·예술</b>을 가리킬 때('문화계 소식, 문화생활').</li>
-                <li>사회의 한 부분을 한정해 가리킨다.</li>
+                <li>교양 있거나 세련된 모습('<b>문화 시민</b>')을 나타낼 때.</li>
+                <li><b><span class="nw">문학⁠·예술</span></b>을 가리킬 때('문화계 소식, 문화생활').</li>
+                <li>사회의 한 부분을 한정해 가리킨다.</li>
             </ul>
         </div>
         <div class="card hl reveal">
             <h3>넓은 의미</h3>
             <p>한 사회의 구성원이 <b>주어진 환경에 적응하는 과정에서 공유하게 된 생활양식</b>.</p>
             <ul class="l" style="margin-top:10px">
-                <li><b>물질문화</b> : 의식주 같은 것</li>
-                <li><b>비물질문화</b> : 신앙·도덕·관습 같은 것</li>
+                <li><b>물질문화</b> : 의식주 같은 것</li>
+                <li><b>비물질문화</b> : <span class="nw">신앙⁠·도덕⁠·관습</span> 같은 것</li>
             </ul>
         </div>
     </div>
     <div class="card warn reveal" style="margin-top:24px">
         <h3>문화가 아닌 것</h3>
-        <p>개인의 <b>버릇·습관</b>, <b>유전·본능</b>에 따른 행동은 구성원이 환경에 적응하며 공유한 것이 아니므로 <b>문화가 아니다</b>. (예 : 긴장해서 다리 떨기, 졸려서 하품 / 문화 예 : 복날 삼계탕)</p>
+        <p>개인의 <b><span class="nw">버릇⁠·습관</span></b>, <b><span class="nw">유전⁠·본능</span></b>에 따른 행동은 구성원이 환경에 적응하며 공유한 것이 아니므로 <b>문화가 아니다</b>. (예 : 긴장해서 다리 떨기, 졸려서 하품 / 문화 예 : 복날 삼계탕)</p>
     </div>
     <div class="pg">3</div>
 </section>
@@ -396,25 +460,25 @@ table.t th b, table.t th strong { color: inherit; }
 <!-- === 4. 보편성과 특수성 === -->
 <section class="slide" style="--z:1.25">
     <div class="kicker">1 문화의 의미와 특징</div>
-    <h2>문화의 특징 : 보편성과 특수성 <small>p.148</small></h2>
+    <h2>문화의 특징 : 보편성과 특수성 <small>p.148</small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>보편성</h3>
             <p><b>모든 사회</b>의 문화에 나타나는 <b>공통된</b> 특성.</p>
-            <p class="dim" style="margin-top:10px">예 : 어느 사회나 춤·노래 같은 예술, 언어 의사소통, 결혼식·장례식 같은 의식이 있다.</p>
+            <p class="dim" style="margin-top:10px">예 : 어느 사회나 <span class="nw">춤⁠·노래</span> 같은 예술, 언어 의사소통, <span class="nw">결혼식⁠·장례식</span> 같은 의식이 있다.</p>
         </div>
         <div class="card hl reveal">
             <h3>특수성</h3>
             <p>각 사회마다 <b>고유한</b> 특성을 지니며 <b>다르게</b> 나타나는 것.</p>
-            <p class="dim" style="margin-top:10px">예 : 춤·노래의 표현 방식, 사용 언어, 의식의 모습이 다르다.</p>
+            <p class="dim" style="margin-top:10px">예 : <span class="nw">춤⁠·노래의</span> 표현 방식, 사용 언어, 의식의 모습이 다르다.</p>
         </div>
     </div>
     <div class="card reveal" style="margin-top:24px">
         <h3>같은 소재에서 둘이 함께 보인다</h3>
         <table class="t" style="margin-top:6px">
             <tr><th>소재</th><th>보편성</th><th>특수성</th></tr>
-            <tr><td>민속춤</td><td>어느 사회에나 민속춤이 있다</td><td>표현은 제각기 다르다</td></tr>
-            <tr><td>주거·음식·종교</td><td>어느 사회에나 종교적인 모습이 나타난다</td><td>주거·음식은 환경에 따라 달라진다</td></tr>
+            <tr><td>민속춤</td><td>어느 사회에나 민속춤이 있다</td><td>표현은 제각기 다르다</td></tr>
+            <tr><td><span class="nw">주거⁠·음식⁠·종교</span></td><td>어느 사회에나 종교적인 모습이 나타난다</td><td><span class="nw">주거⁠·음식은</span> 환경에 따라 달라진다</td></tr>
         </table>
     </div>
     <div class="pg">4</div>
@@ -423,14 +487,14 @@ table.t th b, table.t th strong { color: inherit; }
 <!-- === 5. 문화의 속성 5가지 === -->
 <section class="slide" style="--z:1.275">
     <div class="kicker">1 문화의 의미와 특징</div>
-    <h2>문화의 속성 5가지 <small>p.149 · 서로 긴밀하게 연결</small></h2>
+    <h2>문화의 속성 5가지 <small>p.149 · 서로 긴밀하게 연결</small></h2>
     <table class="t reveal" style="font-size:25px">
         <tr><th style="width:13%">속성</th><th style="width:47%">뜻</th><th>인사 예시</th></tr>
-        <tr><td>공유성</td><td>구성원이 언어·몸짓으로 의사소통하고 상대의 행동을 예측할 수 있다</td><td>인사를 알아차리고 안부를 묻는다</td></tr>
-        <tr><td>학습성</td><td>유전·본능이 아니라 성장하며 배운다. 외국에서 자란 사람은 우리 문화를 어색해한다</td><td>어른을 만나면 인사해야 한다고 배운다</td></tr>
-        <tr><td>축적성</td><td>말·글로 다음 세대에 전달되고 새 지식·기술이 더해져 풍부해진다</td><td>예로부터 전해 온 인사 예절 기록</td></tr>
-        <tr><td>변동성</td><td>고정되지 않고 끊임없이 변화한다 (새 적응 방식, 다른 문화와의 교류)</td><td>서양에서 온 악수, 새 인사말</td></tr>
-        <tr><td>전체성<br>(총체성)</td><td>문화의 여러 요소가 밀접히 연결되어 한 부분이 변하면 다른 부분도 변한다</td><td>인터넷 발달 → 온라인 인사 예절</td></tr>
+        <tr><td>공유성</td><td>구성원이 <span class="nw">언어⁠·몸짓으로</span> 의사소통하고 상대의 행동을 예측할 수 있다</td><td>인사를 알아차리고 안부를 묻는다</td></tr>
+        <tr><td>학습성</td><td><span class="nw">유전⁠·본능이</span> 아니라 성장하며 배운다. 외국에서 자란 사람은 우리 문화를 어색해한다</td><td>어른을 만나면 인사해야 한다고 배운다</td></tr>
+        <tr><td>축적성</td><td><span class="nw">말⁠·글로</span> 다음 세대에 전달되고 새 <span class="nw">지식⁠·기술이</span> 더해져 풍부해진다</td><td>예로부터 전해 온 인사 예절 기록</td></tr>
+        <tr><td>변동성</td><td>고정되지 않고 끊임없이 변화한다 (새 적응 방식, 다른 문화와의 교류)</td><td>서양에서 온 악수, 새 인사말</td></tr>
+        <tr><td>전체성<br><span class="nw">(총체성)</span></td><td>문화의 여러 요소가 밀접히 연결되어 한 부분이 변하면 다른 부분도 변한다</td><td>인터넷 발달 → 온라인 인사 예절</td></tr>
     </table>
     <div class="pg">5</div>
 </section>
@@ -438,20 +502,20 @@ table.t th b, table.t th strong { color: inherit; }
 <!-- === 6. 김치 사례로 속성 구분 === -->
 <section class="slide" style="--z:1.3">
     <div class="kicker">1 문화의 의미와 특징</div>
-    <h2>사례로 속성 구분하기 <small>p.150 · 김치 대화</small></h2>
+    <h2>사례로 속성 구분하기 <small>p.150 · 김치 대화</small></h2>
     <div class="grid g5 reveal">
         <div class="card step"><span class="no">1</span><br>어릴 때부터 먹다 보면 즐기게 됨<br><b>→ 학습성</b></div>
         <div class="card step"><span class="no">2</span><br>공장 김치를 사 먹는 가정 증가<br><b>→ 변동성</b></div>
-        <div class="card step"><span class="no">3</span><br>김치냉장고 (주거 형태 변화)<br><b>→ 전체성</b></div>
+        <div class="card step"><span class="no">3</span><br>김치냉장고 <span class="nw">(주거 형태 변화)</span><br><b>→ 전체성</b></div>
         <div class="card step"><span class="no">4</span><br>문헌 기록을 토대로 새 김치 등장<br><b>→ 축적성</b></div>
         <div class="card step"><span class="no">5</span><br>김장을 담그는 많은 가정<br><b>→ 공유성</b></div>
     </div>
     <div class="card hl reveal" style="margin-top:26px">
-        <h3>스스로 확인하기 (p.150)</h3>
+        <h3>스스로 확인하기 <span class="nw">(p.150)</span></h3>
         <ul class="l">
-            <li>버릇·본능은 문화이다 (X) → 문화가 아니다.</li>
-            <li><b>보편성</b>의 정의 : 모든 사회의 문화에 나타나는 공통된 특성 (O)</li>
-            <li>문화는 한번 형성되면 절대 변하지 않는다 (X) → <b>변동성</b>이 있다.</li>
+            <li><span class="nw">버릇⁠·본능은</span> 문화이다 <span class="nw">(X)</span> → 문화가 아니다.</li>
+            <li><b>보편성</b>의 정의 : 모든 사회의 문화에 나타나는 공통된 특성 <span class="nw">(O)</span></li>
+            <li>문화는 한번 형성되면 절대 변하지 않는다 <span class="nw">(X)</span> → <b>변동성</b>이 있다.</li>
         </ul>
     </div>
     <div class="pg">6</div>
@@ -462,11 +526,11 @@ table.t th b, table.t th strong { color: inherit; }
     <div class="kicker">2 미디어와 문화</div>
     <h2>미디어의 의미와 변화 <small>p.152, 160</small></h2>
     <div class="card hl reveal" style="margin-bottom:20px">
-        <b>미디어</b> : 지식과 정보를 주고받을 때 사용하는 수단. 우편, 신문, 책, 라디오, 텔레비전, 전자 우편, 동영상 공유 플랫폼, 사회 관계망 서비스(SNS) 등.
+        <b>미디어</b> : 지식과 정보를 주고받을 때 사용하는 수단. 우편, 신문, 책, 라디오, 텔레비전, 전자 우편, 동영상 공유 플랫폼, 사회 관계망 <span class="nw">서비스(SNS)</span> 등.
     </div>
     <div class="grid g2">
         <div class="card reveal">
-            <h3>과거 : 일방향</h3>
+            <h3>과거 : 일방향</h3>
             <div class="svgbox"><svg viewBox="0 0 520 150" role="img" aria-label="소수의 생산자에서 대중으로 향하는 일방향 화살표">
                 <rect x="10" y="45" width="130" height="60" rx="8" fill="#ffffff" stroke="#2b6cb0"/>
                 <text x="75" y="82" text-anchor="middle" font-size="24" fill="#1b2f63">소수 생산자</text>
@@ -474,12 +538,12 @@ table.t th b, table.t th strong { color: inherit; }
                 <polygon points="360,60 390,75 360,90" fill="#2b6cb0"/>
                 <rect x="395" y="45" width="115" height="60" rx="8" fill="#ffffff" stroke="#2b6cb0"/>
                 <text x="452" y="82" text-anchor="middle" font-size="24" fill="#1b2f63">대중</text>
-                <text x="260" y="40" text-anchor="middle" font-size="22" fill="#44557a">지식·정보·문화 전달</text>
+                <text x="260" y="40" text-anchor="middle" font-size="22" fill="#44557a">지식⁠·정보⁠·문화 전달</text>
             </svg></div>
-            <p>책·신문(인쇄), 라디오(음성), 텔레비전(영상)</p>
+            <p><span class="nw">책⁠·신문(인쇄),</span> <span class="nw">라디오(음성),</span> <span class="nw">텔레비전(영상)</span></p>
         </div>
         <div class="card hl reveal">
-            <h3>오늘날 : 쌍방향</h3>
+            <h3>오늘날 : 쌍방향</h3>
             <div class="svgbox"><svg viewBox="0 0 520 150" role="img" aria-label="생산자와 소비자가 서로 오가는 쌍방향 화살표">
                 <rect x="10" y="45" width="130" height="60" rx="8" fill="#ffffff" stroke="#2b6cb0"/>
                 <text x="75" y="82" text-anchor="middle" font-size="24" fill="#1b2f63">누구나</text>
@@ -490,7 +554,7 @@ table.t th b, table.t th strong { color: inherit; }
                 <text x="452" y="82" text-anchor="middle" font-size="24" fill="#1b2f63">누구나</text>
                 <text x="260" y="40" text-anchor="middle" font-size="22" fill="#44557a">생산자 ⇄ 소비자</text>
             </svg></div>
-            <p>인터넷·컴퓨터·스마트폰 → <b>쌍방향 소통</b>, 정보의 생산자와 소비자의 <b>경계가 무너짐</b></p>
+            <p><span class="nw">인터넷⁠·컴퓨터⁠·스마트폰</span> → <b>쌍방향 소통</b>, 정보의 생산자와 소비자의 <b>경계가 무너짐</b></p>
         </div>
     </div>
     <div class="pg">7</div>
@@ -504,52 +568,52 @@ table.t th b, table.t th strong { color: inherit; }
         <div class="card hl reveal">
             <h3>미디어와 문화</h3>
             <ul class="l">
-                <li>미디어는 구성원 사이 <b>상호 작용</b>의 수단 중 하나. 공유된 지식·정보·문화는 미디어 속에서 <b>축적되고 변해</b> 간다.</li>
-                <li>미디어는 기업이 소유하는 경우가 많아 문화 콘텐츠가 <b>상품의 성격</b>을 지니기도 한다. 자극적·선정적으로 제작되거나 광고 과정에서 <b>상업적 성격</b>의 문화가 만들어진다.</li>
+                <li>미디어는 구성원 사이 <b>상호 작용</b>의 수단 중 하나. 공유된 <span class="nw">지식⁠·정보⁠·문화는</span> 미디어 속에서 <b>축적되고 변해</b> 간다.</li>
+                <li>미디어는 기업이 소유하는 경우가 많아 문화 콘텐츠가 <b>상품의 성격</b>을 지니기도 한다. <span class="nw">자극적⁠·선정적으로</span> 제작되거나 광고 과정에서 <b>상업적 성격</b>의 문화가 만들어진다.</li>
             </ul>
         </div>
         <div class="card reveal">
             <h3>긍정과 부정</h3>
             <ul class="l">
-                <li><span class="tag">긍정</span>많은 사람이 콘텐츠를 생산·유통 → <b>문화의 다양성 확대</b></li>
-                <li><span class="tag">부정</span>정보가 너무 많아 필요한 정보를 찾기 어렵다.</li>
-                <li><span class="tag">부정</span>사용자 맞춤형 서비스로 제한된 정보만 얻어 <b>편향된 관점</b>(한쪽으로 치우친 것)을 갖거나 다른 생각을 가진 사람과 소통이 어려워질 수 있다.</li>
+                <li><span class="tag">긍정</span>많은 사람이 콘텐츠를 <span class="nw">생산⁠·유통</span> → <b>문화의 다양성 확대</b></li>
+                <li><span class="tag">부정</span>정보가 너무 많아 필요한 정보를 찾기 어렵다.</li>
+                <li><span class="tag">부정</span>사용자 맞춤형 서비스로 제한된 정보만 얻어 <b>편향된 관점</b><span class="nw">(한쪽으로 치우친 것)을</span> 갖거나 다른 생각을 가진 사람과 소통이 어려워질 수 있다.</li>
             </ul>
         </div>
     </div>
     <div class="card reveal" style="margin-top:24px">
         <h3>광고</h3>
-        <p>광고는 <b>정보</b>와 <b>설득</b> 두 요소로 이루어진다. 유명인·전문가를 모델로 쓰는 것은 사람들이 이들의 말을 더 쉽게 <b>신뢰</b>하기 때문이다.</p>
+        <p>광고는 <b>정보</b>와 <b>설득</b> 두 요소로 이루어진다. <span class="nw">유명인⁠·전문가를</span> 모델로 쓰는 것은 사람들이 이들의 말을 더 쉽게 <b>신뢰</b>하기 때문이다.</p>
     </div>
     <div class="pg">8</div>
 </section>
 
 <!-- === 9. 미디어 올바로 이용하기 === -->
-<section class="slide" style="--z:1.15">
+<section class="slide fx-st fx-s9" style="--z:1.15">
     <div class="kicker">2 미디어와 문화</div>
     <h2>미디어 올바로 이용하기 <small>p.154</small></h2>
     <div class="grid g2">
         <div class="card warn reveal">
-            <h3>잘못된 정보 vs 허위 정보</h3>
+            <h3>잘못된 정보 vs 허위 정보</h3>
             <ul class="l">
-                <li><b>잘못된 정보</b> : 사용자가 사실이라고 믿고 공유하지만 틀린 정보.</li>
-                <li><b>허위 정보</b> : 경제적 이익을 얻거나 대중을 속이려고 만든 진실이 아닌 정보.</li>
+                <li><b>잘못된 정보</b> : 사용자가 사실이라고 믿고 공유하지만 틀린 정보.</li>
+                <li><b>허위 정보</b> : 경제적 이익을 얻거나 대중을 속이려고 만든 진실이 아닌 정보.</li>
             </ul>
             <h3 style="margin-top:16px">미디어 리터러시</h3>
-            <p>미디어에서 접하는 정보를 <b>분석·평가·활용</b>하고, 나아가 정보를 <b>창조하고 소통</b>하는 능력.</p>
+            <p>미디어에서 접하는 정보를 <b><span class="nw">분석⁠·평가⁠·활용</span></b>하고, 나아가 정보를 <b>창조하고 소통</b>하는 능력.</p>
         </div>
         <div class="card hl reveal">
             <h3>정보 확인 4가지 (한국 언론 진흥 재단, 2023)</h3>
             <ul class="l">
-                <li>제목·사진만 보지 말고 <b>전체를 읽기</b></li>
+                <li><span class="nw">제목⁠·사진만</span> 보지 말고 <b>전체를 읽기</b></li>
                 <li>같은 정보를 다룬 <b>다른 미디어 자료</b> 찾기</li>
                 <li>믿을 만한지 <b>스스로 조사</b>하기</li>
-                <li>사진·영상 <b>왜곡 여부</b> 검증하기</li>
+                <li><span class="nw">사진⁠·영상</span> <b>왜곡 여부</b> 검증하기</li>
             </ul>
         </div>
     </div>
-    <div class="card reveal" style="margin-top:24px">
-        <b>올바른 이용</b> 같은 정보를 다룬 다양한 미디어 비교, 사실 여부 확인 후 공유, 혼자 어려우면 공공 기관·언론 관련 연구소의 도움. 미디어는 많은 사실 중 알리고 싶은 일부를 <b>선택</b>해 보여 주므로 어떤 부분은 강조되고 어떤 부분은 무시된다. SNS·동영상 플랫폼은 잘못된·허위 정보가 퍼질 위험이 크다.
+    <div class="card reveal fx-lh" style="margin-top:20px">
+        <span class="fx-ln"><b>올바른 이용</b> 같은 정보를 다룬 다양한 미디어 비교, 사실 여부 확인 후 공유, 혼자 어려우면 공공 <span class="nw">기관⁠·언론</span> 관련 연구소의 도움.</span> <span class="fx-ln">미디어는 많은 사실 중 알리고 싶은 일부를 <b>선택</b>해 보여 주므로 어떤 부분은 강조되고 어떤 부분은 무시된다.</span> <span class="fx-ln"><span class="nw">SNS⁠·동영상</span> 플랫폼은 <span class="nw">잘못된⁠·허위</span> 정보가 퍼질 위험이 크다.</span>
     </div>
     <div class="pg">9</div>
 </section>
@@ -561,14 +625,14 @@ table.t th b, table.t th strong { color: inherit; }
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>문화의 다양성</h3>
-            <p>인간은 처한 <b>환경과 상황에 적응</b>하며 독특한 생활 방식과 가치관을 형성한다. 의식주·언어·법·관습·제도 등 문화의 모든 요소가 사회·집단마다 다르게 나타난다.</p>
-            <p class="dim" style="margin-top:12px">세계화로 이주해 온 사람이 늘어 익숙하지 않은 문화를 접할 기회가 늘고 있다.</p>
+            <p>인간은 처한 <b>환경과 상황에 적응</b>하며 독특한 생활 방식과 가치관을 형성한다. <span class="nw">의식주⁠·언어⁠·법⁠·관습⁠·제도</span> 등 문화의 모든 요소가 <span class="nw">사회⁠·집단마다</span> 다르게 나타난다.</p>
+            <p class="dim" style="margin-top:12px">세계화로 이주해 온 사람이 늘어 익숙하지 않은 문화를 접할 기회가 늘고 있다.</p>
         </div>
         <div class="card reveal">
             <h3>환경에 따른 차이의 예</h3>
             <ul class="l">
-                <li><b>힌두교</b> : 소를 신성시 (농사·생계에 필수인 동물).</li>
-                <li><b>이슬람교</b> : 돼지고기 금지 (건조한 기후에서 물이 많이 필요한 돼지 사육 부담).</li>
+                <li><b>힌두교</b> : 소를 신성시 <span class="nw">(농사⁠·생계에</span> 필수인 동물).</li>
+                <li><b>이슬람교</b> : 돼지고기 금지 (건조한 기후에서 물이 많이 필요한 돼지 사육 부담).</li>
             </ul>
         </div>
     </div>
@@ -584,14 +648,14 @@ table.t th b, table.t th strong { color: inherit; }
     <h2>문화를 대하는 세 가지 태도 <small>p.158~159</small></h2>
     <table class="t reveal" style="font-size:24px">
         <tr><th style="width:15%">태도</th><th style="width:29%">뜻</th><th style="width:26%">긍정</th><th>부정</th></tr>
-        <tr><td>자문화 중심주의</td><td>자신의 문화만 우수·올바르고 다른 문화는 열등·잘못으로 여김</td><td>자부심, 구성원 결속력 강화, 사회 통합에 도움</td><td>편견으로 다른 문화권 사람을 차별·무시, 갈등</td></tr>
-        <tr><td>문화 사대주의</td><td>특정 문화를 우수·올바른 것으로 동경·추종, 자기 문화는 열등·잘못으로 여김</td><td>다른 문화의 장점을 쉽게 받아들여 자기 문화 발전에 도움</td><td>자기 문화의 가치를 인정하지 않아 <b>주체성 상실</b>, 고유문화 소멸</td></tr>
-        <tr><td>문화 상대주의</td><td>문화는 환경 적응 과정에서 형성되므로 같은 문화의 가치를 지역·시대에 따라 다르게 인식함(<b>문화의 상대성</b>)을 인정하고, 그 사회의 환경과 맥락 속에서 이해하려는 태도</td><td>다른 사회 문화를 제대로 이해, 있는 그대로 존중 → <b>문화 다양성 보존</b></td><td>인간의 생명과 존엄성 등 <b>인류의 보편적 가치</b>를 무시하는 관습·제도까지 인정해야 하는 것은 아님</td></tr>
+        <tr><td>자문화 중심주의</td><td>자신의 문화만 <span class="nw">우수⁠·올바르고</span> 다른 문화는 <span class="nw">열등⁠·잘못으로</span> 여김</td><td>자부심, 구성원 결속력 강화, 사회 통합에 도움</td><td>편견으로 다른 문화권 사람을 <span class="nw">차별⁠·무시,</span> 갈등</td></tr>
+        <tr><td>문화 사대주의</td><td>특정 문화를 <span class="nw">우수⁠·올바른</span> 것으로 <span class="nw">동경⁠·추종,</span> 자기 문화는 <span class="nw">열등⁠·잘못으로</span> 여김</td><td>다른 문화의 장점을 쉽게 받아들여 자기 문화 발전에 도움</td><td>자기 문화의 가치를 인정하지 않아 <b>주체성 상실</b>, 고유문화 소멸</td></tr>
+        <tr><td>문화 상대주의</td><td>문화는 환경 적응 과정에서 형성되므로 같은 문화의 가치를 <span class="nw">지역⁠·시대에</span> 따라 다르게 인식함(<b>문화의 상대성</b>)을 인정하고, 그 사회의 환경과 맥락 속에서 이해하려는 태도</td><td>다른 사회 문화를 제대로 이해, 있는 그대로 존중 → <b>문화 다양성 보존</b></td><td>인간의 생명과 존엄성 등 <b>인류의 보편적 가치</b>를 무시하는 <span class="nw">관습⁠·제도까지</span> 인정해야 하는 것은 아님</td></tr>
     </table>
     <div class="pg">11</div>
 </section>
 
-<!-- === 12. 바람직한 태도·적용 === -->
+<!-- === 12. 바람직한 태도⁠·적용 === -->
 <section class="slide" style="--z:1.3">
     <div class="kicker">3 문화를 이해하는 태도</div>
     <h2>바람직한 태도와 적용 <small>p.159, 161</small></h2>
@@ -600,22 +664,22 @@ table.t th b, table.t th strong { color: inherit; }
             <h3>바람직한 태도</h3>
             <ul class="l">
                 <li>한 사회의 문화는 그 사회의 <b>환경과 전체적인 맥락</b> 속에서 이해한다.</li>
-                <li><b>보편성·특수성</b>을 이해하고 본질을 파악해 이해의 폭을 넓힌다.</li>
+                <li><b><span class="nw">보편성⁠·특수성</span></b>을 이해하고 본질을 파악해 이해의 폭을 넓힌다.</li>
                 <li>문화의 상대성을 인정하고 <b>다양성을 지키려는</b> 태도가 중요하다.</li>
             </ul>
         </div>
         <div class="card reveal">
-            <h3>평가하기 사례 (p.161)</h3>
+            <h3>평가하기 사례 <span class="nw">(p.161)</span></h3>
             <ul class="l">
-                <li>탈레반 사례 → <b>자문화 중심주의</b> (자기 문화를 강요해 갈등 우려)</li>
-                <li>조혼 풍습 → 문화 상대주의로 <b>인정하기 어려움</b> (인간 존엄성 훼손)</li>
+                <li>탈레반 사례 → <b>자문화 중심주의</b> (자기 문화를 강요해 갈등 우려)</li>
+                <li>조혼 풍습 → 문화 상대주의로 <b>인정하기 어려움</b> (인간 존엄성 훼손)</li>
                 <li>간접 광고 → 미디어 속 정보를 <b>비판적으로 수용</b></li>
             </ul>
         </div>
     </div>
     <div class="card warn reveal" style="margin-top:24px">
-        <h3>스스로 확인하기 (p.159)</h3>
-        <p>"자문화 중심주의는 자신의 문화를 열등하게 여기는 태도이다" (X) → 그 설명은 <b>문화 사대주의</b>의 뜻이다.</p>
+        <h3>스스로 확인하기 <span class="nw">(p.159)</span></h3>
+        <p>"자문화 중심주의는 자신의 문화를 열등하게 여기는 태도이다" <span class="nw">(X)</span> → 그 설명은 <b>문화 사대주의</b>의 뜻이다.</p>
     </div>
     <div class="pg">12</div>
 </section>
@@ -627,18 +691,18 @@ table.t th b, table.t th strong { color: inherit; }
     <div class="grid g2">
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>문화</b>(넓은 의미) = 환경에 적응하며 공유하게 된 <b>생활양식</b>(물질문화+비물질문화). 버릇·본능은 문화 아님.</li>
-                <li><b>보편성</b>(모든 사회 공통) / <b>특수성</b>(사회마다 다름).</li>
-                <li><b>문화의 속성</b> : 공유성·학습성·축적성·변동성·전체성.</li>
-                <li><b>미디어</b> : 과거 일방향 → 오늘날 쌍방향, 생산자·소비자 경계가 무너짐.</li>
+                <li><b>문화</b><span class="nw">(넓은 의미)</span> = 환경에 적응하며 공유하게 된 <b>생활양식</b><span class="nw">(물질문화+비물질문화).</span> <span class="nw">버릇⁠·본능은</span> 문화 아님.</li>
+                <li><b>보편성</b><span class="nw">(모든 사회 공통)</span> / <b>특수성</b><span class="nw">(사회마다 다름).</span></li>
+                <li><b>문화의 속성</b> : 공유성⁠·학습성⁠·축적성⁠·변동성⁠·전체성.</li>
+                <li><b>미디어</b> : 과거 일방향 → 오늘날 쌍방향, <span class="nw">생산자⁠·소비자</span> 경계가 무너짐.</li>
             </ul>
         </div>
         <div class="card hl reveal">
             <ul class="l">
-                <li>미디어 속 콘텐츠는 상품 성격, 편향된 관점 위험. 광고 = 정보 + 설득.</li>
-                <li><b>잘못된 정보</b>(믿고 공유) / <b>허위 정보</b>(속이려고 제작). <b>미디어 리터러시</b> = 분석·평가·활용·창조 능력.</li>
-                <li><b>자문화 중심주의</b>(자기 문화만 우수) / <b>문화 사대주의</b>(남의 문화 동경, 자기 문화 열등) / <b>문화 상대주의</b>(환경·맥락 속 이해).</li>
-                <li>문화 상대주의도 <b>인류의 보편적 가치</b>(생명·존엄성)를 해치는 관습은 인정하지 않는다.</li>
+                <li>미디어 속 콘텐츠는 상품 성격, 편향된 관점 위험. 광고 = 정보 + 설득.</li>
+                <li><b>잘못된 정보</b><span class="nw">(믿고 공유)</span> / <b>허위 정보</b><span class="nw">(속이려고 제작).</span> <b>미디어 리터러시</b> = <span class="nw">분석⁠·평가⁠·활용⁠·창조</span> 능력.</li>
+                <li><b>자문화 중심주의</b><span class="nw">(자기 문화만 우수)</span> / <b>문화 사대주의</b>(남의 문화 동경, 자기 문화 열등) / <b>문화 상대주의</b><span class="nw">(환경⁠·맥락</span> 속 이해).</li>
+                <li>문화 상대주의도 <b>인류의 보편적 가치</b><span class="nw">(생명⁠·존엄성)를</span> 해치는 관습은 인정하지 않는다.</li>
             </ul>
         </div>
     </div>
@@ -646,24 +710,24 @@ table.t th b, table.t th strong { color: inherit; }
 </section>
 
 <!-- === 14. 헷갈리기 쉬운 것 === -->
-<section class="slide" style="--z:1.3">
+<section class="slide" style="--z:1.25">
     <div class="kicker">헷갈리기 쉬운 것</div>
     <h2>구분하기와 자주 하는 오해</h2>
-    <div class="grid g2" style="grid-template-columns:1.25fr 1fr">
+    <div class="grid fx-mis">
         <table class="t reveal" style="font-size:25px">
             <tr><th>비교 항목</th><th>앞의 개념</th><th>뒤의 개념</th></tr>
-            <tr><td>보편성 vs 특수성</td><td>모든 사회에 공통</td><td>사회마다 고유·다름</td></tr>
-            <tr><td>잘못된 vs 허위 정보</td><td>사실이라 믿고 공유한 틀린 정보</td><td>이익·기만 목적으로 만든 거짓 정보</td></tr>
-            <tr><td>자문화 중심주의 vs 사대주의</td><td>자기 문화만 우수</td><td>자기 문화 열등, 남의 문화 동경</td></tr>
-            <tr><td>변동성 vs 전체성</td><td>끊임없이 변화</td><td>요소들이 연결되어 함께 변함</td></tr>
+            <tr><td>보편성 vs 특수성</td><td>모든 사회에 공통</td><td>사회마다 <span class="nw">고유⁠·다름</span></td></tr>
+            <tr><td>잘못된 vs 허위 정보</td><td>사실이라 믿고 공유한 틀린 정보</td><td><span class="nw">이익⁠·기만</span> 목적으로 만든 거짓 정보</td></tr>
+            <tr><td>자문화 중심주의 vs 사대주의</td><td>자기 문화만 우수</td><td>자기 문화 열등, 남의 문화 동경</td></tr>
+            <tr><td>변동성 vs 전체성</td><td>끊임없이 변화</td><td>요소들이 연결되어 함께 변함</td></tr>
         </table>
         <div class="card warn reveal">
             <h3>이렇게 오해하지 말자</h3>
             <ul class="l" style="font-size:25px">
-                <li>문화는 한번 형성되면 변하지 않는다 (X) → <b>변동성</b>.</li>
-                <li>하품·다리 떨기도 문화 (X) → 본능·버릇은 <b>문화 아님</b>.</li>
-                <li>문화 상대주의는 무엇이든 인정 (X) → <b>보편적 가치</b>는 예외.</li>
-                <li>미디어 정보는 모두 사실 (X) → 선택·강조·왜곡 가능.</li>
+                <li>문화는 한번 형성되면 변하지 않는다 <span class="nw">(X)</span> → <b>변동성</b>.</li>
+                <li><span class="nw">하품⁠·다리</span> 떨기도 문화 <span class="nw">(X)</span> → <span class="nw">본능⁠·버릇은</span> <b>문화 아님</b>.</li>
+                <li>문화 상대주의는 무엇이든 인정 <span class="nw">(X)</span> → <b>보편적 가치</b>는 예외.</li>
+                <li>미디어 정보는 모두 사실 <span class="nw">(X)</span> → <span class="nw">선택⁠·강조⁠·왜곡</span> 가능.</li>
             </ul>
         </div>
     </div>

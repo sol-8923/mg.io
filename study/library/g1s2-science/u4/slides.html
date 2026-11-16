@@ -214,6 +214,29 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
     .slide p.sub { font-size: 20px; }
     .card.hl::after { opacity: .4; }
 }
+
+/* ===== 검수 정리 v3 ===== */
+/* 줄바꿈: 짧은 구절·괄호·숫자+단위는 줄 중간에서 끊지 않는다 */
+.nw { white-space: nowrap; }
+.slide li, .slide p, .slide td, .slide th, .slide .card { text-wrap: pretty; }
+/* 쪽번호 컨트롤: 두 자리 쪽수에서도 막대 폭 고정 */
+.deck-controls #count { min-width: 84px; font-variant-numeric: tabular-nums; }
+/* 덧붙임 표시(핵심 암기 N가지 밖의 보조 내용) */
+.slide h3 .tag { font-size: 20px; padding: 0 12px; margin-right: 10px; vertical-align: 4px; }
+.addnote { font-family: var(--font-display); font-size: 28px; color: var(--purple); margin-top: 22px; margin-bottom: 8px; }
+.addnote .tag { font-size: 20px; padding: 0 12px; }
+@media (max-width: 820px) and (orientation: portrait) {
+    /* 가로로 밀어서 보는 그림 위 안내 */
+    .svgbox:not(.fit):has(> svg.wide)::before { content: '← 옆으로 밀어서 보기 →'; display: block; position: sticky; left: 0; text-align: center; font-size: 15px; font-weight: 700; color: var(--brass); padding: 0 0 6px; }
+    /* 일식·월식 그림: 한 화면에 들어오게 오른쪽 여백만 잘라 보여 준다 */
+    .svgbox.fit { overflow: hidden; }
+    .svgbox.fit svg.wide { min-width: 0; max-width: none; width: 141.7%; margin-right: -41.7%; clip-path: inset(0 29.4% 0 0); }
+    .svgbox.fit svg.wide text { font-size: 38px; }
+    .slide h3 .tag { font-size: 13px; padding: 0 8px; margin-right: 6px; vertical-align: 2px; }
+    .slide table.t td:first-child { overflow-wrap: normal; }
+    .addnote { font-size: 19px; margin-top: 14px; }
+    .addnote .tag { font-size: 13px; padding: 0 8px; }
+}
 </style>
 </head>
 <body>
@@ -254,74 +277,75 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 <path d="M-920 1030 Q-300 990 120 1030 Q420 975 620 1010 T1000 990 L2400 990 V1080 H-920Z" fill="#E9DDFB" stroke="#261A52" stroke-width="6"/>
 <ellipse cx="-600" cy="1052" rx="60" ry="10" fill="#D3BFF3"/><ellipse cx="-200" cy="1050" rx="46" ry="9" fill="#D3BFF3"/><ellipse cx="130" cy="1050" rx="60" ry="12" fill="#D3BFF3"/><ellipse cx="780" cy="1046" rx="70" ry="12" fill="#D3BFF3"/>
 </svg>
-    <div class="kicker reveal">1학년 2학기 과학 · 4단원 요약 정리</div>
+    <div class="kicker reveal">1학년 2학기 <span class="nw">과학 · 4단원</span> <span class="nw">요약 정리</span></div>
     <h1 class="reveal">물질의 <span>상태 변화</span></h1>
     <div class="rule reveal"></div>
-    <p class="reveal">확산과 증발 · 물질의 세 가지 상태 · 상태 변화와 열에너지</p>
+    <p class="reveal">확산과 <span class="nw">증발 · 물질의</span> 세 가지 <span class="nw">상태 · 상태</span> 변화와 열에너지</p>
 </section>
 
 <!-- === 2 === -->
 <section class="slide" style="--z:1.4">
-    <div class="kicker">단원 개요</div>
-    <h2>입자로 보는 상태 변화 <small>교과서 p.113~150</small></h2>
+    <div class="kicker"><span class="nw">단원 개요</span></div>
+    <h2>입자로 보는 상태 변화 <small>교과서 p.<span class="nw">113~150</span></small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>Ⅳ-1 물질의 세 가지 상태</h3>
+            <h3>Ⅳ-1 물질의 세 <span class="nw">가지 상태</span></h3>
             <ul class="l">
-                <li><span class="tag">01</span><b>확산과 증발</b> <span class="ref">(p.116~119)</span></li>
-                <li><span class="tag">02</span><b>물질의 세 가지 상태</b> <span class="ref">(p.120~122)</span></li>
+                <li><span class="tag">01</span><b>확산과 증발</b> <span class="ref"><span class="nw">(p.116~119)</span></span></li>
+                <li><span class="tag">02</span><b>물질의 세 가지 상태</b> <span class="ref"><span class="nw">(p.120~122)</span></span></li>
             </ul>
         </div>
         <div class="card hl reveal">
             <h3>Ⅳ-2 상태 변화와 열에너지</h3>
             <ul class="l">
-                <li><b>여러 가지 물질의 상태 변화</b> <span class="ref">(p.128~133)</span></li>
-                <li><b>열에너지를 흡수하는 상태 변화</b> <span class="ref">(p.134~137)</span></li>
-                <li><b>열에너지를 방출하는 상태 변화</b> <span class="ref">(p.138~141)</span></li>
-                <li><b>출입하는 열에너지의 이용</b> <span class="ref">(p.142~143)</span></li>
+                <li><b>여러 가지 물질의 상태 변화</b> <span class="ref"><span class="nw">(p.128~133)</span></span></li>
+                <li><b>열에너지를 흡수하는 상태 변화</b> <span class="ref"><span class="nw">(p.134~137)</span></span></li>
+                <li><b>열에너지를 방출하는 상태 변화</b> <span class="ref"><span class="nw">(p.138~141)</span></span></li>
+                <li><b>출입하는 열에너지의 이용</b> <span class="ref"><span class="nw">(p.142~143)</span></span></li>
             </ul>
         </div>
     </div>
     <div class="card reveal" style="margin-top:24px">
-        <h3>이 교과서의 용어</h3>
-        <p>'녹는점·끓는점·융해열·기화열' 대신 <b>녹는 온도·끓는 온도·어는 온도</b>, <b>열에너지 흡수·방출</b>이라고 쓴다.</p>
+        <h3>이 <span class="nw">교과서의 용어</span></h3>
+        <p>'녹는점·끓는점·융해열·기화열' 대신 <b>녹는 <span class="nw">온도·끓는</span> <span class="nw">온도·어는</span> 온도</b>, <b>열에너지 <span class="nw">흡수·방출</span></b><span class="nw">이라고 쓴다.</span></p>
     </div>
     <div class="pg">2</div>
 </section>
 
 <!-- === 3 === -->
 <section class="slide" style="--z:1.1">
-    <div class="kicker">Ⅳ-1 · 확산과 증발</div>
-    <h2>확산과 증발 <small>p.118~119</small></h2>
+    <div class="kicker">Ⅳ-<span class="nw">1 · 확산과 증발</span></div>
+    <h2>확산과 증발 <small>p.<span class="nw">118~119</span></small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>확산</h3>
             <p>물질을 이루는 입자가 <b>스스로 운동</b>하여 주변으로 퍼져 나가는 현상. 액체뿐 아니라 <b>기체</b>에서도 일어난다.</p>
             <ul class="l" style="margin-top:12px">
-                <li>차가 우러나는 것</li>
-                <li>파스 냄새가 퍼짐</li>
-                <li>식초가 냉면 전체에 퍼짐</li>
-                <li>물에 떨어뜨린 색소가 퍼짐</li>
+                <li>차가 <span class="nw">우러나는 것</span></li>
+                <li>파스 <span class="nw">냄새가 퍼짐</span></li>
+                <li>식초가 냉면 <span class="nw">전체에 퍼짐</span></li>
+                <li>물에 떨어뜨린 <span class="nw">색소가 퍼짐</span></li>
             </ul>
         </div>
         <div class="card hl reveal">
             <h3>증발</h3>
-            <p>액체를 이루는 입자가 스스로 운동하여 <b>액체 표면에서 떨어져 나와 기체</b>로 변하는 현상.</p>
+            <p>액체를 이루는 입자가 스스로 운동하여 <b>액체 표면에서 떨어져 나와 기체</b>로 <span class="nw">변하는 현상.</span></p>
             <ul class="l" style="margin-top:12px">
-                <li>어항 속 물이 줄어듦</li>
-                <li>젖은 빨래가 마름</li>
-                <li>손 소독제 흔적이 사라짐 (질량 감소)</li>
+                <li>어항 속 <span class="nw">물이 줄어듦</span></li>
+                <li>젖은 <span class="nw">빨래가 마름</span></li>
+                <li>손 소독제 흔적이 사라짐 <span class="nw">(질량 감소)</span></li>
             </ul>
         </div>
     </div>
     <div class="grid g2" style="margin-top:24px">
         <div class="card reveal">
-            <h3>공통 원인</h3>
+            <h3><span class="nw">공통 원인</span></h3>
             <p>물질을 이루는 <b>입자가 스스로 끊임없이 운동</b>하기 때문이다.</p>
         </div>
         <div class="card reveal">
-            <h3>향수 냄새가 퍼지는 까닭</h3>
-            <p>향수 입자가 <b>증발</b>하고 공기 중으로 <b>확산</b>하기 때문이다. <span class="ref">증발은 기화, 응결은 액화에 해당 (p.129)</span></p>
+            <h3>향수 냄새가 <span class="nw">퍼지는 까닭</span></h3>
+            <p>향수 입자가 <b>증발</b>하고 공기 중으로 <b>확산</b>하기 때문이다.</p>
+            <p class="ref" style="margin-top:8px">증발은 기화, 응결은 액화에 해당 <span class="nw">(p.129)</span></p>
         </div>
     </div>
     <div class="pg">3</div>
@@ -329,25 +353,25 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 
 <!-- === 4 === -->
 <section class="slide" style="--z:1.12">
-    <div class="kicker">Ⅳ-1 · 물질의 세 가지 상태</div>
-    <h2>고체·액체·기체의 특징 <small>p.120~122</small></h2>
+    <div class="kicker">Ⅳ-<span class="nw">1 · 물질의</span> 세 <span class="nw">가지 상태</span></div>
+    <h2><span class="nw">고체·액체·기체의</span> 특징 <small>p.<span class="nw">120~122</span></small></h2>
     <table class="t reveal" style="font-size:25px">
         <tr><th style="width:15%">구분</th><th>고체</th><th>액체</th><th>기체</th></tr>
-        <tr><td>모양</td><td>일정 (용기와 무관)</td><td>용기에 따라 변함, 흐르는 성질</td><td>용기에 따라 변함, 흐르는 성질</td></tr>
-        <tr><td>부피</td><td>일정, 힘을 가해도 거의 변하지 않음</td><td>일정, 힘을 가해도 거의 변하지 않음</td><td>용기·외부의 힘에 따라 <b>쉽게 변함</b></td></tr>
-        <tr><td>입자 사이 거리</td><td>매우 가깝다</td><td>고체보다 조금 멀지만 비교적 가깝다</td><td>매우 멀다 (공간이 많다)</td></tr>
-        <tr><td>입자 배열</td><td>규칙적</td><td>고체보다 불규칙</td><td>매우 불규칙</td></tr>
-        <tr><td>입자 운동</td><td>제자리에서 <b>진동</b>할 뿐 자유롭게 움직일 수 없다</td><td>고체보다 자유롭게 움직인다</td><td>매우 활발, 공간을 가득 채운다</td></tr>
+        <tr><td>모양</td><td>일정 <span class="nw">(용기와 무관)</span></td><td>용기에 따라 변함, <span class="nw">흐르는 성질</span></td><td>용기에 따라 변함, <span class="nw">흐르는 성질</span></td></tr>
+        <tr><td>부피</td><td>일정, 힘을 가해도 거의 <span class="nw">변하지 않음</span></td><td>일정, 힘을 가해도 거의 <span class="nw">변하지 않음</span></td><td><span class="nw">용기·외부의</span> 힘에 따라 <b>쉽게 변함</b></td></tr>
+        <tr><td>입자 <span class="nw">사이 거리</span></td><td><span class="nw">매우 가깝다</span></td><td>고체보다 조금 멀지만 <span class="nw">비교적 가깝다</span></td><td>매우 멀다 <span class="nw">(공간이 많다)</span></td></tr>
+        <tr><td><span class="nw">입자 배열</span></td><td>규칙적</td><td><span class="nw">고체보다 불규칙</span></td><td><span class="nw">매우 불규칙</span></td></tr>
+        <tr><td><span class="nw">입자 운동</span></td><td>제자리에서 <b>진동</b>할 뿐 자유롭게 움직일 <span class="nw">수 없다</span></td><td>고체보다 자유롭게 움직인다</td><td>매우 활발, 공간을 <span class="nw">가득 채운다</span></td></tr>
     </table>
     <div class="card hl reveal" style="margin-top:22px">
-        <b>왜 다를까</b> 입자 사이의 <b>거리·배열 상태·움직임 정도</b>가 다르기 때문이다. 기체의 부피가 쉽게 변하는 것은 입자 사이의 거리가 매우 멀기 때문이다. <span class="ref">(p.122, 124)</span>
+        <b>왜 다를까</b> 입자 사이의 <b><span class="nw">거리·배열</span> <span class="nw">상태·움직임</span> 정도</b>가 다르기 때문이다. 기체의 부피가 쉽게 변하는 것은 입자 사이의 거리가 매우 멀기 때문이다. <span class="ref"><span class="nw">(p.122, 124)</span></span>
     </div>
     <div class="pg">4</div>
 </section>
 
 <!-- === 5 === -->
 <section class="slide" style="--z:1.3">
-    <div class="kicker">Ⅳ-1 · 입자 모형</div>
+    <div class="kicker">Ⅳ-<span class="nw">1 · 입자 모형</span></div>
     <h2>입자 모형으로 보기 <small>p.122</small></h2>
     <div class="svgbox reveal">
         <svg class="wide" viewBox="0 0 1700 360" xmlns="http://www.w3.org/2000/svg">
@@ -366,17 +390,17 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
         </svg>
     </div>
     <div class="grid g2" style="margin-top:22px">
-        <div class="card hl reveal"><h3>알아둘 점</h3><p>입자 사이의 <b>거리가 멀수록</b> 배열은 불규칙하고 운동은 활발하다.</p></div>
-        <div class="card warn reveal"><h3>오해 주의</h3><p>"고체 입자는 움직이지 않는다" (X) → 제자리에서 <b>진동</b>한다.</p></div>
+        <div class="card hl reveal"><h3><span class="nw">알아둘 점</span></h3><p>입자 사이의 <b>거리가 멀수록</b> 배열은 불규칙하고 운동은 활발하다.</p></div>
+        <div class="card warn reveal"><h3><span class="nw">오해 주의</span></h3><p>"고체 입자는 움직이지 않는다" <span class="nw">(X)</span> → 제자리에서 <b>진동</b>한다.</p></div>
     </div>
     <div class="pg">5</div>
 </section>
 
 <!-- === 6 === -->
 <section class="slide" style="--z:1.16">
-    <div class="kicker">Ⅳ-2 · 여러 가지 물질의 상태 변화</div>
+    <div class="kicker">Ⅳ-<span class="nw">2 · 여러</span> 가지 물질의 <span class="nw">상태 변화</span></div>
     <h2>상태 변화 5가지 <small>p.129</small></h2>
-    <div class="card reveal" style="margin-bottom:18px"><b>상태 변화</b> : 물질의 온도가 높아지거나 낮아지면서 상태가 변하는 것.</div>
+    <div class="card reveal" style="margin-bottom:18px"><span class="nw"><b>상태 변화</b> :</span> 물질의 온도가 높아지거나 낮아지면서 상태가 <span class="nw">변하는 것.</span></div>
     <div class="grid g2" style="grid-template-columns:1fr 1.15fr">
         <div class="svgbox reveal">
             <svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg">
@@ -385,7 +409,7 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
                 <text class="b" x="120" y="462" text-anchor="middle">고체</text><text class="b" x="380" y="92" text-anchor="middle">액체</text><text class="b" x="640" y="462" text-anchor="middle">기체</text>
                 <g stroke="#C2186B" stroke-width="3" marker-end="url(#ar)" fill="none"><path d="M70 400 L280 130"/><path d="M330 130 L120 400" /><path d="M440 130 L650 400"/><path d="M590 400 L390 130"/><path d="M230 450 L530 450"/><path d="M540 480 L230 480" stroke-dasharray="8 6"/></g>
                 <text x="150" y="275" text-anchor="end">융해</text><text x="250" y="275" text-anchor="start">응고</text>
-                <text x="580" y="275" text-anchor="start">기화</text><text x="480" y="275" text-anchor="end">액화</text>
+                <text x="580" y="275" text-anchor="start">기화</text><text x="458" y="275" text-anchor="end">액화</text>
                 <text class="b" x="380" y="440" text-anchor="middle">승화</text>
                 <text class="w" x="380" y="515" text-anchor="middle">승화는 양방향</text>
             </svg>
@@ -393,11 +417,11 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
         <div class="card hl reveal">
             <h3>예시</h3>
             <ul class="l">
-                <li><b>융해</b> (고체→액체) 버터가 녹는다</li>
-                <li><b>응고</b> (액체→고체) 촛농이 굳는다</li>
-                <li><b>기화</b> (액체→기체) 젖은 빨래가 마른다</li>
-                <li><b>액화</b> (기체→액체) 차가운 컵 표면에 물방울</li>
-                <li><b>승화</b> (고체↔기체, 액체를 거치지 않음) 응달의 눈사람이 녹은 흔적 없이 작아짐 (고체→기체), 겨울철 나뭇잎에 서리 (기체→고체)</li>
+                <li><b>융해</b> <span class="nw">(고체→액체)</span> <span class="nw">버터가 녹는다</span></li>
+                <li><b>응고</b> <span class="nw">(액체→고체)</span> <span class="nw">촛농이 굳는다</span></li>
+                <li><b>기화</b> <span class="nw">(액체→기체)</span> 젖은 <span class="nw">빨래가 마른다</span></li>
+                <li><b>액화</b> <span class="nw">(기체→액체)</span> 차가운 컵 <span class="nw">표면에 물방울</span></li>
+                <li><b>승화</b> (<span class="nw">고체↔기체</span>, 액체를 거치지 않음) 응달의 눈사람이 녹은 흔적 없이 작아짐 <span class="nw">(고체→기체)</span>, 겨울철 나뭇잎에 서리 <span class="nw">(기체→고체)</span></li>
             </ul>
         </div>
     </div>
@@ -406,66 +430,66 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 
 <!-- === 7 === -->
 <section class="slide" style="--z:1.12">
-    <div class="kicker">Ⅳ-2 · 상태 변화와 입자</div>
-    <h2>변하는 것, 변하지 않는 것 <small>p.130~133</small></h2>
+    <div class="kicker">Ⅳ-<span class="nw">2 · 상태</span> <span class="nw">변화와 입자</span></div>
+    <h2>변하지 않는 것, 변하는 것 <small>p.<span class="nw">130~133</span></small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>변하지 않는 것</h3>
-            <p>입자의 <b>종류와 개수</b>가 그대로이므로 <b>질량</b>과 <b>물질의 성질</b>은 변하지 않는다.</p>
+            <h3>변하지 <span class="nw">않는 것</span></h3>
+            <p>입자의 <b>종류와 개수</b>가 그대로이므로 <b>질량</b>과 <b>물질의 성질</b>은 <span class="nw">변하지 않는다.</span></p>
         </div>
         <div class="card hl reveal">
-            <h3>변하는 것</h3>
-            <p>입자 사이의 <b>거리와 배열</b>이 달라져 <b>부피</b>가 변한다.</p>
+            <h3><span class="nw">변하는 것</span></h3>
+            <p>입자 사이의 <b>거리와 배열</b>이 달라져 <b>부피</b><span class="nw">가 변한다.</span></p>
         </div>
     </div>
     <table class="t reveal" style="margin-top:24px">
-        <tr><th style="width:30%">상태 변화</th><th>입자 배열·거리</th><th style="width:20%">부피</th></tr>
-        <tr><td>융해, 기화, 고체→기체 승화</td><td>불규칙, 거리가 멀어짐</td><td><b>커진다</b></td></tr>
-        <tr><td>응고, 액화, 기체→고체 승화</td><td>규칙적, 거리가 가까워짐</td><td><b>작아진다</b></td></tr>
+        <tr><th style="width:30%"><span class="nw">상태 변화</span></th><th>입자 <span class="nw">배열·거리</span></th><th style="width:20%">부피</th></tr>
+        <tr><td>융해, 기화, <span class="nw">고체→기체 승화</span></td><td>불규칙, <span class="nw">거리가 멀어짐</span></td><td><b>커진다</b></td></tr>
+        <tr><td>응고, 액화, <span class="nw">기체→고체 승화</span></td><td>규칙적, 거리가 가까워짐</td><td><b>작아진다</b></td></tr>
     </table>
     <div class="card warn reveal" style="margin-top:24px">
-        <h3>예외 : 물</h3>
-        <p>물은 얼 때 입자가 <b>육각형으로 배열</b>되어 입자 사이 공간이 커지므로, 응고할 때 <b>부피가 커진다</b>. (일반 물질과 다름, p.133)</p>
+        <h3><span class="nw">예외 : 물</span></h3>
+        <p>물은 얼 때 입자가 <b>육각형으로 배열</b>되어 입자 사이 공간이 커지므로, 응고할 때 <b>부피가 커진다</b>. <span class="nw">(일반 물질과 다름, p.133)</span></p>
     </div>
     <div class="pg">7</div>
 </section>
 
 <!-- === 8 === -->
 <section class="slide" style="--z:1.08">
-    <div class="kicker">Ⅳ-2 · 열에너지의 출입</div>
-    <h2>흡수하는 변화 vs 방출하는 변화 <small>p.136~141</small></h2>
-    <div class="card reveal" style="margin-bottom:18px"><b>열에너지</b> : 온도가 다른 두 물체 사이에서 이동하는 에너지로, 물질의 온도나 상태를 변화시킨다. <span class="ref">(p.136)</span></div>
+    <div class="kicker">Ⅳ-<span class="nw">2 · 열에너지의 출입</span></div>
+    <h2>흡수하는 변화 vs 방출하는 변화 <small>p.<span class="nw">136~141</span></small></h2>
+    <div class="card reveal" style="margin-bottom:18px"><span class="nw"><b>열에너지</b> :</span> 온도가 다른 두 물체 사이에서 이동하는 에너지로, 물질의 온도나 상태를 변화시킨다. <span class="ref"><span class="nw">(p.136)</span></span></div>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>열에너지 흡수</h3>
+            <h3><span class="nw">열에너지 흡수</span></h3>
             <ul class="l">
-                <li><b>융해, 기화, 고체→기체 승화</b></li>
-                <li>입자 운동이 활발해지고 불규칙하게 배열</li>
+                <li><b>융해, 기화, <span class="nw">고체→기체</span> 승화</b></li>
+                <li>입자 운동이 활발해지고 <span class="nw">불규칙하게 배열</span></li>
                 <li>주위에서 흡수 → <b>주위의 온도가 낮아짐</b></li>
-                <li>예) 물놀이 후 물 밖으로 나오면 시원함 (몸의 물이 기화)</li>
-                <li>예) 아이스팩·냉찜질 팩 (고체→액체)</li>
+                <li>예) 물놀이 후 물 밖으로 나오면 시원함 <span class="nw">(몸의 물이 기화)</span></li>
+                <li>예) <span class="nw">아이스팩·냉찜질</span> 팩 <span class="nw">(고체→액체)</span></li>
             </ul>
         </div>
         <div class="card hl reveal">
-            <h3>열에너지 방출</h3>
+            <h3><span class="nw">열에너지 방출</span></h3>
             <ul class="l">
-                <li><b>응고, 액화, 기체→고체 승화</b></li>
-                <li>입자 운동이 둔해지고 규칙적으로 배열</li>
+                <li><b>응고, 액화, <span class="nw">기체→고체</span> 승화</b></li>
+                <li>입자 운동이 둔해지고 <span class="nw">규칙적으로 배열</span></li>
                 <li>주위로 방출 → <b>주위의 온도가 높아짐</b></li>
-                <li>예) 액체 파라핀이 응고하며 열 방출 (온열 찜질)</li>
-                <li>예) 사과꽃·이글루 벽에 물을 뿌림</li>
+                <li>예) 액체 파라핀이 응고하며 열 방출 <span class="nw">(온열 찜질)</span></li>
+                <li>예) <span class="nw">사과꽃·이글루</span> 벽에 <span class="nw">물을 뿌림</span></li>
             </ul>
         </div>
     </div>
     <div class="card warn reveal" style="margin-top:22px">
-        <b>궁금증</b> 얼음 조각상 옆이 시원한 것은 차가운 기운을 내보내서가 아니라, 얼음이 <b>융해하며 주위에서 열에너지를 흡수</b>하기 때문이다. <span class="ref">(p.145)</span>
+        <b>궁금증</b> 얼음 조각상 옆이 시원한 것은 차가운 기운을 내보내서가 아니라, 얼음이 <b>융해하며 주위에서 열에너지를 흡수</b>하기 때문이다. <span class="ref"><span class="nw">(p.145)</span></span>
     </div>
     <div class="pg">8</div>
 </section>
 
 <!-- === 9 === -->
 <section class="slide" style="--z:1">
-    <div class="kicker">Ⅳ-2 · 가열 곡선과 냉각 곡선</div>
+    <div class="kicker">Ⅳ-<span class="nw">2 · 가열</span> 곡선과 <span class="nw">냉각 곡선</span></div>
     <h2>상태 변화 중에는 온도가 일정 <small>p.136, 140</small></h2>
     <div class="grid g2">
         <div class="svgbox reveal">
@@ -491,44 +515,44 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
         </div>
     </div>
     <div class="grid g2" style="margin-top:20px">
-        <div class="card hl reveal" style="padding:14px 30px"><h3>가열 (p.136)</h3><p>고체 → <b>융해</b>(녹는 온도, 고체+액체) → 액체 → <b>기화</b>(끓는 온도, 액체+기체) → 기체</p></div>
-        <div class="card hl reveal" style="padding:14px 30px"><h3>냉각 (p.140)</h3><p>기체 → <b>액화</b>(일정) → 액체 → <b>응고</b>(어는 온도, 액체+고체) → 고체</p></div>
+        <div class="card hl reveal" style="padding:14px 30px"><h3>가열 <span class="nw">(p.136)</span></h3><p>고체 → <b>융해</b><span class="nw">(녹는 온도, 고체+액체)</span> → 액체 → <b>기화</b><span class="nw">(끓는 온도, 액체+기체)</span> <span class="nw">→ 기체</span></p></div>
+        <div class="card hl reveal" style="padding:14px 30px"><h3>냉각 <span class="nw">(p.140)</span></h3><p>기체 → <b>액화</b><span class="nw">(일정)</span> → 액체 → <b>응고</b><span class="nw">(어는 온도, 액체+고체)</span> <span class="nw">→ 고체</span></p></div>
     </div>
-    <div class="card reveal" style="margin-top:16px;padding:14px 30px">상태 변화 중 온도가 일정한 까닭 : 흡수·방출하는 열에너지가 <b>온도 변화가 아니라 상태 변화</b>에 쓰이기 때문이다.</div>
+    <div class="card reveal" style="margin-top:16px;padding:14px 30px">상태 변화 중 온도가 일정한 <span class="nw">까닭 :</span> <span class="nw">흡수·방출하는</span> 열에너지가 <b>온도 변화가 아니라 상태 변화</b>에 쓰이기 때문이다.</div>
     <div class="pg">9</div>
 </section>
 
 <!-- === 10 === -->
 <section class="slide" style="--z:1.4">
-    <div class="kicker">Ⅳ-2 · 열에너지 출입의 이용</div>
-    <h2>생활 속 열에너지 출입 <small>p.142~143</small></h2>
+    <div class="kicker">Ⅳ-<span class="nw">2 · 열에너지</span> <span class="nw">출입의 이용</span></div>
+    <h2>생활 속 열에너지 출입 <small>p.<span class="nw">142~143</span></small></h2>
     <table class="t reveal">
         <tr><th style="width:24%">사례</th><th>원리</th></tr>
-        <tr><td>항아리 냉장고</td><td>모래의 물이 <b>기화</b>하며 열에너지 흡수</td></tr>
-        <tr><td>냉장고·에어컨</td><td><b>증발기</b>에서 냉매가 기화하며 열 흡수(안이 시원), <b>응축기</b>에서 냉매가 액화하며 열 방출(뒤쪽이 뜨거움). 냉매는 기화와 액화를 반복하며 열에너지를 출입시키는 물질.</td></tr>
-        <tr><td>증산 작용, 인공 안개</td><td>기화하며 열 흡수 → 주변 온도를 낮춤</td></tr>
-        <tr><td>우주복 안감</td><td>융해(흡수)·응고(방출)로 체온 유지</td></tr>
-        <tr><td>드라이아이스</td><td><b>승화</b>하며 열 흡수 → 아이스크림케이크가 잘 안 녹음</td></tr>
+        <tr><td><span class="nw">항아리 냉장고</span></td><td>모래의 물이 <b>기화</b>하며 <span class="nw">열에너지 흡수</span></td></tr>
+        <tr><td><span class="nw">냉장고·에어컨</span></td><td><b>증발기</b>에서 냉매가 기화하며 열 <span class="nw">흡수(안이 시원)</span>, <b>응축기</b>에서 냉매가 액화하며 열 <span class="nw">방출(뒤쪽이 뜨거움)</span>. 냉매는 기화와 액화를 반복하며 열에너지를 <span class="nw">출입시키는 물질.</span></td></tr>
+        <tr><td>증산 작용, <span class="nw">인공 안개</span></td><td>기화하며 열 흡수 → 주변 <span class="nw">온도를 낮춤</span></td></tr>
+        <tr><td><span class="nw">우주복 안감</span></td><td><span class="nw">융해(흡수)</span>·<span class="nw">응고(방출)로</span> <span class="nw">체온 유지</span></td></tr>
+        <tr><td>드라이아이스</td><td><b>승화</b>하며 열 흡수 → 아이스크림케이크가 잘 <span class="nw">안 녹음</span></td></tr>
     </table>
     <div class="pg">10</div>
 </section>
 
 <!-- === 11 === -->
 <section class="slide" style="--z:1.5">
-    <div class="kicker">꼭 외울 것</div>
-    <h2>핵심 암기 5가지</h2>
+    <div class="kicker">꼭 <span class="nw">외울 것</span></div>
+    <h2>핵심 <span class="nw">암기 5가지</span></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>확산</b>(입자가 퍼져 나감) vs <b>증발</b>(액체 표면 입자가 기체로).</li>
-                <li><b>상태 변화 5종</b> : 융해(고→액), 응고(액→고), 기화(액→기), 액화(기→액), 승화(고↔기, 액체를 거치지 않음).</li>
-                <li><b>불변</b> : 질량·입자의 종류·개수·물질의 성질 / <b>변화</b> : 부피·입자 배열·입자 사이 거리.</li>
+                <li><b>확산</b><span class="nw">(입자가 퍼져 나감)</span> vs <b>증발</b><span class="nw">(액체 표면 입자가 기체로).</span></li>
+                <li><span class="nw"><b>상태 변화 5종</b> :</span> <span class="nw">융해(고→액)</span>, <span class="nw">응고(액→고)</span>, <span class="nw">기화(액→기)</span>, <span class="nw">액화(기→액)</span>, <span class="nw">승화(고↔기, 액체를 거치지 않음).</span></li>
+                <li><span class="nw"><b>불변</b> :</span> <span class="nw">질량·입자의</span> <span class="nw">종류·개수·물질의</span> 성질 / <span class="nw"><b>변화</b> :</span> <span class="nw">부피·입자</span> <span class="nw">배열·입자</span> <span class="nw">사이 거리.</span></li>
             </ul>
         </div>
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>흡수</b> : 융해·기화·(고→기)승화 → 주위 온도 <b>낮아짐</b>.<br><b>방출</b> : 응고·액화·(기→고)승화 → 주위 온도 <b>높아짐</b>.</li>
-                <li><b>상태 변화 중 온도 일정</b> (열에너지가 상태 변화에 쓰임).</li>
+                <li><span class="nw"><b>흡수</b> :</span> <span class="nw">융해·기화</span>·<span class="nw">(고→기)승화</span> → 주위 온도 <span class="nw"><b>낮아짐</b>.</span><br><span class="nw"><b>방출</b> :</span> <span class="nw">응고·액화</span>·<span class="nw">(기→고)승화</span> → 주위 온도 <span class="nw"><b>높아짐</b>.</span></li>
+                <li><b>상태 변화 중 온도 일정</b> <span class="nw">(열에너지가 상태 변화에 쓰임).</span></li>
             </ul>
         </div>
     </div>
@@ -537,24 +561,24 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 
 <!-- === 12 === -->
 <section class="slide" style="--z:1.26">
-    <div class="kicker">헷갈리기 쉬운 것</div>
-    <h2>바로잡기와 자주 하는 오해</h2>
+    <div class="kicker">헷갈리기 <span class="nw">쉬운 것</span></div>
+    <h2>바로잡기와 자주 <span class="nw">하는 오해</span></h2>
     <div class="grid g2" style="grid-template-columns:1.2fr 1fr">
         <table class="t reveal" style="font-size:25px">
             <tr><th>헷갈림</th><th>바로잡기</th></tr>
-            <tr><td>서리·성에는 액체를 거친다</td><td>기체→고체 <b>승화</b> (p.129)</td></tr>
-            <tr><td>눈사람이 작아지면 융해</td><td>녹은 흔적이 없으면 고체→기체 <b>승화</b></td></tr>
-            <tr><td>상태가 변하면 질량도 변한다</td><td>입자 종류·개수 같아 <b>질량 불변</b>, 부피만 변함</td></tr>
+            <tr><td><span class="nw">서리·성에는</span> <span class="nw">액체를 거친다</span></td><td><span class="nw">기체→고체</span> <b>승화</b> <span class="nw">(p.129)</span></td></tr>
+            <tr><td>눈사람이 <span class="nw">작아지면 융해</span></td><td>녹은 흔적이 없으면 <span class="nw">고체→기체</span> <b>승화</b></td></tr>
+            <tr><td>상태가 변하면 <span class="nw">질량도 변한다</span></td><td>입자 <span class="nw">종류·개수</span> 같아 <b>질량 불변</b>, <span class="nw">부피만 변함</span></td></tr>
             <tr><td>얼면 항상 부피가 줄어든다</td><td>물은 응고할 때 <b>부피가 커진다</b></td></tr>
-            <tr><td>가열 중 온도는 계속 오른다</td><td>상태 변화 중에는 <b>일정</b></td></tr>
-            <tr><td>증발과 확산은 같은 말</td><td>증발=액체→기체, 확산=퍼져 나감</td></tr>
+            <tr><td>가열 중 온도는 <span class="nw">계속 오른다</span></td><td>상태 변화 중에는 <b>일정</b></td></tr>
+            <tr><td>증발과 확산은 <span class="nw">같은 말</span></td><td>증발=<span class="nw">액체→기체</span>, <span class="nw">확산=퍼져 나감</span></td></tr>
         </table>
         <div class="card warn reveal">
-            <h3>이렇게 오해하지 말자</h3>
+            <h3>이렇게 <span class="nw">오해하지 말자</span></h3>
             <ul class="l" style="font-size:25px">
-                <li>"고체 입자는 움직이지 않는다" (X) → 제자리에서 <b>진동</b>.</li>
-                <li>"기체는 입자가 가벼워 부피가 변한다" (X) → 입자 사이 거리가 매우 멀어 힘을 가하면 부피가 쉽게 변한다.</li>
-                <li>"얼음 조각상이 차가운 기운을 내보낸다" (X) → 융해하며 열에너지 <b>흡수</b>.</li>
+                <li>"고체 입자는 움직이지 않는다" <span class="nw">(X)</span> → 제자리에서 <span class="nw"><b>진동</b>.</span></li>
+                <li>"기체는 입자가 가벼워 부피가 변한다" <span class="nw">(X)</span> → 입자 사이 거리가 매우 멀어 힘을 가하면 부피가 <span class="nw">쉽게 변한다.</span></li>
+                <li>"얼음 조각상이 차가운 기운을 내보낸다" <span class="nw">(X)</span> → 융해하며 열에너지 <span class="nw"><b>흡수</b>.</span></li>
             </ul>
         </div>
     </div>
@@ -563,27 +587,27 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 
 <!-- === 13 === -->
 <section class="slide" style="--z:1.34">
-    <div class="kicker">시험 포인트</div>
-    <h2>이렇게 나온다</h2>
+    <div class="kicker"><span class="nw">시험 포인트</span></div>
+    <h2><span class="nw">이렇게 나온다</span></h2>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>객관식 · 합답</h3>
+            <h3><span class="nw">객관식 · 합답</span></h3>
             <ul class="l">
-                <li>입자 모형 그림에서 상태·상태 변화 이름·열 출입·부피 변화 판단</li>
-                <li>가열·냉각 곡선의 구간별 상태, 온도 일정 구간, 열에너지 흡수·방출</li>
-                <li>현상 분류 : 성에·서리·이슬·김·물방울·빨래·고드름·드라이아이스·나프탈렌 등</li>
+                <li>입자 모형 그림에서 <span class="nw">상태·상태</span> 변화 <span class="nw">이름·열</span> <span class="nw">출입·부피</span> <span class="nw">변화 판단</span></li>
+                <li><span class="nw">가열·냉각</span> 곡선의 구간별 상태, 온도 일정 구간, 열에너지 <span class="nw">흡수·방출</span></li>
+                <li>현상 <span class="nw">분류 :</span> 성에·서리·이슬·김·물방울·빨래·고드름·드라이아이스·나프탈렌 등</li>
             </ul>
         </div>
         <div class="card hl reveal">
             <h3>서술형</h3>
             <ul class="l">
-                <li>확산·증발 설명</li>
-                <li>기체 부피가 쉽게 변하는 까닭 (입자 사이 거리)</li>
-                <li>냉각 후 표면이 움푹 들어가는 까닭</li>
-                <li>열에너지 흡수·방출로 주위 온도 설명, 에어컨 증발기·응축기</li>
+                <li><span class="nw">확산·증발 설명</span></li>
+                <li>기체 부피가 쉽게 변하는 까닭 <span class="nw">(입자 사이 거리)</span></li>
+                <li>냉각 후 표면이 움푹 <span class="nw">들어가는 까닭</span></li>
+                <li>열에너지 <span class="nw">흡수·방출로</span> 주위 온도 설명, 에어컨 <span class="nw">증발기·응축기</span></li>
             </ul>
-            <h3 style="margin-top:20px">마지막 점검</h3>
-            <p>상태 변화 이름과 <b>열에너지 출입</b> 방향을 짝지어 정확히 썼는가?</p>
+            <h3 style="margin-top:20px"><span class="nw">마지막 점검</span></h3>
+            <p>상태 변화 이름과 <b>열에너지 출입</b> 방향을 짝지어 <span class="nw">정확히 썼는가?</span></p>
         </div>
     </div>
     <div class="pg">13</div>

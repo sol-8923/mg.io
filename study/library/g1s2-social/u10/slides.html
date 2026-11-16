@@ -242,6 +242,70 @@ table.t th b, table.t th strong { color: inherit; }
     .card:not(.warn) { border-top-width: 4px; }
     .slide .pg { display: block; width: max-content; margin: 10px 0 0 auto; font-size: 14px; padding: 3px 12px 4px; }
 }
+
+/* ===== 검수 정리 v3 ===== */
+/* 1) 줄바꿈: 짧은 구절(단어·단어, 괄호 안 구절)은 줄 중간에서 끊기지 않게, 고아(한두 글자만 남는 줄) 완화 */
+.nw { white-space: nowrap; }
+.slide p, .slide li, .slide td, .slide th, .slide h3, .slide .card { text-wrap: pretty; }
+
+/* 2) 쪽번호 컨트롤: 두 자리 쪽수에서도 막대가 흔들리지 않게 폭 고정 */
+#count { min-width: 80px; font-variant-numeric: tabular-nums; }
+
+/* 3) 모바일 보정 */
+.swipe-hint { display: none; }
+@media (max-width: 820px) and (orientation: portrait) {
+    /* 가로로 밀어야 보이는 SVG 위에 안내 문구 (.swipe-hint) */
+    .swipe-hint { display: block; text-align: center; font-size: 14px; font-weight: 700; color: var(--ink-dim); margin: 0 0 6px; }
+    /* 표 글자는 16px 이상 */
+    table.t, table.t th, table.t td { font-size: 16px !important; }
+    /* 번호 카드: 번호 원을 글 왼쪽에 두고 가로 배치 */
+    .card.step { position: relative; min-height: 72px; padding-left: 66px !important; }
+    .card.step .no { position: absolute; left: 14px; top: 12px; margin: 0; }
+    .card.step .no + br { display: none; }
+    .card.step > h3:first-of-type { margin-top: 0; }
+}
+
+/* ===== 검수 정리 v3 (단원별 조정) ===== */
+/* 같은 줄 카드 높이 맞춤 */
+.fx-st .grid { align-items: stretch; }
+/* 오해 표 장: 표를 슬라이드 폭에 맞추고, 오해 카드는 아래에 2단으로 */
+.fx-mis { grid-template-columns: 1fr !important; gap: 22px; }
+.fx-mis table.t { table-layout: fixed; width: 100%; }
+.fx-mis table.t th:nth-child(1) { width: 21%; }
+.fx-mis table.t th:nth-child(2), .fx-mis table.t th:nth-child(3) { width: 39.5%; }
+.fx-mis table.t td:first-child { white-space: normal; }
+.fx-mis .card.warn ul.l { column-count: 2; column-gap: 48px; }
+.fx-mis .card.warn ul.l li { break-inside: avoid; }
+@media (max-width: 820px) and (orientation: portrait) {
+    .fx-mis table.t { table-layout: auto; }
+    .fx-mis table.t th:nth-child(n) { width: auto; }
+    .fx-mis table.t td:first-child { white-space: normal; }
+    .fx-mis .card.warn ul.l { column-count: 1; font-size: inherit !important; }
+}
+
+/* u10 8번 제목: 가운뎃점 간격 */
+h2 .dot { margin: 0 .16em; }
+/* 보조 설명을 별도 줄로 */
+.fx-ref { display: block; margin-top: 10px; }
+/* u11 6번: 보조 설명을 카드 아래쪽에 맞춰 줄 정렬 */
+.fx-col .card.hl { display: flex; flex-direction: column; }
+.fx-col .card.hl p.dim { margin-top: auto !important; padding-top: 10px; }
+/* u11 9번: 왼쪽 카드 글자와 간격 키움 */
+.fx-s9 .grid .card.hl { display: flex; flex-direction: column; }
+.fx-s9 .grid .card.hl ul.l { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; font-size: 1.18em; }
+.fx-s9 .grid .card.hl ul.l li { margin-bottom: 0; }
+/* 문장 단위로 줄을 나눈 카드 */
+.fx-ln { display: block; margin-top: 10px; }
+.fx-ln:first-child { margin-top: 0; }
+.fx-lh { line-height: 1.6; }
+/* 번호 카드 글줄 균형 */
+.card.step { text-wrap: balance; }
+@media (max-width: 820px) and (orientation: portrait) {
+    table.t td, table.t th { text-wrap: balance; }
+    .fx-s9 .grid .card.hl ul.l { font-size: inherit; display: block; }
+    .fx-s9 .grid .card.hl ul.l li { margin-bottom: 8px; }
+    .cover p { text-wrap: balance; }
+}
 </style>
 
 </head>
@@ -316,16 +380,16 @@ table.t th b, table.t th strong { color: inherit; }
 <g stroke="#2f7d46" stroke-width="4" stroke-linecap="round" opacity=".7"><path d="M1040 1000 l-6 -26 M1050 1000 l2 -30 M1060 1000 l8 -24"/><path d="M1700 960 l-6 -24 M1710 960 l3 -28"/></g>
 </svg>
     <div class="copy">
-    <div class="kicker reveal">1학년 2학기 사회 · 10단원 요약 정리</div>
+    <div class="kicker reveal">1학년 2학기 사회 · 10단원 요약 정리</div>
     <h1 class="reveal">정치과정과 <span>시민 참여</span></h1>
     <div class="rule reveal"></div>
-    <p class="reveal">선거와 민주 정치 · 정치 주체의 역할과 정치과정 · 지방 자치와 시민 참여</p>
+    <p class="reveal">선거와 민주 정치 · 정치 주체의 역할과 정치과정 · 지방 자치와 시민 참여</p>
     </div>
     <div class="sign" aria-hidden="true"><div class="board">10<small>단원</small></div><div class="post"></div></div>
 </section>
 
 <!-- === 2. 단원 개요 === -->
-<section class="slide" style="--z:1.3">
+<section class="slide fx-st" style="--z:1.3">
     <div class="kicker">단원 개요</div>
     <h2>시민은 정치에 어떻게 참여할까 <small>교과서 p.182~199</small></h2>
     <div class="grid g3">
@@ -333,16 +397,16 @@ table.t th b, table.t th strong { color: inherit; }
             <h3>1. 선거와 민주 정치</h3>
             <p class="ref">p.182~186</p>
             <ul class="l">
-                <li>선거의 의미와 기능</li>
-                <li>선거의 기본 원칙</li>
-                <li>유권자·정당의 활동</li>
+                <li>선거의 의미와 기능</li>
+                <li>선거의 기본 원칙</li>
+                <li><span class="nw">유권자⁠·정당의</span> 활동</li>
             </ul>
         </div>
         <div class="card hl reveal">
             <h3>2. 정치 주체와 정치과정</h3>
             <p class="ref">p.187~191</p>
             <ul class="l">
-                <li>정치 주체의 종류와 역할</li>
+                <li>정치 주체의 종류와 역할</li>
                 <li>정치과정의 단계</li>
             </ul>
         </div>
@@ -350,15 +414,15 @@ table.t th b, table.t th strong { color: inherit; }
             <h3>3. 지방 자치와 시민 참여</h3>
             <p class="ref">p.192~195</p>
             <ul class="l">
-                <li>지방 자치의 의미</li>
-                <li>지방 자치 단체의 구성</li>
-                <li>주민 참여 방법</li>
+                <li>지방 자치의 의미</li>
+                <li>지방 자치 단체의 구성</li>
+                <li>주민 참여 방법</li>
             </ul>
         </div>
     </div>
     <div class="card reveal" style="margin-top:24px">
-        <h3>공부 방법 (일반사회 · 정치)</h3>
-        <p>사례를 읽고 <b>어떤 원칙·주체·단계인지 판별</b>하는 문제가 중심이다. 선거 4원칙, 정치 주체별 역할, 정치과정 순서를 정확히 외운다.</p>
+        <h3>공부 방법 (일반사회 · 정치)</h3>
+        <p>사례를 읽고 <b>어떤 <span class="nw">원칙⁠·주체⁠·단계인지</span> 판별</b>하는 문제가 중심이다. 선거 4원칙, 정치 주체별 역할, 정치과정 순서를 정확히 외운다.</p>
     </div>
     <div class="pg">2</div>
 </section>
@@ -368,14 +432,14 @@ table.t th b, table.t th strong { color: inherit; }
     <div class="kicker">1 선거와 민주 정치</div>
     <h2>선거의 의미와 기능 <small>p.183</small></h2>
     <div class="card hl reveal" style="margin-bottom:22px">
-        <b>선거</b> : 대의 민주주의에서 국민을 대신할 <b>대표를 뽑는 과정</b>. 국민이 정치과정에 참여하는 가장 기본적이고 대표적인 방법이라 "<b>민주주의의 꽃</b>"이라고도 한다.
+        <b>선거</b> : 대의 민주주의에서 국민을 대신할 <b>대표를 뽑는 과정</b>. 국민이 정치과정에 참여하는 가장 기본적이고 대표적인 방법이라 "<b>민주주의의 꽃</b>"이라고도 한다.
     </div>
     <h3>선거의 기능 4가지</h3>
     <div class="grid g4 reveal">
-        <div class="card step"><span class="no">1</span><br><b>대표자를 뽑는다</b><br>(가장 기본 기능)</div>
-        <div class="card step"><span class="no">2</span><br>대표자에게 <b>정당성</b>을 부여한다. 공식 절차를 거쳐 자발적 지지를 받은 대표자에게 합법적·정당한 권한이 주어진다.</div>
-        <div class="card step"><span class="no">3</span><br>대표자를 <b>통제하고 교체</b>한다. 역할을 잘 못한 대표자나 그 정당의 후보자를 다음 선거에서 뽑지 않을 수 있다 (책임 정치).</div>
-        <div class="card step"><span class="no">4</span><br>국민이 <b>정치에 참여</b>하게 한다. 투표권 행사, 정책·공약을 알아보며 정책 결정 과정에 참여한다.</div>
+        <div class="card step"><span class="no">1</span><br><b>대표자를 뽑는다</b><br><span class="nw">(가장 기본 기능)</span></div>
+        <div class="card step"><span class="no">2</span><br>대표자에게 <b>정당성</b>을 부여한다. 공식 절차를 거쳐 자발적 지지를 받은 대표자에게 <span class="nw">합법적⁠·정당한</span> 권한이 주어진다.</div>
+        <div class="card step"><span class="no">3</span><br>대표자를 <b>통제하고 교체</b>한다. 역할을 잘 못한 대표자나 그 정당의 후보자를 다음 선거에서 뽑지 않을 수 있다 <span class="nw">(책임 정치).</span></div>
+        <div class="card step"><span class="no">4</span><br>국민이 <b>정치에 참여</b>하게 한다. 투표권 행사, <span class="nw">정책⁠·공약을</span> 알아보며 정책 결정 과정에 참여한다.</div>
     </div>
     <div class="pg">3</div>
 </section>
@@ -385,11 +449,11 @@ table.t th b, table.t th strong { color: inherit; }
     <div class="kicker">1 선거와 민주 정치</div>
     <h2>우리나라의 선거 과정 6단계 <small>p.183</small></h2>
     <div class="grid g3 reveal">
-        <div class="card step"><span class="no">1</span><br><h3>선거인 명부 작성</h3>시·군·구의 장이 관할 구역 주민 등록자를 조사해 투표할 수 있는 사람의 명단을 만든다.</div>
+        <div class="card step"><span class="no">1</span><br><h3>선거인 명부 작성</h3><span class="nw">시⁠·군⁠·구의</span> 장이 관할 구역 주민 등록자를 조사해 투표할 수 있는 사람의 명단을 만든다.</div>
         <div class="card step"><span class="no">2</span><br><h3>후보자 등록</h3>대표가 되기를 원하는 사람이 관할 선거구 선거 관리 위원회에 서면으로 신청한다.</div>
         <div class="card step"><span class="no">3</span><br><h3>선거 운동</h3>정해진 기간에 거리 유세, 후보자 토론 등을 한다.</div>
         <div class="card step"><span class="no">4</span><br><h3>투표</h3>유권자가 정해진 날짜에 지정된 투표소에서 투표한다.</div>
-        <div class="card step"><span class="no">5</span><br><h3>개표 및 당선인 결정</h3>투표함을 개표소로 옮겨 투표용지를 확인하고 후보자·정당별 득표수를 계산한다.</div>
+        <div class="card step"><span class="no">5</span><br><h3>개표 및 당선인 결정</h3>투표함을 개표소로 옮겨 투표용지를 확인하고 <span class="nw">후보자⁠·정당별</span> 득표수를 계산한다.</div>
         <div class="card step"><span class="no">6</span><br><h3>당선증 발급</h3>당선인이 선거 관리 위원회에서 당선증을 받고 일정 기간 대표자로서 일한다.</div>
     </div>
     <div class="card hl reveal" style="margin-top:24px">
@@ -401,16 +465,16 @@ table.t th b, table.t th strong { color: inherit; }
 <!-- === 5. 선거의 기본 원칙 === -->
 <section class="slide" style="--z:1.3">
     <div class="kicker">1 선거와 민주 정치</div>
-    <h2>선거의 기본 원칙 4가지 <small>p.184 · 헌법 규정</small></h2>
+    <h2>선거의 기본 원칙 4가지 <small>p.184 · 헌법 규정</small></h2>
     <table class="t reveal">
-        <tr><th style="width:17%">원칙</th><th style="width:43%">뜻</th><th>위반 사례 (활동)</th></tr>
-        <tr><td>보통 선거</td><td>성별·인종·재산·학력 등에 관계없이 일정한 나이 이상의 모든 국민에게 선거권을 준다</td><td>전학 온 지 얼마 안 된 친구는 투표 불가 / 재산·성별에 따라 선거권 제한</td></tr>
-        <tr><td>평등 선거</td><td>모든 사람이 행사하는 표의 개수와 가치가 같다</td><td>성적이 좋으면 두 표를 줌</td></tr>
-        <tr><td>직접 선거</td><td>선거권을 가진 사람이 직접 투표한다</td><td>결석한 친구를 대신해 투표</td></tr>
-        <tr><td>비밀 선거</td><td>어느 후보자에게 투표했는지 다른 사람이 알지 못하도록 보장한다</td><td>손을 들어 투표</td></tr>
+        <tr><th style="width:17%">원칙</th><th style="width:43%">뜻</th><th>위반 사례 <span class="nw">(활동)</span></th></tr>
+        <tr><td>보통 선거</td><td><span class="nw">성별⁠·인종⁠·재산⁠·학력</span> 등에 관계없이 일정한 나이 이상의 모든 국민에게 선거권을 준다</td><td>전학 온 지 얼마 안 된 친구는 투표 불가 / <span class="nw">재산⁠·성별에</span> 따라 선거권 제한</td></tr>
+        <tr><td>평등 선거</td><td>모든 사람이 행사하는 표의 개수와 가치가 같다</td><td>성적이 좋으면 두 표를 줌</td></tr>
+        <tr><td>직접 선거</td><td>선거권을 가진 사람이 직접 투표한다</td><td>결석한 친구를 대신해 투표</td></tr>
+        <tr><td>비밀 선거</td><td>어느 후보자에게 투표했는지 다른 사람이 알지 못하도록 보장한다</td><td>손을 들어 투표</td></tr>
     </table>
     <div class="card reveal" style="margin-top:24px">
-        <b>선거</b> = 대표를 뽑는 것 / <b>투표</b> = 선거를 하거나 찬성·반대를 결정할 때 투표용지에 의사를 표시하는 것
+        <b>선거</b> = 대표를 뽑는 것 / <b>투표</b> = 선거를 하거나 <span class="nw">찬성⁠·반대를</span> 결정할 때 투표용지에 의사를 표시하는 것
     </div>
     <div class="pg">5</div>
 </section>
@@ -423,20 +487,20 @@ table.t th b, table.t th strong { color: inherit; }
         <div class="card hl reveal">
             <h3>유권자의 활동</h3>
             <ul class="l">
-                <li><b>유권자</b> : 선거할 권리를 가진 사람.</li>
-                <li>선거 공보·선거 벽보·정당 누리집·정책 토론회 등을 보며 정당과 후보자의 <b>공약을 비교·분석</b>하고, 자신이 지향하는 가치·신념을 구현해 줄 후보자에게 투표한다.</li>
-                <li>후보자의 <b>자질과 능력</b>을 살펴 올바른 대표자를 뽑는다.</li>
-                <li>투표 참여 캠페인, 정책·공약 제안으로 <b>올바른 선거 문화</b>를 만든다.</li>
+                <li><b>유권자</b> : 선거할 권리를 가진 사람.</li>
+                <li>선거 <span class="nw">공보⁠·선거</span> <span class="nw">벽보⁠·정당</span> <span class="nw">누리집⁠·정책</span> 토론회 등을 보며 정당과 후보자의 <b>공약을 <span class="nw">비교⁠·분석</span></b>하고, 자신이 지향하는 <span class="nw">가치⁠·신념을</span> 구현해 줄 후보자에게 투표한다.</li>
+                <li>후보자의 <b>자질과 능력</b>을 살펴 올바른 대표자를 뽑는다.</li>
+                <li>투표 참여 캠페인, <span class="nw">정책⁠·공약</span> 제안으로 <b>올바른 선거 문화</b>를 만든다.</li>
             </ul>
-            <p class="ref">선거 공보 = 후보자의 사진·성명·기호·경력·공약·소속 정당 정책 등을 실은 인쇄물</p>
+            <p class="ref">선거 공보 = 후보자의 사진⁠·성명⁠·기호⁠·경력⁠·공약⁠·소속 정당 정책 등을 실은 인쇄물</p>
         </div>
         <div class="card reveal">
             <h3>정당의 활동</h3>
             <ul class="l">
-                <li><b>정당</b> : 비슷한 정치적 입장을 가진 사람들이 공공의 이익을 실현하고 <b>정치권력을 획득</b>하고자 만든 집단.</li>
-                <li><b>여당</b> : 대통령을 배출해 정권을 잡은 정당 / <b>야당</b> : 여당을 제외한 나머지 정당.</li>
-                <li><b>공천</b> : 정당이 선거에 출마할 후보자를 공식적으로 추천하는 것.</li>
-                <li>정책을 공약으로 제시, 설명회·토론회·공청회에서 이념·정책을 알려 정치에 대한 관심과 참여를 유도하는 <b>정치 사회화 기능</b>.</li>
+                <li><b>정당</b> : 비슷한 정치적 입장을 가진 사람들이 공공의 이익을 실현하고 <b>정치권력을 획득</b>하고자 만든 집단.</li>
+                <li><b>여당</b> : 대통령을 배출해 정권을 잡은 정당 / <b>야당</b> : 여당을 제외한 나머지 정당.</li>
+                <li><b>공천</b> : 정당이 선거에 출마할 후보자를 공식적으로 추천하는 것.</li>
+                <li>정책을 공약으로 제시, <span class="nw">설명회⁠·토론회⁠·공청회에서</span> <span class="nw">이념⁠·정책을</span> 알려 정치에 대한 관심과 참여를 유도하는 <b>정치 사회화 기능</b>.</li>
             </ul>
         </div>
     </div>
@@ -448,30 +512,30 @@ table.t th b, table.t th strong { color: inherit; }
     <div class="kicker">2 정치 주체의 역할과 정치과정</div>
     <h2>정치 주체와 국가기관 <small>p.188~189</small></h2>
     <div class="card hl reveal" style="margin-bottom:22px">
-        <b>정치 주체</b> : 자신의 이익이나 가치에 따라 다양한 의견·요구를 표출하고 공동체의 의사 결정에 영향력을 행사하는 개인이나 집단. 종류 : <b>국가기관(국회·정부·법원), 정당, 이익 집단, 시민단체, 언론, 개인</b> 등.
+        <b>정치 주체</b> : 자신의 이익이나 가치에 따라 다양한 <span class="nw">의견⁠·요구를</span> 표출하고 공동체의 의사 결정에 영향력을 행사하는 개인이나 집단. 종류 : <b><span class="nw">국가기관(국회⁠·정부⁠·법원),</span> 정당, 이익 집단, 시민단체, 언론, 개인</b> 등.
     </div>
     <div class="grid g3 reveal">
-        <div class="card"><h3>국회</h3>국민의 요구를 반영해 <b>법률을 제정·개정·폐지</b>한다.</div>
+        <div class="card"><h3>국회</h3>국민의 요구를 반영해 <b>법률을 <span class="nw">제정⁠·개정⁠·폐지</span></b>한다.</div>
         <div class="card"><h3>정부</h3>법을 기반으로 정책을 구체적으로 <b>만들고 집행</b>한다.</div>
-        <div class="card"><h3>법원</h3>정책 집행 중 발생한 분쟁·갈등을 <b>재판</b>으로 해결한다.</div>
+        <div class="card"><h3>법원</h3>정책 집행 중 발생한 <span class="nw">분쟁⁠·갈등을</span> <b>재판</b>으로 해결한다.</div>
     </div>
     <div class="card reveal" style="margin-top:24px">
         <h3>정당</h3>
-        <p>국민의 다양한 의견·요구를 수렴해 <b>여론을 집약</b>하고 법 제정·정책에 반영하려 노력한다. 정책 집행 과정에서 국가기관을 지지하거나 비판하며 새 정책·수정 정책을 제시한다.</p>
+        <p>국민의 다양한 <span class="nw">의견⁠·요구를</span> 수렴해 <b>여론을 집약</b>하고 법 <span class="nw">제정⁠·정책에</span> 반영하려 노력한다. 정책 집행 과정에서 국가기관을 지지하거나 비판하며 새 <span class="nw">정책⁠·수정</span> 정책을 제시한다.</p>
     </div>
     <div class="pg">7</div>
 </section>
 
-<!-- === 8. 이익 집단·시민단체·언론·개인 === -->
+<!-- === 8. 이익 집단⁠·시민단체⁠·언론⁠·개인 === -->
 <section class="slide" style="--z:1.3">
     <div class="kicker">2 정치 주체의 역할과 정치과정</div>
-    <h2>이익 집단·시민단체·언론·개인 <small>p.188~189</small></h2>
+    <h2>이익 집단<span class="dot">⁠·</span>시민단체<span class="dot">⁠·</span>언론<span class="dot">⁠·</span>개인 <small>p.188~189</small></h2>
     <table class="t reveal" style="font-size:25px">
         <tr><th style="width:15%">주체</th><th>역할</th></tr>
-        <tr><td>이익 집단</td><td>이해관계를 같이하는 사람들이 국회·정부에 압력을 행사해 자신의 <b>특수한 이익</b>을 실현하려고 만든 단체. 전문 지식으로 해결책을 제시하기도 하나, 집단 이익만 지나치게 추구하면 공공의 이익과 충돌해 혼란을 줄 수 있다.</td></tr>
-        <tr><td>시민단체</td><td><b>공익</b>을 실현하고자 시민들이 자발적으로 만든 단체. 시민의 정치 참여 유도·여론 형성·대안 제시, 국가기관이 하는 일을 <b>감시·비판</b>한다.</td></tr>
-        <tr><td>언론</td><td>신문·텔레비전·인터넷으로 정치과정 정보 제공, 정책 해설·의견 제시, 다른 정치 주체의 활동을 감시·비판. 여론 형성에 주도적이므로 <b>공정하고 객관적인 보도</b>를 해야 한다.</td></tr>
-        <tr><td>개인</td><td>선거·투표로 영향력 행사, 행정 기관에 청원·민원 제기, 언론사·SNS에 의견 표현, 서명 운동·집회 참여.</td></tr>
+        <tr><td>이익 집단</td><td>이해관계를 같이하는 사람들이 <span class="nw">국회⁠·정부에</span> 압력을 행사해 자신의 <b>특수한 이익</b>을 실현하려고 만든 단체. 전문 지식으로 해결책을 제시하기도 하나, 집단 이익만 지나치게 추구하면 공공의 이익과 충돌해 혼란을 줄 수 있다.</td></tr>
+        <tr><td>시민단체</td><td><b>공익</b>을 실현하고자 시민들이 자발적으로 만든 단체. 시민의 정치 참여 <span class="nw">유도⁠·여론</span> <span class="nw">형성⁠·대안</span> 제시, 국가기관이 하는 일을 <b><span class="nw">감시⁠·비판</span></b>한다.</td></tr>
+        <tr><td>언론</td><td><span class="nw">신문⁠·텔레비전⁠·인터넷으로</span> 정치과정 정보 제공, 정책 <span class="nw">해설⁠·의견</span> 제시, 다른 정치 주체의 활동을 <span class="nw">감시⁠·비판.</span> 여론 형성에 주도적이므로 <b>공정하고 객관적인 보도</b>를 해야 한다.</td></tr>
+        <tr><td>개인</td><td><span class="nw">선거⁠·투표로</span> 영향력 행사, 행정 기관에 <span class="nw">청원⁠·민원</span> 제기, <span class="nw">언론사⁠·SNS에</span> 의견 표현, 서명 <span class="nw">운동⁠·집회</span> 참여.</td></tr>
     </table>
     <div class="pg">8</div>
 </section>
@@ -481,18 +545,18 @@ table.t th b, table.t th strong { color: inherit; }
     <div class="kicker">2 정치 주체의 역할과 정치과정</div>
     <h2>정치과정의 단계 <small>p.190~191, 198</small></h2>
     <div class="card hl reveal" style="margin-bottom:20px">
-        <b>정치과정</b> : 정치 주체의 다양한 요구를 수렴하고 갈등을 조정하여 민주적이고 합리적인 절차에 따라 <b>정책을 결정·집행</b>하는 과정. 다양한 가치와 이익이 조정되면서 <b>사회 통합과 발전</b>을 이룰 수 있다.
+        <b>정치과정</b> : 정치 주체의 다양한 요구를 수렴하고 갈등을 조정하여 민주적이고 합리적인 절차에 따라 <b>정책을 <span class="nw">결정⁠·집행</span></b>하는 과정. 다양한 가치와 이익이 조정되면서 <b>사회 통합과 발전</b>을 이룰 수 있다.
     </div>
     <div class="grid g5 reveal">
-        <div class="card step"><span class="no">1</span><br><b>이익 표출</b><br>개인·집단이 요구를 드러냄</div>
+        <div class="card step"><span class="no">1</span><br><b>이익 표출</b><br><span class="nw">개인⁠·집단이</span> 요구를 드러냄</div>
         <div class="card step"><span class="no">2</span><br><b>이익 집약</b><br><b>언론과 정당</b>이 모아 요약</div>
-        <div class="card step"><span class="no">3</span><br><b>정책 결정</b><br><b>국회와 정부</b>가 수립·결정</div>
+        <div class="card step"><span class="no">3</span><br><b>정책 결정</b><br><b>국회와 정부</b>가 <span class="nw">수립⁠·결정</span></div>
         <div class="card step"><span class="no">4</span><br><b>정책 집행</b><br><b>정부</b>가 집행</div>
-        <div class="card step"><span class="no">5</span><br><b>정책 평가</b><br><b>국민</b>이 평가·수정 요구</div>
+        <div class="card step"><span class="no">5</span><br><b>정책 평가</b><br><b>국민</b>이 <span class="nw">평가⁠·수정</span> 요구</div>
     </div>
     <div class="card reveal" style="margin-top:20px">
-        <h3>어린이 보호 구역 사례 (p.190)</h3>
-        <p>학부모·시민단체의 요구(이익 표출) → 방송사의 취재·보도(이익 집약) → 국회의 법 개정안 통과(정책 결정) → 정부의 단속(정책 집행) → 시행 후 불편 민원(정책 평가). 평가는 다시 이익 표출 등 정치과정에 반영된다(환류). <span class="ref">집약 = 여럿을 한군데로 모아서 요약하는 것</span></p>
+        <h3>어린이 보호 구역 사례 <span class="nw">(p.190)</span></h3>
+        <p><span class="nw">학부모⁠·시민단체의</span> <span class="nw">요구(이익 표출)</span> → 방송사의 <span class="nw">취재⁠·보도(이익 집약)</span> → 국회의 법 개정안 <span class="nw">통과(정책 결정)</span> → 정부의 <span class="nw">단속(정책 집행)</span> → 시행 후 불편 <span class="nw">민원(정책 평가).</span> 평가는 다시 이익 표출 등 정치과정에 <span class="nw">반영된다(환류).</span> <span class="ref fx-ref">집약 = 여럿을 한군데로 모아서 요약하는 것</span></p>
     </div>
     <div class="pg">9</div>
 </section>
@@ -504,7 +568,7 @@ table.t th b, table.t th strong { color: inherit; }
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>지방 자치</h3>
-            <p>일정한 지역에 사는 <b>주민들이 그 지역의 일을 스스로 처리</b>하는 것. 우리나라는 지방 자치 제도를 시행한다.</p>
+            <p>일정한 지역에 사는 <b>주민들이 그 지역의 일을 스스로 처리</b>하는 것. 우리나라는 지방 자치 제도를 시행한다.</p>
             <ul class="l" style="margin-top:10px">
                 <li>주민이 주체가 되어 지역 문제를 해결하며 민주주의를 배우고 실천 → <b>'민주주의의 학교'</b></li>
                 <li>주민의 자발적 정치 참여로 민주주의의 기초를 다지고 발전 → <b>'풀뿌리 민주주의'</b></li>
@@ -521,11 +585,11 @@ table.t th b, table.t th strong { color: inherit; }
                 <line x1="430" y1="75" x2="430" y2="95" stroke="#2b6cb0" stroke-width="2"/>
                 <rect x="10" y="95" width="240" height="115" rx="8" fill="#eaf6e6" stroke="#2b6cb0"/>
                 <text x="130" y="125" text-anchor="middle" font-size="26" font-weight="700" fill="#1b2f63">광역 자치 단체</text>
-                <text x="130" y="158" text-anchor="middle" font-size="22" fill="#44557a">특별시·광역시·도</text>
-                <text x="130" y="188" text-anchor="middle" font-size="22" fill="#44557a">특별자치도·특별자치시</text>
+                <text x="130" y="158" text-anchor="middle" font-size="22" fill="#44557a">특별시⁠·광역시⁠·도</text>
+                <text x="130" y="188" text-anchor="middle" font-size="22" fill="#44557a">특별자치도⁠·특별자치시</text>
                 <rect x="310" y="95" width="240" height="115" rx="8" fill="#eaf6e6" stroke="#2b6cb0"/>
                 <text x="430" y="125" text-anchor="middle" font-size="26" font-weight="700" fill="#1b2f63">기초 자치 단체</text>
-                <text x="430" y="170" text-anchor="middle" font-size="24" fill="#44557a">시·군·구</text>
+                <text x="430" y="170" text-anchor="middle" font-size="24" fill="#44557a">시⁠·군⁠·구</text>
                 <path d="M130 210 V225 M430 210 V225 M130 225 H430" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="5 4"/><path d="M150 225 V240 M410 225 V240" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="5 4"/>
                 <rect x="40" y="240" width="220" height="75" rx="8" fill="#ffffff" stroke="#2b6cb0"/>
                 <text x="150" y="270" text-anchor="middle" font-size="24" font-weight="700" fill="#a3430a">지방 의회</text>
@@ -545,16 +609,16 @@ table.t th b, table.t th strong { color: inherit; }
     <h2>지방 의회와 지방 자치 단체장 <small>p.193, 195</small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
-            <h3>지방 의회 (의결 기관)</h3>
+            <h3>지방 의회 <span class="nw">(의결 기관)</span></h3>
             <ul class="l">
-                <li>지역 실정에 맞는 <b>조례</b>를 제정·개정·폐지한다.</li>
-                <li><b>예산</b>을 심의·의결한다.</li>
+                <li>지역 실정에 맞는 <b>조례</b>를 <span class="nw">제정⁠·개정⁠·폐지한다.</span></li>
+                <li><b>예산</b>을 <span class="nw">심의⁠·의결한다.</span></li>
                 <li>행정 사무 <b>감사</b>를 한다.</li>
             </ul>
-            <p class="ref">조례 = 지방의 사무를 운영하기 위해 각 지방 의회가 제정하는 법</p>
+            <p class="ref">조례 = 지방의 사무를 운영하기 위해 각 지방 의회가 제정하는 법</p>
         </div>
         <div class="card hl reveal">
-            <h3>지방 자치 단체장 (집행 기관)</h3>
+            <h3>지방 자치 단체장 <span class="nw">(집행 기관)</span></h3>
             <ul class="l">
                 <li>지방 자치 단체를 <b>대표</b>한다.</li>
                 <li>각종 <b>행정 사무</b>를 처리한다.</li>
@@ -563,22 +627,22 @@ table.t th b, table.t th strong { color: inherit; }
         </div>
     </div>
     <div class="card warn reveal" style="margin-top:24px">
-        <h3>헷갈리지 말 것 (p.195)</h3>
-        <p>"지방 자치 단체장은 조례를 만들고 예산을 의결한다" (X) → 조례 제정과 예산 의결은 <b>지방 의회</b>의 일이다. 단체장은 조례를 <b>실행</b>하고 예산을 <b>집행</b>한다.</p>
+        <h3>헷갈리지 말 것 <span class="nw">(p.195)</span></h3>
+        <p>"지방 자치 단체장은 조례를 만들고 예산을 의결한다" <span class="nw">(X)</span> → 조례 제정과 예산 의결은 <b>지방 의회</b>의 일이다. 단체장은 조례를 <b>실행</b>하고 예산을 <b>집행</b>한다.</p>
     </div>
     <div class="pg">11</div>
 </section>
 
 <!-- === 12. 주민 참여 방법 === -->
-<section class="slide" style="--z:1.15">
+<section class="slide fx-st" style="--z:1.15">
     <div class="kicker">3 지방 자치와 시민 참여</div>
     <h2>지역사회 문제 해결을 위한 시민 참여 <small>p.194~195</small></h2>
     <div class="card hl reveal" style="margin-bottom:20px">
-        <b>가장 기본</b> : <b>지방 선거</b> (지방 자치 단체장·지방 의회 의원 선출). 이 밖에 집회·서명·공청회로 의견을 표현하고 여론을 형성한다.
+        <b>가장 기본</b> : <b>지방 선거</b> (지방 자치 <span class="nw">단체장⁠·지방</span> 의회 의원 선출). 이 밖에 <span class="nw">집회⁠·서명⁠·공청회로</span> 의견을 표현하고 여론을 형성한다.
     </div>
     <div class="grid g2">
-        <div class="card reveal"><h3>주민 투표제</h3>지역의 중요한 사항·정책을 <b>주민의 투표로 직접 결정</b>한다.</div>
-        <div class="card reveal"><h3>주민 소환제</h3>지방 자치 단체장·지방 의회 의원(비례 대표 제외) 및 교육감의 <b>해임 여부를 투표로 결정</b>한다.</div>
+        <div class="card reveal"><h3>주민 투표제</h3>지역의 중요한 <span class="nw">사항⁠·정책을</span> <b>주민의 투표로 직접 결정</b>한다.</div>
+        <div class="card reveal"><h3>주민 소환제</h3>지방 자치 <span class="nw">단체장⁠·지방</span> 의회 <span class="nw">의원(비례 대표 제외)</span> 및 교육감의 <b>해임 여부를 투표로 결정</b>한다.</div>
         <div class="card reveal"><h3>주민 청원제</h3>지역 행정에 관한 요구 사항을 <b>문서로 직접 제출</b>한다.</div>
         <div class="card reveal"><h3>주민 참여 예산제</h3>지방 자치 단체의 <b>예산 편성 과정</b>에 주민이 직접 참여한다.</div>
     </div>
@@ -589,25 +653,25 @@ table.t th b, table.t th strong { color: inherit; }
 </section>
 
 <!-- === 13. 꼭 기억할 것 === -->
-<section class="slide" style="--z:1.3">
+<section class="slide fx-st" style="--z:1.3">
     <div class="kicker">꼭 기억할 것</div>
     <h2>핵심 암기 정리</h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>선거의 기능 4가지</b> : 대표자 선출 / 정당성 부여 / 통제·교체 / 정치 참여.</li>
-                <li><b>선거 과정</b> : 선거인 명부 → 후보자 등록 → 선거 운동 → 투표 → 개표·당선인 결정 → 당선증 발급.</li>
-                <li><b>선거 4원칙</b> : 보통·평등·직접·비밀.</li>
-                <li><b>정당</b> : 공천, 공약 제시, 정치 사회화 기능. 여당(정권) / 야당(나머지).</li>
-                <li><b>정치 주체</b> : 국가기관(국회·정부·법원), 정당, 이익 집단, 시민단체, 언론, 개인.</li>
+                <li><b>선거의 기능 4가지</b> : 대표자 선출 / 정당성 부여 / <span class="nw">통제⁠·교체</span> / 정치 참여.</li>
+                <li><b>선거 과정</b> : 선거인 명부 → 후보자 등록 → 선거 운동 → 투표 → <span class="nw">개표⁠·당선인</span> 결정 → 당선증 발급.</li>
+                <li><b>선거 4원칙</b> : <span class="nw">보통⁠·평등⁠·직접⁠·비밀.</span></li>
+                <li><b>정당</b> : 공천, 공약 제시, 정치 사회화 기능. <span class="nw">여당(정권)</span> / <span class="nw">야당(나머지).</span></li>
+                <li><b>정치 주체</b> : <span class="nw">국가기관(국회⁠·정부⁠·법원),</span> 정당, 이익 집단, 시민단체, 언론, 개인.</li>
             </ul>
         </div>
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>정치과정</b> : 이익 표출 → 이익 집약(언론·정당) → 정책 결정(국회·정부) → 정책 집행(정부) → 정책 평가(국민).</li>
-                <li><b>지방 자치</b> = 민주주의의 학교, 풀뿌리 민주주의. 광역(특별시·광역시·도 등) / 기초(시·군·구).</li>
-                <li><b>지방 의회</b> : 조례·예산·감사 / <b>단체장</b> : 대표·행정 사무·규칙·예산 집행.</li>
-                <li><b>주민 참여</b> : 지방 선거, 주민 투표·소환·청원·참여 예산제.</li>
+                <li><b>정치과정</b> : 이익 표출 → 이익 <span class="nw">집약(언론⁠·정당)</span> → 정책 <span class="nw">결정(국회⁠·정부)</span> → 정책 <span class="nw">집행(정부)</span> → 정책 <span class="nw">평가(국민).</span></li>
+                <li><b>지방 자치</b> = 민주주의의 학교, 풀뿌리 민주주의. <span class="nw">광역(특별시⁠·광역시⁠·도 등)</span> / <span class="nw">기초(시⁠·군⁠·구).</span></li>
+                <li><b>지방 의회</b> : <span class="nw">조례⁠·예산⁠·감사</span> / <b>단체장</b> : <span class="nw">대표⁠·행정</span> <span class="nw">사무⁠·규칙⁠·예산</span> 집행.</li>
+                <li><b>주민 참여</b> : 지방 선거, 주민 <span class="nw">투표⁠·소환⁠·청원⁠·참여</span> 예산제.</li>
             </ul>
         </div>
     </div>
@@ -621,18 +685,18 @@ table.t th b, table.t th strong { color: inherit; }
     <div class="grid g2" style="grid-template-columns:1.25fr 1fr">
         <table class="t reveal" style="font-size:25px">
             <tr><th>비교 항목</th><th>앞의 개념</th><th>뒤의 개념</th></tr>
-            <tr><td>이익 집단 vs 시민단체</td><td>구성원의 <b>특수한 이익</b> 실현</td><td><b>공익</b> 실현</td></tr>
-            <tr><td>여당 vs 야당</td><td>대통령을 배출한 정당</td><td>여당을 제외한 정당</td></tr>
-            <tr><td>주민 투표 vs 소환</td><td>중요 정책을 직접 결정</td><td>단체장·의원 해임 여부 결정</td></tr>
-            <tr><td>이익 표출 vs 집약</td><td>요구를 드러냄</td><td>언론·정당이 모아 요약</td></tr>
+            <tr><td>이익 집단 vs 시민단체</td><td>구성원의 <b>특수한 이익</b> 실현</td><td><b>공익</b> 실현</td></tr>
+            <tr><td>여당 vs 야당</td><td>대통령을 배출한 정당</td><td>여당을 제외한 정당</td></tr>
+            <tr><td>주민 투표 vs 소환</td><td>중요 정책을 직접 결정</td><td><span class="nw">단체장⁠·의원</span> 해임 여부 결정</td></tr>
+            <tr><td>이익 표출 vs 집약</td><td>요구를 드러냄</td><td><span class="nw">언론⁠·정당이</span> 모아 요약</td></tr>
         </table>
         <div class="card warn reveal">
             <h3>이렇게 오해하지 말자</h3>
             <ul class="l" style="font-size:25px">
-                <li>손을 들어 투표는 평등 선거 위반 (X) → <b>비밀 선거</b> 위반.</li>
-                <li>대신 투표는 보통 선거 위반 (X) → <b>직접 선거</b> 위반.</li>
-                <li>단체장이 조례를 만든다 (X) → <b>지방 의회</b>.</li>
-                <li>선거의 기능은 대표 선출뿐 (X) → 정당성 부여·통제·참여도 있다.</li>
+                <li>손을 들어 투표는 평등 선거 위반 <span class="nw">(X)</span> → <b>비밀 선거</b> 위반.</li>
+                <li>대신 투표는 보통 선거 위반 <span class="nw">(X)</span> → <b>직접 선거</b> 위반.</li>
+                <li>단체장이 조례를 만든다 <span class="nw">(X)</span> → <b>지방 의회</b>.</li>
+                <li>선거의 기능은 대표 선출뿐 <span class="nw">(X)</span> → 정당성 <span class="nw">부여⁠·통제⁠·참여도</span> 있다.</li>
             </ul>
         </div>
     </div>

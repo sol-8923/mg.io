@@ -242,6 +242,70 @@ table.t th b, table.t th strong { color: inherit; }
     .card:not(.warn) { border-top-width: 4px; }
     .slide .pg { display: block; width: max-content; margin: 10px 0 0 auto; font-size: 14px; padding: 3px 12px 4px; }
 }
+
+/* ===== 검수 정리 v3 ===== */
+/* 1) 줄바꿈: 짧은 구절(단어·단어, 괄호 안 구절)은 줄 중간에서 끊기지 않게, 고아(한두 글자만 남는 줄) 완화 */
+.nw { white-space: nowrap; }
+.slide p, .slide li, .slide td, .slide th, .slide h3, .slide .card { text-wrap: pretty; }
+
+/* 2) 쪽번호 컨트롤: 두 자리 쪽수에서도 막대가 흔들리지 않게 폭 고정 */
+#count { min-width: 80px; font-variant-numeric: tabular-nums; }
+
+/* 3) 모바일 보정 */
+.swipe-hint { display: none; }
+@media (max-width: 820px) and (orientation: portrait) {
+    /* 가로로 밀어야 보이는 SVG 위에 안내 문구 (.swipe-hint) */
+    .swipe-hint { display: block; text-align: center; font-size: 14px; font-weight: 700; color: var(--ink-dim); margin: 0 0 6px; }
+    /* 표 글자는 16px 이상 */
+    table.t, table.t th, table.t td { font-size: 16px !important; }
+    /* 번호 카드: 번호 원을 글 왼쪽에 두고 가로 배치 */
+    .card.step { position: relative; min-height: 72px; padding-left: 66px !important; }
+    .card.step .no { position: absolute; left: 14px; top: 12px; margin: 0; }
+    .card.step .no + br { display: none; }
+    .card.step > h3:first-of-type { margin-top: 0; }
+}
+
+/* ===== 검수 정리 v3 (단원별 조정) ===== */
+/* 같은 줄 카드 높이 맞춤 */
+.fx-st .grid { align-items: stretch; }
+/* 오해 표 장: 표를 슬라이드 폭에 맞추고, 오해 카드는 아래에 2단으로 */
+.fx-mis { grid-template-columns: 1fr !important; gap: 22px; }
+.fx-mis table.t { table-layout: fixed; width: 100%; }
+.fx-mis table.t th:nth-child(1) { width: 21%; }
+.fx-mis table.t th:nth-child(2), .fx-mis table.t th:nth-child(3) { width: 39.5%; }
+.fx-mis table.t td:first-child { white-space: normal; }
+.fx-mis .card.warn ul.l { column-count: 2; column-gap: 48px; }
+.fx-mis .card.warn ul.l li { break-inside: avoid; }
+@media (max-width: 820px) and (orientation: portrait) {
+    .fx-mis table.t { table-layout: auto; }
+    .fx-mis table.t th:nth-child(n) { width: auto; }
+    .fx-mis table.t td:first-child { white-space: normal; }
+    .fx-mis .card.warn ul.l { column-count: 1; font-size: inherit !important; }
+}
+
+/* u10 8번 제목: 가운뎃점 간격 */
+h2 .dot { margin: 0 .16em; }
+/* 보조 설명을 별도 줄로 */
+.fx-ref { display: block; margin-top: 10px; }
+/* u11 6번: 보조 설명을 카드 아래쪽에 맞춰 줄 정렬 */
+.fx-col .card.hl { display: flex; flex-direction: column; }
+.fx-col .card.hl p.dim { margin-top: auto !important; padding-top: 10px; }
+/* u11 9번: 왼쪽 카드 글자와 간격 키움 */
+.fx-s9 .grid .card.hl { display: flex; flex-direction: column; }
+.fx-s9 .grid .card.hl ul.l { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; font-size: 1.18em; }
+.fx-s9 .grid .card.hl ul.l li { margin-bottom: 0; }
+/* 문장 단위로 줄을 나눈 카드 */
+.fx-ln { display: block; margin-top: 10px; }
+.fx-ln:first-child { margin-top: 0; }
+.fx-lh { line-height: 1.6; }
+/* 번호 카드 글줄 균형 */
+.card.step { text-wrap: balance; }
+@media (max-width: 820px) and (orientation: portrait) {
+    table.t td, table.t th { text-wrap: balance; }
+    .fx-s9 .grid .card.hl ul.l { font-size: inherit; display: block; }
+    .fx-s9 .grid .card.hl ul.l li { margin-bottom: 8px; }
+    .cover p { text-wrap: balance; }
+}
 </style>
 
 </head>
@@ -316,10 +380,10 @@ table.t th b, table.t th strong { color: inherit; }
 <g stroke="#2f7d46" stroke-width="4" stroke-linecap="round" opacity=".7"><path d="M1040 1000 l-6 -26 M1050 1000 l2 -30 M1060 1000 l8 -24"/><path d="M1700 960 l-6 -24 M1710 960 l3 -28"/></g>
 </svg>
     <div class="copy">
-    <div class="kicker reveal">1학년 2학기 사회 · 11단원 요약 정리</div>
+    <div class="kicker reveal">1학년 2학기 사회 · 11단원 요약 정리</div>
     <h1 class="reveal">일상생활과 <span>법</span></h1>
     <div class="rule reveal"></div>
-    <p class="reveal">법의 의미와 목적 · 법의 종류와 사회법 · 재판의 의미와 공정한 재판</p>
+    <p class="reveal">법의 의미와 목적 · 법의 종류와 사회법 · 재판의 의미와 공정한 재판</p>
     </div>
     <div class="sign" aria-hidden="true"><div class="board">11<small>단원</small></div><div class="post"></div></div>
 </section>
@@ -334,39 +398,39 @@ table.t th b, table.t th strong { color: inherit; }
             <p class="ref">p.202~205</p>
             <ul class="l">
                 <li>법과 도덕</li>
-                <li>법의 역할과 정의</li>
+                <li>법의 역할과 정의</li>
             </ul>
         </div>
         <div class="card hl reveal">
             <h3>2. 법의 종류와 사회법</h3>
             <p class="ref">p.206~209</p>
             <ul class="l">
-                <li>헌법·민법·형법</li>
-                <li>사회법의 등장과 종류</li>
+                <li><span class="nw">헌법⁠·민법⁠·형법</span></li>
+                <li>사회법의 등장과 종류</li>
             </ul>
         </div>
         <div class="card hl reveal">
             <h3>3. 재판과 공정한 재판</h3>
             <p class="ref">p.210~215</p>
             <ul class="l">
-                <li>민사·형사 재판</li>
-                <li>공정한 재판을 위한 제도</li>
+                <li><span class="nw">민사⁠·형사</span> 재판</li>
+                <li>공정한 재판을 위한 제도</li>
             </ul>
         </div>
     </div>
     <div class="card reveal" style="margin-top:24px">
-        <h3>일상에서 만나는 법의 예 (p.203)</h3>
-        <p><b>도로 교통법</b>(안전한 등교), <b>교육 기본법</b>(수업), <b>학교 급식법</b>(급식), <b>저작권법</b>(음악 구매)</p>
+        <h3>일상에서 만나는 법의 예 <span class="nw">(p.203)</span></h3>
+        <p><b>도로 교통법</b><span class="nw">(안전한 등교),</span> <b>교육 기본법</b><span class="nw">(수업),</span> <b>학교 급식법</b><span class="nw">(급식),</span> <b>저작권법</b><span class="nw">(음악 구매)</span></p>
     </div>
     <div class="pg">2</div>
 </section>
 
 <!-- === 3. 법과 도덕 === -->
-<section class="slide" style="--z:1.3">
+<section class="slide fx-st" style="--z:1.3">
     <div class="kicker">1 법의 의미와 목적</div>
-    <h2>사회 규범 : 법과 도덕 <small>p.203</small></h2>
+    <h2>사회 규범 : 법과 도덕 <small>p.203</small></h2>
     <div class="card reveal" style="margin-bottom:22px">
-        <b>사회 규범</b> : 사회 구성원이 지켜야 할 행위의 기준. 대표적으로 <b>법</b>과 <b>도덕</b>이 있다.
+        <b>사회 규범</b> : 사회 구성원이 지켜야 할 행위의 기준. 대표적으로 <b>법</b>과 <b>도덕</b>이 있다.
     </div>
     <div class="grid g2">
         <div class="card hl reveal">
@@ -389,11 +453,11 @@ table.t th b, table.t th strong { color: inherit; }
         <tr><th style="width:22%">구분</th><th style="width:39%">법</th><th>도덕</th></tr>
         <tr><td>규율 대상</td><td>행위의 <b>결과</b></td><td>행위의 <b>동기</b></td></tr>
         <tr><td>특성</td><td><b>강제성</b></td><td><b>자율성</b></td></tr>
-        <tr><td>위반하는 경우</td><td>국가에 의한 <b>제재</b></td><td>양심의 가책·사회적 비난</td></tr>
+        <tr><td>위반하는 경우</td><td>국가에 의한 <b>제재</b></td><td>양심의 <span class="nw">가책⁠·사회적</span> 비난</td></tr>
         <tr><td>목적</td><td><b>정의</b>의 실현</td><td><b>선</b>의 실현</td></tr>
     </table>
     <div class="card hl reveal" style="margin-top:28px">
-        <b>암기</b> 법 = 결과·강제성·국가 제재·정의 / 도덕 = 동기·자율성·양심의 가책·선
+        <b>암기</b> 법 = <span class="nw">결과⁠·강제성⁠·국가</span> <span class="nw">제재⁠·정의</span> / 도덕 = <span class="nw">동기⁠·자율성⁠·양심의</span> <span class="nw">가책⁠·선</span>
     </div>
     <div class="pg">4</div>
 </section>
@@ -405,48 +469,48 @@ table.t th b, table.t th strong { color: inherit; }
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>법의 역할</h3>
-            <p>지켜야 하는 행동과 하면 안 되는 행동의 <b>기준</b>을 알려 준다.</p>
+            <p>지켜야 하는 행동과 하면 안 되는 행동의 <b>기준</b>을 알려 준다.</p>
             <ul class="l" style="margin-top:10px">
-                <li><b>분쟁</b>을 예방하고 해결한다.</li>
-                <li><b>범죄</b>로부터 사람들을 보호한다.</li>
+                <li><b>분쟁</b>을 예방하고 해결한다.</li>
+                <li><b>범죄</b>로부터 사람들을 보호한다.</li>
                 <li><b>사회 질서</b>를 유지한다.</li>
-                <li><b>인간다운 삶</b>을 위한 권리를 보호한다.</li>
-                <li>소수 집단·개인이 아닌 사회 전체의 이익(<b>공공복리</b>)을 추구한다.</li>
+                <li><b>인간다운 삶</b>을 위한 권리를 보호한다.</li>
+                <li>소수 <span class="nw">집단⁠·개인이</span> 아닌 사회 전체의 이익(<b>공공복리</b>)을 추구한다.</li>
             </ul>
         </div>
         <div class="card reveal">
-            <h3>법이 궁극적으로 추구하는 것 : 정의</h3>
-            <p><b>정의로운 사회</b>란 다음과 같은 사회이다.</p>
+            <h3>법이 궁극적으로 추구하는 것 : 정의</h3>
+            <p><b>정의로운 사회</b>란 다음과 같은 사회이다.</p>
             <ul class="l" style="margin-top:10px">
                 <li>모든 사람이 <b>인간답게 살 권리</b>를 보장받는다.</li>
                 <li>공평하게 <b>기회</b>를 얻는다.</li>
-                <li><b>공정하게 경쟁</b>하고 능력·노력에 따른 <b>정당한 대가</b>를 받는다.</li>
+                <li><b>공정하게 경쟁</b>하고 <span class="nw">능력⁠·노력에</span> 따른 <b>정당한 대가</b>를 받는다.</li>
             </ul>
-            <p class="dim" style="margin-top:8px">법은 정의로운 사회를 실현하는 중요한 장치 중 하나이다.</p>
+            <p class="dim" style="margin-top:8px">법은 정의로운 사회를 실현하는 중요한 장치 중 하나이다.</p>
         </div>
     </div>
     <div class="pg">5</div>
 </section>
 
 <!-- === 6. 법의 종류 === -->
-<section class="slide" style="--z:1.3">
+<section class="slide fx-st fx-col" style="--z:1.3">
     <div class="kicker">2 법의 종류와 사회법</div>
-    <h2>헌법·민법·형법 <small>p.207</small></h2>
+    <h2><span class="nw">헌법⁠·민법⁠·형법</span> <small>p.207</small></h2>
     <div class="grid g3">
         <div class="card hl reveal">
             <h3>헌법</h3>
             <p>국가의 가장 기본이 되는 <b>최상위법</b>. 모든 국민이 누려야 할 <b>기본권</b>을 규정하고 <b>국가기관의 구성 방법과 권한</b>을 담는다.</p>
-            <p class="dim" style="margin-top:8px">우리나라의 모든 법은 헌법에 어긋나지 않아야 한다.</p>
+            <p class="dim" style="margin-top:8px">우리나라의 모든 법은 헌법에 어긋나지 않아야 한다.</p>
         </div>
         <div class="card hl reveal">
             <h3>민법</h3>
-            <p>일반적인 <b>개인 간의 법률관계</b>를 규율하는 법. 가족 관계의 권리·의무, 재산에 대한 권리 등.</p>
-            <p class="dim" style="margin-top:8px">개인 간 다툼을 해결하는 주요 기준이다.</p>
+            <p>일반적인 <b>개인 간의 법률관계</b>를 규율하는 법. 가족 관계의 <span class="nw">권리⁠·의무,</span> 재산에 대한 권리 등.</p>
+            <p class="dim" style="margin-top:8px">개인 간 다툼을 해결하는 주요 기준이다.</p>
         </div>
         <div class="card hl reveal">
             <h3>형법</h3>
-            <p><b>범죄</b>에 해당하는 행위와 그에 부과할 <b>형벌</b>을 규정하는 법.</p>
-            <p class="dim" style="margin-top:8px">범죄를 처벌해 질서를 유지하고 모두가 안전하게 살게 한다.</p>
+            <p><b>범죄</b>에 해당하는 행위와 그에 부과할 <b>형벌</b>을 규정하는 법.</p>
+            <p class="dim" style="margin-top:8px">범죄를 처벌해 질서를 유지하고 모두가 안전하게 살게 한다.</p>
         </div>
     </div>
     <div class="pg">6</div>
@@ -458,38 +522,38 @@ table.t th b, table.t th strong { color: inherit; }
     <h2>사회법의 등장과 종류 <small>p.208</small></h2>
     <div class="card warn reveal" style="margin-bottom:20px">
         <h3>등장 배경과 목적</h3>
-        <p>과거에는 근로 조건이 나빠도 자유로운 계약으로 보아 국가가 개입하지 않았다. 그러나 산업화·자본주의 발달로 <b>빈부 격차</b>가 커지고 근로 조건이 악화되는 등 사회문제가 심각해지자 <b>국가가 개인 간의 관계에 개입</b>하는 사회법이 등장했다. <b>목적</b> : 사회적 약자를 비롯한 모든 국민의 <b>인간다운 삶 보장</b>.</p>
+        <p>과거에는 근로 조건이 나빠도 자유로운 계약으로 보아 국가가 개입하지 않았다. 그러나 <span class="nw">산업화⁠·자본주의</span> 발달로 <b>빈부 격차</b>가 커지고 근로 조건이 악화되는 등 사회문제가 심각해지자 <b>국가가 개인 간의 관계에 개입</b>하는 사회법이 등장했다. <b>목적</b> : 사회적 약자를 비롯한 모든 국민의 <b>인간다운 삶 보장</b>.</p>
     </div>
     <div class="grid g3 reveal">
         <div class="card"><h3>노동법</h3>근로 조건 규정, 근로자와 사용자 사이의 <b>근로관계</b> 규율<br><span class="ref">근로 기준법, 노동조합 및 노동관계 조정법, 최저 임금법</span></div>
-        <div class="card"><h3>경제법</h3>기업 간 <b>공정한 경쟁</b> 유도, <b>소비자의 권리·이익</b> 보호<br><span class="ref">독점 규제 및 공정 거래에 관한 법률, 소비자 기본법</span></div>
-        <div class="card"><h3>사회 보장법</h3>실업·고령·빈곤·질병 등 어려움을 겪는 사람 <b>지원</b><br><span class="ref">사회 보장 기본법, 국민 기초 생활 보장법, 국민 연금법</span></div>
+        <div class="card"><h3>경제법</h3>기업 간 <b>공정한 경쟁</b> 유도, <b>소비자의 <span class="nw">권리⁠·이익</span></b> 보호<br><span class="ref">독점 규제 및 공정 거래에 관한 법률, 소비자 기본법</span></div>
+        <div class="card"><h3>사회 보장법</h3><span class="nw">실업⁠·고령⁠·빈곤⁠·질병</span> 등 어려움을 겪는 사람 <b>지원</b><br><span class="ref">사회 보장 기본법, 국민 기초 생활 보장법, 국민 연금법</span></div>
     </div>
     <div class="pg">7</div>
 </section>
 
-<!-- === 8. 재판과 민사·형사 === -->
+<!-- === 8. 재판과 민사⁠·형사 === -->
 <section class="slide" style="--z:1.3">
     <div class="kicker">3 재판의 의미와 공정한 재판</div>
-    <h2>재판의 의미와 민사·형사 재판 <small>p.211~213</small></h2>
+    <h2>재판의 의미와 <span class="nw">민사⁠·형사</span> 재판 <small>p.211~213</small></h2>
     <div class="card hl reveal" style="margin-bottom:20px">
-        <b>재판</b> : 법원에서 구체적 사건에 대하여 일정한 절차를 거쳐 <b>법적 판단</b>을 내리는 일. 헌법(제27조)은 국민 누구나 <b>재판을 받을 권리</b>를 보장한다. 법의 공정한 적용으로 정의 실현·권리 보장·질서 유지. 재판은 시간과 비용이 많이 들어 재판 없이 푸는 방법도 있다.
+        <b>재판</b> : 법원에서 구체적 사건에 대하여 일정한 절차를 거쳐 <b>법적 판단</b>을 내리는 일. <span class="nw">헌법(제27조)은</span> 국민 누구나 <b>재판을 받을 권리</b>를 보장한다. 법의 공정한 적용으로 정의 <span class="nw">실현⁠·권리</span> <span class="nw">보장⁠·질서</span> 유지. 재판은 시간과 비용이 많이 들어 재판 없이 푸는 방법도 있다.
     </div>
     <div class="grid g2">
         <div class="card reveal">
             <h3>민사 재판</h3>
-            <p><b>개인 간</b> 관계에서 생긴 분쟁 해결.</p>
+            <p><b>개인 간</b> 관계에서 생긴 분쟁 해결.</p>
             <ul class="l" style="margin-top:8px">
-                <li>참여 : <b>원고</b>(소송을 제기), <b>피고</b>(소송을 당함), 판사, 소송 대리인(변호사)</li>
-                <li>절차 : 소장 제출 → 답변서 제출 → 증거 제출 → 재판·판결</li>
+                <li>참여 : <b>원고</b><span class="nw">(소송을 제기),</span> <b>피고</b><span class="nw">(소송을 당함),</span> 판사, 소송 <span class="nw">대리인(변호사)</span></li>
+                <li>절차 : 소장 제출 → 답변서 제출 → 증거 제출 → <span class="nw">재판⁠·판결</span></li>
             </ul>
         </div>
         <div class="card reveal">
             <h3>형사 재판</h3>
             <p><b>범죄 행위</b>가 대상.</p>
             <ul class="l" style="margin-top:8px">
-                <li>참여 : 판사, <b>검사</b>(기소·처벌 요구), <b>피고인</b>, <b>변호인</b>(피고인 편에서 변호)</li>
-                <li>절차 : 고소·고발·인지·자수 → 수사 → 기소 → 재판·판결</li>
+                <li>참여 : 판사, <b>검사</b><span class="nw">(기소⁠·처벌 요구),</span> <b>피고인</b>, <b>변호인</b>(피고인 편에서 변호)</li>
+                <li>절차 : <span class="nw">고소⁠·고발⁠·인지⁠·자수</span> → 수사 → 기소 → <span class="nw">재판⁠·판결</span></li>
             </ul>
         </div>
     </div>
@@ -497,17 +561,17 @@ table.t th b, table.t th strong { color: inherit; }
 </section>
 
 <!-- === 9. 공정한 재판 제도 === -->
-<section class="slide">
+<section class="slide fx-st fx-s9">
     <div class="kicker">3 재판의 의미와 공정한 재판</div>
     <h2>공정한 재판을 위한 제도 <small>p.214</small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>제도 4가지</h3>
             <ul class="l">
-                <li><b>사법권의 독립</b> : 법관이 헌법과 법률에 의해 양심에 따라 독립하여 심판. 외부 간섭 차단·법관 신분 보장.</li>
-                <li><b>공개 재판주의</b> : 원칙적으로 재판 과정을 일반 시민에게도 공개.</li>
-                <li><b>증거 재판주의</b> : 구체적 증거에 의해서만 판결.</li>
-                <li><b>심급 제도</b> : 여러 번 재판 (3심제가 원칙).</li>
+                <li><b>사법권의 독립</b> : 법관이 헌법과 법률에 의해 양심에 따라 독립하여 심판. 외부 간섭 <span class="nw">차단⁠·법관</span> 신분 보장.</li>
+                <li><b>공개 재판주의</b> : 원칙적으로 재판 과정을 일반 시민에게도 공개.</li>
+                <li><b>증거 재판주의</b> : 구체적 증거에 의해서만 판결.</li>
+                <li><b>심급 제도</b> : 여러 번 재판 (3심제가 원칙).</li>
             </ul>
         </div>
         <div class="card reveal">
@@ -531,7 +595,7 @@ table.t th b, table.t th strong { color: inherit; }
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:20px">
-        <b>정리</b> 대법원 판결은 <b>최종 확정 판결</b>이다. 항소·상고를 하지 않으면 판결이 확정된다.
+        <b>정리</b> 대법원 판결은 <b>최종 확정 판결</b>이다. <span class="nw">항소⁠·상고를</span> 하지 않으면 판결이 확정된다.
     </div>
     <div class="pg">9</div>
 </section>
@@ -544,17 +608,17 @@ table.t th b, table.t th strong { color: inherit; }
         <div class="card hl reveal">
             <ul class="l">
                 <li><b>법</b> = 국가가 만든 사회 규범. 강제성, 행위의 결과, 국가의 제재, 목적은 <b>정의</b>.</li>
-                <li><b>도덕</b> = 양심, 행위의 동기, 자율성, 양심의 가책·사회적 비난, 목적은 <b>선</b>.</li>
-                <li><b>법의 역할</b> : 행동 기준 제시, 분쟁 예방·해결, 범죄로부터 보호, 질서 유지, 권리 보호, 공공복리.</li>
-                <li><b>헌법</b>(최상위법·기본권·국가기관) / <b>민법</b>(개인 간 법률관계) / <b>형법</b>(범죄와 형벌).</li>
+                <li><b>도덕</b> = 양심, 행위의 동기, 자율성, 양심의 <span class="nw">가책⁠·사회적</span> 비난, 목적은 <b>선</b>.</li>
+                <li><b>법의 역할</b> : 행동 기준 제시, 분쟁 <span class="nw">예방⁠·해결,</span> 범죄로부터 보호, 질서 유지, 권리 보호, 공공복리.</li>
+                <li><b>헌법</b><span class="nw">(최상위법⁠·기본권⁠·국가기관)</span> / <b>민법</b><span class="nw">(개인 간 법률관계)</span> / <b>형법</b><span class="nw">(범죄와 형벌).</span></li>
             </ul>
         </div>
         <div class="card hl reveal">
             <ul class="l">
-                <li><b>사회법</b> : 산업화로 빈부 격차·근로 조건 악화 → 국가 개입. 노동법·경제법·사회 보장법.</li>
-                <li><b>민사 재판</b> : 원고·피고, 소장 → 답변서 → 증거 → 판결.</li>
-                <li><b>형사 재판</b> : 검사가 기소, 피고인·변호인. 수사 → 기소 → 재판.</li>
-                <li><b>공정한 재판</b> : 사법권의 독립, 공개 재판주의, 증거 재판주의, 심급 제도(3심제 : 지방 법원 → 항소 → 상고 → 대법원).</li>
+                <li><b>사회법</b> : 산업화로 빈부 <span class="nw">격차⁠·근로</span> 조건 악화 → 국가 개입. <span class="nw">노동법⁠·경제법⁠·사회</span> 보장법.</li>
+                <li><b>민사 재판</b> : <span class="nw">원고⁠·피고,</span> 소장 → 답변서 → 증거 → 판결.</li>
+                <li><b>형사 재판</b> : 검사가 기소, <span class="nw">피고인⁠·변호인.</span> 수사 → 기소 → 재판.</li>
+                <li><b>공정한 재판</b> : 사법권의 독립, 공개 재판주의, 증거 재판주의, 심급 제도(3심제 : 지방 법원 → 항소 → 상고 → 대법원).</li>
             </ul>
         </div>
     </div>
@@ -568,18 +632,18 @@ table.t th b, table.t th strong { color: inherit; }
     <div class="grid g2" style="grid-template-columns:1.25fr 1fr">
         <table class="t reveal" style="font-size:25px">
             <tr><th>비교 항목</th><th>앞의 개념</th><th>뒤의 개념</th></tr>
-            <tr><td>민법 vs 형법</td><td>개인 간 법률관계(가족·재산)</td><td>범죄와 형벌</td></tr>
-            <tr><td>원고 vs 피고</td><td>소송을 제기한 사람</td><td>소송을 당한 사람</td></tr>
-            <tr><td>검사 vs 변호인</td><td>기소하고 처벌 요구</td><td>피고인 편에서 변호</td></tr>
-            <tr><td>항소 vs 상고</td><td>1심 → 2심</td><td>2심 → 3심 대법원</td></tr>
+            <tr><td>민법 vs 형법</td><td>개인 간 <span class="nw">법률관계(가족⁠·재산)</span></td><td>범죄와 형벌</td></tr>
+            <tr><td>원고 vs 피고</td><td>소송을 제기한 사람</td><td>소송을 당한 사람</td></tr>
+            <tr><td>검사 vs 변호인</td><td>기소하고 처벌 요구</td><td>피고인 편에서 변호</td></tr>
+            <tr><td>항소 vs 상고</td><td>1심 → 2심</td><td>2심 → 3심 대법원</td></tr>
         </table>
         <div class="card warn reveal">
             <h3>이렇게 오해하지 말자</h3>
             <ul class="l" style="font-size:25px">
-                <li>법은 행위의 동기를 중요시 (X) → <b>행위의 결과</b>. 동기는 도덕.</li>
-                <li>법은 자율성을 가진다 (X) → <b>강제성</b>.</li>
-                <li>사회법은 개인의 자유 계약에 국가가 개입하지 않는다 (X) → <b>국가가 개입</b>.</li>
-                <li>형사 재판의 당사자는 원고·피고 (X) → 검사·피고인.</li>
+                <li>법은 행위의 동기를 중요시 <span class="nw">(X)</span> → <b>행위의 결과</b>. 동기는 도덕.</li>
+                <li>법은 자율성을 가진다 <span class="nw">(X)</span> → <b>강제성</b>.</li>
+                <li>사회법은 개인의 자유 계약에 국가가 개입하지 않는다 <span class="nw">(X)</span> → <b>국가가 개입</b>.</li>
+                <li>형사 재판의 당사자는 <span class="nw">원고⁠·피고</span> <span class="nw">(X)</span> → <span class="nw">검사⁠·피고인.</span></li>
             </ul>
         </div>
     </div>
