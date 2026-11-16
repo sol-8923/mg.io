@@ -132,6 +132,7 @@ var sy=0, scrollWin=null, scrollFn=null;
 function scrollTop(){ var d=cv.ownerDocument; return (d.defaultView.pageYOffset||d.scrollingElement&&d.scrollingElement.scrollTop||0); }
 function layout(){
   if(!cv) return;
+  lift();   // 아래 프레임(이전/다음 줄)이 나중에 생겨도 도구 버튼이 그 위로 올라오게 한다
   var doc=cv.ownerDocument, win=doc.defaultView, d=Math.min(window.devicePixelRatio||1,3), k=1, bw, bh;
   if(staged){
     W=1920; H=1080; sy=0; cv.style.position='absolute'; cv.style.width=W+'px'; cv.style.height=H+'px';
@@ -205,7 +206,7 @@ function show(k,fr){
   dock=document.createElement('div'); dock.className='pen-dock'; dock.addEventListener('click',onDock); document.body.appendChild(dock);
   if(frame){ staged=false; key=null; attachFrame(); frame.addEventListener('load',later); }
   else{ staged=false; key=keyFn(); makeCanvas(document,document.body); }
-  sync(); layout();
+  sync(); layout(); requestAnimationFrame(lift); setTimeout(lift,120); setTimeout(lift,500);
   window.addEventListener('resize',later);
   var app=document.getElementById('app');
   if(window.ResizeObserver){ ro=new ResizeObserver(later); if(app) ro.observe(app); if(frame) ro.observe(frame); }
