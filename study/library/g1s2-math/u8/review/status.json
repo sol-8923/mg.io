@@ -1,0 +1,11 @@
+{
+ "verdict": "PASS",
+ "round": 4,
+ "date": "2026-11-16",
+ "reviewers": [
+  "content",
+  "explanation-overall"
+ ],
+ "note": "검수 절감 규칙: 형식은 build_library --check-unit + precheck 기계 점검, 내용·해설종합 검수. 1차 반려 6건(Q06-a/b, Q09-b, Q14-b, Q16-b, Q17-b) 수정, 2차 Q17-a/b, 3차 Q15-b·S02-b 수정 후 최종 통과. 슬라이드는 별도 검수(내용 교과서 대조 이상 없음, 화면 넘침 수정). 교과서 8단원 기출 없음(textbook 프로필).",
+ "revision": "B1"
+}

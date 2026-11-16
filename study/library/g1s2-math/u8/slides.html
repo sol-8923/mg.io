@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자료의 정리와 해석 - 교과 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style-math.md) : 수학 교과서 - 고슴도치 모눈 노트 === */
+:root {
+    --bg: #FFF7EC;
+    --bg-2: #FFFFFF;
+    --bg-3: #FFE8D2;
+    --ink: #2A2018;
+    --ink-dim: #6A5444;
+    --pen: #B42E1B;
+    --orange: #F58A4B;
+    --orange-d: #C2410C;
+    --navy: #1F3A63;
+    --teal: #17766A;
+    --warn: #A8470E;
+    --grid: rgba(245,138,75,.12);
+    --font-display: 'Jua', 'Gowun Dodum', 'Malgun Gothic', sans-serif;
+    --font-hand: 'Nanum Pen Script', 'Gowun Dodum', cursive;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #3b2a20;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 유지) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls, .axis-prog { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) : 모눈종이 노트 === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 96px;
+    font-size: 27px;
+    line-height: 1.5;
+    background-color: var(--bg);
+    background-image:
+        linear-gradient(var(--grid) 2px, transparent 2px),
+        linear-gradient(90deg, var(--grid) 2px, transparent 2px);
+    background-size: 48px 48px;
+    background-position: 24px 24px;
+    word-break: keep-all; overflow-wrap: break-word;
+}
+/* 노트 왼쪽 바인딩 구멍 + 빨간 여백선 */
+.slide::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 80px; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2290%22%3E%3Ccircle cx=%2232%22 cy=%2245%22 r=%2213%22 fill=%22%23FFF7EC%22 stroke=%22%23D9732F%22 stroke-width=%223%22/%3E%3Cpath d=%22M4 45 H30%22 stroke=%22%238A8F98%22 stroke-width=%225%22 stroke-linecap=%22round%22/%3E%3C/svg%3E"), linear-gradient(90deg, transparent 0 74px, rgba(200,50,40,.55) 74px 76px, transparent 76px), linear-gradient(90deg, #FFE3C8 0 60px, transparent 60px);
+    background-repeat: repeat-y, no-repeat, no-repeat; background-size: 80px 90px, 80px 100%, 80px 100%; }
+/* 오른쪽 위 자와 연필 (작은 장식) */
+.slide::after { content: ""; position: absolute; right: 56px; top: 18px; width: 220px; height: 40px; pointer-events: none; opacity: .9;
+    background: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22330%22 height=%2260%22 viewBox=%220 0 330 60%22%3E%3Crect x=%224%22 y=%2214%22 width=%22170%22 height=%2232%22 rx=%223%22 fill=%22%23FFE3BF%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%2214%22 y1=%2214%22 x2=%2214%22 y2=%2234%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%2224%22 y1=%2214%22 x2=%2224%22 y2=%2225%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%2234%22 y1=%2214%22 x2=%2234%22 y2=%2225%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%2244%22 y1=%2214%22 x2=%2244%22 y2=%2225%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%2254%22 y1=%2214%22 x2=%2254%22 y2=%2225%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%2264%22 y1=%2214%22 x2=%2264%22 y2=%2234%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%2274%22 y1=%2214%22 x2=%2274%22 y2=%2225%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%2284%22 y1=%2214%22 x2=%2284%22 y2=%2225%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%2294%22 y1=%2214%22 x2=%2294%22 y2=%2225%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%22104%22 y1=%2214%22 x2=%22104%22 y2=%2225%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%22114%22 y1=%2214%22 x2=%22114%22 y2=%2234%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%22124%22 y1=%2214%22 x2=%22124%22 y2=%2225%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%22134%22 y1=%2214%22 x2=%22134%22 y2=%2225%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%22144%22 y1=%2214%22 x2=%22144%22 y2=%2225%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%22154%22 y1=%2214%22 x2=%22154%22 y2=%2225%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Cline x1=%22164%22 y1=%2214%22 x2=%22164%22 y2=%2234%22 stroke=%22%23C2410C%22 stroke-width=%222%22/%3E%3Crect x=%22196%22 y=%2216%22 width=%2214%22 height=%2228%22 rx=%224%22 fill=%22%23F59FA0%22/%3E%3Crect x=%22210%22 y=%2216%22 width=%2214%22 height=%2228%22 fill=%22%23B8B8B8%22/%3E%3Crect x=%22224%22 y=%2216%22 width=%2262%22 height=%2228%22 fill=%22%23F58A4B%22/%3E%3Crect x=%22224%22 y=%2226%22 width=%2262%22 height=%225%22 fill=%22%23FFB27F%22/%3E%3Cpolygon points=%22286%2C16 322%2C30 286%2C44%22 fill=%22%23F3D7B0%22/%3E%3Cpolygon points=%22313%2C26.5 322%2C30 313%2C33.5%22 fill=%22%232A2018%22/%3E%3C/svg%3E") no-repeat center / contain; }
+.cover::after { display: none; }
+.kicker { font-family: var(--font-hand); font-size: 36px; line-height: 1.1; letter-spacing: .02em; color: var(--orange-d); font-weight: 400; margin-bottom: 4px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 58px; line-height: 1.2; color: var(--pen); margin-bottom: 28px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 400; font-size: 34px; color: var(--navy); margin-bottom: 10px; }
+b, strong { color: var(--pen); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 64px; bottom: 30px; min-width: 52px; height: 52px; padding: 0 8px; display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 26px; color: var(--pen); background: #fff; border: 3px solid var(--orange); border-radius: 50%; }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 2px solid #F2C9A5; border-radius: 14px; padding: 22px 26px; box-shadow: 4px 5px 0 rgba(245,138,75,.22); }
+.card.hl { border-color: var(--orange); box-shadow: 4px 5px 0 rgba(245,138,75,.4); }
+.card.warn { border-color: var(--pen); border-style: dashed; background: #FFF1EA; box-shadow: none; }
+.card.warn h3 { color: var(--pen); }
+.card.warn h3::before { content: "!"; display: inline-block; width: 1.1em; height: 1.1em; line-height: 1.1em; margin-right: .3em; text-align: center; border-radius: 50%; background: var(--pen); color: #fff; font-size: .8em; vertical-align: .08em; }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 32px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .5em; width: 14px; height: 14px; border: 3px solid var(--orange); border-radius: 50%; background: #fff; }
+.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 2px solid var(--orange-d); border-radius: 99px; color: var(--orange-d); margin-right: 8px; vertical-align: 2px; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+.fm { font-family: var(--font-display); font-weight: 400; font-size: 44px; text-align: center; color: var(--navy); background: #FFF3E4; border: 2px solid var(--orange); border-radius: 12px; padding: 12px 18px; margin: 10px 0; }
+.fig { display: block; margin: 0 auto; }
+svg.fig text { paint-order: stroke; stroke: #fff; stroke-width: 6px; stroke-linejoin: round; }
+.card:has(> svg.fig) { background-color: #fff; background-image: linear-gradient(rgba(31,58,99,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(31,58,99,.07) 1px, transparent 1px); background-size: 24px 24px; }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; background: #fff; }
+table.t th { background: var(--bg-3); color: var(--navy); font-family: var(--font-display); font-weight: 400; text-align: left; padding: 12px 18px; border: 2px solid #F2C9A5; }
+table.t td { padding: 12px 18px; border: 2px solid #F2C9A5; background: rgba(255,255,255,.92); vertical-align: top; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; }
+
+.g5 .card, .g4 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 46px; height: 46px; align-items: center; justify-content: center; border-radius: 50%; background: var(--pen); color: #fff; font-family: var(--font-display); font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+
+/* 표지 : 모눈 노트 + 좌표평면 + 고슴도치 */
+.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 170px; }
+.cover .deco { position: absolute; inset: 0; width: 1920px; height: 1080px; max-width: none; max-height: none; pointer-events: none; z-index: 0; }
+.cover > :not(.deco) { position: relative; z-index: 1; }
+.cover .kicker { font-size: 46px; }
+.cover h1 { font-family: var(--font-display); font-weight: 400; font-size: 112px; line-height: 1.15; margin: 14px 0 26px; color: var(--pen); }
+.cover h1 span { color: var(--navy); background: linear-gradient(transparent 68%, rgba(245,138,75,.55) 68% 92%, transparent 92%); padding: 0 6px; }
+.cover p { font-size: 34px; color: var(--ink); max-width: 1050px; }
+.cover .rule { width: 260px; height: 8px; margin: 10px 0 30px; border-radius: 4px; background: repeating-linear-gradient(90deg, var(--orange) 0 20px, transparent 20px 32px); }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 진행 표시 : x축 위를 움직이는 점 === */
+.axis-prog { position: absolute; left: 150px; bottom: 34px; width: 620px; height: 44px; z-index: 5; pointer-events: none; }
+.axis-prog .ln { position: absolute; left: 0; right: -44px; top: 21px; height: 3px; background: var(--ink); border-radius: 2px; }
+.axis-prog .ln::after { content: ""; position: absolute; right: -2px; top: -7px; border-left: 16px solid var(--ink); border-top: 8.5px solid transparent; border-bottom: 8.5px solid transparent; }
+.axis-prog .tk { position: absolute; top: 14px; width: 3px; height: 17px; margin-left: -1.5px; background: var(--ink-dim); }
+.axis-prog .tk.on { background: var(--orange-d); }
+.axis-prog .dot { position: absolute; top: 9px; width: 26px; height: 26px; margin-left: -13px; border-radius: 50%; background: var(--pen); border: 4px solid #fff; box-shadow: 0 0 0 3px var(--pen); transition: left .45s cubic-bezier(.16,1,.3,1); }
+.axis-prog .co { position: absolute; top: -12px; margin-left: 20px; font-family: var(--font-display); font-size: 24px; color: var(--pen); white-space: nowrap; transition: left .45s cubic-bezier(.16,1,.3,1); }
+
+.axis-prog .co.end { margin-left: -20px; transform: translateX(-100%); }
+
+/* === 컨트롤(하단 바) === */
+.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(255,255,255,.95); border: 2px solid var(--orange); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
+.deck-controls button { background: none; border: none; color: var(--pen); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--pen); color: #fff; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 2px dashed var(--pen); }
+
+
+/* === 보정: 줄바꿈 · 세로 정렬 · 용어 목록 · 핵심 암기 === */
+.slide, td, .card { word-break: keep-all; overflow-wrap: break-word; }
+.slide:not(.cover) { display: flex; flex-direction: column; }
+.slide:not(.cover) > h2 + * { margin-top: auto; }
+.slide:not(.cover) > :nth-last-child(2) { margin-bottom: auto; }
+.slide:not(.cover):not(.core) > h2 ~ *:not(.pg) { zoom: var(--z, 1); }
+.terms { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px; }
+.terms .tm { display: block; }
+.terms .tm b { display: block; font-family: var(--font-display); font-weight: 400; font-size: 31px; line-height: 1.3; }
+.terms .sep { display: none; }
+.slide.core { padding-bottom: 122px; }
+.slide.core > .grid { flex: 1 1 auto; margin: 0; }
+.slide.core > h2 + * { margin-top: 0; }
+.slide.core > :nth-last-child(2) { margin-bottom: 0; }
+@media not all and (max-width: 1100px) and (orientation: portrait) {
+    .slide.core > .grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 20px 24px; counter-reset: core; }
+    .slide.core .card { display: contents; }
+    .slide.core ul.l { display: contents; }
+    .slide.core ul.l li { counter-increment: core; position: relative; display: flow-root; align-content: center; margin: 0; padding: 18px 30px 18px 112px;
+        background: #fff; border: 2px solid var(--orange); border-radius: 16px; box-shadow: 4px 5px 0 rgba(245,138,75,.4); font-size: 31px; line-height: 1.5; }
+    .slide.core.few ul.l li { font-size: 38px; padding-left: 124px; }
+    .slide.core ul.l li::before { content: counter(core); left: 28px; top: 50%; transform: translateY(-50%); width: 58px; height: 58px; border: 0; border-radius: 50%;
+        background: var(--pen); color: #fff; font-family: var(--font-display); font-size: 32px; line-height: 58px; text-align: center; }
+}
+.cover .deco-s, .cover .deco-h { display: none; }
+
+/* === 모바일(세로 좁은 화면) === */
+@media (max-width: 1100px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 44px; font-size: 17px; border-bottom: 4px dashed var(--orange); background-size: 32px 32px; background-position: 0 0; }
+    .slide::before, .slide::after, .cover .deco, .axis-prog { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 22px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 21px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr !important; }
+    .card, .g5 .card, .g4 .card { padding: 14px 16px; font-size: 17px; box-shadow: 3px 4px 0 rgba(245,138,75,.25); }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .fm { font-size: 24px; }
+    .fig { width: 100%; height: auto; }
+    .pg { position: static; margin: 10px 0 0 auto; width: 38px; min-width: 38px; height: 38px; font-size: 16px; border-width: 2px; }
+    table.t { font-size: 16px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 34px; height: 34px; font-size: 20px; }
+    .cover { padding: 56px 18px; }
+    .cover .kicker { font-size: 26px; }
+    .cover h1 { font-size: 46px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 6px; }
+    .slide:not(.cover) { display: block; }
+    .slide:not(.cover) > h2 ~ * { zoom: 1 !important; }
+    .terms { grid-template-columns: 1fr; gap: 8px; }
+    .terms .tm b { font-size: 20px; }
+    table.t { font-size: 16px !important; }
+    .cover { padding: 28px 18px 36px; }
+    .cover .deco-s { display: block; width: 58%; max-width: 250px; height: auto; align-self: flex-end; margin: 0 0 6px; }
+    .cover .deco-h { display: block; width: 52%; max-width: 220px; height: auto; align-self: center; margin: 22px 0 -36px; }
+}
+/* ===== 검수 정리 v3 ===== */
+span.nw { white-space: nowrap; }
+p, li, td, th, .card { text-wrap: pretty; }
+span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hidden; }
+#count { display: inline-block; width: 64px; text-align: center; font-variant-numeric: tabular-nums; }
+.scrollx { display: contents; }
+.scrollx::before { content: ""; display: none; }
+.card:has(> .scrollx) { background-color: #fff; background-image: linear-gradient(rgba(31,58,99,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(31,58,99,.07) 1px, transparent 1px); background-size: 24px 24px; }
+.terms .tm:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .g2, .g3, .g4, .g5 { grid-template-columns: minmax(0, 1fr) !important; }
+    .grid > * { min-width: 0; }
+    .scrollx { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .scrollx > svg.fig { min-width: 500px; }
+    table.t { font-size: 17px !important; }
+    svg.fig[viewBox="0 0 440 340"], svg.fig[viewBox="0 0 340 280"] { width: 100%; max-width: 380px; max-height: 340px; margin: 0 auto; }
+    .poly5 .pc:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) and (orientation: portrait) {
+    .scrollx::before { content: "\2190  옆으로 밀어서 보기  \2192"; display: block; text-align: center; font-size: 14px; color: var(--ink-dim); margin-bottom: 4px; }
+}
+/* ===== 검수 정리 v4 (폰 화면) ===== */
+@media (max-width: 1100px) and (orientation: portrait) {
+    /* 인라인으로 박힌 큰 글자 크기가 카드·표 글자와 따로 노는 것을 막는다 */
+    .slide:not(.cover) :is(p, ul, ol, li, div, span, td, th, b)[style*="font-size"]:not(.fm):not(.fm *):not(.tag):not(.no) { font-size: inherit !important; }
+    /* 연도 알약(1960 등)이 제목을 가리지 않게 */
+    .card.step:has(.no[style*="width:auto"]) { padding-left: 22px !important; }
+    .card.step .no[style*="width:auto"] { position: static !important; display: inline-flex; margin: 0 0 8px; }
+    .card.step:has(.no[style*="width:auto"]) .no + br { display: none; }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+    /* 폰에서는 줄바꿈 금지 구절이 칸 밖으로 밀려나지 않게 */
+    span.nw { white-space: normal; }
+    /* 표를 행 단위 카드로 쌓아 오른쪽 열이 잘리지 않게 */
+    .slide table.stack, .slide table.stack tbody, .slide table.stack tr, .slide table.stack td, .slide table.stack th { display: block; width: auto !important; box-sizing: border-box; }
+    .slide table.stack { border: 0 !important; background: transparent !important; box-shadow: none !important; }
+    .slide table.stack tr.hrow { display: none; }
+    .slide table.stack tr { margin: 0 0 12px; border: 2px solid rgba(0,0,0,.14); border-radius: 12px; overflow: hidden; background: #fff; }
+    .slide table.stack td, .slide table.stack th { border: 0 !important; border-top: 1px solid rgba(0,0,0,.09) !important; padding: 8px 14px !important; text-align: left; white-space: normal !important; font-size: 16px !important; }
+    .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
+    .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
+}
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #C2410C; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1. 표지 === -->
+<section class="slide cover active">
+    <svg class="deco" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="1560" cy="350" r="330" fill="#FFE4CC"/><path d="M910 1080 A200 200 0 0 1 1310 1080 Z" fill="rgba(255,255,255,.7)" stroke="#C2410C" stroke-width="3"/><path d="M970 1080 A140 140 0 0 1 1250 1080" fill="none" stroke="#F58A4B" stroke-width="2"/><line x1="1310" y1="1080" x2="1284" y2="1080" stroke="#C2410C" stroke-width="3"/><line x1="1307" y1="1045.3" x2="1293.2" y2="1047.7" stroke="#C2410C" stroke-width="3"/><line x1="1297.9" y1="1011.6" x2="1284.8" y2="1016.4" stroke="#C2410C" stroke-width="3"/><line x1="1283.2" y1="980" x2="1260.7" y2="993" stroke="#C2410C" stroke-width="3"/><line x1="1263.2" y1="951.4" x2="1252.5" y2="960.4" stroke="#C2410C" stroke-width="3"/><line x1="1238.6" y1="926.8" x2="1229.6" y2="937.5" stroke="#C2410C" stroke-width="3"/><line x1="1210" y1="906.8" x2="1197" y2="929.3" stroke="#C2410C" stroke-width="3"/><line x1="1178.4" y1="892.1" x2="1173.6" y2="905.2" stroke="#C2410C" stroke-width="3"/><line x1="1144.7" y1="883" x2="1142.3" y2="896.8" stroke="#C2410C" stroke-width="3"/><line x1="1110" y1="880" x2="1110" y2="906" stroke="#C2410C" stroke-width="3"/><line x1="1075.3" y1="883" x2="1077.7" y2="896.8" stroke="#C2410C" stroke-width="3"/><line x1="1041.6" y1="892.1" x2="1046.4" y2="905.2" stroke="#C2410C" stroke-width="3"/><line x1="1010" y1="906.8" x2="1023" y2="929.3" stroke="#C2410C" stroke-width="3"/><line x1="981.4" y1="926.8" x2="990.4" y2="937.5" stroke="#C2410C" stroke-width="3"/><line x1="956.8" y1="951.4" x2="967.5" y2="960.4" stroke="#C2410C" stroke-width="3"/><line x1="936.8" y1="980" x2="959.3" y2="993" stroke="#C2410C" stroke-width="3"/><line x1="922.1" y1="1011.6" x2="935.2" y2="1016.4" stroke="#C2410C" stroke-width="3"/><line x1="913" y1="1045.3" x2="926.8" y2="1047.7" stroke="#C2410C" stroke-width="3"/><line x1="910" y1="1080" x2="936" y2="1080" stroke="#C2410C" stroke-width="3"/><rect x="1370" y="430" width="70" height="90" fill="rgba(245,138,75,.35)" stroke="#C2410C" stroke-width="4"/><rect x="1440" y="350" width="70" height="170" fill="rgba(245,138,75,.35)" stroke="#C2410C" stroke-width="4"/><rect x="1510" y="270" width="70" height="250" fill="rgba(245,138,75,.35)" stroke="#C2410C" stroke-width="4"/><rect x="1580" y="360" width="70" height="160" fill="rgba(245,138,75,.35)" stroke="#C2410C" stroke-width="4"/><rect x="1650" y="450" width="70" height="70" fill="rgba(245,138,75,.35)" stroke="#C2410C" stroke-width="4"/><polyline points="1335,520 1405,430 1475,350 1545,270 1615,360 1685,450 1755,520" fill="none" stroke="#1F3A63" stroke-width="5" stroke-linejoin="round"/><circle cx="1335" cy="520" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><circle cx="1405" cy="430" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><circle cx="1475" cy="350" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><circle cx="1545" cy="270" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><circle cx="1615" cy="360" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><circle cx="1685" cy="450" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><circle cx="1755" cy="520" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><line x1="1320" y1="520" x2="1780" y2="520" stroke="#2A2018" stroke-width="4"/><line x1="1335" y1="532" x2="1335" y2="250" stroke="#2A2018" stroke-width="4"/><text x="1260" y="745" font-size="56" font-family="Nanum Pen Script, Gowun Dodum, cursive" fill="#C2410C" transform="rotate(-6 1260 745)">상대도수 = 도수 ÷ 총합</text><text x="1480" y="835" font-size="52" font-family="Nanum Pen Script, Gowun Dodum, cursive" fill="#C2410C" transform="rotate(5 1480 835)">히스토그램</text><text x="120" y="130" font-size="56" font-family="Nanum Pen Script, Gowun Dodum, cursive" fill="#C2410C" transform="rotate(-5 120 130)">평균 · 중앙값 · 최빈값</text><polygon points="1180,94 1186,114 1206,120 1186,126 1180,146 1174,126 1154,120 1174,114" fill="#F58A4B"/><polygon points="1800,758 1805,775 1822,780 1805,785 1800,802 1795,785 1778,780 1795,775" fill="#F58A4B"/><polygon points="130,882 134,896 148,900 134,904 130,918 126,904 112,900 126,896" fill="#F58A4B"/><polygon points="1110,624 1114,636 1126,640 1114,644 1110,656 1106,644 1094,640 1106,636" fill="#F58A4B"/><polygon points="1395,1107 1325,1089 1396,1078" fill="#7A4A2B"/><polygon points="1395,1092 1327,1068 1399,1063" fill="#5E3622"/><polygon points="1397,1076 1331,1046 1403,1048" fill="#946039"/><polygon points="1400,1061 1337,1025 1409,1034" fill="#7A4A2B"/><polygon points="1404,1047 1345,1005 1415,1020" fill="#5E3622"/><polygon points="1409,1033 1355,986 1423,1007" fill="#946039"/><polygon points="1416,1019 1366,967 1433,995" fill="#7A4A2B"/><polygon points="1424,1006 1379,950 1443,984" fill="#5E3622"/><polygon points="1434,994 1394,934 1454,974" fill="#946039"/><polygon points="1444,983 1410,919 1466,964" fill="#7A4A2B"/><polygon points="1455,973 1427,906 1479,956" fill="#5E3622"/><polygon points="1467,963 1446,895 1493,949" fill="#946039"/><polygon points="1480,955 1465,885 1507,944" fill="#7A4A2B"/><polygon points="1494,949 1485,877 1521,940" fill="#5E3622"/><polygon points="1508,943 1506,871 1536,937" fill="#946039"/><polygon points="1523,939 1528,867 1552,935" fill="#7A4A2B"/><polygon points="1538,936 1549,865 1567,935" fill="#5E3622"/><polygon points="1553,935 1571,865 1582,936" fill="#946039"/><polygon points="1568,935 1592,867 1597,939" fill="#7A4A2B"/><polygon points="1584,937 1614,871 1612,943" fill="#5E3622"/><polygon points="1599,940 1635,877 1626,949" fill="#946039"/><polygon points="1613,944 1655,885 1640,955" fill="#7A4A2B"/><polygon points="1627,949 1674,895 1653,963" fill="#5E3622"/><polygon points="1641,956 1693,906 1665,973" fill="#946039"/><polygon points="1654,964 1710,919 1676,983" fill="#7A4A2B"/><polygon points="1666,974 1726,934 1686,994" fill="#5E3622"/><polygon points="1677,984 1741,950 1696,1006" fill="#946039"/><polygon points="1687,995 1754,967 1704,1019" fill="#7A4A2B"/><polygon points="1697,1007 1765,986 1711,1033" fill="#5E3622"/><polygon points="1705,1020 1775,1005 1716,1047" fill="#946039"/><polygon points="1711,1034 1783,1025 1720,1061" fill="#7A4A2B"/><polygon points="1717,1048 1789,1046 1723,1076" fill="#5E3622"/><polygon points="1721,1063 1793,1068 1725,1092" fill="#946039"/><polygon points="1724,1078 1795,1089 1725,1107" fill="#7A4A2B"/><path d="M1390 1100 A170 170 0 0 1 1730 1100 Z" fill="#8B5A3A"/><ellipse cx="1440" cy="980" rx="34" ry="46" fill="#7A4A2B" transform="rotate(-18 1440 980)"/><ellipse cx="1680" cy="980" rx="34" ry="46" fill="#7A4A2B" transform="rotate(18 1680 980)"/><ellipse cx="1560" cy="1048" rx="118" ry="92" fill="#F6D2AA"/><circle cx="1514" cy="1018" r="24" fill="#2A2018"/><circle cx="1521" cy="1010" r="8" fill="#fff"/><circle cx="1606" cy="1018" r="24" fill="#2A2018"/><circle cx="1613" cy="1010" r="8" fill="#fff"/><ellipse cx="1560" cy="1054" rx="20" ry="14" fill="#3A2A22"/><path d="M1550 1070 q10 12 20 0" stroke="#3A2A22" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="1478" cy="1092" rx="34" ry="22" fill="#F6D2AA" stroke="#C9936A" stroke-width="3"/><ellipse cx="1642" cy="1092" rx="34" ry="22" fill="#F6D2AA" stroke="#C9936A" stroke-width="3"/></svg>
+    <svg class="deco-s" viewBox="1230 20 660 660" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="1560" cy="350" r="330" fill="#FFE4CC"/><rect x="1370" y="430" width="70" height="90" fill="rgba(245,138,75,.35)" stroke="#C2410C" stroke-width="4"/><rect x="1440" y="350" width="70" height="170" fill="rgba(245,138,75,.35)" stroke="#C2410C" stroke-width="4"/><rect x="1510" y="270" width="70" height="250" fill="rgba(245,138,75,.35)" stroke="#C2410C" stroke-width="4"/><rect x="1580" y="360" width="70" height="160" fill="rgba(245,138,75,.35)" stroke="#C2410C" stroke-width="4"/><rect x="1650" y="450" width="70" height="70" fill="rgba(245,138,75,.35)" stroke="#C2410C" stroke-width="4"/><polyline points="1335,520 1405,430 1475,350 1545,270 1615,360 1685,450 1755,520" fill="none" stroke="#1F3A63" stroke-width="5" stroke-linejoin="round"/><circle cx="1335" cy="520" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><circle cx="1405" cy="430" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><circle cx="1475" cy="350" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><circle cx="1545" cy="270" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><circle cx="1615" cy="360" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><circle cx="1685" cy="450" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><circle cx="1755" cy="520" r="8" fill="#1F3A63" stroke="#fff" stroke-width="3"/><line x1="1320" y1="520" x2="1780" y2="520" stroke="#2A2018" stroke-width="4"/><line x1="1335" y1="532" x2="1335" y2="250" stroke="#2A2018" stroke-width="4"/></svg>
+    <div class="kicker reveal">1학년 2학기 수학&nbsp;· 8단원 교과 정리</div>
+    <h1 class="reveal">자료의 정리와 <span>해석</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">대푯값&nbsp;· 줄기와 잎 그림&nbsp;· 도수분포표&nbsp;· 히스토그램&nbsp;· <span class="nw">상대도수</span></p>
+    <svg class="deco-h" viewBox="1370 840 380 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="1395,1107 1325,1089 1396,1078" fill="#7A4A2B"/><polygon points="1395,1092 1327,1068 1399,1063" fill="#5E3622"/><polygon points="1397,1076 1331,1046 1403,1048" fill="#946039"/><polygon points="1400,1061 1337,1025 1409,1034" fill="#7A4A2B"/><polygon points="1404,1047 1345,1005 1415,1020" fill="#5E3622"/><polygon points="1409,1033 1355,986 1423,1007" fill="#946039"/><polygon points="1416,1019 1366,967 1433,995" fill="#7A4A2B"/><polygon points="1424,1006 1379,950 1443,984" fill="#5E3622"/><polygon points="1434,994 1394,934 1454,974" fill="#946039"/><polygon points="1444,983 1410,919 1466,964" fill="#7A4A2B"/><polygon points="1455,973 1427,906 1479,956" fill="#5E3622"/><polygon points="1467,963 1446,895 1493,949" fill="#946039"/><polygon points="1480,955 1465,885 1507,944" fill="#7A4A2B"/><polygon points="1494,949 1485,877 1521,940" fill="#5E3622"/><polygon points="1508,943 1506,871 1536,937" fill="#946039"/><polygon points="1523,939 1528,867 1552,935" fill="#7A4A2B"/><polygon points="1538,936 1549,865 1567,935" fill="#5E3622"/><polygon points="1553,935 1571,865 1582,936" fill="#946039"/><polygon points="1568,935 1592,867 1597,939" fill="#7A4A2B"/><polygon points="1584,937 1614,871 1612,943" fill="#5E3622"/><polygon points="1599,940 1635,877 1626,949" fill="#946039"/><polygon points="1613,944 1655,885 1640,955" fill="#7A4A2B"/><polygon points="1627,949 1674,895 1653,963" fill="#5E3622"/><polygon points="1641,956 1693,906 1665,973" fill="#946039"/><polygon points="1654,964 1710,919 1676,983" fill="#7A4A2B"/><polygon points="1666,974 1726,934 1686,994" fill="#5E3622"/><polygon points="1677,984 1741,950 1696,1006" fill="#946039"/><polygon points="1687,995 1754,967 1704,1019" fill="#7A4A2B"/><polygon points="1697,1007 1765,986 1711,1033" fill="#5E3622"/><polygon points="1705,1020 1775,1005 1716,1047" fill="#946039"/><polygon points="1711,1034 1783,1025 1720,1061" fill="#7A4A2B"/><polygon points="1717,1048 1789,1046 1723,1076" fill="#5E3622"/><polygon points="1721,1063 1793,1068 1725,1092" fill="#946039"/><polygon points="1724,1078 1795,1089 1725,1107" fill="#7A4A2B"/><path d="M1390 1100 A170 170 0 0 1 1730 1100 Z" fill="#8B5A3A"/><ellipse cx="1440" cy="980" rx="34" ry="46" fill="#7A4A2B" transform="rotate(-18 1440 980)"/><ellipse cx="1680" cy="980" rx="34" ry="46" fill="#7A4A2B" transform="rotate(18 1680 980)"/><ellipse cx="1560" cy="1048" rx="118" ry="92" fill="#F6D2AA"/><circle cx="1514" cy="1018" r="24" fill="#2A2018"/><circle cx="1521" cy="1010" r="8" fill="#fff"/><circle cx="1606" cy="1018" r="24" fill="#2A2018"/><circle cx="1613" cy="1010" r="8" fill="#fff"/><ellipse cx="1560" cy="1054" rx="20" ry="14" fill="#3A2A22"/><path d="M1550 1070 q10 12 20 0" stroke="#3A2A22" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="1478" cy="1092" rx="34" ry="22" fill="#F6D2AA" stroke="#C9936A" stroke-width="3"/><ellipse cx="1642" cy="1092" rx="34" ry="22" fill="#F6D2AA" stroke="#C9936A" stroke-width="3"/></svg>
+</section>
+
+<!-- === 2 === -->
+<section class="slide" style="--z:1.0">
+    <div class="kicker">단원 개요</div>
+    <h2>자료를 정리하고 해석하는 방법 <small>교과서 p.240~272</small></h2>
+    <div class="grid g5">
+        <div class="card hl step reveal"><span class="no">1</span><br><b>8.1 대푯값</b><br>중앙값, 최빈값 <span class="ref">p242</span></div>
+        <div class="card hl step reveal"><span class="no">2</span><br><b>8.2 줄기와 잎 그림</b><br>분포를 한눈에 <span class="ref">p246</span></div>
+        <div class="card hl step reveal"><span class="no">3</span><br><b>8.3 도수분포표</b><br>계급, 도수 <span class="ref">p250</span></div>
+        <div class="card hl step reveal"><span class="no">4</span><br><b>8.4 히스토그램과 도수분포다각형</b><br>그래프로 나타내기 <span class="ref">p254</span></div>
+        <div class="card hl step reveal"><span class="no">5</span><br><b>8.5 상대도수</b><br>비율로 비교 <span class="ref">p258</span></div>
+    </div>
+    <div class="card reveal" style="margin-top:28px">
+        <h3>용어 한눈에 보기</h3>
+        <p class="terms">
+            <span class="tm"><b>변량</b> 자료를 수량으로 나타낸 것<span class="sep"> · </span></span>
+            <span class="tm"><b>대푯값</b> 자료 전체의 특징을 대표적으로 나타내는 값<span class="sep"> · </span></span>
+            <span class="tm"><b>계급</b> 변량을 일정한 간격으로 나눈 구간<span class="sep"> · </span></span>
+            <span class="tm"><b>도수</b> 각 계급에 속하는 자료의 수<span class="sep"> · </span></span>
+            <span class="tm"><b>상대도수</b> 도수의 총합에 대한 각 계급의 도수의 비율</span>
+        </p>
+    </div>
+    <div class="card reveal" style="margin-top:20px">
+        <span class="lb">8.6</span> 통계 프로젝트&nbsp;: <span class="nw">문제 설정 → 자료 수집 → 자료 분석 → 결과 해석</span> <span class="ref">p264</span>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3 === -->
+<section class="slide" style="--z:1.12">
+    <div class="kicker">8.1 대푯값</div>
+    <h2>중앙값과 최빈값 <small>p242~243</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>중앙값</h3>
+            <p>자료를 <b>작은 값부터 크기순으로 나열</b>하였을 때 가운데 위치한 값</p>
+            <ul class="l">
+                <li>변량의 개수가 <b>홀수</b>&nbsp;: 가운데 위치한 값</li>
+                <li>변량의 개수가 <b>짝수</b>&nbsp;: 가운데 위치한 <b>두 값의 평균</b></li>
+            </ul>
+            <p><span class="lb">계산 예</span> 3, 17, 19, 20, 21 → <b>19</b><br>5, 6, 6, 7, 9, 9, 10, 27 → (7+9)÷2 = <b>8</b></p>
+        </div>
+        <div class="card hl reveal">
+            <h3>최빈값</h3>
+            <p>자료에서 <b>가장 많이 나타나는 값</b>. 최(最)는 '가장', 빈(頻)은 '자주'.</p>
+            <ul class="l">
+                <li>값이 하나로 정해지는 평균·중앙값과 달리 <b>두 개 이상일 수 있다</b>.</li>
+            </ul>
+            <p><span class="lb">계산 예</span> 2, 3, 3, 3, 3, 6 → <b>3</b><br>1, 3, 3, 6, 6, 7 → <b>3과 6</b></p>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <span class="lb">정리</span> <b>변량</b>&nbsp;: 자료를 수량으로 나타낸 것 / <b>대푯값</b>&nbsp;: 자료 전체의 특징을 대표적으로 나타내는 값 (평균도 대푯값) <span class="ref">p242</span>
+        <p class="dim" style="margin-top:6px">초등에서 배운 평균 = (자료의 값의 총합) ÷ (자료의 개수)</p>
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4 === -->
+<section class="slide" style="--z:1.35">
+    <div class="kicker">8.1 대푯값</div>
+    <h2>어떤 대푯값이 알맞을까? <small>p242~243</small></h2>
+    <table class="t reveal">
+        <tr><th style="width:18%">구분</th><th>평균</th><th>중앙값</th><th>최빈값</th></tr>
+        <tr><td>뜻</td><td><span class="nw">총합 ÷ 개수</span></td><td>크기순으로 나열한 가운데 값</td><td>가장 많이 나타나는 값</td></tr>
+        <tr><td>값의 개수</td><td>하나</td><td>하나</td><td>두 개 이상일 수 있다</td></tr>
+        <tr><td>알맞은 때</td><td>—</td><td>매우 크거나 매우 작은 값이 있을 때</td><td>변량이 중복되는 자료, 숫자로 나타낼 수 없는 자료</td></tr>
+    </table>
+    <div class="grid g2" style="margin-top:26px">
+        <div class="card hl reveal"><span class="lb">정리</span> 매우 크거나 작은 값이 있으면 <b>평균보다 중앙값</b>이 대푯값으로 더 적절하다.</div>
+        <div class="card reveal"><span class="lb">정리</span> <b>가장 좋아하는 음식</b>처럼 숫자로 나타낼 수 없는 자료는 <b>최빈값</b>을 쓴다.</div>
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5 === -->
+<section class="slide" style="--z:1.1">
+    <div class="kicker">8.2 줄기와 잎 그림</div>
+    <h2>줄기와 잎 그림 <small>p246~248</small></h2>
+    <div class="grid g2" style="grid-template-columns:1fr 640px;align-items:start">
+        <div>
+            <div class="card hl reveal">
+                <h3>줄기와 잎 그림이란?</h3>
+                <p>자료를 <b>줄기와 잎</b>으로 구분하여 나타낸 그림. 보통 줄기는 변량의 <b>큰 자리의 수</b>, 잎은 <b>나머지 자리의 수</b>.</p>
+            </div>
+            <div class="card reveal" style="margin-top:18px">
+                <h3>만드는 순서</h3>
+                <ul class="l">
+                    <li>변량을 줄기와 잎으로 구분한다.</li>
+                    <li>줄기를 작은 수부터 <b>세로</b>로 적는다.</li>
+                    <li>각 줄기의 잎을 차례대로 <b>가로</b>로 적는다. <b>중복</b>되는 변량은 횟수만큼 적는다.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card reveal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 194" class="fig" width="512" height="388" font-family="sans-serif"><text stroke="#fff" stroke-width="3" paint-order="stroke" x="128" y="18" font-size="14" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">예시 자료의 점수</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="58" y="52" font-size="14" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">줄기</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="90" y="52" font-size="14" text-anchor="start" fill="#222" font-weight="700" font-family="sans-serif">잎</text><line x1="24" y1="58" x2="244" y2="58" stroke="#222" stroke-width="1.4"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="58" y="82" font-size="15" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">3</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="90" y="82" font-size="15" text-anchor="start" fill="#222" font-family="sans-serif">1 6 8</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="58" y="108" font-size="15" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">4</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="90" y="108" font-size="15" text-anchor="start" fill="#222" font-family="sans-serif">0 1 3 4 5 7 9</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="58" y="134" font-size="15" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">5</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="90" y="134" font-size="15" text-anchor="start" fill="#222" font-family="sans-serif">2 8</text><line x1="80" y1="58" x2="80" y2="156" stroke="#222" stroke-width="1.4"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="128" y="184" font-size="13" text-anchor="middle" fill="#222" font-family="sans-serif">(3|1은 31점)</text></svg>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:20px">
+        <div class="card reveal"><span class="lb">장점</span> 분포 상태를 쉽게 알 수 있고 <b>원래의 변량도 정확히</b> 알 수 있다.</div>
+        <div class="card reveal"><span class="lb">비교</span> 두 집단은 한 줄기의 <b>좌우로 두 개의 잎</b>을 만들면 비교하기 편리하다 <span class="ref">p248</span></div>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6 === -->
+<section class="slide" style="--z:0.85">
+    <div class="kicker">8.3 도수분포표</div>
+    <h2>도수분포표 <small>p250~251</small></h2>
+    <div class="grid g2" style="grid-template-columns:1fr 560px;align-items:start">
+        <div>
+            <div class="card hl reveal">
+                <h3>용어</h3>
+                <p class="terms" style="grid-template-columns:1fr">
+                    <span class="tm"><b>계급</b> 변량을 일정한 간격으로 나눈 구간<span class="sep"> · </span></span>
+                    <span class="tm"><b>계급의 크기</b> 구간의 너비<span class="sep"> · </span></span>
+                    <span class="tm"><b>도수</b> 각 계급에 속하는 자료의 수<span class="sep"> · </span></span>
+                    <span class="tm"><b>도수분포표</b> 계급별 도수를 나타낸 표</span>
+                </p>
+            </div>
+            <div class="card reveal" style="margin-top:18px">
+                <h3>계급값</h3>
+                <div class="fm" style="font-size:36px"><span class="nw">(계급값) = (계급의 양 끝 값의 합) ÷ 2</span></div>
+                <p>예&nbsp;: 40 이상 45 미만의 계급값은 (40+45)÷2 = <b>42.5</b></p>
+            </div>
+        </div>
+        <div class="card reveal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 254 240" class="fig" width="342" height="324" font-family="sans-serif"><text stroke="#fff" stroke-width="3" paint-order="stroke" x="127" y="18" font-size="14" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">예시 자료의 도수분포표</text><rect x="2" y="28" width="250" height="26" fill="#fde8d3" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="77" y="45.68" font-size="14" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">점수(점)</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="202" y="45.68" font-size="14" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">학생 수(명)</text><rect x="2" y="54" width="250" height="26" fill="#fff" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="77" y="71.68" font-size="14" text-anchor="middle" fill="#222" font-family="sans-serif">30 이상 ~ 35 미만</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="202" y="71.68" font-size="14" text-anchor="middle" fill="#222" font-family="sans-serif">1</text><rect x="2" y="80" width="250" height="26" fill="#fff" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="77" y="97.68" font-size="14" text-anchor="middle" fill="#222" font-family="sans-serif">35 이상 ~ 40 미만</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="202" y="97.68" font-size="14" text-anchor="middle" fill="#222" font-family="sans-serif">2</text><rect x="2" y="106" width="250" height="26" fill="#fff" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="77" y="123.68" font-size="14" text-anchor="middle" fill="#222" font-family="sans-serif">40 이상 ~ 45 미만</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="202" y="123.68" font-size="14" text-anchor="middle" fill="#222" font-family="sans-serif">4</text><rect x="2" y="132" width="250" height="26" fill="#fff" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="77" y="149.68" font-size="14" text-anchor="middle" fill="#222" font-family="sans-serif">45 이상 ~ 50 미만</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="202" y="149.68" font-size="14" text-anchor="middle" fill="#222" font-family="sans-serif">3</text><rect x="2" y="158" width="250" height="26" fill="#fff" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="77" y="175.68" font-size="14" text-anchor="middle" fill="#222" font-family="sans-serif">50 이상 ~ 55 미만</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="202" y="175.68" font-size="14" text-anchor="middle" fill="#222" font-family="sans-serif">1</text><rect x="2" y="184" width="250" height="26" fill="#fff" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="77" y="201.68" font-size="14" text-anchor="middle" fill="#222" font-family="sans-serif">55 이상 ~ 60 미만</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="202" y="201.68" font-size="14" text-anchor="middle" fill="#222" font-family="sans-serif">1</text><rect x="2" y="210" width="250" height="26" fill="#fff" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="77" y="227.68" font-size="14" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">합계</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="202" y="227.68" font-size="14" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">12</text><line x1="152" y1="28" x2="152" y2="236" stroke="#222" stroke-width="1.2"/></svg></div>
+    </div>
+    <div class="grid g2" style="margin-top:20px">
+        <div class="card reveal"><span class="lb">주의</span> '이상'은 그 값을 <b>포함</b>하고 '미만'은 포함하지 않는다 <span class="ref">(초등에서 배운 뜻)</span></div>
+        <div class="card reveal"><span class="lb">정리</span> 계급의 크기는 <b>같게</b>, 계급의 개수는 자료에 맞게. 너무 적거나 많으면 분포를 알기 어렵다 <span class="ref">p251</span></div>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7 === -->
+<section class="slide" style="--z:1.0">
+    <div class="kicker">8.4 히스토그램과 도수분포다각형</div>
+    <h2>히스토그램 <small>p254</small></h2>
+    <div class="grid g2" style="grid-template-columns:1fr 740px;align-items:start">
+        <div>
+            <div class="card hl reveal">
+                <h3>히스토그램</h3>
+                <p>도수분포표에서 각 계급을 <b>가로</b>로, 도수를 <b>세로</b>로 하여 <b>직사각형</b>으로 나타낸 그래프</p>
+            </div>
+            <div class="card reveal" style="margin-top:18px">
+                <h3>그리는 순서</h3>
+                <ul class="l">
+                    <li>가로축에 각 계급의 <b>양 끝 값</b>을 차례대로 적는다.</li>
+                    <li>세로축에 <b>도수</b>를 적는다.</li>
+                    <li>계급의 크기를 가로, 도수를 세로로 하는 <b>직사각형</b>을 그린다.</li>
+                </ul>
+            </div>
+            <div class="card reveal" style="margin-top:18px"><span class="lb">정리</span> 각 계급에 속하는 자료의 수가 <b>많고 적음</b>을 한눈에 알아보기 쉽다.</div>
+        </div>
+        <div class="card reveal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 464 270" class="fig" width="858" height="499" font-family="sans-serif"><text stroke="#fff" stroke-width="3" paint-order="stroke" x="226" y="16" font-size="14" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">히스토그램</text><line x1="58" y1="230" x2="394" y2="230" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="234" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">0</text><line x1="58" y1="192" x2="394" y2="192" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="196" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">1</text><line x1="58" y1="154" x2="394" y2="154" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="158" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">2</text><line x1="58" y1="116" x2="394" y2="116" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="120" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">3</text><line x1="58" y1="78" x2="394" y2="78" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="82" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">4</text><line x1="58" y1="40" x2="394" y2="40" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="44" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">5</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="50" y="28" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">(명)</text><rect x="58" y="192" width="56" height="38" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="114" y="154" width="56" height="76" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="170" y="78" width="56" height="152" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="226" y="116" width="56" height="114" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="282" y="192" width="56" height="38" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="338" y="192" width="56" height="38" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><line x1="58" y1="230" x2="408" y2="230" stroke="#222" stroke-width="1.6"/><line x1="58" y1="36" x2="58" y2="230" stroke="#222" stroke-width="1.6"/><line x1="58" y1="230" x2="58" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="58" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">30</text><line x1="114" y1="230" x2="114" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="114" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">35</text><line x1="170" y1="230" x2="170" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="170" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">40</text><line x1="226" y1="230" x2="226" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="226" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">45</text><line x1="282" y1="230" x2="282" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="282" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">50</text><line x1="338" y1="230" x2="338" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="338" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">55</text><line x1="394" y1="230" x2="394" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="394" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">60</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="416" y="248" font-size="12" text-anchor="start" fill="#222" font-family="sans-serif">(점)</text></svg>
+            <p style="margin-top:6px" class="dim">(예시 자료의 히스토그램)</p>
+        </div>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8 === -->
+<section class="slide" style="--z:1.05">
+    <div class="kicker">8.4 히스토그램과 도수분포다각형</div>
+    <h2>도수분포다각형 <small>p255</small></h2>
+    <div class="grid g2" style="grid-template-columns:1fr 740px;align-items:start">
+        <div>
+            <div class="card hl reveal">
+                <h3>그리는 순서</h3>
+                <ul class="l">
+                    <li>히스토그램의 각 직사각형에서 <b>윗변의 중앙</b>에 점을 찍는다.</li>
+                    <li>양 끝에 <b>도수가 0인 계급</b>이 하나씩 더 있다고 생각하여 그 중앙에 점을 찍는다.</li>
+                    <li>점들을 차례대로 <b>선분</b>으로 연결한다.</li>
+                </ul>
+            </div>
+            <div class="card reveal" style="margin-top:18px">
+                <span class="lb">정리</span> 히스토그램을 그리지 않고 <b>도수분포표</b>로부터 바로 그릴 수도 있다. 분포 상태를 한눈에 알아보기 쉽다.
+            </div>
+            <div class="card warn reveal" style="margin-top:18px">
+                <span class="lb">주의</span> 점은 계급의 끝 지점이 아니라 각 직사각형 <b>윗변의 중앙</b>에 찍는다.
+            </div>
+        </div>
+        <div class="card reveal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508 270" class="fig" width="939" height="499" font-family="sans-serif"><text stroke="#fff" stroke-width="3" paint-order="stroke" x="248" y="16" font-size="14" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">히스토그램과 도수분포다각형</text><line x1="58" y1="230" x2="438" y2="230" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="234" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">0</text><line x1="58" y1="192" x2="438" y2="192" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="196" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">1</text><line x1="58" y1="154" x2="438" y2="154" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="158" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">2</text><line x1="58" y1="116" x2="438" y2="116" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="120" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">3</text><line x1="58" y1="78" x2="438" y2="78" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="82" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">4</text><line x1="58" y1="40" x2="438" y2="40" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="44" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">5</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="50" y="28" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">(명)</text><rect x="105.5" y="192" width="47.5" height="38" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="153" y="154" width="47.5" height="76" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="200.5" y="78" width="47.5" height="152" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="248" y="116" width="47.5" height="114" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="295.5" y="192" width="47.5" height="38" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="343" y="192" width="47.5" height="38" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><line x1="58" y1="230" x2="452" y2="230" stroke="#222" stroke-width="1.6"/><line x1="58" y1="36" x2="58" y2="230" stroke="#222" stroke-width="1.6"/><line x1="58" y1="230" x2="58" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="58" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">25</text><line x1="105.5" y1="230" x2="105.5" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="105.5" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">30</text><line x1="153" y1="230" x2="153" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="153" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">35</text><line x1="200.5" y1="230" x2="200.5" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="200.5" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">40</text><line x1="248" y1="230" x2="248" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="248" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">45</text><line x1="295.5" y1="230" x2="295.5" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="295.5" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">50</text><line x1="343" y1="230" x2="343" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="343" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">55</text><line x1="390.5" y1="230" x2="390.5" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="390.5" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">60</text><line x1="438" y1="230" x2="438" y2="234" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="438" y="248" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">65</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="460" y="248" font-size="12" text-anchor="start" fill="#222" font-family="sans-serif">(점)</text><polyline points="81.75,230 129.25,192 176.75,154 224.25,78 271.75,116 319.25,192 366.75,192 414.25,230" fill="none" stroke="#1f5fa8" stroke-width="2"/><circle cx="81.75" cy="230" r="3.2" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="129.25" cy="192" r="3.2" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="176.75" cy="154" r="3.2" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="224.25" cy="78" r="3.2" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="271.75" cy="116" r="3.2" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="319.25" cy="192" r="3.2" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="366.75" cy="192" r="3.2" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="414.25" cy="230" r="3.2" fill="#1f5fa8" stroke="#fff" stroke-width="1"/></svg>
+            <p style="margin-top:6px" class="dim">(예시 자료&nbsp;: 양 끝 점은 도수가 0인 계급)</p>
+        </div>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9 === -->
+<section class="slide" style="--z:1.25">
+    <div class="kicker">8.5 상대도수</div>
+    <h2>상대도수 <small>p258~259</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>상대도수</h3>
+            <p>도수의 총합에 대한 각 계급의 도수의 <b>비율</b></p>
+            <div class="fm" style="font-size:36px"><span class="nw">(상대도수) = (그 계급의 도수) ÷ (도수의 총합)</span></div>
+            <p class="dim">도수 = 상대도수 × 도수의 총합</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>성질</h3>
+            <ul class="l">
+                <li>각 계급의 상대도수는 <b>0 이상 1 이하</b>인 수</li>
+                <li>상대도수의 총합은 항상 <b>1</b></li>
+            </ul>
+            <p><span class="lb">언제 쓸까</span> 도수의 총합이 <b>다른</b> 두 자료의 분포를 비교할 때 도수 대신 비율을 비교한다.</p>
+        </div>
+    </div>
+    <table class="t reveal" style="margin-top:24px">
+        <tr><th style="width:26%">점수(예시)</th><th>0~10</th><th>10~20</th><th>20~30</th><th>30~40</th><th>40~50</th><th>합계</th></tr>
+        <tr><td>도수(명)</td><td>2</td><td>6</td><td>8</td><td>3</td><td>1</td><td><b>20</b></td></tr>
+        <tr><td>상대도수</td><td>0.1</td><td>0.3</td><td>0.4</td><td>0.15</td><td>0.05</td><td><b>1</b></td></tr>
+    </table>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10 === -->
+<section class="slide" style="--z:1.08">
+    <div class="kicker">8.5 상대도수</div>
+    <h2>상대도수의 분포를 그래프로 <small>p260</small></h2>
+    <div class="grid g2" style="grid-template-columns:1fr 740px;align-items:start">
+        <div>
+            <div class="card hl reveal">
+                <h3>그래프로 나타내기</h3>
+                <ul class="l">
+                    <li>가로축에 각 계급의 <b>양 끝 값</b>, 세로축에 <b>상대도수</b>를 적는다.</li>
+                    <li>히스토그램이나 도수분포다각형과 같은 방법으로 직사각형을 그리거나 점을 찍어 선분으로 연결한다.</li>
+                </ul>
+            </div>
+            <div class="card reveal" style="margin-top:18px">
+                <h3>두 자료 비교하기</h3>
+                <ul class="l">
+                    <li>두 자료의 그래프를 <b>함께</b> 나타내면 분포 상태를 한눈에 비교할 수 있다.</li>
+                    <li>어떤 계급의 상대도수가 더 높다 = 전체에서 차지하는 <b>비율</b>이 더 높다.</li>
+                    <li>그래프가 <b>오른쪽으로 치우쳐</b> 있으면 큰 값이 상대적으로 많다.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card reveal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 514 288" class="fig" width="899" height="504" font-family="sans-serif"><text stroke="#fff" stroke-width="3" paint-order="stroke" x="248" y="16" font-size="14" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">상대도수의 분포 (예시)</text><line x1="52" y1="248" x2="444" y2="248" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="45" y="252" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">0</text><line x1="52" y1="198" x2="444" y2="198" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="45" y="202" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">0.1</text><line x1="52" y1="148" x2="444" y2="148" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="45" y="152" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">0.2</text><line x1="52" y1="98" x2="444" y2="98" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="45" y="102" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">0.3</text><line x1="52" y1="48" x2="444" y2="48" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="45" y="52" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">0.4</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="6" y="36" font-size="12" text-anchor="start" fill="#222" font-family="sans-serif">(상대도수)</text><line x1="52" y1="248" x2="458" y2="248" stroke="#222" stroke-width="1.6"/><line x1="52" y1="44" x2="52" y2="248" stroke="#222" stroke-width="1.6"/><line x1="52" y1="248" x2="52" y2="252" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="52" y="266" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">-10</text><line x1="108" y1="248" x2="108" y2="252" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="108" y="266" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">0</text><line x1="164" y1="248" x2="164" y2="252" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="164" y="266" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">10</text><line x1="220" y1="248" x2="220" y2="252" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="220" y="266" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">20</text><line x1="276" y1="248" x2="276" y2="252" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="276" y="266" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">30</text><line x1="332" y1="248" x2="332" y2="252" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="332" y="266" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">40</text><line x1="388" y1="248" x2="388" y2="252" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="388" y="266" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">50</text><line x1="444" y1="248" x2="444" y2="252" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="444" y="266" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">60</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="466" y="266" font-size="12" text-anchor="start" fill="#222" font-family="sans-serif">(점)</text><polyline points="80,248 136,198 192,98 248,48 304,173 360,223 416,248" fill="none" stroke="#c2410c" stroke-width="2.2"/><circle cx="80" cy="248" r="3.4" fill="#c2410c" stroke="#fff" stroke-width="1"/><circle cx="136" cy="198" r="3.4" fill="#c2410c" stroke="#fff" stroke-width="1"/><circle cx="192" cy="98" r="3.4" fill="#c2410c" stroke="#fff" stroke-width="1"/><circle cx="248" cy="48" r="3.4" fill="#c2410c" stroke="#fff" stroke-width="1"/><circle cx="304" cy="173" r="3.4" fill="#c2410c" stroke="#fff" stroke-width="1"/><circle cx="360" cy="223" r="3.4" fill="#c2410c" stroke="#fff" stroke-width="1"/><circle cx="416" cy="248" r="3.4" fill="#c2410c" stroke="#fff" stroke-width="1"/><line x1="152" y1="36" x2="178" y2="36" stroke="#c2410c" stroke-width="2.4"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="184" y="40" font-size="13" text-anchor="start" fill="#c2410c" font-weight="700" font-family="sans-serif">자료 1</text><polyline points="80,248 136,148 192,73 248,123 304,173 360,223 416,248" fill="none" stroke="#1f5fa8" stroke-width="2.2" stroke-dasharray="6 4"/><circle cx="80" cy="248" r="3.4" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="136" cy="148" r="3.4" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="192" cy="73" r="3.4" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="248" cy="123" r="3.4" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="304" cy="173" r="3.4" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="360" cy="223" r="3.4" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><circle cx="416" cy="248" r="3.4" fill="#1f5fa8" stroke="#fff" stroke-width="1"/><line x1="248" y1="36" x2="274" y2="36" stroke="#1f5fa8" stroke-width="2.4" stroke-dasharray="6 4"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="280" y="40" font-size="13" text-anchor="start" fill="#1f5fa8" font-weight="700" font-family="sans-serif">자료 2</text></svg>
+            <p style="margin-top:6px" class="dim">(예시 자료&nbsp;: 두 자료의 상대도수 그래프)</p>
+        </div>
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11 === -->
+<section class="slide" style="--z:1.0">
+    <div class="kicker">수학 돋보기 · 8.6 통계 프로젝트</div>
+    <h2>잘못 나타낸 자료와 통계 프로젝트 <small>p263~269</small></h2>
+    <div class="grid g2" style="grid-template-columns:1fr 620px;align-items:start">
+        <div>
+            <div class="card warn reveal">
+                <h3>비판적으로 보기 <span class="ref">p263</span></h3>
+                <ul class="l">
+                    <li>자료를 잘못 나타내면 <b>사실과 다른 정보</b>를 전달하므로 주의한다.</li>
+                    <li><b>세로축의 눈금</b>이 잘못된 히스토그램은 도수의 차이를 실제와 다르게 오해하게 한다.</li>
+                    <li><b>계급의 크기가 같지 않은</b> 표처럼 잘못 정리한 자료는 혼란을 줄 수 있다.</li>
+                </ul>
+            </div>
+            <div class="card hl reveal" style="margin-top:18px">
+                <h3>통계 프로젝트 <span class="ref">p264~268</span></h3>
+                <div class="grid g4" style="gap:10px">
+                    <div class="step"><span class="no">1</span><br><b>문제 설정</b></div>
+                    <div class="step"><span class="no">2</span><br><b>자료 수집</b></div>
+                    <div class="step"><span class="no">3</span><br><b>자료 분석</b></div>
+                    <div class="step"><span class="no">4</span><br><b>결과 해석</b></div>
+                </div>
+                <p style="margin-top:8px">자료는 설문 조사나 실험으로 직접 수집하거나 국가 기관 누리집에서 내려받는다. 정리한 자료는 문제와 연결하여 해석한다.</p>
+            </div>
+        </div>
+        <div class="card reveal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 408 290" class="fig" width="571" height="406" font-family="sans-serif"><text stroke="#fff" stroke-width="3" paint-order="stroke" x="198" y="16" font-size="14" text-anchor="middle" fill="#222" font-weight="700" font-family="sans-serif">눈금 간격이 같지 않은 예</text><line x1="58" y1="250" x2="338" y2="250" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="254" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">0</text><line x1="58" y1="180" x2="338" y2="180" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="184" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">8</text><line x1="58" y1="110" x2="338" y2="110" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="114" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">12</text><line x1="58" y1="40" x2="338" y2="40" stroke="#d9dde6" stroke-width="1"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="51" y="44" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">16</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="50" y="28" font-size="12" text-anchor="end" fill="#222" font-family="sans-serif">(명)</text><rect x="58" y="180" width="56" height="70" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="114" y="75" width="56" height="175" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="170" y="40" width="56" height="210" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="226" y="110" width="56" height="140" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><rect x="282" y="215" width="56" height="35" fill="#f3c9a0" stroke="#c2410c" stroke-width="1.4"/><line x1="58" y1="250" x2="352" y2="250" stroke="#222" stroke-width="1.6"/><line x1="58" y1="36" x2="58" y2="250" stroke="#222" stroke-width="1.6"/><line x1="58" y1="250" x2="58" y2="254" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="58" y="268" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">0</text><line x1="114" y1="250" x2="114" y2="254" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="114" y="268" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">5</text><line x1="170" y1="250" x2="170" y2="254" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="170" y="268" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">10</text><line x1="226" y1="250" x2="226" y2="254" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="226" y="268" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">15</text><line x1="282" y1="250" x2="282" y2="254" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="282" y="268" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">20</text><line x1="338" y1="250" x2="338" y2="254" stroke="#222" stroke-width="1.2"/><text stroke="#fff" stroke-width="3" paint-order="stroke" x="338" y="268" font-size="12" text-anchor="middle" fill="#222" font-family="sans-serif">25</text><text stroke="#fff" stroke-width="3" paint-order="stroke" x="360" y="268" font-size="12" text-anchor="start" fill="#222" font-family="sans-serif">(분)</text></svg>
+            <p style="margin-top:6px" class="dim">(눈금 간격이 같지 않게 그린 예)</p>
+        </div>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12 === -->
+<section class="slide" style="--z:0.95">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>구분하기</h2>
+    <table class="t reveal">
+        <tr><th style="width:20%">비교</th><th>도수</th><th>상대도수</th></tr>
+        <tr><td>뜻</td><td>각 계급에 속하는 자료의 수</td><td>도수의 총합에 대한 도수의 비율</td></tr>
+        <tr><td>합</td><td>자료의 총수(합계)</td><td>항상 1</td></tr>
+        <tr><td>쓰임</td><td>한 자료의 분포</td><td>도수의 총합이 다른 두 자료의 비교</td></tr>
+    </table>
+    <table class="t reveal" style="margin-top:22px">
+        <tr><th style="width:20%">비교</th><th>줄기와 잎 그림</th><th>도수분포표</th><th>히스토그램</th><th>도수분포다각형</th></tr>
+        <tr><td>특징</td><td>원래 변량을 알 수 있다</td><td>계급별 도수를 표로 나타낸다</td><td>직사각형으로 도수를 나타낸다</td><td>윗변 중앙의 점을 선분으로 연결</td></tr>
+    </table>
+    <div class="card warn reveal" style="margin-top:22px">
+        <h3>이렇게 오해하지 말자</h3>
+        <ul class="l">
+            <li>최빈값은 항상 1개이다 (X) → <b>두 개 이상</b>일 수 있다.</li>
+            <li>상대도수의 총합은 2이다 (X) → 항상 <b>1</b>이다.</li>
+            <li>도수분포다각형은 계급의 끝 지점에 점을 찍는다 (X) → <b>윗변의 중앙</b>.</li>
+            <li>도수분포표에서 계급의 개수는 많을수록 좋다 (X) → <b>너무 적거나 많으면</b> 알기 어렵다.</li>
+        </ul>
+    </div>
+    <div class="pg">12</div>
+</section>
+
+<!-- === 13 === -->
+<section class="slide" style="--z:1.25">
+    <div class="kicker">시험 포인트</div>
+    <h2>이런 문제를 풀어 보자</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>예상 문제 유형 (구하기)</h3>
+            <ul class="l">
+                <li><b>중앙값·최빈값</b> 구하기, 알맞은 대푯값 고르기</li>
+                <li>미지수가 든 자료의 <b>대푯값</b></li>
+                <li>그래프·표를 읽고 <b>이상·미만</b> 조건의 인원, 비율(%) 구하기</li>
+                <li><b>일부가 가려진</b> 그래프와 비율 조건으로 도수 구하기</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>예상 문제 유형 (비교)</h3>
+            <ul class="l">
+                <li>도수의 총합이 다른 두 집단은 <b>상대도수</b>로 비교한다.</li>
+                <li>상대도수 그래프의 오른쪽 치우침 읽기</li>
+                <li>잘못 나타낸 그래프·표 찾기</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>마지막 점검</h3>
+        <p>중앙값은 <b>크기순으로 나열</b>했는가? '이상·미만' 경계를 확인했는가? 도수의 합이 <b>자료의 총수</b>와 같은가? 상대도수의 합이 <b>1</b>인가?</p>
+    </div>
+    <div class="pg">13</div>
+</section>
+
+<!-- === 14 === -->
+<section class="slide core few">
+    <div class="kicker">꼭 기억할 것</div>
+    <h2>핵심 암기 6가지</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>중앙값</b>&nbsp;: 크기순으로 나열한 가운데 값 <span class="sl">/ </span>(짝수 개이면 가운데 두 값의 평균)</li>
+                <li><b>최빈값</b>&nbsp;: 가장 많이 나타나는 값 <span class="sl">/ </span>두 개 이상일 수 있다</li>
+                <li><b>계급값</b> = (계급의 양 끝 값의 합) ÷ 2 <span class="sl">/ </span>도수의 합 = 자료의 총수</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>히스토그램</b>&nbsp;: 가로 = 계급, 세로 = 도수</li>
+                <li><b>도수분포다각형</b>&nbsp;: 윗변 중앙에 점, 양 끝에 도수 0인 계급</li>
+                <li><b>상대도수</b> = 도수 ÷ 도수의 총합 <span class="sl">/ </span>총합은 항상 1</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">14</div>
+</section>
+
+<div class="axis-prog" id="prog" aria-hidden="true"><div class="ln"></div><i class="dot" id="pdot"></i><span class="co" id="pco"></span></div>
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 14</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 1100px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+        updProg();
+    }
+    var prog = document.getElementById('prog'), pdot = document.getElementById('pdot'), pco = document.getElementById('pco');
+    function buildProg() {
+        for (var k = 0; k < slides.length; k++) {
+            var tk = document.createElement('span'); tk.className = 'tk'; tk.style.left = (slides.length > 1 ? k / (slides.length - 1) * 100 : 0) + '%';
+            prog.insertBefore(tk, pdot);
+        }
+    }
+    function updProg() {
+        var p = slides.length > 1 ? cur / (slides.length - 1) * 100 : 0;
+        pdot.style.left = p + '%'; pco.style.left = p + '%'; pco.textContent = '(' + (cur + 1) + ', 0)';
+        pco.classList.toggle('end', cur === slides.length - 1);
+        var tks = prog.querySelectorAll('.tk');
+        for (var k = 0; k < tks.length; k++) tks[k].classList.toggle('on', k <= cur);
+    }
+    buildProg();
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+<script>
+/* 폰 화면용: 표 머리 글을 각 칸에 붙여 두면(data-label) CSS가 행 단위 카드로 쌓아 보여 준다 */
+(function(){
+  document.querySelectorAll('.slide table').forEach(function(t){
+    var rows=[].slice.call(t.rows); if(rows.length<2) return;
+    var hr=rows[0]; if(![].every.call(hr.cells,function(c){return c.tagName==='TH';})) return;
+    var labels=[], col=0;
+    [].forEach.call(hr.cells,function(c){ var n=c.colSpan||1; for(var k=0;k<n;k++) labels[col++]=c.textContent.replace(/\s+/g,' ').trim(); });
+    hr.classList.add('hrow');
+    var busy=[];
+    rows.slice(1).forEach(function(r){
+      var c=0;
+      [].forEach.call(r.cells,function(cell){
+        while(busy[c]>0){ c++; }
+        if(c>0 && labels[c]) cell.setAttribute('data-label',labels[c]);
+        var rs=cell.rowSpan||1, cs=cell.colSpan||1;
+        for(var k=0;k<cs;k++){ if(rs>1) busy[c+k]=rs; }
+        c+=cs;
+      });
+      for(var i=0;i<busy.length;i++){ if(busy[i]>0 && !(busy[i]===undefined)) { /* 아래에서 감소 */ } }
+      busy=busy.map(function(v){ return v>0 ? v-1 : 0; });
+    });
+    t.classList.add('stack');
+  });
+})();
+</script>
+</body>
+</html>
