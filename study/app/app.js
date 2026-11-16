@@ -252,8 +252,15 @@ var Mus=(function(){
       stopT=setTimeout(function(){ if(!shouldPlay()&&el&&!el.paused){ el.pause(); if(!document.hidden) fresh=true; } },FADE_OUT*1000+150);
     }
   }
-  function firstGesture(){ if(started) return; started=true; sync(); }
-  ['pointerdown','keydown','touchstart'].forEach(function(ev){ document.addEventListener(ev,firstGesture,{once:true,passive:true}); });
+  /* 브라우저는 소리가 나기 전에 사용자의 '누르기'를 요구한다. 터치에서는 손을 뗄 때(pointerup·touchend·click)가 인정되므로
+   * 그때까지 계속 기다렸다가, 실제로 재생이 시작되면 그만 기다린다(막히면 다음 터치에서 다시 시도). */
+  var GEST=['pointerup','touchend','click','keydown'];
+  function disarm(){ GEST.forEach(function(ev){ document.removeEventListener(ev,onGesture,true); }); }
+  function onGesture(){
+    started=true; sync();
+    setTimeout(function(){ if(el&&!el.paused&&ctx&&ctx.state==='running') disarm(); },700);
+  }
+  GEST.forEach(function(ev){ document.addEventListener(ev,onGesture,true); });
   document.addEventListener('visibilitychange',function(){ sync(); });
   return {
     get on(){ return wantOn; },
