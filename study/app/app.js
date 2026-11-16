@@ -140,7 +140,7 @@ var Snd=(function(){
   var bufs={}, loading={}, lastCustom=0;
   function stamp(){ lastCustom=Date.now(); }
   function load(name){ if(bufs[name]||loading[name]) return; var c=ac(); if(!c) return; loading[name]=1;
-    fetch('app/snd/'+name+'.ogg?v=20261117i').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
+    fetch('app/snd/'+name+'.ogg?v=20261117j').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
       .then(function(ab){ return new Promise(function(ok,no){ c.decodeAudioData(ab,ok,no); }); })
       .then(function(b){ bufs[name]=b; },function(){ loading[name]=0; }); }
   function play(name,vol){ var c=ac(); if(!c) return true; var b=bufs[name]; if(!b){ load(name); return false; }
@@ -272,7 +272,7 @@ function forceRefresh(btn){
   if(btn){ btn.disabled=true; btn.textContent='…'; }
   var urls=[location.pathname];
   Array.prototype.forEach.call(document.querySelectorAll('script[src],link[rel=stylesheet][href]'),function(e){ var u=e.src||e.href; if(u.indexOf(location.origin)===0) urls.push(u); });
-  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117i'); });
+  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117j'); });
   var jobs=[];
   try{ if(window.caches) jobs.push(caches.keys().then(function(ks){ return Promise.all(ks.map(function(k){ return caches.delete(k); })); })); }catch(e){}
   try{ if(navigator.serviceWorker) jobs.push(navigator.serviceWorker.getRegistration().then(function(r){ return r&&r.update(); })); }catch(e){}
@@ -378,7 +378,8 @@ function renderRoom(){
   var page=h('div',{class:'page'},[
     h('div',{class:'topbar'},[h('a',{class:'btn back',href:'#/'},['← 홈']),h('div',{},[h('div',{class:'crumb',text:'민겸이 공부 공간'}),h('h1',{text:'공부방'})])]),
     miniDashboard(),
-    studyCards(learning)
+    studyCards(learning),
+    backupCard()   /* 백업은 공부방 전체(오답노트·시험 기록·필기)가 대상이라 공부방 맨 아래에 둔다 */
   ]);
   app.appendChild(page); app.appendChild(themeBtn());
 }
@@ -512,7 +513,6 @@ function renderShelf(kind,sem){
   ]));
   page.appendChild(h('p',{class:'muted',style:'margin:-6px 0 14px',text:kind==='summary'?'교과 정리를 보고 싶은 교과서를 눌러 보세요. 단원별 교과 정리 슬라이드가 나와요.':kind==='exam'?'풀고 싶은 교과서를 눌러 보세요. 누를 때마다 새로운 시험을 볼 수 있어요.':'교과서별로 틀린 문제가 모여 있어요. 빨간 숫자는 아직 학습 중인 문제 수예요.'}));
   var cs=h('div',{class:'bookcase'}); page.appendChild(cs);
-  if(kind==='notes') page.appendChild(backupCard());
   app.appendChild(page); app.appendChild(themeBtn());
   return Data.catalogP().then(function(c){
     var books=c.books.filter(function(b){ return semKey(b)===sem; }).sort(function(a,b){ return a.grade-b.grade||a.semester-b.semester||a.subject.localeCompare(b.subject,'ko'); });
