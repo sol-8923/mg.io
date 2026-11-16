@@ -215,6 +215,17 @@ body.editing [contenteditable] { outline: 2px dashed var(--pen); }
     .cover .deco-s { display: block; width: 58%; max-width: 250px; height: auto; align-self: flex-end; margin: 0 0 6px; }
     .cover .deco-h { display: block; width: 52%; max-width: 220px; height: auto; align-self: center; margin: 22px 0 -36px; }
 }
+/* 정다면체 5종 카드 */
+.poly5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.poly5 .pc { background: #fff; border: 2px solid var(--orange); border-radius: 14px; padding: 8px 6px 10px; text-align: center; box-shadow: 4px 5px 0 rgba(245,138,75,.35); }
+.poly5 .pc h3 { font-size: 30px; margin-bottom: 2px; white-space: nowrap; }
+.poly5 .pc svg { display: block; margin: 0 auto; }
+.poly5 .sh { font-size: 26px; font-weight: 700; color: var(--ink); margin-top: 2px; }
+.poly5 .big { font-family: var(--font-display); font-size: 54px; line-height: 1.05; color: #B42E1B; }
+.poly5 .big small { font-size: 28px; margin-left: 2px; }
+.poly5 .cap { font-size: 22px; color: var(--ink-dim); }
+.poly5 .fc { margin-top: 4px; display: inline-block; font-size: 24px; padding: 2px 14px; border-radius: 99px; background: var(--bg-3); color: var(--navy); font-weight: 700; }
+@media (max-width: 820px) { .poly5 { grid-template-columns: repeat(2, 1fr); } .poly5 .pc h3 { font-size: 24px; } }
 </style>
 </head>
 <body>
@@ -310,28 +321,64 @@ body.editing [contenteditable] { outline: 2px dashed var(--pen); }
             </ul>
         </div>
         <div class="card reveal">
-            <h3>검산 (모서리·꼭짓점·면 관계)</h3>
+            <h3>검산 (모서리·꼭짓점·면 관계) <span class="tag">교과서 밖 참고</span></h3>
             <p>각기둥 : 2n − 3n + (n+2) = <b>2</b><br>각뿔 : (n+1) − 2n + (n+1) = <b>2</b></p>
-            <p class="dim">(꼭짓점 − 모서리 + 면 = 2 로 맞는지 확인하는 용도)</p>
+            <p class="dim">(꼭짓점 − 모서리 + 면 = 2 로 맞는지 확인하는 용도. 교과서에는 나오지 않는 내용이라 시험에 나오지 않아도 괜찮아요.)</p>
         </div>
     </div>
     <div class="pg">4</div>
 </section>
 
 <!-- === 5. 정다면체 === -->
-<section class="slide" style="--z:1.15">
+<section class="slide" style="--z:1">
     <div class="kicker">7.1 다면체</div>
-    <h2>정다면체 5가지 <small>p212~213</small></h2>
+    <h2>정다면체 5가지 <small>p212~213 · 한 꼭짓점 면의 수는 교과서 해설 표</small></h2>
     <div class="card hl reveal">
         <h3>정다면체의 조건</h3>
         <p>① 모든 면이 <b>합동인 정다각형</b> ② 각 꼭짓점에 모인 <b>면의 개수가 같다</b>. 이를 만족하는 다면체는 <b>다섯 가지뿐</b>이다.</p>
     </div>
-    <table class="t reveal" style="margin-top:24px">
-        <tr><th style="width:30%">면의 모양</th><th>정다면체</th></tr>
-        <tr><td>정삼각형</td><td><b>정사면체 · 정팔면체 · 정이십면체</b> (3가지)</td></tr>
-        <tr><td>정사각형</td><td><b>정육면체</b></td></tr>
-        <tr><td>정오각형</td><td><b>정십이면체</b></td></tr>
-    </table>
+    <div class="poly5" style="margin-top:22px">
+        <div class="pc reveal">
+            <h3>정사면체</h3>
+            <svg viewBox="0 0 120 108" width="92" height="83" aria-hidden="true"><polygon points="60.0,12.0 98.1,78.0 21.9,78.0" fill="#FFE2C4" stroke="#1F3A63" stroke-width="4" stroke-linejoin="round"/></svg>
+            <div class="sh">정삼각형</div>
+            <div class="big">3<small>개</small></div>
+            <div class="cap">한 꼭짓점에 모인 면</div>
+            <div class="fc">면 4개</div>
+        </div>
+        <div class="pc reveal">
+            <h3>정육면체</h3>
+            <svg viewBox="0 0 120 108" width="92" height="83" aria-hidden="true"><polygon points="91.1,24.9 91.1,87.1 28.9,87.1 28.9,24.9" fill="#FFE2C4" stroke="#1F3A63" stroke-width="4" stroke-linejoin="round"/></svg>
+            <div class="sh">정사각형</div>
+            <div class="big">3<small>개</small></div>
+            <div class="cap">한 꼭짓점에 모인 면</div>
+            <div class="fc">면 6개</div>
+        </div>
+        <div class="pc reveal">
+            <h3>정팔면체</h3>
+            <svg viewBox="0 0 120 108" width="92" height="83" aria-hidden="true"><polygon points="60.0,12.0 98.1,78.0 21.9,78.0" fill="#FFE2C4" stroke="#1F3A63" stroke-width="4" stroke-linejoin="round"/></svg>
+            <div class="sh">정삼각형</div>
+            <div class="big">4<small>개</small></div>
+            <div class="cap">한 꼭짓점에 모인 면</div>
+            <div class="fc">면 8개</div>
+        </div>
+        <div class="pc reveal">
+            <h3>정십이면체</h3>
+            <svg viewBox="0 0 120 108" width="92" height="83" aria-hidden="true"><polygon points="60.0,12.0 101.8,42.4 85.9,91.6 34.1,91.6 18.2,42.4" fill="#FFE2C4" stroke="#1F3A63" stroke-width="4" stroke-linejoin="round"/></svg>
+            <div class="sh">정오각형</div>
+            <div class="big">3<small>개</small></div>
+            <div class="cap">한 꼭짓점에 모인 면</div>
+            <div class="fc">면 12개</div>
+        </div>
+        <div class="pc reveal">
+            <h3>정이십면체</h3>
+            <svg viewBox="0 0 120 108" width="92" height="83" aria-hidden="true"><polygon points="60.0,12.0 98.1,78.0 21.9,78.0" fill="#FFE2C4" stroke="#1F3A63" stroke-width="4" stroke-linejoin="round"/></svg>
+            <div class="sh">정삼각형</div>
+            <div class="big">5<small>개</small></div>
+            <div class="cap">한 꼭짓점에 모인 면</div>
+            <div class="fc">면 20개</div>
+        </div>
+    </div>
     <div class="grid g2" style="margin-top:24px">
         <div class="card reveal">
             <h3>이름 읽는 법</h3>
@@ -339,7 +386,7 @@ body.editing [contenteditable] { outline: 2px dashed var(--pen); }
         </div>
         <div class="card warn reveal">
             <h3>시험에서</h3>
-            <p>정다면체 5종의 <b>면의 모양</b>과 <b>한 꼭짓점에 모인 면의 개수</b>를 교과서(p212~213)의 표로 확인해 외운다.</p>
+            <p>면의 모양과 <b>한 꼭짓점에 모인 면의 개수(3·3·4·3·5)</b>를 짝지어 외운다. 정육각형은 3개가 모이면 120°×3=360°가 되어 입체를 만들 수 없어 정다면체가 없다.</p>
         </div>
     </div>
     <div class="pg">5</div>
