@@ -161,7 +161,7 @@ svg.dia .d { fill: var(--ink-dim); font-size: 24px; }
 body.editing [contenteditable] { outline: 2px dashed var(--pink); }
 
 /* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
-@media (max-width: 820px) and (orientation: portrait) {
+@media (max-width: 1100px) and (orientation: portrait) {
     html, body { overflow: auto; height: auto; background: var(--sky); }
     .deck-viewport { position: static; overflow: visible; }
     .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; padding: 10px; }
@@ -234,7 +234,7 @@ body.fitting .reveal { transform: none !important; transition: none !important; 
 svg.dia text { font-size: 32px; }
 svg.dia .d { font-size: 29px; }
 
-@media (max-width: 820px) and (orientation: portrait) {
+@media (max-width: 1100px) and (orientation: portrait) {
     .cover { min-height: 0; }
     .cover h1 { display: block; width: auto; height: auto; padding: 0; margin: 16px 0 12px; }
     .cv-text { padding-bottom: 0; }
@@ -256,7 +256,7 @@ span.nw { white-space: nowrap; }
 .card.note p.dim { color: var(--ink); }
 /* 한 줄 요약 카드: 줄 길이 균형 */
 .card.sum { text-wrap: balance; }
-@media (max-width: 820px) and (orientation: portrait) {
+@media (max-width: 1100px) and (orientation: portrait) {
     /* 가로로 밀어 보는 다이어그램 안내 */
     .dia-wrap::before { content: "← 옆으로 밀어서 보기 →"; display: block; position: sticky; left: 0; width: 100%; box-sizing: border-box; text-align: center; font-family: var(--font-body); font-size: 15px; font-weight: 700; color: var(--ink-dim); padding: 4px 0 8px; }
     /* 카드 안 확대 글자는 모바일에서 한 크기로 통일 */
@@ -682,7 +682,7 @@ span.nw { white-space: nowrap; }
     var stage = document.getElementById('deckStage');
     var count = document.getElementById('count');
     var cur = 0;
-    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+    var mobile = window.matchMedia('(max-width: 1100px) and (orientation: portrait)');
 
     function scale() {
         if (mobile.matches) { stage.style.transform = ''; return; }
@@ -770,7 +770,7 @@ span.nw { white-space: nowrap; }
 <script>
 /* 내용이 적은 슬라이드를 화면에 맞게 키운다: 본문 묶음에 zoom을 걸고, 그래도 비면 여백을 넓힌다(모바일은 제외) */
 (function () {
-    var mq = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+    var mq = window.matchMedia('(max-width: 1100px) and (orientation: portrait)');
     var stage = document.getElementById('deckStage');
     var slides = Array.prototype.slice.call(document.querySelectorAll('.slide')).filter(function (s) { return !s.classList.contains('cover'); });
     var CAP = 1.2, CAP2 = 1.25, BOTTOM = 975;

@@ -151,7 +151,7 @@ table.t th:last-child, table.t td:last-child { border-right: 0; }
 body.editing [contenteditable] { outline: 2px dashed var(--pt); }
 
 /* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
-@media (max-width: 820px) and (orientation: portrait) {
+@media (max-width: 1100px) and (orientation: portrait) {
     html, body { overflow: auto; height: auto; background: var(--sky-l); }
     .deck-viewport { position: static; overflow: visible; }
     .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
@@ -233,7 +233,7 @@ table.t th b, table.t th strong { color: inherit; }
 .trail .hiker { top: -6px; width: 36px; height: 46px; margin-left: -18px; }
 
 /* 모바일: 위 규칙 중 세로 중앙 정렬·확대 해제 */
-@media (max-width: 820px) and (orientation: portrait) {
+@media (max-width: 1100px) and (orientation: portrait) {
     .slide:not(.cover) { display: block; padding-bottom: 52px; }
     .slide:not(.cover) > :not(.kicker):not(h2):not(.pg) { zoom: 1 !important; }
     .slide:not(.cover) > h2 + * { margin-top: 12px !important; }
@@ -253,7 +253,7 @@ table.t th b, table.t th strong { color: inherit; }
 
 /* 3) 모바일 보정 */
 .swipe-hint { display: none; }
-@media (max-width: 820px) and (orientation: portrait) {
+@media (max-width: 1100px) and (orientation: portrait) {
     /* 가로로 밀어야 보이는 SVG 위에 안내 문구 (.swipe-hint) */
     .swipe-hint { display: block; text-align: center; font-size: 14px; font-weight: 700; color: var(--ink-dim); margin: 0 0 6px; }
     /* 표 글자는 16px 이상 */
@@ -276,7 +276,7 @@ table.t th b, table.t th strong { color: inherit; }
 .fx-mis table.t td:first-child { white-space: normal; }
 .fx-mis .card.warn ul.l { column-count: 2; column-gap: 48px; }
 .fx-mis .card.warn ul.l li { break-inside: avoid; }
-@media (max-width: 820px) and (orientation: portrait) {
+@media (max-width: 1100px) and (orientation: portrait) {
     .fx-mis table.t { table-layout: auto; }
     .fx-mis table.t th:nth-child(n) { width: auto; }
     .fx-mis table.t td:first-child { white-space: normal; }
@@ -300,7 +300,7 @@ h2 .dot { margin: 0 .16em; }
 .fx-lh { line-height: 1.6; }
 /* 번호 카드 글줄 균형 */
 .card.step { text-wrap: balance; }
-@media (max-width: 820px) and (orientation: portrait) {
+@media (max-width: 1100px) and (orientation: portrait) {
     table.t td, table.t th { text-wrap: balance; }
     .fx-s9 .grid .card.hl ul.l { font-size: inherit; display: block; }
     .fx-s9 .grid .card.hl ul.l li { margin-bottom: 8px; }
@@ -750,7 +750,7 @@ h2 .dot { margin: 0 .16em; }
     var stage = document.getElementById('deckStage');
     var count = document.getElementById('count');
     var cur = 0;
-    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+    var mobile = window.matchMedia('(max-width: 1100px) and (orientation: portrait)');
 
     function scale() {
         if (mobile.matches) { stage.style.transform = ''; return; }
