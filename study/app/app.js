@@ -165,6 +165,49 @@ function themeBtn(){
   return h('div',{class:'dock'},[sb,tb]);
 }
 
+/* 교실 문 안쪽: 원근감 있는 방 + 조금 떨어진 곳의 책장(SVG, 문마다 책 배치가 다르다) */
+function roomSvg(seed){
+  var s=seed*2654435761>>>0; function rnd(){ s=(s+0x6D2B79F5)>>>0; var t=s; t=Math.imul(t^t>>>15,t|1); t^=t+Math.imul(t^t>>>7,t|61); return ((t^t>>>14)>>>0)/4294967296; }
+  var pal=['#9d2f2f','#2c5282','#c99a2e','#2f6b45','#7a3b8c','#c4621f','#1f7a86','#8a2a4c','#4a5aa8','#6f7f22','#b24a47','#34415f','#a67c52','#e4d9c0','#3a3a3a'];
+  var o='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 170" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'
+   +'<defs><linearGradient id="rw'+seed+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3dfae"/><stop offset="1" stop-color="#c79a57"/></linearGradient>'
+   +'<linearGradient id="rf'+seed+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a5a2b"/><stop offset="1" stop-color="#4a2c12"/></linearGradient>'
+   +'<linearGradient id="rs'+seed+'" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b6a3d"/><stop offset="1" stop-color="#d9b676"/></linearGradient>'
+   +'<radialGradient id="rv'+seed+'" cx=".5" cy=".42" r=".75"><stop offset=".45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".62"/></radialGradient>'
+   +'<radialGradient id="rl'+seed+'" cx=".5" cy=".38" r=".5"><stop offset="0" stop-color="#fff6d6" stop-opacity=".6"/><stop offset="1" stop-color="#fff6d6" stop-opacity="0"/></radialGradient></defs>'
+   +'<polygon points="0,0 120,0 120,170 0,170" fill="#3a2a18"/>'
+   +'<polygon points="0,0 120,0 94,30 26,30" fill="#a98a5c"/>'                       /* 천장 */
+   +'<polygon points="0,0 26,30 26,118 0,170" fill="url(#rs'+seed+')"/>'              /* 왼쪽 벽 */
+   +'<polygon points="120,0 94,30 94,118 120,170" fill="#a78556"/>'                  /* 오른쪽 벽 */
+   +'<rect x="26" y="30" width="68" height="88" fill="url(#rw'+seed+')"/>'            /* 안쪽 벽 */
+   +'<polygon points="26,118 94,118 120,170 0,170" fill="url(#rf'+seed+')"/>';        /* 바닥 */
+  for(var i=1;i<6;i++){ var x0=26+i*68/6, x1=-20+i*160/6; o+='<line x1="'+x0+'" y1="118" x2="'+x1+'" y2="170" stroke="#2c1a0a" stroke-opacity=".35" stroke-width=".5"/>'; }   /* 마루 결 */
+  o+='<polygon points="52,170 68,170 64,134 56,134" fill="#a33b3b" fill-opacity=".55"/>';                                 /* 복도 러그 */
+  /* 책장 */
+  var bx=34, bw=52, by=36, bh=80, rows=4, rh=(bh-4)/rows;
+  o+='<rect x="'+(bx-2)+'" y="'+(by-2)+'" width="'+(bw+4)+'" height="'+(bh+3)+'" fill="#3f2a14"/>'
+   +'<rect x="'+bx+'" y="'+by+'" width="'+bw+'" height="'+(bh-1)+'" fill="#24160a"/>';
+  for(var r=0;r<rows;r++){
+    var base=by+2+(r+1)*rh-1, x=bx+1.5, end=bx+bw-1.5;
+    while(x<end-2){
+      var w=2+rnd()*3.2, h=rh*(0.55+rnd()*0.4), c=pal[Math.floor(rnd()*pal.length)];
+      if(x+w>end) break;
+      if(rnd()<0.07 && x<end-14){ var lw=3, lh=rh*0.85; o+='<rect x="'+x+'" y="'+(base-lh)+'" width="'+lw+'" height="'+lh+'" fill="'+c+'" transform="rotate(14 '+(x+lw)+' '+base+')"/>'; x+=lw+4; continue; }
+      o+='<rect x="'+x.toFixed(2)+'" y="'+(base-h).toFixed(2)+'" width="'+w.toFixed(2)+'" height="'+h.toFixed(2)+'" fill="'+c+'"/>'
+       +'<rect x="'+x.toFixed(2)+'" y="'+(base-h).toFixed(2)+'" width="'+(w*0.28).toFixed(2)+'" height="'+h.toFixed(2)+'" fill="#fff" fill-opacity=".16"/>'
+       +'<rect x="'+x.toFixed(2)+'" y="'+(base-h+h*0.12).toFixed(2)+'" width="'+w.toFixed(2)+'" height=".7" fill="#f3d98a" fill-opacity=".75"/>'
+       +'<rect x="'+x.toFixed(2)+'" y="'+(base-h*0.2).toFixed(2)+'" width="'+w.toFixed(2)+'" height=".7" fill="#f3d98a" fill-opacity=".6"/>';
+      if(w>3.4) o+='<rect x="'+(x+w*0.2).toFixed(2)+'" y="'+(base-h*0.62).toFixed(2)+'" width="'+(w*0.6).toFixed(2)+'" height="'+(h*0.22).toFixed(2)+'" fill="#fbf2d6" fill-opacity=".8"/>';
+      x+=w+(rnd()<0.12?1.4:0.15);
+    }
+    o+='<rect x="'+bx+'" y="'+base+'" width="'+bw+'" height="2" fill="#6b4520"/><rect x="'+bx+'" y="'+(base+2)+'" width="'+bw+'" height="1.2" fill="#000" fill-opacity=".4"/>';
+  }
+  o+='<rect x="'+(bx-2)+'" y="'+(by-2)+'" width="'+(bw+4)+'" height="'+(bh+3)+'" fill="none" stroke="#5a3a17" stroke-width="1.6"/>'
+   +'<ellipse cx="60" cy="119" rx="34" ry="3" fill="#000" fill-opacity=".35"/>'                                                    /* 책장 그림자 */
+   +'<rect width="120" height="170" fill="url(#rl'+seed+')"/><rect width="120" height="170" fill="url(#rv'+seed+')"/></svg>';
+  return o;
+}
+
 /* ═════════ 홈 ═════════ */
 function renderHome(){
   var app=$app(), d=new Date();
@@ -273,7 +316,7 @@ function renderDoors(kind){
         var learning=0; bs.forEach(function(b){ learning+=noteCounts(b.id).learning; });
         var door=h('a',{class:'door'+(bs.length?'':' closed'),href:bs.length?'#/'+kind+'/g'+g+'s'+sm:null,role:bs.length?null:'img','aria-label':g+'학년 '+sm+'학기'+(bs.length?' 교실, 교과서 '+bs.length+'권':' 교실, 준비 중')},[
           h('div',{class:'door-plate',text:g+'학년 '+sm+'학기'}),
-          h('div',{class:'door-body'},[h('div',{class:'door-inside'},[h('div',{class:'shelf'}),h('div',{class:'shelf'}),h('div',{class:'shelf'}),h('div',{class:'shelf'})]),h('div',{class:'door-leaf'},[h('div',{class:'door-win'}),h('div',{class:'door-panel'}),h('div',{class:'door-knob'})])]),
+          h('div',{class:'door-body'},[h('div',{class:'door-inside',html:roomSvg(g*2+sm)}),h('div',{class:'door-leaf'},[h('div',{class:'door-win'}),h('div',{class:'door-panel'}),h('div',{class:'door-knob'})])]),
           h('div',{class:'door-note',text:bs.length?(kind==='notes'&&learning?'학습 중 '+learning+'문제':'교과서 '+bs.length+'권'):'준비 중'}),
           kind==='notes'&&learning?h('div',{class:'door-badge',text:String(learning)}):null
         ]);
