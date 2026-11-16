@@ -9,8 +9,9 @@
 (function(){
 'use strict';
 var KEY='mg-study:ink:v1';
-var COLORS={ red:'#e5383b', blue:'#2f6fe0', green:'#1f9d55' };
-var COLOR_NAMES={ red:'빨강', blue:'파랑', green:'초록' };
+var COLORS={ red:'#e5383b', blue:'#2f6fe0', green:'#1f9d55', yellow:'#ffe600', pink:'#ff6fb5' };
+var COLOR_NAMES={ red:'빨강', blue:'파랑', green:'초록', yellow:'형광 노랑', pink:'형광 분홍' };
+var HL={ yellow:1, pink:1 };   // 형광펜: 굵고 반투명하게 그린다
 var store=load(), key=null, keyFn=null, frame=null, staged=false;
 var open=false, tool='pen', color='red', hand=false, finger=true, askClear=false;
 var cv=null, cvHost=null, ctx=null, dock=null, drawing=null, poll=null, ro=null, W=1, H=1, queued=false;
@@ -37,6 +38,9 @@ var DOCK_CSS=
 '.pen-dock .dot{padding:0;min-width:34px;background:transparent!important}'+
 '.pen-dock .dot i{display:block;width:22px;height:22px;border-radius:50%;box-shadow:0 0 0 1px var(--line,#c8d2cb);border:3px solid transparent}'+
 '.pen-dock .dot[aria-pressed="true"] i{border-color:var(--card,#fff);box-shadow:0 0 0 3px var(--ink,#222)}'+
+'.pen-dock .dot.hl i{width:24px;height:13px;border-radius:4px}'+
+'.pen-dock .dot.hl[aria-pressed="true"] i{box-shadow:0 0 0 2px var(--ink,#222)}'+
+'@media (max-width:520px){.pen-dock .hand span{display:none}.pen-dock .dot{min-width:30px}.pen-dock button{min-width:36px;padding:0 6px}}'+
 '.pen-dock .sep{width:1px;height:22px;background:var(--line,#c8d2cb);margin:0 2px;flex:none}'+
 '.pen-dock .clr{color:#d0342c}'+
 '.pen-dock .yes{background:#d0342c;color:#fff}'+
@@ -66,10 +70,10 @@ function renderDock(){
   var act=!hand;
   dock.innerHTML=
     btn('data-a="toggle" class="main" aria-pressed="true" aria-label="펜 접기" title="누르면 접고 원래 화면으로 (그린 건 그대로)"',I.pen)+
-    ['red','blue','green'].map(function(c){ return btn('class="dot" data-c="'+c+'" aria-label="'+COLOR_NAMES[c]+'" aria-pressed="'+(c===color&&act&&tool==='pen')+'"','<i style="background:'+COLORS[c]+'"></i>'); }).join('')+
+    ['red','blue','green','|','yellow','pink'].map(function(c){ if(c==='|') return '<span class="sep"></span>'; return btn('class="dot'+(HL[c]?' hl':'')+'" data-c="'+c+'" aria-label="'+COLOR_NAMES[c]+(HL[c]?' 형광펜':'')+'" title="'+COLOR_NAMES[c]+(HL[c]?' 형광펜':'')+'" aria-pressed="'+(c===color&&act&&tool==='pen')+'"','<i style="background:'+COLORS[c]+'"></i>'); }).join('')+
     '<span class="sep"></span>'+
     btn('data-a="eraser" aria-pressed="'+(act&&tool==='eraser')+'" aria-label="지우개" title="지우개"',I.eraser)+
-    btn('data-a="hand" aria-pressed="'+hand+'" aria-label="펜 끄고 넘기기" title="펜을 잠시 끄고 화면 넘기기"',I.hand+'<span>넘기기</span>')+
+    btn('class="hand" data-a="hand" aria-pressed="'+hand+'" aria-label="펜 끄고 넘기기" title="펜을 잠시 끄고 화면 넘기기"',I.hand+'<span>넘기기</span>')+
     btn('data-a="clear" class="clr" aria-label="전체 지우기" title="이 화면 전체 지우기"',I.trash)+
     '';
 }
@@ -157,11 +161,14 @@ function onScroll(){ if(!cv||staged) return; sy=scrollTop(); redraw(); if(!frame
 function scale(){ return cv.getBoundingClientRect().width/W||1; }   // 화면에 보이는 크기 ÷ 그림 좌표 크기
 function stroke(s,k){
   var p=s.p; if(!p.length) return;
-  ctx.strokeStyle=COLORS[s.c]||COLORS.red; ctx.lineWidth=Math.min(Math.max(0.004*W,2.8/k),0.012*W);
-  ctx.lineCap='round'; ctx.lineJoin='round'; ctx.beginPath(); ctx.moveTo(p[0][0]*W,p[0][1]*W);
+  var hl=!!HL[s.c];
+  ctx.strokeStyle=COLORS[s.c]||COLORS.red;
+  ctx.lineWidth=hl?Math.min(Math.max(0.016*W,11/k),0.03*W):Math.min(Math.max(0.004*W,2.8/k),0.012*W);
+  ctx.globalAlpha=hl?0.4:1;   // 형광펜은 글씨가 비쳐 보이게 반투명
+  ctx.lineCap=hl?'butt':'round'; ctx.lineJoin='round'; ctx.beginPath(); ctx.moveTo(p[0][0]*W,p[0][1]*W);
   if(p.length===1) ctx.lineTo(p[0][0]*W+.1,p[0][1]*W);
   for(var i=1;i<p.length;i++) ctx.lineTo(p[i][0]*W,p[i][1]*W);
-  ctx.stroke();
+  ctx.stroke(); ctx.globalAlpha=1;
 }
 function redraw(){
   if(!ctx) return;
