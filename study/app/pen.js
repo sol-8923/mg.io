@@ -93,8 +93,10 @@ function lift(){
 function sync(){
   if(!dock) return;
   renderDock(); lift();
-  if(cv) cv.className='pen-cv '+((open&&!hand)?(tool==='pen'?'pen':'eraser'):'off');
+  applyClass();
 }
+/* 캔버스가 나중에 만들어지거나 다시 만들어져도(슬라이드 로딩이 늦을 때) 지금 펜 상태가 바로 적용되게 한다 */
+function applyClass(){ if(cv) cv.className='pen-cv '+((open&&!hand)?(tool==='pen'?'pen':'eraser'):'off'); }
 
 /* ───────── 캔버스 붙이기 ───────── */
 function makeCanvas(doc,host){
@@ -105,8 +107,10 @@ function makeCanvas(doc,host){
   /* 슬라이드는 손가락 가로 쓸기로 장을 넘긴다. 필기 중에는 그 이벤트가 슬라이드에 닿지 않게 막는다 */
   ['touchstart','touchmove','touchend','touchcancel'].forEach(function(t){ c.addEventListener(t,function(e){ e.stopPropagation(); },{passive:true}); });
   host.appendChild(c); cv=c; cvHost=host; ctx=c.getContext('2d');
+  applyClass();
+  scrollWin=doc.defaultView; scrollFn=onScroll; scrollWin.addEventListener('scroll',scrollFn,{passive:true});
 }
-function dropCanvas(){ if(cv&&cv.parentNode) cv.parentNode.removeChild(cv); cv=null; cvHost=null; ctx=null; }
+function dropCanvas(){ if(scrollWin&&scrollFn){ try{ scrollWin.removeEventListener('scroll',scrollFn); }catch(e){} } scrollWin=null; scrollFn=null; if(cv&&cv.parentNode) cv.parentNode.removeChild(cv); cv=null; cvHost=null; ctx=null; }
 
 /* iframe 안쪽 문서를 살펴 캔버스를 올바른 곳(무대 또는 문서)에 둔다. 아직 로딩 중이면 false */
 function attachFrame(){
@@ -119,28 +123,36 @@ function attachFrame(){
   return true;
 }
 
-/* ───────── 그리기 ───────── */
+/* ───────── 그리기 ─────────
+ * 두 가지 방식:
+ *  · 무대(staged): 슬라이드 무대(1920×1080) 안에 캔버스를 넣어 슬라이드와 함께 확대·축소
+ *  · 스크롤(그 외): 화면 크기만 한 캔버스를 화면에 고정하고, 필기는 문서 좌표로 저장해 스크롤할 때마다 위치를 맞춰 다시 그린다
+ *    (문서 전체 크기의 캔버스를 만들면 휴대폰에서 크기 한계로 그림이 깨져서 이렇게 했다) */
+var sy=0, scrollWin=null, scrollFn=null;
+function scrollTop(){ var d=cv.ownerDocument; return (d.defaultView.pageYOffset||d.scrollingElement&&d.scrollingElement.scrollTop||0); }
 function layout(){
   if(!cv) return;
-  var d=Math.min(window.devicePixelRatio||1,2), k=1;
-  if(frame){
-    var doc=cv.ownerDocument;
-    if(staged){ W=1920; H=1080; cv.style.width=W+'px'; cv.style.height=H+'px'; k=cv.getBoundingClientRect().width/1920||1; }
-    else{
-      cv.style.height='0'; W=doc.documentElement.clientWidth; H=Math.max(doc.documentElement.scrollHeight,frame.clientHeight);
-      cv.style.width=W+'px'; cv.style.height=H+'px';
-    }
+  var doc=cv.ownerDocument, win=doc.defaultView, d=Math.min(window.devicePixelRatio||1,3), k=1, bw, bh;
+  if(staged){
+    W=1920; H=1080; sy=0; cv.style.position='absolute'; cv.style.width=W+'px'; cv.style.height=H+'px';
+    k=cv.getBoundingClientRect().width/1920||1;
+    var s=Math.max(1,Math.min(d*k,3)); bw=Math.round(W*s); bh=Math.round(H*s);
   }else{
-    cv.style.height='0'; W=document.documentElement.clientWidth; H=Math.max(window.innerHeight,document.documentElement.scrollHeight);
-    cv.style.width=W+'px'; cv.style.height=H+'px';
+    W=doc.documentElement.clientWidth; H=win.innerHeight; sy=scrollTop();
+    cv.style.position='fixed'; cv.style.left='0'; cv.style.top='0'; cv.style.width=W+'px'; cv.style.height=H+'px';
+    bw=Math.round(W*d); bh=Math.round(H*d);
+    if(!frame){   // 위·아래 고정 프레임(시험 화면의 진행 막대·이전/다음 줄)에는 필기가 올라가지 않게 잘라낸다
+      var top=0, bot=0, q=document.querySelector('.qtop'), n=document.querySelector('.qnav');
+      if(q){ var r=q.getBoundingClientRect(); if(r.top<=2) top=Math.max(0,r.bottom); }
+      if(n) bot=n.offsetHeight;
+      cv.style.clipPath=(top||bot)?'inset('+top+'px 0 '+bot+'px 0)':'none';
+    }
   }
-  var s=Math.max(1,Math.min(d*k,3)); if(H*s>8000) s=8000/H;   // 너무 큰 캔버스는 해상도를 낮춘다
-  var bw=Math.max(1,Math.round(W*s)), bh=Math.max(1,Math.round(H*s));
   if(cv.width!==bw||cv.height!==bh){ cv.width=bw; cv.height=bh; }
-  ctx.setTransform(bw/W,0,0,bh/H,0,0);
   redraw();
 }
-function later(){ if(queued) return; queued=true; requestAnimationFrame(function(){ queued=false; if(frame) attachFrame(); layout(); }); }
+function later(){ if(queued) return; queued=true; requestAnimationFrame(function(){ queued=false; if(frame) attachFrame(); applyClass(); layout(); }); }
+function onScroll(){ if(!cv||staged) return; sy=scrollTop(); redraw(); if(!frame) later(); }
 function scale(){ return cv.getBoundingClientRect().width/W||1; }   // 화면에 보이는 크기 ÷ 그림 좌표 크기
 function stroke(s,k){
   var p=s.p; if(!p.length) return;
@@ -150,8 +162,16 @@ function stroke(s,k){
   for(var i=1;i<p.length;i++) ctx.lineTo(p[i][0]*W,p[i][1]*W);
   ctx.stroke();
 }
-function redraw(){ if(!ctx) return; ctx.clearRect(0,0,W,H); var k=scale(); list().forEach(function(s){ stroke(s,k); }); }
-function pos(e){ var r=cv.getBoundingClientRect(); return [+((e.clientX-r.left)/r.width).toFixed(4),+((e.clientY-r.top)/r.width).toFixed(4)]; }
+function redraw(){
+  if(!ctx) return;
+  ctx.setTransform(1,0,0,1,0,0); ctx.clearRect(0,0,cv.width,cv.height);
+  ctx.setTransform(cv.width/W,0,0,cv.height/H,0,-sy*cv.height/H);
+  var k=scale(); list().forEach(function(s){ stroke(s,k); });
+}
+function pos(e){
+  var r=cv.getBoundingClientRect(), k=r.width/W||1;
+  return [+((e.clientX-r.left)/r.width).toFixed(4),+((((e.clientY-r.top)/k)+sy)/W).toFixed(4)];
+}
 function eraseAt(pt){
   var l=list(), n=l.length, rad=16/(scale()*W);
   var keep=l.filter(function(s){ return !s.p.some(function(q){ var dx=q[0]-pt[0], dy=q[1]-pt[1]; return dx*dx+dy*dy<rad*rad; }); });
@@ -159,7 +179,7 @@ function eraseAt(pt){
 }
 function down(e){
   if(!key||hand||!open) return;
-  if(e.pointerType==='touch'&&!finger) return;
+  /* 손가락·S펜·마우스 모두 그린다 */
   try{ cv.setPointerCapture(e.pointerId); }catch(x){}
   var pt=pos(e);
   if(tool==='eraser'){ drawing='erase'; eraseAt(pt); }
@@ -184,13 +204,13 @@ function show(k,fr){
   css(document); var st=document.createElement('style'); st.id='pen-dock-css'; st.textContent=DOCK_CSS; document.head.appendChild(st);
   dock=document.createElement('div'); dock.className='pen-dock'; dock.addEventListener('click',onDock); document.body.appendChild(dock);
   if(frame){ staged=false; key=null; attachFrame(); frame.addEventListener('load',later); }
-  else{ key=keyFn(); makeCanvas(document,document.body); }
+  else{ staged=false; key=keyFn(); makeCanvas(document,document.body); }
   sync(); layout();
   window.addEventListener('resize',later);
   var app=document.getElementById('app');
   if(window.ResizeObserver){ ro=new ResizeObserver(later); if(app) ro.observe(app); if(frame) ro.observe(frame); }
   if(frame){ poll=setInterval(function(){ if(attachFrame()){ var nk=keyFn(staged); if(nk&&nk!==key) setKey(nk); } later(); },400); }
-  else{ poll=setInterval(later,1500); }   // 답을 펼치는 등 화면 높이가 바뀌어도 필기 영역이 따라가게 한다
+  else{ poll=setInterval(later,1000); }   // 답을 펼치는 등 화면 높이가 바뀌어도 필기 영역이 따라가게 한다
 }
 function hide(){ open=false; hand=false; tool='pen'; askClear=false; teardown(); }
 function teardown(){
