@@ -136,28 +136,55 @@ var Snd=(function(){
   function noise(c,dur){ var n=Math.floor(c.sampleRate*dur), b=c.createBuffer(1,n,c.sampleRate), d=b.getChannelData(0); for(var i=0;i<n;i++) d[i]=Math.random()*2-1; var s=c.createBufferSource(); s.buffer=b; return s; }
   function env(g,t,peak,att,dur){ g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(peak,t+att); g.gain.exponentialRampToValueAtTime(0.0001,t+dur); }
   /* 실제 녹음 파일(app/snd, CC0): 한 번 내려받아 디코딩해 두고 재생. 실패하면 합성음으로 대신한다 */
-  var bufs={}, loading={};
+  var bufs={}, loading={}, lastCustom=0;
+  function stamp(){ lastCustom=Date.now(); }
   function load(name){ if(bufs[name]||loading[name]) return; var c=ac(); if(!c) return; loading[name]=1;
     fetch('app/snd/'+name+'.ogg').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
       .then(function(ab){ return new Promise(function(ok,no){ c.decodeAudioData(ab,ok,no); }); })
       .then(function(b){ bufs[name]=b; },function(){ loading[name]=0; }); }
   function play(name,vol){ var c=ac(); if(!c) return true; var b=bufs[name]; if(!b){ load(name); return false; }
-    var s=c.createBufferSource(), g=c.createGain(); s.buffer=b; g.gain.value=vol; s.connect(g); g.connect(c.destination); s.start(); return true; }
+    var s=c.createBufferSource(), g=c.createGain(), f=c.createBiquadFilter(); s.buffer=b;
+    f.type='lowpass'; f.frequency.value=2600; f.Q.value=0.5;            /* 날카로운 고음을 깎는다 */
+    var t=c.currentTime; g.gain.setValueAtTime(0.0001,t); g.gain.linearRampToValueAtTime(vol,t+0.04);   /* 부드럽게 시작 */
+    s.connect(f); f.connect(g); g.connect(c.destination); s.start(); stamp(); return true; }
   function preload(){ ['door-open','door-locked','page4','page5','page6','page8'].forEach(load); }
   document.addEventListener('pointerdown',function f(){ document.removeEventListener('pointerdown',f); if(on) preload(); },{once:true});
   return {
     get on(){ return on; },
     toggle:function(){ on=!on; try{ localStorage.setItem('mg-study:sound',on?'on':'off'); }catch(e){} if(on) this.page(); return on; },
-    door:function(){ if(!on) return; if(!play('door-open',0.9)) this.doorSynth(); },
-    locked:function(){ if(!on) return; play('door-locked',0.8); },
-    page:function(){ if(!on) return; var n=[4,5,6,8][Math.floor(Math.random()*4)]; if(!play('page'+n,0.7)) this.pageSynth(); },
+    door:function(){ if(!on) return; if(!play('door-open',0.55)) this.doorSynth(); },
+    locked:function(){ if(!on) return; play('door-locked',0.5); },
+    page:function(){ if(!on) return; var n=[4,5,6,8][Math.floor(Math.random()*4)]; if(!play('page'+n,0.42)) this.pageSynth(); },
+    /* 뽁: 가볍고 작은 물방울 소리 (모든 클릭) */
+    pop:function(){ if(!on) return; var c=ac(); if(!c) return; var t=c.currentTime;
+      var o=c.createOscillator(), g=c.createGain(), f=c.createBiquadFilter();
+      o.type='sine'; o.frequency.setValueAtTime(330,t); o.frequency.exponentialRampToValueAtTime(620,t+0.07);
+      f.type='lowpass'; f.frequency.value=1800;
+      g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.11,t+0.012); g.gain.exponentialRampToValueAtTime(0.0001,t+0.11);
+      o.connect(f); f.connect(g); g.connect(c.destination); o.start(t); o.stop(t+0.13); },
+    /* 휙: 작고 부드러운 바람 소리 (뒤로 가기·닫기) */
+    back:function(){ if(!on) return; var c=ac(); if(!c) return; var t=c.currentTime;
+      var n=noise(c,0.26), f=c.createBiquadFilter(), lp=c.createBiquadFilter(), g=c.createGain();
+      f.type='bandpass'; f.Q.value=0.9; f.frequency.setValueAtTime(1500,t); f.frequency.exponentialRampToValueAtTime(380,t+0.2);
+      lp.type='lowpass'; lp.frequency.value=2200;
+      g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.16,t+0.05); g.gain.exponentialRampToValueAtTime(0.0001,t+0.24);
+      n.connect(f); f.connect(lp); lp.connect(g); g.connect(c.destination); n.start(t); n.stop(t+0.27); },
+    /* 띠링: 작고 귀여운 두 음 (가족 톡방) */
+    ding:function(soft){ if(!on) return; var c=ac(); if(!c) return; var t=c.currentTime, v=soft?0.05:0.1;
+      [[784,0],[1047,0.11]].forEach(function(nt,i){
+        if(soft&&i===0) return;
+        var o=c.createOscillator(), g=c.createGain(), f=c.createBiquadFilter();
+        o.type='sine'; o.frequency.value=nt[0]; f.type='lowpass'; f.frequency.value=3200;
+        var s0=t+nt[1]; g.gain.setValueAtTime(0.0001,s0); g.gain.exponentialRampToValueAtTime(v,s0+0.012); g.gain.exponentialRampToValueAtTime(0.0001,s0+0.34);
+        o.connect(f); f.connect(g); g.connect(c.destination); o.start(s0); o.stop(s0+0.38); }); },
+    stamped:function(){ return Date.now()-lastCustom<80; },
     /* 문 여는 소리: 낮은 삐걱임 + 바람 섞인 소리 */
     doorSynth:function(){ var c=ac(); if(!c) return; var t=c.currentTime;
       var o=c.createOscillator(), f=c.createBiquadFilter(), g=c.createGain();
       o.type='sawtooth'; o.frequency.setValueAtTime(95,t); o.frequency.linearRampToValueAtTime(150,t+0.22); o.frequency.linearRampToValueAtTime(110,t+0.45);
-      f.type='bandpass'; f.frequency.value=520; f.Q.value=6; env(g,t,0.09,0.06,0.5);
+      f.type='bandpass'; f.frequency.value=520; f.Q.value=6; env(g,t,0.05,0.08,0.5);
       o.connect(f); f.connect(g); g.connect(c.destination); o.start(t); o.stop(t+0.55);
-      var n=noise(c,0.5), nf=c.createBiquadFilter(), ng=c.createGain(); nf.type='lowpass'; nf.frequency.value=900; env(ng,t,0.05,0.1,0.5);
+      var n=noise(c,0.5), nf=c.createBiquadFilter(), ng=c.createGain(); nf.type='lowpass'; nf.frequency.value=900; env(ng,t,0.03,0.12,0.5);
       n.connect(nf); nf.connect(ng); ng.connect(c.destination); n.start(t);
       var k=c.createOscillator(), kg=c.createGain(); k.type='sine'; k.frequency.setValueAtTime(180,t+0.38); k.frequency.exponentialRampToValueAtTime(70,t+0.5); env(kg,t+0.38,0.12,0.01,0.14); /* 문틀에 닿는 작은 소리 */
       k.connect(kg); kg.connect(c.destination); k.start(t+0.38); k.stop(t+0.55); },
@@ -169,6 +196,16 @@ var Snd=(function(){
   };
 })();
 
+/* 모든 클릭: 뽁. 뒤로 가기·나가기·닫기·취소: 휙. 문·책 소리가 난 클릭은 겹치지 않게 건너뜀 */
+document.addEventListener('click',function(e){
+  var el=e.target&&e.target.closest?e.target.closest('button,a,label,[role=button],.mcard,.btn,.choice,.nitem,input'):null;
+  if(!el||el.disabled||el.classList.contains('sound-btn')) return;
+  setTimeout(function(){
+    if(Snd.stamped()) return;
+    var tx=(el.textContent||'').trim();
+    if(el.classList.contains('back')||/^(←|‹)/.test(tx)||/^(나가기|뒤로|닫기|취소)/.test(tx)) Snd.back(); else Snd.pop();
+  },0);
+},false);
 function themeBtn(){
   var sb=h('button',{class:'theme-btn sound-btn',title:'효과음 켜기/끄기','aria-label':'효과음 켜기 또는 끄기','aria-pressed':String(Snd.on),onclick:function(){
     sb.textContent=Snd.toggle()?'🔊':'🔇'; sb.setAttribute('aria-pressed',String(Snd.on));
@@ -1849,7 +1886,7 @@ function startChatWatch(){
       if(first){ first=false; NOTIF.last=v.at; return; }
       if(v.at>NOTIF.last && !d.metadata.hasPendingWrites){
         NOTIF.last=v.at;
-        if(v.who!==chatWho() && chatWho() && (document.hidden||location.hash.indexOf('#/chat')!==0)) showChatNotif(v);
+        if(v.who!==chatWho() && chatWho() && (document.hidden||location.hash.indexOf('#/chat')!==0)){ showChatNotif(v); if(!document.hidden) Snd.ding(); }
       }
     },function(){ NOTIF.on=false; });
   }).catch(function(){ NOTIF.on=false; });
@@ -1969,8 +2006,12 @@ function renderChat(){
   }).then(function(db){
     status.style.display='none';
     var unW=me?whoRef(db,me).onSnapshot(function(d){ if(d.exists&&d.data().device!==devId()) dropped(); }):null;
+    var roomMax=null;
     var unC=db.collection('chat').orderBy('at','desc').limit(40).onSnapshot(function(snap){
       var docs=snap.docs.map(function(d){ return {ref:d.ref,data:d.data(),pending:d.metadata.hasPendingWrites}; }).reverse();
+      var lastDoc=docs.length?docs[docs.length-1].data:null;
+      if(lastDoc&&roomMax!==null&&lastDoc.at>roomMax&&lastDoc.who!==me) Snd.ding();
+      if(lastDoc) roomMax=Math.max(roomMax||0,lastDoc.at); else if(roomMax===null) roomMax=0;
       paint(docs); markRead(db);
       if(docs.length) setChatSeen(Math.max(chatSeen(),docs[docs.length-1].data.at));
     },function(){ status.style.display=''; status.textContent='대화를 불러오지 못했어요. 인터넷이나 접근 설정을 확인해 주세요.'; });
