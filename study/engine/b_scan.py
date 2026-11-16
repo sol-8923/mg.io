@@ -17,6 +17,12 @@ for book in sorted(os.listdir(lib)):
             if "은(는)" in txt or "이(가)" in txt or "을(를)" in txt or "와(과)" in txt: f.append("조사병기")
             if q.get("detail") and len(sents(q["detail"])) < 3: f.append("detail3문장미만")
             if CIRC.search(" ".join(str(x) for x in [q.get("explanation")] + list(q.get("choiceExplanations") or []))): f.append("번호언급")
+            ceL = list(q.get("choiceExplanations") or [])
+            wrongL = [str(x) for x in ceL if not str(x).startswith("정답")]
+            if len(wrongL) >= 3:
+                keys = [" ".join(sents(x)[1:]) for x in wrongL]
+                top = max((keys.count(k) for k in set(keys) if k), default=0)
+                if top >= 3: f.append("오답해설템플릿반복")
             ch = q.get("choices") or []
             if q.get("type") == "mc" and len(ch) >= 4 and not q.get("fixedOrder") and all(re.match(r"^\s*[㉠-㉤ⓐ-ⓔ]\s*[:.]", str(c)) for c in ch): f.append("fixedOrder누락")
             if f: res.append({"book": book, "unit": unit, "id": q["id"], "flags": f})
