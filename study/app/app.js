@@ -131,11 +131,24 @@ var Snd=(function(){
   function ac(){ if(!ctx){ var C=window.AudioContext||window.webkitAudioContext; if(!C) return null; try{ ctx=new C(); }catch(e){ return null; } } if(ctx.state==='suspended') ctx.resume(); return ctx; }
   function noise(c,dur){ var n=Math.floor(c.sampleRate*dur), b=c.createBuffer(1,n,c.sampleRate), d=b.getChannelData(0); for(var i=0;i<n;i++) d[i]=Math.random()*2-1; var s=c.createBufferSource(); s.buffer=b; return s; }
   function env(g,t,peak,att,dur){ g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(peak,t+att); g.gain.exponentialRampToValueAtTime(0.0001,t+dur); }
+  /* 실제 녹음 파일(app/snd, CC0): 한 번 내려받아 디코딩해 두고 재생. 실패하면 합성음으로 대신한다 */
+  var bufs={}, loading={};
+  function load(name){ if(bufs[name]||loading[name]) return; var c=ac(); if(!c) return; loading[name]=1;
+    fetch('app/snd/'+name+'.ogg').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
+      .then(function(ab){ return new Promise(function(ok,no){ c.decodeAudioData(ab,ok,no); }); })
+      .then(function(b){ bufs[name]=b; },function(){ loading[name]=0; }); }
+  function play(name,vol){ var c=ac(); if(!c) return true; var b=bufs[name]; if(!b){ load(name); return false; }
+    var s=c.createBufferSource(), g=c.createGain(); s.buffer=b; g.gain.value=vol; s.connect(g); g.connect(c.destination); s.start(); return true; }
+  function preload(){ ['door-open','door-locked','page4','page5','page6','page8'].forEach(load); }
+  document.addEventListener('pointerdown',function f(){ document.removeEventListener('pointerdown',f); if(on) preload(); },{once:true});
   return {
     get on(){ return on; },
     toggle:function(){ on=!on; try{ localStorage.setItem('mg-study:sound',on?'on':'off'); }catch(e){} if(on) this.page(); return on; },
+    door:function(){ if(!on) return; if(!play('door-open',0.9)) this.doorSynth(); },
+    locked:function(){ if(!on) return; play('door-locked',0.8); },
+    page:function(){ if(!on) return; var n=[4,5,6,8][Math.floor(Math.random()*4)]; if(!play('page'+n,0.7)) this.pageSynth(); },
     /* 문 여는 소리: 낮은 삐걱임 + 바람 섞인 소리 */
-    door:function(){ if(!on) return; var c=ac(); if(!c) return; var t=c.currentTime;
+    doorSynth:function(){ var c=ac(); if(!c) return; var t=c.currentTime;
       var o=c.createOscillator(), f=c.createBiquadFilter(), g=c.createGain();
       o.type='sawtooth'; o.frequency.setValueAtTime(95,t); o.frequency.linearRampToValueAtTime(150,t+0.22); o.frequency.linearRampToValueAtTime(110,t+0.45);
       f.type='bandpass'; f.frequency.value=520; f.Q.value=6; env(g,t,0.09,0.06,0.5);
@@ -145,7 +158,7 @@ var Snd=(function(){
       var k=c.createOscillator(), kg=c.createGain(); k.type='sine'; k.frequency.setValueAtTime(180,t+0.38); k.frequency.exponentialRampToValueAtTime(70,t+0.5); env(kg,t+0.38,0.12,0.01,0.14); /* 문틀에 닿는 작은 소리 */
       k.connect(kg); kg.connect(c.destination); k.start(t+0.38); k.stop(t+0.55); },
     /* 종이 넘기는 소리: 고음 쪽 잡음이 쓱 지나감 */
-    page:function(){ if(!on) return; var c=ac(); if(!c) return; var t=c.currentTime;
+    pageSynth:function(){ var c=ac(); if(!c) return; var t=c.currentTime;
       [0,0.11].forEach(function(dt,i){ var n=noise(c,0.3), f=c.createBiquadFilter(), g=c.createGain();
         f.type='bandpass'; f.Q.value=0.8; f.frequency.setValueAtTime(2500+i*600,t+dt); f.frequency.exponentialRampToValueAtTime(6500,t+dt+0.2);
         env(g,t+dt,i?0.12:0.2,0.03,0.22); n.connect(f); f.connect(g); g.connect(c.destination); n.start(t+dt); n.stop(t+dt+0.3); }); }
@@ -320,6 +333,7 @@ function renderDoors(kind){
           h('div',{class:'door-note',text:bs.length?(kind==='notes'&&learning?'학습 중 '+learning+'문제':'교과서 '+bs.length+'권'):'준비 중'}),
           kind==='notes'&&learning?h('div',{class:'door-badge',text:String(learning)}):null
         ]);
+        if(!bs.length) door.addEventListener('click',function(){ Snd.locked(); door.classList.remove('shake'); void door.offsetWidth; door.classList.add('shake'); });
         if(bs.length) door.addEventListener('click',function(e){
           if(e.ctrlKey||e.metaKey||e.shiftKey||e.button) return;
           Snd.door();
