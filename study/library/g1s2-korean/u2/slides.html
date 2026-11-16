@@ -285,6 +285,10 @@ span.nw { white-space: nowrap; }
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #1d5fd1; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 </head>
 <body>
@@ -544,7 +548,7 @@ span.nw { white-space: nowrap; }
     <div class="kicker">01 단어의 짜임과 새말</div>
     <h2>새말과 형성 방법 <small>p.80~83</small></h2>
     <div class="card hl reveal" style="margin-bottom:22px">
-        <b>새말</b> 새로운 사물이나 개념을 표현하려고 <b>새로 만들어 사용하는 말</b>. 외국어를 그대로 가져온 외래어, 외래어를 우리말로 <b><span class="nw">순화(다듬은)한</span> 말</b>도 새말에 포함된다. 예) 와이파이(외국어에서 가져온 새말), 댓글('리플'을 순화한 새말)
+        <span class="lb">새말</span> 새로운 사물이나 개념을 표현하려고 <b>새로 만들어 사용하는 말</b>. 외국어를 그대로 가져온 외래어, 외래어를 우리말로 <b><span class="nw">순화(다듬은)한</span> 말</b>도 새말에 포함된다. 예) 와이파이(외국어에서 가져온 새말), 댓글('리플'을 순화한 새말)
     </div>
     <table class="t reveal" style="font-size:26px">
         <tr><th style="width:36%">새말의 형성 방법</th><th style="width:26%">설명</th><th>예</th></tr>

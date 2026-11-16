@@ -327,6 +327,10 @@ h2 .dot { margin: 0 .16em; }
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: var(--pt, #2f6b52); color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 
 </head>
@@ -478,7 +482,7 @@ h2 .dot { margin: 0 .16em; }
         <tr><td>목적</td><td><b>정의</b>의 실현</td><td><b>선</b>의 실현</td></tr>
     </table>
     <div class="card hl reveal" style="margin-top:28px">
-        <b>암기</b> 법 = <span class="nw">결과⁠·강제성⁠·국가</span> <span class="nw">제재⁠·정의</span> / 도덕 = <span class="nw">동기⁠·자율성⁠·양심의</span> <span class="nw">가책⁠·선</span>
+        <span class="lb">암기</span> 법 = <span class="nw">결과⁠·강제성⁠·국가</span> <span class="nw">제재⁠·정의</span> / 도덕 = <span class="nw">동기⁠·자율성⁠·양심의</span> <span class="nw">가책⁠·선</span>
     </div>
     <div class="pg">4</div>
 </section>
@@ -616,7 +620,7 @@ h2 .dot { margin: 0 .16em; }
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:20px">
-        <b>정리</b> 대법원 판결은 <b>최종 확정 판결</b>이다. <span class="nw">항소⁠·상고를</span> 하지 않으면 판결이 확정된다.
+        <span class="lb">정리</span> 대법원 판결은 <b>최종 확정 판결</b>이다. <span class="nw">항소⁠·상고를</span> 하지 않으면 판결이 확정된다.
     </div>
     <div class="pg">9</div>
 </section>

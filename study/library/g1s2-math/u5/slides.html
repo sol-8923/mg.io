@@ -257,6 +257,10 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #C2410C; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 </head>
 <body>
@@ -326,7 +330,7 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:24px">
-        <b>거리</b> 두 점을 잇는 선 중 길이가 가장 짧은 것은 <b>선분</b>이다. 선분 AB의 길이를 두 점 사이의 <b>거리</b>라고 한다.
+        <span class="lb">거리</span> 두 점을 잇는 선 중 길이가 가장 짧은 것은 <b>선분</b>이다. 선분 AB의 길이를 두 점 사이의 <b>거리</b>라고 한다.
     </div>
     <div class="pg">3</div>
 </section>
@@ -473,7 +477,7 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
         </div>
     </div>
     <div class="card warn reveal" style="margin-top:22px">
-        <b>오해 주의</b> 눈금 없는 자로 길이를 옮긴다 (X) → 길이를 옮기는 것은 <b>컴퍼스</b>의 일이다.
+        <span class="lb">오해 주의</span> 눈금 없는 자로 길이를 옮긴다 (X) → 길이를 옮기는 것은 <b>컴퍼스</b>의 일이다.
     </div>
     <div class="pg">7</div>
 </section>

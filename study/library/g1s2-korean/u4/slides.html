@@ -286,6 +286,10 @@ span.nw { white-space: nowrap; }
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #1d5fd1; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 </head>
 <body>
@@ -461,7 +465,7 @@ span.nw { white-space: nowrap; }
         <tr><td><span class="nw">영향력·신뢰도</span></td><td>비교적 신뢰도 높음(모든 정보가 그렇지는 않음), 규제 상대적으로 가능</td><td>규제가 어려워 문제가 더 큼</td></tr>
     </table>
     <div class="card hl sum reveal" style="margin-top:24px">
-        <b>한 줄 요약</b> <span class="nw">대중매체 = 전문 <span class="nw">조직 ·</span> <span class="nw">대중 ·</span> 구분 <span class="nw">명확 ·</span> <span class="nw">일방향 /</span></span> <span class="nw">개인 인터넷 방송 = <span class="nw">개인 ·</span> 일부 <span class="nw">대상 ·</span> 구분 <span class="nw">불명확 ·</span> 쌍방향</span>
+        <span class="lb">한 줄 요약</span> <span class="nw">대중매체 = 전문 <span class="nw">조직 ·</span> <span class="nw">대중 ·</span> 구분 <span class="nw">명확 ·</span> <span class="nw">일방향 /</span></span> <span class="nw">개인 인터넷 방송 = <span class="nw">개인 ·</span> 일부 <span class="nw">대상 ·</span> 구분 <span class="nw">불명확 ·</span> 쌍방향</span>
     </div>
     <div class="pg">5</div>
 </section>
@@ -568,7 +572,7 @@ span.nw { white-space: nowrap; }
     <div class="kicker">02 존중하는 언어생활</div>
     <h2>가상 공간에서의 언어폭력 <small>p.180~182</small></h2>
     <div class="card hl reveal" style="margin-bottom:22px">
-        <b>정의</b> 인터넷, 스마트폰 문자 서비스 등으로 <b>욕설, 거친 언어, 인신공격적 발언</b> 등을 하는 행위. <span class="ref">(p.181)</span>
+        <span class="lb">정의</span> 인터넷, 스마트폰 문자 서비스 등으로 <b>욕설, 거친 언어, 인신공격적 발언</b> 등을 하는 행위. <span class="ref">(p.181)</span>
     </div>
     <div class="grid g3">
         <div class="card reveal" style="text-align:center">

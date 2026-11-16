@@ -285,6 +285,10 @@ span.nw { white-space: nowrap; }
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #1d5fd1; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 </head>
 <body>
@@ -427,7 +431,7 @@ span.nw { white-space: nowrap; }
     <div class="kicker">소설 「멍키 스패너」(진형민)</div>
     <h2>줄거리 흐름 <small>p.12~28 요약</small></h2>
     <div class="card reveal" style="margin-bottom:20px">
-        <b>발단</b> 중학생 '나(한경)'가 엄마 없이 어린 동생 '한아'와 일주일을 지낸다. 화장실 전등이 나간 지 이틀 뒤부터 세면대 물이 내려가지 않고, 엄마가 오려면 아직 <b>4일</b>이 남았다. <span class="ref">(p.13~15)</span>
+        <span class="lb">발단</span> 중학생 '나(한경)'가 엄마 없이 어린 동생 '한아'와 일주일을 지낸다. 화장실 전등이 나간 지 이틀 뒤부터 세면대 물이 내려가지 않고, 엄마가 오려면 아직 <b>4일</b>이 남았다. <span class="ref">(p.13~15)</span>
     </div>
     <div class="grid g5 reveal">
         <div class="card step"><span class="no">1</span><br>철물점 할머니에게 물으니 '한성 설비'를 소개하지만 <b>기본 출장비 <span class="nw">5만 원</span></b>이 부담스럽다.</div>
@@ -437,7 +441,7 @@ span.nw { white-space: nowrap; }
         <div class="card step"><span class="no">5</span><br>너트를 풀어 배수관의 <b>머리카락 뭉치</b>를 제거하고 다시 조립해 해결한다.</div>
     </div>
     <div class="card hl reveal" style="margin-top:20px">
-        <b>결말</b>
+        <span class="lb">결말</span>
         <ul class="l" style="margin-top:8px">
             <li>해결한 뒤 '나'가 "별것도 아니네."라고 말하고 한아가 따라 하며 웃는다. <span class="ref">(p.26)</span></li>
             <li>철물점에서 전구도 사서 갈고, 주스를 <b>유리컵</b>에 따라 건배한다. 엄마와 통화하며 엄마가 준 돈으로 뭔가를 사도 되는지 묻고 "그냥 갖고 싶은 거 있어서. 만 오천 원이야."라고 말한다. <span class="ref">(p.26~28)</span></li>
@@ -458,7 +462,7 @@ span.nw { white-space: nowrap; }
         <tr><td>'만년 철물점'</td><td>이름이 지나치다며 <b>부담스러워함</b>.</td><td>철물점이 천년만년 계속 있는 것에 <b>찬성</b>.</td></tr>
     </table>
     <div class="card hl reveal" style="margin-top:26px">
-        <b>정리</b> 변한 것은 금전적 상황이 아니라 <b>자신에 대한 인식</b>과 <b><span class="nw">동생·철물점을</span> 대하는 태도</b>다. 성장은 줄거리가 아니라 이런 <b><span class="nw">생각·태도의</span> 변화</b>를 비교해 파악한다.
+        <span class="lb">정리</span> 변한 것은 금전적 상황이 아니라 <b>자신에 대한 인식</b>과 <b><span class="nw">동생·철물점을</span> 대하는 태도</b>다. 성장은 줄거리가 아니라 이런 <b><span class="nw">생각·태도의</span> 변화</b>를 비교해 파악한다.
     </div>
     <div class="pg">5</div>
 </section>
@@ -569,7 +573,7 @@ span.nw { white-space: nowrap; }
         <tr><td>5 고쳐쓰기</td><td>자신이 쓴 글을 점검하고 부족한 부분 보완하기</td></tr>
     </table>
     <div class="card hl reveal" style="margin-top:24px">
-        <b>암기</b> 계획하기 → 내용 생성하기 → 내용 조직하기 → 표현하기 → 고쳐쓰기
+        <span class="lb">암기</span> 계획하기 → 내용 생성하기 → 내용 조직하기 → 표현하기 → 고쳐쓰기
     </div>
     <div class="pg">9</div>
 </section>

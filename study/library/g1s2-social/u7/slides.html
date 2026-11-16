@@ -327,6 +327,10 @@ h2 .dot { margin: 0 .16em; }
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: var(--pt, #2f6b52); color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 
 </head>
@@ -520,7 +524,7 @@ h2 .dot { margin: 0 .16em; }
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:24px">
-        <b>자세</b> 미디어 정보를 <b>비판적으로 <span class="nw">검토⁠·분별해</span></b> 받아들이는 자세가 필요하다.
+        <span class="lb">자세</span> 미디어 정보를 <b>비판적으로 <span class="nw">검토⁠·분별해</span></b> 받아들이는 자세가 필요하다.
     </div>
     <div class="pg">6</div>
 </section>
@@ -538,7 +542,7 @@ h2 .dot { margin: 0 .16em; }
         <tr><td>성취 지위</td><td>개인의 <b>선택이나 노력</b>으로 갖는 지위</td><td>학생, 선생님, 직업</td></tr>
     </table>
     <div class="card hl reveal" style="margin-top:24px">
-        <b>변화</b> 전통 사회에서는 신분 같은 <b>귀속 지위</b>의 영향력이 컸으나, 현대 사회에서는 직업 같은 <b>성취 지위</b>의 중요성이 커졌다.
+        <span class="lb">변화</span> 전통 사회에서는 신분 같은 <b>귀속 지위</b>의 영향력이 컸으나, 현대 사회에서는 직업 같은 <b>성취 지위</b>의 중요성이 커졌다.
     </div>
     <div class="pg">7</div>
 </section>
@@ -622,7 +626,7 @@ h2 .dot { margin: 0 .16em; }
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:24px">
-        <b>흐름</b> 외집단과의 만남 → 부족한 정보 → <b>편견</b>이 생기기도 함 → 부정적 편견이 있으면 <b>차별</b>로 이어질 수 있음. 차별로 이어지기 쉬운 편견을 극복하려는 노력이 필요하다.
+        <span class="lb">흐름</span> 외집단과의 만남 → 부족한 정보 → <b>편견</b>이 생기기도 함 → 부정적 편견이 있으면 <b>차별</b>로 이어질 수 있음. 차별로 이어지기 쉬운 편견을 극복하려는 노력이 필요하다.
     </div>
     <div class="pg">10</div>
 </section>

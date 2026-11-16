@@ -268,6 +268,10 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #C2410C; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 </head>
 <body>
@@ -325,7 +329,7 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
                 <li>다각형 = <b>면</b>, 다각형의 변 = <b>모서리</b>, 다각형의 꼭짓점 = <b>꼭짓점</b></li>
             </ul>
             <div class="card warn" style="margin-top:12px">
-                <b>주의</b> <span class="nw">원기둥·원뿔은</span> 곡면이 있어 <b>다면체가 아니다</b>.
+                <span class="lb">주의</span> <span class="nw">원기둥·원뿔은</span> 곡면이 있어 <b>다면체가 아니다</b>.
             </div>
         </div>
         <div class="card reveal">
@@ -458,7 +462,7 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
                 <li><span class="tag">②</span>회전축을 <b>포함</b>하는 평면으로 자른 단면은 모두 <b>합동</b>이고, 회전축을 대칭축으로 하는 <b>선대칭도형</b></li>
             </ul>
             <div class="card warn" style="margin-top:14px">
-                <b>헷갈리지 말 것</b> 수직 → 원&nbsp;/ 포함 → 합동인 선대칭도형. 서로 바꿔 쓰지 않는다.
+                <span class="lb">헷갈리지 말 것</span> 수직 → 원&nbsp;/ 포함 → 합동인 선대칭도형. 서로 바꿔 쓰지 않는다.
             </div>
         </div>
     </div>
@@ -501,7 +505,7 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
         </div>
     </div>
     <div class="card warn reveal" style="margin-top:20px">
-        <b>오해 주의</b> 원뿔의 옆넓이를 구할 때 높이를 모선 대신 쓰지 않는다. <b>모선의 길이</b>를 써야 한다.
+        <span class="lb">오해 주의</span> 원뿔의 옆넓이를 구할 때 높이를 모선 대신 쓰지 않는다. <b>모선의 길이</b>를 써야 한다.
     </div>
     <div class="pg">7</div>
 </section>
@@ -582,7 +586,7 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
         <p>공식에서 r만 k배로 바꾸어 확인한다 → 겉넓이는 <b>k²배</b>, 부피는 <b>k³배</b> <span class="ref">(p229~230)</span></p>
     </div>
     <div class="card warn reveal" style="margin-top:20px">
-        <b>오해 주의</b> 구의 부피에서 <b>4/3</b>을 빠뜨리지 않는다.
+        <span class="lb">오해 주의</span> 구의 부피에서 <b>4/3</b>을 빠뜨리지 않는다.
     </div>
     <div class="pg">9</div>
 </section>

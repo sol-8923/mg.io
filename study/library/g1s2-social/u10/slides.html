@@ -327,6 +327,10 @@ h2 .dot { margin: 0 .16em; }
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: var(--pt, #2f6b52); color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 
 </head>
@@ -478,7 +482,7 @@ h2 .dot { margin: 0 .16em; }
         <div class="card step"><span class="no">6</span><br><h3>당선증 발급</h3>당선인이 선거 관리 위원회에서 당선증을 받고 일정 기간 대표자로서 일한다.</div>
     </div>
     <div class="card hl reveal" style="margin-top:24px">
-        <b>암기</b> 선거인 명부 작성 → 후보자 등록 → 선거 운동 → 투표 → 개표 및 당선인 결정 → 당선증 발급
+        <span class="lb">암기</span> 선거인 명부 작성 → 후보자 등록 → 선거 운동 → 투표 → 개표 및 당선인 결정 → 당선증 발급
     </div>
     <div class="pg">4</div>
 </section>
@@ -668,7 +672,7 @@ h2 .dot { margin: 0 .16em; }
         <div class="card reveal"><h3>주민 참여 예산제</h3>지방 자치 단체의 <b>예산 편성 과정</b>에 주민이 직접 참여한다.</div>
     </div>
     <div class="card reveal" style="margin-top:20px">
-        <b>자세</b> 지방 자치 제도의 발전은 시민의 적극적 관심과 참여에 달려 있다. 지역 문제 해결과 발전에 관심을 갖고 <b>자발적으로 참여하려는 자세</b>가 필요하다.
+        <span class="lb">자세</span> 지방 자치 제도의 발전은 시민의 적극적 관심과 참여에 달려 있다. 지역 문제 해결과 발전에 관심을 갖고 <b>자발적으로 참여하려는 자세</b>가 필요하다.
     </div>
     <div class="pg">12</div>
 </section>

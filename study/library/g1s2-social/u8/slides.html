@@ -327,6 +327,10 @@ h2 .dot { margin: 0 .16em; }
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: var(--pt, #2f6b52); color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 
 </head>
@@ -658,7 +662,7 @@ h2 .dot { margin: 0 .16em; }
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:24px">
-        <b>핵심</b> 문화는 환경 적응 과정에서 형성되므로 사회마다 다르게 나타난다. 그래서 다른 문화를 이해하는 태도가 중요하다.
+        <span class="lb">핵심</span> 문화는 환경 적응 과정에서 형성되므로 사회마다 다르게 나타난다. 그래서 다른 문화를 이해하는 태도가 중요하다.
     </div>
     <div class="pg">10</div>
 </section>

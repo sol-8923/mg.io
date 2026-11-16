@@ -257,6 +257,10 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #C2410C; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 </head>
 <body>
@@ -523,7 +527,7 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
         <tr><td>현의 길이</td><td><b>정비례하지 않는다</b></td></tr>
     </table>
     <div class="card warn reveal" style="margin-top:24px">
-        <b>호 vs 현</b> 호는 곡선, 현은 선분. 부채꼴은 반지름 둘 + 호, 활꼴은 현 + 호.
+        <span class="lb">호 vs 현</span> 호는 곡선, 현은 선분. 부채꼴은 반지름 둘 + 호, 활꼴은 현 + 호.
     </div>
     <div class="pg">8</div>
 </section>

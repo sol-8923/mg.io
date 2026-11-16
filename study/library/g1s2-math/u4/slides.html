@@ -257,6 +257,10 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #C2410C; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 </head>
 <body>
@@ -453,7 +457,7 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
         </div>
     </div>
     <div class="card warn reveal" style="margin-top:20px">
-        <b>오해 주의</b> y=x+1처럼 x가 늘 때 y도 느는 관계를 모두 정비례라고 하지 않는다. 정비례는 <b>y=ax</b> 꼴이며 <b>y/x의 값이 일정(=a)</b>하다.
+        <span class="lb">오해 주의</span> y=x+1처럼 x가 늘 때 y도 느는 관계를 모두 정비례라고 하지 않는다. 정비례는 <b>y=ax</b> 꼴이며 <b>y/x의 값이 일정(=a)</b>하다.
     </div>
     <div class="pg">6</div>
 </section>
@@ -490,7 +494,7 @@ span.sl { display: block; height: 0; font-size: 0; line-height: 0; overflow: hid
         </div>
     </div>
     <div class="card warn reveal" style="margin-top:20px">
-        <b>오해 주의</b> 반비례 그래프가 좌표축과 만난다고 생각하지 않는다. 곡선은 축에 한없이 가까워질 뿐 <b>만나지 않는다</b>.
+        <span class="lb">오해 주의</span> 반비례 그래프가 좌표축과 만난다고 생각하지 않는다. 곡선은 축에 한없이 가까워질 뿐 <b>만나지 않는다</b>.
     </div>
     <div class="pg">7</div>
 </section>

@@ -285,6 +285,10 @@ span.nw { white-space: nowrap; }
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #1d5fd1; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 </head>
 <body>
@@ -444,7 +448,7 @@ span.nw { white-space: nowrap; }
         <tr><td>끝</td><td>소제목 '잔소리보다 강한 부드러운 힘': 문제 해결 행동으로 나아가기 어렵다 → 사람들 마음을 움직이는 방법을 묻는 질문으로 마무리</td><td>p.119</td></tr>
     </table>
     <div class="card hl reveal" style="margin-top:22px">
-        <b>출처</b> 『교과서에 나오지 않는 발칙한 <span class="nw">생각들』 ·</span> 글을 <b>일화</b>로 시작해 독자가 쉽게 공감하고 흥미를 느끼게 한다.
+        <span class="lb">출처</span> 『교과서에 나오지 않는 발칙한 <span class="nw">생각들』 ·</span> 글을 <b>일화</b>로 시작해 독자가 쉽게 공감하고 흥미를 느끼게 한다.
     </div>
     <div class="pg">4</div>
 </section>
@@ -556,7 +560,7 @@ span.nw { white-space: nowrap; }
     <div class="kicker">제재 2 「아이들은 어른보다 추위를 덜 탈까?」(신인철)</div>
     <h2>백색 지방과 갈색 지방 <small>설명하는 <span class="nw">글 ·</span> p.124~125</small></h2>
     <div class="card reveal" style="margin-bottom:22px">
-        <b>도입</b> 글쓴이는 어릴 때 '다방구' 놀이를 하던 일화로 시작해 '정말 아이들은 어른보다 추위를 덜 탈까요?'라고 묻는다. 제목과 일화로 아이들이 추위를 덜 타는 <b>까닭과 원리</b>를 다룰 것임을 추론한다.
+        <span class="lb">도입</span> 글쓴이는 어릴 때 '다방구' 놀이를 하던 일화로 시작해 '정말 아이들은 어른보다 추위를 덜 탈까요?'라고 묻는다. 제목과 일화로 아이들이 추위를 덜 타는 <b>까닭과 원리</b>를 다룰 것임을 추론한다.
     </div>
     <table class="t nw reveal">
         <tr><th style="width:16%">구분</th><th>백색 지방</th><th>갈색 지방</th></tr>
@@ -665,7 +669,7 @@ span.nw { white-space: nowrap; }
     <div class="kicker">02 주장하는 글 쓰기</div>
     <h2>지유의 글 짜임 <small>「하나의 성격 유형이…」 p.137~139</small></h2>
     <div class="card hl reveal" style="margin-bottom:20px">
-        <b>주장</b> 엠비티아이 검사 결과에 과도하게 의존하지 말고, 올바르게 활용해야 <span class="nw">한다. ·</span> <b>서론</b> 새 학기 첫날의 대화를 묻는 질문으로 시작(흥미 유발), 과도한 의존 사례(기업 채용 논란, 청소년 사이의 <span class="nw">갈등)를</span> 들며 '의존하면 안 되는 까닭은 무엇일까?'라고 묻는다(주장을 질문으로 제시해 주의를 환기, 근거로 연결).
+        <span class="lb">주장</span> 엠비티아이 검사 결과에 과도하게 의존하지 말고, 올바르게 활용해야 <span class="nw">한다. ·</span> <b>서론</b> 새 학기 첫날의 대화를 묻는 질문으로 시작(흥미 유발), 과도한 의존 사례(기업 채용 논란, 청소년 사이의 <span class="nw">갈등)를</span> 들며 '의존하면 안 되는 까닭은 무엇일까?'라고 묻는다(주장을 질문으로 제시해 주의를 환기, 근거로 연결).
     </div>
     <table class="t s nw reveal" style="font-size:25px">
         <tr><th style="width:12%">본론</th><th style="width:44%">근거</th><th>뒷받침 방식</th></tr>
@@ -674,7 +678,7 @@ span.nw { white-space: nowrap; }
         <tr><td>셋째</td><td>검사 결과는 응답자의 상태나 상황에 따라 바뀔 수 있다</td><td>연구소 연구부장의 설명 인용</td></tr>
     </table>
     <div class="card reveal" style="margin:20px 0">
-        <b>결론(p.138)</b> 심리학과 교수의 말과 결과지 안내('하나의 근거 자료일 <span class="nw">뿐')를</span> 인용하고, 맹신을 버리고 올바르게 활용하면 나와 다른 사람을 이해하는 <b>매력적인 도구</b>가 된다고 정리.
+        <span class="lb">결론</span><span class="ref">(p.138)</span> 심리학과 교수의 말과 결과지 안내('하나의 근거 자료일 <span class="nw">뿐')를</span> 인용하고, 맹신을 버리고 올바르게 활용하면 나와 다른 사람을 이해하는 <b>매력적인 도구</b>가 된다고 정리.
     </div>
     <div class="pg">13</div>
 </section>

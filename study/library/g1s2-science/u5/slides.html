@@ -258,6 +258,10 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #C2186B; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 </head>
 <body>
@@ -359,7 +363,7 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:24px">
-        <b>힘의 평형</b> 한 물체에 <b>같은 크기의 두 힘이 같은 직선상에서 서로 반대 방향</b>으로 작용하는 경우. 예) 줄다리기에서 줄이 어느 쪽으로도 <span class="nw">움직이지 않는다.</span>
+        <span class="lb">힘의 평형</span> 한 물체에 <b>같은 크기의 두 힘이 같은 직선상에서 서로 반대 방향</b>으로 작용하는 경우. 예) 줄다리기에서 줄이 어느 쪽으로도 <span class="nw">움직이지 않는다.</span>
     </div>
     <div class="pg">3</div>
 </section>
@@ -419,7 +423,7 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:24px">
-        <b>계산 예</b> 용수철이 <span class="nw">2 cm</span> 늘어날 때 탄성력이 <span class="nw">1 N</span>이면, <span class="nw">4 cm</span> 늘어날 때 <b><span class="nw">2 N</span></b>, <span class="nw">6 cm</span> 늘어날 때 <b><span class="nw">3 N</span></b>. <span class="warn" style="color:var(--warn)">탄성력은 늘어난 길이에 반비례한다 <span class="nw">(X)</span> → 비례.</span>
+        <span class="lb">계산 예</span> 용수철이 <span class="nw">2 cm</span> 늘어날 때 탄성력이 <span class="nw">1 N</span>이면, <span class="nw">4 cm</span> 늘어날 때 <b><span class="nw">2 N</span></b>, <span class="nw">6 cm</span> 늘어날 때 <b><span class="nw">3 N</span></b>. <span class="warn" style="color:var(--warn)">탄성력은 늘어난 길이에 반비례한다 <span class="nw">(X)</span> → 비례.</span>
     </div>
     <div class="pg">5</div>
 </section>

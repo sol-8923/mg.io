@@ -327,6 +327,10 @@ h2 .dot { margin: 0 .16em; }
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: var(--pt, #2f6b52); color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
 </style>
 
 </head>
@@ -523,7 +527,7 @@ h2 .dot { margin: 0 .16em; }
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:28px">
-        <b>결론</b> 모두의 <b>인간답고 행복한 삶</b>을 보장하려면 민주주의가 필요하다.
+        <span class="lb">결론</span> 모두의 <b>인간답고 행복한 삶</b>을 보장하려면 민주주의가 필요하다.
     </div>
     <div class="pg">5</div>
 </section>
@@ -676,7 +680,7 @@ h2 .dot { margin: 0 .16em; }
         </div>
     </div>
     <div class="card reveal" style="margin-top:24px">
-        <b>효과</b> 이러한 활동으로 <b>대의 민주주의의 한계를 보완</b>한다.
+        <span class="lb">효과</span> 이러한 활동으로 <b>대의 민주주의의 한계를 보완</b>한다.
     </div>
     <div class="pg">12</div>
 </section>
