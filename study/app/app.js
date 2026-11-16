@@ -601,10 +601,10 @@ function renderSummaryUnit(id,uid){
       h('div',{class:'sum-bar'},[h('a',{class:'btn back',href:'#/summary/'+encodeURIComponent(id)},['← 단원 목록']),h('span',{class:'sum-title',text:bookLabel(book)+' · '+unitFull(book,u)})]),
       fr
     ]));
-    /* 슬라이드마다 필기를 따로 저장: 지금 보이는 슬라이드 번호를 키에 붙인다 */
-    Pen.show(function(){
-      var n=0; try{ var ss=[].slice.call(fr.contentDocument.querySelectorAll('.slide')); n=Math.max(0,ss.indexOf(fr.contentDocument.querySelector('.slide.active'))); }catch(e){}
-      return 'sum:'+id+'/'+uid+'#'+n;
+    /* 필기는 슬라이드 안쪽 문서에 얹힌다: 태블릿은 슬라이드(장)마다, 폰(이어 붙인 문서)은 단원 전체에 하나 */
+    Pen.show(function(staged){
+      var n=0; try{ var d=fr.contentDocument, ss=[].slice.call(d.querySelectorAll('.slide')); n=Math.max(0,ss.indexOf(d.querySelector('.slide.active'))); }catch(e){}
+      return 'sum:'+id+'/'+uid+(staged?'#'+n:'#all');
     },fr);
   }).catch(renderError);
 }
