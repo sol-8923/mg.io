@@ -236,7 +236,7 @@ def build_book(bdir, errors, warns, info):
         info.append(f"{tagu} {bp.get('unitName')} · 시험 {len(slots)}문항/{sum(s.get('points',0) for s in slots)}점 · 은행 {len(qs)}문항 · "
                     + "유형 " + ", ".join(f"{k} {v}" for k, v in sorted(tc.items())) + " · 난이도 " + "/".join(f"{k}{dc.get(k,0)}" for k in "상중하"))
         unit = {"id": udir.name, "name": bp.get("unitName", udir.name), "timeLimitMin": bp.get("timeLimitMin", 0),
-                "slots": [{k: s.get(k) for k in ("id", "type", "difficulty", "points", "concept")} for s in slots]}
+                "slots": [{k: s.get(k) for k in ("id", "type", "difficulty", "points", "concept", "avoid") if s.get(k) is not None} for s in slots]}
         _sp = udir / "review" / "status.json"
         _mode = load(_sp).get("mode") if _sp.exists() else None
         if _mode:

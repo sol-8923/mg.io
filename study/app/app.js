@@ -408,11 +408,14 @@ function planExam(book, unitIds){
   var qu={}; unitIds.forEach(function(id){ qu[id]=N/unitIds.length; });
   var qd=share(function(c){ return c.s.difficulty; }), qp=share(function(c){ return c.s.points; });
   var cu={}, cd={}, cp={}, picks=[], left=cand.slice();
+  /* 같은 사실을 묻는 슬롯(avoid)은 한 시험지에 함께 뽑지 않는다(후보가 모자라면 허용) */
+  function clash(c){ return picks.some(function(p){ return p.u.id===c.u.id && ((c.s.avoid||[]).indexOf(p.s.id)>=0 || (p.s.avoid||[]).indexOf(c.s.id)>=0); }); }
   ['essay','short','mc'].forEach(function(t){
     for(var i=0;i<k[t];i++){
       var best=null, bs=1e9;
-      left.forEach(function(c){
+      for(var pass=0; pass<2 && !best; pass++) left.forEach(function(c){
         if(c.kind!==t) return;
+        if(pass===0 && clash(c)) return;
         var sc=((cu[c.u.id]||0)+1)/qu[c.u.id]+((cd[c.s.difficulty]||0)+1)/qd[c.s.difficulty]+((cp[c.s.points]||0)+1)/qp[c.s.points]+Math.random()*0.05;
         if(sc<bs){ bs=sc; best=c; }
       });
