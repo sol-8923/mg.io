@@ -140,7 +140,7 @@ var Snd=(function(){
   var bufs={}, loading={}, lastCustom=0;
   function stamp(){ lastCustom=Date.now(); }
   function load(name){ if(bufs[name]||loading[name]) return; var c=ac(); if(!c) return; loading[name]=1;
-    fetch('app/snd/'+name+'.ogg?v=20261117j').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
+    fetch('app/snd/'+name+'.ogg?v=20261117k').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
       .then(function(ab){ return new Promise(function(ok,no){ c.decodeAudioData(ab,ok,no); }); })
       .then(function(b){ bufs[name]=b; },function(){ loading[name]=0; }); }
   function play(name,vol){ var c=ac(); if(!c) return true; var b=bufs[name]; if(!b){ load(name); return false; }
@@ -216,7 +216,7 @@ document.addEventListener('click',function(e){
  * 홈·톡방·일정 등에서 잔잔하게 흐르고, 공부방(공부방·시험·요약·오답노트·공부 기록·문제 풀이)에 들어가면 서서히 줄어들며 꺼진다.
  * 브라우저 규칙상 화면을 처음 누른 뒤에 시작한다. 🎵 버튼으로 켜고 끈다(이 기기에 저장). */
 var Mus=(function(){
-  var TRACKS=['aquarium','icicles-melting','isolation-waltz','la-citadelle','lovely-piano-song','night-in-venice','nostalgic-piano','pond','romantic-inspiration','shining-stars','celebrated-minuet'].map(function(n){ return 'app/music/'+n+'.ogg'; });   /* 가사 없는 잔잔한 클래식풍 11곡(amazing-grace는 색소폰 소리가 나서 뺐다), 음량은 같게 맞춰 두었다 */
+  var TRACKS=['aquarium','icicles-melting','isolation-waltz','la-citadelle','lovely-piano-song','nostalgic-piano','pond','romantic-inspiration','shining-stars','celebrated-minuet'].map(function(n){ return 'app/music/'+n+'.ogg'; });   /* 가사 없는 잔잔한 클래식풍 10곡(amazing-grace·night-in-venice는 색소폰 소리가 나서 뺐다), 음량은 같게 맞춰 두었다 */
   var VOL=0.15, FADE_IN=1.0, FADE_OUT=0.6;
   var STUDY={room:1,exam:1,summary:1,notes:1,stats:1,book:1,quiz:1,result:1,review:1};
   var ctx=null, gain=null, lp=null, el=null, idx=Math.floor(Math.random()*TRACKS.length), fresh=true, wantOn=true, inStudy=false, started=false, stopT=null;
@@ -272,7 +272,7 @@ function forceRefresh(btn){
   if(btn){ btn.disabled=true; btn.textContent='…'; }
   var urls=[location.pathname];
   Array.prototype.forEach.call(document.querySelectorAll('script[src],link[rel=stylesheet][href]'),function(e){ var u=e.src||e.href; if(u.indexOf(location.origin)===0) urls.push(u); });
-  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117j'); });
+  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117k'); });
   var jobs=[];
   try{ if(window.caches) jobs.push(caches.keys().then(function(ks){ return Promise.all(ks.map(function(k){ return caches.delete(k); })); })); }catch(e){}
   try{ if(navigator.serviceWorker) jobs.push(navigator.serviceWorker.getRegistration().then(function(r){ return r&&r.update(); })); }catch(e){}
