@@ -240,6 +240,16 @@ def build_book(bdir, errors, warns, info):
         tc = Counter(s.get("type") for s in slots)
         info.append(f"{tagu} {bp.get('unitName')} · 시험 {len(slots)}문항/{sum(s.get('points',0) for s in slots)}점 · 은행 {len(qs)}문항 · "
                     + "유형 " + ", ".join(f"{k} {v}" for k, v in sorted(tc.items())) + " · 난이도 " + "/".join(f"{k}{dc.get(k,0)}" for k in "상중하"))
+        # 교과서 차례(meta.textbookUnits)와 단원 번호·이름 대조: 어긋나면 빌드 오류
+        _tb = {t["no"]: t["name"] for t in (meta.get("textbookUnits") or [])}
+        _m = _re.search(r"(\d+)", udir.name)
+        _no = int(_m.group(1)) if _m else None
+        if not _tb:
+            warns.append(f"[{bdir.name}] meta.textbookUnits(교과서 차례의 단원 번호·이름) 없음 — 새 교과서는 차례부터 정리할 것")
+        elif _no not in _tb:
+            errors.append(f"{tagu} 단원 번호 {_no}가 교과서 차례(meta.textbookUnits)에 없음")
+        elif str(bp.get("unitName", "")).replace(" ", "") != _tb[_no].replace(" ", ""):
+            errors.append(f"{tagu} 단원명 '{bp.get('unitName')}'이 교과서 차례의 '{_tb[_no]}'와 다름")
         unit = {"id": udir.name, "name": bp.get("unitName", udir.name), "timeLimitMin": bp.get("timeLimitMin", 0),
                 "slots": [{k: s.get(k) for k in ("id", "type", "difficulty", "points", "concept", "avoid") if s.get(k) is not None} for s in slots]}
         _sp = udir / "review" / "status.json"

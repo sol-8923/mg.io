@@ -1,1 +1,1 @@
-{"grade": 1, "semester": 2, "subject": "국어", "description": "비상교육 중학 국어 1-2 교과서 기반 (2022 개정)", "exam": {"mc": 25, "short": 4, "essay": 1, "timeMin": 50}}
+{"grade": 1, "semester": 2, "subject": "국어", "description": "비상교육 중학 국어 1-2 교과서 기반 (2022 개정)", "exam": {"mc": 25, "short": 4, "essay": 1, "timeMin": 50}, "textbookUnits": [{"no": 1, "name": "마음을 비추는 글"}, {"no": 2, "name": "다채로운 단어"}, {"no": 3, "name": "삶을 가꾸는 글의 힘"}, {"no": 4, "name": "소통하며 이해하는 삶"}]}
