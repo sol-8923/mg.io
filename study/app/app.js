@@ -140,7 +140,7 @@ var Snd=(function(){
   var bufs={}, loading={}, lastCustom=0;
   function stamp(){ lastCustom=Date.now(); }
   function load(name){ if(bufs[name]||loading[name]) return; var c=ac(); if(!c) return; loading[name]=1;
-    fetch('app/snd/'+name+'.ogg?v=20261117e').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
+    fetch('app/snd/'+name+'.ogg?v=20261117f').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
       .then(function(ab){ return new Promise(function(ok,no){ c.decodeAudioData(ab,ok,no); }); })
       .then(function(b){ bufs[name]=b; },function(){ loading[name]=0; }); }
   function play(name,vol){ var c=ac(); if(!c) return true; var b=bufs[name]; if(!b){ load(name); return false; }
@@ -272,7 +272,7 @@ function forceRefresh(btn){
   if(btn){ btn.disabled=true; btn.textContent='…'; }
   var urls=[location.pathname];
   Array.prototype.forEach.call(document.querySelectorAll('script[src],link[rel=stylesheet][href]'),function(e){ var u=e.src||e.href; if(u.indexOf(location.origin)===0) urls.push(u); });
-  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117e'); });
+  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117f'); });
   var jobs=[];
   try{ if(window.caches) jobs.push(caches.keys().then(function(ks){ return Promise.all(ks.map(function(k){ return caches.delete(k); })); })); }catch(e){}
   try{ if(navigator.serviceWorker) jobs.push(navigator.serviceWorker.getRegistration().then(function(r){ return r&&r.update(); })); }catch(e){}

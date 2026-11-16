@@ -9,9 +9,9 @@
 (function(){
 'use strict';
 var KEY='mg-study:ink:v1';
-var COLORS={ red:'#e5383b', blue:'#2f6fe0', green:'#1f9d55', yellow:'#ffe600', pink:'#ff6fb5' };
-var COLOR_NAMES={ red:'빨강', blue:'파랑', green:'초록', yellow:'형광 노랑', pink:'형광 분홍' };
-var HL={ yellow:1, pink:1 };   // 형광펜: 굵고 반투명하게 그린다
+var COLORS={ red:'#e5383b', blue:'#2f6fe0', green:'#1f9d55', yellow:'#ffe600', pink:'#ff6fb5', lime:'#7df26b' };
+var COLOR_NAMES={ red:'빨강', blue:'파랑', green:'초록', yellow:'형광 노랑', pink:'형광 분홍', lime:'형광 연두' };
+var HL={ yellow:1, pink:1, lime:1 };   // 형광펜: 굵고 반투명하게 그린다
 var store=load(), key=null, keyFn=null, frame=null, staged=false;
 var open=false, tool='pen', color='red', hand=false, finger=true, askClear=false;
 var cv=null, cvHost=null, ctx=null, dock=null, drawing=null, poll=null, ro=null, W=1, H=1, queued=false;
@@ -70,7 +70,7 @@ function renderDock(){
   var act=!hand;
   dock.innerHTML=
     btn('data-a="toggle" class="main" aria-pressed="true" aria-label="펜 접기" title="누르면 접고 원래 화면으로 (그린 건 그대로)"',I.pen)+
-    ['red','blue','green','|','yellow','pink'].map(function(c){ if(c==='|') return '<span class="sep"></span>'; return btn('class="dot'+(HL[c]?' hl':'')+'" data-c="'+c+'" aria-label="'+COLOR_NAMES[c]+(HL[c]?' 형광펜':'')+'" title="'+COLOR_NAMES[c]+(HL[c]?' 형광펜':'')+'" aria-pressed="'+(c===color&&act&&tool==='pen')+'"','<i style="background:'+COLORS[c]+'"></i>'); }).join('')+
+    ['red','blue','green','|','yellow','pink','lime'].map(function(c){ if(c==='|') return '<span class="sep"></span>'; return btn('class="dot'+(HL[c]?' hl':'')+'" data-c="'+c+'" aria-label="'+COLOR_NAMES[c]+(HL[c]?' 형광펜':'')+'" title="'+COLOR_NAMES[c]+(HL[c]?' 형광펜':'')+'" aria-pressed="'+(c===color&&act&&tool==='pen')+'"','<i style="background:'+COLORS[c]+'"></i>'); }).join('')+
     '<span class="sep"></span>'+
     btn('data-a="eraser" aria-pressed="'+(act&&tool==='eraser')+'" aria-label="지우개" title="지우개"',I.eraser)+
     btn('class="hand" data-a="hand" aria-pressed="'+hand+'" aria-label="펜 끄고 넘기기" title="펜을 잠시 끄고 화면 넘기기"',I.hand+'<span>넘기기</span>')+
@@ -163,7 +163,7 @@ function stroke(s,k){
   var p=s.p; if(!p.length) return;
   var hl=!!HL[s.c];
   ctx.strokeStyle=COLORS[s.c]||COLORS.red;
-  ctx.lineWidth=hl?Math.min(Math.max(0.016*W,11/k),0.03*W):Math.min(Math.max(0.004*W,2.8/k),0.012*W);
+  ctx.lineWidth=hl?Math.min(Math.max(0.024*W,16.5/k),0.045*W):Math.min(Math.max(0.004*W,2.8/k),0.012*W);
   ctx.globalAlpha=hl?0.4:1;   // 형광펜은 글씨가 비쳐 보이게 반투명
   ctx.lineCap=hl?'butt':'round'; ctx.lineJoin='round'; ctx.beginPath(); ctx.moveTo(p[0][0]*W,p[0][1]*W);
   if(p.length===1) ctx.lineTo(p[0][0]*W+.1,p[0][1]*W);
