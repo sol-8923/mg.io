@@ -6,6 +6,7 @@
   'use strict';
   var ua = navigator.userAgent || '';
   var standalone = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+  window.MgInstall = { open: function () {} };   /* 칠판의 메롱 그림을 누르면 설치 안내를 연다(app.js). 아래에서 실제 동작으로 바꾼다 */
   if (standalone) return;
 
   /* 1) 앱 안 브라우저 탈출 */
@@ -28,7 +29,6 @@
   var KEY = 'mg-study:install-hint';
   function dismissed() { try { return localStorage.getItem(KEY) === 'off'; } catch (e) { return false; } }
   function dismiss() { try { localStorage.setItem(KEY, 'off'); } catch (e) {} }
-  if (dismissed()) return;
 
   var css = document.createElement('style');
   css.textContent =
@@ -44,8 +44,9 @@
   function onHomeRoute() { var h = location.hash.replace(/^#\/?/, ''); return h === '' || h === 'room'; }
   function sync() { var b = document.querySelector('.inst'); if (b) b.style.display = onHomeRoute() ? '' : 'none'; }
   window.addEventListener('hashchange', sync);
+  var deferredPrompt = null;
   function show(text, withInstall, deferred) {
-    if (document.querySelector('.inst')) return;
+    var old = document.querySelector('.inst'); if (old) old.remove();
     var box = document.createElement('div');
     box.className = 'inst';
     box.setAttribute('role', 'dialog');
@@ -72,13 +73,21 @@
   /* 안드로이드(크롬·삼성 인터넷): 브라우저가 설치 가능하다고 알려 주면 설치 버튼을 보여 준다 */
   window.addEventListener('beforeinstallprompt', function (e) {
     e.preventDefault();
-    show('홈 화면에 설치하면 주소창 없이 앱처럼 열려요.', true, e);
+    deferredPrompt = e;
+    if (!dismissed()) show('홈 화면에 설치하면 주소창 없이 앱처럼 열려요.', true, e);
   });
   window.addEventListener('appinstalled', function () { dismiss(); var b = document.querySelector('.inst'); if (b) b.remove(); });
 
   /* 아이폰 사파리: 자동 설치 버튼이 없어서 방법만 안내 */
   var isIOS = /iPhone|iPad|iPod/i.test(ua) && /Safari/i.test(ua) && !/CriOS|FxiOS|EdgiOS/i.test(ua);
-  if (isIOS) {
+  if (isIOS && !dismissed()) {
     setTimeout(function () { show('아래 공유 버튼(□↑)을 누르고 "홈 화면에 추가"를 선택하세요.', false); }, 1500);
   }
+
+  /* 칠판의 메롱 그림을 눌렀을 때: 닫기로 숨겨 둔 안내도 다시 연다 */
+  window.MgInstall.open = function () {
+    if (deferredPrompt) show('홈 화면에 설치하면 주소창 없이 앱처럼 열려요.', true, deferredPrompt);
+    else if (isIOS) show('아래 공유 버튼(□↑)을 누르고 "홈 화면에 추가"를 선택하세요.', false);
+    else show('브라우저 메뉴(⋮)에서 "홈 화면에 추가" 또는 "앱 설치"를 선택하세요.', false);
+  };
 })();

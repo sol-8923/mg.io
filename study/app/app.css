@@ -615,3 +615,6 @@ a.door.shake{animation:doorShake .45s}
 .hero .board-refresh{position:absolute;z-index:3;top:16px;right:22px;width:22px;height:22px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--chalk);font:700 14px/22px system-ui,sans-serif;text-align:center;opacity:.35;cursor:pointer}
 .hero .board-refresh:hover,.hero .board-refresh:focus-visible{opacity:.9;background:rgba(255,255,255,.12)}
 .hero .board-refresh:disabled{opacity:.9;cursor:default}
+
+/* 메롱 그림을 누르면 앱 설치 안내(겉보기는 그대로: 손가락 커서·눌림 효과·강조 없음) */
+.hero .noisy .mer{pointer-events:auto;cursor:default;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}

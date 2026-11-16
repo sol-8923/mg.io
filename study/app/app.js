@@ -140,7 +140,7 @@ var Snd=(function(){
   var bufs={}, loading={}, lastCustom=0;
   function stamp(){ lastCustom=Date.now(); }
   function load(name){ if(bufs[name]||loading[name]) return; var c=ac(); if(!c) return; loading[name]=1;
-    fetch('app/snd/'+name+'.ogg?v=20261117g').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
+    fetch('app/snd/'+name+'.ogg?v=20261117h').then(function(r){ if(!r.ok) throw 0; return r.arrayBuffer(); })
       .then(function(ab){ return new Promise(function(ok,no){ c.decodeAudioData(ab,ok,no); }); })
       .then(function(b){ bufs[name]=b; },function(){ loading[name]=0; }); }
   function play(name,vol){ var c=ac(); if(!c) return true; var b=bufs[name]; if(!b){ load(name); return false; }
@@ -272,7 +272,7 @@ function forceRefresh(btn){
   if(btn){ btn.disabled=true; btn.textContent='…'; }
   var urls=[location.pathname];
   Array.prototype.forEach.call(document.querySelectorAll('script[src],link[rel=stylesheet][href]'),function(e){ var u=e.src||e.href; if(u.indexOf(location.origin)===0) urls.push(u); });
-  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117g'); });
+  ['door-open','door-locked','page4','page5','page6'].forEach(function(n){ urls.push('app/snd/'+n+'.ogg?v=20261117h'); });
   var jobs=[];
   try{ if(window.caches) jobs.push(caches.keys().then(function(ks){ return Promise.all(ks.map(function(k){ return caches.delete(k); })); })); }catch(e){}
   try{ if(navigator.serviceWorker) jobs.push(navigator.serviceWorker.getRegistration().then(function(r){ return r&&r.update(); })); }catch(e){}
@@ -394,7 +394,7 @@ function renderHome(){
         h('h1',{text:'민겸이 공부 공간'}),
         h('div',{class:'date'},[d.getFullYear()+'년 '+(d.getMonth()+1)+'월 '+d.getDate()+'일 '+days[d.getDay()]+'요일',h('span',{class:'dsep',text:' · '}),h('span',{class:'dmotto',text:'겪어나가는 모든 것이 공부다'})])
       ]),
-      h('div',{class:'noisy','aria-label':'떠든 사람 민겸이'},[h('span',{class:'mer','aria-hidden':'true',html:ICONS.meron}),h('span',{class:'ntext'},[h('span',{class:'nl',text:'떠든 사람 :'}),h('span',{class:'nn',text:'민겸이'})])]),
+      h('div',{class:'noisy','aria-label':'떠든 사람 민겸이'},[h('span',{class:'mer','aria-hidden':'true',html:ICONS.meron,onclick:function(){ if(window.MgInstall) MgInstall.open(); }}),h('span',{class:'ntext'},[h('span',{class:'nl',text:'떠든 사람 :'}),h('span',{class:'nn',text:'민겸이'})])]),
       noticeBoard(),
       h('div',{class:'chalk-line'}),
       h('button',{class:'board-refresh',title:'새 버전 받아오기 (캐시 지우고 새로고침)','aria-label':'새 버전 받아오기: 캐시를 지우고 새로고침',onclick:function(e){ forceRefresh(e.currentTarget); }},['↻'])
