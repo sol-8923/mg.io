@@ -40,6 +40,10 @@
     '.inst button.go{background:#2f6b52;color:#fff;border-color:#2f6b52;font-weight:700}';
   document.head.appendChild(css);
 
+  /* 안내 박스는 홈·공부방에서만 보인다(문제 풀이 중 아래쪽 버튼을 가리지 않도록) */
+  function onHomeRoute() { var h = location.hash.replace(/^#\/?/, ''); return h === '' || h === 'room'; }
+  function sync() { var b = document.querySelector('.inst'); if (b) b.style.display = onHomeRoute() ? '' : 'none'; }
+  window.addEventListener('hashchange', sync);
   function show(text, withInstall, deferred) {
     if (document.querySelector('.inst')) return;
     var box = document.createElement('div');
@@ -62,6 +66,7 @@
     x.onclick = function () { dismiss(); box.remove(); };
     act.appendChild(x);
     document.body.appendChild(box);
+    sync();
   }
 
   /* 안드로이드(크롬·삼성 인터넷): 브라우저가 설치 가능하다고 알려 주면 설치 버튼을 보여 준다 */
