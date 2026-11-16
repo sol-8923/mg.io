@@ -23,6 +23,17 @@
    "questions": 141
   },
   {
+   "id": "g1s2-science",
+   "grade": 1,
+   "semester": 2,
+   "subject": "과학",
+   "color": null,
+   "cover": "g1s2-science/cover.jpg?v=1794750179",
+   "sample": false,
+   "units": 4,
+   "questions": 185
+  },
+  {
    "id": "g1s2-social",
    "grade": 1,
    "semester": 2,

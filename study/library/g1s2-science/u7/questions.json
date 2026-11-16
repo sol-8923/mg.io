@@ -1,0 +1,1417 @@
+{
+ "questions": [
+  {
+   "id": "u7-P25K14-a",
+   "slot": "P25K14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "태양계 구성 천체",
+   "source": "교과서 p.227 (2025 2학기 기말 14번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-14",
+   "question": "태양계를 구성하는 천체와 그에 해당하는 특징이 옳게 짝지어진 것은?",
+   "choices": [
+    "행성 - 다른 행성 주위를 공전한다.",
+    "위성 - 태양 주위를 공전하는 천체이다.",
+    "혜성 - 태양과 멀어질 때 긴 꼬리가 생긴다.",
+    "소행성 - 주로 토성과 목성 궤도 사이에 있다.",
+    "왜소행성 - 행성과 비슷하지만 크기와 질량이 행성보다 작다."
+   ],
+   "answer": 5,
+   "explanation": "행성과 비슷하지만 크기와 질량이 행성보다 작은 천체는 왜소 행성이다.",
+   "choiceExplanations": [
+    "행성은 태양 주위를 공전하는 천체예요. 다른 행성 주위를 공전하는 천체는 위성이에요.",
+    "위성은 행성 주위를 공전하는 천체예요. 태양 주위를 공전하는 천체는 행성 등이에요.",
+    "혜성은 태양과 가까워질 때 긴 꼬리가 나타나요. 멀어질 때가 아니에요.",
+    "소행성은 크기가 작고 모양이 다양한 천체예요. 소행성이 많이 모여 있는 곳은 화성과 목성 궤도 사이예요(교과서 밖 일반 상식).",
+    "정답. 행성과 비슷하지만 크기와 질량이 행성보다 작은 천체는 왜소 행성이다."
+   ],
+   "detail": "태양계 천체의 정의를 정리해 봐요.\n행성: 태양 주위를 공전하는 8개의 천체 / 위성: 행성 주위를 공전 / 왜소 행성: 행성과 비슷하지만 크기·질량이 작음 / 소행성: 크기가 작고 모양이 다양함 / 혜성: 태양과 가까워질 때 긴 꼬리\n그중 왜소 행성의 설명만 옳아요.",
+   "tip": "정의를 천체 이름과 짝지어 외워요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "왜소 행성",
+     "text": "행성과 비슷하지만 크기와 질량이 행성보다 작은 천체를 왜소 행성이라고 해요. 소행성은 크기가 작고 모양이 다양한 천체, 혜성은 태양과 가까워질 때 긴 꼬리가 나타나는 천체예요(교과서 p.227)."
+    }
+   ]
+  },
+  {
+   "id": "u7-P25K15-a",
+   "slot": "P25K15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "행성 분류 그래프",
+   "source": "교과서 p.229 (2025 2학기 기말 15번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-15",
+   "question": "그림은 태양계 행성을 A와 B 두 집단으로 분류한 것이다. 이에 대한 설명으로 옳지 않은 것은?",
+   "choices": [
+    "A는 B보다 크기가 작다.",
+    "B는 A보다 질량이 크다.",
+    "B에는 고리가 없는 행성이 있다.",
+    "A는 B에 비해 위성의 수가 적거나 없다.",
+    "A의 표면은 단단한 암석과 흙으로 이루어져 있다."
+   ],
+   "answer": 3,
+   "explanation": "질량과 반지름이 큰 B는 목성형 행성인데, 목성형 행성은 모두 고리가 있다. 고리가 없는 행성이 있다는 설명이 옳지 않다.",
+   "choiceExplanations": [
+    "옳은 설명이에요. 그림에서 A는 반지름이 B보다 작아요.",
+    "옳은 설명이에요. 그림에서 B는 질량이 A보다 커요.",
+    "정답. 질량과 반지름이 큰 B는 목성형 행성인데, 목성형 행성은 모두 고리가 있다. 고리가 없는 행성이 있다는 설명이 옳지 않다.",
+    "옳은 설명이에요. 질량·반지름이 작은 A는 지구형 행성이라 위성이 없거나 적어요.",
+    "옳은 설명이에요. 지구형 행성인 A의 표면은 단단한 암석으로 이루어져 있어요."
+   ],
+   "detail": "그림을 읽는 순서\n(1) A는 질량·반지름이 작고 B는 크다 → A는 지구형, B는 목성형 행성\n(2) 지구형 행성: 표면이 단단한 암석, 위성 없거나 적음, 고리 없음\n(3) 목성형 행성: 크고 위성이 많으며 모두 고리가 있음\n따라서 목성형 행성(B)에 고리가 없는 행성이 있다는 설명이 틀려요.",
+   "tip": "목성형은 '모두' 고리가 있다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "목성형 행성의 고리",
+     "text": "목성, 토성, 천왕성, 해왕성은 질량과 반지름이 크고 표면이 기체이며, 고리가 있고 위성 수가 많아요(교과서 p.229)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 310 220' font-family='sans-serif' font-size='12'><defs><marker id='ar' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' fill='#222'/></marker></defs><line x1='60' y1='190' x2='60' y2='20' stroke='#222' stroke-width='1.5' marker-end='url(#ar)'/><line x1='60' y1='190' x2='290' y2='190' stroke='#222' stroke-width='1.5' marker-end='url(#ar)'/><text x='34' y='70' font-size='12' text-anchor='middle' fill='#222'>질</text><text x='34' y='86' font-size='12' text-anchor='middle' fill='#222'>량</text><text x='290' y='210' font-size='12' text-anchor='end' fill='#222'>반지름</text><circle cx='110' cy='168' r='12' fill='#f4d6a0' stroke='#222' stroke-width='1.5' /><text x='110' y='173' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>A</text><circle cx='220' cy='60' r='28' fill='#cfe3f5' stroke='#222' stroke-width='1.5' /><text x='220' y='66' font-size='15' text-anchor='middle' fill='#222' font-weight='700'>B</text></svg>",
+    "caption": "태양계 행성의 분류(모식도, A와 B는 각각 한 집단)"
+   }
+  },
+  {
+   "id": "u7-P25K16-a",
+   "slot": "P25K16",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "태양의 표면과 대기",
+   "source": "교과서 p.233 (2025 2학기 기말 16번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-16",
+   "question": "그림은 태양의 표면과 대기를 구분하는 과정이다. A~E는 흑점, 쌀알무늬, 채층, 코로나, 홍염 중 하나이다. 이에 대한 설명으로 옳지 않은 것은?",
+   "choices": [
+    "B는 주변보다 온도가 약 2000℃ 낮다.",
+    "C와 E는 개기 일식 때 관측할 수 있다.",
+    "A는 광구 아래 대류 현상에 의해 나타난다.",
+    "D는 채층을 뚫고 솟아오르는 불꽃 덩어리 기둥이다.",
+    "E는 채층 위로 넓게 뻗어 있으며 광구보다 온도가 낮다."
+   ],
+   "answer": 5,
+   "explanation": "E(코로나)는 채층 위로 넓게 뻗은 대기층이며, 온도가 100만 ℃ 이상으로 광구(약 6000 ℃)보다 매우 높다. 광구보다 낮다는 설명이 옳지 않다.",
+   "choiceExplanations": [
+    "옳은 설명이에요. B(흑점)는 주변보다 약 2000 ℃ 낮아서 어둡게 보여요.",
+    "옳은 설명이에요. C(채층)와 E(코로나)는 개기 일식 때 볼 수 있어요.",
+    "옳은 설명이에요. A(쌀알 무늬)는 광구 아래 대류로 생겨요.",
+    "옳은 설명이에요. D(홍염)는 채층을 뚫고 솟아오르는 불꽃 덩어리 기둥이에요.",
+    "정답. E(코로나)는 채층 위로 넓게 뻗은 대기층이며, 온도가 100만 ℃ 이상으로 광구(약 6000 ℃)보다 매우 높다. 광구보다 낮다는 설명이 옳지 않다."
+   ],
+   "detail": "흐름도를 읽는 순서\n표면: 어둡게 보이면 B(흑점), 아니면 A(쌀알 무늬)\n대기: 붉은색이 아니면 E(코로나), 붉은색이면서 얇은 층이면 C(채층), 아니면 D(홍염)\n따라서 코로나는 광구보다 온도가 매우 높은 대기층이에요.",
+   "tip": "코로나는 100만 ℃ 이상!",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "코로나의 온도",
+     "text": "코로나는 채층 위로 넓게 뻗어 있는 대기층으로, 온도가 100만 ℃ 이상이에요. 광구의 온도는 약 6000 ℃예요(교과서 p.233)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 262' font-family='sans-serif' font-size='12'><defs><marker id='ar' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' fill='#222'/></marker></defs><rect x='147' y='4' width='40' height='22' fill='#fff' stroke='#222' stroke-width='1.3' /><text x='167' y='19' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>태양</text><line x1='167' y1='26' x2='167' y2='42' stroke='#222' stroke-width='1.5' /><line x1='105' y1='42' x2='230' y2='42' stroke='#222' stroke-width='1.5' /><line x1='105' y1='42' x2='105' y2='62' stroke='#222' stroke-width='1.6' marker-end='url(#ar)'/><line x1='230' y1='42' x2='230' y2='62' stroke='#222' stroke-width='1.6' marker-end='url(#ar)'/><text x='86' y='56' font-size='11' text-anchor='middle' fill='#222'>표면</text><text x='250' y='56' font-size='11' text-anchor='middle' fill='#222'>대기</text><polygon points='105,62 151,92 105,122 59,92' fill='#fff7e0' stroke='#222' stroke-width='1.3'/><text x='105' y='90' font-size='10' text-anchor='middle' fill='#222'>어둡게</text><text x='105' y='102' font-size='10' text-anchor='middle' fill='#222'>보이는가?</text><polygon points='230,62 276,92 230,122 184,92' fill='#fff7e0' stroke='#222' stroke-width='1.3'/><text x='230' y='90' font-size='10' text-anchor='middle' fill='#222'>붉은색</text><text x='230' y='102' font-size='10' text-anchor='middle' fill='#222'>인가?</text><polygon points='230,135 276,165 230,195 184,165' fill='#fff7e0' stroke='#222' stroke-width='1.3'/><text x='230' y='163' font-size='10' text-anchor='middle' fill='#222'>얇은 층</text><text x='230' y='175' font-size='10' text-anchor='middle' fill='#222'>모양인가?</text><line x1='59' y1='92' x2='25' y2='92' stroke='#222' stroke-width='1.5' /><line x1='25' y1='92' x2='25' y2='232' stroke='#222' stroke-width='1.6' marker-end='url(#ar)'/><text x='42' y='86' font-size='9' text-anchor='middle' fill='#222'>아니요</text><line x1='105' y1='122' x2='105' y2='232' stroke='#222' stroke-width='1.6' marker-end='url(#ar)'/><text x='112' y='140' font-size='10' text-anchor='start' fill='#222'>예</text><line x1='230' y1='122' x2='230' y2='133' stroke='#222' stroke-width='1.6' marker-end='url(#ar)'/><text x='237' y='128' font-size='10' text-anchor='start' fill='#222'>예</text><line x1='230' y1='195' x2='230' y2='232' stroke='#222' stroke-width='1.6' marker-end='url(#ar)'/><text x='237' y='212' font-size='10' text-anchor='start' fill='#222'>예</text><line x1='276' y1='92' x2='370' y2='92' stroke='#222' stroke-width='1.5' /><line x1='370' y1='92' x2='370' y2='232' stroke='#222' stroke-width='1.6' marker-end='url(#ar)'/><text x='322' y='86' font-size='9' text-anchor='middle' fill='#222'>아니요</text><line x1='276' y1='165' x2='300' y2='165' stroke='#222' stroke-width='1.5' /><line x1='300' y1='165' x2='300' y2='232' stroke='#222' stroke-width='1.6' marker-end='url(#ar)'/><text x='288' y='159' font-size='9' text-anchor='middle' fill='#222'>아니요</text><rect x='10' y='234' width='30' height='22' fill='#fff' stroke='#222' stroke-width='1.3' /><text x='25' y='249' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>A</text><rect x='90' y='234' width='30' height='22' fill='#fff' stroke='#222' stroke-width='1.3' /><text x='105' y='249' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>B</text><rect x='215' y='234' width='30' height='22' fill='#fff' stroke='#222' stroke-width='1.3' /><text x='230' y='249' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>C</text><rect x='285' y='234' width='30' height='22' fill='#fff' stroke='#222' stroke-width='1.3' /><text x='300' y='249' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>D</text><rect x='355' y='234' width='30' height='22' fill='#fff' stroke='#222' stroke-width='1.3' /><text x='370' y='249' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>E</text></svg>",
+    "caption": "태양의 표면과 대기를 구분하는 과정(흐름도)"
+   }
+  },
+  {
+   "id": "u7-P25K17-a",
+   "slot": "P25K17",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "흑점 수 변화와 태양 활동",
+   "source": "교과서 p.233~236 (2025 2학기 기말 17번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-17",
+   "question": "그림은 태양의 흑점 수 변화를 나타낸 것이다. 이에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "흑점 수는 약 6년을 주기로 증감한다.",
+    "B 시기에는 코로나의 크기가 작아진다.",
+    "A 시기에는 델린저 현상이 자주 나타난다.",
+    "A 시기에는 오로라를 더 넓은 지역에서 관측할 수 있다.",
+    "B 시기에는 방사능 피해를 예방하기 위해 북극 항로 비행이 제한된다."
+   ],
+   "answer": 5,
+   "explanation": "흑점 수가 가장 많은 B 시기는 태양 활동이 활발해 태양풍이 강해지므로 비행기가 북극 부근을 운항하기 어렵다(교과서 p.236). 운항 제한의 이유로 든 '방사능 피해'는 교과서에 없는 설명이다(교과서 밖 일반 상식).",
+   "choiceExplanations": [
+    "흑점 수는 약 11년을 주기로 변해요. 약 6년이 아니에요.",
+    "B는 흑점 수가 많은 시기라 태양 활동이 활발하고 코로나의 크기가 커져요.",
+    "A는 흑점 수가 적은 시기라 활동이 약해 델린저 현상이 자주 나타나지 않아요.",
+    "오로라가 더 넓은 지역에서 나타나는 때는 흑점 수가 많은 B 같은 시기예요.",
+    "정답. 흑점 수가 가장 많은 B 시기는 태양 활동이 활발해 태양풍이 강해지므로 비행기가 북극 부근을 운항하기 어렵다(교과서 p.236). 운항 제한의 이유로 든 '방사능 피해'는 교과서에 없는 설명이다(교과서 밖 일반 상식)."
+   ],
+   "detail": "그래프를 읽는 순서\n(1) 흑점 수가 가장 많은 B는 활동이 활발한 시기, 가장 적은 A는 약한 시기\n(2) 활발한 시기: 코로나 커짐, 태양풍 강해짐, 통신 장애·오로라 확대, 항공 피해\n(3) 주기는 극대기 사이를 읽으면 약 11년이에요.",
+   "tip": "활발한 시기 = 흑점 수 많은 시기.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "태양 활동과 항공",
+     "text": "태양 활동이 활발해 입자의 흐름이 강해지면 비행기는 북극 부근을 운항할 수 없어요. 흑점 수는 약 11년 주기로 변해요(교과서 p.233~236)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 190' font-family='sans-serif' font-size='12'><line x1='48' y1='150' x2='346' y2='150' stroke='#222' stroke-width='1.5' /><line x1='48' y1='18' x2='48' y2='150' stroke='#222' stroke-width='1.5' /><line x1='45' y1='150.0' x2='48' y2='150.0' stroke='#222' stroke-width='1.5' /><text x='42' y='154.0' font-size='11' text-anchor='end' fill='#222'>0</text><line x1='45' y1='117.0' x2='48' y2='117.0' stroke='#222' stroke-width='1.5' /><text x='42' y='121.0' font-size='11' text-anchor='end' fill='#222'>50</text><line x1='45' y1='84.0' x2='48' y2='84.0' stroke='#222' stroke-width='1.5' /><text x='42' y='88.0' font-size='11' text-anchor='end' fill='#222'>100</text><line x1='45' y1='51.0' x2='48' y2='51.0' stroke='#222' stroke-width='1.5' /><text x='42' y='55.0' font-size='11' text-anchor='end' fill='#222'>150</text><line x1='45' y1='18.0' x2='48' y2='18.0' stroke='#222' stroke-width='1.5' /><text x='42' y='22.0' font-size='11' text-anchor='end' fill='#222'>200</text><line x1='61.1858407079646' y1='150' x2='61.1858407079646' y2='154' stroke='#222' stroke-width='1.5' /><text x='61.1858407079646' y='167' font-size='11' text-anchor='middle' fill='#222'>1900</text><line x1='113.929203539823' y1='150' x2='113.929203539823' y2='154' stroke='#222' stroke-width='1.5' /><text x='113.929203539823' y='167' font-size='11' text-anchor='middle' fill='#222'>1920</text><line x1='166.6725663716814' y1='150' x2='166.6725663716814' y2='154' stroke='#222' stroke-width='1.5' /><text x='166.6725663716814' y='167' font-size='11' text-anchor='middle' fill='#222'>1940</text><line x1='219.41592920353983' y1='150' x2='219.41592920353983' y2='154' stroke='#222' stroke-width='1.5' /><text x='219.41592920353983' y='167' font-size='11' text-anchor='middle' fill='#222'>1960</text><line x1='272.1592920353982' y1='150' x2='272.1592920353982' y2='154' stroke='#222' stroke-width='1.5' /><text x='272.1592920353982' y='167' font-size='11' text-anchor='middle' fill='#222'>1980</text><line x1='324.9026548672566' y1='150' x2='324.9026548672566' y2='154' stroke='#222' stroke-width='1.5' /><text x='324.9026548672566' y='167' font-size='11' text-anchor='middle' fill='#222'>2000</text><polyline points='48.0,123.6 49.3,123.9 50.6,124.7 52.0,126.1 53.3,127.9 54.6,130.1 55.9,132.6 57.2,135.2 58.5,137.7 59.9,140.2 61.2,142.4 62.5,144.2 63.8,145.6 65.1,146.4 66.5,146.7 67.8,145.3 69.1,141.4 70.4,135.5 71.7,128.6 73.1,121.6 74.4,115.7 75.7,111.8 77.0,110.4 78.3,110.9 79.6,112.3 81.0,114.5 82.3,117.5 83.6,121.0 84.9,125.0 86.2,129.2 87.6,133.4 88.9,137.4 90.2,140.9 91.5,143.9 92.8,146.2 94.2,147.5 95.5,148.0 96.8,145.5 98.1,138.2 99.4,127.2 100.7,114.4 102.1,101.5 103.4,90.6 104.7,83.3 106.0,80.7 107.3,81.8 108.7,84.9 110.0,89.9 111.3,96.4 112.6,103.9 113.9,112.0 115.2,120.2 116.6,127.7 117.9,134.2 119.2,139.2 120.5,142.3 121.8,143.4 123.2,142.3 124.5,139.1 125.8,134.1 127.1,127.9 128.4,121.0 129.8,114.0 131.1,107.8 132.4,102.8 133.7,99.6 135.0,98.5 136.3,99.7 137.7,103.1 139.0,108.5 140.3,115.2 141.6,122.6 142.9,130.1 144.3,136.8 145.6,142.1 146.9,145.5 148.2,146.7 149.5,143.9 150.8,136.1 152.2,124.3 153.5,110.4 154.8,96.5 156.1,84.7 157.4,76.9 158.8,74.1 160.1,75.0 161.4,77.5 162.7,81.7 164.0,87.1 165.4,93.7 166.7,101.0 168.0,108.8 169.3,116.5 170.6,123.8 171.9,130.4 173.3,135.8 174.6,140.0 175.9,142.5 177.2,143.4 178.5,137.9 179.9,122.8 181.2,102.2 182.5,81.5 183.8,66.4 185.1,60.9 186.5,62.0 187.8,65.1 189.1,70.3 190.4,77.1 191.7,85.2 193.0,94.3 194.4,103.8 195.7,113.3 197.0,122.4 198.3,130.5 199.6,137.3 201.0,142.5 202.3,145.6 203.6,146.7 204.9,138.1 206.2,114.5 207.5,82.4 208.9,50.2 210.2,26.6 211.5,18.0 212.8,19.5 214.1,24.0 215.5,31.3 216.8,41.0 218.1,52.6 219.4,65.5 220.7,79.0 222.1,92.6 223.4,105.5 224.7,117.1 226.0,126.8 227.3,134.1 228.6,138.6 230.0,140.1 231.3,137.7 232.6,130.9 233.9,120.7 235.2,108.8 236.6,96.8 237.9,86.6 239.2,79.8 240.5,77.4 241.8,78.0 243.2,79.9 244.5,82.9 245.8,86.9 247.1,91.8 248.4,97.4 249.7,103.4 251.1,109.7 252.4,116.0 253.7,122.1 255.0,127.7 256.3,132.6 257.7,136.6 259.0,139.6 260.3,141.5 261.6,142.1 262.9,135.8 264.2,118.5 265.6,94.9 266.9,71.3 268.2,54.0 269.5,47.7 270.8,48.9 272.2,52.3 273.5,57.8 274.8,65.1 276.1,73.9 277.4,83.6 278.8,93.9 280.1,104.2 281.4,113.9 282.7,122.7 284.0,130.0 285.3,135.5 286.7,138.9 288.0,140.1 289.3,133.7 290.6,116.2 291.9,92.2 293.3,68.3 294.6,50.8 295.9,44.4 297.2,45.6 298.5,49.3 299.8,55.2 301.2,63.0 302.5,72.4 303.8,82.9 305.1,93.9 306.4,104.9 307.8,115.4 309.1,124.8 310.4,132.6 311.7,138.5 313.0,142.2 314.4,143.4 315.7,140.6 317.0,132.8 318.3,121.0 319.6,107.1 320.9,93.2 322.3,81.4 323.6,73.6 324.9,70.8 326.2,71.5 327.5,73.7 328.9,77.2 330.2,81.9 331.5,87.7 332.8,94.2 334.1,101.3 335.5,108.8 336.8,116.2 338.1,123.3 339.4,129.8 340.7,135.6 342.0,140.3 343.4,143.8 344.7,146.0 346.0,146.7' fill='none' stroke='#c0392b' stroke-width='2'/><circle cx='95.46902654867256' cy='148.02' r='3.5' fill='#222' stroke='#222' stroke-width='1.5' /><text x='95.46902654867256' y='166.02' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>A</text><circle cx='211.50442477876106' cy='18.0' r='3.5' fill='#222' stroke='#222' stroke-width='1.5' /><text x='211.50442477876106' y='10.0' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>B</text><text x='197.0' y='187' font-size='11' text-anchor='middle' fill='#222'>연도(년)</text><text x='14' y='84.0' font-size='11' text-anchor='middle' fill='#222'>흑점</text><text x='14' y='98.0' font-size='11' text-anchor='middle' fill='#222'>수</text></svg>",
+    "caption": "태양의 흑점 수 변화(모식도)"
+   }
+  },
+  {
+   "id": "u7-P25K18-a",
+   "slot": "P25K18",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "별의 일주 운동 사진",
+   "source": "교과서 p.245 (2025 2학기 기말 18번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-18",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 관측 시간은 3시간이다.\nㄴ. B가 A보다 먼저 관측된다.\nㄷ. 중심에 있는 별 P는 북극성이다.\nㄹ. 지구의 공전에 의한 겉보기 운동이다.",
+   "question": "그림은 어느 날 특정 시간 간격으로 우리나라 북쪽 하늘에서 관측한 별자리의 일주 운동을 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ, ㄷ",
+    "ㄴ, ㄷ",
+    "ㄴ, ㄹ",
+    "ㄱ, ㄷ, ㄹ",
+    "ㄴ, ㄷ, ㄹ"
+   ],
+   "answer": 1,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다. 관측 시간은 3시간이고 중심의 별 P는 북극성이다.",
+   "choiceExplanations": [
+    "정답. 옳은 설명은 ㄱ, ㄷ이다. 관측 시간은 3시간이고 중심의 별 P는 북극성이다.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 북극성을 중심으로 시계 반대 방향으로 이동하므로 A가 먼저이고 B가 나중에 관측돼요. ㄱ은 옳은 설명인데 빠졌어요. 별은 한 시간에 15°씩 움직이는데 그림에서 45° 이동했으므로 45° ÷ 15° = 3시간이에요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 북극성을 중심으로 시계 반대 방향으로 이동하므로 A가 먼저이고 B가 나중에 관측돼요. ㄹ은 옳지 않은 설명인데 골랐어요. 별의 일주 운동은 지구의 자전 때문에 나타나는 겉보기 운동이에요. ㄱ은 옳은 설명인데 빠졌어요. 별은 한 시간에 15°씩 움직이는데 그림에서 45° 이동했으므로 45° ÷ 15° = 3시간이에요. ㄷ은 옳은 설명인데 빠졌어요. 일주 운동의 중심에 있는 별은 지구 자전축 방향에 있는 북극성이에요.",
+    "ㄹ은 옳지 않은 설명인데 골랐어요. 별의 일주 운동은 지구의 자전 때문에 나타나는 겉보기 운동이에요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 북극성을 중심으로 시계 반대 방향으로 이동하므로 A가 먼저이고 B가 나중에 관측돼요. ㄹ은 옳지 않은 설명인데 골랐어요. 별의 일주 운동은 지구의 자전 때문에 나타나는 겉보기 운동이에요. ㄱ은 옳은 설명인데 빠졌어요. 별은 한 시간에 15°씩 움직이는데 그림에서 45° 이동했으므로 45° ÷ 15° = 3시간이에요."
+   ],
+   "detail": "그림을 읽는 순서\n① 각도: A와 B 사이가 45°, 별은 1시간에 15° → 3시간\n② 북쪽 하늘 별은 북극성을 중심으로 시계 반대 방향 → 먼저 관측된 것은 반대쪽 위치(A)\n③ 일주 운동의 원인은 자전\n· ㄱ : 옳음 — 별은 한 시간에 15°씩 움직이는데 그림에서 45° 이동했으므로 45° ÷ 15° = 3시간이에요.\n· ㄴ : 옳지 않음 — 북극성을 중심으로 시계 반대 방향으로 이동하므로 A가 먼저이고 B가 나중에 관측돼요.\n· ㄷ : 옳음 — 일주 운동의 중심에 있는 별은 지구 자전축 방향에 있는 북극성이에요.\n· ㄹ : 옳지 않음 — 별의 일주 운동은 지구의 자전 때문에 나타나는 겉보기 운동이에요.",
+   "tip": "각도 ÷ 15° = 시간, 원인은 자전.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "일주 운동의 각도",
+     "text": "별은 북극성을 중심으로 한 시간에 15°씩 시계 반대 방향으로 회전하는 것처럼 보여요. 이 겉보기 운동은 지구의 자전 때문이에요(교과서 p.245~247)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 265' font-family='sans-serif' font-size='12'><circle cx='225' cy='140' r='3.5' fill='#222' stroke='#222' stroke-width='1.5' /><text x='235' y='144' font-size='12' text-anchor='start' fill='#222' font-weight='700'>별 P</text><polyline points='177.0,110.0 177.0,68.0 133.0,62.0 133.0,104.0 177.0,110.0 133.0,104.0 107.0,48.0 83.0,38.0 59.0,18.0' fill='none' stroke='#555' stroke-width='1.2'/><circle cx='177.0' cy='110.0' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='177.0' cy='68.0' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='133.0' cy='62.0' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='133.0' cy='104.0' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='107.0' cy='48.0' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='83.0' cy='38.0' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='59.0' cy='18.0' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><line x1='225' y1='140' x2='160.2' y2='99.5' stroke='#888' stroke-width='1' stroke-dasharray='4 3'/><text x='101.0' y='42.0' font-size='14' text-anchor='middle' fill='#222' font-weight='700'>A</text><polyline points='169.8,152.7 140.1,123.0 104.8,149.9 134.5,179.6 169.8,152.7 134.5,179.6 76.5,158.4 52.5,168.3 21.4,171.1' fill='none' stroke='#555' stroke-width='1.2'/><circle cx='169.8' cy='152.7' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='140.1' cy='123.0' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='104.8' cy='149.9' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='134.5' cy='179.6' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='76.5' cy='158.4' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='52.5' cy='168.3' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='21.4' cy='171.1' r='3' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><line x1='225' y1='140' x2='150.5' y2='157.2' stroke='#888' stroke-width='1' stroke-dasharray='4 3'/><text x='70.5' y='152.4' font-size='14' text-anchor='middle' fill='#222' font-weight='700'>B</text><text x='173' y='150' font-size='12' text-anchor='middle' fill='#c0392b' font-weight='700'>45°</text><text x='14' y='252' font-size='13' text-anchor='start' fill='#222' font-weight='700'>서</text><text x='326' y='252' font-size='13' text-anchor='end' fill='#222' font-weight='700'>동</text><line x1='10' y1='258' x2='330' y2='258' stroke='#999' stroke-width='1' /></svg>",
+    "caption": "북쪽 하늘에서 관측한 별자리의 일주 운동(모식도)"
+   }
+  },
+  {
+   "id": "u7-P25K20-a",
+   "slot": "P25K20",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "황도 12궁과 별자리",
+   "source": "교과서 p.251 (2025 2학기 기말 20번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-20",
+   "question": "그림은 황도 12궁을 나타낸 것이다. 지구가 A 위치에 있을 때 3개월 후 태양이 위치하는 별자리와 한밤중에 남쪽 하늘에서 볼 수 있는 별자리를 순서대로 옳게 짝지은 것은?",
+   "choices": [
+    "물병자리, 사자자리",
+    "사자자리, 물병자리",
+    "황소자리, 전갈자리",
+    "전갈자리, 황소자리",
+    "궁수자리, 쌍둥이자리"
+   ],
+   "answer": 2,
+   "explanation": "A에서 태양 쪽 별자리는 황소자리(6월경)이므로 3개월 후에는 태양이 사자자리에 있고, 그 반대쪽인 물병자리가 한밤중 남쪽 하늘에서 보인다.",
+   "choiceExplanations": [
+    "물병자리는 9월에 한밤중 남쪽 하늘에서 보이는 별자리예요. 태양 쪽 별자리는 사자자리라서 순서가 거꾸로예요.",
+    "정답. A에서 태양 쪽 별자리는 황소자리(6월경)이므로 3개월 후에는 태양이 사자자리에 있고, 그 반대쪽인 물병자리가 한밤중 남쪽 하늘에서 보인다.",
+    "황소자리는 지구가 A에 있을 때(6월경) 태양이 있는 별자리예요. 3개월 뒤의 별자리가 아니에요.",
+    "전갈자리는 12월경 태양이 위치하는 별자리라서 3개월 후와 맞지 않아요.",
+    "궁수자리는 1월경 태양이 위치하는 별자리이고, 쌍둥이자리는 7월경 태양이 위치하는 별자리예요."
+   ],
+   "detail": "그림을 읽는 순서\n(1) 그림의 달은 태양이 그 별자리에 있는 달이에요. A에서 태양과 같은 쪽 별자리는 황소자리(6월경)\n(2) 3개월 후는 9월경 → 태양은 사자자리\n(3) 태양 반대쪽 별자리는 한밤중 남쪽 하늘에서 보이므로 사자자리 반대쪽인 물병자리",
+   "tip": "태양 반대쪽 별자리 = 한밤중 남쪽 하늘.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "태양 반대쪽 별자리",
+     "text": "태양 쪽에 있는 별자리는 태양과 함께 뜨고 지므로 볼 수 없고, 태양 반대쪽에 있는 별자리는 태양이 진 후 한밤중에 남쪽 하늘에서 볼 수 있어요(교과서 p.251)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 285' font-family='sans-serif' font-size='12'><defs><marker id='ar' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' fill='#222'/></marker></defs><line x1='197.0' y1='140.0' x2='203.0' y2='140.0' stroke='#d68910' stroke-width='1.6' /><line x1='194.7' y1='148.5' x2='199.9' y2='151.5' stroke='#d68910' stroke-width='1.6' /><line x1='188.5' y1='154.7' x2='191.5' y2='159.9' stroke='#d68910' stroke-width='1.6' /><line x1='180.0' y1='157.0' x2='180.0' y2='163.0' stroke='#d68910' stroke-width='1.6' /><line x1='171.5' y1='154.7' x2='168.5' y2='159.9' stroke='#d68910' stroke-width='1.6' /><line x1='165.3' y1='148.5' x2='160.1' y2='151.5' stroke='#d68910' stroke-width='1.6' /><line x1='163.0' y1='140.0' x2='157.0' y2='140.0' stroke='#d68910' stroke-width='1.6' /><line x1='165.3' y1='131.5' x2='160.1' y2='128.5' stroke='#d68910' stroke-width='1.6' /><line x1='171.5' y1='125.3' x2='168.5' y2='120.1' stroke='#d68910' stroke-width='1.6' /><line x1='180.0' y1='123.0' x2='180.0' y2='117.0' stroke='#d68910' stroke-width='1.6' /><line x1='188.5' y1='125.3' x2='191.5' y2='120.1' stroke='#d68910' stroke-width='1.6' /><line x1='194.7' y1='131.5' x2='199.9' y2='128.5' stroke='#d68910' stroke-width='1.6' /><circle cx='180' cy='140' r='14' fill='#f9c74f' stroke='#d68910' stroke-width='1.6' /><text x='180' y='145' font-size='11' text-anchor='middle' fill='#222'>태양</text><circle cx='180' cy='140' r='52' fill='none' stroke='#777' stroke-width='1.2' stroke-dasharray='5 4'/><circle cx='180' cy='140' r='84' fill='none' stroke='#bbb' stroke-width='1' /><text x='96.9' y='192.0' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>궁수</text><text x='72.6' y='206.0' font-size='11' text-anchor='middle' fill='#c0392b'>1월</text><text x='132.0' y='227.1' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>염소</text><text x='118.0' y='251.4' font-size='11' text-anchor='middle' fill='#c0392b'>2월</text><text x='180.0' y='240.0' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>물병</text><text x='180.0' y='268.0' font-size='11' text-anchor='middle' fill='#c0392b'>3월</text><text x='228.0' y='227.1' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>물고기</text><text x='242.0' y='251.4' font-size='11' text-anchor='middle' fill='#c0392b'>4월</text><text x='263.1' y='192.0' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>양</text><text x='287.4' y='206.0' font-size='11' text-anchor='middle' fill='#c0392b'>5월</text><text x='276.0' y='144.0' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>황소</text><text x='304.0' y='144.0' font-size='11' text-anchor='middle' fill='#c0392b'>6월</text><text x='263.1' y='96.0' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>쌍둥이</text><text x='287.4' y='82.0' font-size='11' text-anchor='middle' fill='#c0392b'>7월</text><text x='228.0' y='60.9' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>게</text><text x='242.0' y='36.6' font-size='11' text-anchor='middle' fill='#c0392b'>8월</text><text x='180.0' y='48.0' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>사자</text><text x='180.0' y='20.0' font-size='11' text-anchor='middle' fill='#c0392b'>9월</text><text x='132.0' y='60.9' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>처녀</text><text x='118.0' y='36.6' font-size='11' text-anchor='middle' fill='#c0392b'>10월</text><text x='96.9' y='96.0' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>천칭</text><text x='72.6' y='82.0' font-size='11' text-anchor='middle' fill='#c0392b'>11월</text><text x='84.0' y='144.0' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>전갈</text><text x='56.0' y='144.0' font-size='11' text-anchor='middle' fill='#c0392b'>12월</text><line x1='128' y1='140' x2='232' y2='140' stroke='#555' stroke-width='1' stroke-dasharray='3 3'/><circle cx='128' cy='140' r='7' fill='#8ecae6' stroke='#1d3557' stroke-width='1.6' /><text x='128' y='128' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>A</text><circle cx='232' cy='140' r='7' fill='#8ecae6' stroke='#1d3557' stroke-width='1.6' /><text x='232' y='160' font-size='11' text-anchor='middle' fill='#222'>지구</text></svg>",
+    "caption": "황도 12궁(모식도, 별자리 이름 옆의 월은 태양이 그 별자리 쪽에 있는 달)"
+   }
+  },
+  {
+   "id": "u7-P25K21-a",
+   "slot": "P25K21",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "별자리 위치 변화(공전)",
+   "source": "교과서 p.249 (2025 2학기 기말 21번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-21",
+   "question": "그림은 우리나라에서 태양이 진 직후 지평선 부근에 보이는 별자리의 모습을 15일 간격으로 관측하여 그 결과를 순서 없이 나타낸 것이다. 이에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "동쪽 하늘을 관측한 것이다.",
+    "별자리는 하루에 약 15°씩 이동한다.",
+    "관측한 시간순으로 나열하면 (다)→(나)→(가)이다.",
+    "별의 연주 운동 방향은 지구의 공전 방향과 반대다.",
+    "별자리는 태양을 기준으로 서쪽에서 동쪽으로 이동한다."
+   ],
+   "answer": 4,
+   "explanation": "별자리는 태양을 기준으로 동쪽에서 서쪽으로 움직이는 것처럼 보이고, 지구의 공전 방향은 서쪽에서 동쪽이므로 두 방향은 서로 반대이다.",
+   "choiceExplanations": [
+    "태양이 진 직후 태양이 가까이 있는 하늘은 서쪽 하늘이에요. 동쪽이 아니에요.",
+    "15°씩 움직이는 것은 일주 운동에서 1시간에 이동하는 각도예요(교과서 p.245). 15일 간격으로 본 별자리의 이동은 지구 공전에 의한 거예요.",
+    "별자리가 태양에 가까워지는 순서가 시간 순서라서 (가)→(나)→(다)예요.",
+    "정답. 별자리는 태양을 기준으로 동쪽에서 서쪽으로 움직이는 것처럼 보이고, 지구의 공전 방향은 서쪽에서 동쪽이므로 두 방향은 서로 반대이다.",
+    "별자리는 태양을 기준으로 동쪽에서 서쪽으로 이동해요."
+   ],
+   "detail": "그림을 읽는 순서\n(1) 해가 진 직후 태양 옆 하늘 → 서쪽 하늘\n(2) 15일이 지날수록 별자리가 태양에 가까워지는 모습 → 시간순은 (가)→(나)→(다)\n(3) 별자리는 태양을 기준으로 동→서, 지구의 공전 방향은 서→동이므로 반대",
+   "tip": "공전 서→동 ↔ 별자리 겉보기 동→서.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "별자리와 공전",
+     "text": "해가 진 직후 서쪽 하늘의 별자리는 태양을 기준으로 동쪽에서 서쪽으로 움직이는 것처럼 보여요. 이것은 지구가 서쪽에서 동쪽으로 공전하기 때문에 나타나는 겉보기 운동이에요(교과서 p.249)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 190' font-family='sans-serif' font-size='12'><rect x='4' y='4' width='112' height='160' fill='#e9eef5' stroke='#333' stroke-width='1.2' /><path d='M4 150 Q34 130 59 146 T116 140 L116 164 L4 164 Z' fill='#778' stroke='none'/><polyline points='38,44 66,34 74,54 46,64 38,44' fill='none' stroke='#444' stroke-width='1.2'/><circle cx='38' cy='44' r='2.5' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='66' cy='34' r='2.5' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='74' cy='54' r='2.5' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='46' cy='64' r='2.5' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><text x='58' y='24' font-size='11' text-anchor='middle' fill='#222'>천칭자리</text><circle cx='102' cy='138' r='5' fill='#e67e22' stroke='#c0392b' stroke-width='1.5' /><text x='94' y='132' font-size='10' text-anchor='end' fill='#222'>태양의 위치</text><text x='60' y='182' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(가)</text><rect x='122' y='4' width='112' height='160' fill='#e9eef5' stroke='#333' stroke-width='1.2' /><path d='M122 150 Q152 130 177 146 T234 140 L234 164 L122 164 Z' fill='#778' stroke='none'/><polyline points='174,58 202,50 210,70 182,80 174,58' fill='none' stroke='#444' stroke-width='1.2'/><circle cx='174' cy='58' r='2.5' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='202' cy='50' r='2.5' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='210' cy='70' r='2.5' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='182' cy='80' r='2.5' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><text x='190' y='40' font-size='11' text-anchor='middle' fill='#222'>천칭자리</text><circle cx='220' cy='138' r='5' fill='#e67e22' stroke='#c0392b' stroke-width='1.5' /><text x='212' y='132' font-size='10' text-anchor='end' fill='#222'>태양의 위치</text><text x='178' y='182' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(나)</text><rect x='240' y='4' width='112' height='160' fill='#e9eef5' stroke='#333' stroke-width='1.2' /><path d='M240 150 Q270 130 295 146 T352 140 L352 164 L240 164 Z' fill='#778' stroke='none'/><polyline points='306,84 330,78 336,96 312,102 306,84' fill='none' stroke='#444' stroke-width='1.2'/><circle cx='306' cy='84' r='2.5' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='330' cy='78' r='2.5' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='336' cy='96' r='2.5' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><circle cx='312' cy='102' r='2.5' fill='#c0392b' stroke='#c0392b' stroke-width='1.5' /><text x='314' y='68' font-size='11' text-anchor='middle' fill='#222'>천칭자리</text><circle cx='338' cy='138' r='5' fill='#e67e22' stroke='#c0392b' stroke-width='1.5' /><text x='330' y='132' font-size='10' text-anchor='end' fill='#222'>태양의 위치</text><text x='296' y='182' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(다)</text></svg>",
+    "caption": "태양이 진 직후 서쪽 지평선 부근의 천칭자리(15일 간격, 순서 없음, 모식도)"
+   }
+  },
+  {
+   "id": "u7-P25K22-a",
+   "slot": "P25K22",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "달의 공전과 위상",
+   "source": "교과서 p.254 (2025 2학기 기말 22번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-22",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 달의 공전에 의해 달의 위상이 달라진다.\nㄴ. 달은 별자리 사이를 매일 약 1°씩 움직인다.\nㄷ. 달의 공전 방향은 지구의 공전 방향과 같다.\nㄹ. 관찰한 기간 동안 달이 공전한 구간은 C→B→A이다.",
+   "question": "그림 (가)는 어느 해 9월에 3일 간격으로 같은 시각에 관측한 달의 모양과 위치를, (나)는 지구, 달, 태양의 상대적인 위치를 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ, ㄴ",
+    "ㄱ, ㄷ",
+    "ㄴ, ㄷ",
+    "ㄷ, ㄹ",
+    "ㄱ, ㄷ, ㄹ"
+   ],
+   "answer": 2,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다. 달의 공전으로 위상이 변하며, 달과 지구의 공전 방향은 같다.",
+   "choiceExplanations": [
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 달은 약 한 달에 한 바퀴를 공전해요. 하루에 1°만 움직이는 것이 아니에요(360° ÷ 약 30일이므로 하루 12° 이상, 교과서 밖 일반 상식). ㄷ은 옳은 설명인데 빠졌어요. 달의 공전 방향과 지구의 공전 방향은 모두 시계 반대 방향(서쪽에서 동쪽)이에요.",
+    "정답. 옳은 설명은 ㄱ, ㄷ이다. 달의 공전으로 위상이 변하며, 달과 지구의 공전 방향은 같다.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 달은 약 한 달에 한 바퀴를 공전해요. 하루에 1°만 움직이는 것이 아니에요(360° ÷ 약 30일이므로 하루 12° 이상, 교과서 밖 일반 상식). ㄱ은 옳은 설명인데 빠졌어요. 달이 지구 주위를 공전하면서 지구에서 볼 때 햇빛이 비치는 부분이 달라져 위상이 변해요.",
+    "ㄹ은 옳지 않은 설명인데 골랐어요. 달은 시계 반대 방향으로 공전하므로 달이 초승달 모양에서 보름달 모양으로 변하는 동안 A→B→C 순서로 이동해요. ㄱ은 옳은 설명인데 빠졌어요. 달이 지구 주위를 공전하면서 지구에서 볼 때 햇빛이 비치는 부분이 달라져 위상이 변해요.",
+    "ㄹ은 옳지 않은 설명인데 골랐어요. 달은 시계 반대 방향으로 공전하므로 달이 초승달 모양에서 보름달 모양으로 변하는 동안 A→B→C 순서로 이동해요."
+   ],
+   "detail": "그림을 읽는 순서\n① 9월 3일에 가까운 달은 초승달 모양, 15일에는 보름달에 가까운 모양 → 위상이 변하는 중\n② (나)에서 햇빛이 오는 오른쪽의 A가 삭, 시계 반대 방향으로 B, C → A→B→C로 이동\n③ 달은 약 한 달에 한 바퀴를 돌아요(하루에 12° 이상 움직인다는 계산은 교과서 밖 일반 상식)\n· ㄱ : 옳음 — 달이 지구 주위를 공전하면서 지구에서 볼 때 햇빛이 비치는 부분이 달라져 위상이 변해요.\n· ㄴ : 옳지 않음 — 달은 약 한 달에 한 바퀴를 공전해요. 하루에 1°만 움직이는 것이 아니에요(360° ÷ 약 30일이므로 하루 12° 이상, 교과서 밖 일반 상식).\n· ㄷ : 옳음 — 달의 공전 방향과 지구의 공전 방향은 모두 시계 반대 방향(서쪽에서 동쪽)이에요.\n· ㄹ : 옳지 않음 — 달은 시계 반대 방향으로 공전하므로 달이 초승달 모양에서 보름달 모양으로 변하는 동안 A→B→C 순서로 이동해요.",
+   "tip": "달과 지구 모두 시계 반대 방향 공전.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "달의 공전",
+     "text": "북극의 하늘에서 내려다볼 때 달은 지구 주위를 시계 반대 방향으로 약 한 달 주기로 공전해요. 지구의 공전 방향도 시계 반대 방향(서쪽에서 동쪽)이에요(교과서 p.249, 254)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 455 205' font-family='sans-serif' font-size='12'><defs><marker id='ar' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' fill='#222'/></marker></defs><path d='M10 120 A100 100 0 0 1 210 120 Z' fill='#e6edf6' stroke='#333' stroke-width='1.4'/><line x1='10' y1='120' x2='210' y2='120' stroke='#333' stroke-width='1.4' /><ellipse cx='110' cy='120' rx='100' ry='16' fill='#cfd8e3' stroke='#333' stroke-width='1.2'/><text x='14' y='140' font-size='13' text-anchor='start' fill='#222' font-weight='700'>동</text><text x='206' y='140' font-size='13' text-anchor='end' fill='#222' font-weight='700'>서</text><circle cx='110' cy='116' r='3' fill='#222' stroke='#222' stroke-width='1.5' /><line x1='110' y1='119' x2='110' y2='128' stroke='#222' stroke-width='1.5' /><circle cx='196' cy='108' r='9' fill='#555' stroke='#222' stroke-width='1' /><path d='M196 99 A9 9 0 0 1 196 117 A6.84 9 0 0 0 196 99 Z' fill='#ffe9a8' stroke='none'/><circle cx='196' cy='108' r='9' fill='none' stroke='#222' stroke-width='1' /><circle cx='170' cy='56' r='9' fill='#555' stroke='#222' stroke-width='1' /><path d='M170 47 A9 9 0 0 1 170 65 A3.6 9 0 0 0 170 47 Z' fill='#ffe9a8' stroke='none'/><circle cx='170' cy='56' r='9' fill='none' stroke='#222' stroke-width='1' /><circle cx='110' cy='26' r='9' fill='#555' stroke='#222' stroke-width='1' /><path d='M110 17 A9 9 0 0 1 110 35 A0.01 9 0 0 1 110 17 Z' fill='#ffe9a8' stroke='none'/><circle cx='110' cy='26' r='9' fill='none' stroke='#222' stroke-width='1' /><circle cx='52' cy='54' r='9' fill='#555' stroke='#222' stroke-width='1' /><path d='M52 45 A9 9 0 0 1 52 63 A4.5 9 0 0 1 52 45 Z' fill='#ffe9a8' stroke='none'/><circle cx='52' cy='54' r='9' fill='none' stroke='#222' stroke-width='1' /><circle cx='24' cy='104' r='9' fill='#555' stroke='#222' stroke-width='1' /><path d='M24 95 A9 9 0 0 1 24 113 A8.1 9 0 0 1 24 95 Z' fill='#ffe9a8' stroke='none'/><circle cx='24' cy='104' r='9' fill='none' stroke='#222' stroke-width='1' /><text x='190' y='96' font-size='10' text-anchor='end' fill='#222'>9월 3일</text><text x='180' y='76' font-size='10' text-anchor='start' fill='#222'>9월 6일</text><text x='110' y='48' font-size='10' text-anchor='middle' fill='#222'>9월 9일</text><text x='62' y='76' font-size='10' text-anchor='start' fill='#222'>9월 12일</text><text x='38' y='98' font-size='10' text-anchor='start' fill='#222'>9월 15일</text><text x='110' y='192' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(가)</text><g transform='translate(300,105)'><circle cx='0' cy='0' r='62' fill='none' stroke='#777' stroke-width='1.2' stroke-dasharray='5 4'/><circle cx='0' cy='0' r='14' fill='#8ecae6' stroke='#1d3557' stroke-width='1.6' /><text x='0' y='4' font-size='10' text-anchor='middle' fill='#222'>지구</text><line x1='150' y1='-40' x2='118' y2='-40' stroke='#d68910' stroke-width='1.6' marker-end='url(#ar)'/><line x1='150' y1='-20' x2='118' y2='-20' stroke='#d68910' stroke-width='1.6' marker-end='url(#ar)'/><line x1='150' y1='0' x2='118' y2='0' stroke='#d68910' stroke-width='1.6' marker-end='url(#ar)'/><line x1='150' y1='20' x2='118' y2='20' stroke='#d68910' stroke-width='1.6' marker-end='url(#ar)'/><line x1='150' y1='40' x2='118' y2='40' stroke='#d68910' stroke-width='1.6' marker-end='url(#ar)'/><text x='135' y='-50' font-size='12' text-anchor='middle' fill='#d68910' font-weight='700'>햇빛</text><circle cx='62' cy='0' r='8' fill='#555' stroke='#222' stroke-width='1.2' /><path d='M62 -8 A8 8 0 0 1 62 8 Z' fill='#ffe9a8' stroke='#222' stroke-width='1'/><text x='80' y='5' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>A</text><circle cx='0' cy='-62' r='8' fill='#555' stroke='#222' stroke-width='1.2' /><path d='M0 -70 A8 8 0 0 1 0 -54 Z' fill='#ffe9a8' stroke='#222' stroke-width='1'/><text x='0' y='-76' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>B</text><circle cx='-62' cy='0' r='8' fill='#555' stroke='#222' stroke-width='1.2' /><path d='M-62 -8 A8 8 0 0 1 -62 8 Z' fill='#ffe9a8' stroke='#222' stroke-width='1'/><text x='-80' y='5' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>C</text><circle cx='0' cy='62' r='8' fill='#555' stroke='#222' stroke-width='1.2' /><path d='M0 54 A8 8 0 0 1 0 70 Z' fill='#ffe9a8' stroke='#222' stroke-width='1'/><text x='0' y='84' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>D</text></g><text x='380' y='192' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(나)</text></svg>",
+    "caption": "(가) 3일 간격으로 같은 시각에 관측한 달의 모양과 위치, (나) 지구·달·태양의 상대적인 위치(모식도)"
+   }
+  },
+  {
+   "id": "u7-P25K23-a",
+   "slot": "P25K23",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "달의 위치와 관측일",
+   "source": "교과서 p.254 (2025 2학기 기말 23번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-23",
+   "question": "그림은 달의 공전 궤도를 나타낸 것이다. 초승달의 위치와 관측일을 옳게 짝지은 것은?",
+   "choices": [
+    "A, 음력 3~5일경",
+    "A, 음력 26~27일경",
+    "D, 음력 15일경",
+    "G, 음력 7~8일경",
+    "G, 음력 26~27일경"
+   ],
+   "answer": 1,
+   "explanation": "달이 삭(H)에서 상현(B)으로 가는 사이의 A에서 초승달이 보인다. 이때의 관측일 음력 3~5일경은 교과서에 없는 내용이라 (교과서 밖 일반 상식)이다.",
+   "choiceExplanations": [
+    "정답. 달이 삭(H)에서 상현(B)으로 가는 사이의 A에서 초승달이 보인다. 이때의 관측일 음력 3~5일경은 교과서에 없는 내용이라 (교과서 밖 일반 상식)이다.",
+    "A는 삭(H) 다음에 오는 위치라서 초승달이 보여요. 음력 26~27일경은 삭 직전의 그믐달 시기(교과서 밖 일반 상식)예요.",
+    "D는 지구를 중심으로 태양 반대쪽에 있어 보름달이 보이는 위치예요.",
+    "G는 삭 바로 앞의 위치라서 그믐달이 보여요. 음력 7~8일경은 상현달(B)이에요.",
+    "G는 그믐달 위치가 맞지만, 초승달이 아니라 그믐달이에요."
+   ],
+   "detail": "그림을 읽는 순서\n(1) 달이 태양과 같은 쪽(H) = 삭(음력 1일경)\n(2) 달은 시계 반대 방향으로 공전하므로 H → A → B(상현, 7~8일경) → … → D(망, 15일경)\n(3) 삭과 상현 사이 = 초승달이 보이는 A, 날짜는 음력 3~5일경 (교과서 밖 일반 상식)",
+   "tip": "삭~상현 사이가 초승달.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "초승달의 위치",
+     "text": "삭과 상현 사이의 달을 초승달, 하현과 삭 사이의 달을 그믐달이라고 해요. 음력 1일경이 삭, 7~8일경이 상현달이에요(교과서 p.254). 초승달이 보이는 음력 3~5일경은 교과서 밖 일반 상식이에요."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250' font-family='sans-serif' font-size='12'><defs><marker id='ar' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' fill='#222'/></marker></defs><circle cx='150' cy='125' r='72' fill='none' stroke='#777' stroke-width='1.2' stroke-dasharray='5 4'/><circle cx='150' cy='125' r='16' fill='#8ecae6' stroke='#1d3557' stroke-width='1.6' /><text x='150' y='129' font-size='11' text-anchor='middle' fill='#222'>지구</text><line x1='292' y1='65' x2='252' y2='65' stroke='#d68910' stroke-width='1.6' marker-end='url(#ar)'/><line x1='292' y1='95' x2='252' y2='95' stroke='#d68910' stroke-width='1.6' marker-end='url(#ar)'/><line x1='292' y1='125' x2='252' y2='125' stroke='#d68910' stroke-width='1.6' marker-end='url(#ar)'/><line x1='292' y1='155' x2='252' y2='155' stroke='#d68910' stroke-width='1.6' marker-end='url(#ar)'/><line x1='292' y1='185' x2='252' y2='185' stroke='#d68910' stroke-width='1.6' marker-end='url(#ar)'/><text x='268' y='55' font-size='12' text-anchor='middle' fill='#d68910' font-weight='700'>햇빛</text><circle cx='222.0' cy='125.0' r='9' fill='#555' stroke='#222' stroke-width='1.2' /><path d='M222.0 116.0 A9 9 0 0 1 222.0 134.0 Z' fill='#ffe9a8' stroke='#222' stroke-width='1'/><text x='244.0' y='129.0' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>H</text><circle cx='200.9' cy='74.1' r='9' fill='#555' stroke='#222' stroke-width='1.2' /><path d='M200.9 65.1 A9 9 0 0 1 200.9 83.1 Z' fill='#ffe9a8' stroke='#222' stroke-width='1'/><text x='216.5' y='62.5' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>A</text><circle cx='150.0' cy='53.0' r='9' fill='#555' stroke='#222' stroke-width='1.2' /><path d='M150.0 44.0 A9 9 0 0 1 150.0 62.0 Z' fill='#ffe9a8' stroke='#222' stroke-width='1'/><text x='150.0' y='35.0' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>B</text><circle cx='99.1' cy='74.1' r='9' fill='#555' stroke='#222' stroke-width='1.2' /><path d='M99.1 65.1 A9 9 0 0 1 99.1 83.1 Z' fill='#ffe9a8' stroke='#222' stroke-width='1'/><text x='83.5' y='62.5' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>C</text><circle cx='78.0' cy='125.0' r='9' fill='#555' stroke='#222' stroke-width='1.2' /><path d='M78.0 116.0 A9 9 0 0 1 78.0 134.0 Z' fill='#ffe9a8' stroke='#222' stroke-width='1'/><text x='56.0' y='129.0' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>D</text><circle cx='99.1' cy='175.9' r='9' fill='#555' stroke='#222' stroke-width='1.2' /><path d='M99.1 166.9 A9 9 0 0 1 99.1 184.9 Z' fill='#ffe9a8' stroke='#222' stroke-width='1'/><text x='83.5' y='195.5' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>E</text><circle cx='150.0' cy='197.0' r='9' fill='#555' stroke='#222' stroke-width='1.2' /><path d='M150.0 188.0 A9 9 0 0 1 150.0 206.0 Z' fill='#ffe9a8' stroke='#222' stroke-width='1'/><text x='150.0' y='223.0' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>F</text><circle cx='200.9' cy='175.9' r='9' fill='#555' stroke='#222' stroke-width='1.2' /><path d='M200.9 166.9 A9 9 0 0 1 200.9 184.9 Z' fill='#ffe9a8' stroke='#222' stroke-width='1'/><text x='216.5' y='195.5' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>G</text></svg>",
+    "caption": "달의 공전 궤도(북극 쪽에서 내려다본 모습, 모식도)"
+   }
+  },
+  {
+   "id": "u7-P25K24-a",
+   "slot": "P25K24",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "일식과 월식의 진행",
+   "source": "교과서 p.256~259 (2025 2학기 기말 24번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-24",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. (가)는 A→B→C, (나)는 C→B→A 순으로 일어난다.\nㄴ. (가)는 달의 위상이 망일 때, (나)는 달의 위상이 삭일 때 관측 가능하다.\nㄷ. (나)의 달 표면에서 어두워진 부분은 달이 지구의 그림자 영역으로 들어가서 생긴다.",
+   "question": "그림은 우리나라에서 일식과 월식이 일어나는 과정을 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 있는 대로 고른 것은?",
+   "choices": [
+    "ㄴ",
+    "ㄷ",
+    "ㄱ, ㄴ",
+    "ㄱ, ㄷ",
+    "ㄴ, ㄷ"
+   ],
+   "answer": 4,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다. 일식과 월식의 진행 방향과 월식의 원인을 옳게 말한 것이다.",
+   "choiceExplanations": [
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 일식은 삭일 때, 월식은 망일 때 일어나요. 서로 거꾸로 말했어요. ㄱ은 옳은 설명인데 빠졌어요. 일식은 태양의 오른쪽부터 가려지기 시작하고, 월식은 달의 왼쪽부터 어두워지기 시작해요. ㄷ은 옳은 설명인데 빠졌어요. 월식은 달이 지구의 그림자 속으로 들어가 일부 또는 전체가 어두워지는 현상이에요.",
+    "ㄱ은 옳은 설명인데 빠졌어요. 일식은 태양의 오른쪽부터 가려지기 시작하고, 월식은 달의 왼쪽부터 어두워지기 시작해요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 일식은 삭일 때, 월식은 망일 때 일어나요. 서로 거꾸로 말했어요. ㄷ은 옳은 설명인데 빠졌어요. 월식은 달이 지구의 그림자 속으로 들어가 일부 또는 전체가 어두워지는 현상이에요.",
+    "정답. 옳은 설명은 ㄱ, ㄷ이다. 일식과 월식의 진행 방향과 월식의 원인을 옳게 말한 것이다.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 일식은 삭일 때, 월식은 망일 때 일어나요. 서로 거꾸로 말했어요. ㄱ은 옳은 설명인데 빠졌어요. 일식은 태양의 오른쪽부터 가려지기 시작하고, 월식은 달의 왼쪽부터 어두워지기 시작해요."
+   ],
+   "detail": "그림을 읽는 순서\n① (가) 태양이 달에 가려지는 일식: 오른쪽부터 가려짐(A) → 완전히 가려짐(B) → 다시 오른쪽부터 보이기 시작(C)\n② (나) 달이 지구 그림자에 들어가는 월식: 왼쪽부터 어두워짐(C) → 완전히 들어감(B) → 왼쪽부터 밝아짐(A)\n③ 일식은 삭, 월식은 망일 때 일어나요.\n· ㄱ : 옳음 — 일식은 태양의 오른쪽부터 가려지기 시작하고, 월식은 달의 왼쪽부터 어두워지기 시작해요.\n· ㄴ : 옳지 않음 — 일식은 삭일 때, 월식은 망일 때 일어나요. 서로 거꾸로 말했어요.\n· ㄷ : 옳음 — 월식은 달이 지구의 그림자 속으로 들어가 일부 또는 전체가 어두워지는 현상이에요.",
+   "tip": "일식=오른쪽부터, 월식=왼쪽부터.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "일식과 월식의 진행",
+     "text": "개기 일식 때 태양은 오른쪽 부분부터 가려지기 시작하고, 개기 월식은 달의 왼쪽부터 어두워지기 시작해요. 월식은 달이 지구의 그림자 속에 들어가서 일어나요(교과서 p.256~259)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 175' font-family='sans-serif' font-size='12'><text x='95' y='14' font-size='14' text-anchor='middle' fill='#222' font-weight='700'>A</text><rect x='50' y='20' width='90' height='68' fill='#222' stroke='#000' stroke-width='1' /><circle cx='95' cy='54' r='26' fill='#ffd166' stroke='none' stroke-width='0' /><circle cx='115' cy='54' r='26' fill='#222' stroke='none' stroke-width='0' /><rect x='50' y='100' width='90' height='68' fill='#222' stroke='#000' stroke-width='1' /><circle cx='95' cy='134' r='26' fill='#e8e1c8' stroke='none' stroke-width='0' /><circle cx='115' cy='134' r='26' fill='#222' stroke='none' stroke-width='0' /><text x='195' y='14' font-size='14' text-anchor='middle' fill='#222' font-weight='700'>B</text><rect x='150' y='20' width='90' height='68' fill='#222' stroke='#000' stroke-width='1' /><circle cx='195' cy='54' r='26' fill='#111' stroke='#f5e9c8' stroke-width='3' /><rect x='150' y='100' width='90' height='68' fill='#222' stroke='#000' stroke-width='1' /><circle cx='195' cy='134' r='26' fill='#7a2e1e' stroke='none' stroke-width='0' /><text x='295' y='14' font-size='14' text-anchor='middle' fill='#222' font-weight='700'>C</text><rect x='250' y='20' width='90' height='68' fill='#222' stroke='#000' stroke-width='1' /><circle cx='295' cy='54' r='26' fill='#ffd166' stroke='none' stroke-width='0' /><circle cx='275' cy='54' r='26' fill='#222' stroke='none' stroke-width='0' /><rect x='250' y='100' width='90' height='68' fill='#222' stroke='#000' stroke-width='1' /><circle cx='295' cy='134' r='26' fill='#e8e1c8' stroke='none' stroke-width='0' /><circle cx='275' cy='134' r='26' fill='#222' stroke='none' stroke-width='0' /><text x='24' y='58' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(가)</text><text x='24' y='138' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(나)</text></svg>",
+    "caption": "(가) 일식, (나) 월식이 일어나는 과정(모식도)"
+   }
+  },
+  {
+   "id": "u7-P25K25-a",
+   "slot": "P25K25",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "개기 월식 때 달이 붉은 까닭",
+   "source": "교과서 p.259 (2025 2학기 기말 25번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-25",
+   "question": "개기 월식 때 달이 붉게 변하는 이유로 옳은 것은?",
+   "choices": [
+    "지구의 그림자가 붉은색을 띠기 때문이다.",
+    "달 자체에서 붉은색 빛을 방출시키기 때문이다.",
+    "태양이 개기 월식 동안 붉은색으로 변하기 때문이다.",
+    "달 표면에 온도가 급격히 상승하여 붉게 보이기 때문이다.",
+    "지구 대기를 통과한 태양 빛 중 붉은색 빛이 굴절되어 달에 반사되기 때문이다."
+   ],
+   "answer": 5,
+   "explanation": "지구 대기를 통과한 햇빛 중 붉은색 빛만 굴절되어 달에 비치기 때문에 개기 월식 때 달이 붉게 보인다.",
+   "choiceExplanations": [
+    "지구의 그림자는 햇빛이 가려진 영역이지 그 자체가 붉은색을 띠는 것이 아니에요.",
+    "달은 스스로 빛을 내지 못해요. 햇빛을 반사해서 보이는 거예요.",
+    "태양의 색이 변하는 것이 아니에요. 개기 월식 때 달에 닿는 빛이 달라지는 거예요.",
+    "달 표면의 온도가 오르는 것과 달이 붉게 보이는 것은 관계가 없어요.",
+    "정답. 지구 대기를 통과한 햇빛 중 붉은색 빛만 굴절되어 달에 비치기 때문에 개기 월식 때 달이 붉게 보인다."
+   ],
+   "detail": "개기 월식 때 달은 지구 그림자 속에 완전히 들어가요. 하지만 지구 대기를 통과한 햇빛 중 붉은색 빛이 휘어져 그림자 속의 달에 도달하고, 달이 이 빛을 반사해 붉게 보여요.\n달 자체가 빛을 내거나 온도가 올라서가 아니에요. (보기의 '굴절'은 교과서에 없는 표현이지만, 지구 대기를 지난 붉은색 빛이 달에 비친다는 뜻으로 읽을 수 있어요.)",
+   "tip": "지구 대기 → 붉은 빛만 달에 도달.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "달이 붉게 보이는 까닭",
+     "text": "개기 월식 때 지구 대기 때문에 햇빛의 붉은색 빛만 달에 비치기 때문에 달이 붉게 보여요(교과서 p.259)."
+    }
+   ]
+  },
+  {
+   "id": "u7-Q01-a",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "지구형 행성의 특징(지구·화성)",
+   "source": "교과서 p.230",
+   "question": "지구형 행성의 특징을 옳게 짝지은 것은?",
+   "choices": [
+    "지구 - 표면이 붉은색 토양으로 덮여 있고 거대한 화산이 있다.",
+    "화성 - 질소와 산소 등으로 이루어진 대기와 액체 상태의 물이 있다.",
+    "화성 - 극지방에 드라이아이스와 얼음으로 된 흰색의 극관이 있다.",
+    "지구 - 극지방에 드라이아이스로 된 흰색의 극관이 있다.",
+    "화성 - 식물이 자랄 수 있는 토양과 다양한 생명체가 있다."
+   ],
+   "answer": 3,
+   "explanation": "화성의 극지방에는 드라이아이스와 얼음으로 된 흰색의 극관이 있다.",
+   "choiceExplanations": [
+    "표면이 붉은색 토양으로 덮여 있는 행성은 화성이에요. 지구는 그렇지 않아요.",
+    "대기와 액체 상태의 물이 함께 있는 행성은 지구예요. 화성에는 물이 흘렀던 흔적이 있어요.",
+    "정답. 화성의 극지방에는 드라이아이스와 얼음으로 된 흰색의 극관이 있다.",
+    "드라이아이스와 얼음으로 된 극관이 있는 행성은 화성이에요. 지구의 극지방에는 드라이아이스로 된 극관이 없어요.",
+    "식물이 자랄 수 있는 토양과 다양한 생명체가 있는 행성은 지구예요."
+   ],
+   "detail": "지구형 행성 가운데 화성과 지구의 특징은 서로 달라요.\n· 화성: 암석과 붉은색 토양, 거대한 화산, 물이 흘렀던 흔적, 극지방의 흰색 극관\n· 지구: 질소·산소 대기, 액체 상태의 물, 식물이 자랄 토양, 다양한 생명체\n보기에서 화성과 지구의 특징이 서로 바뀐 것을 찾으면 돼요.",
+   "tip": "화성 = 붉은 토양·극관, 지구 = 물·생명체로 묶어 기억해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "화성의 극관",
+     "text": "화성의 극지방에는 드라이아이스와 얼음으로 된 흰색의 극관이 있어요(교과서 p.230)."
+    }
+   ]
+  },
+  {
+   "id": "u7-Q01-b",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "지구형 행성의 특징(지구·화성)",
+   "source": "교과서 p.230",
+   "question": "지구와 화성의 특징에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "화성 - 식물이 자랄 수 있는 토양과 다양한 생명체가 살고 있다.",
+    "지구 - 표면이 붉은색 토양으로 덮여 있고 거대한 화산이 있다.",
+    "지구 - 극지방에 드라이아이스와 얼음으로 된 흰색의 극관이 있다.",
+    "화성 - 대기에 질소와 산소가 많고 액체 상태의 물이 흐른다.",
+    "지구 - 질소·산소 대기와 액체 상태의 물이 있다."
+   ],
+   "answer": 5,
+   "explanation": "지구에는 질소와 산소 등으로 이루어진 대기와 액체 상태의 물이 있다.",
+   "choiceExplanations": [
+    "식물이 자랄 토양과 다양한 생명체가 있는 행성은 지구예요.",
+    "표면이 붉은색 토양으로 덮여 있고 거대한 화산이 있는 행성은 화성이에요.",
+    "드라이아이스와 얼음으로 된 극관은 화성의 극지방에 있어요.",
+    "질소·산소 대기와 액체 상태의 물은 지구의 특징이에요. 화성에는 물이 흘렀던 흔적만 있어요.",
+    "정답. 지구에는 질소와 산소 등으로 이루어진 대기와 액체 상태의 물이 있다."
+   ],
+   "detail": "지구는 태양계 행성 중 액체 상태의 물과 다양한 생명체가 있는 행성이에요(p.230).\n보기의 화성 설명 두 개는 지구의 특징을 화성에 잘못 붙였고, 지구 설명 두 개는 화성의 특징을 지구에 잘못 붙였어요.",
+   "tip": "지구 = 질소·산소 대기 + 액체 물.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "지구의 특징",
+     "text": "지구에는 질소와 산소 등으로 이루어진 대기와 액체 상태의 물이 있고, 식물이 자랄 수 있는 토양과 다양한 생명체가 있어요(교과서 p.230)."
+    }
+   ]
+  },
+  {
+   "id": "u7-Q02-a",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "목성형 행성의 특징",
+   "source": "교과서 p.231",
+   "question": "표는 목성형 행성 네 개의 반지름을 지구의 반지름을 1로 하여 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 목성의 표면에는 대기의 소용돌이인 대적점이 나타난다.\nㄴ. 해왕성의 표면에는 대기의 소용돌이인 대흑점이 나타난다.\nㄷ. 토성의 반지름은 목성의 반지름보다 크다.\nㄹ. 천왕성의 자전축은 공전 궤도면과 수직에 가깝다.",
+   "choices": [
+    "ㄱ, ㄴ",
+    "ㄱ, ㄷ",
+    "ㄴ, ㄹ",
+    "ㄱ, ㄴ, ㄹ",
+    "ㄴ, ㄷ, ㄹ"
+   ],
+   "answer": 1,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄱ, ㄴ이다. 목성의 대적점과 해왕성의 대흑점은 대기의 소용돌이이다.",
+   "choiceExplanations": [
+    "정답. ㄱ, ㄴ만 옳은 설명이에요. 목성의 대적점과 해왕성의 대흑점은 대기의 소용돌이이다.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 표에서 토성은 9.45, 목성은 11.21이므로 토성이 더 작아요. ㄴ은 옳은 설명인데 빠졌어요. 해왕성은 가장 바깥쪽 행성이고 표면에 대흑점이 나타나요(p.231).",
+    "ㄹ은 옳지 않은 설명인데 골랐어요. 천왕성은 다른 행성과 다르게 자전축과 공전 궤도면이 거의 나란해요(p.231). ㄱ은 옳은 설명인데 빠졌어요. 대적점은 목성 표면에서 나타나는 거대한 대기의 소용돌이예요(p.231).",
+    "ㄹ은 옳지 않은 설명인데 골랐어요. 천왕성은 다른 행성과 다르게 자전축과 공전 궤도면이 거의 나란해요(p.231).",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 표에서 토성은 9.45, 목성은 11.21이므로 토성이 더 작아요. ㄹ은 옳지 않은 설명인데 골랐어요. 천왕성은 다른 행성과 다르게 자전축과 공전 궤도면이 거의 나란해요(p.231). ㄱ은 옳은 설명인데 빠졌어요. 대적점은 목성 표면에서 나타나는 거대한 대기의 소용돌이예요(p.231)."
+   ],
+   "detail": "표에서 값을 비교하고(반지름: 목성 11.21 > 토성 9.45), 교과서에서 배운 행성별 특징과 맞는지 하나씩 확인해요.\n· ㄱ : 옳음 — 대적점은 목성 표면에서 나타나는 거대한 대기의 소용돌이예요(p.231).\n· ㄴ : 옳음 — 해왕성은 가장 바깥쪽 행성이고 표면에 대흑점이 나타나요(p.231).\n· ㄷ : 옳지 않음 — 표에서 토성은 9.45, 목성은 11.21이므로 토성이 더 작아요.\n· ㄹ : 옳지 않음 — 천왕성은 다른 행성과 다르게 자전축과 공전 궤도면이 거의 나란해요(p.231).",
+   "tip": "대적점 = 목성, 대흑점 = 해왕성. 이름의 색(붉은 점/검은 점)과 행성 이름을 짝지어요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "목성과 해왕성의 대기 소용돌이",
+     "text": "목성에는 대기의 소용돌이인 대적점이, 해왕성에는 대흑점이 나타나요(교과서 p.231)."
+    },
+    {
+     "kind": "svg",
+     "title": "반지름 표 읽기",
+     "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 212 132' font-family='sans-serif' font-size='12'><rect x='1' y='1' width='90' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='46.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>행성</text><rect x='91' y='1' width='120' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='151.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>반지름(지구=1)</text><rect x='1' y='27' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>목성</text><rect x='91' y='27' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>11.21</text><rect x='1' y='53' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>토성</text><rect x='91' y='53' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>9.45</text><rect x='1' y='79' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>천왕성</text><rect x='91' y='79' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>4.01</text><rect x='1' y='105' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>해왕성</text><rect x='91' y='105' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>3.88</text></svg>",
+     "caption": "수가 클수록 반지름이 커요."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 212 132' font-family='sans-serif' font-size='12'><rect x='1' y='1' width='90' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='46.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>행성</text><rect x='91' y='1' width='120' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='151.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>반지름(지구=1)</text><rect x='1' y='27' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>목성</text><rect x='91' y='27' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>11.21</text><rect x='1' y='53' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>토성</text><rect x='91' y='53' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>9.45</text><rect x='1' y='79' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>천왕성</text><rect x='91' y='79' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>4.01</text><rect x='1' y='105' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>해왕성</text><rect x='91' y='105' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>3.88</text></svg>",
+    "caption": "목성형 행성의 반지름(지구=1)"
+   }
+  },
+  {
+   "id": "u7-Q02-b",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "목성형 행성의 특징",
+   "source": "교과서 p.231",
+   "question": "표는 목성형 행성 네 개의 반지름을 지구의 반지름을 1로 하여 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 천왕성은 붉은색으로 보이는 행성이다.\nㄴ. 토성에는 얼음과 암석으로 이루어진 뚜렷한 고리가 있다.\nㄷ. 해왕성은 태양계에서 가장 안쪽에 있는 행성이다.\nㄹ. 목성의 반지름은 지구 반지름의 약 11배이다.",
+   "choices": [
+    "ㄱ, ㄴ",
+    "ㄱ, ㄷ",
+    "ㄴ, ㄹ",
+    "ㄱ, ㄴ, ㄹ",
+    "ㄴ, ㄷ, ㄹ"
+   ],
+   "answer": 3,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄴ, ㄹ이다. 토성의 고리와 목성의 반지름 값(11.21배)이 옳다.",
+   "choiceExplanations": [
+    "ㄱ은 옳지 않은 설명인데 골랐어요. 천왕성은 청록색으로 보이는 행성이에요(p.231). ㄹ은 옳은 설명인데 빠졌어요. 표에서 목성의 반지름은 11.21이므로 지구의 약 11배예요.",
+    "ㄱ은 옳지 않은 설명인데 골랐어요. 천왕성은 청록색으로 보이는 행성이에요(p.231). ㄷ은 옳지 않은 설명인데 골랐어요. 해왕성은 태양계에서 가장 바깥쪽에 위치한 행성이에요(p.231). ㄴ은 옳은 설명인데 빠졌어요. 토성은 얼음과 암석으로 이루어진 뚜렷한 고리가 있어요(p.231). ㄹ은 옳은 설명인데 빠졌어요. 표에서 목성의 반지름은 11.21이므로 지구의 약 11배예요.",
+    "정답. ㄴ, ㄹ만 옳은 설명이에요. 토성의 고리와 목성의 반지름 값(11.21배)이 옳다.",
+    "ㄱ은 옳지 않은 설명인데 골랐어요. 천왕성은 청록색으로 보이는 행성이에요(p.231).",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 해왕성은 태양계에서 가장 바깥쪽에 위치한 행성이에요(p.231)."
+   ],
+   "detail": "행성별 특징(색, 위치, 고리)은 교과서 p.231에서, 반지름 값은 표에서 확인해요.\n· ㄱ : 옳지 않음 — 천왕성은 청록색으로 보이는 행성이에요(p.231).\n· ㄴ : 옳음 — 토성은 얼음과 암석으로 이루어진 뚜렷한 고리가 있어요(p.231).\n· ㄷ : 옳지 않음 — 해왕성은 태양계에서 가장 바깥쪽에 위치한 행성이에요(p.231).\n· ㄹ : 옳음 — 표에서 목성의 반지름은 11.21이므로 지구의 약 11배예요.",
+   "tip": "해왕성 = 가장 바깥쪽, 천왕성 = 청록색, 토성 = 뚜렷한 고리.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "토성과 해왕성",
+     "text": "토성은 태양계에서 두 번째로 큰 행성으로 얼음과 암석으로 이루어진 뚜렷한 고리가 있어요. 해왕성은 태양계에서 가장 바깥쪽에 있는 행성이에요(교과서 p.231)."
+    },
+    {
+     "kind": "svg",
+     "title": "반지름 표 읽기",
+     "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 212 132' font-family='sans-serif' font-size='12'><rect x='1' y='1' width='90' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='46.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>행성</text><rect x='91' y='1' width='120' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='151.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>반지름(지구=1)</text><rect x='1' y='27' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>목성</text><rect x='91' y='27' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>11.21</text><rect x='1' y='53' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>토성</text><rect x='91' y='53' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>9.45</text><rect x='1' y='79' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>천왕성</text><rect x='91' y='79' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>4.01</text><rect x='1' y='105' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>해왕성</text><rect x='91' y='105' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>3.88</text></svg>",
+     "caption": "11.21 ≈ 11"
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 212 132' font-family='sans-serif' font-size='12'><rect x='1' y='1' width='90' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='46.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>행성</text><rect x='91' y='1' width='120' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='151.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>반지름(지구=1)</text><rect x='1' y='27' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>목성</text><rect x='91' y='27' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>11.21</text><rect x='1' y='53' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>토성</text><rect x='91' y='53' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>9.45</text><rect x='1' y='79' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>천왕성</text><rect x='91' y='79' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>4.01</text><rect x='1' y='105' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>해왕성</text><rect x='91' y='105' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>3.88</text></svg>",
+    "caption": "목성형 행성의 반지름(지구=1)"
+   }
+  },
+  {
+   "id": "u7-Q03-a",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "행성 자료표 수치 계산",
+   "source": "교과서 p.228",
+   "question": "표는 태양계 행성 네 개의 질량을 지구의 질량을 1로 하여 나타낸 것이다. 목성의 질량은 토성의 질량의 약 몇 배인가?",
+   "choices": [
+    "약 0.3배",
+    "약 3.3배",
+    "약 1.5배",
+    "약 6.7배",
+    "약 30배"
+   ],
+   "answer": 2,
+   "fixedOrder": true,
+   "explanation": "317.83 ÷ 95.16 ≈ 3.3이므로 목성의 질량은 토성의 약 3.3배이다.",
+   "choiceExplanations": [
+    "토성의 질량을 목성의 질량으로 나눈 값(0.3)이에요. 나누는 순서가 반대예요.",
+    "정답. 317.83 ÷ 95.16 ≈ 3.3이므로 목성의 질량은 토성의 약 3.3배이다.",
+    "실제 값(약 3.3배)보다 작아요. 317.83 ÷ 95.16을 직접 계산해 보세요.",
+    "실제 값(약 3.3배)의 두 배쯤으로 너무 커요. 317.83 ÷ 95.16 ≈ 3.34예요.",
+    "실제 값(약 3.3배)보다 훨씬 커요. 317.83 ÷ 95.16 ≈ 3.34예요."
+   ],
+   "detail": "· 자료를 읽는 순서: 목성 317.83, 토성 95.16.\n· 몇 배인지는 큰 값 ÷ 작은 값으로 구해요: 317.83 ÷ 95.16 = 3.34… ≈ 3.3.\n· 따라서 목성의 질량은 토성의 약 3.3배예요.",
+   "tip": "'몇 배'는 큰 값 ÷ 작은 값. 값을 어림해 보면 320 ÷ 95 ≈ 3.4.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "몇 배인지 구하기",
+     "text": "질량은 지구의 질량을 1로 한 상대적인 값이에요. 두 행성의 질량을 비교할 때는 큰 값을 작은 값으로 나누어요(교과서 p.228)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 212 132' font-family='sans-serif' font-size='12'><rect x='1' y='1' width='90' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='46.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>행성</text><rect x='91' y='1' width='120' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='151.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>질량(지구=1)</text><rect x='1' y='27' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>목성</text><rect x='91' y='27' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>317.83</text><rect x='1' y='53' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>토성</text><rect x='91' y='53' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>95.16</text><rect x='1' y='79' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>천왕성</text><rect x='91' y='79' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>14.54</text><rect x='1' y='105' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>해왕성</text><rect x='91' y='105' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>17.15</text></svg>",
+    "caption": "행성의 질량(지구=1)"
+   }
+  },
+  {
+   "id": "u7-Q03-b",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "행성 자료표 수치 계산",
+   "source": "교과서 p.228",
+   "question": "표는 태양계 행성 다섯 개의 위성 수를 나타낸 것이다. 토성의 위성 수는 목성의 위성 수보다 몇 개 더 많은가?",
+   "choices": [
+    "41개",
+    "51개",
+    "61개",
+    "241개",
+    "146개"
+   ],
+   "answer": 2,
+   "fixedOrder": true,
+   "explanation": "146 − 95 = 51이므로 토성의 위성은 목성보다 51개 더 많다.",
+   "choiceExplanations": [
+    "실제 차이(51개)보다 10개 작아요. 146 − 95를 다시 계산해 보세요.",
+    "정답. 146 − 95 = 51이므로 토성의 위성은 목성보다 51개 더 많다.",
+    "실제 차이(51개)보다 10개 많아요. 146 − 95 = 51이에요.",
+    "두 행성의 위성 수를 더한 값이에요. '더 많은 개수'는 뺄셈으로 구해요.",
+    "토성의 위성 수 그대로예요. 목성의 위성 수(95)를 빼야 해요."
+   ],
+   "detail": "· 자료 읽기: 토성 146개, 목성 95개.\n· '더 많다'는 차이를 묻는 것이므로 146 − 95 = 51.\n· 합(241)이나 큰 값(146)을 고르지 않도록 해요.",
+   "tip": "'몇 개 더 많은가' = 큰 수 − 작은 수.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "표 읽기",
+     "text": "표의 위성 수: 목성 95개, 토성 146개예요. 차이를 구할 때는 뺄셈을 해요(교과서 p.228)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 212 158' font-family='sans-serif' font-size='12'><rect x='1' y='1' width='90' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='46.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>행성</text><rect x='91' y='1' width='120' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='151.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>위성 수(개)</text><rect x='1' y='27' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>지구</text><rect x='91' y='27' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>1</text><rect x='1' y='53' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>화성</text><rect x='91' y='53' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>2</text><rect x='1' y='79' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>목성</text><rect x='91' y='79' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>95</text><rect x='1' y='105' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>토성</text><rect x='91' y='105' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>146</text><rect x='1' y='131' width='90' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='46.0' y='147.9' font-size='12' text-anchor='middle' fill='#222'>천왕성</text><rect x='91' y='131' width='120' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='151.0' y='147.9' font-size='12' text-anchor='middle' fill='#222'>27</text></svg>",
+    "caption": "행성의 위성 수(개)"
+   }
+  },
+  {
+   "id": "u7-Q04-a",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "흑점의 위치 변화",
+   "source": "교과서 p.233",
+   "question": "그림은 어느 날부터 5일 동안 태양 표면을 관측한 모습이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 흑점의 위치가 날마다 달라지는 것으로 태양이 자전함을 알 수 있다.\nㄴ. 그림의 세 날 모두 보이는 흑점의 수는 같다.\nㄷ. 흑점이 이동하는 것은 지구가 자전하기 때문이다.",
+   "choices": [
+    "ㄱ",
+    "ㄴ",
+    "ㄷ",
+    "ㄱ, ㄴ",
+    "ㄴ, ㄷ"
+   ],
+   "answer": 4,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄱ, ㄴ이다. 흑점 위치 변화는 태양의 자전을 보여 주고, 그림의 세 장면에서 흑점은 2개로 같았다.",
+   "choiceExplanations": [
+    "ㄴ은 옳은 설명인데 빠졌어요. 세 장면 모두 흑점이 2개씩 그려져 있어 수가 같아요.",
+    "ㄱ은 옳은 설명인데 빠졌어요. 관측한 흑점의 위치가 달라지는 것으로부터 태양이 자전한다는 것을 알 수 있어요(p.233).",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 그림은 태양 표면을 관측한 것이고, 태양 표면에서 흑점이 이동하는 것은 태양이 자전하기 때문이에요. ㄱ은 옳은 설명인데 빠졌어요. 관측한 흑점의 위치가 달라지는 것으로부터 태양이 자전한다는 것을 알 수 있어요(p.233). ㄴ은 옳은 설명인데 빠졌어요. 세 장면 모두 흑점이 2개씩 그려져 있어 수가 같아요.",
+    "정답. ㄱ, ㄴ만 옳은 설명이에요. 흑점 위치 변화는 태양의 자전을 보여 주고, 그림의 세 장면에서 흑점은 2개로 같았다.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 그림은 태양 표면을 관측한 것이고, 태양 표면에서 흑점이 이동하는 것은 태양이 자전하기 때문이에요. ㄱ은 옳은 설명인데 빠졌어요. 관측한 흑점의 위치가 달라지는 것으로부터 태양이 자전한다는 것을 알 수 있어요(p.233)."
+   ],
+   "detail": "그림을 읽는 순서: ① 날짜별 흑점의 개수를 센다(모두 2개) ② 흑점이 어느 쪽으로 옮겨 가는지 본다(오른쪽) ③ 교과서의 '흑점 위치 변화 → 태양의 자전'과 연결한다.\n· ㄱ : 옳음 — 관측한 흑점의 위치가 달라지는 것으로부터 태양이 자전한다는 것을 알 수 있어요(p.233).\n· ㄴ : 옳음 — 세 장면 모두 흑점이 2개씩 그려져 있어 수가 같아요.\n· ㄷ : 옳지 않음 — 그림은 태양 표면을 관측한 것이고, 태양 표면에서 흑점이 이동하는 것은 태양이 자전하기 때문이에요.",
+   "tip": "흑점이 움직이는 까닭 = 태양이 자전하기 때문.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "흑점으로 아는 태양의 자전",
+     "text": "망원경으로 태양 표면을 관측하면 흑점의 위치가 달라져요. 이로부터 태양이 자전함을 알 수 있어요(교과서 p.233)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 108' font-family='sans-serif' font-size='12'><circle cx='53.333333333333336' cy='46' r='34' fill='#fde9a9' stroke='#d68910' stroke-width='1.8' /><circle cx='35.3' cy='40' r='5' fill='#333' stroke='#222' stroke-width='1' /><circle cx='49.3' cy='54' r='4' fill='#333' stroke='#222' stroke-width='1' /><text x='53.3' y='100' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>1일째</text><circle cx='150.0' cy='46' r='34' fill='#fde9a9' stroke='#d68910' stroke-width='1.8' /><circle cx='152.0' cy='40' r='5' fill='#333' stroke='#222' stroke-width='1' /><circle cx='166.0' cy='54' r='4' fill='#333' stroke='#222' stroke-width='1' /><text x='150.0' y='100' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>3일째</text><circle cx='246.66666666666669' cy='46' r='34' fill='#fde9a9' stroke='#d68910' stroke-width='1.8' /><circle cx='268.7' cy='40' r='5' fill='#333' stroke='#222' stroke-width='1' /><circle cx='275.7' cy='55' r='4' fill='#333' stroke='#222' stroke-width='1' /><text x='246.7' y='100' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>5일째</text></svg>",
+    "caption": "태양 표면의 흑점(모식도)"
+   }
+  },
+  {
+   "id": "u7-Q04-b",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "흑점의 위치 변화",
+   "source": "교과서 p.233",
+   "question": "그림은 어느 날부터 5일 동안 태양 표면을 관측한 모습이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 날이 지남에 따라 흑점은 오른쪽으로 이동했다.\nㄴ. 흑점의 위치가 변하는 것으로 보아 태양은 자전하지 않는다.\nㄷ. 관측한 기간 동안 흑점의 크기는 모두 변하지 않았다.",
+   "choices": [
+    "ㄱ",
+    "ㄴ",
+    "ㄷ",
+    "ㄱ, ㄴ",
+    "ㄴ, ㄷ"
+   ],
+   "answer": 1,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄱ이다. 날이 지날수록 흑점은 오른쪽으로 이동했다.",
+   "choiceExplanations": [
+    "정답. ㄱ만 옳은 설명이에요. 날이 지날수록 흑점은 오른쪽으로 이동했다.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 흑점의 위치가 변하는 것은 태양이 자전한다는 증거예요(p.233). ㄱ은 옳은 설명인데 빠졌어요. 세 장면에서 흑점이 오른쪽으로 옮겨 가요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 그림에서 큰 흑점이 작아지고 작은 흑점은 사라져 크기와 수가 변했어요. 흑점은 모양과 크기가 변해요(p.233). ㄱ은 옳은 설명인데 빠졌어요. 세 장면에서 흑점이 오른쪽으로 옮겨 가요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 흑점의 위치가 변하는 것은 태양이 자전한다는 증거예요(p.233).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 흑점의 위치가 변하는 것은 태양이 자전한다는 증거예요(p.233). ㄷ은 옳지 않은 설명인데 골랐어요. 그림에서 큰 흑점이 작아지고 작은 흑점은 사라져 크기와 수가 변했어요. 흑점은 모양과 크기가 변해요(p.233). ㄱ은 옳은 설명인데 빠졌어요. 세 장면에서 흑점이 오른쪽으로 옮겨 가요."
+   ],
+   "detail": "그림을 읽는 순서: ① 흑점이 이동하는 방향 ② 크기·개수의 변화 ③ 이동의 의미(태양의 자전)를 연결해요.\n· ㄱ : 옳음 — 세 장면에서 흑점이 오른쪽으로 옮겨 가요.\n· ㄴ : 옳지 않음 — 흑점의 위치가 변하는 것은 태양이 자전한다는 증거예요(p.233).\n· ㄷ : 옳지 않음 — 그림에서 큰 흑점이 작아지고 작은 흑점은 사라져 크기와 수가 변했어요. 흑점은 모양과 크기가 변해요(p.233).",
+   "tip": "흑점이 움직인다 = 태양이 자전한다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "흑점의 변화",
+     "text": "흑점은 모양과 크기가 변하고, 어떤 흑점은 행성보다 크기도 해요. 흑점의 위치가 달라지는 것으로 태양이 자전함을 알 수 있어요(교과서 p.233)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 108' font-family='sans-serif' font-size='12'><circle cx='53.333333333333336' cy='46' r='34' fill='#fde9a9' stroke='#d68910' stroke-width='1.8' /><circle cx='31.3' cy='46' r='6' fill='#333' stroke='#222' stroke-width='1' /><circle cx='47.3' cy='60' r='3' fill='#333' stroke='#222' stroke-width='1' /><text x='53.3' y='100' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>1일째</text><circle cx='150.0' cy='46' r='34' fill='#fde9a9' stroke='#d68910' stroke-width='1.8' /><circle cx='148.0' cy='46' r='6' fill='#333' stroke='#222' stroke-width='1' /><circle cx='162.0' cy='60' r='3' fill='#333' stroke='#222' stroke-width='1' /><text x='150.0' y='100' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>3일째</text><circle cx='246.66666666666669' cy='46' r='34' fill='#fde9a9' stroke='#d68910' stroke-width='1.8' /><circle cx='266.7' cy='46' r='4' fill='#333' stroke='#222' stroke-width='1' /><text x='246.7' y='100' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>5일째</text></svg>",
+    "caption": "태양 표면의 흑점(모식도)"
+   }
+  },
+  {
+   "id": "u7-Q05-a",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "태양계의 뜻과 태양의 질량",
+   "source": "교과서 p.227",
+   "question": "태양계에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "태양계에서 스스로 빛을 내는 천체는 태양과 목성이다.",
+    "태양계에는 모두 9개의 행성이 태양 주위를 공전한다.",
+    "태양이 태양계 전체 질량의 대부분을 차지한다.",
+    "태양계는 행성들이 차지하는 공간을 뜻하며 태양은 포함하지 않는다.",
+    "태양계의 모든 행성은 지구 주위를 공전하고 있다."
+   ],
+   "answer": 3,
+   "explanation": "태양은 태양계 전체 질량의 대부분을 차지한다.",
+   "choiceExplanations": [
+    "스스로 빛을 내는 천체는 태양뿐이에요. 목성은 태양 빛을 반사해서 보여요.",
+    "태양계의 행성은 모두 8개예요.",
+    "정답. 태양은 태양계 전체 질량의 대부분을 차지한다.",
+    "태양계는 태양을 포함해요. 태양과 그 주위를 도는 천체들, 이들이 차지하는 공간이에요.",
+    "행성은 태양 주위를 공전해요."
+   ],
+   "detail": "태양은 태양계 전체 질량의 대부분을 차지하고, 스스로 빛을 내는 유일한 별이에요(p.227). 행성은 모두 8개이며 태양 주위를 공전해요.",
+   "tip": "태양계의 중심 = 태양, 질량 대부분 = 태양.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "태양의 비중",
+     "text": "태양은 태양계 전체 질량의 대부분을 차지해요(교과서 p.227)."
+    }
+   ]
+  },
+  {
+   "id": "u7-Q05-b",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "태양계의 뜻과 태양의 질량",
+   "source": "교과서 p.226",
+   "question": "태양계의 뜻으로 옳은 것은?",
+   "choices": [
+    "태양을 제외한 8개의 행성이 서로 모여 있는 우주 공간",
+    "지구를 중심으로 행성과 달이 모여 함께 움직이는 공간",
+    "태양에서 나온 빛이 닿을 수 있는 모든 우주 공간 전체",
+    "태양을 포함해 태양 주위를 공전하는 천체들과 그 공간",
+    "태양과 지구, 달만 포함되어 있고 다른 행성은 없는 공간"
+   ],
+   "answer": 4,
+   "explanation": "태양계는 태양과 태양 주위를 공전하는 천체들, 그리고 이들이 차지하는 공간이다.",
+   "choiceExplanations": [
+    "태양계는 태양을 포함해요. 행성만의 공간이 아니에요.",
+    "태양계의 중심은 태양이에요. 지구를 중심으로 하는 공간이 아니에요.",
+    "빛이 닿는 범위가 아니라 태양을 도는 천체들과 그 공간이에요.",
+    "정답. 태양계는 태양과 태양 주위를 공전하는 천체들, 그리고 이들이 차지하는 공간이다.",
+    "태양계에는 8개의 행성과 왜소 행성, 소행성, 혜성 등이 포함돼요."
+   ],
+   "detail": "태양계는 '태양 + 태양 주위를 공전하는 천체들 + 그 공간'이에요(p.226). 행성뿐 아니라 왜소 행성, 소행성, 혜성 등도 포함돼요.",
+   "tip": "태양계 = 태양을 중심으로 한 천체들의 공간.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "태양계의 뜻",
+     "text": "태양계는 태양을 포함하여 태양 주위를 공전하는 천체들과 이들이 차지하는 공간이에요(교과서 p.226)."
+    }
+   ]
+  },
+  {
+   "id": "u7-Q06-a",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "방향별 일주 운동(동·서·남쪽 하늘)",
+   "source": "교과서 p.247",
+   "question": "그림 (가), (나)는 우리나라에서 서로 다른 방향의 밤하늘을 관측하여 별의 이동 경로를 화살표로 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. (가)는 동쪽 하늘에서 관측한 것이다.\nㄴ. (나)에서 별은 왼쪽으로 비스듬히 진다.\nㄷ. (가)와 (나)는 같은 방향의 하늘을 관측한 것이다.",
+   "choices": [
+    "ㄱ",
+    "ㄴ",
+    "ㄷ",
+    "ㄱ, ㄴ",
+    "ㄴ, ㄷ"
+   ],
+   "answer": 1,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄱ이다. 별이 오른쪽으로 비스듬히 떠오르는 (가)가 동쪽 하늘이다.",
+   "choiceExplanations": [
+    "정답. ㄱ만 옳은 설명이에요. 별이 오른쪽으로 비스듬히 떠오르는 (가)가 동쪽 하늘이다.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (나)의 화살표는 오른쪽 아래로 향해요. 서쪽 하늘에서 별은 오른쪽으로 비스듬히 져요. ㄱ은 옳은 설명인데 빠졌어요. 별이 오른쪽으로 비스듬히 떠오르는 (가)는 동쪽 하늘이에요(p.247).",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. (가)는 별이 떠오르는 동쪽 하늘, (나)는 별이 지는 서쪽 하늘이라 서로 달라요. ㄱ은 옳은 설명인데 빠졌어요. 별이 오른쪽으로 비스듬히 떠오르는 (가)는 동쪽 하늘이에요(p.247).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (나)의 화살표는 오른쪽 아래로 향해요. 서쪽 하늘에서 별은 오른쪽으로 비스듬히 져요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (나)의 화살표는 오른쪽 아래로 향해요. 서쪽 하늘에서 별은 오른쪽으로 비스듬히 져요. ㄷ은 옳지 않은 설명인데 골랐어요. (가)는 별이 떠오르는 동쪽 하늘, (나)는 별이 지는 서쪽 하늘이라 서로 달라요. ㄱ은 옳은 설명인데 빠졌어요. 별이 오른쪽으로 비스듬히 떠오르는 (가)는 동쪽 하늘이에요(p.247)."
+   ],
+   "detail": "그림 읽는 순서: ① 화살표가 위로 향하면 '뜬다', 아래로 향하면 '진다' ② 떠오르는 곳 = 동쪽, 지는 곳 = 서쪽 ③ 보기의 방향 설명과 맞춰 봐요.\n· ㄱ : 옳음 — 별이 오른쪽으로 비스듬히 떠오르는 (가)는 동쪽 하늘이에요(p.247).\n· ㄴ : 옳지 않음 — (나)의 화살표는 오른쪽 아래로 향해요. 서쪽 하늘에서 별은 오른쪽으로 비스듬히 져요.\n· ㄷ : 옳지 않음 — (가)는 별이 떠오르는 동쪽 하늘, (나)는 별이 지는 서쪽 하늘이라 서로 달라요.",
+   "tip": "동쪽 하늘 = 오른쪽 위로 떠오름, 서쪽 하늘 = 오른쪽 아래로 짐.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "동쪽과 서쪽 하늘",
+     "text": "동쪽 하늘에서 별은 오른쪽으로 비스듬히 떠오르고, 서쪽 하늘에서는 오른쪽으로 비스듬히 져요(교과서 p.247)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 134' font-family='sans-serif' font-size='12'><g transform='translate(0.0,0)'><defs><marker id='ar' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' fill='#222'/></marker></defs><line x1='8' y1='90' x2='152' y2='90' stroke='#222' stroke-width='2' /><text x='80' y='104' font-size='11' text-anchor='middle' fill='#222'>지평선</text><circle cx='48' cy='82' r='3.5' fill='#222' stroke='#222' stroke-width='1.5' /><line x1='52' y1='78' x2='112' y2='28' stroke='#222' stroke-width='1.6' marker-end='url(#ar)'/></g><text x='80.0' y='124' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(가)</text><g transform='translate(160.0,0)'><defs><marker id='ar' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' fill='#222'/></marker></defs><line x1='8' y1='90' x2='152' y2='90' stroke='#222' stroke-width='2' /><text x='80' y='104' font-size='11' text-anchor='middle' fill='#222'>지평선</text><circle cx='48' cy='26' r='3.5' fill='#222' stroke='#222' stroke-width='1.5' /><line x1='52' y1='30' x2='112' y2='80' stroke='#222' stroke-width='1.6' marker-end='url(#ar)'/></g><text x='240.0' y='124' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(나)</text></svg>",
+    "caption": "방향별 별의 이동 경로(모식도)"
+   }
+  },
+  {
+   "id": "u7-Q06-b",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "방향별 일주 운동(동·서·남쪽 하늘)",
+   "source": "교과서 p.247",
+   "question": "그림 (가), (나)는 우리나라에서 서로 다른 방향의 밤하늘을 관측하여 별의 이동 경로를 화살표로 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. (가)는 동쪽 하늘에서 관측한 것이다.\nㄴ. (나)에서 별은 오른쪽으로 비스듬히 진다.\nㄷ. (가)에서 별은 동쪽에서 서쪽으로 이동한다.",
+   "choices": [
+    "ㄱ",
+    "ㄴ",
+    "ㄷ",
+    "ㄱ, ㄴ",
+    "ㄴ, ㄷ"
+   ],
+   "answer": 5,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄴ, ㄷ이다. (나)는 서쪽 하늘이고, (가)는 남쪽 하늘에서 별이 동쪽에서 서쪽으로 이동하는 모습이다.",
+   "choiceExplanations": [
+    "ㄱ은 옳지 않은 설명인데 골랐어요. (가)에서 별은 지평선과 거의 나란하게 이동하므로 남쪽 하늘이에요(p.247). ㄴ은 옳은 설명인데 빠졌어요. 서쪽 하늘에서 별은 오른쪽 아래로 비스듬히 져요(p.247). ㄷ은 옳은 설명인데 빠졌어요. 남쪽 하늘에서 별은 지평선과 거의 나란하게 동쪽에서 서쪽으로 이동해요(p.247).",
+    "ㄷ은 옳은 설명인데 빠졌어요. 남쪽 하늘에서 별은 지평선과 거의 나란하게 동쪽에서 서쪽으로 이동해요(p.247).",
+    "ㄴ은 옳은 설명인데 빠졌어요. 서쪽 하늘에서 별은 오른쪽 아래로 비스듬히 져요(p.247).",
+    "ㄱ은 옳지 않은 설명인데 골랐어요. (가)에서 별은 지평선과 거의 나란하게 이동하므로 남쪽 하늘이에요(p.247). ㄷ은 옳은 설명인데 빠졌어요. 남쪽 하늘에서 별은 지평선과 거의 나란하게 동쪽에서 서쪽으로 이동해요(p.247).",
+    "정답. ㄴ, ㄷ만 옳은 설명이에요. (나)는 서쪽 하늘이고, (가)는 남쪽 하늘에서 별이 동쪽에서 서쪽으로 이동하는 모습이다."
+   ],
+   "detail": "그림 읽는 순서: ① (가)는 지평선과 나란한가? → 남쪽 하늘 ② (나)는 아래로 지는가? → 서쪽 하늘 ③ 보기와 맞춰 봐요.\n· ㄱ : 옳지 않음 — (가)에서 별은 지평선과 거의 나란하게 이동하므로 남쪽 하늘이에요(p.247).\n· ㄴ : 옳음 — 서쪽 하늘에서 별은 오른쪽 아래로 비스듬히 져요(p.247).\n· ㄷ : 옳음 — 남쪽 하늘에서 별은 지평선과 거의 나란하게 동쪽에서 서쪽으로 이동해요(p.247).",
+   "tip": "남쪽 하늘 = 지평선과 나란히 동 → 서.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "남쪽과 서쪽 하늘",
+     "text": "남쪽 하늘에서 별은 지평선과 거의 나란하게 동쪽에서 서쪽으로 이동하고, 서쪽 하늘에서는 오른쪽으로 비스듬히 져요(교과서 p.247)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 134' font-family='sans-serif' font-size='12'><g transform='translate(0.0,0)'><defs><marker id='ar' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' fill='#222'/></marker></defs><line x1='8' y1='90' x2='152' y2='90' stroke='#222' stroke-width='2' /><text x='80' y='104' font-size='11' text-anchor='middle' fill='#222'>지평선</text><circle cx='22' cy='62' r='3.5' fill='#222' stroke='#222' stroke-width='1.5' /><path d='M26 60 Q80 22 126 58' fill='none' stroke='#222' stroke-width='1.6' marker-end='url(#ar)'/></g><text x='80.0' y='124' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(가)</text><g transform='translate(160.0,0)'><defs><marker id='ar' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' fill='#222'/></marker></defs><line x1='8' y1='90' x2='152' y2='90' stroke='#222' stroke-width='2' /><text x='80' y='104' font-size='11' text-anchor='middle' fill='#222'>지평선</text><circle cx='48' cy='26' r='3.5' fill='#222' stroke='#222' stroke-width='1.5' /><line x1='52' y1='30' x2='112' y2='80' stroke='#222' stroke-width='1.6' marker-end='url(#ar)'/></g><text x='240.0' y='124' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(나)</text></svg>",
+    "caption": "방향별 별의 이동 경로(모식도)"
+   }
+  },
+  {
+   "id": "u7-Q07-a",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "달의 모양과 위상 이름·음력 날짜",
+   "source": "교과서 p.254",
+   "question": "그림은 지구에서 본 달의 모양을 (가)~(다)로 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. (가)는 상현달이다.\nㄴ. (나)는 음력 22~23일경에 볼 수 있다.\nㄷ. (다)는 음력 22~23일경에 볼 수 있다.\nㄹ. (다)는 삭에서 망으로 가는 과정에서 볼 수 있다.",
+   "choices": [
+    "ㄱ, ㄴ",
+    "ㄱ, ㄷ",
+    "ㄴ, ㄹ",
+    "ㄱ, ㄴ, ㄹ",
+    "ㄴ, ㄷ, ㄹ"
+   ],
+   "answer": 2,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다. (가)는 상현달, (다)는 하현달(음력 22~23일경)이다.",
+   "choiceExplanations": [
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 보름달(망)은 음력 15일경에 볼 수 있어요. ㄷ은 옳은 설명인데 빠졌어요. 왼쪽이 둥근 반달은 하현달로 음력 22~23일경에 볼 수 있어요(p.254).",
+    "정답. ㄱ, ㄷ만 옳은 설명이에요. (가)는 상현달, (다)는 하현달(음력 22~23일경)이다.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 보름달(망)은 음력 15일경에 볼 수 있어요. ㄹ은 옳지 않은 설명인데 골랐어요. 하현달은 망에서 삭으로 가는 과정에서 볼 수 있어요. ㄱ은 옳은 설명인데 빠졌어요. 오른쪽이 둥근 반달은 삭에서 망으로 가는 과정의 상현달이에요(p.254). ㄷ은 옳은 설명인데 빠졌어요. 왼쪽이 둥근 반달은 하현달로 음력 22~23일경에 볼 수 있어요(p.254).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 보름달(망)은 음력 15일경에 볼 수 있어요. ㄹ은 옳지 않은 설명인데 골랐어요. 하현달은 망에서 삭으로 가는 과정에서 볼 수 있어요. ㄷ은 옳은 설명인데 빠졌어요. 왼쪽이 둥근 반달은 하현달로 음력 22~23일경에 볼 수 있어요(p.254).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 보름달(망)은 음력 15일경에 볼 수 있어요. ㄹ은 옳지 않은 설명인데 골랐어요. 하현달은 망에서 삭으로 가는 과정에서 볼 수 있어요. ㄱ은 옳은 설명인데 빠졌어요. 오른쪽이 둥근 반달은 삭에서 망으로 가는 과정의 상현달이에요(p.254)."
+   ],
+   "detail": "그림 읽는 순서: ① 둥근 쪽이 오른쪽이면 상현, 왼쪽이면 하현 ② 보름달은 망(음력 15일경) ③ 음력 날짜와 이름을 짝지어요.\n· ㄱ : 옳음 — 오른쪽이 둥근 반달은 삭에서 망으로 가는 과정의 상현달이에요(p.254).\n· ㄴ : 옳지 않음 — 보름달(망)은 음력 15일경에 볼 수 있어요.\n· ㄷ : 옳음 — 왼쪽이 둥근 반달은 하현달로 음력 22~23일경에 볼 수 있어요(p.254).\n· ㄹ : 옳지 않음 — 하현달은 망에서 삭으로 가는 과정에서 볼 수 있어요.",
+   "tip": "상현 = 오른쪽 둥근 반달(7~8일), 하현 = 왼쪽 둥근 반달(22~23일).",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "달의 모양과 음력 날짜",
+     "head": [
+      "모양",
+      "이름",
+      "음력 날짜"
+     ],
+     "rows": [
+      [
+       "오른쪽이 둥근 반달",
+       "상현달",
+       "7~8일경"
+      ],
+      [
+       "왼쪽이 둥근 반달",
+       "하현달",
+       "22~23일경"
+      ]
+     ]
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 92' font-family='sans-serif' font-size='12'><circle cx='50.0' cy='36' r='24' fill='#555' stroke='#222' stroke-width='1' /><path d='M50.0 12 A24 24 0 0 1 50.0 60 A0.01 24 0 0 1 50.0 12 Z' fill='#ffe9a8' stroke='none'/><circle cx='50.0' cy='36' r='24' fill='none' stroke='#222' stroke-width='1' /><text x='50.0' y='82' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(가)</text><circle cx='150.0' cy='36' r='24' fill='#ffe9a8' stroke='#222' stroke-width='1.4' /><text x='150.0' y='82' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(나)</text><circle cx='250.0' cy='36' r='24' fill='#555' stroke='#222' stroke-width='1' /><path d='M250.0 12 A24 24 0 0 0 250.0 60 A0.01 24 0 0 0 250.0 12 Z' fill='#ffe9a8' stroke='none'/><circle cx='250.0' cy='36' r='24' fill='none' stroke='#222' stroke-width='1' /><text x='250.0' y='82' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(다)</text></svg>",
+    "caption": "지구에서 본 달의 모양(모식도)"
+   }
+  },
+  {
+   "id": "u7-Q07-b",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "달의 모양과 위상 이름·음력 날짜",
+   "source": "교과서 p.254",
+   "question": "그림은 지구에서 본 달의 모양을 (가)~(라)로 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. (가)는 삭에서 망으로 가는 과정에서 볼 수 있다.\nㄴ. (나)는 음력 7~8일경에 볼 수 있다.\nㄷ. (다)는 음력 1일경에 볼 수 있다.\nㄹ. (라)는 달이 지구와 태양 사이에 있어 보이지 않는 때이다.",
+   "choices": [
+    "ㄱ, ㄴ",
+    "ㄱ, ㄷ",
+    "ㄴ, ㄹ",
+    "ㄱ, ㄴ, ㄹ",
+    "ㄴ, ㄷ, ㄹ"
+   ],
+   "answer": 3,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄴ, ㄹ이다. (나)는 음력 7~8일경 상현달이고, (라)는 보이지 않는 삭이다.",
+   "choiceExplanations": [
+    "ㄱ은 옳지 않은 설명인데 골랐어요. (가)는 왼쪽이 둥근 하현달로 망에서 삭으로 가는 과정에서 볼 수 있어요. ㄹ은 옳은 설명인데 빠졌어요. 달이 지구와 태양 사이에 있어 보이지 않는 때를 삭이라 해요(p.254).",
+    "ㄱ은 옳지 않은 설명인데 골랐어요. (가)는 왼쪽이 둥근 하현달로 망에서 삭으로 가는 과정에서 볼 수 있어요. ㄷ은 옳지 않은 설명인데 골랐어요. 보름달(망)은 음력 15일경이에요. 음력 1일경은 삭이에요. ㄴ은 옳은 설명인데 빠졌어요. 오른쪽이 둥근 상현달은 음력 7~8일경에 볼 수 있어요(p.254). ㄹ은 옳은 설명인데 빠졌어요. 달이 지구와 태양 사이에 있어 보이지 않는 때를 삭이라 해요(p.254).",
+    "정답. ㄴ, ㄹ만 옳은 설명이에요. (나)는 음력 7~8일경 상현달이고, (라)는 보이지 않는 삭이다.",
+    "ㄱ은 옳지 않은 설명인데 골랐어요. (가)는 왼쪽이 둥근 하현달로 망에서 삭으로 가는 과정에서 볼 수 있어요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 보름달(망)은 음력 15일경이에요. 음력 1일경은 삭이에요."
+   ],
+   "detail": "그림 읽는 순서: ① 둥근 쪽의 방향으로 상현·하현 구별 ② 가득 찬 모양은 망 ③ 보이지 않으면 삭이에요.\n· ㄱ : 옳지 않음 — (가)는 왼쪽이 둥근 하현달로 망에서 삭으로 가는 과정에서 볼 수 있어요.\n· ㄴ : 옳음 — 오른쪽이 둥근 상현달은 음력 7~8일경에 볼 수 있어요(p.254).\n· ㄷ : 옳지 않음 — 보름달(망)은 음력 15일경이에요. 음력 1일경은 삭이에요.\n· ㄹ : 옳음 — 달이 지구와 태양 사이에 있어 보이지 않는 때를 삭이라 해요(p.254).",
+   "tip": "삭 = 안 보임(1일), 상현 = 7~8일, 망 = 15일, 하현 = 22~23일.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "위상과 음력 날짜",
+     "head": [
+      "이름",
+      "음력 날짜",
+      "모양"
+     ],
+     "rows": [
+      [
+       "삭",
+       "1일경",
+       "보이지 않음"
+      ],
+      [
+       "망",
+       "15일경",
+       "보름달"
+      ]
+     ]
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 92' font-family='sans-serif' font-size='12'><circle cx='42.5' cy='36' r='24' fill='#555' stroke='#222' stroke-width='1' /><path d='M42.5 12 A24 24 0 0 0 42.5 60 A0.01 24 0 0 0 42.5 12 Z' fill='#ffe9a8' stroke='none'/><circle cx='42.5' cy='36' r='24' fill='none' stroke='#222' stroke-width='1' /><text x='42.5' y='82' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(가)</text><circle cx='127.5' cy='36' r='24' fill='#555' stroke='#222' stroke-width='1' /><path d='M127.5 12 A24 24 0 0 1 127.5 60 A0.01 24 0 0 1 127.5 12 Z' fill='#ffe9a8' stroke='none'/><circle cx='127.5' cy='36' r='24' fill='none' stroke='#222' stroke-width='1' /><text x='127.5' y='82' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(나)</text><circle cx='212.5' cy='36' r='24' fill='#ffe9a8' stroke='#222' stroke-width='1.4' /><text x='212.5' y='82' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(다)</text><circle cx='297.5' cy='36' r='24' fill='none' stroke='#555' stroke-width='1.4' stroke-dasharray='4 3'/><text x='297.5' y='40' font-size='10' text-anchor='middle' fill='#222'>안 보임</text><text x='297.5' y='82' font-size='13' text-anchor='middle' fill='#222' font-weight='700'>(라)</text></svg>",
+    "caption": "지구에서 본 달의 모양(모식도)"
+   }
+  },
+  {
+   "id": "u7-T01-a",
+   "slot": "T01",
+   "type": "short",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "달의 지형(바다·운석 충돌구)",
+   "source": "교과서 p.239",
+   "question": "천체 망원경으로 달을 관측하면 어둡고 평평하게 보이는 지역을 볼 수 있다. 이 지역을 무엇이라고 하는지 쓰시오.",
+   "answer": [
+    "바다"
+   ],
+   "answerHint": "두 글자로 쓰시오.",
+   "commonMistakes": [
+    {
+     "answer": "고지",
+     "why": "고지는 밝고 울퉁불퉁한 지역이에요."
+    }
+   ],
+   "explanation": "달에서 어둡고 평평하게 보이는 지역을 바다라고 한다.",
+   "detail": "달 표면은 지형에 따라 밝기와 모양이 달라요. 어둡고 평평한 지역은 '바다', 밝고 울퉁불퉁한 지역은 '고지'로 구별해요(p.239).",
+   "tip": "어둡고 평평 = 바다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "달의 지형",
+     "text": "천체 망원경으로 달을 보면 밝고 울퉁불퉁한 지역과 어둡고 평평한 지역을 자세히 관측할 수 있어요(교과서 p.239)."
+    }
+   ]
+  },
+  {
+   "id": "u7-T01-b",
+   "slot": "T01",
+   "type": "short",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "달의 지형(바다·운석 충돌구)",
+   "source": "교과서 p.239",
+   "question": "천체 망원경으로 달을 관측하면 운석이 충돌하여 움푹 파인 원형의 지형을 볼 수 있다. 이 지형을 무엇이라고 하는지 쓰시오.",
+   "answer": [
+    "운석 충돌구",
+    "운석충돌구"
+   ],
+   "answerHint": "다섯 글자로 쓰시오.",
+   "commonMistakes": [
+    {
+     "answer": "바다",
+     "why": "바다는 어둡고 평평한 지역이라 구덩이 모양 지형의 이름이 아니에요."
+    },
+    {
+     "answer": "고지",
+     "why": "고지는 밝고 울퉁불퉁한 지역이라 구덩이 모양 지형의 이름이 아니에요."
+    }
+   ],
+   "explanation": "달 표면에 운석이 충돌하여 생긴 움푹 파인 지형을 운석 충돌구라고 한다.",
+   "detail": "맨눈으로는 볼 수 없던 달의 지형을 망원경으로 볼 수 있어요. 운석이 부딪혀 움푹 파인 원형 지형이 운석 충돌구예요(p.239).",
+   "tip": "운석이 부딪혀 생긴 구덩이 = 운석 충돌구.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "운석 충돌구",
+     "text": "천체 망원경으로 달을 관측하면 맨눈으로 볼 수 없었던 운석 충돌구를 볼 수 있어요(교과서 p.239)."
+    }
+   ]
+  },
+  {
+   "id": "u7-S01-a",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 8,
+   "concept": "행성의 특징(대기와 표면 온도)",
+   "source": "교과서 p.230",
+   "question": "다음은 지구형 행성에 대한 설명이다.\n(가) 낮과 밤의 표면 온도 차이가 약 600 ℃나 된다.\n(1) (가)에 해당하는 행성의 이름을 쓰시오. (2점)\n(2) (가) 행성의 낮과 밤의 표면 온도 차이가 매우 큰 까닭을 ‘대기’를 사용하여 서술하시오. (6점)",
+   "answerHint": "(2) ‘대기’를 반드시 사용할 것.",
+   "modelAnswer": "(1) 수성 (2) 대기가 거의 없기 때문이다.",
+   "explanation": "모범 답안: (1) 수성 (2) 대기가 거의 없기 때문이다.",
+   "rubric": [
+    {
+     "criterion": "(1) 수성이라고 씀",
+     "points": 2,
+     "tip": "(가)의 설명은 수성의 특징이에요. 수성 = 낮밤 온도 차 약 600 ℃."
+    },
+    {
+     "criterion": "(2) 조건 낱말 ‘대기’를 사용함",
+     "points": 2,
+     "tip": "‘대기’라는 낱말을 넣어 문장을 써야 해요."
+    },
+    {
+     "criterion": "(2) 대기가 거의 없다(없기 때문)는 내용을 씀",
+     "points": 4,
+     "tip": "'대기가 거의 없어서'가 핵심이에요. (혹은 '대기가 매우 희박해서')도 인정해요."
+    }
+   ],
+   "detail": "수성은 대기가 거의 없어 낮과 밤의 표면 온도 차이가 약 600 ℃나 돼요.\n채점: 조건 낱말 항목과 내용 항목을 따로 채점해요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.",
+   "tip": "행성 이름 + 까닭(대기)을 짝으로 외워요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "수성의 특징",
+     "text": "수성은 대기가 거의 없어 낮과 밤의 표면 온도 차이가 약 600 ℃나 돼요(교과서 p.230)."
+    }
+   ]
+  },
+  {
+   "id": "u7-S01-b",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 8,
+   "concept": "행성의 특징(대기와 표면 온도)",
+   "source": "교과서 p.230",
+   "question": "다음은 지구형 행성에 대한 설명이다.\n(나) 크기와 질량이 지구와 비슷하지만 표면 온도가 매우 높다.\n(1) (나)에 해당하는 행성의 이름을 쓰시오. (2점)\n(2) (나) 행성의 표면 온도가 매우 높은 까닭을 ‘이산화 탄소’를 사용하여 서술하시오. (6점)",
+   "answerHint": "(2) ‘이산화 탄소’를 반드시 사용할 것.",
+   "modelAnswer": "(1) 금성 (2) 이산화 탄소로 이루어진 두꺼운 대기가 있기 때문이다.",
+   "explanation": "모범 답안: (1) 금성 (2) 이산화 탄소로 이루어진 두꺼운 대기가 있기 때문이다.",
+   "rubric": [
+    {
+     "criterion": "(1) 금성이라고 씀",
+     "points": 2,
+     "tip": "(나)의 설명은 금성의 특징이에요."
+    },
+    {
+     "criterion": "(2) 조건 낱말 ‘이산화 탄소’를 사용함",
+     "points": 2,
+     "tip": "‘이산화 탄소’(혹은 이산화탄소)를 넣어야 해요."
+    },
+    {
+     "criterion": "(2) 두꺼운 대기가 있다는 내용을 씀",
+     "points": 4,
+     "tip": "'두꺼운 대기'가 핵심이에요. (혹은 '대기가 매우 두껍다')도 인정해요."
+    }
+   ],
+   "detail": "금성에는 이산화 탄소로 이루어진 두꺼운 대기가 있고 표면 온도가 매우 높아요.\n채점: 조건 낱말 항목과 내용 항목을 따로 채점해요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.",
+   "tip": "금성 = 두꺼운 이산화 탄소 대기.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "금성의 특징",
+     "text": "금성은 크기와 질량이 지구와 비슷해요. 이산화 탄소로 이루어진 두꺼운 대기가 있고 표면 온도가 매우 높아요(교과서 p.230)."
+    }
+   ]
+  },
+  {
+   "id": "u7-S02-a",
+   "slot": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "천체 관측 안전 수칙",
+   "source": "교과서 p.239",
+   "question": "천체 망원경으로 태양을 관측할 때 반드시 사용해야 하는 것을 한 가지 쓰고, 그 까닭을 ‘실명’을 사용하여 서술하시오. (4점)",
+   "answerHint": "‘실명’을 반드시 사용할 것.",
+   "modelAnswer": "투영판(혹은 태양 필터)을 사용해야 한다. 망원경으로 태양을 직접 보면 실명할 수 있기 때문이다.",
+   "explanation": "모범 답안: 투영판(혹은 태양 필터)을 사용해야 한다. 망원경으로 태양을 직접 보면 실명할 수 있기 때문이다.",
+   "rubric": [
+    {
+     "criterion": "투영판 또는 태양 필터를 씀",
+     "points": 2,
+     "tip": "태양 관측에는 투영판이나 태양 필터가 필요해요."
+    },
+    {
+     "criterion": "조건 낱말 ‘실명’을 사용함",
+     "points": 1,
+     "tip": "‘실명’이라는 낱말(혹은 ‘실명할’, ‘실명할 수’ 같은 활용형)을 넣어요."
+    },
+    {
+     "criterion": "망원경으로 태양을 직접 보면 위험하다는 까닭을 씀",
+     "points": 1,
+     "tip": "직접 보면 눈을 크게 다칠 수 있다는 내용(혹은 ‘위험하다’)이 있어야 해요."
+    }
+   ],
+   "detail": "태양을 천체 망원경으로 직접 보면 위험하므로 반드시 투영판이나 태양 필터를 사용해야 해요(p.239).\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.",
+   "tip": "방법 + 까닭을 한 문장씩.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "태양 관측 안전",
+     "text": "태양을 천체 망원경으로 직접 보면 위험해요. 반드시 투영판이나 태양 필터를 사용해서 관측해야 해요(교과서 p.239)."
+    }
+   ]
+  },
+  {
+   "id": "u7-S02-b",
+   "slot": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "천체 관측 안전 수칙",
+   "source": "교과서 p.238",
+   "question": "밤에 천체 망원경으로 천체를 관측할 때 안전을 위해 주의해야 할 사항을 두 가지 서술하시오. (4점)",
+   "answerHint": "서로 다른 두 가지를 쓸 것.",
+   "modelAnswer": "반드시 보호자와 함께 관측한다. 삼각대에 걸려 넘어지거나 사물에 부딪치지 않도록 주의한다.",
+   "explanation": "모범 답안: 반드시 보호자와 함께 관측한다. 삼각대에 걸려 넘어지거나 사물에 부딪치지 않도록 주의한다.",
+   "rubric": [
+    {
+     "criterion": "주의 사항 한 가지를 옳게 씀",
+     "points": 2,
+     "tip": "예: 보호자와 함께 관측한다, 따뜻한 옷을 입는다 등."
+    },
+    {
+     "criterion": "서로 다른 두 번째 주의 사항을 옳게 씀",
+     "points": 2,
+     "tip": "예: 삼각대에 걸려 넘어지지 않게 주의한다, 사물에 부딪치지 않게 한다 등. 같은 내용을 반복하면 1개만 인정해요."
+    }
+   ],
+   "detail": "야간 관측 때는 보호자와 함께하고 따뜻한 옷을 준비하며, 삼각대에 걸려 넘어지거나 사물에 부딪치지 않도록 주의해요(p.238).\n채점 안내: 항목마다 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.",
+   "tip": "보호자 동행 + 넘어짐 주의.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "야간 관측 주의 사항",
+     "text": "야간 관측 시에는 반드시 보호자와 함께하고 따뜻한 옷을 준비해요. 삼각대에 걸려 넘어지거나 사물에 부딪치지 않도록 주의해요(교과서 p.238)."
+    }
+   ]
+  },
+  {
+   "id": "u7-S03-a",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 8,
+   "concept": "태양에서 행성까지의 거리 자료 해석",
+   "source": "교과서 p.230",
+   "question": "표는 태양에서 각 행성까지의 상대적인 거리를 나타낸 것이다.\n(1) 해왕성은 태양에서 지구까지 거리의 몇 배인지 쓰시오. (2점)\n(2) 화성과 목성 사이의 거리 차이는 지구를 1.0으로 한 값으로 얼마인지 쓰시오. (2점)\n(3) 태양에서 멀어질수록 이웃한 행성 사이의 간격이 어떻게 달라지는지 ‘간격’을 사용하여 서술하시오. (4점)",
+   "answerHint": "(3) ‘간격’을 반드시 사용할 것.",
+   "modelAnswer": "(1) 30.1배(혹은 약 30배) (2) 3.7 (3) 태양에서 멀어질수록 이웃한 행성 사이의 간격이 점점 넓어진다(혹은 커진다).",
+   "explanation": "모범 답안: (1) 30.1배(혹은 약 30배) (2) 3.7 (3) 태양에서 멀어질수록 이웃한 행성 사이의 간격이 점점 넓어진다(혹은 커진다).",
+   "rubric": [
+    {
+     "criterion": "(1) 30.1배(혹은 약 30배)라고 씀",
+     "points": 2,
+     "tip": "해왕성의 값 30.1을 지구의 값 1.0으로 나누면 30.1이에요."
+    },
+    {
+     "criterion": "(2) 3.7이라고 씀",
+     "points": 2,
+     "tip": "목성 5.2에서 화성 1.5를 빼면 3.7이에요."
+    },
+    {
+     "criterion": "(3) 조건 낱말 ‘간격’을 사용함",
+     "points": 1,
+     "tip": "‘간격’(혹은 ‘간격이’, ‘간격은’ 같은 활용형)을 넣어요."
+    },
+    {
+     "criterion": "(3) 멀어질수록 간격이 점점 커진다는 내용을 씀",
+     "points": 3,
+     "tip": "이웃한 행성 사이의 차이가 0.3, 0.3, 0.5, 3.7 …처럼 커지므로 ‘점점 넓어진다(혹은 커진다)’고 써요. ‘더 멀리 떨어져 있다’만 쓰면 부분 점수예요."
+    }
+   ],
+   "detail": "해왕성은 30.1÷1.0=30.1배, 화성과 목성의 거리 차이는 5.2−1.5=3.7이에요.\n이웃한 행성 사이의 거리 차이를 차례로 구하면 0.3, 0.3, 0.5, 3.7, 4.3, 9.7, 10.9로 점점 커져요.\n채점: 조건 낱말 항목과 내용 항목을 따로 채점해요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.",
+   "tip": "표에서 이웃한 값의 차이를 차례로 구해 보면 규칙이 보여요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "이웃한 행성 사이의 거리 차이",
+     "head": [
+      "이웃한 행성",
+      "거리 차이"
+     ],
+     "rows": [
+      [
+       "수성~금성",
+       "0.3"
+      ],
+      [
+       "금성~지구",
+       "0.3"
+      ],
+      [
+       "지구~화성",
+       "0.5"
+      ],
+      [
+       "화성~목성",
+       "3.7"
+      ],
+      [
+       "목성~토성",
+       "4.3"
+      ],
+      [
+       "토성~천왕성",
+       "9.7"
+      ],
+      [
+       "천왕성~해왕성",
+       "10.9"
+      ]
+     ]
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 302 236' font-family='sans-serif' font-size='12'><rect x='1' y='1' width='80' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='41.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>행성</text><rect x='81' y='1' width='220' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='191.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>태양까지의 상대적인 거리(지구=1.0)</text><rect x='1' y='27' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>수성</text><rect x='81' y='27' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>0.4</text><rect x='1' y='53' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>금성</text><rect x='81' y='53' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>0.7</text><rect x='1' y='79' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>지구</text><rect x='81' y='79' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>1.0</text><rect x='1' y='105' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>화성</text><rect x='81' y='105' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>1.5</text><rect x='1' y='131' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='147.9' font-size='12' text-anchor='middle' fill='#222'>목성</text><rect x='81' y='131' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='147.9' font-size='12' text-anchor='middle' fill='#222'>5.2</text><rect x='1' y='157' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='173.9' font-size='12' text-anchor='middle' fill='#222'>토성</text><rect x='81' y='157' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='173.9' font-size='12' text-anchor='middle' fill='#222'>9.5</text><rect x='1' y='183' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='199.9' font-size='12' text-anchor='middle' fill='#222'>천왕성</text><rect x='81' y='183' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='199.9' font-size='12' text-anchor='middle' fill='#222'>19.2</text><rect x='1' y='209' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='225.9' font-size='12' text-anchor='middle' fill='#222'>해왕성</text><rect x='81' y='209' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='225.9' font-size='12' text-anchor='middle' fill='#222'>30.1</text></svg>",
+    "caption": "태양에서 행성까지의 상대적인 거리(지구=1.0)"
+   }
+  },
+  {
+   "id": "u7-S03-b",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 8,
+   "concept": "태양에서 행성까지의 거리 자료 해석",
+   "source": "교과서 p.230",
+   "question": "표는 태양에서 각 행성까지의 상대적인 거리를 나타낸 것이다.\n(1) 토성은 태양에서 지구까지 거리의 몇 배인지 쓰시오. (2점)\n(2) 태양까지의 거리가 지구의 5배 이상인 행성을 모두 쓰시오. (2점)\n(3) 수성과 금성 사이의 간격과 천왕성과 해왕성 사이의 간격을 비교하여 ‘간격’을 사용하여 서술하시오. (4점)",
+   "answerHint": "(3) ‘간격’을 반드시 사용할 것.",
+   "modelAnswer": "(1) 9.5배 (2) 목성, 토성, 천왕성, 해왕성 (3) 수성과 금성 사이의 간격(0.3)은 천왕성과 해왕성 사이의 간격(10.9)보다 훨씬 좁다.",
+   "explanation": "모범 답안: (1) 9.5배 (2) 목성, 토성, 천왕성, 해왕성 (3) 수성과 금성 사이의 간격(0.3)은 천왕성과 해왕성 사이의 간격(10.9)보다 훨씬 좁다.",
+   "rubric": [
+    {
+     "criterion": "(1) 9.5배(혹은 약 9.5배)라고 씀",
+     "points": 2,
+     "tip": "토성의 값 9.5를 지구의 값 1.0으로 나누면 9.5예요."
+    },
+    {
+     "criterion": "(2) 목성, 토성, 천왕성, 해왕성을 모두 씀",
+     "points": 2,
+     "tip": "5.0 이상인 값은 5.2, 9.5, 19.2, 30.1이에요. 하나라도 빠지면 0점이에요."
+    },
+    {
+     "criterion": "(3) 조건 낱말 ‘간격’을 사용함",
+     "points": 1,
+     "tip": "‘간격’(혹은 ‘간격이’, ‘간격은’ 같은 활용형)을 넣어요."
+    },
+    {
+     "criterion": "(3) 천왕성~해왕성 간격(10.9)이 수성~금성 간격(0.3)보다 훨씬 넓다는 내용을 씀",
+     "points": 3,
+     "tip": "두 간격의 값(0.3과 10.9)을 비교해 ‘바깥쪽이 훨씬 넓다’고 써요. 값 하나만 쓰면 부분 점수예요."
+    }
+   ],
+   "detail": "토성은 9.5÷1.0=9.5배이고, 5.0 이상인 값은 목성 5.2, 토성 9.5, 천왕성 19.2, 해왕성 30.1이에요.\n수성~금성은 0.7−0.4=0.3, 천왕성~해왕성은 30.1−19.2=10.9이므로 바깥쪽 간격이 훨씬 넓어요.\n채점: 조건 낱말 항목과 내용 항목을 따로 채점해요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.",
+   "tip": "표에서 필요한 두 값의 차이를 먼저 계산해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "두 간격의 계산",
+     "head": [
+      "구간",
+      "계산",
+      "간격"
+     ],
+     "rows": [
+      [
+       "수성~금성",
+       "0.7−0.4",
+       "0.3"
+      ],
+      [
+       "천왕성~해왕성",
+       "30.1−19.2",
+       "10.9"
+      ]
+     ]
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 302 236' font-family='sans-serif' font-size='12'><rect x='1' y='1' width='80' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='41.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>행성</text><rect x='81' y='1' width='220' height='26' fill='#e8eef7' stroke='#333' stroke-width='1.2' /><text x='191.0' y='17.900000000000002' font-size='12' text-anchor='middle' fill='#222' font-weight='700'>태양까지의 상대적인 거리(지구=1.0)</text><rect x='1' y='27' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>수성</text><rect x='81' y='27' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='43.900000000000006' font-size='12' text-anchor='middle' fill='#222'>0.4</text><rect x='1' y='53' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>금성</text><rect x='81' y='53' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='69.9' font-size='12' text-anchor='middle' fill='#222'>0.7</text><rect x='1' y='79' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>지구</text><rect x='81' y='79' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='95.9' font-size='12' text-anchor='middle' fill='#222'>1.0</text><rect x='1' y='105' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>화성</text><rect x='81' y='105' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='121.9' font-size='12' text-anchor='middle' fill='#222'>1.5</text><rect x='1' y='131' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='147.9' font-size='12' text-anchor='middle' fill='#222'>목성</text><rect x='81' y='131' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='147.9' font-size='12' text-anchor='middle' fill='#222'>5.2</text><rect x='1' y='157' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='173.9' font-size='12' text-anchor='middle' fill='#222'>토성</text><rect x='81' y='157' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='173.9' font-size='12' text-anchor='middle' fill='#222'>9.5</text><rect x='1' y='183' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='199.9' font-size='12' text-anchor='middle' fill='#222'>천왕성</text><rect x='81' y='183' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='199.9' font-size='12' text-anchor='middle' fill='#222'>19.2</text><rect x='1' y='209' width='80' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='41.0' y='225.9' font-size='12' text-anchor='middle' fill='#222'>해왕성</text><rect x='81' y='209' width='220' height='26' fill='#fff' stroke='#333' stroke-width='1.2' /><text x='191.0' y='225.9' font-size='12' text-anchor='middle' fill='#222'>30.1</text></svg>",
+    "caption": "태양에서 행성까지의 상대적인 거리(지구=1.0)"
+   }
+  }
+ ]
+}

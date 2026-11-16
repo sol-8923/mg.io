@@ -1,0 +1,2134 @@
+{
+ "questions": [
+  {
+   "id": "u4-Q01-a",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "확산과 증발 사례 구분",
+   "source": "교과서 p.118~119",
+   "question": "다음 중 확산 현상의 예로 가장 적절한 것은?",
+   "choices": [
+    "물에 떨어뜨린 잉크가 물 전체로 퍼진다.",
+    "젖은 빨래가 시간이 지나면서 서서히 마른다.",
+    "어항 속 물이 시간이 지나면서 조금씩 줄어든다.",
+    "거름종이에 뿌린 손 소독제의 흔적이 서서히 사라진다.",
+    "가뭄에 논바닥의 물이 말라 갈라진다."
+   ],
+   "answer": 1,
+   "explanation": "잉크 입자가 스스로 운동하여 주변으로 퍼져 나가는 것은 확산이다.",
+   "choiceExplanations": [
+    "정답. 잉크 입자가 스스로 운동하여 주변으로 퍼져 나가는 것은 확산이다.",
+    "빨래의 물이 기체가 되어 날아가는 증발이에요. 입자가 퍼져 나가는 확산과 구분해야 해요.",
+    "액체가 기체로 변해 줄어드는 증발 현상이에요.",
+    "액체 표면에서 입자가 떨어져 나가는 증발이에요.",
+    "물이 기체로 변하는 증발이에요."
+   ],
+   "detail": "개념: 물질을 이루는 입자가 스스로 운동하여 주변으로 퍼져 나가는 현상을 확산이라고 해요.\n적용: 잉크(색소) 입자와 물 입자가 스스로 끊임없이 운동하여 서로 섞이므로 저어 주지 않아도 퍼져요.\n나머지는 모두 액체가 기체로 변해 사라지는 증발 현상이에요.\n결론: 확산 현상은 잉크가 퍼지는 것이에요.",
+   "tip": "퍼져 나가면 확산, 액체가 기체가 되어 줄어들면 증발.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "확산의 뜻",
+     "text": "물질을 이루는 입자가 스스로 운동하여 주변으로 퍼져 나가는 현상이에요. 차가 우러나거나 색소가 물에 퍼지는 것이 그 예예요(교과서 p.118)."
+    }
+   ]
+  },
+  {
+   "id": "u4-Q01-b",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "확산과 증발 사례 구분",
+   "source": "교과서 p.118~119",
+   "question": "다음 중 증발 현상으로 설명할 수 있는 것은?",
+   "choices": [
+    "파스를 붙인 사람 주변에서 파스 냄새가 난다.",
+    "어항 속 물이 시간이 지나면서 조금씩 줄어든다.",
+    "홍차 티백을 넣은 물에 차가 우러나 고르게 퍼진다.",
+    "식초가 냉면 전체에 퍼진다.",
+    "꽃향기를 멀리서도 맡을 수 있다."
+   ],
+   "answer": 2,
+   "explanation": "물 입자가 액체 표면에서 떨어져 나와 기체가 되는 증발로 어항의 물이 줄어든다.",
+   "choiceExplanations": [
+    "냄새 입자가 퍼져 나가는 확산 현상이에요.",
+    "정답. 물 입자가 액체 표면에서 떨어져 나와 기체가 되는 증발로 어항의 물이 줄어든다.",
+    "차 입자가 물 전체로 퍼지는 확산이에요.",
+    "식초 입자가 퍼져 나가는 확산이에요.",
+    "꽃향기 입자가 공기 중으로 퍼져 나가는 확산이에요."
+   ],
+   "detail": "개념: 액체를 이루는 입자가 스스로 운동하여 액체 표면에서 떨어져 나와 기체로 변하는 현상이 증발이에요.\n적용: 어항 속 물 입자가 기체로 변해 날아가므로 물이 줄어요.\n나머지는 입자가 주변으로 퍼져 나가는 확산이에요.\n결론: 증발 현상은 어항의 물이 줄어드는 것이에요.",
+   "tip": "물(액체)이 줄어들거나 마르면 증발, 냄새·색이 퍼지면 확산.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "증발의 뜻",
+     "text": "액체를 이루는 입자가 스스로 운동하여 액체 표면에서 떨어져 나와 기체로 변하는 현상이에요. 어항 속 물이 줄어드는 것이 그 예예요(교과서 p.118)."
+    }
+   ]
+  },
+  {
+   "id": "u4-Q02-a",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "확산과 증발의 정의",
+   "source": "교과서 p.118~119, p.129",
+   "question": "확산과 증발에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ, ㄴ",
+    "ㄴ",
+    "ㄱ",
+    "ㄱ, ㄷ",
+    "ㄴ, ㄷ"
+   ],
+   "answer": 3,
+   "explanation": "옳은 설명은 ㄱ이다.",
+   "choiceExplanations": [
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 증발은 액체 표면에서 입자가 떨어져 나와 기체로 변하는 현상이에요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 증발은 액체 표면에서 입자가 떨어져 나와 기체로 변하는 현상이에요. ㄱ도 옳은 설명인데 빠졌어요. 차 입자가 물 전체로 퍼져 나가는 확산의 예예요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ).",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 파스 냄새가 퍼지는 것처럼 확산은 기체 상태에서도 일어나요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 증발은 액체 표면에서 입자가 떨어져 나와 기체로 변하는 현상이에요. ㄷ은 옳지 않은 설명인데 골랐어요. 파스 냄새가 퍼지는 것처럼 확산은 기체 상태에서도 일어나요. ㄱ도 옳은 설명인데 빠졌어요. 차 입자가 물 전체로 퍼져 나가는 확산의 예예요."
+   ],
+   "detail": "확산과 증발의 뜻과 일어나는 곳을 확인해요.\n· ㄱ : 옳아요. 차 입자가 물 전체로 퍼져 나가는 확산의 예예요.\n· ㄴ : 옳지 않아요. 증발은 액체 표면에서 입자가 떨어져 나와 기체로 변하는 현상이에요.\n· ㄷ : 옳지 않아요. 파스 냄새가 퍼지는 것처럼 확산은 기체 상태에서도 일어나요.\n→ 옳은 설명은 ㄱ이에요.",
+   "tip": "확산은 액체·기체 모두에서, 증발은 액체 표면에서 일어난다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "확산과 증발의 뜻",
+     "text": "확산은 물질을 이루는 입자가 주변으로 퍼져 나가는 현상이고 액체와 기체에서 모두 일어나요. 증발은 액체 표면의 입자가 기체로 변하는 현상이에요(교과서 p.118)."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 차가 물에 우러나 고르게 퍼지는 것은 확산에 해당한다.\nㄴ. 증발은 액체 내부의 입자가 기체로 변하는 현상이다.\nㄷ. 확산은 기체 상태에서는 일어나지 않고 액체 상태에서만 일어난다."
+  },
+  {
+   "id": "u4-Q02-b",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "확산과 증발의 정의",
+   "source": "교과서 p.118~119, p.129",
+   "question": "확산과 증발에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄴ",
+    "ㄷ",
+    "ㄱ, ㄴ",
+    "ㄱ, ㄷ"
+   ],
+   "answer": 5,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다.",
+   "choiceExplanations": [
+    "ㄷ도 옳은 설명인데 빠졌어요. 증발은 액체가 기체로 변하는 기화의 한 예예요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 손 소독제가 액체에서 기체로 변해 사라지는 증발이에요. ㄱ도 옳은 설명인데 빠졌어요. 파스 냄새 입자가 공기 중으로 퍼져 나가는 확산이에요. ㄷ도 옳은 설명인데 빠졌어요. 증발은 액체가 기체로 변하는 기화의 한 예예요.",
+    "ㄱ도 옳은 설명인데 빠졌어요. 파스 냄새 입자가 공기 중으로 퍼져 나가는 확산이에요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 손 소독제가 액체에서 기체로 변해 사라지는 증발이에요. ㄷ도 옳은 설명인데 빠졌어요. 증발은 액체가 기체로 변하는 기화의 한 예예요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄷ)."
+   ],
+   "detail": "각 현상이 퍼져 나가는 것인지, 액체가 기체로 변하는 것인지 먼저 구분해요.\n· ㄱ : 옳아요. 파스 냄새 입자가 공기 중으로 퍼져 나가는 확산이에요.\n· ㄴ : 옳지 않아요. 손 소독제가 액체에서 기체로 변해 사라지는 증발이에요.\n· ㄷ : 옳아요. 증발은 액체가 기체로 변하는 기화의 한 예예요.\n→ 옳은 설명은 ㄱ, ㄷ이에요.",
+   "tip": "냄새·색이 퍼지면 확산, 액체가 기체로 변해 사라지면 증발(기화).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "증발과 기화",
+     "text": "액체가 기체로 변하는 상태 변화가 기화이고, 증발은 기화에 해당해요(교과서 p.129). 냄새가 퍼져 나가는 것은 확산이에요(교과서 p.118)."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 파스를 붙인 사람 주변에서 파스 냄새가 나는 것은 확산에 해당한다.\nㄴ. 손 소독제를 바른 손이 서서히 마르는 것은 확산에 해당한다.\nㄷ. 증발은 기화에 해당한다."
+  },
+  {
+   "id": "u4-Q04-a",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "입자 모형으로 본 세 가지 상태",
+   "source": "교과서 p.121~122",
+   "question": "그림은 물질의 세 가지 상태를 입자 모형으로 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄱ, ㄴ, ㄹ",
+    "ㄴ, ㄷ",
+    "ㄷ, ㄹ",
+    "ㄱ, ㄴ"
+   ],
+   "answer": 5,
+   "explanation": "옳은 설명은 ㄱ, ㄴ이다.",
+   "choiceExplanations": [
+    "ㄴ도 옳은 설명인데 빠졌어요. (가)는 입자 사이의 거리가 매우 먼 기체예요.",
+    "ㄹ은 옳지 않은 설명인데 골랐어요. 기체인 (가)의 입자 운동이 가장 활발해요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 이 설명은 고체인 (나)의 특징이에요. (다)는 액체로 고체보다 자유롭게 움직여요. ㄱ도 옳은 설명인데 빠졌어요. (나)는 입자가 규칙적으로 배열된 고체예요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 이 설명은 고체인 (나)의 특징이에요. (다)는 액체로 고체보다 자유롭게 움직여요. ㄹ은 옳지 않은 설명인데 골랐어요. 기체인 (가)의 입자 운동이 가장 활발해요. ㄱ도 옳은 설명인데 빠졌어요. (나)는 입자가 규칙적으로 배열된 고체예요. ㄴ도 옳은 설명인데 빠졌어요. (가)는 입자 사이의 거리가 매우 먼 기체예요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄴ)."
+   ],
+   "detail": "그림에서 입자 사이 거리와 배열을 보고 (가)=기체, (나)=고체, (다)=액체를 먼저 정해요.\n· ㄱ : 옳아요. (나)는 입자가 규칙적으로 배열된 고체예요.\n· ㄴ : 옳아요. (가)는 입자 사이의 거리가 매우 먼 기체예요.\n· ㄷ : 옳지 않아요. 이 설명은 고체인 (나)의 특징이에요. (다)는 액체로 고체보다 자유롭게 움직여요.\n· ㄹ : 옳지 않아요. 기체인 (가)의 입자 운동이 가장 활발해요.\n→ 옳은 설명은 ㄱ, ㄴ이에요.",
+   "tip": "입자 배열: 고체(규칙)<액체<기체(매우 불규칙). 입자 사이 거리: 고체<액체<기체.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "상태별 입자 특징",
+     "head": [
+      "구분",
+      "입자 사이 거리",
+      "입자 배열",
+      "입자 운동"
+     ],
+     "rows": [
+      [
+       "고체",
+       "매우 가깝다",
+       "규칙적",
+       "제자리 진동"
+      ],
+      [
+       "액체",
+       "고체보다 조금 멀다",
+       "고체보다 불규칙",
+       "자유롭게 움직임"
+      ],
+      [
+       "기체",
+       "매우 멀다",
+       "매우 불규칙",
+       "매우 활발"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 입자 배열이 가장 규칙적인 것은 (나)이다.\nㄴ. 입자 사이의 거리가 가장 먼 것은 (가)이다.\nㄷ. (다)의 입자는 제자리에서 진동할 뿐 자유롭게 움직일 수 없다.\nㄹ. 입자의 움직임은 (나)가 (가)보다 활발하다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 124' width='342' height='124' font-family='sans-serif'><circle cx='57' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='37.5' cy='40.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='37.5' y1='40.6' x2='45.5' y2='34.6' stroke='#c22' stroke-width='1.3'/><circle cx='68.6' cy='22.4' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='68.6' y1='22.4' x2='76.6' y2='16.4' stroke='#c22' stroke-width='1.3'/><circle cx='57.0' cy='82.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='57.0' y1='82.2' x2='65.0' y2='76.2' stroke='#c22' stroke-width='1.3'/><circle cx='87.2' cy='59.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='87.2' y1='59.0' x2='95.2' y2='53.0' stroke='#c22' stroke-width='1.3'/><text x='57' y='114' font-size='13' text-anchor='middle' fill='#222'>(가)</text><circle cx='171' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='136.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='148.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='148.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='148.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='148.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='148.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='159.5' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='159.5' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='159.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='159.5' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='159.5' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='171.0' cy='15.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='171.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='171.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='171.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='171.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='171.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='171.0' cy='84.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='182.5' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='182.5' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='182.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='182.5' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='182.5' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='194.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='194.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='194.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='194.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='194.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='205.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><text x='171' y='114' font-size='13' text-anchor='middle' fill='#222'>(나)</text><circle cx='285' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='264.0' cy='29.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='294.2' cy='18.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='307.8' cy='54.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='310.7' cy='40.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='294.3' cy='43.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='268.4' cy='53.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='260.2' cy='43.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='279.0' cy='82.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='276.0' cy='41.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='289.0' cy='65.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='294.2' cy='81.7' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='272.8' cy='18.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='275.1' cy='66.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='307.9' cy='68.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='260.8' cy='73.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='255.1' cy='57.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><text x='285' y='114' font-size='13' text-anchor='middle' fill='#222'>(다)</text></svg>",
+    "caption": "물질의 세 가지 상태의 입자 모형"
+   }
+  },
+  {
+   "id": "u4-Q04-b",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "입자 모형으로 본 세 가지 상태",
+   "source": "교과서 p.121~122",
+   "question": "그림은 물질의 세 가지 상태를 입자 모형으로 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄱ, ㄷ",
+    "ㄴ, ㄷ",
+    "ㄴ, ㄹ",
+    "ㄱ, ㄴ, ㄹ"
+   ],
+   "answer": 2,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다.",
+   "choiceExplanations": [
+    "ㄷ도 옳은 설명인데 빠졌어요. 기체인 (나)의 입자가 매우 활발하게 움직여요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄷ).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (다)는 고체로 입자 배열이 가장 규칙적이에요. ㄱ도 옳은 설명인데 빠졌어요. (가)는 액체, (나)는 기체예요. 액체의 입자 사이 거리가 기체보다 훨씬 가까워요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (다)는 고체로 입자 배열이 가장 규칙적이에요. ㄹ은 옳지 않은 설명인데 골랐어요. 고체인 (다)는 액체인 (가)보다 입자 사이의 거리가 가까워요. ㄱ도 옳은 설명인데 빠졌어요. (가)는 액체, (나)는 기체예요. 액체의 입자 사이 거리가 기체보다 훨씬 가까워요. ㄷ도 옳은 설명인데 빠졌어요. 기체인 (나)의 입자가 매우 활발하게 움직여요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (다)는 고체로 입자 배열이 가장 규칙적이에요. ㄹ은 옳지 않은 설명인데 골랐어요. 고체인 (다)는 액체인 (가)보다 입자 사이의 거리가 가까워요. ㄷ도 옳은 설명인데 빠졌어요. 기체인 (나)의 입자가 매우 활발하게 움직여요."
+   ],
+   "detail": "(가)=액체, (나)=기체, (다)=고체임을 입자 배열로 먼저 알아내요.\n· ㄱ : 옳아요. (가)는 액체, (나)는 기체예요. 액체의 입자 사이 거리가 기체보다 훨씬 가까워요.\n· ㄴ : 옳지 않아요. (다)는 고체로 입자 배열이 가장 규칙적이에요.\n· ㄷ : 옳아요. 기체인 (나)의 입자가 매우 활발하게 움직여요.\n· ㄹ : 옳지 않아요. 고체인 (다)는 액체인 (가)보다 입자 사이의 거리가 가까워요.\n→ 옳은 설명은 ㄱ, ㄷ이에요.",
+   "tip": "그림 문제는 먼저 각 모형이 어느 상태인지 정한 뒤 보기를 판단한다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "입자 모형 읽는 법",
+     "text": "입자가 빽빽하고 규칙적이면 고체, 빽빽하지만 불규칙하면 액체, 듬성듬성하고 매우 불규칙하면 기체예요(교과서 p.122)."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. (가)의 입자 사이의 거리는 (나)보다 가깝다.\nㄴ. (다)는 입자 배열이 가장 불규칙하다.\nㄷ. 입자의 움직임이 가장 활발한 것은 (나)이다.\nㄹ. (다)는 (가)보다 입자 사이의 거리가 멀다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 124' width='342' height='124' font-family='sans-serif'><circle cx='57' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='58.9' cy='75.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='38.9' cy='69.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='50.9' cy='43.8' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='88.0' cy='52.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='69.1' cy='29.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='36.0' cy='26.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='28.0' cy='45.8' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='55.1' cy='55.7' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='50.8' cy='18.7' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='26.1' cy='61.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='64.7' cy='42.7' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='67.4' cy='61.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='82.8' cy='66.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='81.7' cy='27.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='79.5' cy='41.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='71.4' cy='76.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><text x='57' y='114' font-size='13' text-anchor='middle' fill='#222'>(가)</text><circle cx='171' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='147.4' cy='57.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='147.4' y1='57.3' x2='155.4' y2='51.3' stroke='#c22' stroke-width='1.3'/><circle cx='191.0' cy='39.7' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='191.0' y1='39.7' x2='199.0' y2='33.7' stroke='#c22' stroke-width='1.3'/><circle cx='180.4' cy='71.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='180.4' y1='71.6' x2='188.4' y2='65.6' stroke='#c22' stroke-width='1.3'/><circle cx='161.2' cy='19.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='161.2' y1='19.1' x2='169.2' y2='13.1' stroke='#c22' stroke-width='1.3'/><text x='171' y='114' font-size='13' text-anchor='middle' fill='#222'>(나)</text><circle cx='285' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='250.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='262.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='262.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='262.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='262.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='262.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='273.5' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='273.5' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='273.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='273.5' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='273.5' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='285.0' cy='15.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='285.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='285.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='285.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='285.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='285.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='285.0' cy='84.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='296.5' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='296.5' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='296.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='296.5' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='296.5' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='308.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='308.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='308.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='308.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='308.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='319.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><text x='285' y='114' font-size='13' text-anchor='middle' fill='#222'>(다)</text></svg>",
+    "caption": "물질의 세 가지 상태의 입자 모형"
+   }
+  },
+  {
+   "id": "u4-Q05-a",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "상태 변화의 이름",
+   "source": "교과서 p.129",
+   "question": "상태 변화의 이름과 그 예가 옳게 짝지어진 것은?",
+   "choices": [
+    "응고 - 호수의 물이 추위에 얼어붙는다.",
+    "기화 - 목욕탕 거울에 물방울이 맺힌다.",
+    "융해 - 젖은 수건이 햇볕에서 마른다.",
+    "승화 - 아이스크림이 햇볕에 녹아 흐른다.",
+    "액화 - 주전자의 물이 끓어 수증기가 된다."
+   ],
+   "answer": 1,
+   "explanation": "호수의 물이 얼어붙는 것은 액체가 고체로 변하는 응고이다.",
+   "choiceExplanations": [
+    "정답. 호수의 물이 얼어붙는 것은 액체가 고체로 변하는 응고이다.",
+    "수증기가 액체로 변하는 액화예요.",
+    "수건의 물이 기체로 변하는 기화예요.",
+    "고체가 액체로 변하는 융해예요.",
+    "액체가 기체로 변하는 기화예요."
+   ],
+   "detail": "개념: 액체 → 고체는 응고예요.\n적용: 호수의 물이 얼어 얼음이 되므로 응고예요.\n나머지 짝은 이름이 현상과 맞지 않아요.",
+   "tip": "액체→고체=응고, 고체→액체=융해, 액체→기체=기화, 기체→액체=액화.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "상태 변화의 방향",
+     "head": [
+      "이름",
+      "변화"
+     ],
+     "rows": [
+      [
+       "융해",
+       "고체 → 액체"
+      ],
+      [
+       "응고",
+       "액체 → 고체"
+      ],
+      [
+       "기화",
+       "액체 → 기체"
+      ],
+      [
+       "액화",
+       "기체 → 액체"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u4-Q05-b",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "상태 변화의 이름",
+   "source": "교과서 p.129",
+   "question": "다음 현상과 상태 변화의 이름을 옳게 연결한 것은?",
+   "choices": [
+    "응고 - 주전자의 물이 끓어 수증기가 된다.",
+    "기화 - 차가운 컵 표면에 물방울이 맺힌다.",
+    "액화 - 겨울철 나뭇잎에 서리가 생긴다.",
+    "융해 - 얼음 조각이 손바닥에서 녹는다.",
+    "승화 - 녹은 촛농이 식으면서 굳는다."
+   ],
+   "answer": 4,
+   "explanation": "얼음이 녹는 것은 고체가 액체로 변하는 융해이다.",
+   "choiceExplanations": [
+    "물이 끓어 수증기가 되는 것은 액체가 기체로 변하는 기화예요.",
+    "수증기가 액체가 되는 액화예요.",
+    "서리는 기체가 액체를 거치지 않고 고체가 되는 승화예요.",
+    "정답. 얼음이 녹는 것은 고체가 액체로 변하는 융해이다.",
+    "촛농이 굳는 것은 액체가 고체로 변하는 응고예요."
+   ],
+   "detail": "개념: 고체 → 액체는 융해예요.\n적용: 얼음 조각이 손바닥의 열로 녹아 물이 되므로 융해예요.\n나머지 짝은 이름이 현상과 맞지 않아요.",
+   "tip": "녹으면 융해, 굳으면 응고.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "상태 변화의 방향",
+     "head": [
+      "이름",
+      "변화"
+     ],
+     "rows": [
+      [
+       "융해",
+       "고체 → 액체"
+      ],
+      [
+       "승화",
+       "고체 ↔ 기체"
+      ],
+      [
+       "액화",
+       "기체 → 액체"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u4-Q06-a",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "상태 변화의 방향(순환도)",
+   "source": "교과서 p.129",
+   "question": "그림은 물질의 상태 변화를 화살표로 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄴ",
+    "ㄱ, ㄷ",
+    "ㄴ, ㄷ",
+    "ㄱ, ㄴ"
+   ],
+   "answer": 3,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다.",
+   "choiceExplanations": [
+    "ㄷ도 옳은 설명인데 빠졌어요. E와 F는 고체와 기체 사이에서 일어나는 변화로 모두 승화예요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. B는 기체에서 액체로 변하는 액화예요. ㄱ도 옳은 설명인데 빠졌어요. C는 고체에서 액체로의 변화이므로 융해예요. ㄷ도 옳은 설명인데 빠졌어요. E와 F는 고체와 기체 사이에서 일어나는 변화로 모두 승화예요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄷ).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. B는 기체에서 액체로 변하는 액화예요. ㄱ도 옳은 설명인데 빠졌어요. C는 고체에서 액체로의 변화이므로 융해예요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. B는 기체에서 액체로 변하는 액화예요. ㄷ도 옳은 설명인데 빠졌어요. E와 F는 고체와 기체 사이에서 일어나는 변화로 모두 승화예요."
+   ],
+   "detail": "화살표의 출발점과 도착점을 읽어 상태 변화의 이름을 정해요.\n· ㄱ : 옳아요. C는 고체에서 액체로의 변화이므로 융해예요.\n· ㄴ : 옳지 않아요. B는 기체에서 액체로 변하는 액화예요.\n· ㄷ : 옳아요. E와 F는 고체와 기체 사이에서 일어나는 변화로 모두 승화예요.\n→ 옳은 설명은 ㄱ, ㄷ이에요.",
+   "tip": "고체↔기체는 방향이 반대여도 모두 승화.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "상태 변화 이름",
+     "head": [
+      "변화",
+      "이름"
+     ],
+     "rows": [
+      [
+       "고체 → 액체",
+       "융해"
+      ],
+      [
+       "액체 → 기체",
+       "기화"
+      ],
+      [
+       "고체 ↔ 기체",
+       "승화"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. C는 융해이다.\nㄴ. B는 기화이다.\nㄷ. E와 F는 이름이 같은 상태 변화이다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 200' width='360' height='200' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><circle cx='60' cy='150' r='27' fill='#eef' stroke='#223' stroke-width='1.5'/><text x='60' y='155' font-size='14' text-anchor='middle' fill='#222' font-weight='bold'>고체</text><circle cx='180' cy='38' r='27' fill='#eef' stroke='#223' stroke-width='1.5'/><text x='180' y='43' font-size='14' text-anchor='middle' fill='#222' font-weight='bold'>액체</text><circle cx='300' cy='150' r='27' fill='#eef' stroke='#223' stroke-width='1.5'/><text x='300' y='155' font-size='14' text-anchor='middle' fill='#222' font-weight='bold'>기체</text><line x1='197.3' y1='66.4' x2='267.5' y2='132.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='222.8' y='113.4' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>A</text><line x1='282.7' y1='121.6' x2='212.5' y2='56.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='257.2' y='82.6' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>B</text><line x1='89.5' y1='134.7' x2='159.8' y2='69.1' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='134.2' y='116.2' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>C</text><line x1='150.5' y1='53.3' x2='80.2' y2='118.9' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='105.8' y='79.8' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>D</text><line x1='268.0' y1='141.0' x2='96.0' y2='141.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='182.0' y='131.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>E</text><line x1='92.0' y1='159.0' x2='264.0' y2='159.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='178.0' y='177.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>F</text></svg>",
+    "caption": "물질의 상태 변화 (화살표 방향이 변화 방향)"
+   }
+  },
+  {
+   "id": "u4-Q06-b",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "상태 변화의 방향(순환도)",
+   "source": "교과서 p.129",
+   "question": "그림은 물질의 상태 변화를 화살표로 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ, ㄴ",
+    "ㄴ, ㄹ",
+    "ㄱ, ㄷ",
+    "ㄷ, ㄹ",
+    "ㄱ, ㄹ"
+   ],
+   "answer": 3,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다.",
+   "choiceExplanations": [
+    "ㄴ은 옳지 않은 설명인데 골랐어요. C는 액체에서 고체로의 변화이므로 응고예요. 고체→액체는 D예요. ㄷ도 옳은 설명인데 빠졌어요. B는 액체에서 기체로의 변화이므로 기화예요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. C는 액체에서 고체로의 변화이므로 응고예요. 고체→액체는 D예요. ㄹ은 옳지 않은 설명인데 골랐어요. F는 고체에서 기체로 액체를 거치지 않고 변하는 승화예요. ㄱ도 옳은 설명인데 빠졌어요. A는 기체에서 액체로의 변화이므로 액화예요. ㄷ도 옳은 설명인데 빠졌어요. B는 액체에서 기체로의 변화이므로 기화예요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄷ).",
+    "ㄹ은 옳지 않은 설명인데 골랐어요. F는 고체에서 기체로 액체를 거치지 않고 변하는 승화예요. ㄱ도 옳은 설명인데 빠졌어요. A는 기체에서 액체로의 변화이므로 액화예요.",
+    "ㄹ은 옳지 않은 설명인데 골랐어요. F는 고체에서 기체로 액체를 거치지 않고 변하는 승화예요. ㄷ도 옳은 설명인데 빠졌어요. B는 액체에서 기체로의 변화이므로 기화예요."
+   ],
+   "detail": "글자별로 출발점→도착점을 먼저 정리해요: A 기체→액체, B 액체→기체, C 액체→고체, D 고체→액체, E 기체→고체, F 고체→기체.\n· ㄱ : 옳아요. A는 기체에서 액체로의 변화이므로 액화예요.\n· ㄴ : 옳지 않아요. C는 액체에서 고체로의 변화이므로 응고예요. 고체→액체는 D예요.\n· ㄷ : 옳아요. B는 액체에서 기체로의 변화이므로 기화예요.\n· ㄹ : 옳지 않아요. F는 고체에서 기체로 액체를 거치지 않고 변하는 승화예요.\n→ 옳은 설명은 ㄱ, ㄷ이에요.",
+   "tip": "같은 그림이라도 글자 배정은 문제마다 다르니 화살표 방향부터 읽는다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "승화의 뜻",
+     "text": "승화는 물질이 액체를 거치지 않고 고체에서 기체로, 또는 기체에서 고체로 변하는 현상이에요(교과서 p.129)."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. A는 기체가 액체로 변하는 액화이다.\nㄴ. C는 고체가 액체로 변하는 융해이다.\nㄷ. B는 액체가 기체로 변하는 기화이다.\nㄹ. F는 액체 상태를 거쳐 일어난다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 200' width='360' height='200' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><circle cx='60' cy='150' r='27' fill='#eef' stroke='#223' stroke-width='1.5'/><text x='60' y='155' font-size='14' text-anchor='middle' fill='#222' font-weight='bold'>고체</text><circle cx='180' cy='38' r='27' fill='#eef' stroke='#223' stroke-width='1.5'/><text x='180' y='43' font-size='14' text-anchor='middle' fill='#222' font-weight='bold'>액체</text><circle cx='300' cy='150' r='27' fill='#eef' stroke='#223' stroke-width='1.5'/><text x='300' y='155' font-size='14' text-anchor='middle' fill='#222' font-weight='bold'>기체</text><line x1='282.7' y1='121.6' x2='212.5' y2='56.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='257.2' y='82.6' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>A</text><line x1='197.3' y1='66.4' x2='267.5' y2='132.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='222.8' y='113.4' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>B</text><line x1='150.5' y1='53.3' x2='80.2' y2='118.9' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='105.8' y='79.8' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>C</text><line x1='89.5' y1='134.7' x2='159.8' y2='69.1' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='134.2' y='116.2' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>D</text><line x1='268.0' y1='141.0' x2='96.0' y2='141.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='182.0' y='131.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>E</text><line x1='92.0' y1='159.0' x2='264.0' y2='159.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='178.0' y='177.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>F</text></svg>",
+    "caption": "물질의 상태 변화 (화살표 방향이 변화 방향)"
+   }
+  },
+  {
+   "id": "u4-Q07-a",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "상태 변화와 입자",
+   "source": "교과서 p.132~133",
+   "question": "그림은 어떤 물질이 상태 변화할 때 입자 배열의 변화를 모형으로 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄱ, ㄷ",
+    "ㄴ, ㄷ",
+    "ㄱ, ㄴ",
+    "ㄷ"
+   ],
+   "answer": 4,
+   "explanation": "옳은 설명은 ㄱ, ㄴ이다.",
+   "choiceExplanations": [
+    "ㄴ도 옳은 설명인데 빠졌어요. 액체에서 기체로 변하면 입자가 더 불규칙하게 배열돼요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 기체가 되면 입자 사이의 거리가 멀어져요. ㄴ도 옳은 설명인데 빠졌어요. 액체에서 기체로 변하면 입자가 더 불규칙하게 배열돼요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 기체가 되면 입자 사이의 거리가 멀어져요. ㄱ도 옳은 설명인데 빠졌어요. 상태가 변해도 입자의 개수는 변하지 않아요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄴ).",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 기체가 되면 입자 사이의 거리가 멀어져요. ㄱ도 옳은 설명인데 빠졌어요. 상태가 변해도 입자의 개수는 변하지 않아요. ㄴ도 옳은 설명인데 빠졌어요. 액체에서 기체로 변하면 입자가 더 불규칙하게 배열돼요."
+   ],
+   "detail": "그림에서 (가)와 (나)의 입자를 직접 세어 개수를 비교하고, 배열과 거리를 비교해요.\n· ㄱ : 옳아요. 상태가 변해도 입자의 개수는 변하지 않아요.\n· ㄴ : 옳아요. 액체에서 기체로 변하면 입자가 더 불규칙하게 배열돼요.\n· ㄷ : 옳지 않아요. 기체가 되면 입자 사이의 거리가 멀어져요.\n→ 옳은 설명은 ㄱ, ㄴ이에요.",
+   "tip": "상태가 변해도 입자의 개수는 그대로, 배열·거리만 달라진다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "입자 개수와 배열",
+     "text": "물질의 상태가 변할 때 입자의 개수는 변하지 않고, 입자 배열과 입자 사이의 거리가 달라져요(교과서 p.132~133)."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 입자의 개수는 변하지 않는다.\nㄴ. 입자 배열이 더 불규칙해진다.\nㄷ. 입자 사이의 거리가 가까워진다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 278 126' width='278' height='126' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><circle cx='50' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='51.5' cy='69.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='36.2' cy='64.8' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.3' cy='45.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='73.7' cy='52.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='59.3' cy='34.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='33.9' cy='31.8' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><text x='50' y='114' font-size='12' text-anchor='middle' fill='#222'>(가)</text><circle cx='228' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='207.6' cy='30.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='207.6' y1='30.2' x2='215.6' y2='24.2' stroke='#c22' stroke-width='1.3'/><circle cx='237.0' cy='19.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='237.0' y1='19.2' x2='245.0' y2='13.2' stroke='#c22' stroke-width='1.3'/><circle cx='250.1' cy='54.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='250.1' y1='54.1' x2='258.1' y2='48.1' stroke='#c22' stroke-width='1.3'/><circle cx='222.2' cy='81.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='222.2' y1='81.0' x2='230.2' y2='75.0' stroke='#c22' stroke-width='1.3'/><circle cx='199.0' cy='56.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='199.0' y1='56.9' x2='207.0' y2='50.9' stroke='#c22' stroke-width='1.3'/><circle cx='224.2' cy='50.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='224.2' y1='50.3' x2='232.2' y2='44.3' stroke='#c22' stroke-width='1.3'/><text x='228' y='114' font-size='12' text-anchor='middle' fill='#222'>(나)</text><line x1='104' y1='50' x2='174' y2='50' stroke='#222' stroke-width='2' marker-end='url(#ah)'/><text x='139.0' y='40' font-size='11' text-anchor='middle' fill='#222'>상태 변화</text></svg>",
+    "caption": "어떤 물질의 상태 변화 모형"
+   }
+  },
+  {
+   "id": "u4-Q07-b",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "상태 변화와 입자",
+   "source": "교과서 p.132~133",
+   "question": "그림은 어떤 물질이 상태 변화할 때 입자 배열의 변화를 모형으로 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄴ, ㄷ",
+    "ㄴ",
+    "ㄷ",
+    "ㄱ, ㄴ",
+    "ㄱ"
+   ],
+   "answer": 5,
+   "explanation": "옳은 설명은 ㄱ이다.",
+   "choiceExplanations": [
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 기체에서 액체로 변하므로 입자 사이의 거리가 가까워져요. ㄷ은 옳지 않은 설명인데 골랐어요. 기체에서 액체로 변하면 입자가 더 규칙적으로 배열돼요. ㄱ도 옳은 설명인데 빠졌어요. 상태가 변해도 입자의 종류는 변하지 않아서 물질의 성질도 변하지 않아요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 기체에서 액체로 변하므로 입자 사이의 거리가 가까워져요. ㄱ도 옳은 설명인데 빠졌어요. 상태가 변해도 입자의 종류는 변하지 않아서 물질의 성질도 변하지 않아요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 기체에서 액체로 변하면 입자가 더 규칙적으로 배열돼요. ㄱ도 옳은 설명인데 빠졌어요. 상태가 변해도 입자의 종류는 변하지 않아서 물질의 성질도 변하지 않아요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 기체에서 액체로 변하므로 입자 사이의 거리가 가까워져요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ)."
+   ],
+   "detail": "그림에서 (가)는 기체, (나)는 액체예요. 입자 사이의 거리와 배열이 어떻게 달라졌는지 비교해요.\n· ㄱ : 옳아요. 상태가 변해도 입자의 종류는 변하지 않아서 물질의 성질도 변하지 않아요.\n· ㄴ : 옳지 않아요. 기체에서 액체로 변하므로 입자 사이의 거리가 가까워져요.\n· ㄷ : 옳지 않아요. 기체에서 액체로 변하면 입자가 더 규칙적으로 배열돼요.\n→ 옳은 설명은 ㄱ이에요.",
+   "tip": "거리가 가까워지면 배열은 더 규칙적, 입자의 종류는 그대로.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "입자의 종류",
+     "text": "상태 변화가 일어나도 물질을 이루는 입자의 종류는 변하지 않으므로 물질의 성질은 변하지 않아요(교과서 p.133)."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 입자의 종류는 변하지 않는다.\nㄴ. 입자 사이의 거리가 멀어진다.\nㄷ. 입자 배열이 더 불규칙해진다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 278 126' width='278' height='126' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><circle cx='50' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='51.8' cy='74.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='51.8' y1='74.3' x2='59.8' y2='68.3' stroke='#c22' stroke-width='1.3'/><circle cx='44.1' cy='44.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='44.1' y1='44.0' x2='52.1' y2='38.0' stroke='#c22' stroke-width='1.3'/><circle cx='80.1' cy='52.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='80.1' y1='52.5' x2='88.1' y2='46.5' stroke='#c22' stroke-width='1.3'/><circle cx='20.0' cy='60.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='20.0' y1='60.9' x2='28.0' y2='54.9' stroke='#c22' stroke-width='1.3'/><circle cx='70.4' cy='24.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='70.4' y1='24.2' x2='78.4' y2='18.2' stroke='#c22' stroke-width='1.3'/><circle cx='44.3' cy='17.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='44.3' y1='17.9' x2='52.3' y2='11.9' stroke='#c22' stroke-width='1.3'/><text x='50' y='114' font-size='12' text-anchor='middle' fill='#222'>(가)</text><circle cx='228' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='211.9' cy='34.4' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='235.1' cy='25.7' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='245.5' cy='53.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='235.1' cy='44.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='215.3' cy='52.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='223.4' cy='74.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><text x='228' y='114' font-size='12' text-anchor='middle' fill='#222'>(나)</text><line x1='104' y1='50' x2='174' y2='50' stroke='#222' stroke-width='2' marker-end='url(#ah)'/><text x='139.0' y='40' font-size='11' text-anchor='middle' fill='#222'>상태 변화</text></svg>",
+    "caption": "어떤 물질의 상태 변화 모형"
+   }
+  },
+  {
+   "id": "u4-Q09-a",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "가열 곡선 해석",
+   "source": "교과서 p.134~137",
+   "question": "그래프는 고체 물질 X를 가열할 때 시간에 따른 온도 변화를 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄱ, ㄴ, ㄹ",
+    "ㄴ, ㄷ",
+    "ㄷ, ㄹ",
+    "ㄱ, ㄷ"
+   ],
+   "answer": 5,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다.",
+   "choiceExplanations": [
+    "ㄷ도 옳은 설명인데 빠졌어요. D 구간은 기화가 일어나는 동안이라 액체와 기체가 함께 있어요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 가열하는 동안에는 열에너지를 흡수해요. ㄹ은 옳지 않은 설명인데 골랐어요. 녹는 온도는 첫 번째 수평 구간(B)의 온도인 40 ℃이고 120 ℃는 끓는 온도예요. ㄷ도 옳은 설명인데 빠졌어요. D 구간은 기화가 일어나는 동안이라 액체와 기체가 함께 있어요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 가열하는 동안에는 열에너지를 흡수해요. ㄱ도 옳은 설명인데 빠졌어요. B 구간은 융해가 일어나는 동안이라 고체와 액체가 함께 있어요.",
+    "ㄹ은 옳지 않은 설명인데 골랐어요. 녹는 온도는 첫 번째 수평 구간(B)의 온도인 40 ℃이고 120 ℃는 끓는 온도예요. ㄱ도 옳은 설명인데 빠졌어요. B 구간은 융해가 일어나는 동안이라 고체와 액체가 함께 있어요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄷ)."
+   ],
+   "detail": "자료를 읽는 순서: 수평 구간(B, D)을 찾고 → 어떤 상태 변화인지 정하고 → 보기를 판단해요.\n· ㄱ : 옳아요. B 구간은 융해가 일어나는 동안이라 고체와 액체가 함께 있어요.\n· ㄴ : 옳지 않아요. 가열하는 동안에는 열에너지를 흡수해요.\n· ㄷ : 옳아요. D 구간은 기화가 일어나는 동안이라 액체와 기체가 함께 있어요.\n· ㄹ : 옳지 않아요. 녹는 온도는 첫 번째 수평 구간(B)의 온도인 40 ℃이고 120 ℃는 끓는 온도예요.\n→ 옳은 설명은 ㄱ, ㄷ이에요.",
+   "tip": "수평 구간=상태 변화 중. 앞쪽은 녹는 온도(융해), 뒤쪽은 끓는 온도(기화).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "가열 곡선의 순서",
+     "text": "가열하면 고체 → 융해(고체+액체) → 액체 → 기화(액체+기체) → 기체 순서로 변하고, 수평 구간의 온도가 각각 녹는 온도와 끓는 온도예요(교과서 p.136)."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. B 구간에서는 고체와 액체가 함께 존재한다.\nㄴ. C 구간에서 물질은 열에너지를 방출한다.\nㄷ. D 구간에서는 액체와 기체가 함께 존재한다.\nㄹ. 물질 X의 녹는 온도는 120 ℃이다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 250' width='360' height='250' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><line x1='52' y1='184' x2='340' y2='184' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><line x1='52' y1='184' x2='52' y2='26' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><text x='336' y='238' font-size='11' text-anchor='end' fill='#222'>시간(분)</text><text x='46' y='20' font-size='11' text-anchor='start' fill='#222'>온도(℃)</text><line x1='84.94117647058823' y1='184' x2='84.94117647058823' y2='188' stroke='#222' stroke-width='1'/><text x='84.9' y='201' font-size='10' text-anchor='middle' fill='#222'>2</text><line x1='134.3529411764706' y1='184' x2='134.3529411764706' y2='188' stroke='#222' stroke-width='1'/><text x='134.4' y='201' font-size='10' text-anchor='middle' fill='#222'>5</text><line x1='200.23529411764707' y1='184' x2='200.23529411764707' y2='188' stroke='#222' stroke-width='1'/><text x='200.2' y='201' font-size='10' text-anchor='middle' fill='#222'>9</text><line x1='282.5882352941177' y1='184' x2='282.5882352941177' y2='188' stroke='#222' stroke-width='1'/><text x='282.6' y='201' font-size='10' text-anchor='middle' fill='#222'>14</text><line x1='315.52941176470586' y1='184' x2='315.52941176470586' y2='188' stroke='#222' stroke-width='1'/><text x='315.5' y='201' font-size='10' text-anchor='middle' fill='#222'>16</text><line x1='48' y1='148.70588235294116' x2='52' y2='148.70588235294116' stroke='#222' stroke-width='1'/><text x='45' y='152.7' font-size='10' text-anchor='end' fill='#222'>40</text><line x1='48' y1='78.11764705882354' x2='52' y2='78.11764705882354' stroke='#222' stroke-width='1'/><text x='45' y='82.1' font-size='10' text-anchor='end' fill='#222'>120</text><line x1='134.3529411764706' y1='148.70588235294116' x2='134.3529411764706' y2='184' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='52' y1='148.70588235294116' x2='134.3529411764706' y2='148.70588235294116' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='282.5882352941177' y1='78.11764705882354' x2='282.5882352941177' y2='184' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='52' y1='78.11764705882354' x2='282.5882352941177' y2='78.11764705882354' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><polyline points='52.0,175.2 84.9,148.7 134.4,148.7 200.2,78.1 282.6,78.1 315.5,51.6' fill='none' stroke='#b00' stroke-width='2.5'/><text x='68.5' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>A</text><line x1='84.94117647058823' y1='204' x2='84.94117647058823' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='109.6' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>B</text><line x1='134.3529411764706' y1='204' x2='134.3529411764706' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='167.3' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>C</text><line x1='200.23529411764707' y1='204' x2='200.23529411764707' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='241.4' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>D</text><line x1='282.5882352941177' y1='204' x2='282.5882352941177' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='307.3' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>E</text></svg>",
+    "caption": "고체 물질 X의 가열 곡선"
+   }
+  },
+  {
+   "id": "u4-Q09-b",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "가열 곡선 해석",
+   "source": "교과서 p.134~137",
+   "question": "그래프는 고체 물질 Y를 가열할 때 시간에 따른 온도 변화를 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄷ, ㄹ",
+    "ㄴ, ㄷ",
+    "ㄱ, ㄷ",
+    "ㄱ, ㄴ, ㄹ"
+   ],
+   "answer": 4,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다.",
+   "choiceExplanations": [
+    "ㄷ도 옳은 설명인데 빠졌어요. 가열하는 동안 열에너지를 흡수해 입자 운동이 활발해지므로 온도가 높은 (마) 구간이 더 활발해요.",
+    "ㄹ은 옳지 않은 설명인데 골랐어요. 융해는 (나) 구간이에요. (다) 구간은 액체 상태에서 온도가 오르는 구간이에요. ㄱ도 옳은 설명인데 빠졌어요. (나)는 융해가 일어나는 첫 번째 수평 구간이라 그 온도가 녹는 온도예요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (라)는 기화가 일어나는 수평 구간이라 그 온도는 끓는 온도예요. ㄱ도 옳은 설명인데 빠졌어요. (나)는 융해가 일어나는 첫 번째 수평 구간이라 그 온도가 녹는 온도예요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄷ).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (라)는 기화가 일어나는 수평 구간이라 그 온도는 끓는 온도예요. ㄹ은 옳지 않은 설명인데 골랐어요. 융해는 (나) 구간이에요. (다) 구간은 액체 상태에서 온도가 오르는 구간이에요. ㄷ도 옳은 설명인데 빠졌어요. 가열하는 동안 열에너지를 흡수해 입자 운동이 활발해지므로 온도가 높은 (마) 구간이 더 활발해요."
+   ],
+   "detail": "수평 구간 (나), (라)가 각각 융해, 기화 구간임을 먼저 정해요.\n· ㄱ : 옳아요. (나)는 융해가 일어나는 첫 번째 수평 구간이라 그 온도가 녹는 온도예요.\n· ㄴ : 옳지 않아요. (라)는 기화가 일어나는 수평 구간이라 그 온도는 끓는 온도예요.\n· ㄷ : 옳아요. 가열하는 동안 열에너지를 흡수해 입자 운동이 활발해지므로 온도가 높은 (마) 구간이 더 활발해요.\n· ㄹ : 옳지 않아요. 융해는 (나) 구간이에요. (다) 구간은 액체 상태에서 온도가 오르는 구간이에요.\n→ 옳은 설명은 ㄱ, ㄷ이에요.",
+   "tip": "온도가 오르는 구간은 한 가지 상태, 수평 구간은 두 상태가 섞인 상태 변화 구간.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "수평 구간과 입자 운동",
+     "text": "가열 곡선에서 온도가 오르는 구간은 한 가지 상태이고 수평 구간은 두 상태가 섞여 있어요. 열에너지를 흡수하면 입자 운동이 활발해져요(교과서 p.136)."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. (나) 구간의 온도는 물질 Y의 녹는 온도이다.\nㄴ. (라) 구간의 온도는 물질 Y의 어는 온도이다.\nㄷ. 입자 운동은 (가) 구간보다 (마) 구간에서 더 활발하다.\nㄹ. (다) 구간에서 융해가 일어난다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 250' width='360' height='250' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><line x1='52' y1='184' x2='340' y2='184' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><line x1='52' y1='184' x2='52' y2='26' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><text x='336' y='238' font-size='11' text-anchor='end' fill='#222'>시간(분)</text><text x='46' y='20' font-size='11' text-anchor='start' fill='#222'>온도(℃)</text><line x1='94.0' y1='184' x2='94.0' y2='188' stroke='#222' stroke-width='1'/><text x='94.0' y='201' font-size='10' text-anchor='middle' fill='#222'>3</text><line x1='150.0' y1='184' x2='150.0' y2='188' stroke='#222' stroke-width='1'/><text x='150.0' y='201' font-size='10' text-anchor='middle' fill='#222'>7</text><line x1='206.0' y1='184' x2='206.0' y2='188' stroke='#222' stroke-width='1'/><text x='206.0' y='201' font-size='10' text-anchor='middle' fill='#222'>11</text><line x1='276.0' y1='184' x2='276.0' y2='188' stroke='#222' stroke-width='1'/><text x='276.0' y='201' font-size='10' text-anchor='middle' fill='#222'>16</text><line x1='318.0' y1='184' x2='318.0' y2='188' stroke='#222' stroke-width='1'/><text x='318.0' y='201' font-size='10' text-anchor='middle' fill='#222'>19</text><line x1='48' y1='175.1764705882353' x2='52' y2='175.1764705882353' stroke='#222' stroke-width='1'/><text x='45' y='179.2' font-size='10' text-anchor='end' fill='#222'>-20</text><line x1='48' y1='157.52941176470588' x2='52' y2='157.52941176470588' stroke='#222' stroke-width='1'/><text x='45' y='161.5' font-size='10' text-anchor='end' fill='#222'>0</text><line x1='48' y1='69.29411764705883' x2='52' y2='69.29411764705883' stroke='#222' stroke-width='1'/><text x='45' y='73.3' font-size='10' text-anchor='end' fill='#222'>100</text><line x1='150.0' y1='157.52941176470588' x2='150.0' y2='184' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='52' y1='157.52941176470588' x2='150.0' y2='157.52941176470588' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='276.0' y1='69.29411764705883' x2='276.0' y2='184' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='52' y1='69.29411764705883' x2='276.0' y2='69.29411764705883' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><polyline points='52.0,175.2 94.0,157.5 150.0,157.5 206.0,69.3 276.0,69.3 318.0,42.8' fill='none' stroke='#b00' stroke-width='2.5'/><text x='73.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(가)</text><line x1='94.0' y1='204' x2='94.0' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='122.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(나)</text><line x1='150.0' y1='204' x2='150.0' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='178.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(다)</text><line x1='206.0' y1='204' x2='206.0' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='241.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(라)</text><line x1='276.0' y1='204' x2='276.0' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='304.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(마)</text></svg>",
+    "caption": "고체 물질 Y의 가열 곡선"
+   }
+  },
+  {
+   "id": "u4-Q10-a",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "냉각 곡선 해석",
+   "source": "교과서 p.138~141",
+   "question": "그래프는 기체 물질 Z를 냉각할 때 시간에 따른 온도 변화를 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄷ",
+    "ㄱ, ㄴ",
+    "ㄴ, ㄷ",
+    "ㄱ, ㄷ"
+   ],
+   "answer": 3,
+   "explanation": "옳은 설명은 ㄱ, ㄴ이다.",
+   "choiceExplanations": [
+    "ㄴ도 옳은 설명인데 빠졌어요. (라)는 응고가 일어나는 동안이라 액체와 고체가 함께 있어요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 냉각 중 상태가 변하는 동안에는 열에너지를 방출해서 온도가 일정해요. ㄱ도 옳은 설명인데 빠졌어요. (나)는 기체가 액체로 변하는 동안의 수평 구간이라 액화예요. ㄴ도 옳은 설명인데 빠졌어요. (라)는 응고가 일어나는 동안이라 액체와 고체가 함께 있어요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄴ).",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 냉각 중 상태가 변하는 동안에는 열에너지를 방출해서 온도가 일정해요. ㄱ도 옳은 설명인데 빠졌어요. (나)는 기체가 액체로 변하는 동안의 수평 구간이라 액화예요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 냉각 중 상태가 변하는 동안에는 열에너지를 방출해서 온도가 일정해요. ㄴ도 옳은 설명인데 빠졌어요. (라)는 응고가 일어나는 동안이라 액체와 고체가 함께 있어요."
+   ],
+   "detail": "그래프 수평 구간 (나), (라)를 찾고 어떤 상태 변화인지 정해요.\n· ㄱ : 옳아요. (나)는 기체가 액체로 변하는 동안의 수평 구간이라 액화예요.\n· ㄴ : 옳아요. (라)는 응고가 일어나는 동안이라 액체와 고체가 함께 있어요.\n· ㄷ : 옳지 않아요. 냉각 중 상태가 변하는 동안에는 열에너지를 방출해서 온도가 일정해요.\n→ 옳은 설명은 ㄱ, ㄴ이에요.",
+   "tip": "냉각 곡선의 수평 구간: 앞쪽은 액화, 뒤쪽은 응고. 둘 다 열에너지를 방출한다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "냉각 곡선",
+     "text": "냉각하면 기체 → 액화(일정) → 액체 → 응고(어는 온도에서 일정, 액체+고체) → 고체 순서로 변하고, 상태가 변하는 동안 열에너지를 방출해요(교과서 p.140)."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. (나) 구간에서는 액화가 일어난다.\nㄴ. (라) 구간에서는 액체와 고체가 함께 존재한다.\nㄷ. (라) 구간에서는 열에너지를 흡수한다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 250' width='360' height='250' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><line x1='52' y1='184' x2='340' y2='184' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><line x1='52' y1='184' x2='52' y2='26' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><text x='336' y='238' font-size='11' text-anchor='end' fill='#222'>시간(분)</text><text x='46' y='20' font-size='11' text-anchor='start' fill='#222'>온도(℃)</text><line x1='92.0' y1='184' x2='92.0' y2='188' stroke='#222' stroke-width='1'/><text x='92.0' y='201' font-size='10' text-anchor='middle' fill='#222'>3</text><line x1='145.33333333333331' y1='184' x2='145.33333333333331' y2='188' stroke='#222' stroke-width='1'/><text x='145.3' y='201' font-size='10' text-anchor='middle' fill='#222'>7</text><line x1='225.33333333333334' y1='184' x2='225.33333333333334' y2='188' stroke='#222' stroke-width='1'/><text x='225.3' y='201' font-size='10' text-anchor='middle' fill='#222'>13</text><line x1='292.0' y1='184' x2='292.0' y2='188' stroke='#222' stroke-width='1'/><text x='292.0' y='201' font-size='10' text-anchor='middle' fill='#222'>18</text><line x1='318.6666666666667' y1='184' x2='318.6666666666667' y2='188' stroke='#222' stroke-width='1'/><text x='318.7' y='201' font-size='10' text-anchor='middle' fill='#222'>20</text><line x1='48' y1='175.1764705882353' x2='52' y2='175.1764705882353' stroke='#222' stroke-width='1'/><text x='45' y='179.2' font-size='10' text-anchor='end' fill='#222'>-20</text><line x1='48' y1='157.52941176470588' x2='52' y2='157.52941176470588' stroke='#222' stroke-width='1'/><text x='45' y='161.5' font-size='10' text-anchor='end' fill='#222'>0</text><line x1='48' y1='69.29411764705883' x2='52' y2='69.29411764705883' stroke='#222' stroke-width='1'/><text x='45' y='73.3' font-size='10' text-anchor='end' fill='#222'>100</text><line x1='145.33333333333331' y1='69.29411764705883' x2='145.33333333333331' y2='184' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='52' y1='69.29411764705883' x2='145.33333333333331' y2='69.29411764705883' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='292.0' y1='157.52941176470588' x2='292.0' y2='184' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='52' y1='157.52941176470588' x2='292.0' y2='157.52941176470588' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><polyline points='52.0,42.8 92.0,69.3 145.3,69.3 225.3,157.5 292.0,157.5 318.7,175.2' fill='none' stroke='#b00' stroke-width='2.5'/><text x='72.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(가)</text><line x1='92.0' y1='204' x2='92.0' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='118.7' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(나)</text><line x1='145.33333333333331' y1='204' x2='145.33333333333331' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='185.3' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(다)</text><line x1='225.33333333333334' y1='204' x2='225.33333333333334' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='258.7' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(라)</text><line x1='292.0' y1='204' x2='292.0' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='312.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(마)</text></svg>",
+    "caption": "기체 물질 Z의 냉각 곡선"
+   }
+  },
+  {
+   "id": "u4-Q10-b",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "냉각 곡선 해석",
+   "source": "교과서 p.138~141",
+   "question": "그래프는 액체 물질 W를 냉각할 때 시간에 따른 온도 변화를 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ, ㄷ",
+    "ㄷ",
+    "ㄱ",
+    "ㄴ, ㄹ",
+    "ㄷ, ㄹ"
+   ],
+   "answer": 1,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다.",
+   "choiceExplanations": [
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄷ).",
+    "ㄱ도 옳은 설명인데 빠졌어요. 응고가 일어나는 수평 구간(나)의 온도가 어는 온도예요.",
+    "ㄷ도 옳은 설명인데 빠졌어요. 응고가 끝난 뒤이므로 고체 상태로 온도가 내려가요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 열에너지를 방출하므로 입자 운동이 둔해져요. ㄹ은 옳지 않은 설명인데 골랐어요. 열에너지를 방출하므로 주위의 온도가 높아져요. ㄱ도 옳은 설명인데 빠졌어요. 응고가 일어나는 수평 구간(나)의 온도가 어는 온도예요. ㄷ도 옳은 설명인데 빠졌어요. 응고가 끝난 뒤이므로 고체 상태로 온도가 내려가요.",
+    "ㄹ은 옳지 않은 설명인데 골랐어요. 열에너지를 방출하므로 주위의 온도가 높아져요. ㄱ도 옳은 설명인데 빠졌어요. 응고가 일어나는 수평 구간(나)의 온도가 어는 온도예요."
+   ],
+   "detail": "수평 구간 (나)가 응고 구간이에요. 열에너지를 방출하는 변화예요.\n· ㄱ : 옳아요. 응고가 일어나는 수평 구간(나)의 온도가 어는 온도예요.\n· ㄴ : 옳지 않아요. 열에너지를 방출하므로 입자 운동이 둔해져요.\n· ㄷ : 옳아요. 응고가 끝난 뒤이므로 고체 상태로 온도가 내려가요.\n· ㄹ : 옳지 않아요. 열에너지를 방출하므로 주위의 온도가 높아져요.\n→ 옳은 설명은 ㄱ, ㄷ이에요.",
+   "tip": "응고·액화는 열 방출 → 입자 운동 둔화, 주위 온도 상승.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "응고할 때",
+     "text": "응고할 때 물질은 열에너지를 방출하여 입자 운동이 둔해지고 입자가 규칙적으로 배열돼요. 주위의 온도는 높아져요(교과서 p.140~141)."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 물질 W의 어는 온도는 20 ℃이다.\nㄴ. (나) 구간에서 입자 운동이 더 활발해진다.\nㄷ. (다) 구간에서 물질은 고체 상태이다.\nㄹ. (나) 구간에서 주위의 온도가 낮아진다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 250' width='360' height='250' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><line x1='52' y1='184' x2='340' y2='184' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><line x1='52' y1='184' x2='52' y2='26' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><text x='336' y='238' font-size='11' text-anchor='end' fill='#222'>시간(분)</text><text x='46' y='20' font-size='11' text-anchor='start' fill='#222'>온도(℃)</text><line x1='116.61538461538461' y1='184' x2='116.61538461538461' y2='188' stroke='#222' stroke-width='1'/><text x='116.6' y='201' font-size='10' text-anchor='middle' fill='#222'>3</text><line x1='224.30769230769232' y1='184' x2='224.30769230769232' y2='188' stroke='#222' stroke-width='1'/><text x='224.3' y='201' font-size='10' text-anchor='middle' fill='#222'>8</text><line x1='310.46153846153845' y1='184' x2='310.46153846153845' y2='188' stroke='#222' stroke-width='1'/><text x='310.5' y='201' font-size='10' text-anchor='middle' fill='#222'>12</text><line x1='48' y1='169.0' x2='52' y2='169.0' stroke='#222' stroke-width='1'/><text x='45' y='173.0' font-size='10' text-anchor='end' fill='#222'>-20</text><line x1='48' y1='109.0' x2='52' y2='109.0' stroke='#222' stroke-width='1'/><text x='45' y='113.0' font-size='10' text-anchor='end' fill='#222'>20</text><line x1='48' y1='49.0' x2='52' y2='49.0' stroke='#222' stroke-width='1'/><text x='45' y='53.0' font-size='10' text-anchor='end' fill='#222'>60</text><line x1='224.30769230769232' y1='109.0' x2='224.30769230769232' y2='184' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='52' y1='109.0' x2='224.30769230769232' y2='109.0' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><polyline points='52.0,49.0 116.6,109.0 224.3,109.0 310.5,169.0' fill='none' stroke='#b00' stroke-width='2.5'/><text x='84.3' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(가)</text><line x1='116.61538461538461' y1='204' x2='116.61538461538461' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='170.5' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(나)</text><line x1='224.30769230769232' y1='204' x2='224.30769230769232' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='278.2' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>(다)</text></svg>",
+    "caption": "액체 물질 W의 냉각 곡선"
+   }
+  },
+  {
+   "id": "u4-Q11-a",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "열에너지 흡수·방출 현상 분류",
+   "source": "교과서 p.137, p.141, p.143",
+   "question": "다음 중 열에너지를 흡수하는 상태 변화가 일어나는 현상은?",
+   "choices": [
+    "냉동실에 넣은 물이 단단하게 얼어붙는다.",
+    "겨울철 나뭇잎 위에 하얀 서리가 생긴다.",
+    "따뜻한 실내에서 차가운 안경에 김이 서린다.",
+    "얼음 조각상이 더운 날 서서히 녹는다.",
+    "추운 날씨에 호수의 물이 두껍게 얼어붙는다."
+   ],
+   "answer": 4,
+   "explanation": "얼음이 녹는 융해는 열에너지를 흡수하는 상태 변화이다.",
+   "choiceExplanations": [
+    "물이 얼어 고체가 되는 응고는 열에너지를 방출해요.",
+    "기체가 고체로 변하는 승화는 열에너지를 방출해요.",
+    "수증기가 액체가 되는 액화는 열에너지를 방출해요.",
+    "정답. 얼음이 녹는 융해는 열에너지를 흡수하는 상태 변화이다.",
+    "응고는 열에너지를 방출하는 변화예요."
+   ],
+   "detail": "개념: 융해·기화·고체→기체 승화는 열에너지를 흡수하고, 응고·액화·기체→고체 승화는 방출해요.\n적용: 얼음 조각상이 녹는 것은 융해이므로 열에너지를 흡수해요.\n나머지는 응고·승화(기체→고체)·액화로 열에너지를 방출해요.",
+   "tip": "녹거나 끓거나 마르면 흡수, 얼거나 서리·김이 생기면 방출.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "융해와 열에너지",
+     "text": "융해는 고체가 액체로 변하는 상태 변화이고, 이때 주위에서 열에너지를 흡수해요(교과서 p.136)."
+    }
+   ]
+  },
+  {
+   "id": "u4-Q11-b",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "열에너지 흡수·방출 현상 분류",
+   "source": "교과서 p.137, p.141, p.143",
+   "question": "다음 중 주위의 온도가 낮아지는 현상은?",
+   "choices": [
+    "겨울철 나뭇잎 위에 하얀 서리가 생긴다.",
+    "추운 날 이글루의 벽에 물을 뿌려 둔다.",
+    "여름날 인공 안개 장치로 물을 분사한다.",
+    "따뜻한 실내에서 차가운 안경에 김이 서린다.",
+    "냉동실에 넣은 물이 단단하게 얼어붙는다."
+   ],
+   "answer": 3,
+   "explanation": "분사한 물방울이 기화하며 열에너지를 흡수해 주위의 온도가 낮아진다.",
+   "choiceExplanations": [
+    "기체가 고체로 변하는 승화는 열에너지를 방출해 주위의 온도가 높아져요.",
+    "물이 얼면서 열에너지를 방출하므로 주위의 온도가 높아져요.",
+    "정답. 분사한 물방울이 기화하며 열에너지를 흡수해 주위의 온도가 낮아진다.",
+    "수증기가 액체가 되는 액화는 열에너지를 방출해 주위의 온도가 높아져요.",
+    "응고는 열에너지를 방출해 주위의 온도가 높아져요."
+   ],
+   "detail": "개념: 열에너지를 흡수하는 상태 변화는 주위의 열에너지를 가져가므로 주위의 온도가 낮아져요.\n적용: 인공 안개의 작은 물방울은 기화하며 열에너지를 흡수해요.\n나머지는 방출하는 변화라서 주위의 온도가 높아져요.",
+   "tip": "주위가 시원해지면 흡수(융해·기화), 따뜻해지면 방출(응고·액화).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "기화와 주위 온도",
+     "text": "기화는 액체가 기체로 변하는 상태 변화이고, 주위에서 열에너지를 흡수하므로 주위의 온도가 낮아져요(교과서 p.137, p.143)."
+    }
+   ]
+  },
+  {
+   "id": "u4-Q12-a",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "열에너지 출입의 이용",
+   "source": "교과서 p.141~143",
+   "question": "상태 변화할 때 출입하는 열에너지를 이용한 예에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ, ㄴ",
+    "ㄴ",
+    "ㄱ",
+    "ㄴ, ㄷ",
+    "ㄱ, ㄷ"
+   ],
+   "answer": 1,
+   "explanation": "옳은 설명은 ㄱ, ㄴ이다.",
+   "choiceExplanations": [
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄴ).",
+    "ㄱ도 옳은 설명인데 빠졌어요. 물이 기화할 때 주위에서 열에너지를 흡수하므로 음식물이 시원해요.",
+    "ㄴ도 옳은 설명인데 빠졌어요. 수증기가 액화하며 열에너지를 방출하므로 주위가 따뜻해져요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 증산 작용은 물이 기화하며 열에너지를 흡수하는 현상이에요. ㄱ도 옳은 설명인데 빠졌어요. 물이 기화할 때 주위에서 열에너지를 흡수하므로 음식물이 시원해요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 증산 작용은 물이 기화하며 열에너지를 흡수하는 현상이에요. ㄴ도 옳은 설명인데 빠졌어요. 수증기가 액화하며 열에너지를 방출하므로 주위가 따뜻해져요."
+   ],
+   "detail": "각 사례에서 어떤 상태 변화가 일어나고 열에너지가 흡수인지 방출인지 정리해요.\n· ㄱ : 옳아요. 물이 기화할 때 주위에서 열에너지를 흡수하므로 음식물이 시원해요.\n· ㄴ : 옳아요. 수증기가 액화하며 열에너지를 방출하므로 주위가 따뜻해져요.\n· ㄷ : 옳지 않아요. 증산 작용은 물이 기화하며 열에너지를 흡수하는 현상이에요.\n→ 옳은 설명은 ㄱ, ㄴ이에요.",
+   "tip": "냉각 효과는 기화·융해·승화(흡수), 보온 효과는 응고·액화(방출).",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "열에너지 이용 예",
+     "head": [
+      "사례",
+      "상태 변화",
+      "열에너지"
+     ],
+     "rows": [
+      [
+       "항아리 냉장고",
+       "기화",
+       "흡수"
+      ],
+      [
+       "방열기의 수증기",
+       "액화",
+       "방출"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 항아리 냉장고는 모래의 물이 기화하며 열에너지를 흡수하는 원리를 이용한다.\nㄴ. 방열기는 수증기가 물로 변하며 방출하는 열에너지로 방 안을 따뜻하게 한다.\nㄷ. 식물의 증산 작용은 물이 액화하며 열에너지를 방출하는 현상이다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 324 108' width='324' height='108' font-family='sans-serif'><rect x='2' y='2' width='130' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='67.0' y='19.0' font-size='11' text-anchor='middle' fill='#222' font-weight='bold'>사례</text><rect x='132' y='2' width='190' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='227.0' y='19.0' font-size='11' text-anchor='middle' fill='#222' font-weight='bold'>하는 일</text><rect x='2' y='28' width='130' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='67.0' y='45.0' font-size='11' text-anchor='middle' fill='#222'>(가) 항아리 냉장고</text><rect x='132' y='28' width='190' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='227.0' y='45.0' font-size='11' text-anchor='middle' fill='#222'>모래에 물을 적신다</text><rect x='2' y='54' width='130' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='67.0' y='71.0' font-size='11' text-anchor='middle' fill='#222'>(나) 방열기</text><rect x='132' y='54' width='190' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='227.0' y='71.0' font-size='11' text-anchor='middle' fill='#222'>수증기가 지나간다</text><rect x='2' y='80' width='130' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='67.0' y='97.0' font-size='11' text-anchor='middle' fill='#222'>(다) 식물의 잎</text><rect x='132' y='80' width='190' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='227.0' y='97.0' font-size='11' text-anchor='middle' fill='#222'>증산 작용이 일어난다</text></svg>",
+    "caption": "열에너지 출입과 관련된 사례"
+   }
+  },
+  {
+   "id": "u4-Q12-b",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "열에너지 출입의 이용",
+   "source": "교과서 p.141~143",
+   "question": "상태 변화할 때 출입하는 열에너지를 이용한 예에 대한 설명으로 옳은 것만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄴ",
+    "ㄱ, ㄴ",
+    "ㄴ, ㄷ",
+    "ㄱ, ㄷ"
+   ],
+   "answer": 5,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다.",
+   "choiceExplanations": [
+    "ㄷ도 옳은 설명인데 빠졌어요. 고체인 드라이아이스가 기체로 승화하며 주위의 열에너지를 흡수해요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 항아리 냉장고는 모래의 물이 기화하며 열에너지를 흡수하는 원리를 이용해요. ㄱ도 옳은 설명인데 빠졌어요. 물이 기화할 때 주위에서 열에너지를 흡수하므로 주변이 시원해요. ㄷ도 옳은 설명인데 빠졌어요. 고체인 드라이아이스가 기체로 승화하며 주위의 열에너지를 흡수해요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 항아리 냉장고는 모래의 물이 기화하며 열에너지를 흡수하는 원리를 이용해요. ㄷ도 옳은 설명인데 빠졌어요. 고체인 드라이아이스가 기체로 승화하며 주위의 열에너지를 흡수해요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 항아리 냉장고는 모래의 물이 기화하며 열에너지를 흡수하는 원리를 이용해요. ㄱ도 옳은 설명인데 빠졌어요. 물이 기화할 때 주위에서 열에너지를 흡수하므로 주변이 시원해요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄷ)."
+   ],
+   "detail": "각 사례에서 어떤 상태 변화가 일어나고 열에너지가 흡수인지 방출인지 정리해요.\n· ㄱ : 옳아요. 물이 기화할 때 주위에서 열에너지를 흡수하므로 주변이 시원해요.\n· ㄴ : 옳지 않아요. 항아리 냉장고는 모래의 물이 기화하며 열에너지를 흡수하는 원리를 이용해요.\n· ㄷ : 옳아요. 고체인 드라이아이스가 기체로 승화하며 주위의 열에너지를 흡수해요.\n→ 옳은 설명은 ㄱ, ㄷ이에요.",
+   "tip": "냉각 효과는 기화·융해·승화(고→기)(흡수), 보온 효과는 응고·액화(방출).",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "열에너지 이용 예",
+     "head": [
+      "사례",
+      "상태 변화",
+      "열에너지"
+     ],
+     "rows": [
+      [
+       "증산 작용",
+       "기화",
+       "흡수"
+      ],
+      [
+       "드라이아이스",
+       "승화(고체→기체)",
+       "흡수"
+      ]
+     ]
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 식물의 증산 작용은 물이 기화하며 열에너지를 흡수하는 현상이다.\nㄴ. 항아리 냉장고는 모래의 물이 얼면서 열에너지를 방출하는 원리를 이용한다.\nㄷ. 아이스크림 케이크 포장에 드라이아이스를 넣으면 승화하며 열에너지를 흡수하므로 잘 녹지 않는다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 324 108' width='324' height='108' font-family='sans-serif'><rect x='2' y='2' width='130' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='67.0' y='19.0' font-size='11' text-anchor='middle' fill='#222' font-weight='bold'>사례</text><rect x='132' y='2' width='190' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='227.0' y='19.0' font-size='11' text-anchor='middle' fill='#222' font-weight='bold'>하는 일</text><rect x='2' y='28' width='130' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='67.0' y='45.0' font-size='11' text-anchor='middle' fill='#222'>(가) 식물의 잎</text><rect x='132' y='28' width='190' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='227.0' y='45.0' font-size='11' text-anchor='middle' fill='#222'>증산 작용이 일어난다</text><rect x='2' y='54' width='130' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='67.0' y='71.0' font-size='11' text-anchor='middle' fill='#222'>(나) 항아리 냉장고</text><rect x='132' y='54' width='190' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='227.0' y='71.0' font-size='11' text-anchor='middle' fill='#222'>모래에 물을 적신다</text><rect x='2' y='80' width='130' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='67.0' y='97.0' font-size='11' text-anchor='middle' fill='#222'>(다) 아이스크림 케이크</text><rect x='132' y='80' width='190' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='227.0' y='97.0' font-size='11' text-anchor='middle' fill='#222'>드라이아이스를 넣는다</text></svg>",
+    "caption": "열에너지 출입과 관련된 사례"
+   }
+  },
+  {
+   "id": "u4-Q13-a",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "곡선 수치 읽기(상태 변화 시간·온도)",
+   "source": "교과서 p.136, p.140",
+   "question": "그래프는 고체 물질을 가열할 때 시간에 따른 온도 변화를 나타낸 것이다. 이 물질의 녹는 온도와 융해가 일어나는 데 걸린 시간을 옳게 짝지은 것은?",
+   "choices": [
+    "60 ℃, 9분",
+    "100 ℃, 5분",
+    "60 ℃, 5분",
+    "20 ℃, 4분",
+    "60 ℃, 4분"
+   ],
+   "answer": 3,
+   "explanation": "수평 구간(B)의 온도가 60 ℃이고 4분에서 9분까지이므로 5분이다.",
+   "choiceExplanations": [
+    "온도는 맞지만 9분은 융해가 끝난 시각이에요. 걸린 시간은 9 - 4 = 5분이에요.",
+    "100 ℃는 융해가 끝난 뒤 액체의 온도가 오른 값이에요. 녹는 온도는 수평 구간의 온도예요.",
+    "정답. 수평 구간(B)의 온도가 60 ℃이고 4분에서 9분까지이므로 5분이다.",
+    "20 ℃는 처음 온도이고 4분은 융해가 시작되기까지의 시간이에요.",
+    "온도는 맞지만 융해는 4분에 시작해 9분에 끝나므로 5분 걸려요."
+   ],
+   "detail": "자료를 읽는 순서: 수평 구간을 찾기 → 온도 읽기 → 시간 구하기.\n수평 구간 B: 온도 60 ℃ → 녹는 온도는 60 ℃\n시작 4분, 끝 9분 → 걸린 시간 = 9 - 4 = 5분",
+   "tip": "수평 구간의 온도=녹는(어는) 온도, 구간 길이=걸린 시간.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "수평 구간 읽기",
+     "text": "가열 곡선에서 온도가 일정한 수평 구간의 온도가 녹는 온도(또는 끓는 온도)이고, 구간의 가로 길이가 상태 변화에 걸린 시간이에요(교과서 p.136)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 250' width='360' height='250' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><line x1='52' y1='184' x2='340' y2='184' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><line x1='52' y1='184' x2='52' y2='26' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><text x='336' y='238' font-size='11' text-anchor='end' fill='#222'>시간(분)</text><text x='46' y='20' font-size='11' text-anchor='start' fill='#222'>온도(℃)</text><line x1='126.66666666666667' y1='184' x2='126.66666666666667' y2='188' stroke='#222' stroke-width='1'/><text x='126.7' y='201' font-size='10' text-anchor='middle' fill='#222'>4</text><line x1='220.0' y1='184' x2='220.0' y2='188' stroke='#222' stroke-width='1'/><text x='220.0' y='201' font-size='10' text-anchor='middle' fill='#222'>9</text><line x1='313.3333333333333' y1='184' x2='313.3333333333333' y2='188' stroke='#222' stroke-width='1'/><text x='313.3' y='201' font-size='10' text-anchor='middle' fill='#222'>14</text><line x1='48' y1='156.72727272727272' x2='52' y2='156.72727272727272' stroke='#222' stroke-width='1'/><text x='45' y='160.7' font-size='10' text-anchor='end' fill='#222'>20</text><line x1='48' y1='102.18181818181819' x2='52' y2='102.18181818181819' stroke='#222' stroke-width='1'/><text x='45' y='106.2' font-size='10' text-anchor='end' fill='#222'>60</text><line x1='48' y1='47.636363636363626' x2='52' y2='47.636363636363626' stroke='#222' stroke-width='1'/><text x='45' y='51.6' font-size='10' text-anchor='end' fill='#222'>100</text><line x1='220.0' y1='102.18181818181819' x2='220.0' y2='184' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='52' y1='102.18181818181819' x2='220.0' y2='102.18181818181819' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><polyline points='52.0,156.7 126.7,102.2 220.0,102.2 313.3,47.6' fill='none' stroke='#b00' stroke-width='2.5'/><text x='89.3' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>A</text><line x1='126.66666666666667' y1='204' x2='126.66666666666667' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='173.3' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>B</text><line x1='220.0' y1='204' x2='220.0' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='276.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>C</text></svg>",
+    "caption": "고체 물질의 가열 곡선"
+   }
+  },
+  {
+   "id": "u4-Q13-b",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "곡선 수치 읽기(상태 변화 시간·온도)",
+   "source": "교과서 p.136, p.140",
+   "question": "그래프는 액체 물질을 냉각할 때 시간에 따른 온도 변화를 나타낸 것이다. 이 물질의 어는 온도와 응고가 일어나는 데 걸린 시간을 옳게 짝지은 것은?",
+   "choices": [
+    "30 ℃, 8분",
+    "30 ℃, 6분",
+    "70 ℃, 6분",
+    "0 ℃, 4분",
+    "30 ℃, 2분"
+   ],
+   "answer": 2,
+   "explanation": "수평 구간(B)의 온도가 30 ℃이고 2분에서 8분까지이므로 6분이다.",
+   "choiceExplanations": [
+    "응고는 2분에 시작해 8분에 끝나므로 8분은 끝난 시각이에요.",
+    "정답. 수평 구간(B)의 온도가 30 ℃이고 2분에서 8분까지이므로 6분이다.",
+    "70 ℃는 처음 온도예요. 어는 온도는 수평 구간의 온도예요.",
+    "0 ℃는 마지막 온도이고 응고가 끝난 뒤의 값이에요.",
+    "온도는 맞지만 2분은 응고가 시작되기까지의 시간이에요."
+   ],
+   "detail": "자료를 읽는 순서: 수평 구간 찾기 → 온도 읽기 → 시간 구하기.\n수평 구간 B: 온도 30 ℃ → 어는 온도는 30 ℃\n시작 2분, 끝 8분 → 걸린 시간 = 8 - 2 = 6분",
+   "tip": "수평 구간의 온도 = 어는 온도, 가로 길이 = 걸린 시간.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "냉각 곡선의 수평 구간",
+     "text": "냉각 곡선에서 온도가 일정한 구간의 온도가 어는 온도이고, 그 구간의 가로 길이가 응고에 걸린 시간이에요(교과서 p.140)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 250' width='360' height='250' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><line x1='52' y1='184' x2='340' y2='184' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><line x1='52' y1='184' x2='52' y2='26' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><text x='336' y='238' font-size='11' text-anchor='end' fill='#222'>시간(분)</text><text x='46' y='20' font-size='11' text-anchor='start' fill='#222'>온도(℃)</text><line x1='95.07692307692308' y1='184' x2='95.07692307692308' y2='188' stroke='#222' stroke-width='1'/><text x='95.1' y='201' font-size='10' text-anchor='middle' fill='#222'>2</text><line x1='224.30769230769232' y1='184' x2='224.30769230769232' y2='188' stroke='#222' stroke-width='1'/><text x='224.3' y='201' font-size='10' text-anchor='middle' fill='#222'>8</text><line x1='310.46153846153845' y1='184' x2='310.46153846153845' y2='188' stroke='#222' stroke-width='1'/><text x='310.5' y='201' font-size='10' text-anchor='middle' fill='#222'>12</text><line x1='48' y1='184.0' x2='52' y2='184.0' stroke='#222' stroke-width='1'/><text x='45' y='188.0' font-size='10' text-anchor='end' fill='#222'>0</text><line x1='48' y1='127.75' x2='52' y2='127.75' stroke='#222' stroke-width='1'/><text x='45' y='131.8' font-size='10' text-anchor='end' fill='#222'>30</text><line x1='48' y1='52.75' x2='52' y2='52.75' stroke='#222' stroke-width='1'/><text x='45' y='56.8' font-size='10' text-anchor='end' fill='#222'>70</text><line x1='224.30769230769232' y1='127.75' x2='224.30769230769232' y2='184' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='52' y1='127.75' x2='224.30769230769232' y2='127.75' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><polyline points='52.0,52.8 95.1,127.8 224.3,127.8 310.5,184.0' fill='none' stroke='#b00' stroke-width='2.5'/><text x='73.5' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>A</text><line x1='95.07692307692308' y1='204' x2='95.07692307692308' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='159.7' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>B</text><line x1='224.30769230769232' y1='204' x2='224.30769230769232' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='278.2' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>C</text></svg>",
+    "caption": "액체 물질의 냉각 곡선"
+   }
+  },
+  {
+   "id": "u4-Q14-a",
+   "slot": "Q14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "승화·기화 현상 분류",
+   "source": "교과서 p.129",
+   "question": "승화에 해당하는 현상만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄷ, ㄹ",
+    "ㄴ, ㄷ",
+    "ㄱ, ㄴ",
+    "ㄱ, ㄹ"
+   ],
+   "answer": 4,
+   "explanation": "옳은 설명은 ㄱ, ㄴ이다. (ㄴ의 언 빨래 사례는 교과서 밖 일반 상식이에요.)",
+   "choiceExplanations": [
+    "ㄴ도 옳은 설명인데 빠졌어요. (교과서 밖 일반 상식) 빨래 속의 얼음이 액체를 거치지 않고 기체로 변하는 승화예요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 고체가 액체로 변하는 융해예요. ㄹ은 옳지 않은 설명인데 골랐어요. 수증기가 액체로 변하는 액화예요. ㄱ도 옳은 설명인데 빠졌어요. 고체인 눈이 액체를 거치지 않고 기체로 변하는 승화예요. ㄴ도 옳은 설명인데 빠졌어요. (교과서 밖 일반 상식) 빨래 속의 얼음이 액체를 거치지 않고 기체로 변하는 승화예요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 고체가 액체로 변하는 융해예요. ㄱ도 옳은 설명인데 빠졌어요. 고체인 눈이 액체를 거치지 않고 기체로 변하는 승화예요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄴ).",
+    "ㄹ은 옳지 않은 설명인데 골랐어요. 수증기가 액체로 변하는 액화예요. ㄴ도 옳은 설명인데 빠졌어요. (교과서 밖 일반 상식) 빨래 속의 얼음이 액체를 거치지 않고 기체로 변하는 승화예요."
+   ],
+   "detail": "각 현상이 어떤 상태에서 어떤 상태로 변하는지 먼저 적어요.\n· ㄱ : 옳아요. 고체인 눈이 액체를 거치지 않고 기체로 변하는 승화예요.\n· ㄴ : 옳아요. (교과서 밖 일반 상식) 빨래 속의 얼음이 액체를 거치지 않고 기체로 변하는 승화예요.\n· ㄷ : 옳지 않아요. 고체가 액체로 변하는 융해예요.\n· ㄹ : 옳지 않아요. 수증기가 액체로 변하는 액화예요.\n→ 옳은 설명은 ㄱ, ㄴ이에요.",
+   "tip": "액체를 거치지 않고 고체↔기체로 변하면 승화.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "승화",
+     "text": "물질이 액체를 거치지 않고 고체에서 기체로, 또는 기체에서 고체로 변하는 현상이에요(교과서 p.129). 언 빨래가 마르는 것도 같은 원리예요(교과서 밖 일반 상식)."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 응달에 둔 눈사람이 녹은 흔적 없이 크기가 작아진다.\nㄴ. 영하의 추운 날 빨랫줄에 널어 얼어 있던 빨래가 녹지 않고 마른다.\nㄷ. 손바닥 위의 초콜릿이 녹는다.\nㄹ. 차가운 안경이 따뜻한 실내에서 뿌옇게 흐려진다."
+  },
+  {
+   "id": "u4-Q14-b",
+   "slot": "Q14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "승화·기화 현상 분류",
+   "source": "교과서 p.129",
+   "question": "기화에 해당하는 현상만을 〈보기〉에서 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ, ㄴ, ㄷ",
+    "ㄴ, ㄷ, ㄹ",
+    "ㄱ, ㄷ, ㄹ",
+    "ㄱ, ㄴ, ㄹ",
+    "ㄷ, ㄹ"
+   ],
+   "answer": 3,
+   "explanation": "옳은 설명은 ㄱ, ㄷ, ㄹ이다.",
+   "choiceExplanations": [
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 수증기가 액체로 변하는 액화예요. ㄹ도 옳은 설명인데 빠졌어요. 액체가 기체로 변하는 기화예요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 수증기가 액체로 변하는 액화예요. ㄱ도 옳은 설명인데 빠졌어요. 액체인 물이 기체로 변하는 기화예요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄷ, ㄹ).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 수증기가 액체로 변하는 액화예요. ㄷ도 옳은 설명인데 빠졌어요. 물이 기체로 변하는 기화(증발)예요.",
+    "ㄱ도 옳은 설명인데 빠졌어요. 액체인 물이 기체로 변하는 기화예요."
+   ],
+   "detail": "액체가 기체로 변하는 현상을 모두 찾아요.\n· ㄱ : 옳아요. 액체인 물이 기체로 변하는 기화예요.\n· ㄴ : 옳지 않아요. 수증기가 액체로 변하는 액화예요.\n· ㄷ : 옳아요. 물이 기체로 변하는 기화(증발)예요.\n· ㄹ : 옳아요. 액체가 기체로 변하는 기화예요.\n→ 옳은 설명은 ㄱ, ㄷ, ㄹ이에요.",
+   "tip": "마르거나 끓어 기체가 되는 현상은 모두 기화이다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "기화",
+     "text": "기화는 물질이 액체에서 기체로 변하는 현상이에요(교과서 p.129)."
+    }
+   ],
+   "fixedOrder": true,
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 젖은 머리카락이 드라이어로 마른다.\nㄴ. 목욕탕 거울에 수증기가 물방울로 맺힌다.\nㄷ. 가뭄에 논바닥의 물이 말라 갈라진다.\nㄹ. 주전자의 물이 끓어 수증기가 된다."
+  },
+  {
+   "id": "u4-Q15-a",
+   "slot": "Q15",
+   "type": "short",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "상태 변화 용어(단답)",
+   "source": "교과서 p.134, p.141",
+   "question": "물이 끓을 때의 가열 곡선을 그리는 실험에서 액체가 갑자기 끓어 넘치는 것을 막기 위해 넣는 돌이나 사기 조각을 무엇이라고 하는지 쓰시오.",
+   "answer": [
+    "끓임쪽"
+   ],
+   "answerHint": "세 글자로 쓰시오.",
+   "commonMistakes": [
+    {
+     "answer": [
+      "증류수"
+     ],
+     "why": "증류수는 이 실험에서 가열하는 액체예요. 끓어 넘치는 것을 막기 위해 넣는 조각이 아니에요."
+    },
+    {
+     "answer": [
+      "온도계"
+     ],
+     "why": "온도계는 물의 온도를 재는 도구예요."
+    }
+   ],
+   "explanation": "액체가 갑자기 끓어 넘치는 것을 막기 위해 넣는 돌이나 사기 조각은 끓임쪽이다.",
+   "detail": "개념: 물이 끓을 때의 온도 변화를 측정하는 실험에서는 삼각 플라스크에 증류수와 함께 끓임쪽을 3~4개 넣어요.\n적용: 끓임쪽은 액체가 갑자기 끓어 넘치는 것을 막아 줘요.",
+   "tip": "끓어 넘침 방지용 돌·사기 조각 = 끓임쪽.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "끓임쪽",
+     "text": "끓임쪽은 액체가 갑자기 끓어 넘치는 것을 막기 위해 넣는 돌이나 사기 조각이에요(교과서 p.134)."
+    }
+   ]
+  },
+  {
+   "id": "u4-Q15-b",
+   "slot": "Q15",
+   "type": "short",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "상태 변화 용어(단답)",
+   "source": "교과서 p.134, p.141",
+   "question": "갑자기 추워지거나 햇볕이 부족하여 농작물 등이 입는 피해를 무엇이라고 하는지 쓰시오.",
+   "answer": [
+    "냉해"
+   ],
+   "answerHint": "두 글자로 쓰시오.",
+   "commonMistakes": [
+    {
+     "answer": [
+      "서리"
+     ],
+     "why": "서리는 기체가 고체로 변하는 현상이에요. 농작물이 입는 피해를 가리키는 말이 아니에요."
+    },
+    {
+     "answer": [
+      "한파"
+     ],
+     "why": "한파는 매우 심한 추위를 뜻하는 말이고, 농작물이 입는 피해를 가리키는 말이 아니에요(교과서 밖 일반 상식)."
+    }
+   ],
+   "explanation": "갑자기 추워지거나 햇볕이 부족하여 농작물이 입는 피해는 냉해이다.",
+   "detail": "개념: 냉해는 갑자기 추워지거나 햇볕이 부족하여 농작물 등이 입는 피해예요.\n적용: 사과꽃이 핀 뒤 기온이 갑자기 낮아지면 냉해를 입을 수 있어요.",
+   "tip": "추위·일조 부족으로 농작물이 입는 피해 = 냉해.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "냉해",
+     "text": "냉해는 갑자기 추워지거나 햇볕이 부족하여 농작물 등이 입는 피해예요(교과서 p.141)."
+    }
+   ]
+  },
+  {
+   "id": "u4-S03-a",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 8,
+   "concept": "상태 변화 이름·열에너지 출입 쓰기",
+   "source": "교과서 p.129, p.137, p.141, p.143",
+   "question": "다음은 일상생활에서 일어나는 현상이다.\n(가) 온열 치료에서 액체 파라핀에 손을 담갔다가 꺼내면 파라핀이 식으면서 굳는다.\n(나) 아이스 팩 속의 물질이 시간이 지나면서 고체에서 액체로 변한다.\n(다) 마당에 뿌린 물이 햇볕에 서서히 마른다.\n(1) (가)~(다)에서 일어나는 상태 변화의 이름을 각각 쓰시오. (3점)\n(2) (가)~(다)에서 열에너지를 흡수하는지 방출하는지 각각 쓰시오. (3점)\n(3) (가)~(다) 중 주위의 온도가 높아지는 현상의 기호를 쓰시오. (2점)",
+   "answerHint": "(단, 기호와 이름을 구분하여 쓸 것)",
+   "modelAnswer": "(1) (가) 응고 (나) 융해 (다) 기화(혹은 증발) (2) (가) 방출 (나) 흡수 (다) 흡수 (3) (가)",
+   "explanation": "모범 답안: (1) (가) 응고 (나) 융해 (다) 기화(혹은 증발) (2) (가) 방출 (나) 흡수 (다) 흡수 (3) (가) (근거: 교과서 p.129, p.137, p.141)",
+   "rubric": [
+    {
+     "criterion": "(1) 이름 (가) 응고, (나) 융해, (다) 기화(혹은 증발)를 씀",
+     "points": 3,
+     "tip": "하나당 1점. (가)는 액체가 고체로 변하는 응고, (나)는 고체가 액체로 변하는 융해, (다)는 액체가 기체로 변하는 기화(증발은 기화에 해당)예요."
+    },
+    {
+     "criterion": "(2) 열에너지 (가) 방출, (나) 흡수, (다) 흡수를 씀",
+     "points": 3,
+     "tip": "하나당 1점. 흡수: 융해·기화·고체→기체 승화, 방출: 응고·액화·기체→고체 승화."
+    },
+    {
+     "criterion": "(3) (가)를 씀",
+     "points": 2,
+     "tip": "열에너지를 방출하면 주위의 온도가 높아져요."
+    }
+   ],
+   "detail": "개념: 융해·기화·고체→기체 승화는 열에너지를 흡수하고, 응고·액화·기체→고체 승화는 방출해요.\n적용: (가) 응고 방출, (나) 융해 흡수, (다) 기화 흡수. 방출하는 (가)에서 주위 온도가 높아져요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: (1)에서 기화 대신 증발을 쓴 답도 인정",
+   "tip": "방출하면 주위가 따뜻, 흡수하면 주위가 시원.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "상태 변화 이름 읽는 법",
+     "text": "고체→액체는 융해, 액체→고체는 응고, 액체→기체는 기화(증발은 기화에 해당)예요(교과서 p.129)."
+    }
+   ]
+  },
+  {
+   "id": "u4-S03-b",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 8,
+   "concept": "상태 변화 이름·열에너지 출입 쓰기",
+   "source": "교과서 p.129, p.137, p.141, p.143",
+   "question": "다음은 일상생활에서 일어나는 현상이다.\n(가) 우주복 안감에 사용되는 물질이 체온에 의해 고체에서 액체로 변한다.\n(나) 차가운 음료수 캔의 표면에 물방울이 맺힌다.\n(다) 건조대에 널어 둔 젖은 빨래가 마른다.\n(1) (가)~(다)에서 일어나는 상태 변화의 이름을 각각 쓰시오. (3점)\n(2) (가)~(다)에서 열에너지를 흡수하는지 방출하는지 각각 쓰시오. (3점)\n(3) (가)~(다) 중 주위의 온도가 낮아지는 현상의 기호를 모두 쓰시오. (2점)",
+   "answerHint": "(단, 기호와 이름을 구분하여 쓸 것)",
+   "modelAnswer": "(1) (가) 융해 (나) 액화 (다) 기화(혹은 증발) (2) (가) 흡수 (나) 방출 (다) 흡수 (3) (가), (다)",
+   "explanation": "모범 답안: (1) (가) 융해 (나) 액화 (다) 기화(혹은 증발) (2) (가) 흡수 (나) 방출 (다) 흡수 (3) (가), (다) (근거: 교과서 p.129, p.137, p.143)",
+   "rubric": [
+    {
+     "criterion": "(1) 이름 (가) 융해, (나) 액화, (다) 기화(혹은 증발)를 씀",
+     "points": 3,
+     "tip": "하나당 1점. (나)는 수증기가 액체로 변하는 액화예요."
+    },
+    {
+     "criterion": "(2) 열에너지 (가) 흡수, (나) 방출, (다) 흡수를 씀",
+     "points": 3,
+     "tip": "하나당 1점. 액화는 열에너지를 방출해요."
+    },
+    {
+     "criterion": "(3) (가), (다)를 모두 씀",
+     "points": 2,
+     "tip": "열에너지를 흡수하는 (가), (다)에서 주위의 온도가 낮아져요. 하나만 쓰면 1점."
+    }
+   ],
+   "detail": "개념: 융해·기화·고체→기체 승화는 열에너지를 흡수하고, 응고·액화·기체→고체 승화는 방출해요.\n적용: (가) 융해 흡수, (나) 액화 방출, (다) 기화 흡수. 흡수하는 (가), (다)에서 주위의 온도가 낮아져요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: 물방울이 맺히는 것을 기화로 쓰는 오답",
+   "tip": "물방울이 맺히면 액화(방출).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "상태 변화 이름 읽는 법",
+     "text": "기체→액체는 액화, 고체→액체는 융해, 액체→기체는 기화예요(교과서 p.129)."
+    }
+   ]
+  },
+  {
+   "id": "u4-S04-a",
+   "slot": "S04",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "열에너지와 온도 일정·보온(조건어 서술)",
+   "source": "교과서 p.136, p.140~141",
+   "question": "물을 가열하면 온도가 서서히 높아지다가 물이 끓기 시작하면 온도가 더 이상 높아지지 않고 일정하게 유지된다. 그 까닭을 '열에너지', '상태 변화'를 모두 사용하여 서술하시오.",
+   "answerHint": "(단, 조건 낱말을 모두 사용할 것)",
+   "modelAnswer": "물이 끓는 동안 가해 준 열에너지가 물의 온도를 높이는 데 쓰이지 않고 액체가 기체로 상태 변화하는 데 사용되기 때문이다.",
+   "explanation": "모범 답안: 물이 끓는 동안 가해 준 열에너지가 물의 온도를 높이는 데 쓰이지 않고 액체가 기체로 상태 변화하는 데 사용되기 때문이다. (근거: 교과서 p.136)",
+   "rubric": [
+    {
+     "criterion": "조건 낱말 '열에너지', '상태 변화'를 모두 사용함",
+     "points": 1,
+     "tip": "두 낱말이 모두 들어가야 해요. 빠진 낱말이 있으면 이 항목은 0점이에요."
+    },
+    {
+     "criterion": "가해 준(흡수한) 열에너지가 온도를 높이는 데 쓰이지 않는다고 씀",
+     "points": 1,
+     "tip": "온도 상승이 아닌 다른 곳에 쓰인다는 점을 써요."
+    },
+    {
+     "criterion": "열에너지가 액체가 기체로 변하는 상태 변화(기화)에 사용된다고 씀",
+     "points": 2,
+     "tip": "기화(상태 변화)에 쓰인다는 핵심 까닭이에요."
+    }
+   ],
+   "detail": "개념: 물질의 상태가 변하는 동안 흡수한 열에너지는 온도 변화가 아니라 상태 변화에 사용돼요.\n적용: 끓는 동안 가해 준 열에너지가 물이 수증기로 변하는 데 쓰이므로 온도가 일정해요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: '열이 사라져서'처럼 열에너지의 쓰임을 쓰지 않는 답",
+   "tip": "수평 구간 = 열에너지가 상태 변화에 쓰이는 중.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "끓는 동안 온도가 일정한 까닭",
+     "text": "물을 가열하면 끓기 시작하면서 온도가 일정해져요. 가해 준 열에너지가 물이 수증기로 변하는 데 사용되기 때문이에요(교과서 p.136)."
+    }
+   ]
+  },
+  {
+   "id": "u4-S04-b",
+   "slot": "S04",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "열에너지와 온도 일정·보온(조건어 서술)",
+   "source": "교과서 p.136, p.140~141",
+   "question": "얼음을 천천히 가열하면 0 ℃에서 얼음이 녹기 시작하여 모두 녹을 때까지 온도가 변하지 않고 일정하게 유지된다. 그 까닭을 '열에너지', '융해'를 모두 사용하여 서술하시오.",
+   "answerHint": "(단, 조건 낱말을 모두 사용할 것)",
+   "modelAnswer": "얼음이 녹는 동안 가해 준 열에너지가 온도를 높이는 데 쓰이지 않고 고체가 액체로 융해하는 데 사용되기 때문이다.",
+   "explanation": "모범 답안: 얼음이 녹는 동안 가해 준 열에너지가 온도를 높이는 데 쓰이지 않고 고체가 액체로 융해하는 데 사용되기 때문이다. (근거: 교과서 p.136)",
+   "rubric": [
+    {
+     "criterion": "조건 낱말 '열에너지', '융해'를 모두 사용함",
+     "points": 1,
+     "tip": "두 낱말이 모두 들어가야 해요. 빠진 낱말이 있으면 이 항목은 0점이에요."
+    },
+    {
+     "criterion": "가해 준(흡수한) 열에너지가 온도를 높이는 데 쓰이지 않는다고 씀",
+     "points": 1,
+     "tip": "온도 상승이 아닌 다른 곳에 쓰인다는 점을 써요."
+    },
+    {
+     "criterion": "열에너지가 고체가 액체로 변하는 융해에 사용된다고 씀",
+     "points": 2,
+     "tip": "융해(상태 변화)에 쓰인다는 핵심 까닭이에요."
+    }
+   ],
+   "detail": "개념: 물질의 상태가 변하는 동안 흡수한 열에너지는 온도 변화가 아니라 상태 변화에 사용돼요.\n적용: 얼음이 녹는 동안 가해 준 열에너지가 고체를 액체로 바꾸는 융해에 쓰이므로 온도가 일정해요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: '열이 사라져서'처럼 열에너지의 쓰임을 쓰지 않는 답",
+   "tip": "수평 구간 = 열에너지가 상태 변화에 쓰이는 중.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "녹는 동안 온도가 일정한 까닭",
+     "text": "물질이 녹는 동안 온도가 일정한 것은 흡수한 열에너지가 온도를 높이는 데가 아니라 고체가 액체로 변하는 데 사용되기 때문이에요(교과서 p.136)."
+    }
+   ]
+  },
+  {
+   "id": "u4-P23M11-a",
+   "slot": "P23M11",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "세 가지 상태의 특징",
+   "source": "교과서 p.120~122 (2023 2학기 중간 11번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2023-2학기-중간-11",
+   "question": "물질의 세 가지 상태에 대한 설명으로 옳지 않은 것은?",
+   "choices": [
+    "액체, 기체는 흐르는 성질이 있다.",
+    "고체는 모양과 부피가 일정하다.",
+    "액체는 부피가 일정하다.",
+    "기체는 힘을 가하면 쉽게 압축된다.",
+    "기체는 모양은 일정하지 않지만 부피는 일정하다."
+   ],
+   "answer": 5,
+   "explanation": "기체는 모양뿐 아니라 부피도 일정하지 않다.",
+   "choiceExplanations": [
+    "액체와 기체는 담는 용기에 따라 모양이 변하고 흐르는 성질이 있어요. 옳은 설명이에요.",
+    "고체는 담는 용기에 상관없이 모양과 부피가 일정해요. 옳은 설명이에요.",
+    "액체는 용기가 바뀌어도 부피가 일정해요. 옳은 설명이에요.",
+    "기체는 입자 사이의 거리가 멀어 힘을 가하면 부피가 쉽게 줄어요(압축). 옳은 설명이에요.",
+    "정답. 이 설명이 옳지 않아요. 기체는 담는 용기와 외부의 힘에 따라 모양뿐 아니라 부피도 쉽게 변해요."
+   ],
+   "detail": "개념: 기체는 담는 용기와 외부의 힘에 따라 모양과 부피가 모두 변해요.\n적용: 기체의 부피가 일정하다는 설명만 옳지 않아요.",
+   "tip": "부피가 일정한 것은 고체와 액체, 기체는 부피도 변한다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "기체의 특징",
+     "text": "기체는 담는 용기나 외부의 힘에 따라 모양과 부피가 쉽게 변해요(교과서 p.120)."
+    }
+   ]
+  },
+  {
+   "id": "u4-P23M12-a",
+   "slot": "P23M12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "승화와 상태 변화",
+   "source": "교과서 p.129 (2023 2학기 중간 12번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2023-2학기-중간-12",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. A→B의 상태 변화는 기화이다.\nㄴ. B→C의 상태 변화는 승화이다.\nㄷ. 둥근바닥 플라스크 밑에 생긴 보라색 고체는 아이오딘과 다른 물질이다.",
+   "question": "그림과 같이 고체 상태의 아이오딘을 넣고, 찬물이 든 둥근바닥 플라스크를 위에 올려놓은 비커를 서서히 가열하였다. 이에 대한 설명으로 옳은 것만을 모두 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄴ",
+    "ㄷ",
+    "ㄱ, ㄴ",
+    "ㄴ, ㄷ"
+   ],
+   "answer": 2,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄴ이다.",
+   "choiceExplanations": [
+    "ㄱ은 옳지 않은 설명인데 골랐어요. 고체 아이오딘이 기체가 되는 변화이므로 액체를 거치지 않는 승화예요(아이오딘은 교과서에 없는 물질이라 가열 실험의 결과는 교과서 밖 일반 상식이에요). ㄴ도 옳은 설명인데 빠졌어요. 기체 아이오딘이 찬 플라스크 바닥에서 고체로 변하므로 기체→고체 승화예요(교과서 밖 일반 상식인 실험이지만 승화의 뜻(교과서 p.129)으로 판단해요).",
+    "정답. 옳은 설명만 골랐어요(ㄴ).",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 상태만 변했으므로 같은 아이오딘이에요. 상태가 변해도 물질의 종류와 성질은 변하지 않아요. ㄴ도 옳은 설명인데 빠졌어요. 기체 아이오딘이 찬 플라스크 바닥에서 고체로 변하므로 기체→고체 승화예요(교과서 밖 일반 상식인 실험이지만 승화의 뜻(교과서 p.129)으로 판단해요).",
+    "ㄱ은 옳지 않은 설명인데 골랐어요. 고체 아이오딘이 기체가 되는 변화이므로 액체를 거치지 않는 승화예요(아이오딘은 교과서에 없는 물질이라 가열 실험의 결과는 교과서 밖 일반 상식이에요).",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 상태만 변했으므로 같은 아이오딘이에요. 상태가 변해도 물질의 종류와 성질은 변하지 않아요."
+   ],
+   "detail": "이 실험 결과(액체를 거치지 않고 고체→기체→고체로 변함)는 교과서 밖 일반 상식이에요. 승화의 뜻(교과서 p.129)에 맞춰 판단해요.\n· ㄱ : 옳지 않아요. 고체 아이오딘이 기체가 되는 변화이므로 액체를 거치지 않는 승화예요(아이오딘은 교과서에 없는 물질이라 가열 실험의 결과는 교과서 밖 일반 상식이에요).\n· ㄴ : 옳아요. 기체 아이오딘이 찬 플라스크 바닥에서 고체로 변하므로 기체→고체 승화예요(교과서 밖 일반 상식인 실험이지만 승화의 뜻(교과서 p.129)으로 판단해요).\n· ㄷ : 옳지 않아요. 상태만 변했으므로 같은 아이오딘이에요. 상태가 변해도 물질의 종류와 성질은 변하지 않아요.\n→ 옳은 설명은 ㄴ이에요.",
+   "tip": "고체↔기체는 방향이 반대여도 모두 승화, 상태가 변해도 물질은 그대로.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "승화",
+     "text": "물질이 액체를 거치지 않고 고체에서 기체로, 기체에서 고체로 변하는 현상이 승화예요(교과서 p.129)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330 260' width='330' height='260' font-family='sans-serif'><ellipse cx='165' cy='60' rx='62' ry='38' fill='#e8f3ff' stroke='#222' stroke-width='2'/><text x='165' y='36' font-size='11' text-anchor='middle' fill='#222'>찬물</text><rect x='95' y='96' width='140' height='110' fill='#fff' stroke='#222' stroke-width='2'/><ellipse cx='165' cy='150' rx='24' ry='24' fill='#c9a3e0' opacity='0.6'/><rect x='130' y='192' width='70' height='9' fill='#4a2a6a'/><circle cx='140' cy='103' r='3' fill='#4a2a6a'/><circle cx='165' cy='104' r='3' fill='#4a2a6a'/><circle cx='190' cy='103' r='3' fill='#4a2a6a'/><text x='255' y='108' font-size='14' fill='#222' font-weight='bold'>C</text><line x1='230' y1='104' x2='250' y2='104' stroke='#222'/><text x='255' y='158' font-size='14' fill='#222' font-weight='bold'>B</text><line x1='190' y1='152' x2='250' y2='154' stroke='#222'/><text x='255' y='200' font-size='14' fill='#222' font-weight='bold'>A</text><line x1='202' y1='196' x2='250' y2='198' stroke='#222'/><text x='62' y='200' font-size='12' text-anchor='end' fill='#222'>아이오딘</text><line x1='65' y1='196' x2='130' y2='196' stroke='#222'/><rect x='120' y='214' width='90' height='30' fill='#fff2cc' stroke='#222'/><text x='165' y='233' font-size='11' text-anchor='middle' fill='#222'>가열</text></svg>",
+    "caption": "가열하는 아이오딘 실험 장치 (A: 고체 아이오딘, B: 기체, C: 플라스크 바닥의 고체)"
+   }
+  },
+  {
+   "id": "u4-P23M15-a",
+   "slot": "P23M15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "융해와 승화",
+   "source": "교과서 p.129 (2023 2학기 중간 15번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2023-2학기-중간-15",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. (가)에서는 융해가 일어난다.\nㄴ. (가)와 (나) 모두 비닐주머니가 부풀어 오른다.\nㄷ. 옷장 안의 나프탈렌이 작아지는 것은 (나)와 같은 상태 변화이다.",
+   "question": "그림과 같이 25 ℃, 1기압에서 비닐봉지 (가)에 얼음 조각과 (나)에 드라이아이스 조각을 각각 넣고 비닐봉지 입구를 막았다. 시간이 지남에 따라 두 비닐봉지에서 일어나는 변화를 관찰하였다. 이에 대한 설명으로 옳은 것만을 모두 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄴ",
+    "ㄱ, ㄷ",
+    "ㄴ, ㄷ",
+    "ㄱ, ㄴ, ㄷ"
+   ],
+   "answer": 3,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄱ, ㄷ이다.",
+   "choiceExplanations": [
+    "ㄷ도 옳은 설명인데 빠졌어요. 고체인 드라이아이스가 기체가 되는 승화와 같이 나프탈렌도 고체가 기체로 바로 변해 작아져요(교과서 밖 일반 상식).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (가)는 고체가 액체로 변해 기체가 생기지 않으므로 부풀지 않아요. 기체가 생기는 (나)만 부풀어요. ㄱ도 옳은 설명인데 빠졌어요. 25 ℃에서 얼음(고체)이 물(액체)로 변하는 융해가 일어나요. ㄷ도 옳은 설명인데 빠졌어요. 고체인 드라이아이스가 기체가 되는 승화와 같이 나프탈렌도 고체가 기체로 바로 변해 작아져요(교과서 밖 일반 상식).",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄷ).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (가)는 고체가 액체로 변해 기체가 생기지 않으므로 부풀지 않아요. 기체가 생기는 (나)만 부풀어요. ㄱ도 옳은 설명인데 빠졌어요. 25 ℃에서 얼음(고체)이 물(액체)로 변하는 융해가 일어나요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (가)는 고체가 액체로 변해 기체가 생기지 않으므로 부풀지 않아요. 기체가 생기는 (나)만 부풀어요."
+   ],
+   "detail": "얼음은 융해(고체→액체), 드라이아이스는 승화(고체→기체)임을 먼저 정해요.\n· ㄱ : 옳아요. 25 ℃에서 얼음(고체)이 물(액체)로 변하는 융해가 일어나요.\n· ㄴ : 옳지 않아요. (가)는 고체가 액체로 변해 기체가 생기지 않으므로 부풀지 않아요. 기체가 생기는 (나)만 부풀어요.\n· ㄷ : 옳아요. 고체인 드라이아이스가 기체가 되는 승화와 같이 나프탈렌도 고체가 기체로 바로 변해 작아져요(교과서 밖 일반 상식).\n→ 옳은 설명은 ㄱ, ㄷ이에요.",
+   "tip": "비닐봉지가 부푸는 것은 기체가 생길 때(고체→기체 승화).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "승화와 부피",
+     "text": "고체에서 기체로의 승화가 일어나면 입자 사이의 거리가 멀어져 부피가 커져요(교과서 p.133)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330 190' width='330' height='190' font-family='sans-serif'><path d='M35,40 L125,40 L130,150 L30,150 Z' fill='#f4f4f4' stroke='#222' stroke-width='2'/><rect x='32' y='34' width='96' height='7' fill='#d9b400' stroke='#222'/><rect x='63' y='120' width='34' height='24' fill='#bfe3ff' stroke='#222' stroke-width='1.5'/><text x='80' y='172' font-size='12' text-anchor='middle' fill='#222'>(가) 얼음 조각</text><text x='80' y='135' font-size='10' text-anchor='middle' fill='#222'></text><path d='M205,40 L295,40 L300,150 L200,150 Z' fill='#f4f4f4' stroke='#222' stroke-width='2'/><rect x='202' y='34' width='96' height='7' fill='#d9b400' stroke='#222'/><rect x='233' y='120' width='34' height='24' fill='#e8e8e8' stroke='#222' stroke-width='1.5'/><text x='250' y='172' font-size='12' text-anchor='middle' fill='#222'>(나) 드라이아이스 조각</text><text x='250' y='135' font-size='10' text-anchor='middle' fill='#222'></text></svg>",
+    "caption": "(가) 얼음 조각, (나) 드라이아이스 조각을 넣은 비닐봉지"
+   }
+  },
+  {
+   "id": "u4-P23MS3-a",
+   "slot": "P23MS3",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 8,
+   "concept": "확산과 증발(서술형)",
+   "source": "교과서 p.118~119 (2023 2학기 중간 서술형 3번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2023-2학기-중간-서03",
+   "question": "다음은 우리 주위에서 일어나는 현상이다.\n(가) 풀잎에 맺힌 이슬이 사라진다.\n(나) 향수병의 뚜껑을 열어 놓으면 멀리서도 향수 냄새가 난다.\n(1) (가)와 (나)는 각각 어떤 현상인지 쓰시오. (4점)\n(2) (가)와 (나)의 현상이 일어나는 근본적인 까닭이 무엇인지 쓰시오. (4점)",
+   "answerHint": "(1)은 현상의 이름을, (2)는 두 현상에 공통인 까닭을 쓰시오.",
+   "modelAnswer": "(1) (가) 증발(혹은 기화) (나) 확산 (2) 물질을 이루는 입자가 스스로 끊임없이 운동하기 때문이다.",
+   "explanation": "모범 답안: (1) (가) 증발(혹은 기화) (나) 확산 (2) 물질을 이루는 입자가 스스로 끊임없이 운동하기 때문이다. (근거: 교과서 p.118~119)",
+   "rubric": [
+    {
+     "criterion": "(1) (가)를 증발(혹은 기화)이라고 씀",
+     "points": 2,
+     "tip": "이슬(액체)이 기체가 되어 사라지는 것은 증발(기화)이에요."
+    },
+    {
+     "criterion": "(1) (나)를 확산이라고 씀",
+     "points": 2,
+     "tip": "냄새 입자가 스스로 운동하여 퍼져 나가는 것은 확산이에요."
+    },
+    {
+     "criterion": "(2) 물질을 이루는 입자가 스스로 끊임없이 운동한다고 씀",
+     "points": 4,
+     "tip": "'입자'와 '스스로 운동'이 모두 들어가야 해요. 입자가 가열되어서라고 쓰면 오답이에요."
+    }
+   ],
+   "detail": "개념: 증발은 액체 표면의 입자가 기체로 변하는 현상, 확산은 입자가 퍼져 나가는 현상이에요. 두 현상 모두 물질을 이루는 입자가 스스로 끊임없이 운동하기 때문에 일어나요.\n적용: (가) 이슬이 사라짐 → 증발, (나) 향수 냄새가 퍼짐 → 확산, 까닭은 입자의 운동이에요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.",
+   "tip": "증발·확산의 근본 까닭 = 입자가 스스로 운동한다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "확산과 증발의 까닭",
+     "text": "확산과 증발은 물질을 이루는 입자가 스스로 끊임없이 운동하기 때문에 나타나는 현상이에요(교과서 p.118~119)."
+    }
+   ]
+  },
+  {
+   "id": "u4-P23MS4-a",
+   "slot": "P23MS4",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 9,
+   "concept": "상태 변화의 기호와 이름(서술형)",
+   "source": "교과서 p.129 (2023 2학기 중간 서술형 4번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2023-2학기-중간-서04",
+   "question": "그림은 물질의 상태 변화를 나타낸 것이다. 다음 현상에서 일어나는 상태 변화를 그림에서 골라 기호로 쓰고 상태 변화의 종류도 쓰시오. (9점)\n(1) 갓 구운 빵 위에 버터를 올려 두면 버터가 녹는다. (3점)\n(2) 나뭇잎에 서리가 생긴다. (3점)\n(3) 찬 음료가 담긴 유리컵 표면에 물방울이 맺힌다. (3점)",
+   "answerHint": "기호와 상태 변화의 이름을 모두 쓰시오.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 200' width='360' height='200' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><circle cx='60' cy='150' r='27' fill='#eef' stroke='#223' stroke-width='1.5'/><text x='60' y='155' font-size='14' text-anchor='middle' fill='#222' font-weight='bold'>고체</text><circle cx='180' cy='38' r='27' fill='#eef' stroke='#223' stroke-width='1.5'/><text x='180' y='43' font-size='14' text-anchor='middle' fill='#222' font-weight='bold'>액체</text><circle cx='300' cy='150' r='27' fill='#eef' stroke='#223' stroke-width='1.5'/><text x='300' y='155' font-size='14' text-anchor='middle' fill='#222' font-weight='bold'>기체</text><line x1='89.5' y1='134.7' x2='159.8' y2='69.1' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='134.2' y='116.2' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>A</text><line x1='150.5' y1='53.3' x2='80.2' y2='118.9' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='105.8' y='79.8' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>B</text><line x1='282.7' y1='121.6' x2='212.5' y2='56.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='257.2' y='82.6' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>C</text><line x1='197.3' y1='66.4' x2='267.5' y2='132.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='222.8' y='113.4' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>D</text><line x1='92.0' y1='159.0' x2='264.0' y2='159.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='178.0' y='177.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>E</text><line x1='268.0' y1='141.0' x2='96.0' y2='141.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='182.0' y='131.0' font-size='13' text-anchor='middle' fill='#222' font-weight='bold'>F</text></svg>",
+    "caption": "물질의 상태 변화 (화살표 방향이 변화 방향)"
+   },
+   "modelAnswer": "(1) A, 융해 (2) F, 승화(기체에서 고체로의 승화) (3) C, 액화",
+   "explanation": "모범 답안: (1) A, 융해 (2) F, 승화(기체에서 고체로의 승화) (3) C, 액화 (근거: 교과서 p.129)",
+   "rubric": [
+    {
+     "criterion": "(1) 기호 A와 융해를 모두 씀",
+     "points": 3,
+     "tip": "버터가 녹는 것은 고체→액체인 A이고 융해예요. 기호나 이름 중 하나만 맞으면 부분 점수예요."
+    },
+    {
+     "criterion": "(2) 기호 F와 승화를 모두 씀",
+     "points": 3,
+     "tip": "서리는 기체가 액체를 거치지 않고 고체가 되는 F, 승화예요."
+    },
+    {
+     "criterion": "(3) 기호 C와 액화를 모두 씀",
+     "points": 3,
+     "tip": "수증기가 물방울이 되는 것은 기체→액체인 C, 액화예요."
+    }
+   ],
+   "detail": "개념: 그림에서 화살표 출발·도착 상태를 읽어 기호를 정해요. A 고체→액체(융해), B 액체→고체(응고), C 기체→액체(액화), D 액체→기체(기화), E 고체→기체(승화), F 기체→고체(승화).\n적용: 버터가 녹음=A 융해, 서리=F 승화, 물방울=C 액화.\n채점 안내: 조건 낱말(기호와 이름)을 쓰지 않으면 그 항목은 0점이고, 나머지는 따로 점수를 줘요. 기호와 이름을 모두 써야 만점이고 모범 답안과 뜻이 같으면 인정해요.",
+   "tip": "화살표의 출발→도착으로 변화 방향부터 읽는다.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "상태 변화의 이름",
+     "head": [
+      "기호",
+      "변화",
+      "이름"
+     ],
+     "rows": [
+      [
+       "A",
+       "고체 → 액체",
+       "융해"
+      ],
+      [
+       "C",
+       "기체 → 액체",
+       "액화"
+      ],
+      [
+       "F",
+       "기체 → 고체",
+       "승화"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u4-P24K03-a",
+   "slot": "P24K03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "입자 모형과 세 가지 상태",
+   "source": "교과서 p.120~122 (2024 2학기 기말 3번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2024-2학기-기말-03",
+   "question": "그림은 물질의 세 가지 상태를 입자 모형으로 나타낸 것이다. 물질의 상태 (가)~(다)에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "(가)는 흐르는 성질이 있다.",
+    "(나)와 (다)는 담는 그릇에 따라 모양이 변한다.",
+    "(나)는 담는 그릇에 따라 부피가 변한다.",
+    "(다)에서 (나)로 변할 때 물질의 성질이 변한다.",
+    "(다)는 압력을 가하여도 쉽게 압축되지 않는다."
+   ],
+   "answer": 2,
+   "explanation": "액체(나)와 기체(다)는 담는 그릇에 따라 모양이 변한다.",
+   "choiceExplanations": [
+    "(가)는 입자가 규칙적으로 배열된 고체예요. 고체는 흐르는 성질이 없어요.",
+    "정답. (나)는 액체, (다)는 기체로 둘 다 담는 그릇에 따라 모양이 변해요.",
+    "(나)는 액체예요. 액체는 그릇이 바뀌어도 부피가 일정해요.",
+    "(다)에서 (나)로 변하는 것은 상태 변화예요. 상태가 변해도 입자의 종류가 같아서 물질의 성질은 변하지 않아요.",
+    "(다)는 입자 사이의 거리가 매우 먼 기체라서 압력을 가하면 쉽게 압축돼요."
+   ],
+   "detail": "자료를 읽는 순서: 입자 배열로 (가) 고체, (나) 액체, (다) 기체를 정한 뒤 보기를 판단해요.\n액체와 기체는 담는 그릇에 따라 모양이 변하고 흐르는 성질이 있어요.\n고체는 흐르지 않고, 액체는 부피가 일정하며, 기체는 쉽게 압축돼요.",
+   "tip": "입자가 빽빽·규칙=고체, 빽빽·불규칙=액체, 듬성듬성=기체.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "모양과 부피",
+     "text": "액체와 기체는 담는 용기에 따라 모양이 변하고 흐르는 성질이 있어요. 기체는 부피도 쉽게 변해요(교과서 p.120)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 124' width='342' height='124' font-family='sans-serif'><circle cx='57' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='22.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='15.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='84.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='91.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><text x='57' y='114' font-size='13' text-anchor='middle' fill='#222'>(가)</text><circle cx='171' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='172.0' cy='60.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='190.7' cy='58.7' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='197.5' cy='35.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='172.5' cy='34.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='153.6' cy='45.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='178.3' cy='81.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='185.5' cy='23.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='161.1' cy='75.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='167.4' cy='18.8' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='149.1' cy='32.8' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='157.9' cy='58.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='143.1' cy='67.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='179.9' cy='47.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='202.1' cy='52.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='139.8' cy='41.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='142.5' cy='54.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><text x='171' y='114' font-size='13' text-anchor='middle' fill='#222'>(나)</text><circle cx='285' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='258.6' cy='54.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='258.6' y1='54.3' x2='266.6' y2='48.3' stroke='#c22' stroke-width='1.3'/><circle cx='305.2' cy='51.4' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='305.2' y1='51.4' x2='313.2' y2='45.4' stroke='#c22' stroke-width='1.3'/><circle cx='280.2' cy='17.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='280.2' y1='17.9' x2='288.2' y2='11.9' stroke='#c22' stroke-width='1.3'/><circle cx='282.4' cy='82.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='282.4' y1='82.0' x2='290.4' y2='76.0' stroke='#c22' stroke-width='1.3'/><text x='285' y='114' font-size='13' text-anchor='middle' fill='#222'>(다)</text></svg>",
+    "caption": "물질의 세 가지 상태의 입자 모형"
+   }
+  },
+  {
+   "id": "u4-P24K04-a",
+   "slot": "P24K04",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "성에와 승화",
+   "source": "교과서 p.129 (2024 2학기 기말 4번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2024-2학기-기말-04",
+   "question": "일교차가 심한 가을 아침, 유리창에 성에가 생길 때 일어나는 상태 변화를 (가)~(다)로 옳게 나타낸 것은? (그림은 물질의 세 가지 상태를 입자 모형으로 나타낸 것이다.)",
+   "choices": [
+    "(가) → (나)",
+    "(가) → (다)",
+    "(나) → (가)",
+    "(다) → (나)",
+    "(다) → (가)"
+   ],
+   "answer": 5,
+   "explanation": "성에는 기체가 고체로 바로 변하는 승화이므로 (다)에서 (가)이다.",
+   "choiceExplanations": [
+    "고체에서 액체로 변하는 융해예요. 성에는 기체가 고체로 변해서 생겨요.",
+    "고체에서 기체로 변하는 승화예요. 성에는 반대로 기체가 고체가 되는 거예요.",
+    "액체에서 고체로 변하는 응고예요. 성에는 액체를 거치지 않아요.",
+    "기체에서 액체로 변하는 액화예요. 성에는 기체에서 고체로 바로 변해요.",
+    "정답. 성에는 기체인 (다)가 액체를 거치지 않고 고체인 (가)로 변하는 승화예요."
+   ],
+   "detail": "자료를 읽는 순서: 입자 배열로 (가) 고체, (나) 액체, (다) 기체를 정해요.\n성에는 수증기가 유리창에서 액체를 거치지 않고 고체가 되는 승화(기체→고체)예요.\n따라서 (다) → (가)예요.",
+   "tip": "서리·성에는 기체→고체 승화.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "성에와 서리",
+     "text": "겨울철 나뭇잎에 서리가 생기는 것처럼 기체가 액체를 거치지 않고 고체로 변하는 승화예요(교과서 p.129)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 124' width='342' height='124' font-family='sans-serif'><circle cx='57' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='22.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='15.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='84.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='91.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><text x='57' y='114' font-size='13' text-anchor='middle' fill='#222'>(가)</text><circle cx='171' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='172.0' cy='60.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='190.7' cy='58.7' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='197.5' cy='35.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='172.5' cy='34.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='153.6' cy='45.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='178.3' cy='81.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='185.5' cy='23.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='161.1' cy='75.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='167.4' cy='18.8' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='149.1' cy='32.8' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='157.9' cy='58.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='143.1' cy='67.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='179.9' cy='47.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='202.1' cy='52.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='139.8' cy='41.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='142.5' cy='54.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><text x='171' y='114' font-size='13' text-anchor='middle' fill='#222'>(나)</text><circle cx='285' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='258.6' cy='54.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='258.6' y1='54.3' x2='266.6' y2='48.3' stroke='#c22' stroke-width='1.3'/><circle cx='305.2' cy='51.4' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='305.2' y1='51.4' x2='313.2' y2='45.4' stroke='#c22' stroke-width='1.3'/><circle cx='280.2' cy='17.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='280.2' y1='17.9' x2='288.2' y2='11.9' stroke='#c22' stroke-width='1.3'/><circle cx='282.4' cy='82.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='282.4' y1='82.0' x2='290.4' y2='76.0' stroke='#c22' stroke-width='1.3'/><text x='285' y='114' font-size='13' text-anchor='middle' fill='#222'>(다)</text></svg>",
+    "caption": "물질의 세 가지 상태의 입자 모형"
+   }
+  },
+  {
+   "id": "u4-P24K05-a",
+   "slot": "P24K05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "이슬과 서리의 상태 변화",
+   "source": "교과서 p.129 (2024 2학기 기말 5번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2024-2학기-기말-05",
+   "question": "위 내용에서 일어나는 상태 변화를 2개 고르면?",
+   "choices": [
+    "액화",
+    "응고",
+    "승화",
+    "융해",
+    "기화"
+   ],
+   "answer": [
+    1,
+    3
+   ],
+   "explanation": "이슬은 액화, 서리는 승화이다.",
+   "choiceExplanations": [
+    "정답. 이슬은 수증기(기체)가 액체로 변하는 액화예요(이슬 자체는 교과서 밖 일반 상식이고, 액화의 뜻은 교과서 p.129).",
+    "응고는 액체가 고체로 변하는 현상인데, 서리는 액체를 거치지 않고 생겨요.",
+    "정답. 서리는 수증기(기체)가 액체를 거치지 않고 고체로 변하는 승화예요.",
+    "융해는 고체가 액체로 변하는 현상이에요. 여기서는 일어나지 않았어요.",
+    "기화는 액체가 기체로 변하는 현상이에요. 이슬·서리는 반대 방향이에요."
+   ],
+   "detail": "개념: 이슬은 기체→액체(액화, 이슬은 교과서 밖 일반 상식), 서리는 기체→고체(승화)예요.\n적용: 어제의 이슬은 액화, 오늘 아침의 서리는 승화이므로 두 가지 상태 변화는 액화와 승화예요.",
+   "tip": "이슬=액화, 서리=승화.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "액화와 승화의 뜻",
+     "text": "액화는 기체가 액체로 변하는 현상이고, 승화는 액체를 거치지 않고 기체에서 고체로(또는 고체에서 기체로) 변하는 현상이에요(교과서 p.129). 이슬이 수증기가 변한 것이라는 점은 교과서 밖 일반 상식이에요."
+    }
+   ],
+   "passageTitle": "현상",
+   "passage": "어제까지만 해도 이른 아침 풀잎에 이슬이 맺혔었는데 오늘 아침에는 기온이 영하로 떨어져 풀잎에 이슬 대신 하얀 서리가 내렸다."
+  },
+  {
+   "id": "u4-P24K06-a",
+   "slot": "P24K06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "녹는점·끓는점과 상온에서의 상태",
+   "source": "교과서 p.136 (2024 2학기 기말 6번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2024-2학기-기말-06",
+   "question": "표는 물질 A~E의 녹는점과 끓는점을 나타낸 것이다. 상온(25 °C)에서 물질 A~E의 상태를 옳게 짝지은 것은?",
+   "choices": [
+    "A – 기체",
+    "B – 고체",
+    "C – 액체",
+    "D – 액체",
+    "E - 기체"
+   ],
+   "answer": 4,
+   "explanation": "25 ℃가 녹는점보다 높고 끓는점보다 낮은 D만 액체로 옳다.",
+   "choiceExplanations": [
+    "A는 녹는점(-0.5 ℃)보다 높고 끓는점(30 ℃)보다 낮은 25 ℃이므로 액체예요.",
+    "B는 녹는점(10 ℃)보다 높고 끓는점(75 ℃)보다 낮은 25 ℃이므로 액체예요.",
+    "C는 끓는점(-196 ℃)보다 높은 25 ℃이므로 기체예요.",
+    "정답. D는 녹는점(0 ℃)보다 높고 끓는점(100 ℃)보다 낮은 25 ℃이므로 액체예요.",
+    "E는 녹는점(350 ℃)보다 낮은 25 ℃이므로 고체예요."
+   ],
+   "detail": "자료를 읽는 순서: 각 물질의 녹는점·끓는점 사이에 25 ℃가 있는지 비교해요.\n녹는점보다 낮으면 고체, 녹는점과 끓는점 사이면 액체, 끓는점보다 높으면 기체예요.\nA, B, D는 액체, C는 기체, E는 고체 → 옳은 짝은 'D – 액체'예요.",
+   "tip": "온도가 녹는점 아래=고체, 사이=액체, 끓는점 위=기체.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "가열 곡선과 상태",
+     "text": "가열하면 녹는 온도에서 고체가 액체로, 끓는 온도에서 액체가 기체로 변해요. 그 사이의 온도에서는 액체 상태예요(교과서 p.136; 이 문항의 '녹는점·끓는점'은 교과서의 녹는 온도·끓는 온도와 같은 뜻)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 354 82' width='354' height='82' font-family='sans-serif'><rect x='2' y='2' width='90' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='47.0' y='19.0' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>물질</text><rect x='92' y='2' width='50' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='117.0' y='19.0' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>A</text><rect x='142' y='2' width='50' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='167.0' y='19.0' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>B</text><rect x='192' y='2' width='55' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='219.5' y='19.0' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>C</text><rect x='247' y='2' width='50' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='272.0' y='19.0' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>D</text><rect x='297' y='2' width='55' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='324.5' y='19.0' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>E</text><rect x='2' y='28' width='90' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='47.0' y='45.0' font-size='12' text-anchor='middle' fill='#222'>녹는점(°C)</text><rect x='92' y='28' width='50' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='117.0' y='45.0' font-size='12' text-anchor='middle' fill='#222'>-0.5</text><rect x='142' y='28' width='50' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='167.0' y='45.0' font-size='12' text-anchor='middle' fill='#222'>10</text><rect x='192' y='28' width='55' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='219.5' y='45.0' font-size='12' text-anchor='middle' fill='#222'>-210</text><rect x='247' y='28' width='50' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='272.0' y='45.0' font-size='12' text-anchor='middle' fill='#222'>0</text><rect x='297' y='28' width='55' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='324.5' y='45.0' font-size='12' text-anchor='middle' fill='#222'>350</text><rect x='2' y='54' width='90' height='26' fill='#e6ecf5' stroke='#222' stroke-width='1'/><text x='47.0' y='71.0' font-size='12' text-anchor='middle' fill='#222'>끓는점(°C)</text><rect x='92' y='54' width='50' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='117.0' y='71.0' font-size='12' text-anchor='middle' fill='#222'>30</text><rect x='142' y='54' width='50' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='167.0' y='71.0' font-size='12' text-anchor='middle' fill='#222'>75</text><rect x='192' y='54' width='55' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='219.5' y='71.0' font-size='12' text-anchor='middle' fill='#222'>-196</text><rect x='247' y='54' width='50' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='272.0' y='71.0' font-size='12' text-anchor='middle' fill='#222'>100</text><rect x='297' y='54' width='55' height='26' fill='#fff' stroke='#222' stroke-width='1'/><text x='324.5' y='71.0' font-size='12' text-anchor='middle' fill='#222'>1450</text></svg>",
+    "caption": "물질 A~E의 녹는점과 끓는점"
+   }
+  },
+  {
+   "id": "u4-P24K08-a",
+   "slot": "P24K08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "양초의 응고와 부피·질량",
+   "source": "교과서 p.130~133 (2024 2학기 기말 8번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2024-2학기-기말-08",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 양초의 부피는 (가) > (나)이다.\nㄴ. 양초의 질량은 (가) > (나)이다.\nㄷ. (가)에서 (나)로 상태 변화가 일어날 때 입자 배열은 불규칙적으로 변한다.\nㄹ. 양초 대신에 물을 넣어 같은 실험을 하면 부피는 (가) < (나)이다.",
+   "question": "그림과 같이 양초를 잘게 잘라 모두 녹인 후 전자저울 위에 올려놓고 냉각시키면서 양초의 부피와 질량 변화를 관찰하였다. 이에 대한 설명으로 옳은 것을 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ, ㄴ",
+    "ㄱ, ㄹ",
+    "ㄴ, ㄷ",
+    "ㄱ, ㄴ, ㄷ",
+    "ㄴ, ㄷ, ㄹ"
+   ],
+   "answer": 2,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄱ, ㄹ이다.",
+   "choiceExplanations": [
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 상태가 변해도 입자의 개수가 같아 질량은 변하지 않아요. ㄹ도 옳은 설명인데 빠졌어요. 물은 일반적인 물질과 달리 얼면 부피가 커지는 예외예요(교과서 p.133).",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄹ).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 상태가 변해도 입자의 개수가 같아 질량은 변하지 않아요. ㄷ은 옳지 않은 설명인데 골랐어요. 응고할 때는 입자가 규칙적으로 배열돼요. ㄱ도 옳은 설명인데 빠졌어요. 양초는 응고하면 부피가 작아져서 (가)가 (나)보다 커요(교과서 p.133). ㄹ도 옳은 설명인데 빠졌어요. 물은 일반적인 물질과 달리 얼면 부피가 커지는 예외예요(교과서 p.133).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 상태가 변해도 입자의 개수가 같아 질량은 변하지 않아요. ㄷ은 옳지 않은 설명인데 골랐어요. 응고할 때는 입자가 규칙적으로 배열돼요. ㄹ도 옳은 설명인데 빠졌어요. 물은 일반적인 물질과 달리 얼면 부피가 커지는 예외예요(교과서 p.133).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. 상태가 변해도 입자의 개수가 같아 질량은 변하지 않아요. ㄷ은 옳지 않은 설명인데 골랐어요. 응고할 때는 입자가 규칙적으로 배열돼요. ㄱ도 옳은 설명인데 빠졌어요. 양초는 응고하면 부피가 작아져서 (가)가 (나)보다 커요(교과서 p.133)."
+   ],
+   "detail": "(가)는 녹은 양초(액체), (나)는 굳은 양초(고체)예요.\n· ㄱ : 옳아요. 양초는 응고하면 부피가 작아져서 (가)가 (나)보다 커요(교과서 p.133).\n· ㄴ : 옳지 않아요. 상태가 변해도 입자의 개수가 같아 질량은 변하지 않아요.\n· ㄷ : 옳지 않아요. 응고할 때는 입자가 규칙적으로 배열돼요.\n· ㄹ : 옳아요. 물은 일반적인 물질과 달리 얼면 부피가 커지는 예외예요(교과서 p.133).\n→ 옳은 설명은 ㄱ, ㄹ이에요.",
+   "tip": "양초는 응고하면 부피 감소, 물은 예외로 부피 증가.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "이 실험의 읽는 법",
+     "text": "(가)는 녹은 양초(액체), (나)는 굳은 양초(고체)예요. 같은 양초라서 질량은 같고, 부피만 달라져요(교과서 p.133)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330 190' width='330' height='190' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><rect x='20' y='70' width='90' height='70' fill='#fff' stroke='#222' stroke-width='2'/><rect x='20' y='95' width='90' height='45' fill='#f3a0c8' opacity='0.8'/><rect x='15' y='142' width='100' height='14' fill='#8aa' stroke='#222'/><text x='65' y='62' font-size='12' text-anchor='middle' fill='#222'>액체 양초</text><text x='65' y='172' font-size='12' text-anchor='middle' fill='#222'>(가)</text><rect x='220' y='70' width='90' height='70' fill='#fff' stroke='#222' stroke-width='2'/><path d='M220,100 Q265,118 310,100 L310,140 L220,140 Z' fill='#d58db0'/><rect x='215' y='142' width='100' height='14' fill='#8aa' stroke='#222'/><text x='265' y='62' font-size='12' text-anchor='middle' fill='#222'>고체 양초</text><text x='265' y='172' font-size='12' text-anchor='middle' fill='#222'>(나)</text><line x1='130' y1='105' x2='200' y2='105' stroke='#222' stroke-width='2' marker-end='url(#ah)'/><text x='165' y='95' font-size='12' text-anchor='middle' fill='#222'>냉각</text></svg>",
+    "caption": "녹은 양초를 냉각하는 실험 (가: 냉각 전, 나: 냉각 후)"
+   }
+  },
+  {
+   "id": "u4-P24K11-a",
+   "slot": "P24K11",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "부피가 가장 많이 커지는 상태 변화",
+   "source": "교과서 p.133 (2024 2학기 기말 11번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2024-2학기-기말-11",
+   "question": "상태 변화 중 부피가 가장 많이 커지는 것은?",
+   "choices": [
+    "초콜릿 조각이 녹는다.",
+    "겨울철 처마 끝에 생긴 고드름이 녹는다.",
+    "드라이아이스 조각의 크기가 점점 작아진다.",
+    "겨울날 실내에 들어가면 안경이 뿌옇게 흐려진다.",
+    "차가운 음료가 담긴 컵의 표면에 물방울이 맺힌다."
+   ],
+   "answer": 3,
+   "explanation": "고체가 기체로 변하는 승화가 입자 사이 거리가 가장 크게 멀어져 부피가 가장 많이 커진다.",
+   "choiceExplanations": [
+    "초콜릿이 녹는 것은 고체가 액체가 되는 융해예요. 부피가 조금 커질 뿐, 기체가 되는 것만큼 커지지는 않아요.",
+    "고드름이 녹는 것은 얼음이 물이 되는 융해인데 물은 얼음보다 부피가 작아요.",
+    "정답. 드라이아이스가 작아지는 것은 고체가 기체로 변하는 승화예요. 기체가 되면 입자 사이의 거리가 매우 멀어져 부피가 가장 크게 커져요.",
+    "안경이 뿌옇게 되는 것은 수증기가 액체가 되는 액화예요. 부피가 작아져요.",
+    "물방울이 맺히는 것은 수증기가 액체가 되는 액화예요. 부피가 작아져요."
+   ],
+   "detail": "개념: 입자 사이의 거리는 고체<액체<기체 순으로 멀어요. 융해·기화·고체→기체 승화는 거리가 멀어져 부피가 커져요.\n적용: 드라이아이스(승화)는 고체가 기체가 되므로 변화 폭이 가장 커요. 액화는 부피가 작아져요.",
+   "tip": "고체→기체 승화는 부피 변화가 가장 크다.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "입자 사이 거리",
+     "head": [
+      "상태",
+      "입자 사이 거리"
+     ],
+     "rows": [
+      [
+       "고체",
+       "매우 가깝다"
+      ],
+      [
+       "액체",
+       "고체보다 조금 멀다"
+      ],
+      [
+       "기체",
+       "매우 멀다"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u4-P24K12-a",
+   "slot": "P24K12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "에어컨과 열에너지 출입",
+   "source": "교과서 p.142 (2024 2학기 기말 12번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2024-2학기-기말-12",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. 실내기에서는 냉매의 부피가 작아진다.\nㄴ. 실외기에서는 냉매 입자 사이의 거리가 가까워진다.\nㄷ. 실외기에서는 기화가, 실내기에서는 액화가 일어난다.",
+   "question": "그림은 상태 변화 과정에서 출입하는 열에너지를 이용하여 온도를 조절하는 에어컨의 구조를 나타낸 것이다. 이에 대한 설명으로 옳은 것을 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ",
+    "ㄴ",
+    "ㄱ, ㄴ",
+    "ㄴ, ㄷ",
+    "ㄱ, ㄴ, ㄷ"
+   ],
+   "answer": 2,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄴ이다.",
+   "choiceExplanations": [
+    "ㄱ은 옳지 않은 설명인데 골랐어요. 실내기의 증발기에서는 냉매가 기화하므로 부피가 커져요. ㄴ도 옳은 설명인데 빠졌어요. 실외기의 응축기에서는 냉매가 액화하므로 입자 사이의 거리가 가까워져요.",
+    "정답. 옳은 설명만 골랐어요(ㄴ).",
+    "ㄱ은 옳지 않은 설명인데 골랐어요. 실내기의 증발기에서는 냉매가 기화하므로 부피가 커져요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. 반대예요. 실내기(증발기)에서 기화, 실외기(응축기)에서 액화가 일어나요.",
+    "ㄱ은 옳지 않은 설명인데 골랐어요. 실내기의 증발기에서는 냉매가 기화하므로 부피가 커져요. ㄷ은 옳지 않은 설명인데 골랐어요. 반대예요. 실내기(증발기)에서 기화, 실외기(응축기)에서 액화가 일어나요."
+   ],
+   "detail": "증발기는 실내기, 응축기는 실외기에 있어요. 증발기=기화, 응축기=액화예요.\n· ㄱ : 옳지 않아요. 실내기의 증발기에서는 냉매가 기화하므로 부피가 커져요.\n· ㄴ : 옳아요. 실외기의 응축기에서는 냉매가 액화하므로 입자 사이의 거리가 가까워져요.\n· ㄷ : 옳지 않아요. 반대예요. 실내기(증발기)에서 기화, 실외기(응축기)에서 액화가 일어나요.\n→ 옳은 설명은 ㄴ이에요.",
+   "tip": "기화하면 부피 증가(열 흡수), 액화하면 거리가 가까워짐(열 방출).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "에어컨 구조 읽는 법",
+     "text": "그림에서 실내기에는 증발기, 실외기에는 응축기가 있어요. 냉매는 기화와 액화를 반복하며 열에너지를 출입시켜요(교과서 p.142 냉장고, p.149)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 380 230' width='380' height='230' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><path d='M20,70 L120,25 L200,25 L200,185 L20,185 Z' fill='#f7f7f7' stroke='#222' stroke-width='2'/><rect x='34' y='70' width='100' height='105' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='84' y='88' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>실내기</text><rect x='45' y='100' width='78' height='24' fill='#cfe8ff' stroke='#036'/><text x='84' y='117' font-size='12' text-anchor='middle' fill='#036'>증발기</text><rect x='45' y='140' width='78' height='24' fill='#ffeccc' stroke='#a60'/><text x='84' y='157' font-size='12' text-anchor='middle' fill='#a60'>팽창 밸브</text><rect x='225' y='80' width='130' height='95' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='290' y='98' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>실외기</text><rect x='238' y='108' width='80' height='24' fill='#ffd9cf' stroke='#a30'/><text x='278' y='125' font-size='12' text-anchor='middle' fill='#a30'>응축기</text><rect x='238' y='142' width='80' height='24' fill='#e6e6e6' stroke='#444'/><text x='278' y='159' font-size='12' text-anchor='middle' fill='#222'>압축기</text><line x1='124' y1='112' x2='224' y2='118' stroke='#222' stroke-width='2' marker-end='url(#ah)'/><path d='M278,168 L278,200 L84,200 L84,166' fill='none' stroke='#222' stroke-width='2' marker-end='url(#ah)'/><text x='150' y='216' font-size='11' text-anchor='middle' fill='#222'>냉매</text></svg>",
+    "caption": "에어컨의 구조"
+   }
+  },
+  {
+   "id": "u4-P25M02-a",
+   "slot": "P25M02",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "입자 모형과 세 가지 상태",
+   "source": "교과서 p.120~122 (2025 2학기 중간 2번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-중간-02",
+   "question": "그림은 물질의 세 가지 상태를 입자 모형으로 나타낸 것이다. 이에 대한 설명으로 옳지 않은 것은?",
+   "choices": [
+    "(가)는 고체이다.",
+    "(나), (다)는 흐르는 성질이 있다.",
+    "(다)는 담는 용기에 따라 모양과 부피가 변한다.",
+    "(나)는 외부에서 힘이 가해져도 부피가 거의 변하지 않는다.",
+    "가루는 담는 용기에 따라 모양이 바뀌므로 (나)에 해당한다."
+   ],
+   "answer": 5,
+   "explanation": "가루는 고체이므로 액체인 (나)에 해당한다는 설명이 옳지 않다.",
+   "choiceExplanations": [
+    "(가)는 입자가 규칙적으로 배열된 고체예요. 옳은 설명이에요.",
+    "(나)는 액체, (다)는 기체로 둘 다 흐르는 성질이 있어요. 옳은 설명이에요.",
+    "(다)는 기체라서 용기에 따라 모양과 부피가 모두 변해요. 옳은 설명이에요.",
+    "(나)는 액체라서 힘을 가해도 부피가 거의 변하지 않아요. 옳은 설명이에요.",
+    "정답. 이 설명이 옳지 않아요. 가루는 알갱이 하나하나가 고체라서 담는 용기를 바꿔도 알갱이의 모양이 변하지 않아요(가루가 고체라는 점은 교과서 밖 일반 상식이에요)."
+   ],
+   "detail": "자료를 읽는 순서: 입자 배열로 (가) 고체, (나) 액체, (다) 기체를 정해요.\n(나), (다)는 흐르는 성질이 있고 (다)는 모양과 부피가 변해요. (나)는 힘을 가해도 부피가 거의 변하지 않아요.\n가루는 쌓아 두면 용기에 따라 모양이 바뀌는 것처럼 보여도 알갱이 하나하나는 고체예요(교과서 밖 일반 상식).",
+   "tip": "가루도 알갱이 하나하나는 고체(교과서 밖 상식).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "고체의 특징",
+     "text": "고체는 담는 용기에 상관없이 모양과 부피가 일정해요(교과서 p.120). 가루 알갱이도 고체라는 점은 교과서 밖 일반 상식이에요."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 124' width='342' height='124' font-family='sans-serif'><circle cx='57' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='22.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='34.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.5' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='15.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.0' cy='84.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='68.5' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='27.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='38.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='61.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='80.0' cy='73.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='91.5' cy='50.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><text x='57' y='114' font-size='13' text-anchor='middle' fill='#222'>(가)</text><circle cx='171' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='172.0' cy='60.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='190.7' cy='58.7' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='197.5' cy='35.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='172.5' cy='34.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='153.6' cy='45.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='178.3' cy='81.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='185.5' cy='23.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='161.1' cy='75.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='167.4' cy='18.8' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='149.1' cy='32.8' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='157.9' cy='58.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='143.1' cy='67.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='179.9' cy='47.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='202.1' cy='52.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='139.8' cy='41.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='142.5' cy='54.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><text x='171' y='114' font-size='13' text-anchor='middle' fill='#222'>(나)</text><circle cx='285' cy='50' r='42' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='258.6' cy='54.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='258.6' y1='54.3' x2='266.6' y2='48.3' stroke='#c22' stroke-width='1.3'/><circle cx='305.2' cy='51.4' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='305.2' y1='51.4' x2='313.2' y2='45.4' stroke='#c22' stroke-width='1.3'/><circle cx='280.2' cy='17.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='280.2' y1='17.9' x2='288.2' y2='11.9' stroke='#c22' stroke-width='1.3'/><circle cx='282.4' cy='82.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='282.4' y1='82.0' x2='290.4' y2='76.0' stroke='#c22' stroke-width='1.3'/><text x='285' y='114' font-size='13' text-anchor='middle' fill='#222'>(다)</text></svg>",
+    "caption": "물질의 세 가지 상태의 입자 모형"
+   }
+  },
+  {
+   "id": "u4-P25M03-a",
+   "slot": "P25M03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "상태 변화와 입자 모형",
+   "source": "교과서 p.129~137 (2025 2학기 중간 3번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-중간-03",
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. (가)의 과정에서 열에너지를 흡수한다.\nㄴ. (다)의 과정에서 입자의 개수는 줄어든다.\nㄷ. (마)의 과정에서 물질의 부피는 커진다.\nㄹ. (바)의 과정에서 주위의 온도는 높아진다.",
+   "question": "그림은 물질의 세 가지 상태의 입자 모형과 상태 변화를 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ, ㄴ",
+    "ㄴ, ㄷ",
+    "ㄷ, ㄹ",
+    "ㄱ, ㄷ, ㄹ",
+    "ㄱ, ㄴ, ㄷ, ㄹ"
+   ],
+   "answer": 4,
+   "fixedOrder": true,
+   "explanation": "옳은 설명은 ㄱ, ㄷ, ㄹ이다.",
+   "choiceExplanations": [
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (다)는 액체→기체인 기화예요. 상태가 변해도 입자의 개수는 변하지 않아요. ㄷ도 옳은 설명인데 빠졌어요. (마)는 고체→기체 승화라서 입자 사이의 거리가 멀어져 부피가 커져요. ㄹ도 옳은 설명인데 빠졌어요. (바)는 기체→고체 승화라서 열에너지를 방출하여 주위의 온도가 높아져요.",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (다)는 액체→기체인 기화예요. 상태가 변해도 입자의 개수는 변하지 않아요. ㄱ도 옳은 설명인데 빠졌어요. (가)는 고체→액체인 융해라서 열에너지를 흡수해요. ㄹ도 옳은 설명인데 빠졌어요. (바)는 기체→고체 승화라서 열에너지를 방출하여 주위의 온도가 높아져요.",
+    "ㄱ도 옳은 설명인데 빠졌어요. (가)는 고체→액체인 융해라서 열에너지를 흡수해요.",
+    "정답. 옳은 설명만 골랐어요(ㄱ, ㄷ, ㄹ).",
+    "ㄴ은 옳지 않은 설명인데 골랐어요. (다)는 액체→기체인 기화예요. 상태가 변해도 입자의 개수는 변하지 않아요."
+   ],
+   "detail": "그림에서 (가) 고체→액체, (나) 액체→고체, (다) 액체→기체, (라) 기체→액체, (마) 고체→기체, (바) 기체→고체임을 먼저 읽어요.\n· ㄱ : 옳아요. (가)는 고체→액체인 융해라서 열에너지를 흡수해요.\n· ㄴ : 옳지 않아요. (다)는 액체→기체인 기화예요. 상태가 변해도 입자의 개수는 변하지 않아요.\n· ㄷ : 옳아요. (마)는 고체→기체 승화라서 입자 사이의 거리가 멀어져 부피가 커져요.\n· ㄹ : 옳아요. (바)는 기체→고체 승화라서 열에너지를 방출하여 주위의 온도가 높아져요.\n→ 옳은 설명은 ㄱ, ㄷ, ㄹ이에요.",
+   "tip": "화살표의 출발→도착 상태로 (가)~(바)의 이름부터 정한다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "이 그림 읽는 법",
+     "text": "(가) 융해, (나) 응고, (다) 기화, (라) 액화, (마) 고체→기체 승화, (바) 기체→고체 승화예요. 상태 변화의 이름은 출발 상태와 도착 상태로 정해져요(교과서 p.129)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 225' width='360' height='225' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><circle cx='180' cy='55' r='38' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='157.0' cy='43.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='157.0' cy='55.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='157.0' cy='66.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='168.5' cy='32.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='168.5' cy='43.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='168.5' cy='55.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='168.5' cy='66.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='168.5' cy='78.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='180.0' cy='32.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='180.0' cy='43.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='180.0' cy='55.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='180.0' cy='66.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='180.0' cy='78.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='191.5' cy='32.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='191.5' cy='43.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='191.5' cy='55.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='191.5' cy='66.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='191.5' cy='78.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='203.0' cy='43.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='203.0' cy='55.0' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='203.0' cy='66.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='70' cy='170' r='38' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='70.8' cy='179.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='87.4' cy='177.7' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='93.4' cy='156.8' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='71.3' cy='155.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='54.6' cy='166.4' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='76.4' cy='198.2' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='82.8' cy='146.3' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='61.3' cy='192.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='66.9' cy='142.4' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='45.4' cy='185.5' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='50.3' cy='151.4' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='77.9' cy='167.8' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='42.5' cy='162.6' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='98.4' cy='169.4' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='92.3' cy='189.4' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='57.4' cy='178.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><circle cx='290' cy='170' r='38' fill='#fff' stroke='#222' stroke-width='1.5'/><circle cx='269.3' cy='176.4' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='269.3' y1='176.4' x2='277.3' y2='170.4' stroke='#c22' stroke-width='1.3'/><circle cx='307.6' cy='160.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='307.6' y1='160.9' x2='315.6' y2='154.9' stroke='#c22' stroke-width='1.3'/><circle cx='299.0' cy='193.1' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='299.0' y1='193.1' x2='307.0' y2='187.1' stroke='#c22' stroke-width='1.3'/><circle cx='281.4' cy='142.9' r='5' fill='#456' stroke='#123' stroke-width='0.8'/><line x1='281.4' y1='142.9' x2='289.4' y2='136.9' stroke='#c22' stroke-width='1.3'/><line x1='155.4' y1='92.3' x2='109.0' y2='140.8' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='146' y='130' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>(가)</text><line x1='94.6' y1='132.7' x2='141.0' y2='84.2' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='102' y='96' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>(나)</text><line x1='114.0' y1='162.0' x2='242.0' y2='162.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='180' y='150' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>(다)</text><line x1='246.0' y1='178.0' x2='118.0' y2='178.0' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='180' y='205' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>(라)</text><line x1='216.2' y1='81.3' x2='262.6' y2='129.8' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='290' y='100' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>(마)</text><line x1='253.8' y1='143.7' x2='207.4' y2='95.2' stroke='#2a6' stroke-width='2' marker-end='url(#ah)'/><text x='214' y='130' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>(바)</text></svg>",
+    "caption": "물질의 세 가지 상태의 입자 모형과 상태 변화 (화살표가 변화 방향)"
+   }
+  },
+  {
+   "id": "u4-P25M04-a",
+   "slot": "P25M04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "상태 변화의 이름과 예",
+   "source": "교과서 p.129 (2025 2학기 중간 4번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-중간-04",
+   "question": "상태 변화와 그에 해당하는 예시가 옳지 않은 것은?",
+   "choices": [
+    "융해 - 소금이 물에 녹는다.",
+    "기화 - 젖은 머리카락을 말린다.",
+    "응고 - 흘러내린 촛농이 굳는다.",
+    "승화 - 상온에서 드라이아이스가 사라진다.",
+    "액화 - 주전자에서 나온 김이 보인다."
+   ],
+   "answer": 1,
+   "explanation": "소금이 물에 녹는 것은 융해가 아니다.",
+   "choiceExplanations": [
+    "정답. 이 짝이 옳지 않아요. 소금이 물에 녹는 것은 물질의 상태가 변하는 융해가 아니라 소금이 물에 섞이는 현상이에요(교과서 밖 일반 상식). 융해는 고체가 열을 받아 액체로 변하는 것이에요.",
+    "젖은 머리카락이 마르는 것은 액체가 기체로 변하는 기화예요. 옳은 짝이에요.",
+    "촛농이 굳는 것은 액체가 고체로 변하는 응고예요. 옳은 짝이에요.",
+    "드라이아이스가 사라지는 것은 고체가 기체로 변하는 승화예요. 옳은 짝이에요.",
+    "주전자에서 나온 김은 수증기가 액체 물방울로 변한 액화예요. 옳은 짝이에요."
+   ],
+   "detail": "개념: 융해는 고체가 액체로 변하는 상태 변화예요. 고체 소금은 물에 섞여 퍼지는 것이므로 소금 자체가 액체로 변한 것이 아니에요(소금이 물에 섞이는 현상은 교과서 밖 일반 상식이에요).\n적용: 나머지 짝은 상태 변화의 뜻(교과서 p.129)에 맞는 짝이에요.",
+   "tip": "'녹는다'라고 모두 융해가 아니다(물에 섞이는 것은 상태 변화가 아니다).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "융해의 뜻",
+     "text": "융해는 물질의 상태가 고체에서 액체로 변하는 현상이에요(교과서 p.129)."
+    }
+   ]
+  },
+  {
+   "id": "u4-P25M05-a",
+   "slot": "P25M05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "얼음의 가열 곡선",
+   "source": "교과서 p.136~137 (2025 2학기 중간 5번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-중간-05",
+   "question": "그림은 -50 ℃의 얼음을 일정한 조건으로 가열할 때 시간에 따른 온도 변화를 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 있는 대로 고른 것은?",
+   "choices": [
+    "ㄱ, ㄴ",
+    "ㄴ, ㄹ",
+    "ㄷ, ㄹ",
+    "ㄱ, ㄴ, ㄹ",
+    "ㄴ, ㄷ, ㄹ"
+   ],
+   "answer": 2,
+   "explanation": "수평 구간 B(융해), D(기화)에서 상태 변화가 일어나고 가열하는 모든 구간에서 열에너지를 흡수한다.",
+   "choiceExplanations": [
+    "ㄱ은 옳지 않은데 골랐어요. B 구간은 융해예요. 융해할 때는 열에너지를 방출하지 않고 흡수해요(보기의 '융해열'은 융해할 때 출입하는 열에너지를 뜻해요).",
+    "정답. ㄴ(B는 융해, D는 기화)과 ㄹ(가열하는 동안 모든 구간에서 열에너지를 흡수)이 옳아요.",
+    "ㄷ은 옳지 않아요. E는 기화가 끝난 뒤이므로 수증기만 있어요. ㄴ도 옳은데 빠졌어요.",
+    "ㄱ은 옳지 않은 설명인데 골랐어요. 융해는 열에너지를 흡수해요.",
+    "ㄷ은 옳지 않은 설명인데 골랐어요. E 구간에는 얼음이 없고 수증기만 있어요."
+   ],
+   "detail": "자료를 읽는 순서: 수평 구간 B(0 ℃, 융해)와 D(100 ℃, 기화)를 찾아요.\nㄱ B는 융해라 열에너지를 흡수해요(방출 아님). ㄴ B, D에서 상태 변화 일어남(옳음). ㄷ E는 수증기만 존재(옳지 않음). ㄹ 가열하므로 모든 구간에서 흡수(옳음).",
+   "tip": "가열 곡선: 수평 구간=상태 변화, 가열 중 열에너지는 계속 흡수.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "가열 곡선",
+     "text": "가열하면 얼음(온도 상승) → 융해(0 ℃, 일정) → 물(온도 상승) → 기화(100 ℃, 일정) → 수증기 순서로 변하고, 가열하는 동안 열에너지를 계속 흡수해요(교과서 p.136)."
+    }
+   ],
+   "passageTitle": "〈보기〉",
+   "passage": "ㄱ. B 구간에서 융해열을 방출한다.\nㄴ. B 구간과 D 구간에서 상태 변화가 일어난다.\nㄷ. E 구간에서 얼음과 수증기가 함께 존재한다.\nㄹ. 위 모든 구간에서 열에너지를 흡수한다.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 250' width='360' height='250' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><line x1='52' y1='184' x2='340' y2='184' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><line x1='52' y1='184' x2='52' y2='26' stroke='#222' stroke-width='1.5' marker-end='url(#ah)'/><text x='336' y='238' font-size='11' text-anchor='end' fill='#222'>시간(분)</text><text x='46' y='20' font-size='11' text-anchor='start' fill='#222'>온도(℃)</text><line x1='48' y1='176.5' x2='52' y2='176.5' stroke='#222' stroke-width='1'/><text x='45' y='180.5' font-size='10' text-anchor='end' fill='#222'>-50</text><line x1='48' y1='139.0' x2='52' y2='139.0' stroke='#222' stroke-width='1'/><text x='45' y='143.0' font-size='10' text-anchor='end' fill='#222'>0</text><line x1='48' y1='64.0' x2='52' y2='64.0' stroke='#222' stroke-width='1'/><text x='45' y='68.0' font-size='10' text-anchor='end' fill='#222'>100</text><line x1='172.0' y1='64.0' x2='172.0' y2='184' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><line x1='52' y1='64.0' x2='172.0' y2='64.0' stroke='#777' stroke-width='1' stroke-dasharray='4 3'/><polyline points='52.0,176.5 76.0,139.0 104.0,139.0 172.0,64.0 272.0,64.0 312.0,41.5' fill='none' stroke='#b00' stroke-width='2.5'/><text x='64.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>A</text><line x1='76.0' y1='204' x2='76.0' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='90.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>B</text><line x1='104.0' y1='204' x2='104.0' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='138.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>C</text><line x1='172.0' y1='204' x2='172.0' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='222.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>D</text><line x1='272.0' y1='204' x2='272.0' y2='34' stroke='#999' stroke-width='1' stroke-dasharray='3 3'/><text x='302.0' y='218' font-size='13' text-anchor='middle' fill='#036' font-weight='bold'>E</text></svg>",
+    "caption": "-50 ℃의 얼음을 가열할 때 시간에 따른 온도 변화"
+   },
+   "fixedOrder": true
+  },
+  {
+   "id": "u4-P25M06-a",
+   "slot": "P25M06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "기화와 열에너지 흡수",
+   "source": "교과서 p.137 (2025 2학기 중간 6번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-중간-06",
+   "question": "그림과 같이 온도계 두 개를 장치하고 부채질을 하였더니 두 온도계의 온도가 달라졌다. 시간이 지난 후, (가)와 (나) 중에 온도가 더 낮은 것과 그 원인이 되는 열에너지 출입을 옳게 짝지은 것은?",
+   "choices": [
+    "(가), 기화열 흡수",
+    "(가), 응고열 방출",
+    "(가), 승화열 흡수",
+    "(나), 기화열 흡수",
+    "(나), 액화열 방출"
+   ],
+   "answer": 1,
+   "explanation": "젖은 헝겊의 물이 기화하며 열에너지를 흡수해 (가)가 더 낮아진다.",
+   "choiceExplanations": [
+    "정답. 젖은 헝겊을 감은 (가)에서 물이 기화하며 주위의 열에너지를 흡수하므로 (가)의 온도가 더 낮아져요.",
+    "응고는 액체가 고체가 되는 변화인데 여기서는 일어나지 않아요. 물이 마르는 것은 기화예요.",
+    "승화는 고체가 기체로 변하는 변화인데 헝겊의 물은 액체예요.",
+    "(나)는 젖지 않은 온도계라 기화가 일어나지 않아 온도가 내려가지 않아요.",
+    "(나)에서는 액화가 일어나지 않아요. 온도가 낮아진 쪽은 물이 기화하는 (가)예요."
+   ],
+   "detail": "개념: 액체가 기체로 변하는 기화는 열에너지를 흡수하여 주위의 온도를 낮춰요.\n적용: 부채질을 하면 (가)의 젖은 헝겊의 물이 빨리 기화하고 열에너지를 흡수하므로 (가)의 온도가 더 낮아져요.",
+   "tip": "젖은 쪽이 시원해진다 = 기화(열 흡수).",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "기화와 열에너지",
+     "text": "기화는 액체가 기체로 변하는 현상이고 열에너지를 흡수해요. 보기의 '기화열'은 기화할 때 출입하는 열에너지를 뜻해요(교과서 p.129, p.137)."
+    }
+   ],
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330 230' width='330' height='230' font-family='sans-serif'><rect x='20' y='20' width='180' height='6' fill='#555'/><rect x='30' y='20' width='6' height='190' fill='#555'/><rect x='10' y='208' width='110' height='10' fill='#555'/><line x1='100' y1='26' x2='100' y2='130' stroke='#222' stroke-width='3'/><ellipse cx='100' cy='148' rx='9' ry='20' fill='#caa' stroke='#222'/><text x='100' y='18' font-size='12' text-anchor='middle' fill='#222'>(가)</text><text x='88' y='152' font-size='11' text-anchor='end' fill='#222'>젖은 헝겊</text><line x1='150' y1='26' x2='150' y2='150' stroke='#222' stroke-width='3'/><circle cx='150' cy='158' r='6' fill='#c33' stroke='#222'/><text x='150' y='18' font-size='12' text-anchor='middle' fill='#222'>(나)</text><circle cx='270' cy='130' r='40' fill='#eee' stroke='#222' stroke-width='2'/><line x1='270' y1='130' x2='300' y2='190' stroke='#222' stroke-width='4'/><text x='270' y='90' font-size='11' text-anchor='middle' fill='#222'>부채</text><path d='M215,115 L195,110 M215,130 L195,130 M215,145 L195,150' stroke='#222' stroke-width='2' fill='none'/></svg>",
+    "caption": "젖은 헝겊을 감은 온도계 (가)와 마른 온도계 (나)에 부채질"
+   }
+  },
+  {
+   "id": "u4-P25MS2-a",
+   "slot": "P25MS2",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "기체의 부피(서술형)",
+   "source": "교과서 p.122, p.124 (2025 2학기 중간 서술형 2번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-중간-서02",
+   "question": "고체나 액체와 달리 기체는 외부 압력에 의해 부피가 쉽게 변한다. 그 까닭을 입자 사이의 거리를 포함하여 서술하시오. (4점)",
+   "answerHint": "(단, '입자 사이의 거리'를 반드시 포함할 것)",
+   "modelAnswer": "기체는 입자 사이의 거리가 멀어서 외부의 압력에 의해 입자 사이의 거리가 가까워지면서 부피가 쉽게 변한다.",
+   "explanation": "모범 답안: 기체는 입자 사이의 거리가 멀어서 외부의 압력에 의해 입자 사이의 거리가 가까워지면서 부피가 쉽게 변한다. (근거: 교과서 p.122, p.124)",
+   "rubric": [
+    {
+     "criterion": "'입자 사이의 거리'를 사용함",
+     "points": 1,
+     "tip": "조건 낱말이 빠지면 이 항목은 0점이에요."
+    },
+    {
+     "criterion": "기체는 입자 사이의 거리가 멀다고 씀",
+     "points": 1,
+     "tip": "기체는 입자 사이의 거리가 매우 멀어 공간이 많다는 점을 써요."
+    },
+    {
+     "criterion": "외부 압력에 의해 입자 사이의 거리가 가까워진다고 씀",
+     "points": 1,
+     "tip": "압력을 가하면 입자 사이가 가까워져요."
+    },
+    {
+     "criterion": "그 결과 부피가 쉽게 변한다고 씀",
+     "points": 1,
+     "tip": "거리 변화 → 부피 변화의 인과를 써요."
+    }
+   ],
+   "detail": "개념: 기체는 입자 사이의 거리가 매우 멀어서 힘을 가하면 입자 사이의 거리가 쉽게 가까워져 부피가 쉽게 변해요.\n적용: 고체·액체는 입자 사이의 거리가 가까워 힘을 가해도 부피가 거의 변하지 않아요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.",
+   "tip": "기체는 입자 사이가 멀어서 눌리면 쉽게 가까워진다.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "기체의 부피",
+     "text": "기체는 입자 사이의 거리가 매우 멀어서 외부에서 힘을 가하면 부피가 쉽게 변해요(교과서 p.122, p.124)."
+    }
+   ]
+  },
+  {
+   "id": "u4-P25MS3-a",
+   "slot": "P25MS3",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 8,
+   "concept": "에어컨과 상태 변화(서술형)",
+   "source": "교과서 p.142 (2025 2학기 중간 서술형 3번 기출)",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-중간-서03",
+   "question": "그림은 에어컨의 구조를 나타낸 것이다. 물음에 답하시오. (8점)\n(1) 증발기에서 일어나는 상태 변화의 종류와 열에너지 출입을 쓰시오. (4점)\n(2) 응축기에서 일어나는 상태 변화의 종류와 열에너지 출입을 쓰시오. (4점)",
+   "answerHint": "상태 변화의 이름과 열에너지의 흡수·방출을 모두 쓰시오.",
+   "figure": {
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 380 230' width='380' height='230' font-family='sans-serif'><defs><marker id='ah' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#222'/></marker></defs><path d='M20,70 L120,25 L200,25 L200,185 L20,185 Z' fill='#f7f7f7' stroke='#222' stroke-width='2'/><rect x='34' y='70' width='100' height='105' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='84' y='88' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>실내기</text><rect x='45' y='100' width='78' height='24' fill='#cfe8ff' stroke='#036'/><text x='84' y='117' font-size='12' text-anchor='middle' fill='#036'>증발기</text><rect x='45' y='140' width='78' height='24' fill='#ffeccc' stroke='#a60'/><text x='84' y='157' font-size='12' text-anchor='middle' fill='#a60'>팽창 밸브</text><rect x='225' y='80' width='130' height='95' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='290' y='98' font-size='12' text-anchor='middle' fill='#222' font-weight='bold'>실외기</text><rect x='238' y='108' width='80' height='24' fill='#ffd9cf' stroke='#a30'/><text x='278' y='125' font-size='12' text-anchor='middle' fill='#a30'>응축기</text><rect x='238' y='142' width='80' height='24' fill='#e6e6e6' stroke='#444'/><text x='278' y='159' font-size='12' text-anchor='middle' fill='#222'>압축기</text><line x1='124' y1='112' x2='224' y2='118' stroke='#222' stroke-width='2' marker-end='url(#ah)'/><path d='M278,168 L278,200 L84,200 L84,166' fill='none' stroke='#222' stroke-width='2' marker-end='url(#ah)'/><text x='150' y='216' font-size='11' text-anchor='middle' fill='#222'>냉매</text></svg>",
+    "caption": "에어컨의 구조"
+   },
+   "modelAnswer": "(1) 기화, 열에너지 흡수(혹은 기화열 흡수) (2) 액화, 열에너지 방출(혹은 액화열 방출)",
+   "explanation": "모범 답안: (1) 기화, 열에너지 흡수(혹은 기화열 흡수) (2) 액화, 열에너지 방출(혹은 액화열 방출) (근거: 교과서 p.142)",
+   "rubric": [
+    {
+     "criterion": "(1) 상태 변화를 기화라고 씀",
+     "points": 2,
+     "tip": "증발기에서는 냉매가 액체에서 기체로 변하는 기화가 일어나요."
+    },
+    {
+     "criterion": "(1) 열에너지를 흡수한다고 씀",
+     "points": 2,
+     "tip": "기화할 때 열에너지를 흡수해 실내가 시원해져요."
+    },
+    {
+     "criterion": "(2) 상태 변화를 액화라고 씀",
+     "points": 2,
+     "tip": "응축기에서는 냉매가 기체에서 액체로 변하는 액화가 일어나요."
+    },
+    {
+     "criterion": "(2) 열에너지를 방출한다고 씀",
+     "points": 2,
+     "tip": "액화할 때 열에너지를 방출해 실외기에서 더운 바람이 나와요."
+    }
+   ],
+   "detail": "개념: 냉매는 증발기에서 기화하며 열에너지를 흡수하고, 응축기에서 액화하며 열에너지를 방출해요.\n적용: (1) 기화·흡수 (2) 액화·방출.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.",
+   "tip": "증발기=기화=흡수, 응축기=액화=방출.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "증발기와 응축기",
+     "text": "증발기에서 냉매가 기화하며 열에너지를 흡수하고, 응축기에서 냉매가 액화하며 열에너지를 방출해요(교과서 p.142)."
+    }
+   ]
+  }
+ ]
+}
