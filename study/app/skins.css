@@ -108,16 +108,16 @@
   --wood1:#c9a86a; --wood2:#a07f44; --case:#f1e4c0; --case2:#e8d6a8; --sat:#0f8fb8;
   --radius:18px; --shadow:0 4px 10px -6px rgba(15,100,140,.35);
   --serif:"Gowun Dodum",system-ui,sans-serif; --sans:"Gowun Dodum",Pretendard,system-ui,sans-serif;
-  --hero-pb:132px; --note-bg:rgba(255,255,255,.66); --note-bg-h:rgba(255,255,255,.85);
+  --hero-pb:148px; --note-bg:rgba(255,255,255,.66); --note-bg-h:rgba(255,255,255,.85);
 }
 :root[data-skin="sea"] .hero{border-radius:22px;background:linear-gradient(#63c0e8,#bfeaf6 70%,#fff1cf)}
 :root[data-skin="sea"] .hero h1{text-shadow:0 1px 0 rgba(255,255,255,.55)}
 :root[data-skin="sea"] .dc-sky{top:4px;left:34%;width:200px;height:60px}
 :root[data-skin="sea"] .dc-sun{top:4px;right:12px;width:90px;height:90px}
-:root[data-skin="sea"] .dc-band{left:0;right:0;bottom:0;width:100%;height:100px}
-:root[data-skin="sea"] .dc-boat{right:26%;bottom:92px;width:40px;height:34px}
-:root[data-skin="sea"] .dc-shells{left:16px;bottom:4px;width:90px;height:30px}
-:root[data-skin="sea"] .dc-carve{right:18px;bottom:3px;width:54px;height:54px}
+:root[data-skin="sea"] .dc-band{left:0;right:0;bottom:0;width:100%;height:116px}
+:root[data-skin="sea"] .dc-boat{right:26%;bottom:108px;width:40px;height:34px}
+:root[data-skin="sea"] .dc-shells{left:16px;bottom:6px;width:90px;height:30px}
+:root[data-skin="sea"] .dc-carve{right:22px;bottom:6px;width:40px;height:40px}   /* 모래사장(밴드 아래쪽 약 50px) 안에 다 들어오게 */
 
 /* ═════════ ⑪ 레트로 게임기 ═════════ */
 :root[data-skin="arcade"]{
