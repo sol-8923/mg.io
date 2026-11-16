@@ -124,13 +124,45 @@ function renderError(e){
 
 /* ───────── 테마 ───────── */
 try{ var th=localStorage.getItem('mg-study:theme'); if(th) document.documentElement.setAttribute('data-theme',th); }catch(e){}
+/* ───────── 효과음(파일 없이 브라우저에서 합성) ───────── */
+var Snd=(function(){
+  var ctx=null, on=true;
+  try{ on=localStorage.getItem('mg-study:sound')!=='off'; }catch(e){}
+  function ac(){ if(!ctx){ var C=window.AudioContext||window.webkitAudioContext; if(!C) return null; try{ ctx=new C(); }catch(e){ return null; } } if(ctx.state==='suspended') ctx.resume(); return ctx; }
+  function noise(c,dur){ var n=Math.floor(c.sampleRate*dur), b=c.createBuffer(1,n,c.sampleRate), d=b.getChannelData(0); for(var i=0;i<n;i++) d[i]=Math.random()*2-1; var s=c.createBufferSource(); s.buffer=b; return s; }
+  function env(g,t,peak,att,dur){ g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(peak,t+att); g.gain.exponentialRampToValueAtTime(0.0001,t+dur); }
+  return {
+    get on(){ return on; },
+    toggle:function(){ on=!on; try{ localStorage.setItem('mg-study:sound',on?'on':'off'); }catch(e){} if(on) this.page(); return on; },
+    /* 문 여는 소리: 낮은 삐걱임 + 바람 섞인 소리 */
+    door:function(){ if(!on) return; var c=ac(); if(!c) return; var t=c.currentTime;
+      var o=c.createOscillator(), f=c.createBiquadFilter(), g=c.createGain();
+      o.type='sawtooth'; o.frequency.setValueAtTime(95,t); o.frequency.linearRampToValueAtTime(150,t+0.22); o.frequency.linearRampToValueAtTime(110,t+0.45);
+      f.type='bandpass'; f.frequency.value=520; f.Q.value=6; env(g,t,0.09,0.06,0.5);
+      o.connect(f); f.connect(g); g.connect(c.destination); o.start(t); o.stop(t+0.55);
+      var n=noise(c,0.5), nf=c.createBiquadFilter(), ng=c.createGain(); nf.type='lowpass'; nf.frequency.value=900; env(ng,t,0.05,0.1,0.5);
+      n.connect(nf); nf.connect(ng); ng.connect(c.destination); n.start(t);
+      var k=c.createOscillator(), kg=c.createGain(); k.type='sine'; k.frequency.setValueAtTime(180,t+0.38); k.frequency.exponentialRampToValueAtTime(70,t+0.5); env(kg,t+0.38,0.12,0.01,0.14); /* 문틀에 닿는 작은 소리 */
+      k.connect(kg); kg.connect(c.destination); k.start(t+0.38); k.stop(t+0.55); },
+    /* 종이 넘기는 소리: 고음 쪽 잡음이 쓱 지나감 */
+    page:function(){ if(!on) return; var c=ac(); if(!c) return; var t=c.currentTime;
+      [0,0.11].forEach(function(dt,i){ var n=noise(c,0.3), f=c.createBiquadFilter(), g=c.createGain();
+        f.type='bandpass'; f.Q.value=0.8; f.frequency.setValueAtTime(2500+i*600,t+dt); f.frequency.exponentialRampToValueAtTime(6500,t+dt+0.2);
+        env(g,t+dt,i?0.12:0.2,0.03,0.22); n.connect(f); f.connect(g); g.connect(c.destination); n.start(t+dt); n.stop(t+dt+0.3); }); }
+  };
+})();
+
 function themeBtn(){
-  return h('button',{class:'theme-btn',title:'밝기 전환','aria-label':'화면 밝기 전환',onclick:function(){
+  var sb=h('button',{class:'theme-btn sound-btn',title:'효과음 켜기/끄기','aria-label':'효과음 켜기 또는 끄기','aria-pressed':String(Snd.on),onclick:function(){
+    sb.textContent=Snd.toggle()?'🔊':'🔇'; sb.setAttribute('aria-pressed',String(Snd.on));
+  }},[Snd.on?'🔊':'🔇']);
+  var tb=h('button',{class:'theme-btn',title:'밝기 전환','aria-label':'화면 밝기 전환',onclick:function(){
     var r=document.documentElement, cur=r.getAttribute('data-theme');
     var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
     r.setAttribute('data-theme',dark?'light':'dark');
     try{ localStorage.setItem('mg-study:theme',r.getAttribute('data-theme')); }catch(e){}
   }},['🌓']);
+  return h('div',{class:'dock'},[sb,tb]);
 }
 
 /* ═════════ 홈 ═════════ */
@@ -213,6 +245,7 @@ function bookEl(b, opts){
   ]);
   if(opts.onpick) el.addEventListener('click',function(){
     if(el.classList.contains('pull')) return;
+    Snd.page();
     var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(rm) return opts.onpick();
     el.classList.add('pull'); setTimeout(opts.onpick,380);
@@ -240,12 +273,13 @@ function renderDoors(kind){
         var learning=0; bs.forEach(function(b){ learning+=noteCounts(b.id).learning; });
         var door=h('a',{class:'door'+(bs.length?'':' closed'),href:bs.length?'#/'+kind+'/g'+g+'s'+sm:null,role:bs.length?null:'img','aria-label':g+'학년 '+sm+'학기'+(bs.length?' 교실, 교과서 '+bs.length+'권':' 교실, 준비 중')},[
           h('div',{class:'door-plate',text:g+'학년 '+sm+'학기'}),
-          h('div',{class:'door-body'},[h('div',{class:'door-leaf'},[h('div',{class:'door-win'}),h('div',{class:'door-panel'}),h('div',{class:'door-knob'})])]),
+          h('div',{class:'door-body'},[h('div',{class:'door-inside'},[h('div',{class:'shelf'}),h('div',{class:'shelf'}),h('div',{class:'shelf'}),h('div',{class:'shelf'})]),h('div',{class:'door-leaf'},[h('div',{class:'door-win'}),h('div',{class:'door-panel'}),h('div',{class:'door-knob'})])]),
           h('div',{class:'door-note',text:bs.length?(kind==='notes'&&learning?'학습 중 '+learning+'문제':'교과서 '+bs.length+'권'):'준비 중'}),
           kind==='notes'&&learning?h('div',{class:'door-badge',text:String(learning)}):null
         ]);
         if(bs.length) door.addEventListener('click',function(e){
           if(e.ctrlKey||e.metaKey||e.shiftKey||e.button) return;
+          Snd.door();
           if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches) return;
           e.preventDefault(); if(door.classList.contains('opening')) return;
           door.classList.add('opening');

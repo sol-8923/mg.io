@@ -84,7 +84,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
 .mcard:hover{transform:translateY(-2px)} .mcard:active{transform:scale(.98)}
 .mcard .count{position:absolute;right:38px;top:10px;font-size:.75rem;font-weight:800;color:#fff;background:var(--red);border-radius:999px;padding:1px 8px}
 .foot{text-align:center;color:var(--muted);font-size:.85rem;margin-top:36px}
-.theme-btn{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:calc(env(safe-area-inset-bottom) + 14px);z-index:20;width:48px;height:48px;padding:0;justify-content:center;border-radius:50%;box-shadow:var(--shadow)}
+.dock{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:calc(env(safe-area-inset-bottom) + 14px);z-index:20;display:flex;gap:10px}
+.theme-btn{width:48px;height:48px;padding:0;justify-content:center;border-radius:50%;box-shadow:var(--shadow)}
 
 /* ── 책장 ── */
 .bookcase{background:linear-gradient(var(--case),var(--case2));border-radius:18px;padding:8px 0 30px;box-shadow:inset 0 0 0 12px var(--wood2),inset 0 0 0 14px rgba(0,0,0,.15),inset 0 18px 30px -12px rgba(0,0,0,.25);margin-top:6px}
@@ -513,8 +514,19 @@ th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)} th.n,
 .door-leaf{position:absolute;inset:0;border-radius:10px 10px 2px 2px;transform-origin:0 50%;transition:transform .45s cubic-bezier(.3,.7,.3,1);
   background:linear-gradient(90deg,rgba(0,0,0,.18),rgba(255,255,255,.06) 12%,rgba(255,255,255,0) 50%,rgba(0,0,0,.14)),var(--wood1);
   box-shadow:inset 0 0 0 7px var(--wood2),inset 0 0 0 9px rgba(0,0,0,.18)}
-a.door.opening .door-leaf{transform:rotateY(-58deg)}
-@media (hover:hover){ a.door:hover .door-leaf{transform:rotateY(-14deg)} a.door.opening:hover .door-leaf{transform:rotateY(-58deg)} }
+/* 문 안쪽: 책장(문이 열리면 보인다) */
+.door-inside{position:absolute;inset:7px;border-radius:6px 6px 0 0;overflow:hidden;display:flex;flex-direction:column;gap:3%;padding:5% 4% 3%;
+  background:radial-gradient(ellipse at 50% 30%,#fff1c4 0,#e8b660 38%,#7a4f1e 100%)}
+.door-inside .shelf{flex:1;border-bottom:4px solid #5a3a17;box-shadow:0 3px 0 rgba(0,0,0,.25);
+  background:
+   repeating-linear-gradient(90deg,
+     #b83a3a 0 7%,#2f5d8c 7% 12%,#e0b13a 12% 20%,#3f7d4f 20% 25%,#8c4a9e 25% 33%,#d9732b 33% 38%,#2a8a96 38% 46%,#9c2f55 46% 51%,#5c6bc0 51% 58%,#7b8f2a 58% 64%,#c0504d 64% 70%,#3b4a6b 70% 77%,#e0b13a 77% 83%,#3f7d4f 83% 90%,#b83a3a 90% 96%,transparent 96% 100%);
+  -webkit-mask:linear-gradient(#000,#000);}
+.door-inside .shelf:nth-child(even){filter:hue-rotate(40deg)}
+.door-inside .shelf:nth-child(3n){filter:hue-rotate(-50deg) saturate(.9)}
+.door-inside::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 14px rgba(0,0,0,.55);pointer-events:none}
+a.door.opening .door-leaf{transform:rotateY(-50deg)}
+@media (hover:hover){ a.door:hover .door-leaf{transform:rotateY(-14deg)} a.door.opening:hover .door-leaf{transform:rotateY(-50deg)} }
 @media (prefers-reduced-motion:reduce){ .door-leaf{transition:none} }
 .door-win{position:absolute;left:24%;right:24%;top:11%;height:24%;border-radius:4px;background:linear-gradient(160deg,#cfe6ee,#8fb3c2);box-shadow:inset 0 0 0 3px var(--wood2),inset 0 0 0 4px rgba(0,0,0,.2)}
 .door-panel{position:absolute;left:18%;right:18%;top:44%;bottom:10%;border-radius:4px;box-shadow:inset 0 0 0 3px rgba(0,0,0,.2),inset 0 0 0 5px rgba(255,255,255,.07)}
