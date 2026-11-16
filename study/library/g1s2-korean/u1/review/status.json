@@ -1,2 +1,13 @@
-{ "verdict": "PASS", "round": 3, "date": "2026-11-15", "reviewers": ["format", "content", "overall", "explanation"],
-  "note": "새 기출 기준(27슬롯·100점)으로 재제작. 4중 검수 만장일치(1라운드 전원 반려→2라운드 내용만 통과→3라운드 4개 모두 PASS). 기출 15개 변환 포함. 종합 검수의 난이도 지적은 기록만." }
+{
+ "verdict": "PASS",
+ "round": 3,
+ "date": "2026-11-16",
+ "reviewers": [
+  "format",
+  "content",
+  "overall",
+  "explanation"
+ ],
+ "note": "새 기출 기준(27슬롯·100점)으로 재제작. 4중 검수 만장일치(1라운드 전원 반려→2라운드 내용만 통과→3라운드 4개 모두 PASS). 기출 15개 변환 포함. 종합 검수의 난이도 지적은 기록만.",
+ "revision": "B1"
+}
