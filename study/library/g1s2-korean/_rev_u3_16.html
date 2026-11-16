@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>삶을 가꾸는 글의 힘 - 요약 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME 과자 봉지 놀이공원 (config/slide-style-korean.md) : 색상은 여기서 바꾼다 === */
+:root {
+    --sky: #3a86d9;
+    --cobalt: #1d5fd1;
+    --navy: #14306e;
+    --cream: #fff8e6;
+    --card: #ffffff;
+    --card-hl: #eaf4ff;
+    --card-warn: #fff1ec;
+    --line: #bcd7f7;
+    --ink: #1b2a4a;
+    --ink-dim: #50608a;
+    --pink: #b81f57;
+    --pink-soft: #ff7aa8;
+    --yellow: #ffd84d;
+    --mint: #52c9a0;
+    --warn: #b3332a;
+    --font-display: 'Jua', 'Gowun Dodum', 'Malgun Gothic', sans-serif;
+    --font-body: 'Gowun Dodum', 'Malgun Gothic', sans-serif;
+    --stage-bg: #1d5fd1;
+    --slide-bg: var(--cream);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 70px 100px 90px;
+    font-size: 27px;
+    line-height: 1.42;
+    /* 크림 바탕 + 모서리 풍선·색종이 장식 */
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='150' viewBox='0 0 120 150'%3E%3Cpath d='M40 62 Q40 112 40 118' stroke='%2350608a' stroke-width='2' fill='none'/%3E%3Cellipse cx='40' cy='34' rx='26' ry='31' fill='%23ff7aa8'/%3E%3Cellipse cx='32' cy='24' rx='7' ry='10' fill='%23fff' opacity='.55'/%3E%3Cellipse cx='84' cy='52' rx='21' ry='25' fill='%23ffd84d'/%3E%3Cpath d='M84 76 Q80 110 40 118' stroke='%2350608a' stroke-width='2' fill='none'/%3E%3C/svg%3E") right 36px top 30px / 96px auto no-repeat,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='60' viewBox='0 0 160 60'%3E%3Crect x='10' y='20' width='14' height='6' rx='2' fill='%23ff7aa8' transform='rotate(25 17 23)'/%3E%3Crect x='50' y='36' width='14' height='6' rx='2' fill='%23ffd84d' transform='rotate(-30 57 39)'/%3E%3Crect x='96' y='14' width='14' height='6' rx='2' fill='%2352c9a0' transform='rotate(50 103 17)'/%3E%3Ccircle cx='140' cy='38' r='5' fill='%233a86d9'/%3E%3C/svg%3E") left 40px bottom 34px / 150px auto no-repeat,
+        var(--cream);
+}
+.slide::before { /* 봉지 테두리: 바깥은 잘리고 안쪽만 둥글게 보인다 */
+    content: ""; position: absolute; inset: -40px; border: 62px solid var(--sky); border-radius: 92px; pointer-events: none;
+}
+.slide::after { /* 봉지 윗면 접힌 주름(실링) */
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 22px; pointer-events: none;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,.4) 0 5px, rgba(255,255,255,0) 5px 13px), linear-gradient(#2e74c9, #3a86d9);
+}
+.kicker { display: inline-block; font-size: 24px; letter-spacing: .06em; color: var(--navy); font-weight: 700; margin-bottom: 8px; padding: 1px 22px; background: var(--yellow); border-radius: 99px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 60px; line-height: 1.15; color: var(--navy); margin-bottom: 22px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 700; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 400; font-size: 33px; color: var(--cobalt); margin-bottom: 10px; }
+b, strong { color: var(--pink); font-weight: 700; background: linear-gradient(transparent 62%, #fff0a0 62%); }
+.dim { color: var(--ink-dim); }
+/* 슬라이드 번호: 놀이공원 티켓 */
+.pg { position: absolute; right: 74px; bottom: 40px; font-family: var(--font-display); font-size: 26px; line-height: 1; color: var(--navy); padding: 10px 22px 10px 20px;
+      background: radial-gradient(circle at left center, transparent 9px, var(--yellow) 10px) left / 51% 100% no-repeat, radial-gradient(circle at right center, transparent 9px, var(--yellow) 10px) right / 51% 100% no-repeat; }
+.pg::before { content: "TICKET No."; font-family: var(--font-body); font-weight: 700; font-size: 18px; letter-spacing: .08em; margin-right: 10px; padding-right: 12px; border-right: 2px dashed rgba(20,48,110,.45); }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--card); border: 3px solid var(--line); border-radius: 28px; padding: 18px 28px; box-shadow: 0 6px 0 var(--line); }
+.card.hl { background: var(--card-hl); border-color: var(--sky); box-shadow: 0 6px 0 #9cc4f0; }
+.card.warn { background: var(--card-warn); border-color: #ff9f86; box-shadow: 0 6px 0 #ffc9bb; }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 34px; margin-bottom: 6px; }
+ul.l li::before { content: ""; position: absolute; left: 2px; top: .5em; width: 18px; height: 18px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff 0 12%, transparent 14%), var(--pink-soft); }
+ul.l li:nth-child(3n+2)::before { background: radial-gradient(circle at 35% 30%, #fff 0 12%, transparent 14%), var(--yellow); }
+ul.l li:nth-child(3n)::before { background: radial-gradient(circle at 35% 30%, #fff 0 12%, transparent 14%), var(--mint); }
+.tag { display: inline-block; font-size: 24px; padding: 0 14px; background: var(--yellow); border-radius: 8px; color: var(--navy); font-weight: 700; margin-right: 8px; vertical-align: 1px; }
+.ref { font-size: 24px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
+table.t th { background: var(--cobalt); color: #fff; font-family: var(--font-display); font-weight: 400; text-align: left; padding: 12px 18px; border: 2px solid var(--cobalt); }
+table.t td { padding: 12px 18px; border: 2px solid #cfe1f7; background: #fff; vertical-align: top; }
+table.t tr:nth-child(even) td { background: #f1f7ff; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; color: var(--navy); }
+table.t.s td, table.t.s th { padding: 9px 16px; }
+table.t.nw td:first-child { white-space: normal; }
+
+/* 순서 카드 (줄거리 흐름) : 과자 색깔별 */
+.g5 .card, .g4 .card { font-size: 25px; padding: 18px 20px; }
+.step:nth-child(5n+1) { background: #e6f8ee; border-color: #8fdcba; box-shadow: 0 6px 0 #8fdcba; }
+.step:nth-child(5n+2) { background: #fff6cc; border-color: #f0d25a; box-shadow: 0 6px 0 #f0d25a; }
+.step:nth-child(5n+3) { background: #ffe9f1; border-color: #ff9fc0; box-shadow: 0 6px 0 #ff9fc0; }
+.step:nth-child(5n+4) { background: #e6f2ff; border-color: #8cb9ee; box-shadow: 0 6px 0 #8cb9ee; }
+.step:nth-child(5n+5) { background: #efe9ff; border-color: #b9a6f0; box-shadow: 0 6px 0 #b9a6f0; }
+.step .no { display: inline-flex; width: 46px; height: 46px; align-items: center; justify-content: center; border-radius: 50%; background: var(--pink); color: #fff; font-family: var(--font-display); font-size: 27px; margin-bottom: 8px; }
+
+svg.dia { width: 100%; height: auto; display: block; }
+svg.dia text { font-family: var(--font-body); fill: var(--ink); font-size: 26px; }
+svg.dia .b { fill: var(--pink); font-weight: 700; }
+svg.dia .d { fill: var(--ink-dim); font-size: 24px; }
+.quote { border-left: 7px solid var(--pink-soft); padding: 4px 0 4px 20px; margin-bottom: 10px; }
+
+/* 표지: 파란 과자 봉지 속 놀이공원 */
+.cover { padding: 0; background: radial-gradient(1100px 800px at 25% 20%, #5aa6ee, transparent 70%), linear-gradient(160deg, #3f93e3, #2a74cf 60%, #2766bd); color: #fff; }
+.cover::before { display: none; }
+.cover::after { height: 64px; background: repeating-linear-gradient(90deg, rgba(255,255,255,.28) 0 6px, rgba(255,255,255,0) 6px 16px), linear-gradient(#1f62bd, #2f7fd6); }
+.cv-bag { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; max-width: none; max-height: none; }
+.cv-hole { position: absolute; right: 70px; top: 190px; width: 940px; height: 800px; max-width: none; max-height: none; filter: drop-shadow(0 14px 0 rgba(15,50,110,.28)); }
+.cv-text { position: absolute; left: 110px; top: 230px; width: 840px; }
+.cover .kicker { font-size: 30px; padding: 4px 28px; border-radius: 10px; color: var(--navy);
+    background: radial-gradient(circle at left center, transparent 10px, var(--yellow) 11px) left / 51% 100% no-repeat, radial-gradient(circle at right center, transparent 10px, var(--yellow) 11px) right / 51% 100% no-repeat; }
+.cover h1 { font-family: var(--font-display); font-weight: 400; font-size: 118px; line-height: 1.12; text-wrap: balance; word-break: keep-all; margin: 26px 0 22px; color: var(--yellow);
+    text-shadow: 6px 6px 0 var(--navy), -3px -3px 0 var(--navy), 3px -3px 0 var(--navy), -3px 3px 0 var(--navy), 0 10px 0 var(--navy); }
+.cover h1 span { color: #fff; }
+.cover p { font-size: 34px; color: #fff; background: rgba(20,48,110,.55); display: inline-block; padding: 8px 24px; border-radius: 20px; }
+.cover .rule { width: 260px; height: 12px; margin: 6px 0 30px; border-radius: 6px; background: repeating-linear-gradient(90deg, #ff9fc0 0 30px, #fff 30px 60px, #7fe0bc 60px 90px); }
+
+/* 등장 효과 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖): 입장 티켓 + 풍선 진행 표시 === */
+.deck-controls { display: flex; gap: 12px; align-items: center; background: var(--cream); border: 3px solid var(--sky); border-radius: 99px; padding: 6px 16px; font-family: var(--font-body); color: var(--ink); font-size: 16px; font-weight: 700; box-shadow: 0 4px 0 rgba(20,48,110,.35); }
+.deck-controls button { background: none; border: none; color: var(--cobalt); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.trk { position: relative; width: 150px; height: 10px; border-radius: 99px; background: #cfe1f7; margin: 0 4px; }
+.trk i { position: absolute; left: 0; top: 0; height: 10px; width: 0; border-radius: 99px; background: var(--pink-soft); transition: width .3s; }
+.trk i::after { content: ""; position: absolute; right: -12px; top: -17px; width: 22px; height: 26px; border-radius: 50% 50% 48% 48%; background: radial-gradient(circle at 35% 30%, #fff 0 12%, transparent 14%), var(--yellow); box-shadow: 0 0 0 2px #fff; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--yellow); color: var(--navy); border: 0; border-radius: 8px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 2px dashed var(--pink); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 820px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--sky); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; padding: 10px; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 40px 18px 56px; font-size: 17px; margin-bottom: 14px; border-radius: 28px; border: 6px solid var(--sky); background: var(--cream); }
+    .slide::before { display: none; }
+    .slide::after { height: 14px; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; padding: 1px 14px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 21px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr !important; }
+    .card, .g5 .card, .g4 .card { padding: 14px 16px; font-size: 17px; border-radius: 20px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { position: static; display: block; width: max-content; margin: 10px 0 0 auto; font-size: 16px; padding: 6px 16px; }
+    .pg::before { font-size: 12px; }
+    table.t { font-size: 16px !important; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    svg.dia text { font-size: 22px; }
+    .step .no { width: 32px; height: 32px; font-size: 18px; }
+    .cover { padding: 0; min-height: 640px; overflow: hidden; background: linear-gradient(160deg, #3f93e3, #2766bd); }
+    .cover::after { height: 30px; }
+    .cv-bag { display: none; }
+    .cover { display: flex; flex-direction: column; }
+    .cv-text { order: -1; }
+    .cv-text { position: relative; left: auto; top: auto; width: auto; padding: 56px 18px 12px; }
+    .cv-hole { position: relative; right: auto; top: auto; width: 100%; height: auto; display: block; }
+    .cover .kicker { font-size: 15px; padding: 3px 16px; }
+    .cover h1 { font-size: 48px; margin: 16px 0 12px; text-shadow: 3px 3px 0 var(--navy), -2px -2px 0 var(--navy), 2px -2px 0 var(--navy), -2px 2px 0 var(--navy); }
+    .cover p { font-size: 18px; padding: 6px 14px; }
+    .cover .rule { width: 140px; height: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1. 표지 === -->
+<section class="slide cover active">
+    <svg class="cv-bag" viewBox="0 0 1920 1080" aria-hidden="true">
+        <g fill="#fff" opacity=".16"><polygon points="140,140 330,120 420,230 250,260"/><polygon points="1500,90 1760,130 1700,230 1560,180"/><polygon points="60,640 200,560 240,760 90,820"/><polygon points="1740,560 1860,520 1880,700 1770,760"/></g>
+        <g fill="#fff" opacity=".1"><path d="M0 330 Q500 280 1000 360 T1920 300 L1920 330 Q1400 380 1000 400 T0 380Z"/><path d="M760 0 L860 0 L1010 220 L930 230Z"/></g>
+        <g opacity=".95"><rect x="60" y="860" width="20" height="9" rx="3" fill="#ff9fc0" transform="rotate(30 70 864)"/><rect x="190" y="940" width="20" height="9" rx="3" fill="#ffd84d" transform="rotate(-25 200 944)"/><rect x="420" y="900" width="20" height="9" rx="3" fill="#7fe0bc" transform="rotate(60 430 904)"/><rect x="560" y="990" width="20" height="9" rx="3" fill="#fff" transform="rotate(15 570 994)"/><circle cx="330" cy="1010" r="8" fill="#ff9fc0"/><circle cx="700" cy="930" r="8" fill="#ffd84d"/><circle cx="100" cy="1020" r="7" fill="#fff"/><rect x="820" y="1000" width="20" height="9" rx="3" fill="#ff9fc0" transform="rotate(-40 830 1004)"/></g>
+        <g fill="#fff"><path d="M1830 230 l8 24 24 8 -24 8 -8 24 -8 -24 -24 -8 24 -8z" opacity=".9"/><path d="M880 150 l6 18 18 6 -18 6 -6 18 -6 -18 -18 -6 18 -6z" opacity=".8"/></g>
+    </svg>
+    <svg class="cv-hole" viewBox="0 0 940 800" role="img" aria-label="과자 봉지 구멍으로 보이는 놀이공원">
+        <defs>
+            <path id="hole" d="M150 190 C80 250 40 360 110 450 C20 520 60 680 220 720 C360 780 600 760 720 720 C880 670 910 540 830 450 C900 360 870 230 740 170 C650 90 500 130 430 100 C320 60 220 110 150 190Z"/>
+            <clipPath id="holeClip"><use href="#hole"/></clipPath>
+            <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe3ff"/><stop offset=".55" stop-color="#ffe3f0"/><stop offset="1" stop-color="#fff3d6"/></linearGradient>
+        </defs>
+        <use href="#hole" fill="#fff8e6" stroke="#fff8e6" stroke-width="26" stroke-linejoin="round"/>
+        <g clip-path="url(#holeClip)">
+            <rect width="940" height="800" fill="url(#skyG)"/>
+            <g fill="#fff"><ellipse cx="300" cy="190" rx="70" ry="24"/><ellipse cx="350" cy="175" rx="46" ry="26"/><ellipse cx="740" cy="160" rx="64" ry="22"/><ellipse cx="780" cy="146" rx="40" ry="22"/></g>
+            <rect y="420" width="940" height="70" fill="#7fcdee"/>
+            <path d="M0 450 Q120 430 240 450 T480 450 T720 450 T940 450" stroke="#fff" stroke-width="5" fill="none" opacity=".7"/>
+            <rect y="490" width="940" height="320" fill="#bdebd0"/>
+            <path d="M0 560 Q300 520 620 570 T940 540 L940 620 L0 640Z" fill="#a9e0c0"/>
+            <!-- 대관람차 -->
+            <g transform="translate(640 330)">
+                <path d="M-60 170 L0 0 L60 170" stroke="#ff7aa8" stroke-width="10" fill="none" stroke-linecap="round"/>
+                <circle r="125" fill="none" stroke="#ff7aa8" stroke-width="9"/><circle r="80" fill="none" stroke="#ffd84d" stroke-width="6"/>
+                <g stroke="#ff9fc0" stroke-width="5"><path d="M-125 0H125M0 -125V125M-88 -88L88 88M88 -88L-88 88"/></g>
+                <g stroke="#fff" stroke-width="3"><circle cx="0" cy="-125" r="15" fill="#7fe0bc"/><circle cx="125" cy="0" r="15" fill="#ffd84d"/><circle cx="0" cy="125" r="15" fill="#ff9fc0"/><circle cx="-125" cy="0" r="15" fill="#8cb9ee"/><circle cx="88" cy="-88" r="15" fill="#b9a6f0"/><circle cx="88" cy="88" r="15" fill="#7fe0bc"/><circle cx="-88" cy="88" r="15" fill="#ffd84d"/><circle cx="-88" cy="-88" r="15" fill="#ff9fc0"/></g>
+                <circle r="14" fill="#fff" stroke="#ff7aa8" stroke-width="5"/>
+            </g>
+            <!-- 회전목마 -->
+            <g transform="translate(300 560)">
+                <ellipse cx="0" cy="130" rx="190" ry="40" fill="#ff9fc0"/><ellipse cx="0" cy="116" rx="190" ry="40" fill="#ffd1e1"/>
+                <g stroke="#fff" stroke-width="9"><path d="M-110 110V-40M-40 118V-40M40 118V-40M110 110V-40"/></g>
+                <path d="M-205 -30 L0 -190 L205 -30Z" fill="#ff5f8f"/>
+                <path d="M-205 -30 L0 -190 L-100 -30Z" fill="#fff" opacity=".9"/><path d="M0 -190 L100 -30 L205 -30Z" fill="#fff" opacity=".9"/>
+                <path d="M-205 -30 Q-170 -5 -136 -30 Q-102 -5 -68 -30 Q-34 -5 0 -30 Q34 -5 68 -30 Q102 -5 136 -30 Q170 -5 205 -30Z" fill="#ffd84d"/>
+                <circle cx="0" cy="-200" r="12" fill="#ffd84d"/>
+                <g><ellipse cx="-80" cy="70" rx="42" ry="30" fill="#fff"/><circle cx="-48" cy="46" r="20" fill="#fff"/><ellipse cx="-40" cy="22" rx="8" ry="22" fill="#fff" transform="rotate(-10 -40 22)"/><circle cx="-44" cy="44" r="4" fill="#14306e"/></g>
+                <g><ellipse cx="80" cy="72" rx="42" ry="30" fill="#ffe08a"/><circle cx="112" cy="48" r="20" fill="#ffe08a"/><ellipse cx="120" cy="24" rx="8" ry="22" fill="#ffe08a" transform="rotate(10 120 24)"/><circle cx="116" cy="46" r="4" fill="#14306e"/></g>
+            </g>
+            <!-- 풍선 + 쿠키 -->
+            <g transform="translate(150 230)">
+                <g stroke="#50608a" stroke-width="2"><path d="M0 70 L40 150"/><path d="M45 60 L40 150"/><path d="M90 70 L40 150"/></g>
+                <ellipse cx="0" cy="40" rx="30" ry="36" fill="#ff7aa8"/><ellipse cx="45" cy="25" rx="30" ry="36" fill="#ffd84d"/><ellipse cx="92" cy="42" rx="30" ry="36" fill="#7fe0bc"/>
+                <g fill="#fff" opacity=".6"><ellipse cx="-9" cy="28" rx="7" ry="11"/><ellipse cx="36" cy="12" rx="7" ry="11"/><ellipse cx="83" cy="30" rx="7" ry="11"/></g>
+                <g transform="translate(40 190)"><circle r="34" fill="#e8b36b"/><circle r="34" fill="none" stroke="#c98f45" stroke-width="4"/><circle cx="-12" cy="-12" r="5" fill="#7a4a2a"/><circle cx="14" cy="-18" r="4" fill="#7a4a2a"/><circle cx="16" cy="12" r="5" fill="#7a4a2a"/><circle cx="-4" cy="-2" r="4" fill="#14306e"/><circle cx="14" cy="-2" r="4" fill="#14306e"/><path d="M-2 12 Q5 20 12 12" stroke="#14306e" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="-14" cy="8" r="6" fill="#ff9fc0" opacity=".8"/></g>
+            </g>
+            <!-- 놀이공원 매점 -->
+            <g transform="translate(790 560)"><rect x="-60" y="0" width="120" height="90" fill="#fff"/><path d="M-70 0 L-50 -40 H50 L70 0Z" fill="#7fe0bc"/><path d="M-70 0 H70" stroke="#fff" stroke-width="6"/><rect x="-36" y="26" width="72" height="34" fill="#ffd84d"/></g>
+            <!-- 색종이 -->
+            <g><rect x="470" y="170" width="16" height="8" rx="2" fill="#ff7aa8" transform="rotate(30 478 174)"/><rect x="520" y="260" width="16" height="8" rx="2" fill="#ffd84d" transform="rotate(-30 528 264)"/><rect x="420" y="330" width="16" height="8" rx="2" fill="#52c9a0" transform="rotate(60 428 334)"/><rect x="780" y="300" width="16" height="8" rx="2" fill="#3a86d9" transform="rotate(10 788 304)"/><circle cx="560" cy="200" r="6" fill="#ff7aa8"/><circle cx="380" cy="260" r="6" fill="#ffd84d"/><circle cx="470" cy="620" r="6" fill="#52c9a0"/><circle cx="130" cy="560" r="6" fill="#3a86d9"/></g>
+        </g>
+        <use href="#hole" fill="none" stroke="#fff" stroke-width="5" opacity=".9"/>
+    </svg>
+    <div class="cv-text">
+        <div class="kicker reveal">1학년 2학기 국어 · 3단원 요약 정리</div>
+        <h1 class="reveal">삶을 가꾸는 글의 <span>힘</span></h1>
+        <div class="rule reveal"></div>
+        <p class="reveal">추론하며 읽기 · 주장하는 글 쓰기</p>
+    </div>
+</section>
+
+<!-- === 2. 단원 개요 === -->
+<section class="slide">
+    <div class="kicker">단원 개요</div>
+    <h2>글을 읽고 쓰며 삶을 가꾼다 <small>교과서 p.108~111, 131</small></h2>
+    <div class="card hl reveal" style="margin-bottom:24px">
+        <h3>단원 주제</h3>
+        <p>글을 읽고 쓰며 삶을 가꾼다. 글에 드러나지 않은 <b>의도나 관점</b>을 파악하며 다른 사람의 생각을 깊이 이해하고, 자신의 생각을 효과적으로 표현하는 글을 써 본다. <span class="ref">(p.108)</span></p>
+    </div>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>01 추론하며 읽기</h3>
+            <ul class="l">
+                <li>제재 「동네 쓰레기를 하루아침에 사라지게 하려면」(공규택), 「아이들은 어른보다 추위를 덜 탈까?」(신인철)</li>
+                <li>목표: 배경지식과 글에 나타난 정보 등을 활용하여 글에 드러나지 않은 <b>의도나 관점을 추론</b>하며 읽는다. <span class="ref">(p.111)</span></li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>02 주장하는 글 쓰기</h3>
+            <ul class="l">
+                <li>사례 글 「하나의 성격 유형이 나의 모든 것을 보여 주지는 않는다」(학생 '지유')</li>
+                <li>목표: 주장을 뒷받침할 <b>타당한 근거</b>를 들고 적절한 표현을 사용하여 주장하는 글을 쓴다. <span class="ref">(p.131)</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>단원 역량</h3>
+        <p>비판적·창의적 사고 역량, 디지털·미디어 역량 <span class="ref">(p.109)</span></p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3. 추론하며 읽기 === -->
+<section class="slide">
+    <div class="kicker">01 추론하며 읽기</div>
+    <h2>추론하며 읽기란 <small>p.110, 121, 123, 128</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>용어</h3>
+            <ul class="l">
+                <li><b>관점</b>: 사물이나 현상을 보고 생각하는 개인의 입장이나 태도.</li>
+                <li><b>추론</b>: 주어진 내용을 근거로 삼아 겉으로 드러나지 않은 내용을 추측하는 것.</li>
+                <li><b>추론하며 읽기</b>: 배경지식이나 글에 제시된 정보를 활용하여 글에 드러나지 않은 <b>의도나 관점</b>을 짐작하며 읽는 것.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>추론에 활용하는 요소 2가지</h3>
+            <ul class="l">
+                <li><b>① 독자의 경험이나 배경지식</b></li>
+                <li><b>② 글의 흐름이나 글에 나타난 정보</b>: 글의 제목, 소제목, 표지, 차례, 사례, 시각 자료, 단어나 문장의 의미, 접속어</li>
+            </ul>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card reveal">
+            <h3>추론하며 읽기의 방법</h3>
+            <ul class="l">
+                <li>표지의 그림, 차례, 제목, 소제목 등을 <b>훑어보며</b> 추론한다.</li>
+                <li>자신의 <b>배경지식이나 경험</b>을 글의 내용과 관련지어 추론한다.</li>
+                <li>사례, 시각 자료, 단어나 문장의 의미, 접속어 등 <b>글에 나타난 정보</b>를 활용해 추론한다.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>효과</h3>
+            <ul class="l">
+                <li>글을 <b>능동적</b>으로 읽을 수 있다.</li>
+                <li>글의 내용에 더욱 집중한다.</li>
+                <li>내용을 깊이 있게 이해하여 오래 기억한다.</li>
+            </ul>
+            <p class="dim">같은 요소를 활용해도 독자의 경험·배경지식에 따라 추론한 내용이 달라질 수 있다.</p>
+        </div>
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4. 제재 1 구성 === -->
+<section class="slide">
+    <div class="kicker">제재 1 「동네 쓰레기를 하루아침에 사라지게 하려면」(공규택)</div>
+    <h2>글의 구성 <small>설명하는 글 · 소재 넛지 효과 · p.114~119</small></h2>
+    <table class="t s reveal" style="font-size:26px">
+        <tr><th style="width:12%">부분</th><th>내용</th><th style="width:12%">쪽</th></tr>
+        <tr><td>처음</td><td>담벼락 쓰레기 일화. 호소문과 빨간 경고 글씨, CCTV 설치에도 쓰레기가 다시 쌓임</td><td>p.114</td></tr>
+        <tr><td>중간 ①</td><td>어느 날 쓰레기가 사라짐. 밤에 관찰하니 사람들이 쓰레기를 버리려다 도로 가져감 → 누군가 <b>화단</b>을 만들어 꽃을 심었기 때문. <b>넛지 효과</b>의 개념 제시</td><td>p.114~115</td></tr>
+        <tr><td>중간 ②</td><td>소제목 '은근하게 변화를 이끄는 창의적인 생각들': 공익 캠페인 사례 — 독일 피아노 계단, WWF 화장지 케이스</td><td>p.116~117</td></tr>
+        <tr><td>중간 ③</td><td>소제목 '천편일률적인 방법에서 벗어나라': 부산 곡선 구간 흰색 가로선, 노면 색깔 유도선</td><td>p.118~119</td></tr>
+        <tr><td>끝</td><td>소제목 '잔소리보다 강한 부드러운 힘': 문제 해결 행동으로 나아가기 어렵다 → 사람들 마음을 움직이는 방법을 묻는 질문으로 마무리</td><td>p.119</td></tr>
+    </table>
+    <div class="card hl reveal" style="margin-top:22px">
+        <b>출처</b> 『교과서에 나오지 않는 발칙한 생각들』 · 글을 <b>일화</b>로 시작해 독자가 쉽게 공감하고 흥미를 느끼게 한다.
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5. 넛지 효과 개념 === -->
+<section class="slide">
+    <div class="kicker">제재 1 「동네 쓰레기를…」</div>
+    <h2>넛지 효과와 소제목의 의미 <small>p.115, 121</small></h2>
+    <div class="card hl reveal" style="margin-bottom:24px">
+        <h3>넛지 효과</h3>
+        <p style="font-size:32px;line-height:1.6"><b>규제나 감시 대신</b> 사람들이 문제 해결에 <b>스스로 참여</b>하도록 이끌어 자연스럽게 변화를 불러오는 현상.</p>
+        <p class="dim">'넛지'는 우리말로 '팔꿈치로 쿡쿡 찌르다.'라는 뜻.</p>
+    </div>
+    <div class="grid g2">
+        <div class="card warn reveal">
+            <h3>기존의 방법 (넛지 이전)</h3>
+            <ul class="l">
+                <li>호소문·경고문, CCTV 설치, 캠페인 구호, 경찰 단속</li>
+                <li>효과가 없거나 <b>일시적</b>이었다.</li>
+                <li>소제목 <b>'천편일률적인 방법'</b>, <b>'잔소리'</b>가 가리키는 것.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>넛지 효과를 활용한 방법</h3>
+            <ul class="l">
+                <li>화단, 피아노 계단, 화장지 케이스, 흰색 가로선, 노면 색깔 유도선</li>
+                <li>소제목 <b>'부드러운 힘'</b>이 가리키는 것: 변화를 자연스럽게 이끄는 넛지 효과.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6. 넛지 사례 표 === -->
+<section class="slide">
+    <div class="kicker">제재 1 「동네 쓰레기를…」</div>
+    <h2>넛지 효과 사례 정리 <small>p.114~119 · p.120 표</small></h2>
+    <table class="t s nw reveal" style="font-size:25px">
+        <tr><th style="width:17%">문제</th><th style="width:38%">넛지 효과를 활용한 방법</th><th>결과</th></tr>
+        <tr><td>담벼락 쓰레기 무단 투기</td><td>담벼락 앞에 <b>화단</b>을 만들어 꽃을 심음</td><td>쓰레기가 사라짐(사람들이 버리지 않고 돌아감)</td></tr>
+        <tr><td>전력 아끼기 캠페인(독일)</td><td>지하철역 출구 계단을 <b>피아노 모양</b>으로 설계, 밟을 때마다 소리가 남</td><td>계단 이용자 <b>66퍼센트 증가</b>, 에스컬레이터 이용자 감소</td></tr>
+        <tr><td>줄어드는 숲 지키기 캠페인(WWF)</td><td>남미 지도 모양 <b>화장지 케이스</b>: 화장지를 뽑을 때마다 초록색 부분의 높이가 낮아짐</td><td>화장지를 아껴 쓰게 됨. '화장지를 낭비하면 숲이 사라진다'는 메시지를 <b>비유적</b>으로 전달</td></tr>
+        <tr><td>곡선 구간 과속 문제(부산)</td><td>곡선 구간 시작부터 중심부까지 <b>30m, 20m, 10m</b>로 간격을 좁혀 흰색 가로선을 그림</td><td>같은 속도에서도 속도감을 더 빠르게 느껴 스스로 속도를 줄임. 규제·단속 없이 자발적 변화</td></tr>
+        <tr><td>여러 갈래 혼잡한 길</td><td>분홍·연한 녹색·녹색 <b>노면 색깔 유도선</b>을 차로 한가운데에 그음</td><td>분기점에서 방향을 한눈에 찾음, 분기점 교통사고 <b>40퍼센트 이상 감소</b></td></tr>
+    </table>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7. 관점·의도 === -->
+<section class="slide">
+    <div class="kicker">제재 1 「동네 쓰레기를…」</div>
+    <h2>글쓴이의 관점과 의도 추론 <small>p.114~116, 119, 128</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>관점</h3>
+            <p>넛지 효과를 <b>긍정적</b>으로 본다.</p>
+            <ul class="l" style="margin-top:8px">
+                <li>'<b>인상적</b>'이라는 표현이 주로 긍정적 평가에 쓰임.</li>
+                <li>'고정 관념을 뛰어넘는 새로운 문제 해결 방법'이라는 서술. <span class="ref">(p.115)</span></li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>의도</h3>
+            <p>문제를 효과적으로 해결하려면 사람들이 스스로 변화하도록 유도하는 <b>창의적인 생각</b>이 필요함을 말하려고 이 글을 썼다.</p>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card reveal">
+            <h3>글 구성 방식의 의도</h3>
+            <ul class="l">
+                <li><b>일화로 시작</b>: 독자가 쉽게 공감하고 흥미를 느끼게 하려는 것.</li>
+                <li>'과연 무엇이 이러한 변화를 불러왔을까요?'처럼 <b>질문으로 끝내</b> 이어질 내용을 암시하고 흥미를 유발한다.</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>마지막 질문의 의도</h3>
+            <p>'천 마디 잔소리와 부드러운 메시지 중 어느 쪽에 마음이 움직일까요?' → 사람들 마음을 움직이는 데에는 <b>부드러운 메시지(넛지 효과)</b>가 효과적임을 독자가 생각해 보게 하려는 것.</p>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>공익 캠페인에 넛지 효과가 효과적인 까닭</h3>
+        <p>환경·안전 등 개인의 이익과 직접 관련이 없는 내용이라 <b>구호만으로는 설득이 어려운데</b>, 넛지 효과를 이용하면 사람들이 자연스럽게 참여한다. <span class="ref">(p.116)</span></p>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8. 추론 요소 구분 + 제재 2 도입 === -->
+<section class="slide">
+    <div class="kicker">추론 요소 구분</div>
+    <h2>어떤 요소로 추론했을까 <small>p.121~122</small></h2>
+    <table class="t nw reveal">
+        <tr><th style="width:26%">활용한 요소</th><th>추론 예</th></tr>
+        <tr><td>독자의 경험·배경지식</td><td>'캔 모양 쓰레기통을 설치하니 분리수거 참여율이 높아졌다는 기사를 본 적이 있어'를 바탕으로 <b>화단의 역할</b>을 추론.</td></tr>
+        <tr><td>글의 흐름·글에 나타난 정보</td><td>밑줄 친 내용으로 미루어 '천편일률적인 방법'을 <b>기존의 방법</b>으로, '잔소리'를 <b>안내문이나 단속</b> 등으로 추론.</td></tr>
+    </table>
+    <div class="card hl reveal" style="margin-top:26px">
+        <h3>같은 사례도 다르게 추론할 수 있다</h3>
+        <p>화장지 케이스를 시각 자료와 함께 제시한 까닭을 — 아마존에 관한 신문 기사를 읽은 경험(<b>배경지식</b>)으로, 또는 글의 '지구의 허파'라는 표현(<b>글에 나타난 정보</b>)으로 추론할 수 있다.</p>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>구분 요령</h3>
+        <p>'본 적이 있어', '아는 내용' → 독자의 <b>경험·배경지식</b> / 제목·소제목·사례·시각 자료·문장 의미 → <b>글에 나타난 정보</b>.</p>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9. 제재 2 지방 === -->
+<section class="slide">
+    <div class="kicker">제재 2 「아이들은 어른보다 추위를 덜 탈까?」(신인철)</div>
+    <h2>백색 지방과 갈색 지방 <small>설명하는 글 · p.124~125</small></h2>
+    <div class="card reveal" style="margin-bottom:22px">
+        <b>도입</b> 글쓴이는 어릴 때 '다방구' 놀이를 하던 일화로 시작해 '정말 아이들은 어른보다 추위를 덜 탈까요?'라고 묻는다. 제목과 일화로 아이들이 추위를 덜 타는 <b>까닭과 원리</b>를 다룰 것임을 추론한다.
+    </div>
+    <table class="t nw reveal">
+        <tr><th style="width:16%">구분</th><th>백색 지방</th><th>갈색 지방</th></tr>
+        <tr><td>색</td><td>흰색에 가까움(우리 몸 지방의 대부분)</td><td>갈색(지방 세포에 <b>미토콘드리아</b>가 많기 때문)</td></tr>
+        <tr><td>역할</td><td>쓰고 남은 열량을 몸에 <b>저장</b></td><td>미토콘드리아가 열을 많이 만들어 백색 지방을 <b>태움</b></td></tr>
+        <tr><td>비율</td><td>—</td><td>갓난아이 지방 중 약 5퍼센트, 성인은 0.1퍼센트도 안 됨. 나이 들수록 줄지만 많이 가진 어른도 있음</td></tr>
+    </table>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10. 갈색 지방 이어서 === -->
+<section class="slide">
+    <div class="kicker">제재 2 「아이들은 어른보다 추위를 덜 탈까?」</div>
+    <h2>갈색 지방과 체온, 글쓴이의 의도 <small>p.124~125, 127</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>갓난아이는 왜 추위를 덜 탈까</h3>
+            <p>몸이 떨리는 것은 근육을 떠는 행동이 <b>열을 발생</b>시켜 체온을 올리기 때문이다. 갓난아이는 어른처럼 몸을 떨 만큼 근육이 발달하지 못해 <b>갈색 지방이 내는 열</b>로 체온을 유지한다.</p>
+            <h3 style="margin-top:16px">갈색 지방이 많으면</h3>
+            <p>추운 환경에서도 몸을 따뜻하게 유지하고, 신진대사가 활발해져 건강에 도움이 된다.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>갈색 지방 비율을 늘리는 방법 (기존 연구)</h3>
+            <ul class="l">
+                <li><b>① 유산소 근력 운동</b>: 근육에서 호르몬을 분비하고, 이 호르몬이 백색 지방을 갈색 지방으로 만들어 줌.</li>
+                <li><b>② 몸의 온도를 일정 시간 차갑게 유지</b>: 19도에서는 몸속 지방의 30~40퍼센트가 갈색 지방으로 바뀜. 27도에서는 갈색 지방 비율이 기준치보다 줄었음.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>글쓴이의 의도 추론</h3>
+        <ul class="l">
+            <li>두 가지 연구 결과를 제시한 것은 갈색 지방의 비율을 늘리는 방법의 <b>근거</b>를 보여 주려는 것.</li>
+            <li>마지막에 '갈색 지방의 비밀을 떠올려 보라'고 한 것은 이불 밖으로 나가기 싫은 추운 날 <b>어떤 행동이 몸에 유익한지</b> 한 번 더 생각해 보게 하려는 것.</li>
+        </ul>
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11. 주장하는 글 + 쓰기 과정 === -->
+<section class="slide">
+    <div class="kicker">02 주장하는 글 쓰기</div>
+    <h2>주장하는 글과 쓰기 과정 <small>p.130, 143, 146</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>주장하는 글</h3>
+            <p>어떤 문제와 관련하여 글쓴이가 자신의 <b>주장</b>을 <b>타당한 근거</b>를 들어 논리적으로 서술한 글.</p>
+            <p class="dim" style="margin-top:8px"><b>주장</b>: 자신의 의견이나 생각을 굳게 내세움. <b>근거</b>: 어떤 일이나 의견을 뒷받침하는 까닭.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>쓰는 방법 4가지</h3>
+            <ul class="l">
+                <li>주장이 <b>명료</b>하게 드러나게 쓴다.</li>
+                <li><b>타당한 근거</b>를 들어 주장을 뒷받침한다.</li>
+                <li><b>적절한 표현</b>으로 설득력을 높인다.</li>
+                <li><b>서론 - 본론 - 결론</b> 구조로 논리적으로 쓴다.</li>
+            </ul>
+        </div>
+    </div>
+    <table class="t s nw reveal" style="margin-top:24px;font-size:25px">
+        <tr><th style="width:17%">단계</th><th style="width:38%">하는 일</th><th>지유의 사례</th></tr>
+        <tr><td>1 계획하기</td><td>문제 상황 발견하기, 주장 정하기</td><td>성격 유형 검사 결과를 지나치게 믿는 친구들 → 주장: 엠비티아이 검사 결과에 과도하게 의존하지 말고 올바르게 활용해야 한다</td></tr>
+        <tr><td>2 내용 생성하기</td><td>자료 수집 및 선정, 근거 구성하기</td><td>책·영상·누리집·기사·블로그 자료(가~마)를 수집해 평가</td></tr>
+        <tr><td>3 내용 조직하기</td><td>개요 작성하기</td><td>서론(문제 상황·주장 제시, 관심 유발), 본론(근거), 결론(요약·강조)</td></tr>
+        <tr><td>4 표현하기</td><td>주장 명료, 타당한 근거, 설득력 있는 표현</td><td>글 쓰기</td></tr>
+        <tr><td>5 고쳐쓰기</td><td>근거의 타당성, 표현의 적절성, 구조의 완결성 점검</td><td>서론·표현을 고쳐 씀</td></tr>
+    </table>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12. 개요·고쳐쓰기 + 자료 평가 기준 === -->
+<section class="slide">
+    <div class="kicker">02 주장하는 글 쓰기</div>
+    <h2>개요 · 자료와 근거의 평가 <small>p.133~136, 139~140, 143</small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>개요</h3>
+            <ul class="l">
+                <li>서론·본론·결론에 넣을 내용을 정리한 <b>설계도</b>(집을 지을 때의 설계도에 비유).</li>
+                <li>글의 흐름을 <b>일관성</b> 있게 유지하고 근거가 타당한지 판단하는 데 도움이 된다.</li>
+                <li>표현하기 앞의 <b>내용 조직하기</b> 단계에서 작성한다.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>평가 기준</h3>
+            <ul class="l">
+                <li><b>자료의 적절성</b>: 주장과 긴밀하게 연관되어 있는가, 객관적이고 신뢰할 만한가.</li>
+                <li><b>근거의 타당성</b>: 주장과 연관성이 있는가, 객관적인가, 믿을 만한 내용인가.</li>
+                <li>누가 쓴 글인지, 어디에서 발췌했는지 <b>출처</b>를 함께 정리한다. 출처를 밝혀야 근거의 신뢰도가 높아진다.</li>
+            </ul>
+        </div>
+    </div>
+    <table class="t s nw reveal" style="margin-top:22px;font-size:25px">
+        <tr><th style="width:8%">자료</th><th style="width:10%">출처</th><th>중심 내용</th><th style="width:25%">활용</th></tr>
+        <tr><td>가</td><td>책</td><td>검사는 성격 특성을 둘로 나누어 '중간'의 성격을 반영하기 어렵다</td><td>○ 한계점을 드러냄</td></tr>
+        <tr><td>나</td><td>영상</td><td>인터넷의 무료 엠비티아이 검사는 정식 검사와 관계가 없다</td><td>○ 무료 검사 신뢰도 지적</td></tr>
+        <tr><td>다</td><td>누리집</td><td>스스로 응답하므로 응답자의 상태·상황에 따라 결과가 달라질 수 있다</td><td>○ 전문가 설명, 믿을 만함</td></tr>
+        <tr><td>라</td><td>기사</td><td>심리학과 교수: 자신이 속한 유형이 자신의 모든 것을 설명한다고 생각하지 말아야 함</td><td>○ 올바른 활용 태도</td></tr>
+        <tr><td>마</td><td>블로그</td><td>기업 채용에서 엠비티아이를 활용하는 것은 법적으로 문제가 없음</td><td><b>X</b> 주장과 긴밀하지 않음</td></tr>
+    </table>
+    <div class="pg">12</div>
+</section>
+
+<!-- === 13. 지유의 글 === -->
+<section class="slide">
+    <div class="kicker">02 주장하는 글 쓰기</div>
+    <h2>지유의 글 짜임 <small>「하나의 성격 유형이…」 p.137~139</small></h2>
+    <div class="card hl reveal" style="margin-bottom:20px">
+        <b>주장</b> 엠비티아이 검사 결과에 과도하게 의존하지 말고, 올바르게 활용해야 한다. · <b>서론</b> 새 학기 첫날의 대화를 묻는 질문으로 시작(흥미 유발), 과도한 의존 사례(기업 채용 논란, 청소년 사이의 갈등)를 들며 '의존하면 안 되는 까닭은 무엇일까?'라고 묻는다(주장을 질문으로 제시해 주의를 환기, 근거로 연결).
+    </div>
+    <table class="t s nw reveal" style="font-size:25px">
+        <tr><th style="width:12%">본론</th><th style="width:44%">근거</th><th>뒷받침 방식</th></tr>
+        <tr><td>첫째</td><td>엠비티아이는 '중간'의 성격을 설명하기 어렵다</td><td>외향 55퍼센트·내향 45퍼센트인 학생 ㉮와 외향 45·내향 55퍼센트인 학생 ㉯를 가정한 예</td></tr>
+        <tr><td>둘째</td><td>신뢰도가 떨어지는 자료나 검사가 뒤섞여 있다</td><td>무료 검사는 정식 검사와 차이가 있고, 방송에서 사이트 관계자가 정식 검사와 관계없다고 밝힘</td></tr>
+        <tr><td>셋째</td><td>검사 결과는 응답자의 상태나 상황에 따라 바뀔 수 있다</td><td>연구소 연구부장의 설명 인용</td></tr>
+    </table>
+    <div class="card reveal" style="margin:20px 0">
+        <b>결론(p.138)</b> 심리학과 교수의 말과 결과지 안내('하나의 근거 자료일 뿐')를 인용하고, 맹신을 버리고 올바르게 활용하면 나와 다른 사람을 이해하는 <b>매력적인 도구</b>가 된다고 정리.
+    </div>
+    <div class="pg">13</div>
+</section>
+
+<!-- === 13-2. 고쳐쓰기 === -->
+<section class="slide">
+    <div class="kicker">02 주장하는 글 쓰기</div>
+    <h2>지유의 고쳐쓰기 <small>p.137, 139, 142</small></h2>
+    <div class="card hl reveal" style="margin-bottom:24px">
+        <h3>고쳐쓰기</h3>
+        <p>특정한 한 단계에서만이 아니라 글쓰기 <b>과정 전반</b>에 걸쳐 이루어질 수 있다. 점검 항목: 근거의 타당성, 표현의 적절성, 글의 구조의 완결성.</p>
+    </div>
+    <table class="t nw reveal" style="font-size:26px">
+        <tr><th style="width:36%">고치기 전</th><th style="width:26%">고친 방향</th><th>까닭</th></tr>
+        <tr><td>(서론) 최근 사회 현상 없음</td><td>서론에 언급 추가</td><td>독자의 흥미를 끌고 공감을 불러일으키려고</td></tr>
+        <tr><td>'어떤 사람들 사이에서도'</td><td>'청소년들'로 명확하게</td><td><b>모호한 표현</b>이므로 대상을 명확하게</td></tr>
+        <tr><td>'당연히 결과가 다르게 나올 수밖에 없다고 생각한다'</td><td>전문가의 설명을 인용했음을 드러냄</td><td><b>주관적·단정적 표현</b>을 쓰지 않고 설득력 있게</td></tr>
+    </table>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3>표현할 때 피할 것</h3>
+        <p>글의 내용을 적절하게 표현하려면 <b>주관적인 표현, 모호한 표현, 단정적인 표현</b>은 사용하지 않아야 한다.</p>
+    </div>
+    <div class="pg">14</div>
+</section>
+
+<!-- === 14. 기사 + 낱말 === -->
+<section class="slide">
+    <div class="kicker">관점 파악 · 낱말</div>
+    <h2>기사에 드러난 관점 <small>p.144</small></h2>
+    <table class="t nw reveal" style="font-size:25px">
+        <tr><th style="width:24%">글</th><th style="width:38%">내용</th><th>관점</th></tr>
+        <tr><td>『에스비에스(SBS) 뉴스』 2023. 10. 4. '평점 1점 남긴 제가 잘못한 건가요?'</td><td>배달 앱으로 주문한 과일 케이크가 사진과 너무 달라 평점 1점을 주자 가게가 항의 전화를 함</td><td>같은 일이 다시 일어나는 것을 막으려면 평점·후기 게시판이 <b>꼭 있어야 한다</b></td></tr>
+        <tr><td>『부산일보』 2021. 10. 5. '평점과 후기에 두 번 우는 자영업자'</td><td>손님들의 무분별한 요청과 악의적 후기로 고충, 부정적 후기는 매출에도 큰 영향</td><td>평점·후기 게시판이 <b>없어졌으면 좋겠다</b></td></tr>
+    </table>
+    <div class="card hl reveal" style="margin-top:24px">
+        <h3>낱말 (교과서 뜻풀이 대상, p.129, 147)</h3>
+        <p><b>관점, 추론, 호소문, 투기, 규제, 상습적, 공익, 유도하다, 가미하다, 자발적, 주장, 근거</b></p>
+        <p class="dim" style="margin-top:8px">앞에서 나온 뜻: 관점(사물·현상을 보는 개인의 입장이나 태도), 추론(내용을 근거로 드러나지 않은 내용을 추측), 주장(의견을 굳게 내세움), 근거(뒷받침하는 까닭)</p>
+    </div>
+    <div class="pg">15</div>
+</section>
+
+<!-- === 15. 꼭 외울 것 === -->
+<section class="slide">
+    <div class="kicker">꼭 외울 것</div>
+    <h2>핵심 암기 9가지</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>추론하며 읽기</b> = 배경지식·글에 나타난 정보를 활용해 글에 드러나지 않은 <b>의도나 관점</b>을 짐작하며 읽기. 효과 = 능동적 읽기, 깊이 있는 이해.</li>
+                <li><b>추론 요소 2가지</b> : 독자의 경험·배경지식 / 글의 흐름·글에 나타난 정보.</li>
+                <li><b>넛지 효과</b> = 규제·감시 대신 스스로 참여하도록 이끌어 자연스럽게 변화를 불러오는 현상. 관점 = <b>긍정적</b>, 의도 = 창의적인 생각 필요.</li>
+                <li><b>갈색 지방</b>: 미토콘드리아가 많아 열을 만들어 백색 지방을 태움 / <b>백색 지방</b>: 남은 열량 저장. 갓난아이는 갈색 지방으로 체온 유지.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <ul class="l">
+                <li><b>주장하는 글</b> = 문제에 대한 주장을 타당한 근거로 논리적으로 쓴 글. 방법 4가지(주장 명료, 타당한 근거, 적절한 표현, 서론-본론-결론).</li>
+                <li><b>쓰기 과정 5단계</b> : 계획하기 → 내용 생성하기 → 내용 조직하기 → 표현하기 → 고쳐쓰기.</li>
+                <li><b>개요</b> = 서론·본론·결론에 넣을 내용을 정리한 설계도.</li>
+                <li><b>자료·근거 평가</b> : 주장과의 연관성, 객관성, 믿을 만함(신뢰도). 출처를 밝힌다.</li>
+                <li><b>피할 표현</b> : 주관적·모호한·단정적 표현.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">16</div>
+</section>
+
+<!-- === 16. 헷갈리기 쉬운 것 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>구분하기와 자주 하는 오해</h2>
+    <div class="grid g2" style="grid-template-columns:1.2fr 1fr">
+        <table class="t nw reveal" style="font-size:24px">
+            <tr><th>구분</th><th>A</th><th>B</th></tr>
+            <tr><td>기존 방법 vs 넛지</td><td>호소문·경고문·CCTV·단속 ('잔소리')</td><td>화단·피아노 계단·가로선 ('부드러운 힘')</td></tr>
+            <tr><td>관점 vs 의도</td><td>대상을 보는 입장(넛지를 긍정적으로)</td><td>글을 쓴 목적(창의적 생각의 필요성)</td></tr>
+            <tr><td>내용 생성 vs 조직</td><td>자료 수집·선정, 근거 구성</td><td>개요 작성(서론·본론·결론)</td></tr>
+            <tr><td>근거 평가</td><td>주장과 연관·객관적·믿을 만함 → 적절</td><td>주장과 긴밀하지 않음 → 부적절</td></tr>
+            <tr><td>표현 문제</td><td>모호('어떤 사람들')</td><td>주관적·단정적('당연히 ~ 생각한다')</td></tr>
+        </table>
+        <div class="card warn reveal">
+            <h3>이렇게 오해하지 말자</h3>
+            <ul class="l" style="font-size:24px">
+                <li>추론은 쓰인 내용을 그대로 찾는 것 (X) → 드러나지 않은 의도·관점을 <b>짐작</b>.</li>
+                <li>추론에는 내 경험만 쓴다 (X) → 제목·사례·접속어 등 <b>글의 정보</b>도 활용.</li>
+                <li>넛지는 강한 규제로 이끈다 (X) → 규제·감시 대신 <b>스스로 참여</b>.</li>
+                <li>지방은 모두 해롭다 (X) → 갈색 지방은 열을 내 체온 유지에 도움.</li>
+                <li>어른도 갈색 지방이 많다 (X) → 나이 들수록 줄지만 많은 어른도 있음.</li>
+                <li>고쳐쓰기는 다 쓴 뒤에만 (X) → <b>과정 전반</b>에서 가능.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">17</div>
+</section>
+
+<!-- === 17. 시험 포인트 === -->
+<section class="slide">
+    <div class="kicker">시험 포인트</div>
+    <h2>이렇게 나온다</h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>객관식 · 이해</h3>
+            <ul class="l">
+                <li>추론하며 읽기의 개념·방법·효과, 추론 요소 구분(〈보기〉의 학생 추론)</li>
+                <li>「동네 쓰레기…」: 넛지 효과의 개념·사례, 일화로 시작한 까닭, 소제목('천편일률적인 방법', '잔소리', '부드러운 힘') 추론, 관점·의도</li>
+                <li>「아이들은 어른보다…」: 갈색·백색 지방 비교, 두 연구 결과를 제시한 까닭, 마지막 문단 의도</li>
+                <li>주장하는 글의 개념·방법, 쓰기 단계별 활동, 자료의 적절성·근거의 타당성(가~마), 개요의 역할</li>
+                <li>지유의 글 짜임, 고쳐쓰기의 까닭, 두 기사의 서로 다른 관점, 낱말 뜻풀이</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>서답형 · 서술형</h3>
+            <ul class="l">
+                <li>지문·〈보기〉에서 찾아 쓰기</li>
+                <li>분류표(갈색/백색 지방) 채우기</li>
+                <li>자료 가~마 중 기호 고르기</li>
+                <li>조건 낱말을 넣어 고쳐 쓴 까닭 서술</li>
+            </ul>
+            <h3 style="margin-top:22px">마지막 점검</h3>
+            <p>글에 쓰인 내용이 아니라 <b>드러나지 않은 의도·관점</b>으로 답했는가? 단계 이름과 순서를 정확히 썼는가?</p>
+        </div>
+    </div>
+    <div class="pg">18</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span class="trk"><i id="bar"></i></span>
+    <span id="count">1 / 18</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 820px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+<script>
+/* 풍선 진행 표시 (컨트롤러와 독립: #count 변화를 따라간다) */
+(function () {
+    var c = document.getElementById('count'), bar = document.getElementById('bar');
+    function upd() { var m = c.textContent.match(/(\d+)\s*\/\s*(\d+)/); if (m && bar) bar.style.width = (m[1] / m[2] * 100) + '%'; }
+    new MutationObserver(upd).observe(c, { childList: true, characterData: true, subtree: true }); upd();
+})();
+</script>
+<script>for(var k=0;k<15;k++)document.getElementById('next').click();</script></body>
+</html>

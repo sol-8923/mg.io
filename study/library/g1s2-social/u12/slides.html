@@ -8,26 +8,34 @@
 <!-- 한글 글꼴 CDN (유일한 외부 의존) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 <style>
-/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+/* === THEME (config/slide-style-social.md) : 사회 교과서 표지 메타포 - 하이킹/지도 === */
 :root {
-    --bg: #14301f;
-    --bg-2: #1c4029;
-    --bg-3: #0f2517;
-    --ink: #f3ead3;
-    --ink-dim: #c9c3a8;
-    --brass: #c9a24b;
-    --warn: #e08a6a;
-    --font-display: 'Noto Serif KR', 'Batang', serif;
+    --sky: #8ec9f0;
+    --sky-l: #e3f3fc;
+    --hill: #4fae4e;
+    --hill-d: #2f7d46;
+    --path: #efdcb2;
+    --bg: #fbfdf8;
+    --bg-2: #ffffff;
+    --bg-3: #1b2f63;
+    --ink: #1e2a44;
+    --ink-dim: #46567a;
+    --navy: #1b2f63;
+    --em: #b3450b;
+    --warn: #b3450b;
+    --line: #bcd6c2;
+    --pt: #0f766e;
+    --font-display: 'Jua', 'Malgun Gothic', sans-serif;
     --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-    --stage-bg: #0a1a10;
+    --stage-bg: #cfe6f5;
     --slide-bg: var(--bg);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* === viewport-base.css (전체 포함) === */
+/* === viewport-base.css (전체 유지) === */
 html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
 .deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
 .deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
@@ -47,106 +55,142 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
 }
 
-/* === SLIDE 공통 (1920x1080 기준 px) === */
+/* === SLIDE 공통 (1920x1080 무대 px) === */
 .slide {
     font-family: var(--font-body);
     color: var(--ink);
-    padding: 64px 96px 84px;
+    padding: 60px 96px 100px;
     font-size: 27px;
     line-height: 1.5;
-    background:
-        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
-        var(--bg);
+    background: linear-gradient(180deg, var(--sky-l) 0, #f1f9f6 230px, var(--bg) 420px);
 }
+/* 오른쪽 위: 나침반 + 등고선 장식 (본문 뒤, 옅게) */
 .slide::before {
-    content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none;
+    content: ""; position: absolute; right: 30px; top: 18px; width: 300px; height: 200px; pointer-events: none; z-index: 0;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><g fill='none' stroke='%23b5d8ee' stroke-width='3'><ellipse cx='200' cy='80' rx='96' ry='56'/><ellipse cx='200' cy='80' rx='70' ry='40'/><ellipse cx='200' cy='80' rx='44' ry='24'/></g><g transform='translate(238 66)'><circle r='30' fill='%23ffffff' stroke='%2395c4e4' stroke-width='3'/><path d='M0 -22 L7 0 L0 22 L-7 0Z' fill='%23d9822b' opacity='.8'/><path d='M0 -22 L7 0 L-7 0Z' fill='%231b2f63' opacity='.55'/></g></svg>") no-repeat right top / contain;
 }
-.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
-h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+/* 아래쪽: 초록 언덕 + 흙길 띠 */
+.slide::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 74px; pointer-events: none; z-index: 0;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 74' preserveAspectRatio='none'><path d='M0 40 Q300 6 640 30 T1300 24 T1920 14 V74 H0Z' fill='%23cfe9c2'/><path d='M0 58 Q420 22 900 48 T1920 36 V74 H0Z' fill='%23b4dea5'/><path d='M-20 68 Q500 46 1000 62 T1940 52' fill='none' stroke='%23efdcb2' stroke-width='9' stroke-dasharray='34 18' stroke-linecap='round'/></svg>") no-repeat center bottom / 100% 100%;
+}
+.slide > * { position: relative; z-index: 1; }
+.kicker { display: inline-block; font-size: 24px; letter-spacing: .06em; color: #fff; background: var(--pt); font-weight: 700; margin-bottom: 10px; padding: 2px 20px 3px; border-radius: 99px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 60px; line-height: 1.2; color: var(--navy); margin-bottom: 26px; }
 h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
-h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
-b, strong { color: var(--brass); font-weight: 700; }
+h3 { font-family: var(--font-display); font-weight: 400; font-size: 34px; color: var(--navy); margin-bottom: 10px; }
+b, strong { color: var(--em); font-weight: 700; }
 .dim { color: var(--ink-dim); }
-.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+.pg { position: absolute !important; right: 70px; bottom: 16px; font-size: 24px; font-weight: 700; color: var(--navy); z-index: 2 !important; }
 
 .grid { display: grid; gap: 24px; }
 .g2 { grid-template-columns: 1fr 1fr; }
 .g3 { grid-template-columns: 1fr 1fr 1fr; }
 .g4 { grid-template-columns: repeat(4, 1fr); }
 .g5 { grid-template-columns: repeat(5, 1fr); }
-.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
-.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
-.card.warn { border-color: rgba(224,138,106,.6); }
+.card { background: var(--bg-2); border: 2px solid var(--line); border-radius: 18px; padding: 22px 26px; box-shadow: 0 4px 0 rgba(47,125,70,.12); }
+.card.hl { border-color: var(--line); border-left: 10px solid var(--pt); }
+.card.warn { border-color: #f0b98a; border-left: 10px solid #e8751a; background: #fff8f0; }
 .card.warn h3 { color: var(--warn); }
 ul.l { list-style: none; }
-ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
-ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
-.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
-.ref { font-size: 22px; color: var(--ink-dim); }
+ul.l li { position: relative; padding-left: 32px; margin-bottom: 8px; }
+/* 지도 핀 모양 불릿 */
+ul.l li::before { content: ""; position: absolute; left: 5px; top: .5em; width: 15px; height: 15px; background: var(--pt); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); }
+ul.l li::after { content: ""; position: absolute; left: 10px; top: calc(.5em + 5px); width: 5px; height: 5px; background: #fff; border-radius: 50%; }
+.tag { display: inline-block; font-size: 24px; padding: 0 14px; background: var(--pt); border-radius: 99px; color: #fff; margin-right: 10px; vertical-align: 3px; font-family: var(--font-body); font-weight: 700; }
+.ref { font-size: 24px; color: var(--ink-dim); }
 
-table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
-table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
-table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
-table.t td:first-child { font-weight: 700; white-space: nowrap; }
+table.t { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 27px; border: 2px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; }
+table.t th { background: var(--navy); color: #fff; font-family: var(--font-display); font-weight: 400; text-align: left; padding: 12px 18px; border-right: 1px solid rgba(255,255,255,.25); }
+table.t td { padding: 12px 18px; border-top: 1px solid var(--line); border-right: 1px solid var(--line); background: #fff; vertical-align: top; }
+table.t tr:nth-child(even) td { background: #f1f8ee; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; color: var(--navy); }
+table.t th:last-child, table.t td:last-child { border-right: 0; }
 
-.g4 .card, .g5 .card { font-size: 25px; padding: 18px 20px; }
-.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
-.svgbox { text-align: center; }
+.g5 .card, .g4 .card { font-size: 25px; padding: 18px 20px; }
+/* 이정표 번호 */
+.step .no { display: inline-flex; width: 48px; height: 48px; align-items: center; justify-content: center; border-radius: 50%; background: var(--pt); color: #fff; font-weight: 900; font-size: 26px; margin-bottom: 8px; border: 3px solid #fff; box-shadow: 0 0 0 3px var(--pt); }
+.svgbox { display: flex; justify-content: center; align-items: center; }
 .svgbox svg { width: 100%; height: auto; }
 
-.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
-.cover .kicker { font-size: 30px; }
-.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
-.cover h1 span { color: var(--brass); }
-.cover p { font-size: 34px; color: var(--ink-dim); }
-.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+/* 표지 */
+.slide.cover { background: linear-gradient(180deg, #7ec3ee 0, #a9d8f5 40%, #d3ecfa 62%, #e4f4fb 100%); padding: 0; }
+.slide.cover::before, .slide.cover::after { display: none; }
+.cover .scene { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; z-index: 0; }
+.cover .copy { position: absolute; left: 150px; top: 96px; width: 1250px; z-index: 2; }
+.cover .kicker { font-size: 30px; padding: 4px 26px 5px; background: #fff; color: var(--navy); border: 3px solid var(--navy); margin-bottom: 18px; }
+.cover h1 { font-family: var(--font-display); font-weight: 400; font-size: 136px; line-height: 1.1; margin: 8px 0 22px; color: var(--navy); text-shadow: 0 4px 0 rgba(255,255,255,.65); }
+.cover h1 span { color: #fff; background: var(--navy); border-radius: 26px; padding: 0 28px 6px; text-shadow: none; display: inline-block; }
+.cover p { font-size: 36px; font-weight: 500; color: var(--navy); background: rgba(255,255,255,.82); display: inline-block; padding: 6px 22px; border-radius: 16px; }
+.cover .rule { width: 240px; height: 10px; background: repeating-linear-gradient(90deg, var(--pt) 0 34px, transparent 34px 52px); border-radius: 5px; margin: 6px 0 24px; }
+.cover .sign { position: absolute; left: 230px; top: 770px; z-index: 2; transform: rotate(-4deg); }
+.cover .sign .post { position: absolute; left: 50%; top: 100%; width: 22px; height: 150px; margin-left: -11px; background: #8a5a2b; border-radius: 4px; }
+.cover .sign .board { position: relative; min-width: 240px; padding: 10px 40px 12px; background: var(--pt); color: #fff; border: 5px solid #fff; border-radius: 12px 40px 40px 12px; font-family: var(--font-display); font-size: 58px; line-height: 1.1; text-align: center; box-shadow: 0 6px 0 rgba(0,0,0,.18); }
+.cover .sign .board small { font-family: var(--font-body); font-size: 28px; font-weight: 700; margin-left: 6px; }
 
+/* 등장 효과 */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
 .slide.visible .reveal { opacity: 1; transform: none; }
 .slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
 .slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
 .slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
 
-/* === 컨트롤(무대 밖) === */
-.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
-.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
-.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+/* === 컨트롤(하단): 등산길 진행 표시 === */
+.deck-controls { display: flex; gap: 12px; align-items: center; background: rgba(255,255,255,.94); border: 2px solid var(--hill-d); border-radius: 99px; padding: 6px 16px; font-family: var(--font-body); color: var(--navy); font-size: 15px; font-weight: 700; box-shadow: 0 3px 10px rgba(27,47,99,.2); }
+.deck-controls button { background: none; border: none; color: var(--navy); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.trail { position: relative; width: 340px; height: 34px; margin: 0 4px; }
+.trail .road { position: absolute; left: 10px; right: 10px; top: 20px; height: 8px; border-radius: 4px; background: #e6d3a6; }
+.trail .walked { position: absolute; left: 10px; top: 20px; height: 8px; border-radius: 4px; background: var(--hill); width: 0; transition: width .35s; }
+.trail .post { position: absolute; top: 14px; width: 6px; height: 20px; margin-left: -3px; border-radius: 2px; background: #b08a55; }
+.trail .post.done { background: var(--hill-d); }
+.trail .flag { position: absolute; right: 2px; top: 0; width: 18px; height: 26px; }
+.trail .hiker { position: absolute; top: -4px; width: 26px; height: 32px; margin-left: -13px; transition: left .35s; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--navy); color: #fff; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
 .edit-toggle.show, .edit-toggle.active { opacity: 1; }
 .edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
-body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+body.editing [contenteditable] { outline: 2px dashed var(--pt); }
 
 /* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
 @media (max-width: 820px) and (orientation: portrait) {
-    html, body { overflow: auto; height: auto; background: var(--bg-3); }
+    html, body { overflow: auto; height: auto; background: var(--sky-l); }
     .deck-viewport { position: static; overflow: visible; }
     .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
     .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
-             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
+             padding: 30px 18px 52px; font-size: 17px; border-bottom: 6px solid var(--hill); background: linear-gradient(180deg, var(--sky-l) 0, var(--bg) 160px); }
     .slide::before { display: none; }
+    .slide::after { height: 34px; }
     .reveal { opacity: 1; transform: none; transition: none; }
     .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
-    .kicker { font-size: 14px; }
+    .kicker { font-size: 14px; padding: 1px 12px 2px; }
     h2 { font-size: 28px; margin-bottom: 16px; }
     h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
-    h3 { font-size: 20px; }
+    h3 { font-size: 21px; }
     .grid { gap: 12px; }
-    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr; }
-    .card, .g4 .card, .g5 .card { padding: 14px 16px; font-size: 17px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr !important; }
+    .card, .g4 .card, .g5 .card { padding: 14px 16px; font-size: 17px !important; border-radius: 14px; }
+    .card li, .card p { font-size: inherit !important; }
+    ul.l li { padding-left: 26px; }
+    ul.l li::before { width: 12px; height: 12px; }
+    ul.l li::after { left: 9px; top: calc(.5em + 4px); width: 4px; height: 4px; }
     .tag { font-size: 14px; }
     .ref { font-size: 14px; }
-    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
-    table.t { font-size: 16px; }
+    .pg { position: static !important; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px !important; }
     table.t th, table.t td { padding: 8px 9px; }
     table.t td:first-child { white-space: normal; }
-    .step .no { width: 32px; height: 32px; font-size: 18px; }
-    .cover { padding: 56px 18px; }
-    .cover .kicker { font-size: 16px; }
-    .cover h1 { font-size: 46px; }
-    .cover p { font-size: 18px; }
-    .cover .rule { width: 120px; height: 4px; }
+    .step .no { width: 36px; height: 36px; font-size: 18px; }
+    .slide.cover { padding: 0; min-height: 600px; overflow: hidden; background: linear-gradient(180deg, #7ec3ee 0, #a9d8f5 45%, #d3ecfa 100%); }
+    .cover .scene { top: auto; bottom: 0; height: 52%; }
+    .cover .copy { position: relative; left: auto; top: auto; width: auto; padding: 36px 18px 0; }
+    .cover .kicker { font-size: 15px; padding: 2px 14px 3px; border-width: 2px; }
+    .cover h1 { font-size: 54px; margin: 6px 0 12px; }
+    .cover h1 span { border-radius: 14px; padding: 0 14px 3px; }
+    .cover p { font-size: 18px; padding: 4px 12px; }
+    .cover .rule { width: 140px; height: 6px; margin: 4px 0 14px; }
+    .cover .sign, .cover .scene .sky { display: none; }
 }
 </style>
+
 </head>
 <body>
 <div class="edit-hotzone"></div>
@@ -157,10 +201,74 @@ body.editing [contenteditable] { outline: 1px dashed var(--brass); }
 
 <!-- === 1. 표지 === -->
 <section class="slide cover active">
+    <svg class="scene" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+<g class="sky"><g transform="translate(1500 150) scale(1.1)" fill="#fff" opacity=".92"><ellipse cx="0" cy="0" rx="120" ry="38"/><ellipse cx="-50" cy="-26" rx="56" ry="40"/><ellipse cx="30" cy="-40" rx="62" ry="46"/></g><g transform="translate(1790 330) scale(0.8)" fill="#fff" opacity=".92"><ellipse cx="0" cy="0" rx="120" ry="38"/><ellipse cx="-50" cy="-26" rx="56" ry="40"/><ellipse cx="30" cy="-40" rx="62" ry="46"/></g><g transform="translate(1120 90) scale(0.6)" fill="#fff" opacity=".92"><ellipse cx="0" cy="0" rx="120" ry="38"/><ellipse cx="-50" cy="-26" rx="56" ry="40"/><ellipse cx="30" cy="-40" rx="62" ry="46"/></g><g transform="translate(120 420) scale(0.7)" fill="#fff" opacity=".92"><ellipse cx="0" cy="0" rx="120" ry="38"/><ellipse cx="-50" cy="-26" rx="56" ry="40"/><ellipse cx="30" cy="-40" rx="62" ry="46"/></g></g>
+<g><rect x="1450" y="530" width="50" height="100" fill="#b7d4ec"/><rect x="1500" y="480" width="40" height="150" fill="#c3dbef"/><rect x="1540" y="550" width="56" height="80" fill="#aecbe6"/><rect x="1596" y="440" width="44" height="190" fill="#bcd7ee"/><rect x="1640" y="510" width="50" height="120" fill="#aecbe6"/><rect x="1690" y="540" width="40" height="90" fill="#c3dbef"/><rect x="1730" y="490" width="56" height="140" fill="#b7d4ec"/><rect x="1786" y="560" width="40" height="70" fill="#aecbe6"/><rect x="1612" y="402" width="8" height="40" fill="#bcd7ee"/></g>
+<path d="M0 640 Q300 596 640 628 T1260 622 T1920 606 V1080 H0Z" fill="#a8dba0"/>
+<g transform="translate(300 624) scale(.62)"><path d="M-14 0 L-8 -90 L8 -90 L14 0Z" fill="#fff"/><path d="M-10 -90 L0 -108 L10 -90Z" fill="#c9523f"/>
+<g transform="translate(0 -96)" stroke="#fff" stroke-width="9" stroke-linecap="round"><line x1="-4" y1="-4" x2="-60" y2="-64"/><line x1="4" y1="-4" x2="60" y2="64"/><line x1="4" y1="-4" x2="62" y2="-62"/><line x1="-4" y1="4" x2="-60" y2="64"/></g></g><g transform="translate(150 622)"><rect x="0" y="-34" width="64" height="34" fill="#fff"/><path d="M-6 -34 L32 -64 L70 -34Z" fill="#c9523f"/><rect x="26" y="-20" width="12" height="20" fill="#8a5a2b"/></g><g transform="translate(1330 640)"><rect x="0" y="-60" width="130" height="60" fill="#fff"/><path d="M-12 -60 L40 -108 L142 -108 L142 -60Z" fill="#c9523f"/><rect x="18" y="-38" width="22" height="38" fill="#8a5a2b"/><rect x="62" y="-42" width="26" height="22" fill="#9ccbe8"/><rect x="98" y="-42" width="26" height="22" fill="#9ccbe8"/></g><g transform="translate(1290 650) scale(1)"><rect x="-4" y="-10" width="8" height="26" fill="#7d5a30"/><circle cx="0" cy="-34" r="28" fill="#2f8a4a"/></g><g transform="translate(1480 640) scale(0.9)"><rect x="-4" y="-10" width="8" height="26" fill="#7d5a30"/><circle cx="0" cy="-34" r="28" fill="#2f8a4a"/></g><g transform="translate(740 640) scale(0.8)"><rect x="-4" y="-10" width="8" height="26" fill="#7d5a30"/><circle cx="0" cy="-34" r="28" fill="#2f8a4a"/></g><g transform="translate(560 645) scale(0.7)"><rect x="-4" y="-10" width="8" height="26" fill="#7d5a30"/><circle cx="0" cy="-34" r="28" fill="#2f8a4a"/></g>
+<path d="M0 760 Q500 650 1000 700 T1920 650 V1080 H0Z" fill="#7cc468"/>
+<g transform="translate(1060 706)"><ellipse cx="0" cy="0" rx="30" ry="18" fill="#a85f32"/><rect x="-22" y="10" width="7" height="18" fill="#7d4524"/><rect x="14" y="10" width="7" height="18" fill="#7d4524"/><circle cx="32" cy="-8" r="11" fill="#a85f32"/></g><g transform="translate(1180 736)"><ellipse cx="0" cy="0" rx="22" ry="15" fill="#fff"/><circle cx="20" cy="-3" r="8" fill="#3b3b4a"/><rect x="-12" y="10" width="5" height="12" fill="#3b3b4a"/><rect x="8" y="10" width="5" height="12" fill="#3b3b4a"/></g><g transform="translate(1560 690)"><ellipse cx="0" cy="0" rx="22" ry="15" fill="#fff"/><circle cx="20" cy="-3" r="8" fill="#3b3b4a"/><rect x="-12" y="10" width="5" height="12" fill="#3b3b4a"/><rect x="8" y="10" width="5" height="12" fill="#3b3b4a"/></g>
+<path d="M0 930 C520 900 900 800 1320 700 S1740 580 1920 560 V1080 H0Z" fill="#4fae4e"/>
+<path d="M0 990 C560 960 960 860 1360 760 S1760 640 1920 620 V1080 H0Z" fill="#3f9a45"/>
+<path d="M-40 1030 C500 990 980 880 1340 790 S1740 680 1960 640" fill="none" stroke="#d6bf8b" stroke-width="120" stroke-linecap="round"/>
+<path d="M-40 1030 C500 990 980 880 1340 790 S1740 680 1960 640" fill="none" stroke="#efdcb2" stroke-width="106" stroke-linecap="round"/>
+<path d="M-40 1030 C500 990 980 880 1340 790 S1740 680 1960 640" fill="none" stroke="#fff5d8" stroke-width="6" stroke-dasharray="36 30" opacity=".7"/>
+<g fill="none" stroke="#2f7d46" stroke-width="5" opacity=".55"><path d="M60 1000 Q300 960 520 975"/><path d="M700 940 Q900 880 1120 850"/><path d="M1500 800 Q1700 720 1900 690"/></g>
+<g transform="translate(1210 840) scale(.62) rotate(-8)"><g>
+ <line x1="0" y1="-125" x2="-30" y2="-64" stroke="#2d2a3e" stroke-width="30" stroke-linecap="round"/>
+ <line x1="-30" y1="-64" x2="-52" y2="-14" stroke="#2d2a3e" stroke-width="28" stroke-linecap="round"/>
+ <rect x="-68" y="-32" width="30" height="18" rx="5" fill="#fff"/>
+ <ellipse cx="-56" cy="-4" rx="28" ry="13" fill="#2d2a3e"/>
+ <rect x="-60" y="-235" width="52" height="95" rx="18" fill="#2f3b4d" transform="rotate(8 -34 -190)"/>
+ <ellipse cx="-44" cy="-248" rx="28" ry="16" fill="#3aa6b9" transform="rotate(-10 -44 -248)"/>
+ <line x1="0" y1="-125" x2="46" y2="-88" stroke="#2d2a3e" stroke-width="30" stroke-linecap="round"/>
+ <line x1="46" y1="-88" x2="66" y2="-24" stroke="#2d2a3e" stroke-width="28" stroke-linecap="round"/>
+ <rect x="52" y="-38" width="30" height="18" rx="5" fill="#fff"/>
+ <ellipse cx="76" cy="-10" rx="30" ry="13" fill="#2d2a3e"/>
+ <line x1="2" y1="-130" x2="22" y2="-198" stroke="#7a55c4" stroke-width="50" stroke-linecap="round"/>
+ <line x1="22" y1="-198" x2="62" y2="-160" stroke="#7a55c4" stroke-width="17" stroke-linecap="round"/>
+ <line x1="62" y1="-160" x2="82" y2="-128" stroke="#c98a60" stroke-width="15" stroke-linecap="round"/>
+ <line x1="84" y1="-136" x2="40" y2="-4" stroke="#333" stroke-width="6" stroke-linecap="round"/>
+ <line x1="22" y1="-198" x2="-14" y2="-150" stroke="#7a55c4" stroke-width="17" stroke-linecap="round"/>
+ <line x1="-14" y1="-150" x2="-26" y2="-120" stroke="#c98a60" stroke-width="15" stroke-linecap="round"/>
+ <line x1="-30" y1="-128" x2="-60" y2="-6" stroke="#333" stroke-width="6" stroke-linecap="round"/>
+ <circle cx="32" cy="-238" r="24" fill="#c98a60"/>
+ <path d="M6 -240 A26 26 0 0 1 58 -240 Q60 -262 32 -266 Q8 -262 6 -240Z" fill="#2b2430"/>
+ <circle cx="12" cy="-268" r="14" fill="#2b2430"/>
+</g></g>
+<g transform="translate(1500 770) scale(.66) rotate(-8)"><g>
+ <line x1="0" y1="-130" x2="-34" y2="-70" stroke="#2d2a3e" stroke-width="32" stroke-linecap="round"/>
+ <line x1="-34" y1="-70" x2="-62" y2="-14" stroke="#2d2a3e" stroke-width="30" stroke-linecap="round"/>
+ <ellipse cx="-66" cy="-4" rx="30" ry="14" fill="#8a5a2b"/>
+ <rect x="-62" y="-250" width="56" height="100" rx="18" fill="#f08a24" transform="rotate(8 -34 -200)"/>
+ <circle cx="-30" cy="-215" r="19" fill="#4f9ec4"/>
+ <line x1="2" y1="-135" x2="26" y2="-205" stroke="#2d2a3e" stroke-width="52" stroke-linecap="round"/>
+ <line x1="6" y1="-150" x2="26" y2="-205" stroke="#fff" stroke-width="50" stroke-linecap="round"/>
+ <line x1="0" y1="-130" x2="52" y2="-92" stroke="#2d2a3e" stroke-width="32" stroke-linecap="round"/>
+ <line x1="52" y1="-92" x2="78" y2="-24" stroke="#2d2a3e" stroke-width="30" stroke-linecap="round"/>
+ <ellipse cx="86" cy="-12" rx="32" ry="14" fill="#8a5a2b"/>
+ <line x1="26" y1="-205" x2="52" y2="-150" stroke="#b9703e" stroke-width="17" stroke-linecap="round"/>
+ <line x1="52" y1="-150" x2="62" y2="-118" stroke="#b9703e" stroke-width="16" stroke-linecap="round"/>
+ <line x1="62" y1="-122" x2="34" y2="-2" stroke="#333" stroke-width="6" stroke-linecap="round"/>
+ <line x1="30" y1="-208" x2="96" y2="-262" stroke="#b9703e" stroke-width="18" stroke-linecap="round"/>
+ <line x1="96" y1="-262" x2="132" y2="-310" stroke="#b9703e" stroke-width="17" stroke-linecap="round"/>
+ <circle cx="138" cy="-318" r="11" fill="#b9703e"/>
+ <circle cx="40" cy="-248" r="25" fill="#b9703e"/>
+ <path d="M14 -252 A27 27 0 0 1 66 -252 Z" fill="#f5b82e"/>
+ <rect x="12" y="-257" width="56" height="9" rx="4" fill="#e0a21c"/>
+</g></g>
+<path d="M0 1080 L0 1030 Q60 1010 130 1040 L180 1080Z" fill="#4a3f47"/>
+<path d="M1920 1080 L1920 1000 Q1840 990 1760 1040 L1720 1080Z" fill="#4a3f47"/>
+<g stroke="#2f7d46" stroke-width="4" stroke-linecap="round" opacity=".7"><path d="M1040 1000 l-6 -26 M1050 1000 l2 -30 M1060 1000 l8 -24"/><path d="M1700 960 l-6 -24 M1710 960 l3 -28"/></g>
+</svg>
+    <div class="copy">
     <div class="kicker reveal">1학년 2학기 사회 · 12단원 요약 정리</div>
     <h1 class="reveal">인권과 <span>기본권</span></h1>
     <div class="rule reveal"></div>
     <p class="reveal">인권 보장과 기본권 · 기본권 제한과 구제 · 근로자의 권리와 노동권</p>
+    </div>
+    <div class="sign" aria-hidden="true"><div class="board">12<small>단원</small></div><div class="post"></div></div>
 </section>
 
 <!-- === 2. 단원 개요 === -->
@@ -539,6 +647,30 @@ body.editing [contenteditable] { outline: 1px dashed var(--brass); }
     tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
     tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
     tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+<script>
+/* === 등산길 진행 표시: 길 위의 하이커 + 이정표 (컨트롤러와 독립, #count 변화를 따라감) === */
+(function () {
+    var count = document.getElementById('count'), box = document.getElementById('controls');
+    if (!count || !box) return;
+    var N = document.querySelectorAll('.slide').length;
+    var tr = document.createElement('div'); tr.className = 'trail';
+    var h = '<div class="road"></div><div class="walked"></div>';
+    for (var i = 0; i < N; i++) h += '<div class="post" style="left:' + (10 + i * (320 / (N - 1))) + 'px"></div>';
+    h += '<svg class="flag" viewBox="0 0 18 26"><rect x="2" y="2" width="2.5" height="24" fill="#8a5a2b"/><path d="M4.5 3 L17 7.5 L4.5 12Z" fill="#c2570c"/></svg>';
+    h += '<svg class="hiker" viewBox="0 0 26 32"><circle cx="14" cy="6" r="4.5" fill="#c98a60"/><path d="M9.5 5 A4.8 4.8 0 0 1 18.5 5Z" fill="#f5b82e"/><rect x="5" y="11" width="7" height="11" rx="3" fill="#3aa6b9"/><line x1="14" y1="11" x2="14" y2="21" stroke="#7a55c4" stroke-width="6" stroke-linecap="round"/><line x1="14" y1="21" x2="10" y2="30" stroke="#2d2a3e" stroke-width="4" stroke-linecap="round"/><line x1="14" y1="21" x2="19" y2="30" stroke="#2d2a3e" stroke-width="4" stroke-linecap="round"/><line x1="17" y1="14" x2="22" y2="28" stroke="#333" stroke-width="1.5"/></svg>';
+    tr.innerHTML = h;
+    box.insertBefore(tr, count);
+    var walked = tr.querySelector('.walked'), hk = tr.querySelector('.hiker'), posts = tr.querySelectorAll('.post');
+    function upd() {
+        var m = /(\d+)\s*\/\s*(\d+)/.exec(count.textContent); if (!m) return;
+        var k = +m[1] - 1, x = 10 + k * (320 / (N - 1));
+        hk.style.left = x + 'px'; walked.style.width = (x - 10) + 'px';
+        for (var i = 0; i < posts.length; i++) posts[i].className = 'post' + (i <= k ? ' done' : '');
+    }
+    new MutationObserver(upd).observe(count, { childList: true, characterData: true, subtree: true });
+    upd();
 })();
 </script>
 </body>

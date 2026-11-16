@@ -8,22 +8,29 @@
 <!-- 한글 글꼴 CDN (유일한 외부 의존) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
 
 <style>
-/* === THEME (config/slide-style.md) : 색상은 여기서 바꾼다 === */
+/* === THEME (config/slide-style-science.md) : 과학 교과서 표지 메타포 = 우주 탐험/로켓 === */
 :root {
-    --bg: #14301f;
-    --bg-2: #1c4029;
-    --bg-3: #0f2517;
-    --ink: #f3ead3;
-    --ink-dim: #c9c3a8;
-    --brass: #c9a24b;
-    --warn: #e08a6a;
-    --font-display: 'Noto Serif KR', 'Batang', serif;
-    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-    --stage-bg: #0a1a10;
+    --bg: #FFF1F8;
+    --bg-2: #FFFFFF;
+    --bg-3: #3B2A7A;
+    --ink: #261A52;
+    --ink-dim: #5A4F85;
+    --brass: #C2186B;      /* 강조(마젠타) - 기존 변수명 유지 */
+    --purple: #5B2AA6;     /* 소제목 */
+    --line: #7A4FD0;       /* 카드 테두리(보라) */
+    --soft: #D9CCF3;
+    --cyan: #39C6E8;
+    --star: #FFC83D;
+    --warn: #B93A12;
+    --warn-line: #E8552D;
+    --font-display: 'Jua', 'Gowun Dodum', 'Malgun Gothic', sans-serif;
+    --font-body: 'Gowun Dodum', 'Malgun Gothic', sans-serif;
+    --stage-bg: #1B1245;
     --slide-bg: var(--bg);
+    --deco: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201920%201080%22%3E%0A%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%221880%22%20height%3D%221040%22%20rx%3D%2244%22%20fill%3D%22none%22%20stroke%3D%22%23C9B3F2%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-dasharray%3D%220.1%2018%22%2F%3E%0A%3Cpath%20d%3D%22M1560%20190%20Q1740%20-10%201880%20150%22%20fill%3D%22none%22%20stroke%3D%22%23C9B3F2%22%20stroke-width%3D%224%22%20stroke-dasharray%3D%224%2012%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cellipse%20cx%3D%221790%22%20cy%3D%2296%22%20rx%3D%2264%22%20ry%3D%2216%22%20transform%3D%22rotate%28-18%201790%2096%29%22%20fill%3D%22none%22%20stroke%3D%22%23F06BB4%22%20stroke-width%3D%228%22%2F%3E%0A%3Ccircle%20cx%3D%221790%22%20cy%3D%2296%22%20r%3D%2230%22%20fill%3D%22%238E63E6%22%20stroke%3D%22%233B2A7A%22%20stroke-width%3D%225%22%2F%3E%0A%3Cellipse%20cx%3D%221790%22%20cy%3D%2296%22%20rx%3D%2264%22%20ry%3D%2216%22%20transform%3D%22rotate%28-18%201790%2096%29%22%20fill%3D%22none%22%20stroke%3D%22%23F06BB4%22%20stroke-width%3D%228%22%20stroke-dasharray%3D%220%2074%20200%22%2F%3E%0A%3Cpath%20d%3D%22M52%20134%20Q52%20150%2068%20150%20Q52%20150%2052%20166%20Q52%20150%2036%20150%20Q52%20150%2052%20134Z%22%20fill%3D%22%23FFC83D%22%2F%3E%3Cpath%20d%3D%22M60%20408%20Q60%20420%2072%20420%20Q60%20420%2060%20432%20Q60%20420%2048%20420%20Q60%20420%2060%20408Z%22%20fill%3D%22%2339C6E8%22%2F%3E%3Cpath%20d%3D%22M44%20682%20Q44%20700%2062%20700%20Q44%20700%2044%20718%20Q44%20700%2026%20700%20Q44%20700%2044%20682Z%22%20fill%3D%22%23F06BB4%22%2F%3E%3Cpath%20d%3D%22M70%20888%20Q70%20900%2082%20900%20Q70%20900%2070%20912%20Q70%20900%2058%20900%20Q70%20900%2070%20888Z%22%20fill%3D%22%23FFC83D%22%2F%3E%3Cpath%20d%3D%22M1868%20316%20Q1868%20330%201882%20330%20Q1868%20330%201868%20344%20Q1868%20330%201854%20330%20Q1868%20330%201868%20316Z%22%20fill%3D%22%23F06BB4%22%2F%3E%3Cpath%20d%3D%22M1880%20542%20Q1880%20560%201898%20560%20Q1880%20560%201880%20578%20Q1880%20560%201862%20560%20Q1880%20560%201880%20542Z%22%20fill%3D%22%23FFC83D%22%2F%3E%3Cpath%20d%3D%22M1860%20788%20Q1860%20800%201872%20800%20Q1860%20800%201860%20812%20Q1860%20800%201848%20800%20Q1860%20800%201860%20788Z%22%20fill%3D%22%2339C6E8%22%2F%3E%3Cpath%20d%3D%22M1700%2030%20Q1700%2040%201710%2040%20Q1700%2040%201700%2050%20Q1700%2040%201690%2040%20Q1700%2040%201700%2030Z%22%20fill%3D%22%23FFC83D%22%2F%3E%3Cpath%20d%3D%22M1500%2034%20Q1500%2046%201512%2046%20Q1500%2046%201500%2058%20Q1500%2046%201488%2046%20Q1500%2046%201500%2034Z%22%20fill%3D%22%2339C6E8%22%2F%3E%3Cpath%20d%3D%22M300%2032%20Q300%2044%20312%2044%20Q300%2044%20300%2056%20Q300%2044%20288%2044%20Q300%2044%20300%2032Z%22%20fill%3D%22%23F06BB4%22%2F%3E%0A%3Cpath%20d%3D%22M0%201048%20Q420%20996%20900%201030%20T1920%201010%20V1080%20H0Z%22%20fill%3D%22%23E9DDFB%22%20stroke%3D%22%237A4FD0%22%20stroke-width%3D%224%22%2F%3E%0A%3Cellipse%20cx%3D%22260%22%20cy%3D%221052%22%20rx%3D%2246%22%20ry%3D%229%22%20fill%3D%22%23D3BFF3%22%2F%3E%3Cellipse%20cx%3D%22640%22%20cy%3D%221058%22%20rx%3D%2230%22%20ry%3D%226%22%20fill%3D%22%23D3BFF3%22%2F%3E%0A%3Cellipse%20cx%3D%221180%22%20cy%3D%221052%22%20rx%3D%2252%22%20ry%3D%229%22%20fill%3D%22%23D3BFF3%22%2F%3E%3Cellipse%20cx%3D%221530%22%20cy%3D%221046%22%20rx%3D%2234%22%20ry%3D%227%22%20fill%3D%22%23D3BFF3%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -51,56 +58,64 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
 .slide {
     font-family: var(--font-body);
     color: var(--ink);
-    padding: 64px 96px 84px;
+    padding: 64px 96px 96px;
     font-size: 27px;
     line-height: 1.5;
-    /* 칠판 느낌: 은은한 빛 번짐 + 가는 격자 */
-    background:
-        radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,.05), transparent 60%),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 2px, transparent 2px 6px),
-        var(--bg);
+    isolation: isolate;
+    background: linear-gradient(180deg, #FFE6F3 0%, #FFF4EC 100%);
 }
-.slide::before { /* 황동 테두리 */
-    content: ""; position: absolute; inset: 22px; border: 2px solid rgba(201,162,75,.45); border-radius: 6px; pointer-events: none;
+.slide::before { /* 우주 장식: 점선 창틀 · 토성 · 별 · 달 표면 */
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: var(--deco) center / 1920px 1080px no-repeat;
 }
-.kicker { font-size: 24px; letter-spacing: .12em; color: var(--brass); font-weight: 700; margin-bottom: 6px; }
-h2 { font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
-h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
-h3 { font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--brass); margin-bottom: 10px; }
+.kicker { display: inline-block; font-size: 24px; letter-spacing: .06em; color: #fff; background: var(--brass); font-weight: 700; margin-bottom: 10px; padding: 2px 20px 3px; border-radius: 99px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 60px; line-height: 1.2; color: var(--ink); margin-bottom: 26px; }
+h2::before { content: ""; display: inline-block; width: 46px; height: 46px; margin-right: 16px; vertical-align: -6px; background: var(--star); border: 4px solid var(--bg-3); border-radius: 50%; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 400; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 400; font-size: 34px; color: var(--purple); margin-bottom: 10px; }
 b, strong { color: var(--brass); font-weight: 700; }
 .dim { color: var(--ink-dim); }
-.pg { position: absolute; right: 70px; bottom: 36px; font-size: 22px; color: var(--ink-dim); }
+.pg { position: absolute; right: 64px; bottom: 14px; width: 66px; height: 66px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 30px; color: #fff; z-index: 2; }
+.pg::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--purple); border: 4px solid var(--bg-3); border-radius: 50%; box-shadow: 0 0 0 5px var(--cyan) inset; }
+.pg::after { content: ""; position: absolute; left: -24px; right: -24px; top: 50%; height: 14px; margin-top: -7px; border: 4px solid var(--star); border-radius: 50%; transform: rotate(-18deg); z-index: -2; }
 
 .grid { display: grid; gap: 24px; }
 .g2 { grid-template-columns: 1fr 1fr; }
 .g3 { grid-template-columns: 1fr 1fr 1fr; }
 .g5 { grid-template-columns: repeat(5, 1fr); }
-.card { background: var(--bg-2); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 22px 26px; }
-.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 1px rgba(201,162,75,.4); }
-.card.warn { border-color: rgba(224,138,106,.6); }
+.card { position: relative; background: var(--bg-2); border: 4px solid var(--line); border-radius: 30px; padding: 22px 30px; box-shadow: 0 7px 0 rgba(91,42,166,.22); }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 6px #FFE0EF, 0 7px 0 rgba(194,24,107,.22); }
+.card.hl::after { content: ""; position: absolute; top: -11px; right: 40px; width: 16px; height: 16px; border-radius: 50%; background: var(--cyan); border: 3px solid var(--bg-3); }
+.card.warn { border-color: var(--warn-line); background: #FFF3EC; box-shadow: 0 7px 0 rgba(232,85,45,.22); }
 .card.warn h3 { color: var(--warn); }
 ul.l { list-style: none; }
-ul.l li { position: relative; padding-left: 28px; margin-bottom: 8px; }
-ul.l li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 10px; height: 10px; background: var(--brass); transform: rotate(45deg); }
-.tag { display: inline-block; font-size: 22px; padding: 1px 12px; border: 1px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; }
+ul.l li { position: relative; padding-left: 36px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .36em; width: 22px; height: 22px; background: var(--brass); clip-path: polygon(50% 0, 62% 36%, 98% 38%, 69% 60%, 80% 96%, 50% 74%, 20% 96%, 31% 60%, 2% 38%, 38% 36%); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 13px; border: 3px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; font-weight: 700; }
 .ref { font-size: 22px; color: var(--ink-dim); }
 
-table.t { width: 100%; border-collapse: collapse; font-size: 27px; }
-table.t th { background: var(--bg-3); color: var(--brass); font-family: var(--font-display); text-align: left; padding: 12px 18px; border: 1px solid rgba(201,162,75,.4); }
-table.t td { padding: 12px 18px; border: 1px solid rgba(201,162,75,.3); background: rgba(28,64,41,.7); vertical-align: top; }
-table.t td:first-child { font-weight: 700; white-space: nowrap; }
+table.t { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 27px; border: 4px solid var(--bg-3); border-radius: 26px; overflow: hidden; background: #fff; }
+table.t th { background: var(--bg-3); color: #fff; font-family: var(--font-display); font-weight: 400; text-align: left; padding: 12px 18px; border-right: 2px solid #5A48A5; }
+table.t td { padding: 12px 18px; border-right: 2px solid var(--soft); border-bottom: 2px solid var(--soft); background: #fff; vertical-align: top; }
+table.t tr:nth-child(even) td { background: #FFF1F8; }
+table.t th:last-child, table.t td:last-child { border-right: 0; }
+table.t tr:last-child td { border-bottom: 0; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; color: var(--purple); }
 
 /* 순서 카드 (줄거리 흐름, 5단계) */
 .g5 .card { font-size: 25px; padding: 18px 20px; }
-.step .no { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: var(--bg-3); font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+.step .no { display: inline-flex; width: 46px; height: 46px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: #fff; font-family: var(--font-display); font-weight: 400; font-size: 28px; margin-bottom: 8px; border: 3px solid var(--bg-3); }
 
-/* 표지 */
-.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 160px; }
-.cover .kicker { font-size: 30px; }
-.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: 128px; line-height: 1.12; margin: 14px 0 26px; }
-.cover h1 span { color: var(--brass); }
-.cover p { font-size: 34px; color: var(--ink-dim); }
-.cover .rule { width: 220px; height: 6px; background: var(--brass); margin: 10px 0 30px; }
+/* 표지: 로켓 발사 장면 */
+.slide.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 150px; padding-right: 760px; color: #fff;
+    background: linear-gradient(180deg, #1F1553 0%, #4A2584 34%, #A02F94 66%, #F07BC6 100%); }
+.slide.cover::before { display: none; }
+.cover .scene { overflow: visible; position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; max-width: none; max-height: none; z-index: -1; }
+.cover .kicker { font-size: 30px; align-self: flex-start; background: var(--star); color: #261A52; }
+.cover h1 { font-family: var(--font-display); font-weight: 400; font-size: 136px; line-height: 1.12; margin: 18px 0 26px; color: #fff; text-shadow: 0 6px 0 rgba(27,18,69,.55); }
+.cover h1 span { color: var(--star); }
+.cover p { font-size: 36px; color: #fff; line-height: 1.55; }
+.cover .rule { width: 260px; height: 10px; margin: 10px 0 30px; border-radius: 99px; background: repeating-linear-gradient(90deg, var(--cyan) 0 26px, transparent 26px 44px); }
 
 /* 등장 효과 */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
@@ -109,52 +124,62 @@ table.t td:first-child { font-weight: 700; white-space: nowrap; }
 .slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
 .slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
 
-/* === 컨트롤(무대 밖) === */
-.deck-controls { display: flex; gap: 14px; align-items: center; background: rgba(10,26,16,.85); border: 1px solid rgba(201,162,75,.5); border-radius: 99px; padding: 6px 14px; font-family: var(--font-body); color: var(--ink); font-size: 15px; }
-.deck-controls button { background: none; border: none; color: var(--brass); font-size: 20px; cursor: pointer; padding: 2px 10px; }
-.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--brass); color: #0f2517; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+/* === 컨트롤(무대 밖): 로켓이 궤도를 따라 이동하는 진행 표시 === */
+.deck-controls { display: flex; gap: 12px; align-items: center; background: rgba(27,18,69,.94); border: 3px solid var(--cyan); border-radius: 99px; padding: 4px 16px; font-family: var(--font-body); color: #fff; font-size: 16px; }
+.deck-controls button { background: var(--star); border: none; color: #261A52; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; cursor: pointer; padding: 0; }
+.deck-controls #count { min-width: 64px; text-align: center; font-weight: 700; }
+.deck-controls #orbit { display: block; width: 260px; height: 46px; max-width: none; max-height: none; overflow: visible; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--star); color: #261A52; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
 .edit-toggle.show, .edit-toggle.active { opacity: 1; }
 .edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
-body.editing [contenteditable] { outline: 1px dashed var(--brass); }
+body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 
 /* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
 @media (max-width: 820px) and (orientation: portrait) {
-    html, body { overflow: auto; height: auto; background: var(--bg-3); }
-    .deck-viewport { position: static; overflow: visible; }
+    html, body { overflow: auto; height: auto; background: #2A1B64; }
+    .deck-viewport { position: static; overflow: visible; padding: 12px 0; }
     .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
-    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
-             padding: 30px 18px 44px; font-size: 17px; border-bottom: 3px solid var(--brass); }
-    .slide::before { display: none; }
+    .slide { position: relative; width: calc(100% - 20px); margin: 0 10px 14px; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 56px; font-size: 17px; border: 3px solid var(--line); border-radius: 28px; }
+    .slide::before { background: #E9DDFB; inset: auto; left: 0; right: 0; bottom: 0; height: 26px; border-top: 3px solid var(--line); }
     .reveal { opacity: 1; transform: none; transition: none; }
     .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
     .kicker { font-size: 14px; }
-    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 { font-size: 30px; margin-bottom: 16px; }
+    h2::before { width: 26px; height: 26px; border-width: 3px; margin-right: 10px; vertical-align: -2px; }
     h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
-    h3 { font-size: 20px; }
+    h3 { font-size: 21px; }
     .grid { gap: 12px; }
     .g2, .g3, .g5 { grid-template-columns: 1fr; }
-    .card, .g5 .card { padding: 14px 16px; font-size: 17px; }
+    .card, .g5 .card { padding: 14px 16px; font-size: 17px; border-radius: 22px; border-width: 3px; }
+    .card.hl::after { top: -8px; right: 24px; width: 12px; height: 12px; }
+    ul.l li { padding-left: 28px; }
+    ul.l li::before { width: 17px; height: 17px; }
     .tag { font-size: 14px; }
     .ref { font-size: 14px; }
-    .pg { position: static; text-align: right; font-size: 13px; margin-top: 10px; }
-    table.t { font-size: 16px; }
+    .pg { right: 14px; bottom: 6px; width: 40px; height: 40px; font-size: 18px; }
+    .pg::before { border-width: 3px; box-shadow: 0 0 0 3px var(--cyan) inset; }
+    .pg::after { display: none; }
+    table.t { font-size: 16px; border-radius: 18px; border-width: 3px; }
     table.t th, table.t td { padding: 8px 9px; }
     table.t td:first-child { white-space: normal; }
-    .step .no { width: 32px; height: 32px; font-size: 18px; }
-    .cover { padding: 56px 18px; }
+    .step .no { width: 34px; height: 34px; font-size: 20px; }
+    .slide.cover { padding: 40px 18px 330px; background: linear-gradient(180deg, #1F1553 0%, #6B2A8E 55%, #F07BC6 100%); }
+    .slide.cover::before { display: none; }
+    .cover .scene { position: absolute; left: 50%; margin-left: -474px; top: auto; bottom: 0; width: 1920px; height: 1080px; transform-origin: 0 100%; transform: scale(.32); }
     .cover .kicker { font-size: 16px; }
-    .cover h1 { font-size: 46px; }
+    .cover h1 { font-size: 50px; }
     .cover p { font-size: 18px; }
-    .cover .rule { width: 120px; height: 4px; }
+    .cover .rule { width: 120px; height: 7px; }
 }
 
 /* 도식·확장 */
 .g4 { grid-template-columns: repeat(4, 1fr); }
-.svgbox { background: var(--bg-3); border: 1px solid rgba(201,162,75,.35); border-radius: 10px; padding: 10px; }
+.svgbox { background: #fff; border: 4px solid var(--line); border-radius: 30px; padding: 10px; box-shadow: 0 7px 0 rgba(91,42,166,.22); }
 .svgbox svg { display: block; width: 100%; height: auto; max-height: none; }
-.svgbox svg text { fill: #f3ead3; font-family: 'Noto Sans KR','Malgun Gothic',sans-serif; font-size: 24px; }
-.svgbox svg text.b { fill: #c9a24b; font-weight: 700; }
-.svgbox svg text.w { fill: #e08a6a; font-weight: 700; }
+.svgbox svg text { fill: #261A52; font-family: 'Gowun Dodum','Malgun Gothic',sans-serif; font-size: 24px; }
+.svgbox svg text.b { fill: #C2186B; font-weight: 700; }
+.svgbox svg text.w { fill: #B93A12; font-weight: 700; }
 .big { font-size: 34px; line-height: 1.6; }
 @media (max-width: 820px) and (orientation: portrait) { .g4 { grid-template-columns: 1fr; } .big { font-size: 20px; } .svgbox svg text { font-size: 24px; } }
 </style>
@@ -168,6 +193,35 @@ body.editing [contenteditable] { outline: 1px dashed var(--brass); }
 
 <!-- === 1 === -->
 <section class="slide cover active">
+    <svg class="scene" viewBox="-920 0 1920 1080" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<path d="M120 98 Q120 120 142 120 Q120 120 120 142 Q120 120 98 120 Q120 120 120 98Z" fill="#FFC83D"/><path d="M300 46 Q300 60 314 60 Q300 60 300 74 Q300 60 286 60 Q300 60 300 46Z" fill="#fff"/><path d="M880 120 Q880 140 900 140 Q880 140 880 160 Q880 140 860 140 Q880 140 880 120Z" fill="#39C6E8"/><path d="M940 406 Q940 420 954 420 Q940 420 940 434 Q940 420 926 420 Q940 420 940 406Z" fill="#FFC83D"/><path d="M70 284 Q70 300 86 300 Q70 300 70 316 Q70 300 54 300 Q70 300 70 284Z" fill="#fff"/><path d="M160 688 Q160 700 172 700 Q160 700 160 712 Q160 700 148 700 Q160 700 160 688Z" fill="#39C6E8"/><path d="M900 702 Q900 720 918 720 Q900 720 900 738 Q900 720 882 720 Q900 720 900 702Z" fill="#fff"/><path d="M620 28 Q620 40 632 40 Q620 40 620 52 Q620 40 608 40 Q620 40 620 28Z" fill="#F06BB4"/><path d="M40 240 Q40 250 50 250 Q40 250 40 260 Q40 250 30 250 Q40 250 40 240Z" fill="#FFC83D"/>
+<g transform="translate(790 250)"><ellipse rx="92" ry="22" transform="rotate(-18)" fill="none" stroke="#FFC83D" stroke-width="10"/><circle r="44" fill="#8E63E6" stroke="#261A52" stroke-width="6"/><path d="M-36 -10 Q0 -26 36 -10" stroke="#B79CF5" stroke-width="7" fill="none"/><ellipse rx="92" ry="22" transform="rotate(-18)" fill="none" stroke="#FFC83D" stroke-width="10" stroke-dasharray="0 150 300"/></g>
+<g transform="translate(180 330) rotate(-12)"><ellipse cx="0" cy="22" rx="60" ry="16" fill="#8FE3F4" stroke="#261A52" stroke-width="6"/><path d="M-40 18 Q0 -48 40 18Z" fill="#CFF6FF" stroke="#261A52" stroke-width="6"/><circle cx="-34" cy="30" r="6" fill="#FFC83D"/><circle cx="0" cy="34" r="6" fill="#FFC83D"/><circle cx="34" cy="30" r="6" fill="#FFC83D"/></g>
+<circle cx="150" cy="905" r="46" fill="#3B9AE8" stroke="#261A52" stroke-width="6"/><path d="M122 893 q20 -22 36 -4 q-8 18 -22 14 q-10 12 -14 -10Z M156 927 q14 -6 20 6 q-12 10 -20 -6Z" fill="#6BD28A"/>
+<g transform="translate(560 0) rotate(7 0 560)">
+  <path d="M-60 840 Q0 980 -10 1030 Q0 970 20 1010 Q10 930 60 840Z" fill="#FFC83D" stroke="#261A52" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M-30 830 Q0 930 -4 960 Q8 920 30 830Z" fill="#fff" opacity=".9"/>
+  <path d="M-140 560 L-250 790 L-140 740 Z" fill="#F06BB4" stroke="#261A52" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M140 560 L250 790 L140 740 Z" fill="#F06BB4" stroke="#261A52" stroke-width="8" stroke-linejoin="round"/>
+  <clipPath id="rb"><path d="M0 70 C110 170 150 340 140 560 L140 800 L-140 800 L-140 560 C-150 340 -110 170 0 70Z"/></clipPath>
+  <path d="M0 70 C110 170 150 340 140 560 L140 800 L-140 800 L-140 560 C-150 340 -110 170 0 70Z" fill="#fff"/>
+  <g clip-path="url(#rb)"><rect x="-160" y="40" width="320" height="170" fill="#F06BB4"/><rect x="-160" y="650" width="320" height="34" fill="#F5C1E1"/><rect x="-160" y="730" width="320" height="26" fill="#F5C1E1"/></g>
+  <path d="M0 70 C110 170 150 340 140 560 L140 800 L-140 800 L-140 560 C-150 340 -110 170 0 70Z" fill="none" stroke="#261A52" stroke-width="8" stroke-linejoin="round"/>
+  <rect x="-100" y="790" width="200" height="34" rx="12" fill="#7A4FD0" stroke="#261A52" stroke-width="8"/>
+  <circle cx="0" cy="420" r="108" fill="#7A4FD0" stroke="#261A52" stroke-width="8"/>
+  <circle cx="0" cy="420" r="86" fill="#A8E8F7" stroke="#261A52" stroke-width="6"/>
+  <path d="M-34 380 L-52 336 L-14 360Z M34 380 L52 336 L14 360Z" fill="#F5A524" stroke="#261A52" stroke-width="5" stroke-linejoin="round"/>
+  <ellipse cx="0" cy="430" rx="54" ry="48" fill="#F5A524" stroke="#261A52" stroke-width="5"/>
+  <path d="M-20 392 l6 14 M0 388 v16 M20 392 l-6 14" stroke="#B5640A" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="-22" cy="424" r="8" fill="#261A52"/><circle cx="22" cy="424" r="8" fill="#261A52"/><circle cx="-19" cy="421" r="3" fill="#fff"/><circle cx="25" cy="421" r="3" fill="#fff"/>
+  <path d="M-8 442 h16 l-8 10Z" fill="#F06BB4" stroke="#261A52" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M0 452 q-10 12 -20 4 M0 452 q10 12 20 4" fill="none" stroke="#261A52" stroke-width="4" stroke-linecap="round"/>
+  <path d="M-62 380 Q-44 346 -8 338" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".85"/>
+</g>
+<g fill="#fff" stroke="#261A52" stroke-width="6"><circle cx="330" cy="1010" r="60"/><circle cx="420" cy="990" r="74"/><circle cx="520" cy="1020" r="56"/><circle cx="600" cy="1000" r="64"/></g>
+<path d="M-920 1030 Q-300 990 120 1030 Q420 975 620 1010 T1000 990 L2400 990 V1080 H-920Z" fill="#E9DDFB" stroke="#261A52" stroke-width="6"/>
+<ellipse cx="-600" cy="1052" rx="60" ry="10" fill="#D3BFF3"/><ellipse cx="-200" cy="1050" rx="46" ry="9" fill="#D3BFF3"/><ellipse cx="130" cy="1050" rx="60" ry="12" fill="#D3BFF3"/><ellipse cx="780" cy="1046" rx="70" ry="12" fill="#D3BFF3"/>
+</svg>
     <div class="kicker reveal">1학년 2학기 과학 · 6단원 요약 정리</div>
     <h1 class="reveal">기체의 <span>성질</span></h1>
     <div class="rule reveal"></div>
@@ -246,10 +300,10 @@ body.editing [contenteditable] { outline: 1px dashed var(--brass); }
         </div>
         <div class="svgbox reveal">
             <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-                <defs><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c9a24b"/></marker></defs>
-                <ellipse cx="400" cy="200" rx="300" ry="160" fill="rgba(201,162,75,.08)" stroke="#c9a24b" stroke-width="4"/>
-                <g fill="#e8c76a"><circle cx="330" cy="150" r="16"/><circle cx="470" cy="250" r="16"/><circle cx="400" cy="210" r="16"/><circle cx="290" cy="250" r="16"/><circle cx="500" cy="150" r="16"/></g>
-                <g stroke="#e08a6a" stroke-width="4" marker-end="url(#m)"><line x1="330" y1="150" x2="230" y2="100"/><line x1="470" y1="250" x2="560" y2="300"/><line x1="500" y1="150" x2="590" y2="110"/><line x1="290" y1="250" x2="215" y2="285"/></g>
+                <defs><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#C2186B"/></marker></defs>
+                <ellipse cx="400" cy="200" rx="300" ry="160" fill="rgba(194,24,107,.08)" stroke="#C2186B" stroke-width="4"/>
+                <g fill="#FFC83D"><circle cx="330" cy="150" r="16"/><circle cx="470" cy="250" r="16"/><circle cx="400" cy="210" r="16"/><circle cx="290" cy="250" r="16"/><circle cx="500" cy="150" r="16"/></g>
+                <g stroke="#D9461F" stroke-width="4" marker-end="url(#m)"><line x1="330" y1="150" x2="230" y2="100"/><line x1="470" y1="250" x2="560" y2="300"/><line x1="500" y1="150" x2="590" y2="110"/><line x1="290" y1="250" x2="215" y2="285"/></g>
                 <text class="b" x="400" y="388" text-anchor="middle">입자가 벽에 충돌 → 모든 방향으로 압력</text>
             </svg>
         </div>
@@ -277,10 +331,10 @@ body.editing [contenteditable] { outline: 1px dashed var(--brass); }
         </div>
         <div class="svgbox reveal">
             <svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#f3ead3" stroke-width="2" fill="none"><path d="M100 30 L100 370 L770 370"/></g>
+                <g stroke="#261A52" stroke-width="2" fill="none"><path d="M100 30 L100 370 L770 370"/></g>
                 <text x="110" y="40">부피(mL)</text><text x="560" y="415">압력(기압)</text>
-                <polyline points="217,60 230,90 295,180 360,225 490,270 620,292 724,304" fill="none" stroke="#c9a24b" stroke-width="5"/>
-                <g fill="#e8c76a"><circle cx="230" cy="90" r="9"/><circle cx="360" cy="225" r="9"/><circle cx="620" cy="292" r="9"/></g>
+                <polyline points="217,60 230,90 295,180 360,225 490,270 620,292 724,304" fill="none" stroke="#C2186B" stroke-width="5"/>
+                <g fill="#FFC83D"><circle cx="230" cy="90" r="9"/><circle cx="360" cy="225" r="9"/><circle cx="620" cy="292" r="9"/></g>
                 <text x="250" y="86">0.5기압 · 60 mL</text><text x="380" y="215">1.0기압 · 30 mL</text><text x="470" y="335">2.0기압 · 15 mL</text>
             </svg>
         </div>
@@ -297,10 +351,10 @@ body.editing [contenteditable] { outline: 1px dashed var(--brass); }
     <h2>왜 반비례일까 <small>p.201</small></h2>
     <div class="svgbox reveal">
         <svg viewBox="0 0 1700 330" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="#c9a24b" stroke-width="3" fill="rgba(201,162,75,.07)"><rect x="40" y="50" width="760" height="190" rx="8"/><rect x="900" y="50" width="400" height="190" rx="8"/></g>
+            <g stroke="#C2186B" stroke-width="3" fill="rgba(194,24,107,.07)"><rect x="40" y="50" width="760" height="190" rx="8"/><rect x="900" y="50" width="400" height="190" rx="8"/></g>
             <text class="b" x="420" y="34" text-anchor="middle">부피 큼 : 충돌 횟수 적음, 압력 작음</text>
             <text class="b" x="1100" y="34" text-anchor="middle">부피 작음 : 충돌 횟수 많음</text>
-            <g fill="#e8c76a"><circle cx="150" cy="110" r="14"/><circle cx="330" cy="190" r="14"/><circle cx="520" cy="100" r="14"/><circle cx="650" cy="180" r="14"/><circle cx="960" cy="100" r="14"/><circle cx="1030" cy="190" r="14"/><circle cx="1130" cy="120" r="14"/><circle cx="1200" cy="200" r="14"/></g>
+            <g fill="#FFC83D"><circle cx="150" cy="110" r="14"/><circle cx="330" cy="190" r="14"/><circle cx="520" cy="100" r="14"/><circle cx="650" cy="180" r="14"/><circle cx="960" cy="100" r="14"/><circle cx="1030" cy="190" r="14"/><circle cx="1130" cy="120" r="14"/><circle cx="1200" cy="200" r="14"/></g>
             <text x="420" y="290" text-anchor="middle">입자 수는 같다</text><text x="1100" y="290" text-anchor="middle">입자 수는 같다</text>
         </svg>
     </div>
@@ -351,9 +405,9 @@ body.editing [contenteditable] { outline: 1px dashed var(--brass); }
         </div>
         <div class="svgbox reveal">
             <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#f3ead3" stroke-width="2" fill="none"><path d="M100 30 L100 360 L770 360"/></g>
+                <g stroke="#261A52" stroke-width="2" fill="none"><path d="M100 30 L100 360 L770 360"/></g>
                 <text x="110" y="40">부피</text><text x="640" y="405">온도</text>
-                <line x1="130" y1="320" x2="720" y2="80" stroke="#c9a24b" stroke-width="5"/>
+                <line x1="130" y1="320" x2="720" y2="80" stroke="#C2186B" stroke-width="5"/>
                 <text class="b" x="440" y="230" text-anchor="middle">직선으로 증가</text>
             </svg>
         </div>
@@ -494,6 +548,13 @@ body.editing [contenteditable] { outline: 1px dashed var(--brass); }
 
 <div class="deck-controls" id="controls">
     <button id="prev" aria-label="이전">&#9664;</button>
+    <svg id="orbit" viewBox="0 0 260 46" aria-hidden="true">
+        <path id="orbitPath" d="M20 38 Q130 -22 240 38" fill="none" stroke="#9A8BE0" stroke-width="3" stroke-dasharray="3 7" stroke-linecap="round"/>
+        <path id="orbitDone" d="M20 38 Q130 -22 240 38" fill="none" stroke="#FFC83D" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="16" cy="38" r="8" fill="#3B9AE8" stroke="#fff" stroke-width="2"/>
+        <circle cx="244" cy="38" r="8" fill="#E9DDFB" stroke="#fff" stroke-width="2"/>
+        <g id="rocketMark"><g transform="rotate(90)"><path d="M0 -13 C6 -7 7 2 6 8 L-6 8 C-7 2 -6 -7 0 -13Z" fill="#fff" stroke="#261A52" stroke-width="1.5"/><circle cx="0" cy="-2" r="3" fill="#39C6E8" stroke="#261A52" stroke-width="1"/><path d="M-6 4 L-11 11 L-6 9Z M6 4 L11 11 L6 9Z" fill="#F06BB4"/><path d="M-3 8 L0 16 L3 8Z" fill="#FFC83D"/></g></g>
+    </svg>
     <span id="count">1 / 13</span>
     <button id="next" aria-label="다음">&#9654;</button>
 </div>
@@ -521,6 +582,15 @@ body.editing [contenteditable] { outline: 1px dashed var(--brass); }
             s.classList.toggle('visible', k === cur);
         });
         count.textContent = (cur + 1) + ' / ' + slides.length;
+        var op = document.getElementById('orbitPath');
+        if (op && op.getTotalLength) {
+            var L = op.getTotalLength(), p = slides.length > 1 ? cur / (slides.length - 1) : 0;
+            var a = op.getPointAtLength(p * L), b = op.getPointAtLength(Math.min(L, p * L + 1)), c = op.getPointAtLength(Math.max(0, p * L - 1));
+            var ang = Math.atan2(b.y - c.y, b.x - c.x) * 180 / Math.PI;
+            document.getElementById('rocketMark').setAttribute('transform', 'translate(' + a.x + ' ' + a.y + ') rotate(' + ang + ')');
+            var od = document.getElementById('orbitDone');
+            od.style.strokeDasharray = L; od.style.strokeDashoffset = L * (1 - p);
+        }
     }
     window.addEventListener('resize', scale);
     scale(); show(0);
