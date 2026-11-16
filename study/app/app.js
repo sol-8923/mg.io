@@ -457,6 +457,7 @@ function unitLabel(book,u,i){
   var m=/(\d+)/.exec(u.id||''), n=m?parseInt(m[1],10):(i+1);
   return (book.subject==='사회'||book.subject==='과학')?(ROMANS[n]||String(n))+'.':n+'.';
 }
+function unitFull(book,u,i){ return unitLabel(book,u,i||0)+' '+u.name; }
 function renderSummaryBook(id){
   var app=$app(), page=h('div',{class:'page'}); app.appendChild(page); app.appendChild(themeBtn());
   return Data.bookP(id).then(function(book){
@@ -489,8 +490,8 @@ function renderSummaryUnit(id,uid){
     var u=book.units.filter(function(x){return x.id===uid;})[0];
     if(!u||!u.slides){ go('#/summary/'+encodeURIComponent(id)); return; }
     app.appendChild(h('div',{class:'sum-view'},[
-      h('div',{class:'sum-bar'},[h('a',{class:'btn back',href:'#/summary/'+encodeURIComponent(id)},['← 단원 목록']),h('span',{class:'sum-title',text:bookLabel(book)+' · '+u.name})]),
-      h('iframe',{class:'sum-frame',src:'library/'+encodeURIComponent(id)+'/'+u.slides,title:u.name})
+      h('div',{class:'sum-bar'},[h('a',{class:'btn back',href:'#/summary/'+encodeURIComponent(id)},['← 단원 목록']),h('span',{class:'sum-title',text:bookLabel(book)+' · '+unitFull(book,u)})]),
+      h('iframe',{class:'sum-frame',src:'library/'+encodeURIComponent(id)+'/'+u.slides,title:unitFull(book,u)})
     ]));
   }).catch(renderError);
 }
@@ -514,7 +515,7 @@ function renderBook(id){
             book.description?h('p',{class:'muted',style:'margin:4px 0 0',text:book.description}):null,
             h('p',{class:'muted',style:'margin:6px 0 0;font-size:.9rem',text:'문제 은행 '+book.questions.length+'문항'+(last?' · 최근 '+Math.round(last.got/last.max*100)+'점':'')})])
         ]),
-        h('p',{class:'muted',style:'margin:16px 0 0;font-size:.9rem',text:'단원 '+book.units.length+'개 · '+book.units.map(function(u){ return u.name; }).join(', ')}),
+        h('p',{class:'muted',style:'margin:16px 0 0;font-size:.9rem',text:(book.textbookUnits&&book.textbookUnits.length?'교과서 '+book.textbookUnits.length+'개 단원 중 ':'')+'단원 '+book.units.length+'개 · '+book.units.map(function(u){ return unitFull(book,u); }).join(', ')}),
         h('h3',{style:'margin:18px 0 8px;font-size:1.05rem',text:'풀이 방식'}), modeBox,
         h('div',{class:'row',style:'margin-top:18px'},[
           h('button',{class:'primary',onclick:function(){ rangeModal(book); }},['✏️ 새로운 시험 보기']),
@@ -527,7 +528,7 @@ function renderBook(id){
         h('a',{class:'btn',href:'#/notes/'+encodeURIComponent(id)},['📒 이 과목 오답노트']),
         book.units.some(function(u){return u.slides;})?h('h3',{style:'font-size:1.05rem;margin-top:20px',text:'요약 정리'}):null,
         h('div',{class:'row',style:'margin-top:8px'},book.units.filter(function(u){return u.slides;}).map(function(u){
-          return h('a',{class:'btn',href:'#/summary/'+encodeURIComponent(id)+'/'+encodeURIComponent(u.id)},['📘 '+u.name]);
+          return h('a',{class:'btn',href:'#/summary/'+encodeURIComponent(id)+'/'+encodeURIComponent(u.id)},['📘 '+unitFull(book,u)]);
         }))
       ])
     ]));
@@ -1026,7 +1027,7 @@ function rangeModal(book){
   book.units.forEach(function(u){
     var cb=h('input',{type:'checkbox'}); cb.checked=picked[u.id]; cbs[u.id]=cb;
     cb.addEventListener('change',function(){ picked[u.id]=cb.checked; refresh(); });
-    list.appendChild(h('label',{},[cb,h('span',{text:u.name}),h('span',{class:'u-meta',text:'문제은행 '+u.slots.length+'칸'})]));
+    list.appendChild(h('label',{},[cb,h('span',{text:unitFull(book,u)}),h('span',{class:'u-meta',text:'문제은행 '+u.slots.length+'칸'})]));
   });
   allCb.addEventListener('change',function(){ book.units.forEach(function(u){ picked[u.id]=allCb.checked; cbs[u.id].checked=allCb.checked; }); refresh(); });
   function chosen(){ return book.units.filter(function(u){ return picked[u.id]; }); }
@@ -1704,7 +1705,7 @@ function renderStats(param){
     if(!S2.tests){ page.appendChild(h('div',{class:'card'},[h('p',{class:'muted',text:'아직 푼 시험이 없어요. 시험을 풀면 여기에 기록이 쌓여요.'}),h('a',{class:'btn primary',href:'#/exam'},['✏️ 시험 보러 가기'])])); return; }
     // 단원 이름 불러오기
     return Promise.all(ids.map(function(id){ return Data.bookP(id).catch(function(){ return null; }); })).then(function(bks){
-      var unitName={}; bks.forEach(function(b){ if(b) b.units.forEach(function(u){ unitName[b.id+'|'+u.id]=u.name; }); });
+      var unitName={}; bks.forEach(function(b){ if(b) b.units.forEach(function(u){ unitName[b.id+'|'+u.id]=unitFull(b,u); }); });
       page.appendChild(h('div',{class:'kpis big'},[
         kpi('푼 시험',S2.tests+'회','연습 '+S2.pracN+' · 실전 '+S2.examN),
         kpi('푼 문항',S2.solved+'개',S2.items.length?'정답률 '+pct(S2.acc):''),
