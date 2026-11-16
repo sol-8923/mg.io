@@ -2,6 +2,11 @@
 # (precheck_unit.py 가 exec 로 불러 쓰는 조각 — 반복 반려 사유를 자동으로 잡는 규칙. 모든 과목 공통)
 import html as _html
 
+def A1(q):
+    """복수 정답(배열)이면 첫 번째 정답 번호 — 복수 정답 기출에서 TypeError 방지"""
+    a = q["answer"]
+    return a[0] if isinstance(a, list) else a
+
 SYM = re.compile(r"(?:\([가-힣]\)|[㉠-㉿]|[ㄱ-ㅎ](?![가-힣])|[A-Z]군?|[①-⑤])")
 def combo_sets(choices):
     """합답형 보기('ㄱ, ㄴ' / '㉠, ㉢' / '(가), (나)')를 기호 집합으로. 아니면 None"""
@@ -38,7 +43,7 @@ for q in qs:
     if q["type"] != "mc": continue
     cs = combo_sets(q["choices"])
     if not cs: continue
-    ans = cs[q["answer"] - 1]
+    ans = cs[A1(q) - 1]
     sizes = [len(c) for c in cs]
     if sizes.count(len(ans)) == 1 and len(set(sizes)) > 1:
         E("%s: 합답 정답만 %d개짜리 조합 — 같은 크기의 오답 조합을 1개 이상 만들 것(모양으로 정답이 드러남)" % (q["id"], len(ans)))
@@ -51,7 +56,7 @@ for q in qs:
     if q["type"] != "mc": continue
     if combo_sets(q["choices"]): continue
     ls = [len(norm(c)) for c in q["choices"]]
-    a_i = q["answer"] - 1
+    a_i = A1(q) - 1
     others = sorted(l for i, l in enumerate(ls) if i != a_i)
     if ls[a_i] > others[-1] and ls[a_i] >= 14:
         if ls[a_i] - others[-1] >= 3: E("%s: 정답이 단독 최장 보기(%d자 > %d자) — 오답을 비슷한 길이·구조로 늘리거나 정답을 줄일 것" % (q["id"], ls[a_i], others[-1]))
@@ -61,7 +66,7 @@ for q in qs:
 slot_answers = collections.defaultdict(list)     # slot -> [(id, 정답 문자열)]
 for q in qs:
     if q["type"] == "mc" and not combo_sets(q["choices"]):
-        t = q["choices"][q["answer"] - 1]
+        t = q["choices"][A1(q) - 1]
         if len(norm(t)) >= 8: slot_answers[q["slot"]].append((q["id"], t))
     elif q["type"] == "short":
         for t in q["answer"]:
@@ -85,13 +90,13 @@ for q in qs:
     if q["type"] == "mc": byv[q["id"].rsplit("-", 1)[-1]].append(q)
 for v, lst in byv.items():
     if len(lst) < 8: continue
-    cnt = collections.Counter(x["answer"] for x in lst)
+    cnt = collections.Counter(A1(x) for x in lst)
     full = [cnt.get(i, 0) for i in range(1, 6)]
     if max(full) - min(full) >= 3: E("변형 %s: 정답 번호 분포가 쏠림 %s — 3~4개씩 고르게 재배치(fixedOrder 문항은 보기 순서를 바꿔서)" % (v, full))
     run = 1
     for i in range(1, len(lst)):
-        run = run + 1 if lst[i]["answer"] == lst[i - 1]["answer"] else 1
-        if run >= 3: E("변형 %s: 정답 번호 %d이(가) %s부터 3연속" % (v, lst[i]["answer"], lst[i - 2]["id"])); break
+        run = run + 1 if A1(lst[i]) == A1(lst[i - 1]) else 1
+        if run >= 3: E("변형 %s: 정답 번호 %d이(가) %s부터 3연속" % (v, A1(lst[i]), lst[i - 2]["id"])); break
 
 # ── R-E. 발문이 지문에 없는 표시를 가리킴 ──────────────────
 for q in qs:
@@ -186,11 +191,11 @@ if qs and _src:
 _PL = re.compile(r"\(([가-힣])\)")
 for q in qs:
     if q["type"] != "mc": continue
-    ch = q["choices"]; ans_txt = ch[q["answer"] - 1]
+    ch = q["choices"]; ans_txt = ch[A1(q) - 1]
     m = _PL.match(ans_txt.strip())
     if not m: continue
     L = m.group(1)
-    others = {_PL.match(c.strip()).group(1) for i, c in enumerate(ch) if i != q["answer"] - 1 and _PL.match(c.strip())}
+    others = {_PL.match(c.strip()).group(1) for i, c in enumerate(ch) if i != A1(q) - 1 and _PL.match(c.strip())}
     if not others: continue
     text = q.get("explanation", "") + " " + q.get("detail", "") + " " + " ".join(c for c in (q.get("choiceExplanations") or []) if c.startswith("정답."))
     found = set(_PL.findall(text))
@@ -225,3 +230,29 @@ _PAR = re.compile(r"[가-힣㉠-㉿]\((?:는|를|가|은|을|이)\)")
 for q in qs:
     n = sum(len(_PAR.findall(f[1])) for f in fields(q) if f[1])
     if n: W("%s: 조사 병기('은(는)' 등) %d곳 — 받침을 판정해 정확한 조사로" % (q["id"], n))
+
+
+# ── R-M. (수학 등) 글자 그대로의 역슬래시+n, 단원 내 다른 슬롯 정답 값과 같은 선택지 ──
+_BSN = chr(92) + "n"
+def _strs(o):
+    if isinstance(o, str): yield o
+    elif isinstance(o, dict):
+        for k, v in o.items():
+            if k != "svg": yield from _strs(v)
+    elif isinstance(o, list):
+        for v in o: yield from _strs(v)
+for q in qs:
+    if any(_BSN in t for t in _strs(q)):
+        E("%s: 문자열에 글자 그대로의 역슬래시+n이 있음 — gen.py에서 줄바꿈을 이스케이프하지 않았는지 확인" % q["id"])
+_NUMV = re.compile(r"\d[\d.,/]*\s*(?:π|cm|m|km|°|g|L|개|바퀴|점)?")
+_slot_val = {}
+for q in qs:
+    if q["type"] == "mc" and not combo_sets(q["choices"]):
+        t = norm(q["choices"][A1(q) - 1])
+        if re.search(r"\d", t) and len(t) >= 3: _slot_val.setdefault(t, set()).add(q["slot"])
+for q in qs:
+    if q["type"] != "mc" or combo_sets(q["choices"]): continue
+    for i, c in enumerate(q["choices"]):
+        t = norm(c)
+        if t in _slot_val and (_slot_val[t] - {q["slot"]}):
+            W("%s: 선택지 '%s'가 다른 슬롯 %s의 정답 값과 같음 — 수치 세트를 슬롯마다 따로 정할 것(수학)" % (q["id"], c[:20], ",".join(sorted(_slot_val[t] - {q["slot"]}))))

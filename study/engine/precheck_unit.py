@@ -99,7 +99,8 @@ for q in qs:
     if q["type"] == "mc":
         ce = q.get("choiceExplanations") or []
         wrong = [c for c in ce if not c.startswith("정답.")]
-        if len(wrong) != len(ce) - 1 or len(ce) != len(q["choices"]): E("%s: choiceExplanations 구성 오류" % q["id"])
+        n_ok = len(q["answer"]) if isinstance(q.get("answer"), list) else 1   # 복수 정답 문항은 '정답.' 해설이 정답 개수만큼
+        if len(wrong) != len(ce) - n_ok or len(ce) != len(q["choices"]): E("%s: choiceExplanations 구성 오류" % q["id"])
         for c in wrong:
             if len(c) < 14: E("%s: 오답 해설이 너무 짧음 → '%s'" % (q["id"], c))
         if len(set(wrong)) < len(wrong): E("%s: 오답 해설 중 똑같은 문장이 있음" % q["id"])

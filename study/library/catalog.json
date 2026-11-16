@@ -12,6 +12,17 @@
    "questions": 206
   },
   {
+   "id": "g1s2-math",
+   "grade": 1,
+   "semester": 2,
+   "subject": "수학",
+   "color": null,
+   "cover": "g1s2-math/cover.png?v=1794749564",
+   "sample": false,
+   "units": 4,
+   "questions": 141
+  },
+  {
    "id": "g1s2-social",
    "grade": 1,
    "semester": 2,
