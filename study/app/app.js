@@ -219,10 +219,10 @@ document.addEventListener('click',function(e){
  * 홈·톡방·일정 등에서 잔잔하게 흐르고, 공부방(공부방·시험·요약·오답노트·공부 기록·문제 풀이)에 들어가면 서서히 줄어들며 꺼진다.
  * 브라우저 규칙상 화면을 처음 누른 뒤에 시작한다. 🎵 버튼으로 켜고 끈다(이 기기에 저장). */
 var Mus=(function(){
-  var TRACKS=['app/music/contemplation.mp3','app/music/ambient-loop.ogg','app/music/heavenly-loop.ogg'];
+  var TRACKS=['app/music/sunset-plains.ogg','app/music/contemplation.mp3'];   /* 5분 30초 + 2분, 두 곡의 음량은 같게 맞춰 두었다 */
   var VOL=0.15, FADE_IN=3, FADE_OUT=1.8;
   var STUDY={room:1,exam:1,summary:1,notes:1,stats:1,book:1,quiz:1,result:1,review:1};
-  var ctx=null, gain=null, lp=null, el=null, idx=Math.floor(Math.random()*TRACKS.length), wantOn=true, inStudy=false, started=false, stopT=null;
+  var ctx=null, gain=null, lp=null, el=null, idx=0, wantOn=true, inStudy=false, started=false, stopT=null;
   try{ wantOn=localStorage.getItem('mg-study:music')!=='off'; }catch(e){}
   function ensure(){
     if(el) return true;
