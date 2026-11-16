@@ -1,7 +1,7 @@
 {
   "name": "민겸이 공부 공간",
   "short_name": "공부 공간",
-  "description": "시험 풀이, 오답노트, 요약 정리, 가족 채팅을 한곳에서",
+  "description": "시험 풀이, 오답노트, 교과 정리, 가족 채팅을 한곳에서",
   "lang": "ko",
   "start_url": "./",
   "scope": "./",

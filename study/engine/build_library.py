@@ -10,7 +10,7 @@
     library/<책id>/meta.json                 {"grade":1,"semester":2,"subject":"과학", "color"?, "description"?, "sample"?}
     library/<책id>/<단원id>/blueprint.json   시험 설계도 (unitName, timeLimitMin, totalPoints, variantsPerSlot, slots[])
     library/<책id>/<단원id>/questions.json   문제 은행 (슬롯마다 변형 문제 여러 개)
-    library/<책id>/<단원id>/slides.html      요약 정리 (있으면 연결)
+    library/<책id>/<단원id>/slides.html      교과 정리 (있으면 연결)
 오류가 하나라도 있으면 종료 코드 1, 파일을 만들지 않는다.
 """
 import json

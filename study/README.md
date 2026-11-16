@@ -28,7 +28,7 @@
 ```
 자료 → 핵심 정리(notes.md) → [내신 시험화 에이전트] 설계도(blueprint.json)
      → [study-quiz] 문제 은행(questions.json, 슬롯×변형) → [study-explain] 오답풀이·참고 자료
-     → [frontend-slides] 요약 정리(slides.html)
+     → [frontend-slides] 교과 정리(slides.html)
      → 검수 4개 동시: 형식 / 내용 / 종합 / 오답풀이 — 만장일치 통과, 아니면 해당 단계로 되돌림(무제한)
      → build_library.py → 커밋·push → Pages 반영
 ```

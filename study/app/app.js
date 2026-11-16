@@ -8,7 +8,7 @@
 
 /* ───────── 설정: 홈 메뉴 (여기에 추가하면 홈에 카드가 생김) ───────── */
 var MENUS = [
-  { id:'summary', color:'#2f6b52', icon:'summary', title:'요약 정리', desc:'학년·학기·과목을 고르면 단원별 요약 슬라이드를 볼 수 있어요.', href:'#/summary' },
+  { id:'summary', color:'#2f6b52', icon:'summary', title:'교과 정리', desc:'학년·학기·과목을 고르면 단원별 교과 정리 슬라이드를 볼 수 있어요.', href:'#/summary' },
   { id:'exam',  color:'#b07a1f', icon:'exam',  title:'시험으로 풀어보기', desc:'학년·학기·과목을 고르면 들어갈 때마다 새로운 시험을 볼 수 있어요.', href:'#/exam' },
   { id:'notes', color:'#a8362c', icon:'notes', title:'오답노트', desc:'틀린 문제만 모아 다시 풀어요. 두 번 연속 맞히면 졸업!', href:'#/notes' },
   { id:'stats', color:'#2a4468', icon:'chart', title:'공부 기록', desc:'시험 횟수·점수 추이·공부 달력·취약 개념을 한눈에 봐요.', href:'#/stats' }
@@ -357,7 +357,7 @@ function studyEntrance(learning){
   pic.innerHTML='<svg viewBox="0 0 220 150" aria-hidden="true">'+art+'</svg>';
   var el=h('a',{class:'mcard room-entry',href:'#/room',style:'--mc:#2f6b52',onclick:function(){ Snd.door(); }},[
     pic,
-    h('div',{},[h('h3',{text:'공부방'}),h('p',{text:'요약 정리 · 시험 · 오답노트 · 공부 기록이 모여 있는 방이에요. 들어가 볼까요?'})]),
+    h('div',{},[h('h3',{text:'공부방'}),h('p',{text:'교과 정리 · 시험 · 오답노트 · 공부 기록이 모여 있는 방이에요. 들어가 볼까요?'})]),
     learning?h('span',{class:'count',text:String(learning)}):null,
     h('span',{class:'go',text:'›'})
   ]);
@@ -426,7 +426,7 @@ function bookEl(b, opts){
   var img=b.cover?h('img',{src:'library/'+b.cover,alt:'',loading:'lazy',decoding:'async'}):null;
   if(img) img.addEventListener('error',function(){ el.classList.remove('has-img'); img.remove(); });
   if(img) img.addEventListener('load',function(){ fitCover(img,el); });
-  var el=h('button',{class:'book'+(img?' has-img':'')+(opts.dim?' dim':''),style:'--c:'+(b.color||sub.c),'aria-label':bookLabel(b)+(opts.caption?' ('+opts.caption+')':'')},[
+  var el=h('button',{class:'book'+(opts.notebook?' notebook':'')+(img?' has-img':'')+(opts.dim?' dim':''),style:'--c:'+(b.color||sub.c),'aria-label':bookLabel(b)+(opts.caption?' ('+opts.caption+')':'')},[
     h('div',{class:'cover'},[img]),h('div',{class:'pages'}),
     h('div',{class:'band t'}),h('div',{class:'band b'}),
     h('div',{class:'label'},[
@@ -437,6 +437,7 @@ function bookEl(b, opts){
     ]),
     h('div',{class:'emblem',html:emblem(b.subject)}),
     h('div',{class:'ribbon'}),
+    opts.notebook?h('div',{class:'spiral'}):null, opts.notebook?h('div',{class:'elastic'}):null,
     b.sample?h('div',{class:'sample',text:'샘플'}):null,
     opts.badge?h('div',{class:'badge',text:String(opts.badge)}):null
   ]);
@@ -453,7 +454,7 @@ function isSem(x){ return /^g\d+s\d+$/.test(x||''); }
 function semKey(b){ return 'g'+b.grade+'s'+b.semester; }
 function semBack(kind,b){ return '#/'+kind+(b&&b.grade&&b.semester&&b.grade!=='?'?'/'+semKey(b):''); }
 /* 교실 문: 학년·학기를 고르는 화면 */
-var KIND_TITLE={exam:'시험으로 풀어보기',summary:'요약 정리',notes:'오답노트'};
+var KIND_TITLE={exam:'시험으로 풀어보기',summary:'교과 정리',notes:'오답노트'};
 function renderDoors(kind){
   var app=$app(), page=h('div',{class:'page'});
   page.appendChild(h('div',{class:'topbar'},[
@@ -498,7 +499,7 @@ function renderShelf(kind,sem){
     h('a',{class:'btn back',href:'#/'+kind},['← 교실 고르기']),
     h('div',{},[h('div',{class:'crumb',text:KIND_TITLE[kind]}),h('h1',{text:semText})])
   ]));
-  page.appendChild(h('p',{class:'muted',style:'margin:-6px 0 14px',text:kind==='summary'?'요약을 보고 싶은 교과서를 눌러 보세요. 단원별 요약 슬라이드가 나와요.':kind==='exam'?'풀고 싶은 교과서를 눌러 보세요. 누를 때마다 새로운 시험을 볼 수 있어요.':'교과서별로 틀린 문제가 모여 있어요. 빨간 숫자는 아직 학습 중인 문제 수예요.'}));
+  page.appendChild(h('p',{class:'muted',style:'margin:-6px 0 14px',text:kind==='summary'?'교과 정리를 보고 싶은 교과서를 눌러 보세요. 단원별 교과 정리 슬라이드가 나와요.':kind==='exam'?'풀고 싶은 교과서를 눌러 보세요. 누를 때마다 새로운 시험을 볼 수 있어요.':'교과서별로 틀린 문제가 모여 있어요. 빨간 숫자는 아직 학습 중인 문제 수예요.'}));
   var cs=h('div',{class:'bookcase'}); page.appendChild(cs);
   if(kind==='notes') page.appendChild(backupCard());
   app.appendChild(page); app.appendChild(themeBtn());
@@ -513,6 +514,7 @@ function renderShelf(kind,sem){
         books.slice(i,i+cols).forEach(function(b){
           var nc=noteCounts(b.id);
           row.appendChild(bookEl(b,{
+            notebook: kind==='notes',
             badge: kind==='notes'?nc.learning:0,
             dim: kind==='notes' && !nc.learning && !nc.mastered,
             caption: kind==='notes' ? ('학습 중 '+nc.learning+' · 졸업 '+nc.mastered) : null,
@@ -555,7 +557,7 @@ function backupCard(){
 }
 
 /* ═════════ 책 (시험 범위 고르기) ═════════ */
-/* 요약 정리: 교과서의 단원 목록 → 슬라이드 보기 */
+/* 교과 정리: 교과서의 단원 목록 → 슬라이드 보기 */
 /* 교과서 단원 번호: u<번호>의 숫자를 쓰고, 사회·과학은 교과서처럼 로마 숫자로 */
 var ROMANS=['','Ⅰ','Ⅱ','Ⅲ','Ⅳ','Ⅴ','Ⅵ','Ⅶ','Ⅷ','Ⅸ','Ⅹ','Ⅺ','Ⅻ'];
 function unitLabel(book,u,i){
@@ -566,7 +568,7 @@ function unitFull(book,u,i){ return unitLabel(book,u,i||0)+' '+u.name; }
 function renderSummaryBook(id){
   var app=$app(), page=h('div',{class:'page'}); app.appendChild(page); app.appendChild(themeBtn());
   return Data.bookP(id).then(function(book){
-    page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:semBack('summary',book)},['← 책장']),h('div',{},[h('div',{class:'crumb',text:'요약 정리'}),h('h1',{text:bookLabel(book)})])]));
+    page.appendChild(h('div',{class:'topbar'},[h('a',{class:'btn back',href:semBack('summary',book)},['← 책장']),h('div',{},[h('div',{class:'crumb',text:'교과 정리'}),h('h1',{text:bookLabel(book)})])]));
     var list=h('div',{class:'card'});
     /* 교과서 전체 단원 목록(textbookUnits)이 있으면 그 번호·이름 그대로 보여 주고, 아직 안 만든 단원은 '준비 중'으로 둔다 */
     var tb=book.textbookUnits;
@@ -631,7 +633,7 @@ function renderBook(id){
         h('h3',{style:'font-size:1.05rem',text:'오답노트'}),
         h('p',{class:'muted',style:'margin:4px 0 12px',text:'학습 중 '+nc.learning+'문제 · 졸업 '+nc.mastered+'문제'}),
         h('a',{class:'btn',href:'#/notes/'+encodeURIComponent(id)},['📒 이 과목 오답노트']),
-        book.units.some(function(u){return u.slides;})?h('h3',{style:'font-size:1.05rem;margin-top:20px',text:'요약 정리'}):null,
+        book.units.some(function(u){return u.slides;})?h('h3',{style:'font-size:1.05rem;margin-top:20px',text:'교과 정리'}):null,
         h('div',{class:'row',style:'margin-top:8px'},book.units.filter(function(u){return u.slides;}).map(function(u){
           return h('a',{class:'btn',href:'#/summary/'+encodeURIComponent(id)+'/'+encodeURIComponent(u.id)},['📘 '+unitFull(book,u)]);
         }))
