@@ -54,6 +54,15 @@ def main():
                        key=lambda s: (len(s), s))
     pages, offset, note = split_src.parse_units(book)
     if not pages: print("안내: 쪽 범위를 읽지 못해 precheck를 쪽 범위 없이 실행합니다 (%s)" % note)
+    # 오프셋은 문서(units.md)에 적힌 값보다 교과서 텍스트에 인쇄된 쪽번호로 판별한 값을 우선한다(2026-11-17)
+    try:
+        import page_offset
+        auto, why = page_offset.detect(ROOT / "drafts" / book / "src" / "교과서.txt")
+    except Exception:
+        auto, why = None, {}
+    if auto is not None and auto != offset:
+        print("안내: 쪽 오프셋을 문서 값 %d 대신 쪽번호로 판별한 %d로 사용합니다 (%s)" % (offset, auto, why.get("일치", "")))
+        offset = auto
     rows, details, bad_units = [], [], []
     for u in units:
         udir = base / u
