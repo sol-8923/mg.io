@@ -934,6 +934,7 @@ function renderQ(){
   var left_=h('div',{},[passageEl(q),q.passage&&q.figure?h('div',{style:'height:12px'}):null,figureEl(q.figure)]);
   var right_=h('div',{});
   right_.appendChild(h('div',{class:'qtext',style:side?'margin-top:0':'',text:q.question}));
+  right_.appendChild(Report.btn(q,E.ans[q.id],E.bookId));
   if(isMulti(q)) right_.appendChild(h('div',{class:'hint',style:'margin:-6px 0 12px',text:'정답 '+q.answer.length+'개를 모두 고르세요.'}));
   var a=E.ans[q.id];
   function setAns(v){ E.ans[q.id]=v; if(!locked) renderQ(); }
@@ -1096,6 +1097,51 @@ function renderResult(){
   page.appendChild(h('div',{class:'res-grid'},[table('난이도별',R.byD,['하','중','상','-']),table('개념별',R.byC)]));
 }
 
+/* ═════════ 문제 오류 신고 ═════════
+ * 문제에서 정답·보기·해설의 오류를 발견하면 사유와 함께 Firestore reports 컬렉션에 쌓는다(규칙: firestore.rules의 reports).
+ * 인터넷이 안 되면 이 기기(localStorage)에 대기시켰다가 다음에 앱을 열 때 다시 보낸다. 모아 둔 신고는 engine/reports_pull.py 로 내려받아 일괄 개정에 쓴다. */
+var Report={
+  cats:[['answer','정답이 이상해요'],['unclear','문제·보기가 헷갈려요'],['explain','해설이 틀리거나 이상해요'],['typo','오타·그림이 이상해요'],['other','기타']],
+  KEY:'mg.reports.queue',
+  queue:function(){ try{ return JSON.parse(localStorage.getItem(Report.KEY)||'[]'); }catch(e){ return []; } },
+  saveQ:function(a){ try{ localStorage.setItem(Report.KEY,JSON.stringify(a.slice(-50))); }catch(e){} },
+  fields:function(r){ var f={}; Object.keys(r).forEach(function(k){ f[k]=typeof r[k]==='number'?{integerValue:String(Math.round(r[k]))}:{stringValue:String(r[k])}; }); return {fields:f}; },
+  post:function(r){
+    var f=CFG.firebase; if(!f||!f.projectId||!f.apiKey) return Promise.reject(new Error('설정 없음'));
+    return fetch('https://firestore.googleapis.com/v1/projects/'+encodeURIComponent(f.projectId)+'/databases/(default)/documents/reports?key='+encodeURIComponent(f.apiKey),
+      {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Report.fields(r))}).then(function(x){ if(!x.ok) throw new Error('HTTP '+x.status); });
+  },
+  flush:function(){
+    var q=Report.queue(); if(!q.length||Report.busy) return; Report.busy=true;
+    (function next(i,rest){
+      if(i>=q.length){ Report.busy=false; Report.saveQ(rest); return; }
+      Report.post(q[i]).then(function(){ next(i+1,rest); },function(){ next(i+1,rest.concat([q[i]])); });
+    })(0,[]);
+  },
+  snap:function(q,a){
+    var o={t:q.type,q:q.question,p:q.passage||undefined,c:q.choices,ans:rightText(q),my:a==null?undefined:myText(q,a),d:q.difficulty,pt:q.points};
+    var j=JSON.stringify(o); if(j.length>7000){ o.p=(o.p||'').slice(0,800); o.c=(o.c||[]).map(function(x){ return String(x).slice(0,150); }); j=JSON.stringify(o).slice(0,7500); }
+    return j;
+  },
+  open:function(q,a,bookId){
+    var cat='answer', ta=h('textarea',{rows:'4',maxlength:'500',placeholder:'어떤 점이 이상한지 적어 주세요. (예: ③번도 정답 같아요 / 해설의 숫자가 달라요)',style:'width:100%;box-sizing:border-box;margin-top:8px;padding:10px;border-radius:10px;border:1px solid var(--line,#ccc);font:inherit;background:var(--paper);color:var(--ink)'});
+    var btns=h('div',{style:'display:grid;gap:6px;margin-top:6px'});
+    Report.cats.forEach(function(c){ var b=h('button',{class:'btn',style:'text-align:left;justify-content:flex-start;min-height:42px','aria-pressed':String(c[0]===cat),onclick:function(){ cat=c[0]; btns.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed','false'); x.style.outline=''; }); b.setAttribute('aria-pressed','true'); b.style.outline='2px solid var(--accent,#c0552d)'; }},[c[1]]); if(c[0]===cat) b.style.outline='2px solid var(--accent,#c0552d)'; btns.appendChild(b); });
+    var send=h('button',{class:'primary',style:'flex:1'},['🚩 신고 보내기']);
+    var m=openModal([h('h3',{text:'문제 오류 신고',style:'margin:0 0 4px'}),h('div',{class:'muted',style:'font-size:.88rem',text:'이 문제에서 이상한 점을 알려 주세요. 모아서 고칠 때 써요.'}),btns,ta,
+      h('div',{class:'row',style:'margin-top:12px;gap:8px'},[h('button',{onclick:function(){ m.close(); }},['취소']),send])]);
+    send.addEventListener('click',function(){
+      var why=ta.value.trim(); if(why.length<2){ toast('이상한 점을 조금만 적어 주세요'); return; }
+      send.disabled=true;
+      var ver=''; try{ ver=(document.querySelector('script[src*="app.js"]').src.match(/v=([\w]+)/)||[])[1]||''; }catch(e){}
+      var r={qid:q.id||'',book:bookId||'',unit:q.unit||'',slot:q.slot||'',cat:cat,reason:why.slice(0,500),snap:Report.snap(q,a),ver:ver,at:Date.now()};
+      Report.post(r).then(function(){ m.close(); toast('신고했어요. 고마워요!'); },function(){ var qq=Report.queue(); qq.push(r); Report.saveQ(qq); m.close(); toast('지금은 못 보냈어요. 인터넷이 되면 다시 보낼게요'); });
+    });
+  },
+  btn:function(q,a,bookId){ return h('button',{class:'rpt',style:'margin-top:10px;background:none;border:0;color:var(--muted);font-size:.85rem;text-decoration:underline;cursor:pointer;padding:6px 0',onclick:function(){ Report.open(q,a,bookId); }},['🚩 문제 오류 신고']); }
+};
+function backBook(back){ var m=String(back||'').match(/#\/(?:notes|book|stats)\/([^\/?]+)/); return m?decodeURIComponent(m[1]):''; }
+
 /* ═════════ 오답풀이 (한 문제 = 한 페이지) ═════════ */
 function rightText(q){
   if(q.type==='mc') return (isMulti(q)?q.answer:[q.answer]).map(function(n){ return CIRCLED[n-1]+' '+q.choices[n-1]; }).join(', ');
@@ -1178,6 +1224,7 @@ function renderReview(n){
   }
   if(q.tip) kids.push(box('rv-tip','💡 기억할 점',[h('div',{class:'pre',text:q.tip})]));
   if(q.source) kids.push(h('div',{class:'src',text:'📖 '+q.source}));
+  kids.push(Report.btn(q,a,backBook(R.back)||(S.exam&&S.exam.bookId)||''));
   kids.forEach(function(k){ main.appendChild(k); });
   var mainCard=h('div',{class:'qcard'},[main]);
   // 참고 자료
@@ -2231,5 +2278,6 @@ function renderChat(){
 /* ───────── 시작 ───────── */
 startChatWatch();
 syncToken();
+Report.flush();
 route();
 })();

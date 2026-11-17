@@ -80,6 +80,22 @@ service cloud.firestore {
         && request.resource.data.at is string;
       allow list, delete: if false;
     }
+    // 문제 오류 신고(2026-11-17): 누구나 새 신고를 올릴 수 있고(수정·삭제 금지), 내려받기는 engine/reports_pull.py가 목록 조회로 한다.
+    // 문제 본문 스냅샷과 신고 사유만 담기며 이름 등 개인정보는 없다.
+    match /reports/{id} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['qid', 'book', 'unit', 'slot', 'cat', 'reason', 'snap', 'ver', 'at'])
+        && request.resource.data.qid is string && request.resource.data.qid.size() >= 1 && request.resource.data.qid.size() <= 40
+        && request.resource.data.book is string && request.resource.data.book.size() <= 40
+        && request.resource.data.unit is string && request.resource.data.unit.size() <= 12
+        && request.resource.data.slot is string && request.resource.data.slot.size() <= 12
+        && request.resource.data.cat in ['answer', 'unclear', 'explain', 'typo', 'other']
+        && request.resource.data.reason is string && request.resource.data.reason.size() >= 2 && request.resource.data.reason.size() <= 500
+        && request.resource.data.snap is string && request.resource.data.snap.size() <= 8000
+        && request.resource.data.ver is string && request.resource.data.ver.size() <= 20
+        && request.resource.data.at is number;
+      allow update, delete: if false;
+    }
     match /{document=**} { allow read, write: if false; }
   }
 }

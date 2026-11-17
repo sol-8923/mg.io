@@ -158,4 +158,5 @@ description: 학년·학기·과목 폴더(materials/<학년>/<학기>/<과목>/
 - 진행 상태: `python engine/pipeline_state.py <책> init|show|next|set …` (`drafts/<책>/STATE.json`). 작업 시작 때 `next`로 다음 할 일을 확인하고 단계가 바뀔 때마다 `set`으로 기록한다.
 - 빠짐없음 점검: `python engine/coverage_check.py <책> [단원]` — 문항·슬라이드에 한 번도 안 나온 notes 개념 목록(참고용). 단원 통과 전에 훑어 필요하면 슬롯을 보강한다.
 - 정책 확인: `docs/정책-결정-목록.md`
+- 신고 반영: `python engine/reports_pull.py --md`로 학생의 문제 오류 신고를 내려받아 문항별 요약을 보고(`drafts/reports/summary.md`), B개정 때 반영한 뒤 `--done`으로 처리 표시한다. 정답·해설 오류 신고는 먼저 원문과 대조한다.
 
