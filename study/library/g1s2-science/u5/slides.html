@@ -348,17 +348,17 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
             <p><b>크기, 방향, 작용점</b>을 함께 표시한다. <span class="nw">크기·방향이</span> 같아도 작용점이 다르면 모양이나 운동 상태가 달라질 수 있다. 단위는 주로 <span class="nw"><b><span class="nw">N(뉴턴)</span></b>.</span></p>
         </div>
         <div class="svgbox reveal">
-            <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 800 410" xmlns="http://www.w3.org/2000/svg">
                 <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#C2186B"/></marker></defs>
-                <rect x="120" y="150" width="180" height="120" fill="rgba(38,26,82,.10)" stroke="#261A52" stroke-width="3"/>
-                <line x1="300" y1="210" x2="700" y2="210" stroke="#C2186B" stroke-width="8" marker-end="url(#a)"/>
-                <line x1="300" y1="210" x2="338" y2="270" stroke="#D9461F" stroke-width="3"/>
-                <line x1="700" y1="254" x2="700" y2="292" stroke="#C2186B" stroke-width="3"/>
-                <circle cx="300" cy="210" r="9" fill="#D9461F"/>
-                <text class="w" x="338" y="304" text-anchor="middle">작용점</text>
-                <text class="b" x="460" y="168" text-anchor="middle">화살표 길이 = 크기</text>
-                <text class="b" x="780" y="318" text-anchor="end">화살표 방향 = 힘의 방향</text>
-                <text x="338" y="344" text-anchor="middle">시작점 = 작용점</text>
+                <rect x="30" y="130" width="220" height="160" fill="rgba(38,26,82,.10)" stroke="#261A52" stroke-width="4"/>
+                <line x1="250" y1="210" x2="740" y2="210" stroke="#C2186B" stroke-width="10" marker-end="url(#a)"/>
+                <line x1="250" y1="210" x2="312" y2="282" stroke="#D9461F" stroke-width="4"/>
+                <line x1="740" y1="258" x2="740" y2="306" stroke="#C2186B" stroke-width="4"/>
+                <circle cx="250" cy="210" r="13" fill="#D9461F"/>
+                <text class="w" x="330" y="322" text-anchor="middle" style="font-size:36px">작용점</text>
+                <text class="b" x="500" y="160" text-anchor="middle" style="font-size:36px">화살표 길이 = 크기</text>
+                <text class="b" x="790" y="352" text-anchor="end" style="font-size:36px">화살표 방향 = 힘의 방향</text>
+                <text x="180" y="388" text-anchor="middle" style="font-size:36px">시작점 = 작용점</text>
             </svg>
         </div>
     </div>
@@ -412,13 +412,13 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
             </ul>
         </div>
         <div class="svgbox reveal">
-            <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#261A52" stroke-width="2" fill="none"><path d="M90 30 L90 360 L760 360"/></g>
-                <text x="100" y="40">탄성력(N)</text><text x="792" y="412" text-anchor="end">늘어난 길이(cm)</text>
-                <line x1="90" y1="360" x2="640" y2="60" stroke="#C2186B" stroke-width="5"/>
-                <g fill="#FFC83D"><circle cx="258" cy="268" r="9"/><circle cx="423" cy="178" r="9"/><circle cx="588" cy="88" r="9"/></g>
-                <text x="258" y="390" text-anchor="middle">2</text><text x="423" y="390" text-anchor="middle">4</text><text x="588" y="390" text-anchor="middle">6</text>
-                <text x="60" y="275" text-anchor="end">1</text><text x="60" y="185" text-anchor="end">2</text><text x="60" y="95" text-anchor="end">3</text>
+            <svg viewBox="0 0 800 470" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="#261A52" stroke-width="3" fill="none"><path d="M90 30 L90 360 L760 360"/></g>
+                <text x="104" y="48" style="font-size:36px">탄성력(N)</text><text x="792" y="458" text-anchor="end" style="font-size:36px">늘어난 길이(cm)</text>
+                <line x1="90" y1="360" x2="640" y2="60" stroke="#C2186B" stroke-width="6"/>
+                <g fill="#FFC83D"><circle cx="258" cy="268" r="11"/><circle cx="423" cy="178" r="11"/><circle cx="588" cy="88" r="11"/></g>
+                <text x="258" y="404" text-anchor="middle" style="font-size:36px">2</text><text x="423" y="404" text-anchor="middle" style="font-size:36px">4</text><text x="588" y="404" text-anchor="middle" style="font-size:36px">6</text>
+                <text x="70" y="281" text-anchor="end" style="font-size:36px">1</text><text x="70" y="191" text-anchor="end" style="font-size:36px">2</text><text x="70" y="101" text-anchor="end" style="font-size:36px">3</text>
             </svg>
         </div>
     </div>
@@ -466,13 +466,13 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
     <h2>알짜힘 구하기 <small>p.<span class="nw">174~175</span></small></h2>
     <div class="card reveal" style="margin-bottom:20px"><span class="nw"><b>알짜힘</b> :</span> 한 물체에 여러 힘이 동시에 작용할 때 모든 힘을 <span class="nw">합한 힘.</span></div>
     <div class="svgbox reveal">
-        <svg class="wide" viewBox="0 0 1700 330" xmlns="http://www.w3.org/2000/svg">
-            <defs><marker id="b2" viewBox="0 0 10 10" markerWidth="5.5" markerHeight="5.5" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#C2186B"/></marker><marker id="w2" viewBox="0 0 10 10" markerWidth="5.5" markerHeight="5.5" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#D9461F"/></marker></defs>
-            <g fill="rgba(38,26,82,.10)" stroke="#261A52" stroke-width="3"><rect x="220" y="80" width="100" height="70"/><rect x="780" y="80" width="100" height="70"/><rect x="1340" y="80" width="100" height="70"/></g>
-            <g stroke="#C2186B" stroke-width="7"><line x1="320" y1="115" x2="480" y2="115" marker-end="url(#b2)"/><line x1="100" y1="115" x2="205" y2="115" marker-end="url(#b2)"/><line x1="880" y1="115" x2="1040" y2="115" marker-end="url(#b2)"/><line x1="780" y1="115" x2="710" y2="115" marker-end="url(#b2)"/><line x1="1440" y1="115" x2="1540" y2="115" marker-end="url(#b2)"/><line x1="1340" y1="115" x2="1240" y2="115" marker-end="url(#b2)"/></g>
-            <text class="b" x="270" y="215" text-anchor="middle">방향이 같으면 합</text><text x="270" y="255" text-anchor="middle">방향도 같음</text>
-            <text class="b" x="830" y="215" text-anchor="middle">반대이면 차</text><text x="830" y="255" text-anchor="middle">큰 힘의 방향</text>
-            <text class="w" x="1390" y="215" text-anchor="middle">크기 같고 반대이면 0</text><text x="1390" y="255" text-anchor="middle">힘의 평형</text>
+        <svg class="wide" viewBox="0 0 1700 400" xmlns="http://www.w3.org/2000/svg">
+            <defs><marker id="b2" viewBox="0 0 10 10" markerWidth="4.5" markerHeight="4.5" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#C2186B"/></marker><marker id="w2" viewBox="0 0 10 10" markerWidth="4.5" markerHeight="4.5" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#D9461F"/></marker></defs>
+            <g fill="rgba(38,26,82,.10)" stroke="#261A52" stroke-width="4"><rect x="225" y="90" width="150" height="110"/><rect x="785" y="90" width="150" height="110"/><rect x="1345" y="90" width="150" height="110"/></g>
+            <g stroke="#C2186B" stroke-width="10"><line x1="375" y1="145" x2="583" y2="145" marker-end="url(#b2)"/><line x1="75" y1="145" x2="217" y2="145" marker-end="url(#b2)"/><line x1="935" y1="145" x2="1143" y2="145" marker-end="url(#b2)"/><line x1="785" y1="145" x2="694" y2="145" marker-end="url(#b2)"/><line x1="1495" y1="145" x2="1625" y2="145" marker-end="url(#b2)"/><line x1="1345" y1="145" x2="1215" y2="145" marker-end="url(#b2)"/></g>
+            <text class="b" x="330" y="292" text-anchor="middle" style="font-size:42px">방향이 같으면 합</text><text x="330" y="352" text-anchor="middle" style="font-size:42px">방향도 같음</text>
+            <text class="b" x="890" y="292" text-anchor="middle" style="font-size:42px">반대이면 차</text><text x="890" y="352" text-anchor="middle" style="font-size:42px">큰 힘의 방향</text>
+            <text class="w" x="1420" y="292" text-anchor="middle" style="font-size:42px">크기 같고 반대이면 0</text><text x="1420" y="352" text-anchor="middle" style="font-size:42px">힘의 평형</text>
         </svg>
     </div>
     <div class="card hl reveal" style="margin-top:20px">
@@ -482,7 +482,7 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 </section>
 
 <!-- === 8 === -->
-<section class="slide" style="--z:1">
+<section class="slide" style="--z:1.14">
     <div class="kicker">2 힘과 우리 생활 · 힘과 운동</div>
     <h2>알짜힘과 운동 상태 <small>p.<span class="nw">176~179</span></small></h2>
     <div class="card reveal" style="margin-bottom:20px">알짜힘이 0이 아니면 운동 상태(<b>속력 또는 운동 방향</b>)가 변한다. <span class="ref"><span class="nw">(p.177)</span></span></div>
@@ -529,7 +529,7 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 </section>
 
 <!-- === 10 === -->
-<section class="slide" style="--z:1.06">
+<section class="slide" style="--z:1.12">
     <div class="kicker">꼭 <span class="nw">외울 것</span></div>
     <h2>핵심 <span class="nw">암기 4가지</span></h2>
     <div class="grid g2">

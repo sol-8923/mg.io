@@ -5,11 +5,12 @@
 <circle cx="1500" cy="330" r="170" fill="#4DB05E"/>
 <circle cx="1660" cy="420" r="140" fill="#3E9B4F"/>
 <circle cx="1480" cy="450" r="130" fill="#58BC68"/>
-<circle cx="1300" cy="330" r="38" fill="#FFC83D" stroke="#B8860B" stroke-width="6"/>
 <circle cx="1590" cy="300" r="38" fill="#FFC83D" stroke="#B8860B" stroke-width="6"/>
 <text x="1590" y="314" text-anchor="middle" font-size="40" font-weight="700" fill="#8A5A00">$</text>
-<circle cx="1300" cy="330" r="62" fill="none" stroke="#D9461F" stroke-width="12"/>
-<line x1="1260" y1="372" x2="1340" y2="288" stroke="#D9461F" stroke-width="12" stroke-linecap="round"/>
+<circle cx="1110" cy="230" r="62" fill="#FFC83D" stroke="#B8860B" stroke-width="8"/>
+<text x="1110" y="254" text-anchor="middle" font-size="68" font-weight="700" fill="#8A5A00">$</text>
+<circle cx="1110" cy="230" r="96" fill="none" stroke="#FF5A36" stroke-width="18"/>
+<line x1="1042" y1="298" x2="1178" y2="162" stroke="#FF5A36" stroke-width="18" stroke-linecap="round"/>
 <ellipse cx="1620" cy="800" rx="170" ry="120" fill="#F59BB8" stroke="#C23B22" stroke-width="8"/>
 <polygon points="1530,700 1560,640 1600,690" fill="#F59BB8" stroke="#C23B22" stroke-width="8" stroke-linejoin="round"/>
 <rect x="1560" y="690" width="90" height="14" rx="7" fill="#C23B22"/>

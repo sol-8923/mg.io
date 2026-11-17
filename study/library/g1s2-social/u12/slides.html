@@ -306,6 +306,8 @@ h2 .dot { margin: 0 .16em; }
     .fx-s9 .grid .card.hl ul.l li { margin-bottom: 8px; }
     .cover p { text-wrap: balance; }
 }
+/* u12 13번: 비교 표 첫 열은 줄바꿈 허용해 뒤 열 폭 확보 */
+table.t.wrapfirst td:first-child { white-space: normal; }
 /* ===== 검수 정리 v4 (폰 화면) ===== */
 @media (max-width: 1100px) and (orientation: portrait) {
     /* 인라인으로 박힌 큰 글자 크기가 카드·표 글자와 따로 노는 것을 막는다 */
@@ -686,9 +688,9 @@ h2 .dot { margin: 0 .16em; }
 <section class="slide" style="--z:1.3">
     <div class="kicker">헷갈리기 쉬운 것</div>
     <h2>구분하기와 자주 하는 오해</h2>
-    <div class="grid g2" style="grid-template-columns:1.25fr 1fr">
-        <table class="t reveal" style="font-size:25px">
-            <tr><th>비교 항목</th><th>앞의 개념</th><th>뒤의 개념</th></tr>
+    <div class="grid g2" style="grid-template-columns:1.4fr 1fr">
+        <table class="t reveal wrapfirst" style="font-size:25px">
+            <tr><th style="width:19%">비교 항목</th><th style="width:43%">앞의 개념</th><th>뒤의 개념</th></tr>
             <tr><td>자유권 vs 사회권</td><td>국가의 간섭을 받지 않을 권리</td><td>국가에 인간다운 생활을 요구하는 권리</td></tr>
             <tr><td>참정권 vs 청구권</td><td>정치적 의사 결정에 참여</td><td>침해 시 국가에 행위를 요구하는 수단</td></tr>
             <tr><td>진정 vs 헌법 소원</td><td>국가 인권 위원회에 제기</td><td>헌법재판소에 청구</td></tr>

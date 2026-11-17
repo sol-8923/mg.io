@@ -286,7 +286,7 @@ table.t th b, table.t th strong { color: inherit; }
 /* u10 8번 제목: 가운뎃점 간격 */
 h2 .dot { margin: 0 .16em; }
 /* 보조 설명을 별도 줄로 */
-.fx-ref { display: block; margin-top: 10px; }
+.fx-ref { display: block; margin-top: 10px; font-size: 26px; }
 /* u11 6번: 보조 설명을 카드 아래쪽에 맞춰 줄 정렬 */
 .fx-col .card.hl { display: flex; flex-direction: column; }
 .fx-col .card.hl p.dim { margin-top: auto !important; padding-top: 10px; }
@@ -306,6 +306,8 @@ h2 .dot { margin: 0 .16em; }
     .fx-s9 .grid .card.hl ul.l li { margin-bottom: 8px; }
     .cover p { text-wrap: balance; }
 }
+/* u10 9번: 번호 카드 글자 키움 (가로 화면 전용) */
+@media not all and (max-width: 1100px) and (orientation: portrait) { .slide.big5 .g5 .card { font-size: 27px; } }
 /* ===== 검수 정리 v4 (폰 화면) ===== */
 @media (max-width: 1100px) and (orientation: portrait) {
     /* 인라인으로 박힌 큰 글자 크기가 카드·표 글자와 따로 노는 것을 막는다 */
@@ -526,7 +528,7 @@ h2 .dot { margin: 0 .16em; }
                 <li>후보자의 <b>자질과 능력</b>을 살펴 올바른 대표자를 뽑는다.</li>
                 <li>투표 참여 캠페인, <span class="nw">정책⁠·공약</span> 제안으로 <b>올바른 선거 문화</b>를 만든다.</li>
             </ul>
-            <p class="ref">선거 공보 = 후보자의 사진⁠·성명⁠·기호⁠·경력⁠·공약⁠·소속 정당 정책 등을 실은 인쇄물</p>
+            <p class="ref" style="font-size:26px">선거 공보 = 후보자의 사진⁠·성명⁠·기호⁠·경력⁠·공약⁠·소속 정당 정책 등을 실은 인쇄물</p>
         </div>
         <div class="card reveal">
             <h3>정당의 활동</h3>
@@ -575,7 +577,7 @@ h2 .dot { margin: 0 .16em; }
 </section>
 
 <!-- === 9. 정치과정 === -->
-<section class="slide" style="--z:1.175">
+<section class="slide big5" style="--z:1.175">
     <div class="kicker">02 정치 주체의 역할과 정치과정</div>
     <h2>정치과정의 단계 <small>p.190~191, 198</small></h2>
     <div class="card hl reveal" style="margin-bottom:20px">
@@ -624,7 +626,7 @@ h2 .dot { margin: 0 .16em; }
                 <rect x="310" y="95" width="240" height="115" rx="8" fill="#eaf6e6" stroke="#2b6cb0"/>
                 <text x="430" y="125" text-anchor="middle" font-size="26" font-weight="700" fill="#1b2f63">기초 자치 단체</text>
                 <text x="430" y="170" text-anchor="middle" font-size="24" fill="#44557a">시⁠·군⁠·구</text>
-                <path d="M130 210 V225 M430 210 V225 M130 225 H430" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="5 4"/><path d="M150 225 V240 M410 225 V240" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="5 4"/>
+                <path d="M130 210 V225 M430 210 V225 M130 225 H430" fill="none" stroke="#173f7a" stroke-width="3.5" stroke-dasharray="8 5"/><path d="M150 225 V240 M410 225 V240" fill="none" stroke="#173f7a" stroke-width="3.5" stroke-dasharray="8 5"/>
                 <rect x="40" y="240" width="220" height="75" rx="8" fill="#ffffff" stroke="#2b6cb0"/>
                 <text x="150" y="270" text-anchor="middle" font-size="24" font-weight="700" fill="#a3430a">지방 의회</text>
                 <text x="150" y="300" text-anchor="middle" font-size="21" fill="#1b2f63">의결 기관</text>
