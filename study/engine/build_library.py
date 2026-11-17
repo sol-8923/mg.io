@@ -257,7 +257,7 @@ def build_book(bdir, errors, warns, info):
         if _mode:
             unit["reviewMode"] = _mode   # 예: "reduced" = 임시 축약 검수 (개정안 R8)
         if (udir / "slides.html").exists():
-            unit["slides"] = f"{udir.name}/slides.html"
+            unit["slides"] = f"{udir.name}/slides.html?v={int((udir / 'slides.html').stat().st_mtime)}"   # 슬라이드를 고치면 주소가 바뀌어 폰·브라우저 캐시를 우회한다(2026-11-17)
             try:
                 import slide_integrity   # 슬라이드 무결성(</html>·장수=카운터·쪽 번호 등)
                 for _m in slide_integrity.check_file(udir / "slides.html"):
