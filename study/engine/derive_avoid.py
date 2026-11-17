@@ -15,6 +15,8 @@ def answers(q):
         return [ch[i - 1] for i in idx if isinstance(i, int) and 0 < i <= len(ch)]
     if q.get("type") == "short":
         return ans if isinstance(ans, list) else [ans]
+    if q.get("type") == "essay":   # 서술형 조건 낱말(answerHint의 '…')도 정답 낱말로 본다(2026-11-17)
+        return re.findall(r"'([^']{2,10})'", q.get("answerHint", "") or "")
     return []
 def surface(q):
     parts = [q.get("question"), q.get("passage")] + list(q.get("choices") or []) + answers(q)
@@ -39,7 +41,7 @@ for book in sorted(os.listdir(lib)):
                         for q in by.get(x["id"], []):
                             for ans in answers(q):
                                 w = n(ans)
-                                if len(w) >= 3 and w in ys: hit = True; break
+                                if (len(w) >= 3 or (q.get("type") == "essay" and len(w) >= 2)) and w in ys: hit = True; break
                             if hit: break
                         if hit: break
                 if hit: pairs[s["id"]].add(t["id"]); pairs[t["id"]].add(s["id"])
