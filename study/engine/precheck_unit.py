@@ -14,10 +14,11 @@ def norm(s): return PUNCT.sub("", s or "")
 
 ap = argparse.ArgumentParser()
 ap.add_argument("book"); ap.add_argument("unit")
+ap.add_argument("--root", default="drafts", choices=["drafts","library"])  # 점검 대상 폴더(2026-11-17 추가)
 ap.add_argument("--pages", default=""); ap.add_argument("--offset", type=int, default=0)
 ap.add_argument("--src", nargs="*", default=["교과서.txt", "교사용 교과서.txt"])
 a = ap.parse_args()
-D = ROOT / "drafts" / a.book / a.unit
+D = ROOT / a.root / a.book / a.unit
 qs = json.load(open(D / "questions.json", encoding="utf-8"))["questions"]
 bp = json.load(open(D / "blueprint.json", encoding="utf-8"))
 pages = {}      # 파일 -> [쪽별 정규화 텍스트]
@@ -86,7 +87,7 @@ for slot, ws in conds.items():
         for o in qs:
             if o["slot"] != slot and norm(w) in open_text(o): W("서술형 %s 조건 낱말 '%s'이(가) %s의 발문·지문·보기에 나옴 (정답·조건을 알려 주는지 검수자가 판단)" % (slot, w, o["id"]))
 for q in qs:
-    if q["type"] != "mc" or q.get("fixedOrder"): continue
+    if q["type"] != "mc" or q.get("fixedOrder") or isinstance(q.get("answer"), list): continue   # 복수 정답은 건너뜀(2026-11-17: TypeError 수정)
     ans = norm(q["choices"][q["answer"] - 1])
     if len(ans) < 12: continue
     for o in qs:

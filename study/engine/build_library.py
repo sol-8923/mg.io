@@ -258,6 +258,12 @@ def build_book(bdir, errors, warns, info):
             unit["reviewMode"] = _mode   # 예: "reduced" = 임시 축약 검수 (개정안 R8)
         if (udir / "slides.html").exists():
             unit["slides"] = f"{udir.name}/slides.html"
+            try:
+                import slide_integrity   # 슬라이드 무결성(</html>·장수=카운터·쪽 번호 등)
+                for _m in slide_integrity.check_file(udir / "slides.html"):
+                    errors.append(f"{tagu} slides.html: {_m}")
+            except ImportError:
+                pass
         units.append(unit)
     dup = [i for i, c in ids.items() if c > 1]
     if dup:
