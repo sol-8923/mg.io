@@ -1,6 +1,17 @@
 {
  "books": [
   {
+   "id": "g1s2-ethics",
+   "grade": 1,
+   "semester": 2,
+   "subject": "도덕",
+   "color": null,
+   "cover": "g1s2-ethics/cover.jpg?v=1794749688",
+   "sample": false,
+   "units": 10,
+   "questions": 339
+  },
+  {
    "id": "g1s2-korean",
    "grade": 1,
    "semester": 2,
