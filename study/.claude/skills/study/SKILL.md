@@ -153,3 +153,9 @@ description: 학년·학기·과목 폴더(materials/<학년>/<학기>/<과목>/
 
 ## 반려 예방 (모든 과목 공통)
 - 출제·풀이 작성 전에 `docs/출제-반려-예방.md`를 읽는다(슬롯 간 정답 노출·합답 구성·정답 최장·그림 글자 잘림·쪽수 등 반복 반려 사유와 작업 순서). 검수 전 `python engine/precheck_unit.py <책> <단원> --pages a-b --src 교과서.txt "교사용 교과서.txt"`가 ✖ 0건이어야 한다. 새 반려 사유는 그 문서와 `engine/_precheck_extra.py`, 과목 md 5번에 함께 추가한다.
+
+## 보조 도구 (2026-11-17)
+- 진행 상태: `python engine/pipeline_state.py <책> init|show|next|set …` (`drafts/<책>/STATE.json`). 작업 시작 때 `next`로 다음 할 일을 확인하고 단계가 바뀔 때마다 `set`으로 기록한다.
+- 빠짐없음 점검: `python engine/coverage_check.py <책> [단원]` — 문항·슬라이드에 한 번도 안 나온 notes 개념 목록(참고용). 단원 통과 전에 훑어 필요하면 슬롯을 보강한다.
+- 정책 확인: `docs/정책-결정-목록.md`
+

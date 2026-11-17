@@ -1,0 +1,30 @@
+name: 문제 은행 점검
+
+on:
+  push:
+    paths: ['study/library/**', 'study/engine/**', 'study/app/**']
+  pull_request:
+    paths: ['study/library/**', 'study/engine/**', 'study/app/**']
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: study
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      # 필수: 빌드 검사(문항·설계도·통과 기록) + 슬라이드 무결성. 실패하면 이 점검이 빨간색이 된다.
+      - name: 빌드 검사
+        run: python engine/build_library.py --check-only
+      - name: 슬라이드 무결성
+        run: python engine/slide_integrity.py
+      # 참고: 기존 문항의 b_scan 지적은 아직 남아 있어 실패로 치지 않고 기록만 한다.
+      - name: b_scan (참고)
+        continue-on-error: true
+        run: python engine/b_scan.py
