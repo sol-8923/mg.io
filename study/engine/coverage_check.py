@@ -55,6 +55,9 @@ def acceptable(c):
         return False
     if re.fullmatch(r"[\d\W]*", n):
         return False
+    # 기출 문항 번호(J1, 중간 ①), 쪽 표기('~ p'), 작품 내용 표지, 표 안내 문구는 개념이 아니다(2026-11-17)
+    if re.fullmatch(r"[A-Za-z]{1,2}\d{1,2}", c.strip()) or re.search(r"(중간|기말)\s*[①-⑩\d]", c)        or re.search(r"\sp\.?$", c.strip()) or re.search(r"[「『].*(내용|기사|면담)", c) or re.search(r"(서답형|분류표|조건 낱말)", c):
+        return False
     if n in STOP:
         return False
     # 불용어로만 이루어진 경우 제외
@@ -76,6 +79,9 @@ def extract_concepts(md):
         m = re.fullmatch(r"(\S+의)\s+(\S+?)[와과]\s+(\S+)", c)
         if m:   # 신념의 의미와 역할 → 신념의 의미 / 신념의 역할 (2026-11-17)
             add(m.group(1) + " " + m.group(2)); add(m.group(1) + " " + m.group(3))
+            return
+        if " vs " in c:
+            for x in c.split(" vs "): add(x)
             return
         if re.search(r"[=,/.]", c):
             for x in re.split(r"=|,|/|\.\s*", c):
