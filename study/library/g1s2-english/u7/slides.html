@@ -309,6 +309,9 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
 /* === 태블릿(갤럭시탭 S10 FE) 적합성: 컨트롤 터치 영역 44px, 하단 제스처 바 여백 (2026-11-17 검수 반영) === */
 .deck-controls { bottom: max(22px, calc(env(safe-area-inset-bottom, 0px) + 14px)); gap: 14px; }
 .deck-controls button { width: 44px; height: 44px; font-size: 20px; flex: 0 0 auto; touch-action: manipulation; }
+
+/* 표지 제목의 아포스트로피(Doesn't)가 글꼴에서 높게 떠 벌어져 보이는 것을 붙여 준다 (2026-11-17) */
+.cover h1 .ap { font-style: normal; display: inline-block; margin: 0 -.1em 0 -.08em; transform: translateY(.05em); }
 </style>
 </head>
 <body>
@@ -348,7 +351,7 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
 </svg>
 
     <div class="kicker reveal">1학년 2학기 <span class="nw">영어 · Lesson 7</span> <span class="nw">교과 정리</span></div>
-    <h1 class="reveal">Money <span>Doesn't</span><br>Grow on Trees</h1>
+    <h1 class="reveal">Money <span>Doesn<i class="ap">’</i>t</span><br>Grow on Trees</h1>
     <div class="rule reveal"></div>
     <p class="reveal">현명한 소비 · 용돈과 돈의 가치 · 책임감</p>
     <p class="reveal">찾는 물건 말하기 · 가격 묻고 말하기<br>수여동사 · <span class="nw">have to</span></p>

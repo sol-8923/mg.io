@@ -309,6 +309,9 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
 /* === 태블릿(갤럭시탭 S10 FE) 적합성: 컨트롤 터치 영역 44px, 하단 제스처 바 여백 (2026-11-17 검수 반영) === */
 .deck-controls { bottom: max(22px, calc(env(safe-area-inset-bottom, 0px) + 14px)); gap: 14px; }
 .deck-controls button { width: 44px; height: 44px; font-size: 20px; flex: 0 0 auto; touch-action: manipulation; }
+
+/* 표지 제목의 아포스트로피(Doesn't)가 글꼴에서 높게 떠 벌어져 보이는 것을 붙여 준다 (2026-11-17) */
+.cover h1 .ap { font-style: normal; display: inline-block; margin: 0 -.1em 0 -.08em; transform: translateY(.05em); }
 </style>
 </head>
 <body>

@@ -309,6 +309,9 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
 /* === 태블릿(갤럭시탭 S10 FE) 적합성: 컨트롤 터치 영역 44px, 하단 제스처 바 여백 (2026-11-17 검수 반영) === */
 .deck-controls { bottom: max(22px, calc(env(safe-area-inset-bottom, 0px) + 14px)); gap: 14px; }
 .deck-controls button { width: 44px; height: 44px; font-size: 20px; flex: 0 0 auto; touch-action: manipulation; }
+
+/* 표지 제목의 아포스트로피(Doesn't)가 글꼴에서 높게 떠 벌어져 보이는 것을 붙여 준다 (2026-11-17) */
+.cover h1 .ap { font-style: normal; display: inline-block; margin: 0 -.1em 0 -.08em; transform: translateY(.05em); }
 </style>
 </head>
 <body>
@@ -338,8 +341,8 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
 <path d="M570 690 L650 690" stroke="#14305F" stroke-width="5"/>
 <circle cx="860" cy="760" r="84" fill="#9BE0F2" stroke="#14305F" stroke-width="7"/>
 <path d="M860 710 L860 810 M810 760 L910 760" stroke="#C23B22" stroke-width="26" stroke-linecap="butt" fill="none"/>
-<path d="M-920 1080 L-920 990 Q-300 930 240 1000 Q520 900 800 960 Q920 985 1000 940 L1000 1080Z" fill="#3E7CC0"/>
-<path d="M-920 1080 L-920 1035 Q-300 995 240 1045 Q560 960 820 1020 Q930 1040 1000 1010 L1000 1080Z" fill="#1F3F73"/>
+<path d="M-920 1080 L-920 990 Q-300 930 240 1000 Q520 900 800 960 Q920 985 1000 940 L3000 940 L3000 1080Z" fill="#3E7CC0"/>
+<path d="M-920 1080 L-920 1035 Q-300 995 240 1045 Q560 960 820 1020 Q930 1040 1000 1010 L3000 1010 L3000 1080Z" fill="#1F3F73"/>
 </svg>
 
     <div class="kicker reveal">1학년 2학기 <span class="nw">영어 · Lesson 6</span> <span class="nw">교과 정리</span></div>
