@@ -5,11 +5,11 @@
 <path d="M930 120 Q930 134 944 134 Q930 134 930 148 Q930 134 916 134 Q930 134 930 120Z" fill="#fff"/>
 <path d="M600 60 Q600 72 612 72 Q600 72 600 84 Q600 72 588 72 Q600 72 600 60Z" fill="#FFC83D"/>
 <path d="M230 660 Q400 580 540 490 Q630 425 680 372" fill="none" stroke="#fff" stroke-width="8" stroke-dasharray="4 22" stroke-linecap="round"/>
-<g stroke="#14305F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
-<path d="M965 225 L792 388 L856 488Z" fill="#B7CCEC"/>
-<path d="M792 388 L856 488 L752 437Z" fill="#7FA3DA"/>
-<path d="M965 225 L695 332 L792 388Z" fill="#fff"/>
-<path d="M965 225 L792 388" fill="none"/>
+<g transform="translate(700 420) rotate(-32) scale(1.25)" stroke="#14305F" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M240 0 L0 -84 L44 0Z" fill="#fff"/>
+<path d="M240 0 L0 84 L44 0Z" fill="#BFD3F0"/>
+<path d="M240 0 L44 0 L104 46Z" fill="#7FA3DA"/>
+<path d="M240 0 L44 0" fill="none"/>
 </g>
 <circle cx="360" cy="780" r="84" fill="#FFC83D" stroke="#14305F" stroke-width="7"/>
 <path d="M388 740 L388 800 M388 740 L338 752 L338 812" fill="none" stroke="#14305F" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
