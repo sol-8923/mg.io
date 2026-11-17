@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자아와 도덕적인 삶 - 교과 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style-ethics.md) : 도덕 교과서 표지 메타포 - 마음의 산책 === */
+:root {
+    --sky: #8fcdf5;
+    --sky-l: #e6f4fd;
+    --cloud: #ffffff;
+    --grass: #5db75a;
+    --grass-d: #2f7d46;
+    --flower: #f2c230;
+    --bg: #fbfdf9;
+    --bg-2: #ffffff;
+    --bg-3: #1c3a5e;
+    --ink: #1f2a3d;
+    --ink-dim: #4a5872;
+    --navy: #1c3a5e;
+    --em: #b3450b;
+    --warn: #b3450b;
+    --line: #bfdcc9;
+    --pt: #1f6fb5;
+    --font-display: 'Gaegu', 'Jua', 'Malgun Gothic', sans-serif;
+    --font-body: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    --stage-bg: #cfe6f5;
+    --slide-bg: var(--bg);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 유지) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 무대 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 60px 96px 100px;
+    font-size: 27px;
+    line-height: 1.5;
+    background: linear-gradient(180deg, var(--sky-l) 0, #f1f9f6 230px, var(--bg) 420px);
+}
+/* 오른쪽 위: 나침반 + 등고선 장식 (본문 뒤, 옅게) */
+.slide::before {
+    content: ""; position: absolute; right: 30px; top: 18px; width: 300px; height: 200px; pointer-events: none; z-index: 0;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><g fill='none' stroke='%23b5d8ee' stroke-width='3'><ellipse cx='200' cy='80' rx='96' ry='56'/><ellipse cx='200' cy='80' rx='70' ry='40'/><ellipse cx='200' cy='80' rx='44' ry='24'/></g><g transform='translate(238 66)'><circle r='30' fill='%23ffffff' stroke='%2395c4e4' stroke-width='3'/><path d='M0 -22 L7 0 L0 22 L-7 0Z' fill='%23d9822b' opacity='.8'/><path d='M0 -22 L7 0 L-7 0Z' fill='%231b2f63' opacity='.55'/></g></svg>") no-repeat right top / contain;
+}
+/* 아래쪽: 초록 언덕 + 흙길 띠 */
+.slide::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 74px; pointer-events: none; z-index: 0;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 74' preserveAspectRatio='none'><path d='M0 40 Q300 6 640 30 T1300 24 T1920 14 V74 H0Z' fill='%23cfe9c2'/><path d='M0 58 Q420 22 900 48 T1920 36 V74 H0Z' fill='%23b4dea5'/><path d='M-20 68 Q500 46 1000 62 T1940 52' fill='none' stroke='%23efdcb2' stroke-width='9' stroke-dasharray='34 18' stroke-linecap='round'/></svg>") no-repeat center bottom / 100% 100%;
+}
+.slide > * { position: relative; z-index: 1; }
+.kicker { display: inline-block; font-size: 24px; letter-spacing: .06em; color: #fff; background: var(--pt); font-weight: 700; margin-bottom: 10px; padding: 2px 20px 3px; border-radius: 99px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 60px; line-height: 1.2; color: var(--navy); margin-bottom: 26px; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 500; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 400; font-size: 34px; color: var(--navy); margin-bottom: 10px; }
+b, strong { color: var(--em); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute !important; right: 70px; bottom: 16px; font-size: 24px; font-weight: 700; color: var(--navy); z-index: 2 !important; }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { background: var(--bg-2); border: 2px solid var(--line); border-radius: 18px; padding: 22px 26px; box-shadow: 0 4px 0 rgba(47,125,70,.12); }
+.card.hl { border-color: var(--line); border-left: 10px solid var(--pt); }
+.card.warn { border-color: #f0b98a; border-left: 10px solid #e8751a; background: #fff8f0; }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 32px; margin-bottom: 8px; }
+/* 지도 핀 모양 불릿 */
+ul.l li::before { content: ""; position: absolute; left: 5px; top: .5em; width: 15px; height: 15px; background: var(--pt); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); }
+ul.l li::after { content: ""; position: absolute; left: 10px; top: calc(.5em + 5px); width: 5px; height: 5px; background: #fff; border-radius: 50%; }
+.tag { display: inline-block; font-size: 24px; padding: 0 14px; background: var(--pt); border-radius: 99px; color: #fff; margin-right: 10px; vertical-align: 3px; font-family: var(--font-body); font-weight: 700; }
+.ref { font-size: 24px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 27px; border: 2px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; }
+table.t th { background: var(--navy); color: #fff; font-family: var(--font-display); font-weight: 400; text-align: left; padding: 12px 18px; border-right: 1px solid rgba(255,255,255,.25); }
+table.t td { padding: 12px 18px; border-top: 1px solid var(--line); border-right: 1px solid var(--line); background: #fff; vertical-align: top; }
+table.t tr:nth-child(even) td { background: #f1f8ee; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; color: var(--navy); }
+table.t th:last-child, table.t td:last-child { border-right: 0; }
+
+.g5 .card, .g4 .card { font-size: 25px; padding: 18px 20px; }
+/* 이정표 번호 */
+.step .no { display: inline-flex; width: 48px; height: 48px; align-items: center; justify-content: center; border-radius: 50%; background: var(--pt); color: #fff; font-weight: 900; font-size: 26px; margin-bottom: 8px; border: 3px solid #fff; box-shadow: 0 0 0 3px var(--pt); }
+.svgbox { display: flex; justify-content: center; align-items: center; }
+.svgbox svg { width: 100%; height: auto; }
+
+/* 표지 */
+.slide.cover { background: linear-gradient(180deg, #7ec3ee 0, #a9d8f5 40%, #d3ecfa 62%, #e4f4fb 100%); padding: 0; }
+.slide.cover::before, .slide.cover::after { display: none; }
+.cover .scene { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; z-index: 0; }
+.cover .copy { position: absolute; left: 150px; top: 96px; width: 1250px; z-index: 2; }
+.cover .kicker { font-size: 30px; padding: 4px 26px 5px; background: #fff; color: var(--navy); border: 3px solid var(--navy); margin-bottom: 18px; }
+.cover h1 { font-family: var(--font-display); font-weight: 400; font-size: 136px; line-height: 1.1; margin: 8px 0 22px; color: var(--navy); text-shadow: 0 4px 0 rgba(255,255,255,.65); }
+.cover h1 span { color: #fff; background: var(--navy); border-radius: 26px; padding: 0 28px 6px; text-shadow: none; display: inline-block; }
+.cover p { font-size: 36px; font-weight: 500; color: var(--navy); background: rgba(255,255,255,.82); display: inline-block; padding: 6px 22px; border-radius: 16px; }
+.cover .rule { width: 240px; height: 10px; background: repeating-linear-gradient(90deg, var(--pt) 0 34px, transparent 34px 52px); border-radius: 5px; margin: 6px 0 24px; }
+.cover .sign { position: absolute; left: 230px; top: 770px; z-index: 2; transform: rotate(-4deg); }
+.cover .sign .post { position: absolute; left: 50%; top: 100%; width: 22px; height: 150px; margin-left: -11px; background: #8a5a2b; border-radius: 4px; }
+.cover .sign .board { position: relative; min-width: 240px; padding: 10px 40px 12px; background: var(--pt); color: #fff; border: 5px solid #fff; border-radius: 12px 40px 40px 12px; font-family: var(--font-display); font-size: 58px; line-height: 1.1; text-align: center; box-shadow: 0 6px 0 rgba(0,0,0,.18); }
+.cover .sign .board small { font-family: var(--font-body); font-size: 28px; font-weight: 700; margin-left: 6px; }
+
+/* 등장 효과 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(하단): 등산길 진행 표시 === */
+.deck-controls { display: flex; gap: 12px; align-items: center; background: rgba(255,255,255,.94); border: 2px solid var(--grass-d); border-radius: 99px; padding: 6px 16px; font-family: var(--font-body); color: var(--navy); font-size: 15px; font-weight: 700; box-shadow: 0 3px 10px rgba(27,47,99,.2); }
+.deck-controls button { background: none; border: none; color: var(--navy); font-size: 20px; cursor: pointer; padding: 2px 10px; }
+.trail { position: relative; width: 340px; height: 34px; margin: 0 4px; }
+.trail .road { position: absolute; left: 10px; right: 10px; top: 20px; height: 8px; border-radius: 4px; background: #e6d3a6; }
+.trail .walked { position: absolute; left: 10px; top: 20px; height: 8px; border-radius: 4px; background: var(--grass); width: 0; transition: width .35s; }
+.trail .post { position: absolute; top: 14px; width: 6px; height: 20px; margin-left: -3px; border-radius: 2px; background: #b08a55; }
+.trail .post.done { background: var(--grass-d); }
+.trail .flag { position: absolute; right: 2px; top: 0; width: 18px; height: 26px; }
+.trail .hiker { position: absolute; top: -4px; width: 26px; height: 32px; margin-left: -13px; transition: left .35s; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--navy); color: #fff; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 2px dashed var(--pt); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 1100px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: var(--sky-l); }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: 100%; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 52px; font-size: 17px; border-bottom: 6px solid var(--grass); background: linear-gradient(180deg, var(--sky-l) 0, var(--bg) 160px); }
+    .slide::before { display: none; }
+    .slide::after { height: 34px; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; padding: 1px 12px 2px; }
+    h2 { font-size: 28px; margin-bottom: 16px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 21px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g4, .g5 { grid-template-columns: 1fr !important; }
+    .card, .g4 .card, .g5 .card { padding: 14px 16px; font-size: 17px !important; border-radius: 14px; }
+    .card li, .card p { font-size: inherit !important; }
+    ul.l li { padding-left: 26px; }
+    ul.l li::before { width: 12px; height: 12px; }
+    ul.l li::after { left: 9px; top: calc(.5em + 4px); width: 4px; height: 4px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { position: static !important; text-align: right; font-size: 13px; margin-top: 10px; }
+    table.t { font-size: 16px !important; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 36px; height: 36px; font-size: 18px; }
+    .slide.cover { padding: 0; min-height: 600px; overflow: hidden; background: linear-gradient(180deg, #7ec3ee 0, #a9d8f5 45%, #d3ecfa 100%); }
+    .cover .scene { top: auto; bottom: 0; height: 52%; }
+    .cover .copy { position: relative; left: auto; top: auto; width: auto; padding: 36px 18px 0; }
+    .cover .kicker { font-size: 15px; padding: 2px 14px 3px; border-width: 2px; }
+    .cover h1 { font-size: 54px; margin: 6px 0 12px; }
+    .cover h1 span { border-radius: 14px; padding: 0 14px 3px; }
+    .cover p { font-size: 18px; padding: 4px 12px; }
+    .cover .rule { width: 140px; height: 6px; margin: 4px 0 14px; }
+    .cover .sign, .cover .scene .sky { display: none; }
+}
+/* ===== 검수 수정 v2 ===== */
+/* 줄바꿈: 한국어는 단어 단위로, 긴 단어만 강제 줄바꿈 */
+.slide, td, th, .card { word-break: keep-all; overflow-wrap: break-word; }
+
+/* 본문 슬라이드: 제목 아래 본문을 세로 가운데로, 슬라이드별 --z 배율로 글자·카드 확대 */
+.slide:not(.cover) { display: flex; flex-direction: column; }
+.slide:not(.cover) > * { flex-shrink: 0; }
+.slide:not(.cover) > .kicker { align-self: flex-start; }
+.slide:not(.cover) > h2 + * { margin-top: auto !important; }
+.slide:not(.cover) > :nth-last-child(2) { margin-bottom: auto !important; }
+.slide:not(.cover) > *:not(.kicker):not(h2):not(.pg) { zoom: var(--z, 1); }
+/* 본문 덩어리 사이 간격 확대 */
+.slide:not(.cover) > *:not(.kicker):not(h2):not(.pg) + *:not(.pg) { margin-top: 24px; }
+/* 마지막 '핵심 정리' 장: 카드를 크게, 항목 간격 넓게 */
+.deck-stage > .slide:last-child:not(.cover) .card { padding: 34px 44px; }
+.deck-stage > .slide:last-child:not(.cover) ul.l li { margin-bottom: 16px; }
+.deck-stage > .slide:last-child:not(.cover) ul.l li:last-child { margin-bottom: 0; }
+
+/* 표지: 한 단어 제목은 크게 */
+.cover .copy:has(h1 > span:only-child) { top: 54px; }
+.cover .copy:has(h1 > span:only-child) .kicker { font-size: 38px; padding: 6px 34px 7px; margin-bottom: 16px; }
+.cover .copy:has(h1 > span:only-child) h1 { font-size: 184px; line-height: 1.04; margin: 8px 0 20px; }
+.cover .copy:has(h1 > span:only-child) h1 span { border-radius: 40px; padding: 0 44px 10px; }
+.cover .copy:has(h1 > span:only-child) p { font-size: 44px; padding: 8px 28px; }
+.cover .copy:has(h1 > span:only-child) .rule { width: 300px; height: 12px; }
+
+/* 하이커가 깃발을 가리지 않게 (끝 여백은 스크립트에서 처리) */
+.trail .flag { z-index: 1; }
+.trail .hiker { z-index: 2; }
+
+@media (max-width: 1100px) and (orientation: portrait) {
+    .slide:not(.cover) { display: block; }
+    .slide:not(.cover) > * { zoom: 1 !important; }
+    .slide:not(.cover) > *:not(.kicker):not(h2):not(.pg) + *:not(.pg) { margin-top: 0; }
+    .deck-stage > .slide:last-child:not(.cover) .card { padding: 14px 16px; }
+    /* 카드 글자 크기 통일 (인라인 font-size 포함) */
+    .card ul, .card ul.l, .card li, .card p, .card div:not(.svgbox):not(.step),
+    .card [style*="font-size"]:not(h3):not(.no) { font-size: 17px !important; }
+    .card .dim { font-size: 17px !important; }
+    /* 표지: 단원 이정표를 작게 */
+    .cover .sign { display: block !important; position: absolute; left: 20px; top: auto; bottom: 74px; transform: rotate(-4deg); z-index: 2; }
+    .cover .sign .board { min-width: 0; padding: 3px 18px 4px; border-width: 3px; border-radius: 8px 20px 20px 8px; font-size: 28px; box-shadow: 0 3px 0 rgba(0,0,0,.18); }
+    .cover .sign .board small { font-size: 14px; margin-left: 3px; }
+    .cover .sign .post { width: 10px; height: 46px; margin-left: -5px; }
+    .cover .copy:has(h1 > span:only-child) { top: auto; }
+    .cover .copy:has(h1 > span:only-child) .kicker { font-size: 17px; padding: 3px 16px 4px; margin-bottom: 8px; }
+    .cover .copy:has(h1 > span:only-child) h1 { font-size: 84px; margin: 6px 0 14px; }
+    .cover .copy:has(h1 > span:only-child) h1 span { border-radius: 20px; padding: 0 22px 5px; }
+    .cover .copy:has(h1 > span:only-child) p { font-size: 20px; padding: 5px 14px; }
+    .cover .copy:has(h1 > span:only-child) .rule { width: 160px; height: 7px; }
+}
+
+/* ===== 검수 정리 v3 ===== */
+/* 줄바꿈: 짧은 구절·숫자+단위·'용어 :'는 줄 중간에서 끊지 않고, 한두 글자 고아 줄을 줄인다 */
+.nw { white-space: nowrap; }
+.slide p, .slide li, .slide td, .slide th, .slide h3 { text-wrap: pretty; }
+/* 쪽번호: 두 자리 쪽수에서 진행 막대가 흔들리지 않게 폭 고정 */
+#count { display: inline-block; min-width: 58px; text-align: center; font-variant-numeric: tabular-nums; }
+/* 표지 점선: 마지막 대시가 잘리지 않는 폭 (대시 34px + 간격 18px 반복) */
+.cover .rule { width: 242px; }
+.cover .copy:has(h1 > span:only-child) .rule { width: 294px; }
+.swipe-hint { display: none; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .swipe-hint { display: block; text-align: center; font-size: 14px; font-weight: 700; color: var(--ink-dim); margin: 0 0 6px; }
+    table.t, table.t th, table.t td { font-size: 16px !important; }
+    .step { display: flow-root; }
+    .step br { display: none; }
+    .step .no { float: left; margin: 0 12px 0 0; }
+    .cover .rule, .cover .copy:has(h1 > span:only-child) .rule { width: 138px; }
+}
+/* ===== 검수 정리 v4 (폰 화면) ===== */
+@media (max-width: 1100px) and (orientation: portrait) {
+    /* 인라인으로 박힌 큰 글자 크기가 카드·표 글자와 따로 노는 것을 막는다 */
+    .slide:not(.cover) :is(p, ul, ol, li, div, span, td, th, b)[style*="font-size"]:not(.fm):not(.fm *):not(.tag):not(.no) { font-size: inherit !important; }
+    /* 연도 알약(1960 등)이 제목을 가리지 않게 */
+    .card.step:has(.no[style*="width:auto"]) { padding-left: 22px !important; }
+    .card.step .no[style*="width:auto"] { position: static !important; display: inline-flex; margin: 0 0 8px; }
+    .card.step:has(.no[style*="width:auto"]) .no + br { display: none; }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+    /* 폰에서는 줄바꿈 금지 구절이 칸 밖으로 밀려나지 않게 */
+    span.nw { white-space: normal; }
+    /* 표를 행 단위 카드로 쌓아 오른쪽 열이 잘리지 않게 */
+    .slide table.stack, .slide table.stack tbody, .slide table.stack tr, .slide table.stack td, .slide table.stack th { display: block; width: auto !important; box-sizing: border-box; }
+    .slide table.stack { border: 0 !important; background: transparent !important; box-shadow: none !important; }
+    .slide table.stack tr.hrow { display: none; }
+    .slide table.stack tr { margin: 0 0 12px; border: 2px solid rgba(0,0,0,.14); border-radius: 12px; overflow: hidden; background: #fff; }
+    .slide table.stack td, .slide table.stack th { border: 0 !important; border-top: 1px solid rgba(0,0,0,.09) !important; padding: 8px 14px !important; text-align: left; white-space: normal !important; font-size: 16px !important; }
+    .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
+    .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
+}
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: var(--pt, #2f6b52); color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
+/* ===== 도덕 스킨: 마음의 산책 (구름 · 풀밭 · 강아지) ===== */
+h2, h3, table.t th { font-weight: 700; }
+h2 { font-size: 74px; }
+h2 small { font-weight: 500; }
+h3 { font-size: 46px; line-height: 1.25; }
+table.t th { font-size: 36px; }
+.step .no { font-family: var(--font-body); }
+h2 small { font-size: 28px; }
+.card h3 .tag { font-size: 26px; }
+.card { border-radius: 22px; box-shadow: 0 4px 0 rgba(47,125,70,.12); }
+/* 오른쪽 위: 작은 뭉게구름 (본문 뒤, 옅게) */
+.slide::before {
+    content: ""; position: absolute; right: 30px; top: 14px; width: 330px; height: 140px; pointer-events: none; z-index: 0;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 330 140'><g fill='%23ffffff' opacity='.95'><ellipse cx='110' cy='96' rx='80' ry='26'/><circle cx='74' cy='72' r='28'/><circle cx='120' cy='58' r='38'/><circle cx='160' cy='80' r='28'/></g><g fill='%23ffffff' opacity='.85'><ellipse cx='258' cy='54' rx='50' ry='17'/><circle cx='238' cy='40' r='18'/><circle cx='266' cy='34' r='22'/></g><ellipse cx='110' cy='106' rx='70' ry='10' fill='%23d5e9f8' opacity='.7'/></svg>") no-repeat right top / contain;
+}
+/* 아래쪽: 풀밭 언덕 + 노란 꽃 점 */
+.slide::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 74px; pointer-events: none; z-index: 0;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 74' preserveAspectRatio='none'><path d='M0 40 Q300 8 640 30 T1300 24 T1920 14 V74 H0Z' fill='%23d3edcd'/><path d='M0 58 Q420 24 900 48 T1920 36 V74 H0Z' fill='%23b0e0a8'/><g fill='%23f2c230'><circle cx='140' cy='62' r='4'/><circle cx='520' cy='56' r='4'/><circle cx='980' cy='60' r='4'/><circle cx='1400' cy='54' r='4'/><circle cx='1760' cy='58' r='4'/></g></svg>") no-repeat center bottom / 100% 100%;
+}
+/* 잎 모양 불릿 */
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .5em; width: 18px; height: 18px; background: var(--pt); border-radius: 0 100% 0 100%; transform: none; }
+ul.l li::after { display: none; }
+/* 표지 */
+.slide.cover { background: linear-gradient(180deg, #78c2f0 0, #a4d6f6 45%, #cfeafb 70%, #e4f4fb 100%); }
+.cover h1 { font-weight: 700; font-size: 150px; line-height: 1.08; }
+.cover .sign .board { background: var(--pt); }
+.cover .sign .board, .cover h1, .cover .kicker { font-family: var(--font-display); }
+.cover .kicker { font-family: var(--font-body); }
+.cover .sign .board small { font-family: var(--font-display); }
+/* 진행 표시: 풀밭 길 위를 걷는 강아지 + 구름 점 */
+.trail .road { background: #cfe9c6; }
+.trail .post { top: 17px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: #fff; border: 2px solid #9cc7a4; }
+.trail .post.done { background: var(--grass-d); border-color: var(--grass-d); }
+.trail .flag { right: 0; top: 0; width: 24px; height: 30px; }
+.trail .dog { position: absolute; top: -2px; width: 30px; height: 26px; margin-left: -15px; transition: left .35s; z-index: 2; }
+/* 폰 화면: 가로로 밀어 보는 그림, 표지 풍경 */
+@media (max-width: 1100px) and (orientation: portrait) {
+    .slide::after { height: 34px; }
+    .svgbox.sx { overflow-x: auto; justify-content: flex-start; -webkit-overflow-scrolling: touch; }
+    .svgbox.sx svg { min-width: 760px; max-width: none !important; flex: none; }
+    h2 { font-size: 38px; line-height: 1.2; }
+    h2 small { font-size: 16px; }
+    h3 { font-size: 28px; }
+    table.t th { font-size: 20px !important; }
+    .card h3 .tag { font-size: 14px; }
+    .cover h1 { font-size: 70px; }
+    .cover .scene .sky { display: block; }
+    .cover .scene { height: 62%; }
+    .cover .sign { bottom: 40px; }
+}
+
+.deck-stage > .slide:nth-child(2) { --z: 0.95; }
+.deck-stage > .slide:nth-child(3) { --z: 1.06; }
+.deck-stage > .slide:nth-child(4) { --z: 1.2; }
+.deck-stage > .slide:nth-child(5) { --z: 1.15; }
+.deck-stage > .slide:nth-child(6) { --z: 1.2; }
+.deck-stage > .slide:nth-child(7) { --z: 1.2; }
+.deck-stage > .slide:nth-child(8) { --z: 1.0; }
+.deck-stage > .slide:nth-child(9) { --z: 1.12; }
+.deck-stage > .slide:nth-child(10) { --z: 1.12; }
+.deck-stage > .slide:nth-child(11) { --z: 1.35; }
+.deck-stage > .slide:nth-child(12) { --z: 1.08; }
+
+</style>
+
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+
+<!-- === 1. 표지 === -->
+<section class="slide cover active">
+    <svg class="scene" viewBox="0 0 1920 1080" preserveAspectRatio="xMaxYMax slice" aria-hidden="true">
+<g class="sky" fill="#fff">
+  <g opacity=".95"><ellipse cx="1060" cy="470" rx="470" ry="150"/><circle cx="800" cy="380" r="170"/><circle cx="1010" cy="300" r="210"/><circle cx="1240" cy="360" r="180"/><circle cx="1420" cy="450" r="120"/><circle cx="640" cy="470" r="110"/></g>
+  <g opacity=".6"><ellipse cx="1040" cy="560" rx="440" ry="60" fill="#e3f0fb"/></g>
+  <g opacity=".92" transform="translate(1700 150)"><ellipse rx="130" ry="40"/><ellipse cx="-50" cy="-26" rx="60" ry="42"/><ellipse cx="30" cy="-40" rx="66" ry="48"/></g>
+  <g opacity=".9" transform="translate(150 640) scale(.8)"><ellipse rx="130" ry="40"/><ellipse cx="-50" cy="-26" rx="60" ry="42"/><ellipse cx="30" cy="-40" rx="66" ry="48"/></g>
+</g>
+<g><circle cx="700" cy="720" r="70" fill="#4fa05a"/><circle cx="780" cy="700" r="90" fill="#58ad5f"/><circle cx="860" cy="730" r="62" fill="#4fa05a"/><circle cx="1700" cy="730" r="60" fill="#58ad5f"/><circle cx="1770" cy="750" r="46" fill="#4fa05a"/></g>
+<path d="M0 760 Q500 690 1000 735 T1920 705 V1080 H0Z" fill="#92d283"/>
+<path d="M0 880 Q600 790 1200 850 T1920 800 V1080 H0Z" fill="#5db75a"/>
+<path d="M0 960 Q700 890 1300 930 T1920 900 V1080 H0Z" fill="#4aa24a"/>
+<g fill="#f2c230"><circle cx="220" cy="930" r="9"/><circle cx="520" cy="1000" r="8"/><circle cx="900" cy="960" r="9"/><circle cx="1620" cy="990" r="8"/><circle cx="1780" cy="940" r="9"/><circle cx="360" cy="860" r="7"/></g>
+<g fill="#fff" opacity=".8"><circle cx="300" cy="990" r="6"/><circle cx="740" cy="935" r="6"/><circle cx="1500" cy="920" r="6"/></g>
+<!-- 강아지 -->
+<g transform="translate(1270 905)">
+  <ellipse cx="10" cy="40" rx="80" ry="12" fill="#2f7d46" opacity=".3"/>
+  <ellipse cx="0" cy="0" rx="62" ry="42" fill="#fffdf6" stroke="#e5dcc7" stroke-width="3"/>
+  <circle cx="-8" cy="-10" r="26" fill="#fffdf6"/>
+  <rect x="-34" y="20" width="14" height="24" rx="6" fill="#fffdf6" stroke="#e5dcc7" stroke-width="3"/>
+  <rect x="22" y="20" width="14" height="24" rx="6" fill="#fffdf6" stroke="#e5dcc7" stroke-width="3"/>
+  <circle cx="-62" cy="-30" r="38" fill="#fffdf6" stroke="#e5dcc7" stroke-width="3"/>
+  <ellipse cx="-92" cy="-34" rx="14" ry="22" fill="#d9c7a6"/>
+  <ellipse cx="-34" cy="-34" rx="14" ry="22" fill="#d9c7a6"/>
+  <circle cx="-76" cy="-34" r="4" fill="#2b2430"/><circle cx="-52" cy="-34" r="4" fill="#2b2430"/>
+  <ellipse cx="-64" cy="-20" rx="8" ry="6" fill="#2b2430"/>
+</g>
+<!-- 소녀 -->
+<g transform="translate(1440 900)">
+  <ellipse cx="40" cy="50" rx="190" ry="20" fill="#2f7d46" opacity=".3"/>
+  <line x1="-10" y1="0" x2="50" y2="-95" stroke="#2d4a73" stroke-width="46" stroke-linecap="round"/>
+  <line x1="50" y1="-95" x2="140" y2="14" stroke="#2d4a73" stroke-width="42" stroke-linecap="round"/>
+  <ellipse cx="170" cy="36" rx="34" ry="16" fill="#26303f"/>
+  <rect x="140" y="44" width="62" height="8" rx="4" fill="#fff"/>
+  <line x1="-20" y1="6" x2="30" y2="-60" stroke="#263f63" stroke-width="44" stroke-linecap="round"/>
+  <line x1="30" y1="-60" x2="96" y2="30" stroke="#263f63" stroke-width="40" stroke-linecap="round"/>
+  <ellipse cx="118" cy="46" rx="32" ry="15" fill="#26303f"/>
+  <line x1="-12" y1="-6" x2="-48" y2="-150" stroke="#f7f4ec" stroke-width="78" stroke-linecap="round"/>
+  <line x1="-30" y1="-120" x2="-96" y2="-30" stroke="#f7f4ec" stroke-width="26" stroke-linecap="round"/>
+  <circle cx="-100" cy="-22" r="14" fill="#f0c9a4"/>
+  <line x1="-40" y1="-180" x2="-4" y2="-130" stroke="#f0c9a4" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="-64" cy="-232" r="46" fill="#5a4234"/>
+  <circle cx="-46" cy="-226" r="36" fill="#f0c9a4"/>
+  <path d="M-84 -250 Q-50 -290 -12 -246 Q-40 -252 -84 -250Z" fill="#5a4234"/>
+  <circle cx="-30" cy="-226" r="4" fill="#2b2430"/>
+  <path d="M-30 -208 Q-20 -200 -10 -210" fill="none" stroke="#b5524a" stroke-width="3" stroke-linecap="round"/>
+</g>
+<g stroke="#2f7d46" stroke-width="5" stroke-linecap="round" opacity=".6"><path d="M80 1020 l-6 -26 M92 1020 l2 -30 M104 1020 l8 -24"/><path d="M1000 1010 l-6 -26 M1012 1010 l3 -28"/><path d="M1830 1020 l-6 -24 M1842 1020 l3 -28"/></g>
+    </svg>
+    <div class="copy">
+    <div class="kicker reveal">도덕 ① · <span class="nw">Ⅰ 자신과의 관계</span> 요약 정리</div>
+    <h1 class="reveal">자아와<br><span>도덕적인 삶</span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">01 나는 어떤 사람일까 · 02 도덕은 왜 필요할까 · 03 도덕적으로 살려면</p>
+    </div>
+    <div class="sign" aria-hidden="true"><div class="board">Ⅰ-1</div><div class="post"></div></div>
+</section>
+
+<!-- === 3. 자아의 의미 === -->
+<section class="slide">
+    <div class="kicker">01 나는 어떤 사람일까?</div>
+    <h2>자아의 의미 <small><span class="nw">p.12</span></small></h2>
+    <div class="card hl reveal" style="margin-bottom:24px">
+        <p style="font-size:30px"><b>자아</b> : 자신에게 '나는 누구인가?'를 묻고 답을 찾는 과정에서 알게 되는 <b>나의 모습</b>. 특징·성격·능력·가치관뿐 아니라 <b>사회적 역할과 의무</b>도 들어간다.</p>
+    </div>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>개인적 존재로서의 나</h3>
+            <ul class="l">
+                <li>내가 바라보는 나의 모습</li>
+                <li>원하는 것, 잘하는 것, 소중하게 생각하는 것을 탐색한다.</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>사회적 존재로서의 나</h3>
+            <ul class="l">
+                <li>다른 사람과의 관계 속에서 나타나는 나의 모습</li>
+                <li>다른 사람이 나를 어떻게 생각하는지, 사회 구성원으로서 맡을 역할이 무엇인지 파악한다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3>청소년기의 자아</h3>
+        <p>주변 환경의 영향을 받기 쉽다 → 개인적 모습과 사회적 모습을 <b>균형 있게 바라보고 통합</b>해 폭넓게 이해하려 노력한다.</p>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card hl reveal">
+            <span class="lb">알아 둘 점</span> 내가 바라보는 나와 다른 사람이 바라보는 나는 <b>다를 수 있다</b>.
+        </div>
+        <div class="card reveal">
+            <span class="lb">활동 자료</span> <b>조하리의 창</b> : 대인 관계에서 자신이 어떻게 보이고 어떤 성향인지 파악하게 해 주는 심리학 이론.
+        </div>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 5. 가치 === -->
+<section class="slide">
+    <div class="kicker">01 나는 어떤 사람일까?</div>
+    <h2>가치의 의미와 종류 <small><span class="nw">p.14</span></small></h2>
+    <div class="card hl reveal" style="margin-bottom:24px">
+        <p style="font-size:30px"><b>가치</b> : 자신이 소중하게 여겨 추구하는 대상이나 목표 <span class="nw">(돈·직장·사랑·행복 등).</span></p>
+    </div>
+    <table class="t reveal">
+        <tr><th style="width:24%">종류</th><th style="width:16%">구분</th><th>뜻 · 예</th></tr>
+        <tr><td>물질적 가치</td><td>①</td><td>집, 자동차, 옷</td></tr>
+        <tr><td>정신적 가치</td><td>①</td><td>사랑, 우정, 지혜로움</td></tr>
+        <tr><td>도덕적 가치</td><td>①</td><td>정신적 가치 중 <b>선과 악, 옳고 그름</b>과 관련된 것</td></tr>
+        <tr><td>도구적 가치</td><td>②</td><td>어떤 목적을 이루기 위한 <b>수단</b>이 되는 가치</td></tr>
+        <tr><td>본래적 가치</td><td>②</td><td>그 <b>자체로 목적</b>이 되는 가치</td></tr>
+    </table>
+    <div class="card reveal" style="margin-top:24px">
+        <span class="lb">참고</span> 한 가치가 두 특성을 모두 지닐 수 있고, 본래적 가치가 상황에 따라 도구적 특성을 지니기도 한다.
+    </div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 6. 바람직한 가치와 가치관 === -->
+<section class="slide">
+    <div class="kicker">01 나는 어떤 사람일까?</div>
+    <h2>바람직한 가치와 가치관 <small><span class="nw">p.14~15</span></small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>바람직한 가치의 특징</h3>
+            <ul class="l">
+                <li>만족감이 쉽게 없어지지 않고 <b>오래 지속</b>된다.</li>
+                <li>많은 사람이 함께 나누어도 <b>줄어들지 않는다</b>.</li>
+                <li>어떤 것을 위한 수단이 아니라 <b>그 자체로 목적</b>이 된다.</li>
+                <li class="dim">예 : 타인을 위한 봉사</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>가치관</h3>
+            <p><b>가치관</b> : 다양한 가치 가운데 자신이 옳다고 생각하는 것, 해야 할 것과 하지 말아야 할 것에 관해 갖게 되는 <b>태도나 관점</b>.</p>
+            <p style="margin-top:12px">어떤 행동을 할지 정하는 중요한 <b>기준</b>이 된다.</p>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>가치관과 나의 모습</h3>
+        <p style="font-size:30px">가치관에 따라 <b>자아의 모습과 삶의 모습</b>이 달라진다. 가치관을 형성하고 그에 따라 행동할 때 원하는 모습의 자아를 만들어 갈 수 있다.</p>
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 7. 도덕의 특성 === -->
+<section class="slide">
+    <div class="kicker">02 도덕은 왜 필요할까?</div>
+    <h2>도덕의 특성 <small><span class="nw">p.16</span></small></h2>
+    <div class="card hl reveal" style="margin-bottom:24px">
+        <p style="font-size:30px"><b>도덕</b> : 사람으로서 마땅히 지켜야 할 도리이자, 도리에 따라 살아가려는 바른 품성.</p>
+    </div>
+    <div class="grid g3">
+        <div class="card hl reveal">
+            <h3>근본적 규범</h3>
+            <p>사람으로서 무엇을 해야 하고 무엇을 하면 안 되는지 알려 주고 <b>바람직한 삶</b>으로 이끈다.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>자율적 규범</h3>
+            <p>다른 사람이 강요하지 않아도 <b>스스로 실천</b>하는 규범. 마음속 <b>양심</b> 덕분에 옳지 못한 일에는 부끄러움을 느낀다.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>보편적 규범</h3>
+            <p><b>모든 사람</b>에게 적용되어야 한다. 양심에 따른 판단을 다른 사람들이 받아들일 수 있는지 <b>보편적 관점</b>에서 생각해 본다.</p>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card reveal"><span class="lb">용어</span> <b>규범</b> : 행동·판단할 때 마땅히 따르고 지켜야 할 가치 판단의 기준.</div>
+        <div class="card reveal"><span class="lb">용어</span> <b>양심</b> : 옳고 그름을 판단할 때 기준이 되는 내면의 목소리.</div>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 8. 도덕·법·예절 === -->
+<section class="slide">
+    <div class="kicker">02 도덕은 왜 필요할까?</div>
+    <h2>도덕 · 법 · 예절 <small><span class="nw">p.17</span></small></h2>
+    <table class="t reveal">
+        <tr><th style="width:16%">구분</th><th style="width:44%">성격</th><th>지키게 하는 방식</th></tr>
+        <tr><td>도덕</td><td>옳고 그름에 관한 <b>가치와 원칙</b></td><td>스스로 실천해야 해서 다른 사람이 <b>강제로 지키게 할 수 없다</b></td></tr>
+        <tr><td>법</td><td>공동체 유지를 위해 <b>최소한</b>으로 지켜야 할 것을 정한 규범</td><td><b>강제</b> → 어기면 처벌 가능</td></tr>
+        <tr><td>예절</td><td>오랫동안 함께 살아온 사람들 사이에 <b>관습</b>으로 형성된 규범</td><td>시대나 상황에 따라 다르게 나타날 수 있다</td></tr>
+    </table>
+    <div class="card hl reveal" style="margin-top:28px">
+        <p style="font-size:30px">법과 예절은 모두 <b>도덕의 정신</b>을 담고 있다.</p>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 9. 도덕의 필요성 === -->
+<section class="slide">
+    <div class="kicker">02 도덕은 왜 필요할까?</div>
+    <h2>도덕의 필요성 <small><span class="nw">p.18</span></small></h2>
+    <div class="grid g3">
+        <div class="card hl reveal step">
+            <span class="no">1</span><br>
+            <h3>판단의 길잡이</h3>
+            <p>옳고 그름을 판단하는 기준을 제시 → 판단하고 갈등을 원만하게 해결할 수 있다.</p>
+        </div>
+        <div class="card hl reveal step">
+            <span class="no">2</span><br>
+            <h3>정의로운 공동체</h3>
+            <p>자기 이익만 위해 행동하면 다툼으로 질서가 무너진다 → 도덕을 지켜야 공동체가 <b>정의롭게</b> 유지된다.</p>
+        </div>
+        <div class="card hl reveal step">
+            <span class="no">3</span><br>
+            <h3>더불어 사는 삶</h3>
+            <p>다른 사람과 원만하게 관계를 맺고 함께 살 수 있다. 재능으로 남을 도우면 보람과 기쁨 속에 인격적으로 <b>성장</b>한다.</p>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:28px">
+        <h3>철학자 칸트</h3>
+        <p>독일 철학자 <b>칸트</b> : 도덕적으로 살아가는 것은 인간의 <b>도덕적 의무</b>. 도덕적으로 사는 것이 오히려 더 큰 이익이 되기도 하고, 함께 더불어 행복하게 살 수 있다.</p>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 10. 도덕적 정체성 === -->
+<section class="slide">
+    <div class="kicker">03 도덕적으로 살려면 어떻게 해야 할까?</div>
+    <h2>도덕적 정체성 <small><span class="nw">p.20</span></small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>자아 정체성</h3>
+            <p><b>자아 정체성</b> : 시간이나 상황에 따라 나의 모습이 변해도 그 변화 속에서 <b>나를 나라고 여기게</b> 해 주는 것.</p>
+        </div>
+        <div class="card hl reveal">
+            <h3>도덕적 정체성의 의미</h3>
+            <p>도덕적 신념과 가치관을 지니고, 자신의 정체성에서 <b>도덕성이 핵심</b>이라 생각해 도덕적 삶을 살고자 하는 것.</p>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>도덕적 정체성의 역할</h3>
+        <div class="swipe-hint" aria-hidden="true">← 옆으로 밀어서 보기 →</div>
+        <div class="svgbox sx">
+            <svg viewBox="0 0 1000 270" style="max-width:1250px" role="img" aria-label="도덕적으로 행동하겠다는 마음가짐, 자율적 실천, 도덕적 책임감이 도덕적 행동의 원동력이 된다는 그림">
+                <defs><marker id="ar2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1c3a5e"/></marker></defs>
+                <rect x="10" y="10" width="600" height="60" rx="14" fill="#fff" stroke="#2b6cb0" stroke-width="3"/>
+                <text x="310" y="49" text-anchor="middle" fill="#1c3a5e" font-size="26" font-weight="700">도덕적으로 행동하겠다는 마음가짐</text>
+                <rect x="10" y="90" width="600" height="60" rx="14" fill="#fff" stroke="#2b6cb0" stroke-width="3"/>
+                <text x="310" y="129" text-anchor="middle" fill="#1c3a5e" font-size="26" font-weight="700">자율적 실천</text>
+                <rect x="10" y="170" width="600" height="90" rx="14" fill="#fff" stroke="#2b6cb0" stroke-width="3"/>
+                <text x="310" y="206" text-anchor="middle" fill="#1c3a5e" font-size="26" font-weight="700">도덕적 책임감으로 도덕적 가치·기준에</text>
+                <text x="310" y="242" text-anchor="middle" fill="#1c3a5e" font-size="26" font-weight="700">따라 살려는 노력</text>
+                <path d="M620 40 L690 112" stroke="#1c3a5e" stroke-width="4" fill="none" marker-end="url(#ar2)"/><path d="M620 120 H690" stroke="#1c3a5e" stroke-width="4" fill="none" marker-end="url(#ar2)"/><path d="M620 215 L690 150" stroke="#1c3a5e" stroke-width="4" fill="none" marker-end="url(#ar2)"/>
+                <rect x="700" y="80" width="290" height="110" rx="18" fill="#1f6fb5"/>
+                <text x="845" y="125" text-anchor="middle" fill="#fff" font-size="28" font-weight="700">도덕적 행동의</text>
+                <text x="845" y="161" text-anchor="middle" fill="#fff" font-size="28" font-weight="700">원동력</text>
+            </svg>
+        </div>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 11. 정체성 형성 노력 === -->
+<section class="slide">
+    <div class="kicker">03 도덕적으로 살려면 어떻게 해야 할까?</div>
+    <h2>도덕적 정체성을 형성하기 위한 노력 <small>4가지 · <span class="nw">p.22</span></small></h2>
+    <div class="grid g4">
+        <div class="card hl reveal step">
+            <span class="no">1</span><br>
+            <h3>도덕적 가치관 설정</h3>
+            <p>정직·존중·배려·책임 같은 가치 중 내가 중요하게 여기는 것을 파악하고 실현하며 살고자 한다.</p>
+        </div>
+        <div class="card hl reveal step">
+            <span class="no">2</span><br>
+            <h3>실천 의지 함양</h3>
+            <p>도덕적 삶이 손해이거나 귀찮다고 느껴도 선택과 실천 의지로 만들어 갈 수 있다.</p>
+        </div>
+        <div class="card hl reveal step">
+            <span class="no">3</span><br>
+            <h3>도덕적 실천의 반복</h3>
+            <p>실천으로 이어질 때 비로소 완성된다. 가치를 반복 실천해 <b>습관화</b>한다.</p>
+        </div>
+        <div class="card hl reveal step">
+            <span class="no">4</span><br>
+            <h3>자신에 대한 성찰</h3>
+            <p>되고 싶은 모습과 실제 모습이 일치하는지, 추구하는 정체성이 잘못되지 않았는지 살핀다.</p>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card reveal">
+            <span class="lb">사례</span> <b>오드리 헵번</b> : 은퇴 후 아프리카 어린이를 도왔다 (반복 실천). 도덕적 인물을 모범으로 삼는 것도 도움이 된다.
+        </div>
+        <div class="card reveal">
+            <span class="lb">인용</span> 철학자 <b>존 듀이</b> : "실제적인 도덕적 문제는 어떤 종류의 자아가 형성되느냐 하는 것이다."
+        </div>
+    </div>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 12. 관계 속의 나 === -->
+<section class="slide">
+    <div class="kicker">특집 · 단원 탐구</div>
+    <h2>관계 속의 나 <small>특집 · <span class="nw">p.24~25</span></small></h2>
+    <div class="card reveal">
+        <div class="swipe-hint" aria-hidden="true">← 옆으로 밀어서 보기 →</div>
+        <div class="svgbox sx">
+            <svg viewBox="0 0 1000 290" style="max-width:1250px" role="img" aria-label="개인은 공동체에 영향을 미치고, 환경에 적응하며 다른 개인이 되는 상호적 관계를 나타내는 그림">
+                <defs><marker id="ar3" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1c3a5e"/></marker></defs>
+                <rect x="20" y="20" width="230" height="100" rx="20" fill="#1f6fb5"/>
+                <text x="135" y="82" text-anchor="middle" fill="#fff" font-size="34" font-weight="700">개인</text>
+                <rect x="750" y="20" width="230" height="100" rx="20" fill="#2f7d46"/>
+                <text x="865" y="82" text-anchor="middle" fill="#fff" font-size="34" font-weight="700">공동체</text>
+                <path d="M270 70 H730" stroke="#1c3a5e" stroke-width="4" fill="none" marker-end="url(#ar3)"/>
+                <text x="500" y="52" text-anchor="middle" fill="#1c3a5e" font-size="26" font-weight="700">공동체에 영향을 미친다</text>
+                <rect x="750" y="170" width="230" height="100" rx="20" fill="#fff" stroke="#a35a10" stroke-width="4"/>
+                <text x="865" y="232" text-anchor="middle" fill="#a35a10" font-size="34" font-weight="700">환경</text>
+                <path d="M740 220 H135 V132" stroke="#1c3a5e" stroke-width="4" fill="none" marker-end="url(#ar3)"/>
+                <text x="450" y="206" text-anchor="middle" fill="#1c3a5e" font-size="26" font-weight="700">환경에 적응하며 다른 개인이 된다</text>
+            </svg>
+        </div>
+    </div>
+    <div class="card hl reveal" style="margin-top:24px">
+        <p style="font-size:30px"><b>조지 허버트 미드</b> : 개인은 환경에 적응하며 다른 개인이 되고, 그로써 공동체에 영향을 미친다 → 개인과 공동체 사이에는 늘 <b>상호적 관계</b>가 있다.</p>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <span class="lb">특집</span> 우주 속의 나(칼 세이건, p.24), 시간 속의 나(스티븐 로, p.25), 관계 속의 나(미드).
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 13. 헷갈리기 쉬운 것 === -->
+<section class="slide">
+    <div class="kicker">헷갈리기 쉬운 것</div>
+    <h2>구분하기</h2>
+    <div class="grid g2" style="grid-template-columns:1.4fr 1fr">
+        <table class="t reveal" style="font-size:25px">
+            <tr><th>비교</th><th>앞의 개념</th><th>뒤의 개념</th></tr>
+            <tr><td>존재</td><td>개인적 : 내가 바라보는 나</td><td>사회적 : 관계·역할 속의 나</td></tr>
+            <tr><td>가치</td><td>도구적 : 목적을 위한 수단</td><td>본래적 : 그 자체로 목적</td></tr>
+            <tr><td>규범</td><td>법 : 강제, 어기면 처벌</td><td>예절 : 관습, 시대·상황에 따라 다름</td></tr>
+            <tr><td>정체성</td><td>자아 정체성 : 변해도 나를 나라고 여김</td><td>도덕적 정체성 : 도덕성이 핵심인 자아</td></tr>
+        </table>
+        <div class="card warn reveal">
+            <h3>이렇게 기억하자</h3>
+            <ul class="l" style="font-size:25px">
+                <li><b>도덕적 가치</b>는 정신적 가치 중 옳고 그름과 관련된 것.</li>
+                <li>도덕은 스스로 실천해야 해서 <b>강제</b>할 수 없다.</li>
+                <li>내가 옳다고 생각하는 것만으로는 도덕이라 할 수 없다 → <b>보편적 관점</b>.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12. 시험 포인트 · 핵심 정리 === -->
+<section class="slide">
+    <div class="kicker">꼭 기억할 것</div>
+    <h2>시험 포인트와 핵심 정리 <small>쪽수는 교과서 기준</small></h2>
+    <div class="grid g3">
+        <div class="card hl reveal">
+            <h3 style="font-size:40px"><span class="tag">01</span>나는 어떤 사람일까?</h3>
+            <ul class="l">
+                <li><b>자아</b> = 개인적 존재 + 사회적 존재, 청소년기에는 둘을 균형 있게 통합 <span class="ref">p.12</span></li>
+                <li><b>가치</b> : 물질적 / 정신적(그중 <b>도덕적 가치</b>), 도구적 / 본래적, 바람직한 가치의 특징. <b>가치관</b>은 행동의 기준 <span class="ref">p.14</span></li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3 style="font-size:40px"><span class="tag">02</span>도덕은 왜 필요할까?</h3>
+            <ul class="l">
+                <li>도덕의 특성 3가지(근본적·자율적·보편적 규범)와 <b>양심</b> <span class="ref">p.16</span></li>
+                <li>도덕·법·예절 : 스스로 실천 / 강제·처벌 / 관습 <span class="ref">p.17</span></li>
+                <li>도덕의 필요성 3가지(판단의 길잡이·정의로운 공동체·더불어 사는 삶), <b>칸트</b> <span class="ref">p.18</span></li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3 style="font-size:40px"><span class="tag">03</span>도덕적으로 살려면?</h3>
+            <ul class="l">
+                <li><b>도덕적 정체성</b>은 도덕적 행동의 원동력 <span class="ref">p.20</span></li>
+                <li>형성 노력 <span class="nw">4가지</span> : 가치관 설정 / 실천 의지 / 반복 실천 / 자신에 대한 성찰, <b>존 듀이</b> <span class="ref">p.22</span></li>
+                <li><b>조지 허버트 미드</b> <span class="ref">p.25</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <span class="lb">논술형</span> 도덕적으로 사는 것이 왜 중요한지(<b>도덕의 필요성</b>)를 사례에 적용해 설득하기.
+    </div>
+    <div class="pg">12</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <span id="count">1 / 12</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 1100px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+<script>
+/* === 산책길 진행 표시: 풀밭 길 위의 강아지 + 구름 점 (컨트롤러와 독립, #count 변화를 따라감) === */
+(function () {
+    var count = document.getElementById('count'), box = document.getElementById('controls');
+    if (!count || !box) return;
+    var N = document.querySelectorAll('.slide').length;
+    var tr = document.createElement('div'); tr.className = 'trail';
+    var W = 292;
+    var h = '<div class="road"></div><div class="walked"></div>';
+    for (var i = 0; i < N; i++) h += '<div class="post" style="left:' + (10 + i * (W / (N - 1))) + 'px"></div>';
+    h += '<svg class="flag" viewBox="0 0 24 30"><rect x="10.5" y="18" width="3" height="12" fill="#8a5a2b"/><circle cx="12" cy="11" r="9" fill="#2f7d46"/><circle cx="7" cy="14" r="5.5" fill="#3f9a45"/></svg>';
+    h += '<svg class="dog" viewBox="0 0 30 26"><ellipse cx="13" cy="15" rx="10" ry="6.5" fill="#fffdf6" stroke="#c9bfa6" stroke-width="1.2"/><circle cx="23" cy="10" r="6" fill="#fffdf6" stroke="#c9bfa6" stroke-width="1.2"/><ellipse cx="19" cy="7" rx="2.6" ry="4" fill="#d9c7a6"/><circle cx="25" cy="9" r="1" fill="#2b2430"/><circle cx="28.2" cy="11.5" r="1.2" fill="#2b2430"/><rect x="6" y="19" width="3" height="6" rx="1.5" fill="#fffdf6" stroke="#c9bfa6" stroke-width="1"/><rect x="16" y="19" width="3" height="6" rx="1.5" fill="#fffdf6" stroke="#c9bfa6" stroke-width="1"/><path d="M3 13 Q-1 8 2 6" fill="none" stroke="#c9bfa6" stroke-width="2" stroke-linecap="round"/></svg>';
+    tr.innerHTML = h;
+    box.insertBefore(tr, count);
+    var walked = tr.querySelector('.walked'), dg = tr.querySelector('.dog'), posts = tr.querySelectorAll('.post');
+    function upd() {
+        var m = /(\d+)\s*\/\s*(\d+)/.exec(count.textContent); if (!m) return;
+        var k = +m[1] - 1, x = 10 + k * (W / (N - 1));
+        dg.style.left = x + 'px'; walked.style.width = (x - 10) + 'px';
+        for (var i = 0; i < posts.length; i++) posts[i].className = 'post' + (i <= k ? ' done' : '');
+    }
+    new MutationObserver(upd).observe(count, { childList: true, characterData: true, subtree: true });
+    upd();
+})();
+</script>
+
+<script>
+/* 폰 화면용: 표 머리 글을 각 칸에 붙여 두면(data-label) CSS가 행 단위 카드로 쌓아 보여 준다 */
+(function(){
+  document.querySelectorAll('.slide table').forEach(function(t){
+    var rows=[].slice.call(t.rows); if(rows.length<2) return;
+    var hr=rows[0]; if(![].every.call(hr.cells,function(c){return c.tagName==='TH';})) return;
+    var labels=[], col=0;
+    [].forEach.call(hr.cells,function(c){ var n=c.colSpan||1; for(var k=0;k<n;k++) labels[col++]=c.textContent.replace(/\s+/g,' ').trim(); });
+    hr.classList.add('hrow');
+    var busy=[];
+    rows.slice(1).forEach(function(r){
+      var c=0;
+      [].forEach.call(r.cells,function(cell){
+        while(busy[c]>0){ c++; }
+        if(c>0 && labels[c]) cell.setAttribute('data-label',labels[c]);
+        var rs=cell.rowSpan||1, cs=cell.colSpan||1;
+        for(var k=0;k<cs;k++){ if(rs>1) busy[c+k]=rs; }
+        c+=cs;
+      });
+      for(var i=0;i<busy.length;i++){ if(busy[i]>0 && !(busy[i]===undefined)) { /* 아래에서 감소 */ } }
+      busy=busy.map(function(v){ return v>0 ? v-1 : 0; });
+    });
+    t.classList.add('stack');
+  });
+})();
+</script>
+</body>
+</html>
