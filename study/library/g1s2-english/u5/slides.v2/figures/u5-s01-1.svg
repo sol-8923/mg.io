@@ -1,0 +1,16 @@
+<svg class="scene" viewBox="-920 0 1920 1080" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<path d="M-700 120 Q-700 140 -680 140 Q-700 140 -700 160 Q-700 140 -720 140 Q-700 140 -700 120Z" fill="#FFC83D"/>
+<path d="M-300 70 Q-300 84 -286 84 Q-300 84 -300 98 Q-300 84 -314 84 Q-300 84 -300 70Z" fill="#fff"/>
+<path d="M200 130 Q200 150 220 150 Q200 150 200 170 Q200 150 180 150 Q200 150 200 130Z" fill="#fff"/>
+<path d="M900 120 Q900 140 920 140 Q900 140 900 160 Q900 140 880 140 Q900 140 900 120Z" fill="#FFC83D"/>
+<rect x="260" y="190" width="430" height="500" rx="14" fill="#FFC83D" stroke="#14233F" stroke-width="8"/>
+<rect x="300" y="230" width="350" height="420" rx="6" fill="#EEF5FF" stroke="#14233F" stroke-width="6"/>
+<path d="M300 560 Q380 470 450 540 Q520 600 650 480 L650 650 L300 650Z" fill="#8DB3E6"/>
+<circle cx="560" cy="330" r="36" fill="#FFE08A"/>
+<ellipse cx="770" cy="912" rx="190" ry="26" fill="#0F2547" opacity=".45"/>
+<circle cx="770" cy="740" r="170" fill="#C23B22" stroke="#14233F" stroke-width="8"/>
+<path d="M670 650 Q700 600 770 596" stroke="#FFB8A6" stroke-width="16" fill="none" stroke-linecap="round"/>
+<rect x="800" y="250" width="110" height="110" fill="#FFC83D" stroke="#14233F" stroke-width="5"/>
+<rect x="740" y="380" width="110" height="110" fill="#F7A8C8" stroke="#14233F" stroke-width="5"/>
+<rect x="860" y="420" width="110" height="110" fill="#8FE3F4" stroke="#14233F" stroke-width="5"/>
+</svg>

@@ -1,0 +1,276 @@
+{
+ "unitName": "Dream High, Fly High!",
+ "profile": "past-exam",
+ "basis": "past-exam-pattern",
+ "analysis": "학교 기출(1학년 영어 2024·2025 기말) 유형(docs/subjects/영어.md 0번)을 기준으로, 객관식(mc) 13슬롯 + 서술형(essay) 4슬롯 × 변형 2 = 34문항, 65점(객관식 49점 + 서술형 16점, 서술형 비중 약 25%)으로 구성했다. [배점] 3점 4(Q01·Q02·Q03·Q10) · 4점 8(Q04·Q05·Q06·Q08·Q09·Q11·Q12·Q13) · 5점 1(Q07 어법 조합형, 5점은 이 하나뿐) · 서술형 4점×4. 난이도 라벨은 하 4 · 중 9 · 상 4. [영역] 어휘 4(Q01~Q04) · 어법 5(Q05~Q09) · 대화 2(Q10·Q11) · 독해 2(Q12·Q13) + 서술형 어법·영작 3(S01·S02·S04)·독해 1(S03). 어휘+어법이 객관식 9/13(69%), 전체 12/17(71%). [반드시 쓰는 문형] (가) 두 단어 관계·공통 빈칸·잘못된 뜻(Q01~Q03) (나) '쓰임이 나머지와 다른 것' to(Q05)·when(Q06) (다) 밑줄 어법 조합 올바른/올바르지 않은 것끼리(Q07)·밑줄 중 틀린 것(Q08) (라) 어색한 대화(Q10)·(A)~(E) 순서 배열(Q11) (마) 독해 내용 일치(Q12)·답할 수 없는 질문(Q13). 서술형은 주어진 단어 영작(S01·S04, 어형 변화·추가 단어 개수 명시), 어법 오류 고치기(S02, 각 1점), 본문에서 단어 찾기(S03, 각 1점). [발문·선택지] 발문 한국어, 선택지 영어(Q12 b와 Q02·Q03의 뜻 병기만 한국어 포함). 앱이 밑줄을 표시하지 못해 밑줄 대상은 [ ]로 표시하고 발문에 '[ ]로 표시한'이라고 적었다. 지문이 필요한 Q12·Q13·S03은 같은 어휘·문법으로 새로 쓴 짧은 글·대화를 문항에 넣었다. [기출 처리] 이 단원 id 6행 중 편입 1: 2025-2학기-기말-18(when 접속사 vs 의문사, Q06 변형 a, 원문 그대로, 밑줄만 대괄호 표시로 바꿈). 제외 5: 2024-18(정답 근거 '목적을 나타내는 부사적 용법'이 학생용 p.107의 목적어 예문 밖, promise·hate도 학생용 쪽에 없음) · 2024-19(정답 hopes to learn의 hope는 교사용·지도서 목록에만, 오답 풀이에 쓰는 should 어순은 L6 교과서 쪽 근거 없음) · 2024-서8(정답지 없이 직접 도출한 값이고 빈칸 8칸만 있어 when절 앞·뒤 두 어순이 모두 가능해 모범 답안·채점 기준이 하나로 정해지지 않음) · 2025-14(looks like·practices dancing·consider는 학생용 쪽에 근거 없음, 동명사는 L6 언어 형식 아님) · 2025-23(grow up은 교사용·지도서 듣기 대본에만, 미래 when절 현재시제 규칙은 지도서 22와 p.110 예시 하나뿐). [사실 배분표] Q01 luckily 부사–lucky 형용사(a, p.104)·act–acting 동작 이름(b, p.104) | Q02 play 연극·놀다(a, p.104)·spend 시간·돈(b, p.105) | Q03 has two left feet=춤이 서툴다(a, p.104)·even=~조차(b, p.104) | Q04 take care of·fall in love with·in front of(a, p.105·104·102)·in one's sleep·all over·on the way to(b, p.104·105) | Q05 to부정사의 to 뒤 동사원형 vs 전치사 to 뒤 명사(p.107·104) | Q06 접속사 when(~할 때) vs 의문사 When(언제)(p.107·108) | Q07 to + 동사원형·3인칭 단수 -s·when + 주어 + 동사(p.107) | Q08 interested in 뒤 to부정사 금지(a, p.98)·want 뒤 to 빠뜨림(b, p.99·105) | Q09 decide to + 동사원형(a, p.108)·when절 어순(b, p.107) | Q10 관심 질문–I'm interested in 답(a, p.98)·Why 질문–이유 답(b, p.99) | Q11 희망–이유–응원 순서(a, p.99·101)·관심 묻고 되묻기(b, p.98) | Q12 지문 내용 일치 | Q13 지문·대화에 없는 정보 | S01 when절 + like/want to 영작 | S02 오류 고치기 | S03 본문 단어 찾기 | S04 want·plan·like + to + 동사원형 영작. 슬롯 간 같은 사실을 정답으로 반복하지 않도록 정답 사실을 하나씩 나눴다(오답 보기·오류 문장에는 같은 문법 형태가 나올 수 있다). [정답 번호 배분표(Q01~Q13 순)] 변형 a = 3·1·4·2·5·3·1·5·2·4·1·3·2 (①3 ②3 ③3 ④2 ⑤2), 변형 b = 4·5·2·3·1·5·4·2·5·3·1·5·4 (①2 ②2 ③2 ④3 ⑤4), 각 변형 3연속 없음, 전체 ①5 ②5 ③5 ④5 ⑤6. [서술형] 선택형 확정 후 avoid_motifs 출력의 이름·정답 문장·소재를 S01~S04 avoidMotifs에 적고, 겹치지 않는 이름(Minho·Eric·Doyun·Yuri·Nari·Minsu·Jun·Somin·Minjun)과 소재로 설계했다.",
+ "timeLimitMin": 45,
+ "totalPoints": 65,
+ "variantsPerSlot": 2,
+ "totalQuestions": 17,
+ "types": {
+  "mc": 13,
+  "short": 0,
+  "essay": 4
+ },
+ "difficulty": {
+  "상": 4,
+  "중": 9,
+  "하": 4
+ },
+ "concepts": {
+  "단어 관계(파생어)": 1,
+  "공통 빈칸(다의어)": 1,
+  "밑줄 표현의 뜻": 1,
+  "전치사 조합(구동사)": 1,
+  "to의 쓰임": 1,
+  "when의 쓰임": 1,
+  "어법 조합(밑줄 ⓐ~ⓔ)": 1,
+  "틀린 표현 찾기(밑줄)": 1,
+  "바른 문장·단어 배열": 1,
+  "어색한 대화": 1,
+  "대화 순서 배열": 1,
+  "독해 내용 일치": 1,
+  "답할 수 없는 질문": 1,
+  "when 영작(어형 변화·단어 추가)": 1,
+  "어법 오류 고치기": 1,
+  "본문에서 단어 찾기": 1,
+  "to부정사 목적어 영작": 1
+ },
+ "slots": [
+  {
+   "id": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "단어 관계(파생어)",
+   "intent": "[어휘] 두 단어의 관계가 나머지와 다른 것. a: 명사-형용사 짝 4개 중 부사-형용사(luckily-lucky) 찾기, b: 동사-행위자 짝 4개 중 동사-동작 이름(act-acting) 찾기.",
+   "facts": [
+    "luckily는 부사, lucky는 형용사 (p104 luckily)",
+    "act(동)-acting(명)은 행위자(singer·writer·designer·reporter)가 아닌 동작 이름 (p104·p108·p99)"
+   ]
+  },
+  {
+   "id": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "공통 빈칸(다의어)",
+   "intent": "[어휘] 두 문장의 빈칸에 공통으로 들어갈 말. a: play(연극 명사·놀다 동사), b: spend(시간을 보내다·돈을 쓰다).",
+   "facts": [
+    "play는 명사 '연극'과 동사 '놀다'로 쓰인다 (p104)",
+    "spend는 시간을 보내다·돈을 쓰다 (p105)"
+   ]
+  },
+  {
+   "id": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "밑줄 표현의 뜻",
+   "intent": "[어휘] 밑줄 친 표현의 우리말 뜻이 알맞지 않은 것. a: has two left feet(춤·운동이 서툴다)를 달리 풀이한 것 찾기, b: even(~조차)을 '~도 또한'으로 풀이한 것 찾기.",
+   "facts": [
+    "has two left feet = 동작(춤)이 서툴다 (p104)",
+    "even은 '~조차', '~도 또한'은 too (p104)"
+   ]
+  },
+  {
+   "id": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "전치사 조합(구동사)",
+   "intent": "[어휘] 세 문장 빈칸에 들어갈 전치사 조합. a: take care of · fall in love with · in front of, b: in one's sleep · all over the country · on the way to.",
+   "facts": [
+    "take care of / fall in love with / in front of (p105, p104, p102)",
+    "in his sleep / all over the country / on the way to (p104, p105)"
+   ]
+  },
+  {
+   "id": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "to의 쓰임",
+   "intent": "[어법] 밑줄 친 to의 쓰임이 나머지와 다른 것. a: 부정사 to 4개 중 전치사 to, b: 전치사 to 4개 중 부정사 to.",
+   "facts": [
+    "to부정사의 to는 뒤에 동사원형 (p107)",
+    "전치사 to는 뒤에 명사(장소) (p104 on the way to school)"
+   ]
+  },
+  {
+   "id": "Q06",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "when의 쓰임",
+   "intent": "[어법] 밑줄 친 when의 쓰임이 나머지와 다른 것. a: 기출 원문(접속사 4개 중 의문사), b: 의문사 4개 중 접속사.",
+   "facts": [
+    "접속사 when: ~할 때, 뒤에 주어+동사 (p107)",
+    "의문사 When: 언제, 의문문 어순 (p108 Q3)"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-18"
+   ]
+  },
+  {
+   "id": "Q07",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "어법 조합(밑줄 ⓐ~ⓔ)",
+   "intent": "[어법·5점 조합형] 밑줄 친 ⓐ~ⓔ 중 올바르지 않은 것끼리(a)/올바른 것끼리(b) 짝짓기. to+동사원형, when+주어+동사 형태. b의 ⓔ는 미래 내용을 말하는 when절의 현재시제(p110).",
+   "facts": [
+    "to + 동사원형 형태 (p107)",
+    "when + 주어 + 동사 (p107)",
+    "미래 내용을 말하는 when절은 현재시제: Q07-b ⓔ When I become a doctor (p110)"
+   ]
+  },
+  {
+   "id": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "틀린 표현 찾기(밑줄)",
+   "intent": "[어법] 짧은 글의 밑줄 친 부분 중 어법상 틀린 것. a: 전치사 in 뒤의 to부정사, b: want 뒤 to 빠뜨림.",
+   "facts": [
+    "interested in 뒤에는 동명사/명사 (p98)",
+    "want to be (p99)"
+   ]
+  },
+  {
+   "id": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "바른 문장·단어 배열",
+   "intent": "[어법] a: 어법상 바른 문장 고르기, b: 주어진 단어를 배열할 때 3번째 단어(when절 어순).",
+   "facts": [
+    "decide to + 동사원형 (p108)",
+    "when + 주어 + 동사 어순 (p107)"
+   ]
+  },
+  {
+   "id": "Q10",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어색한 대화",
+   "intent": "[대화] 어색한 대화 고르기. a: 관심 질문에 장래 희망으로 답함, b: Why 질문에 Yes로 답함.",
+   "facts": [
+    "관심 질문 - I'm interested in (p98)",
+    "장래 희망 질문 - I want to be, Why 질문 - 이유 (p99)"
+   ]
+  },
+  {
+   "id": "Q11",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "대화 순서 배열",
+   "intent": "[대화] (A)~(E) 순서 배열. a: 장래 희망-이유-응원, b: 관심 묻고 답하기-되묻기.",
+   "facts": [
+    "장래 희망 묻고 이유 묻기 (p99)",
+    "관심 말하기와 이유 덧붙이기 (p98)"
+   ]
+  },
+  {
+   "id": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해 내용 일치",
+   "intent": "[독해] 지문(새로 쓴 짧은 글)과 일치하는 것. a: 영어 선지, b: 한국어 선지.",
+   "facts": [
+    "지문 근거(문항 안 지문)",
+    "글 구조: 좋아한 일-계기-현재 직업 (p104~105)"
+   ]
+  },
+  {
+   "id": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "답할 수 없는 질문",
+   "intent": "[독해·대화] 지문/대화를 읽고 답할 수 없는 질문. a: 지문, b: 대화.",
+   "facts": [
+    "지문에 없는 정보(나이)",
+    "대화에 없는 정보(좋아하는 종목)"
+   ]
+  },
+  {
+   "id": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "when 영작(어형 변화·단어 추가)",
+   "intent": "[서술형 영작] 주어진 단어로 when 문장 영작(when절 + like/want to 주절). 어형 변화·추가 단어(to) 조건 명시.",
+   "facts": [
+    "when + 주어 + 동사 (p107), like/want to + 동사원형 (p107)"
+   ],
+   "avoidMotifs": [
+    "이름 Tom·Mina·Tim·Hana·Sam·Jisu·Leo·Jina·Sue·Dan·Jin·Anna·Jack·Sora·Kevin·Ben·유나(Yuna)",
+    "play/spend 다의어 빈칸, luckily–lucky, act–acting 단어 관계",
+    "has two left feet(춤이 서툴다), even(~조차) 뜻풀이",
+    "of–with–of, in–over–on 전치사 조합",
+    "to부정사의 to vs 전치사 to 구분(Mina walked to the bus stop / Dad wants to paint the fence)",
+    "접속사 when vs 의문사 When 구분(We had lunch when the rain stopped / When did he buy that laptop computer?)",
+    "My sister decided to join the school band.",
+    "Tim began to love baking at the age of ten.",
+    "How old is Leo now? / Which sport does Sam like best?"
+   ]
+  },
+  {
+   "id": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어법 오류 고치기",
+   "intent": "[서술형] 문장 4개에서 틀린 단어를 하나씩 찾아 고치기(각 1점).",
+   "facts": [
+    "to + 동사원형, 3인칭 단수 -s, as(~로서), 시제 일치 (p107·p105·p104)",
+    "a/an 구별: S02-b (3) a engineer → an engineer (p100)"
+   ],
+   "avoidMotifs": [
+    "이름 Tom·Mina·Tim·Hana·Sam·Jisu·Leo·Jina·Sue·Dan·Jin·Anna·Jack·Sora·Kevin·Ben·유나(Yuna)",
+    "wanted be a drummer / is interested in to make clothes (틀린 표현 찾기 정답)",
+    "decided to join, wants to being, when saw 등 Q07·Q09 오류 문장",
+    "has two left feet, even, play/spend, luckily–lucky 어휘 문항",
+    "A: What are you interested in? B: I want to be a scientist. / A: Why do you want to be a designer? B: Yes, I do."
+   ]
+  },
+  {
+   "id": "S03",
+   "type": "essay",
+   "difficulty": "하",
+   "points": 4,
+   "concept": "본문에서 단어 찾기",
+   "intent": "[서술형 독해] 새로 쓴 글을 읽고 요약문 빈칸에 들어갈 단어를 글에서 찾아 쓰기(각 1점).",
+   "facts": [
+    "글에 나온 단어(철자 확인)"
+   ],
+   "avoidMotifs": [
+    "이름 Tim·Leo·Sam·Hana·Yuna(유나)·Jisu·Ben·Jina·Tom·Mina",
+    "Tim(제빵사)·Leo(스포츠 기자)·유나(동물 의사) 글 소재",
+    "대화 순서 (C)–(A)–(E)–(D)–(B) / (B)–(A)–(D)–(C)–(E)",
+    "독해 정답 문장: Tim began to love baking at the age of ten. / 유나는 동물들이 아플 때 돌본다."
+   ]
+  },
+  {
+   "id": "S04",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "to부정사 목적어 영작",
+   "intent": "[서술형 영작] want·plan·like 뒤 to + 동사원형 문장을 주어진 단어로 영작(각 2점, 추가 단어·어형 변화 조건 명시).",
+   "facts": [
+    "want/plan/like + to + 동사원형 (p99, p107)"
+   ],
+   "avoidMotifs": [
+    "이름 Tom·Mina·Tim·Hana·Sam·Jisu·Leo·Jina·Sue·Dan·Jin·Anna·Jack·Sora·Kevin·Ben·유나(Yuna)",
+    "I'm interested in ~ / I want to be ~ 질문·대답 대화(Q10·Q11)",
+    "decided to join / plans to study / wants to paint 등 Q05·Q08·Q09의 to부정사 정답 문장",
+    "My sister decided to join the school band. / Dad wants to paint the fence."
+   ]
+  }
+ ]
+}

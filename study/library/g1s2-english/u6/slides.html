@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 6. Dream High, Fly High! - 교과 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style-english.md) : 영어 = 여행 엽서·말풍선(항공 노선) === */
+:root {
+    --bg: #EEF5FF;
+    --bg-2: #FFFFFF;
+    --bg-3: #1F3F73;
+    --ink: #14233F;
+    --ink-dim: #4A5F80;
+    --brass: #C23B22;      /* 강조(마젠타) - 기존 변수명 유지 */
+    --purple: #2D5A8C;     /* 소제목 */
+    --line: #4F86C6;       /* 카드 테두리(보라) */
+    --soft: #CFE0F7;
+    --cyan: #39B8E8;
+    --star: #FFC83D;
+    --warn: #B93A12;
+    --warn-line: #E8552D;
+    --font-display: 'Jua', 'Gowun Dodum', 'Malgun Gothic', sans-serif;
+    --font-body: 'Gowun Dodum', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0F2547;
+    --slide-bg: var(--bg);
+    --deco: none;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 96px;
+    font-size: 27px;
+    line-height: 1.5;
+    isolation: isolate;
+    background: linear-gradient(180deg, #E3EEFF 0%, #F4F9FF 100%);
+}
+.slide::before { /* 우주 장식: 점선 창틀 · 토성 · 별 · 달 표면 */
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: var(--deco) center / 1920px 1080px no-repeat;
+}
+.kicker { display: inline-block; font-size: 24px; letter-spacing: .06em; color: #fff; background: var(--brass); font-weight: 700; margin-bottom: 10px; padding: 2px 20px 3px; border-radius: 99px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 60px; line-height: 1.2; color: var(--ink); margin-bottom: 26px; }
+h2::before { content: ""; display: inline-block; width: 46px; height: 46px; margin-right: 16px; vertical-align: -6px; background: var(--star); border: 4px solid var(--bg-3); border-radius: 50%; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 400; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 400; font-size: 34px; color: var(--purple); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 64px; bottom: 14px; width: 66px; height: 66px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 30px; color: #fff; z-index: 2; }
+.pg::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--purple); border: 4px solid var(--bg-3); border-radius: 50%; box-shadow: 0 0 0 5px var(--cyan) inset; }
+.pg::after { content: ""; position: absolute; left: -24px; right: -24px; top: 50%; height: 14px; margin-top: -7px; border: 4px solid var(--star); border-radius: 50%; transform: rotate(-18deg); z-index: -2; }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { position: relative; background: var(--bg-2); border: 4px solid var(--line); border-radius: 30px; padding: 22px 30px; box-shadow: 0 7px 0 rgba(91,42,166,.22); }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 6px #FFE0EF, 0 7px 0 rgba(194,24,107,.22); }
+.card.hl::after { content: ""; position: absolute; top: -11px; right: 40px; width: 16px; height: 16px; border-radius: 50%; background: var(--cyan); border: 3px solid var(--bg-3); }
+.card.warn { border-color: var(--warn-line); background: #FFF3EC; box-shadow: 0 7px 0 rgba(232,85,45,.22); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 36px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .36em; width: 22px; height: 22px; background: var(--brass); clip-path: polygon(50% 0, 62% 36%, 98% 38%, 69% 60%, 80% 96%, 50% 74%, 20% 96%, 31% 60%, 2% 38%, 38% 36%); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 13px; border: 3px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; font-weight: 700; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 27px; border: 4px solid var(--bg-3); border-radius: 26px; overflow: hidden; background: #fff; }
+table.t th { background: var(--bg-3); color: #fff; font-family: var(--font-display); font-weight: 400; text-align: left; padding: 12px 18px; border-right: 2px solid #5A48A5; }
+table.t td { padding: 12px 18px; border-right: 2px solid var(--soft); border-bottom: 2px solid var(--soft); background: #fff; vertical-align: top; }
+table.t tr:nth-child(even) td { background: #EEF5FF; }
+table.t th:last-child, table.t td:last-child { border-right: 0; }
+table.t tr:last-child td { border-bottom: 0; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; color: var(--purple); }
+
+/* 순서 카드 (줄거리 흐름, 5단계) */
+.g5 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 46px; height: 46px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: #fff; font-family: var(--font-display); font-weight: 400; font-size: 28px; margin-bottom: 8px; border: 3px solid var(--bg-3); }
+
+/* 표지: 로켓 발사 장면 */
+.slide.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 150px; padding-right: 760px; color: #fff;
+    background: linear-gradient(180deg, #1F1553 0%, #4A2584 34%, #A02F94 66%, #F07BC6 100%); }
+.slide.cover::before { display: none; }
+.cover .scene { overflow: visible; position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; max-width: none; max-height: none; z-index: -1; }
+.cover .kicker { font-size: 30px; align-self: flex-start; background: var(--star); color: #14233F; }
+.cover h1 { font-family: var(--font-display); font-weight: 400; font-size: 136px; line-height: 1.12; margin: 18px 0 26px; color: #fff; text-shadow: 0 6px 0 rgba(27,18,69,.55); }
+.cover h1 span { color: var(--star); }
+.cover p { font-size: 36px; color: #fff; line-height: 1.55; }
+.cover .rule { width: 260px; height: 10px; margin: 10px 0 30px; border-radius: 99px; background: repeating-linear-gradient(90deg, var(--cyan) 0 26px, transparent 26px 44px); }
+
+/* 등장 효과 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖): 로켓이 궤도를 따라 이동하는 진행 표시 === */
+.deck-controls { display: flex; gap: 12px; align-items: center; background: rgba(27,18,69,.94); border: 3px solid var(--cyan); border-radius: 99px; padding: 4px 16px; font-family: var(--font-body); color: #fff; font-size: 16px; }
+.deck-controls button { background: var(--star); border: none; color: #14233F; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; cursor: pointer; padding: 0; }
+.deck-controls #count { min-width: 64px; text-align: center; font-weight: 700; }
+.deck-controls #orbit { display: block; width: 260px; height: 46px; max-width: none; max-height: none; overflow: visible; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--star); color: #14233F; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 2px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 1100px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: #2A1B64; }
+    .deck-viewport { position: static; overflow: visible; padding: 12px 0; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: calc(100% - 20px); margin: 0 10px 14px; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 56px; font-size: 17px; border: 3px solid var(--line); border-radius: 28px; }
+    .slide::before { background: #E4EEFB; inset: auto; left: 0; right: 0; bottom: 0; height: 26px; border-top: 3px solid var(--line); }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 30px; margin-bottom: 16px; }
+    h2::before { width: 26px; height: 26px; border-width: 3px; margin-right: 10px; vertical-align: -2px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 21px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g5 { grid-template-columns: 1fr; }
+    .card, .g5 .card { padding: 14px 16px; font-size: 17px; border-radius: 22px; border-width: 3px; }
+    .card.hl::after { top: -8px; right: 24px; width: 12px; height: 12px; }
+    ul.l li { padding-left: 28px; }
+    ul.l li::before { width: 17px; height: 17px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { right: 14px; bottom: 6px; width: 40px; height: 40px; font-size: 18px; }
+    .pg::before { border-width: 3px; box-shadow: 0 0 0 3px var(--cyan) inset; }
+    .pg::after { display: none; }
+    table.t { font-size: 16px; border-radius: 18px; border-width: 3px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 34px; height: 34px; font-size: 20px; }
+    .slide.cover { padding: 40px 18px 330px; background: linear-gradient(180deg, #1F1553 0%, #6B2A8E 55%, #F07BC6 100%); }
+    .slide.cover::before { display: none; }
+    .cover .scene { position: absolute; left: 50%; margin-left: -474px; top: auto; bottom: 0; width: 1920px; height: 1080px; transform-origin: 0 100%; transform: scale(.32); }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 50px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 7px; }
+}
+
+/* 도식·확장 */
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.svgbox { background: #fff; border: 4px solid var(--line); border-radius: 30px; padding: 10px; box-shadow: 0 7px 0 rgba(91,42,166,.22); }
+.svgbox svg { display: block; width: 100%; height: auto; max-height: none; }
+.svgbox svg text { fill: #14233F; font-family: 'Gowun Dodum','Malgun Gothic',sans-serif; font-size: 24px; }
+.svgbox svg text.b { fill: #C23B22; font-weight: 700; }
+.svgbox svg text.w { fill: #B93A12; font-weight: 700; }
+.big { font-size: 34px; line-height: 1.6; }
+@media (max-width: 1100px) and (orientation: portrait) { .g4 { grid-template-columns: 1fr; } .big { font-size: 20px; } .svgbox svg text { font-size: 24px; } }
+
+/* === 화면 검수 보정 (공통) === */
+.slide, .card { word-break: keep-all; overflow-wrap: break-word; }
+.slide td, .slide th { word-break: keep-all; overflow-wrap: anywhere; }
+.grid { align-items: start; }
+.g4, .g5 { align-items: stretch; }
+/* 본문 세로 중앙 정렬 + 슬라이드별 확대(--z, 내용이 적을수록 크게) */
+.slide:not(.cover) { display: flex; flex-direction: column; }
+.slide:not(.cover) > .kicker { align-self: flex-start; }
+.slide:not(.cover) > h2 + * { margin-top: auto; }
+.slide:not(.cover) > :nth-last-child(2) { margin-bottom: auto; }
+.slide:not(.cover) > :not(.pg):not(.kicker):not(h2) { zoom: var(--z, 1); }
+/* 카드 장식 점은 은은하게 */
+.card.hl::after { opacity: .4; }
+/* 카드 안 소제목(굵은 한 줄) */
+.slide p.sub { font-family: var(--font-display); font-size: 31px; line-height: 1.35; color: var(--ink); margin-bottom: 2px; }
+.slide p.sub b { color: inherit; font-weight: 400; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .slide:not(.cover) { display: block; }
+    .slide:not(.cover) > * { zoom: 1 !important; }
+    .grid, .g2, .g3, .g4, .g5 { grid-template-columns: 1fr !important; }
+    .slide table.t { font-size: 16px !important; }
+    .slide table.t.dense { font-size: 14px !important; }
+    .slide table.t.dense th, .slide table.t.dense td { padding: 7px 3px; }
+    .slide ul.l[style*="font-size"], .slide .card[style*="font-size"] { font-size: 17px !important; }
+    .svgbox { overflow-x: auto; }
+    .svgbox svg { max-height: none !important; }
+    .svgbox svg.wide { min-width: 1100px; }
+    .svgbox svg.wide text { font-size: 28px; }
+    .slide p.sub { font-size: 20px; }
+    .card.hl::after { opacity: .4; }
+}
+
+/* ===== 검수 정리 v3 ===== */
+/* 줄바꿈: 짧은 구절·괄호·숫자+단위는 줄 중간에서 끊지 않는다 */
+.nw { white-space: nowrap; }
+.slide li, .slide p, .slide td, .slide th, .slide .card { text-wrap: pretty; }
+/* 쪽번호 컨트롤: 두 자리 쪽수에서도 막대 폭 고정 */
+.deck-controls #count { min-width: 84px; font-variant-numeric: tabular-nums; }
+/* 덧붙임 표시(핵심 암기 N가지 밖의 보조 내용) */
+.slide h3 .tag { font-size: 20px; padding: 0 12px; margin-right: 10px; vertical-align: 4px; }
+.addnote { font-family: var(--font-display); font-size: 28px; color: var(--purple); margin-top: 22px; margin-bottom: 8px; }
+.addnote .tag { font-size: 20px; padding: 0 12px; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    /* 가로로 밀어서 보는 그림 위 안내 */
+    .svgbox:not(.fit):has(> svg.wide)::before { content: '← 옆으로 밀어서 보기 →'; display: block; position: sticky; left: 0; text-align: center; font-size: 15px; font-weight: 700; color: var(--brass); padding: 0 0 6px; }
+    /* 일식·월식 그림: 한 화면에 들어오게 오른쪽 여백만 잘라 보여 준다 */
+    .svgbox.fit { overflow: hidden; }
+    .svgbox.fit svg.wide { min-width: 0; max-width: none; width: 141.7%; margin-right: -41.7%; clip-path: inset(0 29.4% 0 0); }
+    .svgbox.fit svg.wide text { font-size: 38px; }
+    .slide h3 .tag { font-size: 13px; padding: 0 8px; margin-right: 6px; vertical-align: 2px; }
+    .slide table.t td:first-child { overflow-wrap: normal; }
+    .addnote { font-size: 19px; margin-top: 14px; }
+    .addnote .tag { font-size: 13px; padding: 0 8px; }
+}
+/* ===== 검수 정리 v4 (폰 화면) ===== */
+@media (max-width: 1100px) and (orientation: portrait) {
+    /* 인라인으로 박힌 큰 글자 크기가 카드·표 글자와 따로 노는 것을 막는다 */
+    .slide:not(.cover) :is(p, ul, ol, li, div, span, td, th, b)[style*="font-size"]:not(.fm):not(.fm *):not(.tag):not(.no) { font-size: inherit !important; }
+    /* 연도 알약(1960 등)이 제목을 가리지 않게 */
+    .card.step:has(.no[style*="width:auto"]) { padding-left: 22px !important; }
+    .card.step .no[style*="width:auto"] { position: static !important; display: inline-flex; margin: 0 0 8px; }
+    .card.step:has(.no[style*="width:auto"]) .no + br { display: none; }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+    /* 폰에서는 줄바꿈 금지 구절이 칸 밖으로 밀려나지 않게 */
+    span.nw { white-space: normal; }
+    /* 표를 행 단위 카드로 쌓아 오른쪽 열이 잘리지 않게 */
+    .slide table.stack, .slide table.stack tbody, .slide table.stack tr, .slide table.stack td, .slide table.stack th { display: block; width: auto !important; box-sizing: border-box; }
+    .slide table.stack { border: 0 !important; background: transparent !important; box-shadow: none !important; }
+    .slide table.stack tr.hrow { display: none; }
+    .slide table.stack tr { margin: 0 0 12px; border: 2px solid rgba(0,0,0,.14); border-radius: 12px; overflow: hidden; background: #fff; }
+    .slide table.stack td, .slide table.stack th { border: 0 !important; border-top: 1px solid rgba(0,0,0,.09) !important; padding: 8px 14px !important; text-align: left; white-space: normal !important; font-size: 16px !important; }
+    .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
+    .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
+}
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #C23B22; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
+
+/* ===== 영어 전용 추가 (u7 제작: 표지 하늘색 배경 · 말풍선) ===== */
+.slide.cover { background: linear-gradient(180deg, #14305F 0%, #2D5A8C 45%, #7FB6E8 100%); }
+.bubs { display: flex; flex-direction: column; gap: 12px; }
+.bub { max-width: 88%; padding: 10px 22px; border: 4px solid var(--line); border-radius: 28px; background: #fff; font-size: 27px; line-height: 1.45; }
+.bub.a { align-self: flex-start; border-bottom-left-radius: 6px; }
+.bub.b { align-self: flex-end; background: #FFF6D8; border-color: var(--star); border-bottom-right-radius: 6px; }
+.bub .who { font-family: var(--font-display); color: var(--purple); margin-right: 8px; }
+.bub .ko { display: block; font-size: 24px; color: var(--ink-dim); }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .slide.cover { background: linear-gradient(180deg, #14305F 0%, #2D5A8C 55%, #7FB6E8 100%); }
+    .bub { max-width: 96%; font-size: 17px; padding: 8px 14px; border-radius: 20px; border-width: 3px; }
+    .bub .ko { font-size: 15px; }
+}
+
+/* ===== 영어 전용 추가 (대화 말풍선 · 파란 표지) ===== */
+.dlg { display: flex; flex-direction: column; gap: 18px; }
+.bub { position: relative; max-width: 92%; padding: 14px 26px; border-radius: 30px; border: 4px solid var(--line); background: #fff; font-size: 28px; line-height: 1.45; }
+.bub .who { display: inline-block; margin-right: 10px; font-family: var(--font-display); color: #fff; background: var(--purple); border-radius: 99px; padding: 0 14px; font-size: 24px; }
+.bub.a { margin-right: auto; border-bottom-left-radius: 6px; }
+.bub.b { margin-left: auto; border-bottom-right-radius: 6px; background: #FFF6D6; border-color: var(--star); }
+.bub.b .who { background: var(--brass); }
+.slide.cover { background: linear-gradient(180deg, #14305F 0%, #2D5A8C 52%, #6FA8E6 100%); }
+.cover .scene { overflow: visible; }
+.card.sm { font-size: 25px; }
+.card.sm h3 { font-size: 30px; }
+.ok { color: #1E7A46; font-weight: 700; }
+.bad { color: var(--warn); font-weight: 700; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .dlg { gap: 12px; }
+    .bub { font-size: 17px; padding: 10px 16px; max-width: 96%; border-width: 3px; }
+    .bub .who { font-size: 14px; padding: 0 9px; }
+    .slide.cover { background: linear-gradient(180deg, #14305F 0%, #2D5A8C 60%, #6FA8E6 100%); }
+    .card.sm { font-size: 17px; }
+    .card.sm h3 { font-size: 21px; }
+}
+/* 촘촘한 표·카드 (최소 24px 유지) */
+table.t.tight { font-size: 25px; }
+table.t.tight th, table.t.tight td { padding: 6px 14px; }
+.card.xs { font-size: 24px; padding: 14px 22px; }
+.card.xs h3 { font-size: 28px; margin-bottom: 4px; }
+.card.xs ul.l li { margin-bottom: 4px; }
+@media (max-width: 1100px) and (orientation: portrait) { .card.xs { font-size: 17px; } .card.xs h3 { font-size: 21px; } table.t.tight { font-size: 16px; } }
+
+/* === 태블릿(갤럭시탭 S10 FE) 적합성: 컨트롤 터치 영역 44px, 하단 제스처 바 여백 (2026-11-17 검수 반영) === */
+.deck-controls { bottom: max(22px, calc(env(safe-area-inset-bottom, 0px) + 14px)); gap: 14px; }
+.deck-controls button { width: 44px; height: 44px; font-size: 20px; flex: 0 0 auto; touch-action: manipulation; }
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1 === -->
+<section class="slide cover active">
+    <svg class="scene" viewBox="-920 0 1920 1080" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="420" cy="170" rx="150" ry="46" fill="#fff" opacity=".75"/><ellipse cx="520" cy="140" rx="110" ry="50" fill="#fff" opacity=".75"/><ellipse cx="340" cy="190" rx="90" ry="34" fill="#fff" opacity=".75"/>
+<ellipse cx="820" cy="470" rx="130" ry="40" fill="#fff" opacity=".6"/><ellipse cx="900" cy="450" rx="80" ry="38" fill="#fff" opacity=".6"/>
+<path d="M300 70 Q300 90 320 90 Q300 90 300 110 Q300 90 280 90 Q300 90 300 70Z" fill="#FFC83D"/>
+<path d="M930 120 Q930 134 944 134 Q930 134 930 148 Q930 134 916 134 Q930 134 930 120Z" fill="#fff"/>
+<path d="M600 60 Q600 72 612 72 Q600 72 600 84 Q600 72 588 72 Q600 72 600 60Z" fill="#FFC83D"/>
+<path d="M250 640 Q420 560 560 470 Q700 380 760 330" fill="none" stroke="#fff" stroke-width="8" stroke-dasharray="4 22" stroke-linecap="round"/>
+<path d="M740 350 L920 262 L820 380 L850 420 L790 392 L752 440 L760 372Z" fill="#fff" stroke="#14305F" stroke-width="6" stroke-linejoin="round"/>
+<path d="M920 262 L790 392" stroke="#14305F" stroke-width="5" fill="none"/>
+<path d="M760 372 L790 392" stroke="#FFC83D" stroke-width="8" fill="none" stroke-linecap="round"/>
+<circle cx="360" cy="780" r="84" fill="#FFC83D" stroke="#14305F" stroke-width="7"/>
+<path d="M388 740 L388 800 M388 740 L338 752 L338 812" fill="none" stroke="#14305F" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="372" cy="816" rx="24" ry="17" fill="#14305F"/><ellipse cx="322" cy="828" rx="24" ry="17" fill="#14305F"/>
+<circle cx="610" cy="700" r="84" fill="#F4A6C8" stroke="#14305F" stroke-width="7"/>
+<path d="M590 660 L630 660 L650 690 L690 730 L530 730 L570 690Z" fill="#fff" stroke="#14305F" stroke-width="6" stroke-linejoin="round"/>
+<path d="M570 690 L650 690" stroke="#14305F" stroke-width="5"/>
+<circle cx="860" cy="760" r="84" fill="#9BE0F2" stroke="#14305F" stroke-width="7"/>
+<path d="M860 710 L860 810 M810 760 L910 760" stroke="#C23B22" stroke-width="26" stroke-linecap="butt" fill="none"/>
+<path d="M-920 1080 L-920 990 Q-300 930 240 1000 Q520 900 800 960 Q920 985 1000 940 L1000 1080Z" fill="#3E7CC0"/>
+<path d="M-920 1080 L-920 1035 Q-300 995 240 1045 Q560 960 820 1020 Q930 1040 1000 1010 L1000 1080Z" fill="#1F3F73"/>
+</svg>
+
+    <div class="kicker reveal">1학년 2학기 <span class="nw">영어 · Lesson 6</span> <span class="nw">교과 정리</span></div>
+    <h1 class="reveal"><span class="nw">Dream High,</span> <span class="nw"><span>Fly High!</span></span></h1>
+    <div class="rule reveal"></div>
+    <p class="reveal">관심과 <span class="nw">장래 희망</span> · <span class="nw">p.96~111</span></p>
+    <p class="reveal"><span class="nw">What are you interested in?</span> · <span class="nw">I want to be a doctor.</span></p>
+    <p class="reveal"><span class="nw">to부정사(목적어)</span> · <span class="nw">접속사 when</span></p>
+</section>
+
+<!-- === 2 === -->
+<section class="slide">
+    <div class="kicker"><span class="nw">단원 한눈에</span></div>
+    <h2>관심과 장래 희망 <small>단원 소재 · 교과서 p.<span class="nw">96~111</span> · <span class="nw">타 교과 연계: 진로와 직업</span></small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>의사소통 기능 <span class="ref">(p.96)</span></h3>
+            <ul class="l">
+                <li><b>관심 말하기</b> : <span class="nw"><b>What are you interested in?</b></span> / <span class="nw">I'm interested in solving puzzles.</span></li>
+                <li><b>장래 희망 말하기</b> : <span class="nw"><b>What do you want to be in the future?</b></span> / <span class="nw">I want to be a doctor.</span></li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>언어 형식 <span class="ref">(p.96, p.107)</span></h3>
+            <ul class="l">
+                <li>목적어로 쓰이는 <b>to부정사</b> : <span class="nw">Rahul loved to sing.</span></li>
+                <li>시간을 나타내는 접속사 <b>when</b> : <span class="nw">When Rahul was in middle school, he acted in a school play.</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <h3>단원 구성 <span class="ref">(쪽)</span></h3>
+        <p><span class="nw">Warm Up · Listen and Speak 1 <b>p.97~98</b></span> → <span class="nw">Listen and Speak 2 <b>p.99</b></span> → <span class="nw">Real Life Talk <b>p.100~101</b></span> → <span class="nw">Before You Read <b>p.102</b></span> → <span class="nw">Reading <b>p.103~105</b></span> → <span class="nw">After You Read <b>p.106</b></span> → <span class="nw">Language Use <b>p.107</b></span> → <span class="nw">Think and Write <b>p.108</b></span> → <span class="nw">Culture to Culture <b>p.109</b></span> → <span class="nw">Project <b>p.110</b></span> → <span class="nw">Check Up <b>p.111</b></span></p>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+        <p><span class="lb">참고</span> <b>단원 설정의 취지</b>(교사용·지도서) : 직업을 고를 때 고려할 흥미·관심을 묻고 답하고, 좋아하던 일을 직업으로 삼은 세 사람(Rahul, Mina, Kevin)의 이야기를 읽는다. <b>학습 목표</b> : 관심과 장래 희망에 관한 대화를 듣고 말한다 / 세 사람의 직업 글을 읽고 자신의 미래 모습을 써 본다.</p>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3 === -->
+<section class="slide">
+    <div class="kicker"><span class="nw">핵심 어휘 1</span></div>
+    <h2>읽기 지문 어휘 ① <small>p.<span class="nw">103~104</span></small></h2>
+    <table class="t reveal stack">
+        <tr class="hrow"><th>영어</th><th>품사 · 뜻</th><th>본문에서의 쓰임</th></tr>
+        <tr><td data-label="영어">activity</td><td data-label="품사 · 뜻">명 <b>활동</b></td><td data-label="쓰임"><span class="nw">those activities</span> = 피아노 치기 · TV 보기</td></tr>
+        <tr><td data-label="영어">future</td><td data-label="품사 · 뜻">형 <b>미래의</b> (명 미래)</td><td data-label="쓰임"><span class="nw">your future jobs</span></td></tr>
+        <tr><td data-label="영어">following</td><td data-label="품사 · 뜻">형 <b>다음의</b></td><td data-label="쓰임"><span class="nw">the following people</span> = 앞으로 언급될 사람들</td></tr>
+        <tr><td data-label="영어">even</td><td data-label="품사 · 뜻">부 <b>~조차(도), 심지어</b></td><td data-label="쓰임"><span class="nw">He even sang in his sleep!</span> (놀라운 일)</td></tr>
+        <tr><td data-label="영어">act</td><td data-label="품사 · 뜻">동 <b>연기하다</b></td><td data-label="쓰임"><span class="nw">acted in a school play</span> / acting = 연기</td></tr>
+        <tr><td data-label="영어">play</td><td data-label="품사 · 뜻">명 <b>연극</b> (동 놀다 · 연주하다)</td><td data-label="쓰임"><span class="nw">a school play</span> / <span class="nw">played with her dolls</span></td></tr>
+        <tr><td data-label="영어">fall in love (with)</td><td data-label="품사 · 뜻"><b>사랑에 빠지다</b>, ~에 깊은 관심을 갖게 되다</td><td data-label="쓰임"><span class="nw">fell in love with acting</span></td></tr>
+        <tr><td data-label="영어">luckily</td><td data-label="품사 · 뜻">부 <b>운 좋게도</b> (문장 전체 수식)</td><td data-label="쓰임">Luckily(Mina) · cf. lucky 형 행운의, luck 명 운</td></tr>
+    </table>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4 === -->
+<section class="slide">
+    <div class="kicker"><span class="nw">핵심 어휘 2</span></div>
+    <h2>읽기 지문 어휘 ② · 단어 관계 <small>p.<span class="nw">104~105</span></small></h2>
+    <table class="t tight reveal stack">
+        <tr class="hrow"><th>영어</th><th>품사 · 뜻</th><th>본문에서의 쓰임</th></tr>
+        <tr><td data-label="영어">traditional</td><td data-label="품사 · 뜻">형 <b>전통적인</b></td><td data-label="쓰임"><span class="nw">Mina's favorite traditional dress</span></td></tr>
+        <tr><td data-label="영어">as</td><td data-label="품사 · 뜻">전 <b>~로(서)</b> (자격)</td><td data-label="쓰임"><span class="nw">works as a doctor</span></td></tr>
+        <tr><td data-label="영어">travel</td><td data-label="품사 · 뜻">동 <b>여행하다</b></td><td data-label="쓰임"><span class="nw">travels all over the country</span></td></tr>
+        <tr><td data-label="영어">take care of</td><td data-label="품사 · 뜻"><b>~을 돌보다</b></td><td data-label="쓰임"><span class="nw">takes care of the players</span></td></tr>
+        <tr><td data-label="영어">get hurt</td><td data-label="품사 · 뜻"><b>다치다</b>, 부상을 입다</td><td data-label="쓰임"><span class="nw">when they get hurt</span></td></tr>
+        <tr><td data-label="영어">up close</td><td data-label="품사 · 뜻"><b>바로 가까이에(서)</b></td><td data-label="쓰임"><span class="nw">watch the games up close</span></td></tr>
+        <tr><td data-label="영어">spend</td><td data-label="품사 · 뜻">동 (시간을) <b>보내다</b>; 돈을 쓰다</td><td data-label="쓰임"><span class="nw">spend about 30 percent of their lives</span></td></tr>
+    </table>
+    <div class="card hl reveal" style="margin-top:28px">
+        <h3>단어 관계 · 형태 변화</h3>
+        <ul class="l">
+            <li><b>파생</b> : <span class="nw">luck(명) – lucky(형) – luckily(부)</span> · <span class="nw">tradition(명) – traditional(형)</span> · <span class="nw">act(동) – acting(연기)</span> · <span class="nw">interested(형) – interests(명)</span></li>
+            <li><b>다의어</b> : <span class="nw">play</span> 명 연극 / 동 놀다·연주하다, <span class="nw">spend</span> 시간 / 돈</li>
+        </ul>
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5 === -->
+<section class="slide">
+    <div class="kicker"><span class="nw">핵심 어휘 3</span></div>
+    <h2>듣기 · 말하기 어휘와 숙어 <small>p.<span class="nw">98~101</span></small></h2>
+    <div class="grid g2">
+        <table class="t tight reveal stack">
+            <tr class="hrow"><th>영어</th><th>뜻</th></tr>
+            <tr><td data-label="영어">be interested in</td><td data-label="뜻"><b>~에 관심이(흥미가) 있다</b></td></tr>
+            <tr><td data-label="영어">solve puzzles</td><td data-label="뜻"><b>퍼즐을 풀다</b></td></tr>
+            <tr><td data-label="영어">challenging</td><td data-label="뜻">형 <b>도전적인, 흥미를 돋우는</b></td></tr>
+            <tr><td data-label="영어">exciting / fun</td><td data-label="뜻">형 <b>흥미진진한 / 재미있는</b></td></tr>
+            <tr><td data-label="영어">recommend</td><td data-label="뜻">동 <b>추천하다</b></td></tr>
+            <tr><td data-label="영어">make a movie</td><td data-label="뜻"><b>영화를 만들다</b></td></tr>
+        </table>
+        <table class="t tight reveal stack">
+            <tr class="hrow"><th>영어</th><th>뜻</th></tr>
+            <tr><td data-label="영어">grow up</td><td data-label="뜻"><b>자라다</b> (<span class="nw">when you grow up</span> = 커서)</td></tr>
+            <tr><td data-label="영어">still</td><td data-label="뜻">부 <b>여전히, 아직도</b></td></tr>
+            <tr><td data-label="영어">at the time</td><td data-label="뜻"><b>그 당시</b></td></tr>
+            <tr><td data-label="영어">sure</td><td data-label="뜻">형 <b>확실한</b> (<span class="nw">I'm not sure yet.</span>)</td></tr>
+            <tr><td data-label="영어">yet</td><td data-label="뜻">부 <b>아직</b> (부정문)</td></tr>
+            <tr><td data-label="영어">animal doctor</td><td data-label="뜻"><b>수의사</b></td></tr>
+            <tr><td data-label="영어">Good luck (to you)!</td><td data-label="뜻"><b>행운을 빕니다!</b> (p.101)</td></tr>
+        </table>
+    </div>
+    <div class="card xs reveal" style="margin-top:18px">
+        <ul class="l">
+            <li><b>구동사·숙어</b> : be interested in, take care of, get hurt, fall in love with, <span class="nw">all over the country</span>(전국을), <span class="nw">on the way to</span>(~에 가는 도중에), <span class="nw">at that time</span>(그 당시에), <span class="nw">have two left feet</span>(동작이 매우 어색하다), <span class="nw">in one's sleep</span>(잠자는 중에), <span class="nw">around the world</span>(전 세계의)</li>
+            <li><b>과거형</b>(본문에서 확인) : sing–sang, fall–fell, find–found, eat–ate, sleep–slept, act–acted, want–wanted · <b>발음</b> : <span class="nw">want to</span>의 to는 약하게(/wɑːntə/)</li>
+            <li><span class="lb">참고</span> 듣기·말하기 뜻풀이는 교사용·지도서 기준(학생용에는 단어 상자 없음). <b>Not anymore.</b> = 더 이상은 아니야(문맥에서 푼 뜻)</li>
+        </ul>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6 === -->
+<section class="slide">
+    <div class="kicker"><span class="nw">핵심 표현</span></div>
+    <h2>관심 · 장래 희망 말하기 <small>p.<span class="nw">98~101</span></small></h2>
+    <div class="grid g2">
+        <div class="reveal">
+            <h3>관심 말하기 <span class="ref">(p.98)</span></h3>
+            <div class="dlg" style="margin-bottom:14px">
+<div class="bub a"><span class="who">A</span> <b>What are you interested in?</b></div>
+            <div class="bub b"><span class="who">B</span> <b>I'm interested in</b> solving puzzles. <span class="nw">It's challenging.</span></div>
+</div>
+            <ul class="l">
+                <li><span class="nw">in + <b>동명사(구)/명사</b></span> (전치사 뒤) : <span class="nw">playing sports, taking care of animals</span></li>
+                <li><span class="nw">이유·느낌 : It's challenging. / exciting. / fun.</span></li>
+                <li><span class="nw">What are your interests? / My interests are ~.</span></li>
+            </ul>
+        </div>
+        <div class="reveal">
+            <h3>장래 희망 말하기 <span class="ref">(p.99)</span></h3>
+            <div class="dlg" style="margin-bottom:14px">
+<div class="bub a"><span class="who">A</span> <b>What do you want to be in the future?</b></div>
+            <div class="bub b"><span class="who">B</span> <b>I want to be a doctor.</b></div>
+            <div class="bub a"><span class="who">A</span> <b>Why do you want to be a doctor?</b></div>
+            <div class="bub b"><span class="who">B</span> <b>I want to help sick people.</b></div>
+</div>
+            <ul class="l">
+                <li><span class="nw">a(n) + 직업</span> : <span class="nw">a doctor / an animal doctor</span></li>
+                <li><span class="nw">What is your dream job? / My dream job is ~.</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:20px">
+        <p><span class="lb">더 쓰는 표현</span> <span class="nw">How can I help you?</span> / <span class="nw">Of course.</span> · <span class="nw">That sounds wonderful.</span> · <span class="nw">How about + 동명사(구)?</span> / <span class="nw">That's a great idea.</span> · <span class="nw">I'm not sure yet.</span> · <span class="nw"><b>Good luck to you!</b></span> (p.101) · <span class="nw">What do you like to do?</span> (p.101)</p>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7 === -->
+<section class="slide">
+    <div class="kicker"><span class="nw">직업 · 대화 · 활동</span></div>
+    <h2>직업 어휘와 대화 · 활동 정리 <small>p.<span class="nw">97~111</span></small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>직업 어휘</h3>
+            <ul class="l">
+                <li><span class="nw">p.97 : A doctor <b>takes care of</b> sick people.</span> (다른 직업의 하는 일 문장은 교사용·지도서에만)</li>
+                <li><b>본문 직업</b> (p.104~105) : <span class="nw">actor in musicals(뮤지컬 배우)</span>, <span class="nw">doll dress designer(인형 옷 디자이너)</span>, <span class="nw">doctor for a baseball team(팀 의사)</span></li>
+                <li><b>p.99 직업 이름</b> : <span class="nw">doctor, movie director, musician, scientist, poet, reporter</span> (+ <span class="nw">basketball player, car designer</span>)</li>
+            </ul>
+        </div>
+        <div class="card hl reveal">
+            <h3>듣기 · 대화 흐름 <span class="ref">(듣기 자료)</span></h3>
+            <ul class="l">
+                <li><b>Listen and Number</b> · <b>Listen and Choose</b> (p.98) : Andy – <span class="nw">making movies</span>, Jake – <span class="nw">cooking</span> / 도서관에서 <span class="nw">I'm interested in planes.</span> → <span class="nw">Wright Brothers</span> 책</li>
+                <li><b>Listen and Match</b> · <b>Listen and Choose</b> (p.99) : Minji – <span class="nw">basketball player</span>, Alice – <span class="nw">car designer</span> / <span class="nw">Not anymore.</span> → <span class="nw">famous singer</span></li>
+                <li><b>Real Life Talk</b> (p.100, Kate와 Jiho) : <span class="nw">I'm not sure yet.</span> → <span class="nw">cooking and teaching</span> → Kate는 <span class="nw">animal doctor</span> → <span class="nw">Good luck to you!</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="grid g3 reveal" style="margin-top:20px;align-items:stretch">
+        <div class="card xs"><h3>Think and Write <span class="ref">p.108</span></h3><p>20년 후의 나 : <span class="nw">What do you do for a living?</span> · <span class="nw">Where do you work?</span> · <span class="nw">When / Why did you decide...?</span> 점검 : 접속사 <b>when</b>.</p></div>
+        <div class="card xs"><h3>Culture to Culture <span class="ref">p.109</span></h3><p>직업과 나라 짝짓기 : <span class="nw">football player – U.S.</span>, <span class="nw">해녀 – Korea</span>, <span class="nw">gondolier – Italy</span>, <span class="nw">파티쉐 – France</span></p></div>
+        <div class="card xs"><h3>Project · Check Up <span class="ref">p.110~111</span></h3><p>행복 지수 그래프 : 기쁨 <b>+1~+5</b>(위), 슬픔 <b>−1~−5</b>(아래). <b>Word Ace</b> : following, traditional, activity, luckily, take care of. <b>Sentence Master</b> : <span class="nw">I want to be a famous singer.</span> · <span class="nw">When I'm sad, I eat sweets.</span></p></div>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8 === -->
+<section class="slide">
+    <div class="kicker"><span class="nw">언어 형식 ①</span></div>
+    <h2>목적어로 쓰이는 to부정사 <small>p.<span class="nw">107</span></small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>형태 · 의미 · 쓰임</h3>
+            <ul class="l">
+                <li><b>형태</b> : <b>to + 동사원형</b></li>
+                <li><b>의미</b> : 동사의 목적어 자리에서 <b>'~하는 것을 / ~하기를'</b></li>
+                <li><b>교과서 예문</b> : <span class="nw">Rahul <b>loved to sing</b>.</span> <span class="nw">Kevin <b>wanted to leave</b> early.</span> <span class="nw">We <b>plan to visit</b> a few theaters in London.</span></li>
+                <li><b>love, like, hate</b> : 명사 · 동명사 · to부정사 <b>모두</b> 가능 — <span class="nw">I love animals. / I love <b>to take</b> care of animals. / I love <b>taking</b> care of animals.</span></li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3><span class="lb">참고</span> 규칙 설명 <span class="ref">(교사용·지도서)</span></h3>
+            <ul class="l">
+                <li>to부정사를 목적어로 취하는 동사 : <b>want, hope, expect, decide, plan, agree</b></li>
+                <li><b>쓰임 확장</b> : to부정사는 주어 · 보어로도 쓰인다 : <span class="nw">My dream is to be a singer.</span> (이 단원의 중심은 목적어)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3><span class="lb">참고</span> 자주 하는 오류 <span class="ref">(교과서에 오류 목록은 없고, 형태 규칙에서 도출한 일반 설명)</span></h3>
+        <ul class="l">
+            <li><span class="nw">wants to <b>plays</b></span>, <span class="nw">to <b>played</b></span> (X) → <span class="nw"><b>wants to play</b></span> · <span class="nw">Kevin wanted leave early</span> (X) → <span class="nw"><b>wanted to leave</b></span></li>
+            <li><span class="nw">plan <b>visiting</b></span> (X) → <span class="nw"><b>plan to visit</b></span> · love/like 뒤에는 to만 된다(X) → 명사·동명사·to부정사 모두 가능</li>
+            <li><b>부정사 to</b>(뒤에 동사원형 <span class="nw">want to sing</span>) ≠ <b>전치사 to</b>(뒤에 명사 <span class="nw">on the way to school</span>)</li>
+        </ul>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9 === -->
+<section class="slide">
+    <div class="kicker"><span class="nw">언어 형식 ②</span></div>
+    <h2>시간을 나타내는 접속사 when <small>p.<span class="nw">107</span></small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>의미·형태 · 쓰임</h3>
+            <ul class="l">
+                <li><b>의미</b> : <b>'~할 때'</b></li>
+                <li><b>형태</b> : <b>when + 주어 + 동사</b> (시간을 나타내는 부사절)</li>
+                <li><b>교과서 예문</b> : <span class="nw">When Rahul was in middle school, he acted...</span> <span class="nw">When I'm sad, I eat peanut ice cream.</span> <span class="nw">My dad cooks dinner when he comes home early.</span></li>
+                <li><b>본문·활동 용례</b> (p.105, p.108) : <span class="nw">He takes care of the players <b>when</b> they get hurt.</span> <span class="nw">I decided to be a writer <b>when</b> I was in middle school.</span></li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3><span class="lb">참고</span> 규칙 설명 <span class="ref">(교사용·지도서)</span></h3>
+            <ul class="l">
+                <li><b>위치와 쉼표</b> : 주절 앞 · 뒤 모두 가능. <b>앞에 오면 콤마(,)</b> — <span class="nw">When I cooked dinner, my mom smiled.</span> / <span class="nw">My mom smiled when I cooked dinner.</span></li>
+                <li><b>미래의 일</b> : when절 안은 <b>현재시제</b>. 학생용 예시 <span class="nw">I'll be a car designer when I <b>become</b> 28 years old.</span> (p.110)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:24px">
+        <h3><span class="lb">참고</span> 자주 하는 오류 <span class="ref">(교과서에 오류 목록은 없고, 규칙에서 도출한 일반 설명)</span></h3>
+        <ul class="l">
+            <li><span class="nw">When I'm sad I eat...</span> (X) → <span class="nw"><b>When I'm sad, I eat...</b></span> · <span class="nw">when was in middle school</span> (X) → <span class="nw"><b>when Rahul was...</b></span></li>
+            <li><span class="nw">When he comes home early.</span> (X, 단독 문장) · <span class="nw">When Rahul is in middle school, he acted</span> (X) → <span class="nw"><b>was ... acted</b></span></li>
+            <li><b>접속사 when</b> (<span class="nw">I decided ... when I was in middle school</span>) ≠ <b>의문사 When</b> (<span class="nw">When did you decide to do this job?</span> '언제')</li>
+        </ul>
+    </div>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10 === -->
+<section class="slide">
+    <div class="kicker"><span class="nw">본문 흐름</span></div>
+    <h2>세 사람의 perfect job <small>읽기 p.<span class="nw">103~105</span></small></h2>
+    <div class="grid g3" style="margin-top:12px;align-items:stretch">
+        <div class="card xs reveal">
+            <h3>Rahul</h3>
+            <ul class="l">
+                <li><b>좋아하던 일</b> : 노래를 좋아함(<span class="nw">loved to sing</span>), 잠자는 중에도 노래함</li>
+                <li><b>계기 · 하는 일</b> : 학교 연극에서 연기, 연기에도 푹 빠짐</li>
+                <li><b>현재 직업</b> : <b>actor in musicals</b> (춤은 서툼, <span class="nw">two left feet</span>)</li>
+            </ul>
+        </div>
+        <div class="card xs reveal">
+            <h3>Mina</h3>
+            <ul class="l">
+                <li><b>좋아하던 일</b> : 늘 인형을 가지고 놀았고 매일 인형 옷을 갈아입힘</li>
+                <li><b>계기 · 하는 일</b> : <span class="nw">Luckily</span>, perfect job 발견 · 전 세계 인형의 전통 옷</li>
+                <li><b>현재 직업</b> : <b>doll dress designer</b> (좋아하는 옷 : <b>hanbok</b>)</li>
+            </ul>
+        </div>
+        <div class="card xs reveal">
+            <h3>Kevin</h3>
+            <ul class="l">
+                <li><b>좋아하던 일</b> : 의사가 되고 싶었음, 운동도 좋아함</li>
+                <li><b>계기 · 하는 일</b> : 전국을 여행, 다쳤을 때 선수를 돌봄</li>
+                <li><b>현재 직업</b> : <b>doctor for a baseball team</b> (경기를 가까이에서 봄)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="grid g2" style="margin-top:20px">
+        <div class="card hl xs reveal">
+            <h3>도입 · 맺는 문단 · 글의 중심 생각</h3>
+            <ul class="l">
+                <li><b>읽기 전략</b> : 특정 정보(세 사람의 perfect job)에 주목하며 읽기</li>
+                <li><b>도입</b> : <span class="nw">What do you love to do?</span> — 활동이 장래 직업이 될 수 있다</li>
+                <li><b>맺는 문단</b> : 인생의 <b>약 30퍼센트</b>를 일하며 <b>spend</b>한다 → <span class="nw">how will you spend...?</span></li>
+                <li><b>중심 생각</b> : 좋아하는 것(love to do)이 직업이 될 수 있다</li>
+            </ul>
+        </div>
+        <div class="card xs reveal">
+            <h3>이해 확인 질문과 답 <span class="ref">(p.104~105)</span></h3>
+            <ul class="l">
+                <li><span class="nw">Q1 Rahul의 직업</span> : 뮤지컬 배우</li>
+                <li><span class="nw">Q2 Mina의 perfect job</span> : 인형 옷 디자이너</li>
+                <li><span class="nw">Q3 Mina's favorite traditional dress</span> : <b>hanbok</b></li>
+                <li><span class="nw">Q4 When does Kevin take care of the players?</span> : <b>when they get hurt</b></li>
+            <li><span class="nw">What does Mina make?</span> : 전 세계 인형을 위한 전통 옷</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11 === -->
+<section class="slide">
+    <div class="kicker"><span class="nw">헷갈리기 쉬운 것</span></div>
+    <h2>구분하기와 자주 하는 오해</h2>
+    <table class="t tight reveal stack">
+        <tr class="hrow"><th>비교</th><th>A</th><th>B</th></tr>
+        <tr><td data-label="비교">to의 종류</td><td data-label="A"><span class="nw">want to sing</span> : <b>to부정사</b>(뒤에 동사원형)</td><td data-label="B"><span class="nw">on the way to school</span> : <b>전치사</b>(뒤에 명사)</td></tr>
+        <tr><td data-label="비교">목적어 형태</td><td data-label="A">want / plan / decide / hope / expect / agree + <b>to부정사</b></td><td data-label="B">love / like / hate + 명사 · 동명사 · to부정사 <b>모두</b></td></tr>
+        <tr><td data-label="비교">전치사 뒤</td><td data-label="A"><span class="nw">interested in solving</span>, <span class="nw">fell in love with acting</span> : 동명사/명사</td><td data-label="B"><span class="nw">want to solve</span> : to부정사</td></tr>
+        <tr><td data-label="비교">when 품사</td><td data-label="A"><b>접속사</b> '~할 때'(주어 + 동사)</td><td data-label="B"><b>의문사</b> <span class="nw">When did you decide...?</span> '언제'</td></tr>
+        <tr><td data-label="비교">when절 위치</td><td data-label="A">앞 : <span class="nw">When ~, 주절.</span> (콤마)</td><td data-label="B">뒤 : <span class="nw">주절 when ~.</span> (콤마 없음)</td></tr>
+        <tr><td data-label="비교">even / too</td><td data-label="A"><b>even</b> ~조차(도) (놀라운 일)</td><td data-label="B"><b>too</b> ~도 또한 (문장 끝 부사)</td></tr>
+        <tr><td data-label="비교">want to be / want to + 동사</td><td data-label="A"><span class="nw">want to <b>be</b> + 직업</span> (~이 되고 싶다)</td><td data-label="B"><span class="nw">want to + <b>동사원형</b></span> (~하고 싶다)</td></tr>
+        <tr><td data-label="비교">관심 질문 / 희망 질문</td><td data-label="A"><span class="nw">What are you interested in?</span> → 관심</td><td data-label="B"><span class="nw">What do you want to be...?</span> → 장래 희망</td></tr>
+        <tr><td data-label="비교">yet / already <span class="lb">참고</span></td><td data-label="A"><b>yet</b> : 부정문 '아직', 의문문 '벌써 · 지금'</td><td data-label="B"><b>already</b> : 긍정문 '이미, 벌써'</td></tr>
+        <tr><td data-label="비교">clothes / clothing <span class="lb">참고</span></td><td data-label="A"><b>clothes</b> : 일반 옷</td><td data-label="B"><b>clothing</b> : 집합적 · 격식, 의류</td></tr>
+    </table>
+    <div class="card warn xs reveal" style="margin-top:18px">
+        <h3>이렇게 오해하지 말자</h3>
+        <ul class="l">
+            <li><span class="nw">want 뒤에도 동명사</span> (X) → to부정사 · <span class="nw">interested in 뒤에 to부정사</span> (X) → 동명사/명사 · <span class="nw">has two left feet</span> = 춤이 서툴다(왼발 두 개 X)</li>
+            <li>Mina는 사람 옷 (X) → <b>인형을 위한</b> 옷 · Kevin은 야구 선수 (X) → <b>야구팀의 의사</b> · <span class="nw">fall in love with</span> = 깊은 관심 · spend = 이 단원에서는 <b>시간</b></li>
+        </ul>
+    </div>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12 === -->
+<section class="slide">
+    <div class="kicker"><span class="nw">시험 포인트</span></div>
+    <h2>어휘 · 어법 · 대화 · 독해 <small>p.<span class="nw">96~111</span></small></h2>
+    <div class="grid g2">
+        <div class="card hl xs reveal">
+            <h3>어휘</h3>
+            <ul class="l">
+                <li><b>두 단어 관계</b>가 다른 것 : luck–lucky–luckily, tradition–traditional, act–acting, interested–interests · <b>공통 빈칸</b> : play, spend</li>
+                <li><b>밑줄 의미</b> · <b>구동사·숙어 조합</b> : take care of, get hurt, fall in love with, have two left feet, grow up</li>
+                <li><b>영영 풀이 연결</b> : <span class="nw">A doctor takes care of sick people.</span>(p.97), doll dress designer = 인형 옷을 만드는 사람</li>
+                <li><b>철자 쓰기</b> : following, traditional, activity, luckily, take care of</li>
+            </ul>
+        </div>
+        <div class="card hl xs reveal">
+            <h3>어법</h3>
+            <ul class="l">
+                <li>쓰임이 다른 것 : 부정사 to ↔ 전치사 to, 접속사 when ↔ 의문사 When</li>
+                <li><b>전치사 뒤 동명사</b> vs to부정사 · <b>밑줄 어법 조합</b> : <span class="nw">wants to plays</span>, <span class="nw">plan visiting</span></li>
+                <li><b>어법상 바른 문장</b> · <b>단어 배열</b> · <b>서술형 영작 후보</b> : <span class="nw">to + 동사원형</span>, <span class="nw">When + 주어 + 동사, 주절</span></li>
+                <li><span class="lb">참고</span> <b>to부정사 용법</b> 구분 : 목적어 ↔ 보어</li>
+            </ul>
+        </div>
+        <div class="card hl xs reveal">
+            <h3>대화</h3>
+            <ul class="l">
+                <li><b>어색한 대화</b> : 두 질문의 대답을 맞바꾼 것, <span class="nw">Why</span>에 이유 없이 Yes</li>
+                <li><b>순서 배열</b> : 질문 → 대답 → 이유 → 호응·응원 (<span class="lb">참고</span> <b>대화 흐름 정리</b>는 일반 정리)</li>
+                <li><b>답할 수 없는 질문</b> : Jiho의 최종 결정 · <b>빈칸</b> : interested in, want to be, recommend, Not anymore</li>
+            </ul>
+        </div>
+        <div class="card hl xs reveal">
+            <h3>독해</h3>
+            <ul class="l">
+                <li><b>답할 수 없는 질문</b>(<b>본문에 없는 정보</b>) · <b>내용 일치</b> · <b>본문과 다른 진술</b> : <span class="nw">Rahul is good at dancing</span> (F)</li>
+                <li><b>흐름상 어색한 문장</b> · <b>문장 삽입</b> · <b>지시·빈칸</b> : those activities, their clothes</li>
+                <li><b>맺는 문단·요약</b>(약 30퍼센트, spend) · <b>글의 주제·제목</b> · <b>빈칸 어휘</b> : but, too ↔ even</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pg">12</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <svg id="orbit" viewBox="0 0 260 46" aria-hidden="true">
+        <path id="orbitPath" d="M20 38 Q130 -22 240 38" fill="none" stroke="#8DB3E6" stroke-width="3" stroke-dasharray="3 7" stroke-linecap="round"/>
+        <path id="orbitDone" d="M20 38 Q130 -22 240 38" fill="none" stroke="#FFC83D" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="16" cy="38" r="8" fill="#3B9AE8" stroke="#fff" stroke-width="2"/>
+        <circle cx="244" cy="38" r="8" fill="#E4EEFB" stroke="#fff" stroke-width="2"/>
+        <g id="rocketMark"><g transform="rotate(0)"><path d="M-14 -3 L14 0 L-14 5 L-9 0Z" fill="#fff" stroke="#14233F" stroke-width="1.5" stroke-linejoin="round"/><path d="M-9 0 L-14 -3 M-9 0 L-14 5" stroke="#14233F" stroke-width="1.2"/><path d="M-2 -1.5 L4 -8 L6 -7 L2 -1Z" fill="#FFC83D" stroke="#14233F" stroke-width="1"/></g></g>
+    </svg>
+    <span id="count">1 / 12</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 1100px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+        var op = document.getElementById('orbitPath');
+        if (op && op.getTotalLength) {
+            var L = op.getTotalLength(), p = slides.length > 1 ? cur / (slides.length - 1) : 0;
+            var a = op.getPointAtLength(p * L), b = op.getPointAtLength(Math.min(L, p * L + 1)), c = op.getPointAtLength(Math.max(0, p * L - 1));
+            var ang = Math.atan2(b.y - c.y, b.x - c.x) * 180 / Math.PI;
+            document.getElementById('rocketMark').setAttribute('transform', 'translate(' + a.x + ' ' + a.y + ') rotate(' + ang + ')');
+            var od = document.getElementById('orbitDone');
+            od.style.strokeDasharray = L; od.style.strokeDashoffset = L * (1 - p);
+        }
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+<script>
+/* 폰 화면용: 표 머리 글을 각 칸에 붙여 두면(data-label) CSS가 행 단위 카드로 쌓아 보여 준다 */
+(function(){
+  document.querySelectorAll('.slide table').forEach(function(t){
+    var rows=[].slice.call(t.rows); if(rows.length<2) return;
+    var hr=rows[0]; if(![].every.call(hr.cells,function(c){return c.tagName==='TH';})) return;
+    var labels=[], col=0;
+    [].forEach.call(hr.cells,function(c){ var n=c.colSpan||1; for(var k=0;k<n;k++) labels[col++]=c.textContent.replace(/\s+/g,' ').trim(); });
+    hr.classList.add('hrow');
+    var busy=[];
+    rows.slice(1).forEach(function(r){
+      var c=0;
+      [].forEach.call(r.cells,function(cell){
+        while(busy[c]>0){ c++; }
+        if(c>0 && labels[c]) cell.setAttribute('data-label',labels[c]);
+        var rs=cell.rowSpan||1, cs=cell.colSpan||1;
+        for(var k=0;k<cs;k++){ if(rs>1) busy[c+k]=rs; }
+        c+=cs;
+      });
+      for(var i=0;i<busy.length;i++){ if(busy[i]>0 && !(busy[i]===undefined)) { /* 아래에서 감소 */ } }
+      busy=busy.map(function(v){ return v>0 ? v-1 : 0; });
+    });
+    t.classList.add('stack');
+  });
+})();
+</script>
+</body>
+</html>

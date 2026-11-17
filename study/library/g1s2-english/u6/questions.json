@@ -1,0 +1,1657 @@
+{
+ "questions": [
+  {
+   "id": "u6-Q01-a",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "단어 관계(파생어)",
+   "source": "교과서 p.104",
+   "question": "다음 짝지어진 두 단어의 관계가 나머지와 다른 것은?",
+   "choices": [
+    "tradition – traditional",
+    "health – healthy",
+    "luckily – lucky",
+    "snow – snowy",
+    "power – powerful"
+   ],
+   "answer": 3,
+   "explanation": "luckily는 부사이고 lucky는 형용사라서 '부사 – 형용사' 관계예요. 나머지 짝은 모두 '명사 – 형용사' 관계예요.",
+   "choiceExplanations": [
+    "tradition(전통)은 명사이고 traditional(전통적인)은 그 명사에 -al이 붙은 형용사예요. 명사에서 형용사가 된 짝이라 이 보기만 특별하지 않아요.",
+    "health(건강)는 명사이고 healthy(건강한)는 형용사예요. 명사 끝에 -y를 붙여 형용사를 만든 짝이에요.",
+    "정답. luckily는 부사이고 lucky는 형용사라서 '부사 – 형용사' 관계예요. 나머지 짝은 모두 '명사 – 형용사' 관계예요.",
+    "snow(눈)는 명사이고 snowy(눈이 오는)는 형용사예요. 같은 방식으로 명사에서 형용사가 된 짝이에요.",
+    "power(힘)는 명사이고 powerful(강력한)은 형용사예요. 명사에 -ful이 붙은 짝이라 다른 보기와 관계가 같아요."
+   ],
+   "detail": "·luckily(운 좋게도)는 -ly로 끝나는 부사이고, lucky(운이 좋은)는 형용사예요(교과서 p.104 단어 상자의 luckily).\n·tradition–traditional(p.104 traditional), health–healthy, snow–snowy, power–powerful은 모두 명사 뒤에 -al, -y, -ful을 붙여 형용사를 만든 짝이에요.\n·따라서 품사 관계가 다른 한 쌍은 부사와 형용사가 짝인 luckily–lucky예요.\n·lucky·health·tradition(명사)·snow–snowy·power–powerful 같은 파생 형태는 (교과서 밖 일반 상식)이에요.",
+   "tip": "-ly로 끝나면 대개 부사, 명사 뒤 -al·-y·-ful은 형용사가 된다고 기억해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "단어의 품사(p.104 단어 상자)",
+     "head": [
+      "단어",
+      "품사",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "luckily",
+       "부사",
+       "운 좋게도"
+      ],
+      [
+       "traditional",
+       "형용사",
+       "전통적인"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "끝말과 품사",
+     "text": "명사 + -y/-ful/-al → 형용사, 형용사 + -ly → 부사 (교과서 밖 일반 상식)"
+    },
+    {
+     "kind": "text",
+     "title": "Check Up Word Ace (p.111)",
+     "text": "다음의 following, 전통적인 traditional, 활동 activity, 다행히도 luckily, ~을 돌보다 take care of를 영어로 쓰는 활동이에요."
+    }
+   ]
+  },
+  {
+   "id": "u6-Q01-b",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "단어 관계(파생어)",
+   "source": "교과서 p.104",
+   "question": "다음 중 두 단어의 관계가 나머지 넷과 다른 짝은?",
+   "choices": [
+    "sing – singer",
+    "write – writer",
+    "design – designer",
+    "act – acting",
+    "report – reporter"
+   ],
+   "answer": 4,
+   "explanation": "act(연기하다)–acting(연기)은 동사와 그 동작의 이름이고, 나머지는 동사와 그 일을 하는 사람이에요.",
+   "choiceExplanations": [
+    "sing(노래하다)은 동사이고 singer(가수)는 그 일을 하는 사람이에요. 본문에 a great singer가 나와요(p.104).",
+    "write(글을 쓰다)와 writer(작가)는 동사와 그 일을 하는 사람이에요. p.108 예시 글에 a writer가 나와요.",
+    "design(디자인하다)과 designer(디자이너)는 동사와 그 일을 하는 사람이에요. doll dress designer(p.104)처럼 직업 이름이에요.",
+    "정답. act(연기하다)–acting(연기)은 동사와 그 동작의 이름이고, 나머지는 동사와 그 일을 하는 사람이에요.",
+    "report(보도하다)와 reporter(기자)도 동사와 그 일을 하는 사람이에요. p.99에 직업으로 reporter가 나와요."
+   ],
+   "detail": "·act는 '연기하다'라는 동사이고 acting은 '연기(하는 것)'라는 동작의 이름이에요(교과서 p.104 'fell in love with acting').\n·sing–singer, write–writer, design–designer, report–reporter는 동사 뒤에 -er을 붙여 '그 일을 하는 사람'을 만든 짝이에요.\n·따라서 사람이 아니라 동작을 가리키는 act–acting이 나머지와 관계가 달라요.\n·직업을 뜻하는 -er 형태는 singer(p.104), reporter(p.99)처럼 단원 곳곳에 나와요.\n·(sing–singer, write–writer, design–designer, report–reporter처럼 동사에 -er을 붙여 짝으로 묶는 규칙은 교과서 밖 일반 상식이에요.)",
+   "tip": "동사 + -er은 '하는 사람', 동사 + -ing는 '하는 것(동작)'이에요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "act 관련 단어(p.104)",
+     "head": [
+      "단어",
+      "품사",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "act",
+       "동사",
+       "연기하다"
+      ],
+      [
+       "acting",
+       "명사",
+       "연기"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u6-Q02-a",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "공통 빈칸(다의어)",
+   "source": "교과서 p.104",
+   "question": "다음 두 문장의 빈칸에 공통으로 들어갈 알맞은 말은?",
+   "choices": [
+    "play",
+    "spend",
+    "travel",
+    "sing",
+    "draw"
+   ],
+   "answer": 1,
+   "explanation": "play는 '연극'이라는 명사와 '놀다'라는 동사로 모두 쓰여서 두 빈칸에 모두 들어가요.",
+   "choiceExplanations": [
+    "정답. play는 '연극'이라는 명사와 '놀다'라는 동사로 모두 쓰여서 두 빈칸에 모두 들어가요.",
+    "spend는 동사라서 첫 문장의 'school ___'처럼 명사가 필요한 자리에 들어갈 수 없어요.",
+    "travel은 '여행하다'라는 뜻이라 첫 문장의 '학교 ___에서 맡은 역할'과 이어지지 않아요.",
+    "sing은 동사로만 쓰여서 'school ___'라는 명사 자리에 맞지 않아요.",
+    "draw는 '그리다'라는 뜻이라 첫 문장의 학교 행사 이름 자리에 어울리지 않아요."
+   ],
+   "detail": "·play는 명사일 때 '연극', 동사일 때 '놀다'를 뜻하는 다의어예요(교과서 p.104 'a school play', 'played with her dolls').\n·첫 문장은 '학교 ___에서 주인공 역할'이므로 명사 '연극'이 맞고, 둘째 문장은 '인형들과 ___'이므로 동사 '놀다'가 맞아요.\n·다른 보기는 두 문장 중 한쪽에서는 품사나 뜻이 맞지 않아요.\n·따라서 두 문장에 모두 어울리는 말은 play예요.",
+   "tip": "같은 철자라도 명사·동사로 뜻이 달라지는 단어는 문장 자리를 보고 판단해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "play의 두 가지 쓰임(p.104)",
+     "head": [
+      "품사",
+      "뜻",
+      "본문 속 쓰임"
+     ],
+     "rows": [
+      [
+       "명사",
+       "연극",
+       "a school play"
+      ],
+      [
+       "동사",
+       "놀다",
+       "played with her dolls"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "(1) My sister has the main role in the school ___.\n(2) Children ___ with their dolls after dinner."
+  },
+  {
+   "id": "u6-Q02-b",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "공통 빈칸(다의어)",
+   "source": "교과서 p.105",
+   "question": "다음 두 문장의 빈칸에 공통으로 들어갈 알맞은 말은?",
+   "choices": [
+    "play",
+    "travel",
+    "sing",
+    "act",
+    "spend"
+   ],
+   "answer": 5,
+   "explanation": "spend는 '시간을 보내다'와 '돈을 쓰다'라는 뜻이 모두 있어 두 문장에 모두 맞아요.",
+   "choiceExplanations": [
+    "play는 둘째 문장의 'her allowance on comic books'와 이어지지 않아요. 용돈은 '쓰는' 것이지 '노는' 것이 아니에요.",
+    "travel(여행하다)은 'your Sunday afternoons'를 목적어로 받기 어렵고, 용돈과도 이어지지 않아요.",
+    "sing은 목적어 'your Sunday afternoons'나 'her allowance'와 어울리지 않아요.",
+    "act(연기하다)는 'her allowance on comic books'와 이어지지 않아요.",
+    "정답. spend는 '시간을 보내다'와 '돈을 쓰다'라는 뜻이 모두 있어 두 문장에 모두 맞아요."
+   ],
+   "detail": "·spend는 시간을 보내다라는 뜻과 돈을 쓰다라는 뜻을 모두 가져요(교과서 p.105 'spend about 30 percent of their lives').\n·첫 문장의 'your Sunday afternoons'는 시간이므로 '보내다'가, 둘째 문장의 'her allowance'는 돈이므로 '쓰다'가 맞아요.\n·그래서 두 문장의 빈칸에는 모두 spend가 들어가요.\n·돈을 쓰다는 뜻은 (교과서 밖 일반 상식)이에요.",
+   "tip": "spend 뒤에 시간이 오면 '보내다', 돈이 오면 '쓰다'로 해석해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "spend의 두 가지 뜻",
+     "head": [
+      "뒤에 오는 말",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "시간(30 percent of their lives, p.105)",
+       "시간을 보내다"
+      ],
+      [
+       "돈(allowance) (교과서 밖 일반 상식)",
+       "돈을 쓰다"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "(1) How do you ___ your Sunday afternoons?\n(2) Jisu likes to ___ her allowance on comic books."
+  },
+  {
+   "id": "u6-Q03-a",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "밑줄 표현의 뜻",
+   "source": "교과서 p.104",
+   "question": "다음 [ ]로 표시한 부분의 우리말 뜻이 알맞지 않은 것은?",
+   "choices": [
+    "Please read the [following] words aloud together. (다음의)",
+    "Players sometimes [get hurt] when they play hard games. (다친다)",
+    "We watched the soccer game [up close] from the front row. (가까이에서)",
+    "Tom is a good singer, but he [has two left feet]. (달리기가 빠르다)",
+    "Swimming is a fun [activity] for many children. (활동)"
+   ],
+   "answer": 4,
+   "explanation": "has two left feet는 '춤이나 몸 쓰는 동작이 아주 서툴다'는 뜻이라 '달리기가 빠르다'는 풀이는 맞지 않아요.",
+   "choiceExplanations": [
+    "following은 뒤에 오는 단어들을 가리키는 '다음의'예요. read the following words는 '다음 단어들을 읽어라'가 돼요(p.103 the following people).",
+    "get hurt는 '다치다'라는 뜻이 맞아요(p.105 when they get hurt).",
+    "up close는 '바로 가까이에서'라는 뜻이 맞아요(p.105 watch the games up close).",
+    "정답. has two left feet는 '춤이나 몸 쓰는 동작이 아주 서툴다'는 뜻이라 '달리기가 빠르다'는 풀이는 맞지 않아요.",
+    "수영은 몸으로 하는 일이니 '활동'이 문맥에 맞아요(p.103 those activities)."
+   ],
+   "detail": "·교과서 p.104에서 Rahul은 훌륭한 가수이지만(but) has two left feet라고 해요. 앞뒤 내용이 반대이니 '잘 못하는 점'을 말한다는 걸 알 수 있어요.\n·그래서 has two left feet는 춤이나 동작이 서툴다는 뜻이고, 달리기를 잘한다는 풀이는 문맥과 어긋나요.\n·나머지 보기의 following, get hurt, up close, activity는 우리말 풀이가 모두 알맞아요.\n·따라서 뜻이 알맞지 않은 것은 has two left feet를 '달리기가 빠르다'로 푼 보기예요.",
+   "tip": "but 앞뒤는 반대 내용이에요. 잘하는 점 뒤의 but은 '서툰 점'이 이어져요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "has two left feet (p.104)",
+     "text": "'훌륭한 가수이지만(but) has two left feet'에서 앞뒤 내용이 반대라는 점에 주목해요. 왼발이 두 개라는 뜻이 아니라 춤이 서툴다는 관용 표현이에요."
+    }
+   ]
+  },
+  {
+   "id": "u6-Q03-b",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 3,
+   "concept": "밑줄 표현의 뜻",
+   "source": "교과서 p.104",
+   "question": "다음 [ ]로 표시한 표현의 뜻풀이로 적절하지 않은 것은?",
+   "choices": [
+    "I was only six years old [at that time]. (그 당시에)",
+    "It was so cold that it [even] snowed in April. (~도 또한)",
+    "I want to be a doctor in the [future]. (미래)",
+    "[Luckily], we found the lost key at the park. (운 좋게도)",
+    "She wore a [traditional] dress to the party. (전통적인)"
+   ],
+   "answer": 2,
+   "explanation": "even은 '~조차(도), 심지어'라는 뜻이고, '~도 또한'은 문장 끝의 too가 나타내요.",
+   "choiceExplanations": [
+    "at that time은 '그 당시에'라는 뜻이 맞아요(p.104 At that time, he fell in love with acting).",
+    "정답. even은 '~조차(도), 심지어'라는 뜻이고, '~도 또한'은 문장 끝의 too가 나타내요.",
+    "future는 '미래'라는 뜻이 맞아요(p.103 your future jobs, p.96 장래 희망).",
+    "luckily는 '운 좋게도'라는 뜻이 맞아요(p.104 Luckily, Mina found the perfect job).",
+    "옛날부터 이어 온 드레스를 뜻하니 '전통적인'이 맞아요(p.104 traditional dresses)."
+   ],
+   "detail": "·교과서 p.104의 'He even sang in his sleep!'에서 even은 '잠잘 때조차' 노래할 만큼 놀랍다는 뜻을 더해요.\n·'~도 또한'이라는 뜻은 같은 쪽의 'fell in love with acting, too'처럼 문장 끝에 쓰는 too예요.\n·at that time, future, luckily, traditional은 보기의 우리말 풀이가 모두 알맞아요.\n·따라서 even을 '~도 또한'으로 푼 보기가 알맞지 않아요.",
+   "tip": "even = ~조차(놀라움), too = ~도 또한(문장 끝)으로 구분해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "even과 too (p.104)",
+     "head": [
+      "단어",
+      "뜻",
+      "본문 속 쓰임"
+     ],
+     "rows": [
+      [
+       "even",
+       "~조차(도), 심지어",
+       "even sang in his sleep"
+      ],
+      [
+       "too",
+       "~도 또한",
+       "fell in love with acting, too"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u6-Q04-a",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "전치사 조합(구동사)",
+   "source": "교과서 p.102, p.104, p.105",
+   "question": "다음 문장의 빈칸 (A)~(C)에 들어갈 말이 순서대로 짝지어진 것은?",
+   "choices": [
+    "for – with – of",
+    "of – with – of",
+    "of – in – of",
+    "of – with – to",
+    "of – at – for"
+   ],
+   "answer": 2,
+   "explanation": "'~을 돌보다'는 take care of, '~에 푹 빠지다'는 fall in love with, '~ 앞에서'는 in front of예요.",
+   "choiceExplanations": [
+    "(A)에서 '~을 돌보다'는 take care for가 아니라 take care of예요. (B)와 (C)는 맞아요.",
+    "정답. '~을 돌보다'는 take care of, '~에 푹 빠지다'는 fall in love with, '~ 앞에서'는 in front of예요.",
+    "(B)에서 fell in love in은 '~에 푹 빠지다'를 만들지 못해요. with를 써야 해요.",
+    "(C)에서 in front to는 어색해요. '~ 앞에서'는 in front of예요.",
+    "(A)만 맞아요. fell in love at과 in front for는 둘 다 교과서에 나오는 짝이 아니에요."
+   ],
+   "detail": "·교과서에는 takes care of the players(p.105), fell in love with acting(p.104), dance in front of many people(p.102)이 나와요.\n·각 표현의 전치사는 한 덩어리로 외워야 해요. take care of, fall in love with, in front of예요.\n·(A)에는 of, (B)에는 with, (C)에는 of를 넣어야 해서 정답은 of – with – of예요.\n·다른 보기는 세 곳 중 하나 이상이 이 표현의 전치사와 달라요.",
+   "tip": "take care OF, fall in love WITH, in front OF를 덩어리로 외워요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "전치사가 정해진 표현",
+     "head": [
+      "표현",
+      "뜻",
+      "쪽"
+     ],
+     "rows": [
+      [
+       "take care of",
+       "~을 돌보다",
+       "p.105"
+      ],
+      [
+       "fall in love with",
+       "~에 푹 빠지다",
+       "p.104"
+      ],
+      [
+       "in front of",
+       "~ 앞에서",
+       "p.102"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "(A) My aunt takes care ___ sick dogs.\n(B) Anna fell in love ___ the city.\n(C) Jisu danced in front ___ many people."
+  },
+  {
+   "id": "u6-Q04-b",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "전치사 조합(구동사)",
+   "source": "교과서 p.104, p.105",
+   "question": "다음 문장의 빈칸 (A)~(C)에 들어갈 말이 순서대로 짝지어진 것은?",
+   "choices": [
+    "on – over – in",
+    "in – at – on",
+    "in – over – on",
+    "at – over – on",
+    "in – over – at"
+   ],
+   "answer": 3,
+   "explanation": "'잠자는 중에'는 in his sleep, '전국을'은 all over the country, '~에 가는 도중에'는 on the way to예요.",
+   "choiceExplanations": [
+    "(A)와 (C)의 전치사가 서로 바뀌었어요. '잠자는 중에'는 in his sleep, '~에 가는 도중에'는 on the way to예요.",
+    "(A)와 (C)는 맞지만, '전국을 여행하다'는 travel all at가 아니라 all over the country예요.",
+    "정답. '잠자는 중에'는 in his sleep, '전국을'은 all over the country, '~에 가는 도중에'는 on the way to예요.",
+    "at his sleep은 '잠자는 중에'라는 뜻이 되지 않아요. in his sleep으로 써요.",
+    "(A)와 (B)는 맞지만, '학교에 가는 도중에'는 at the way가 아니라 on the way예요."
+   ],
+   "detail": "·교과서 p.104에는 sang in his sleep과 on the way to school이, p.105에는 travels all over the country가 나와요.\n·이 표현들은 전치사까지 덩어리로 외워야 해요. in one's sleep, all over, on the way to예요.\n·그러므로 (A)는 in, (B)는 over, (C)는 on이고 정답은 in – over – on이에요.\n·다른 보기는 세 전치사 중 하나 이상이 교과서 표현과 달라요.",
+   "tip": "in one's sleep, all over the country, on the way to를 덩어리째 기억해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "전치사가 정해진 표현",
+     "head": [
+      "표현",
+      "뜻",
+      "쪽"
+     ],
+     "rows": [
+      [
+       "in one's sleep",
+       "잠자는 중에",
+       "p.104"
+      ],
+      [
+       "all over the country",
+       "전국을",
+       "p.105"
+      ],
+      [
+       "on the way to",
+       "~에 가는 도중에",
+       "p.104"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "(A) He even sang ___ his sleep.\n(B) Kevin travels all ___ the country.\n(C) Rahul sang ___ the way to school."
+  },
+  {
+   "id": "u6-Q05-a",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "to의 쓰임",
+   "source": "교과서 p.104, p.107",
+   "question": "다음 [ ]로 표시한 to의 쓰임이 나머지와 다른 것은?",
+   "choices": [
+    "My brother wants [to] learn the guitar.",
+    "Sue plans [to] bake a cake.",
+    "I love [to] read stories at night.",
+    "We decided [to] make a poster.",
+    "Mina walked [to] the bus stop."
+   ],
+   "answer": 5,
+   "explanation": "정답의 to는 뒤에 명사(the bus stop)가 오는 전치사이고, 나머지 to는 뒤에 동사원형이 오는 to부정사예요.",
+   "choiceExplanations": [
+    "wants 뒤의 to 다음에 동사원형 learn이 와요. 동사의 목적어가 되는 to부정사의 to예요.",
+    "plans 뒤의 to 다음에 동사원형 bake가 와서 to부정사예요. 정답과 같은 전치사가 아니에요.",
+    "love 뒤의 to 다음에 동사원형 read가 오는 to부정사예요.",
+    "decided 뒤의 to 다음에 동사원형 make가 와요. p.108의 'decided to be'와 같은 쓰임이에요.",
+    "정답. 정답의 to는 뒤에 명사(the bus stop)가 오는 전치사이고, 나머지 to는 뒤에 동사원형이 오는 to부정사예요."
+   ],
+   "detail": "·to부정사의 to는 'to + 동사원형' 형태로 쓰여요. 'Kevin wanted to leave early'(교과서 p.107)가 그 예예요.\n·전치사 to는 뒤에 장소 같은 명사가 와요(p.104 'on the way to school').\n·보기에서 wants to learn, plans to bake, love to read, decided to make는 모두 뒤에 동사원형이 와요.\n·Mina walked to the bus stop만 뒤에 명사 the bus stop이 오는 전치사 to라서 정답이에요.",
+   "tip": "to 뒤에 동사원형이면 to부정사, 장소·명사면 전치사예요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "to의 두 가지 쓰임",
+     "head": [
+      "종류",
+      "뒤에 오는 말",
+      "교과서 예"
+     ],
+     "rows": [
+      [
+       "to부정사",
+       "동사원형",
+       "wanted to leave (p.107)"
+      ],
+      [
+       "전치사",
+       "명사",
+       "on the way to school (p.104)"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "to의 종류 (p.104, p.107)",
+     "text": "to부정사: want, plan, decide 같은 동사 뒤에서 to + 동사원형. 전치사 to: on the way to school처럼 뒤에 명사."
+    }
+   ]
+  },
+  {
+   "id": "u6-Q05-b",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "to의 쓰임",
+   "source": "교과서 p.104, p.107",
+   "question": "다음 [ ]로 표시한 to 중 쓰임이 나머지 넷과 다른 것은?",
+   "choices": [
+    "Dad wants [to] paint the fence.",
+    "We went [to] the theater yesterday.",
+    "He gave a letter [to] his teacher.",
+    "Hajun walks [to] the library every day.",
+    "The bus goes [to] the airport."
+   ],
+   "answer": 1,
+   "explanation": "정답의 to는 뒤에 동사원형(paint)이 오는 to부정사이고, 나머지 to는 뒤에 명사가 오는 전치사예요.",
+   "choiceExplanations": [
+    "정답. 정답의 to는 뒤에 동사원형(paint)이 오는 to부정사이고, 나머지 to는 뒤에 명사가 오는 전치사예요.",
+    "to 뒤에 장소 명사 the theater가 오는 전치사예요. 정답처럼 동사원형이 오는 것이 아니에요.",
+    "to 뒤에 사람을 가리키는 명사 his teacher가 오는 전치사예요.",
+    "to 뒤에 장소 명사 the library가 오는 전치사예요.",
+    "to 뒤에 장소 명사 the airport가 오는 전치사예요. 동사원형이 아니라서 정답과 달라요."
+   ],
+   "detail": "·to부정사의 to는 want, plan, decide 같은 동사 뒤에서 'to + 동사원형'이 돼요. 'We plan to visit a few theaters in London'(교과서 p.107)가 그 예예요.\n·전치사 to는 뒤에 명사가 와서 장소·방향을 나타내요(p.104 'on the way to school').\n·보기 중 Dad wants to paint the fence만 wants 뒤에서 동사원형 paint가 이어지는 to부정사예요.\n·나머지 네 문장은 the theater, his teacher, the library, the airport처럼 명사가 이어지는 전치사 to예요.",
+   "tip": "to 다음이 동사원형인지 명사인지만 보면 구분돼요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "to의 두 가지 쓰임",
+     "head": [
+      "종류",
+      "뒤에 오는 말",
+      "교과서 예"
+     ],
+     "rows": [
+      [
+       "to부정사",
+       "동사원형",
+       "plan to visit (p.107)"
+      ],
+      [
+       "전치사",
+       "명사",
+       "on the way to school (p.104)"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "to의 종류 (p.104, p.107)",
+     "text": "to부정사: want, plan, decide 같은 동사 뒤에서 to + 동사원형. 전치사 to: on the way to school처럼 뒤에 명사."
+    }
+   ]
+  },
+  {
+   "id": "u6-Q06-a",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "when의 쓰임",
+   "source": "교과서 p.107, p.108 (2025 2학기 기말 18번)",
+   "question": "다음 [ ]로 표시한 when 중 쓰임이 나머지와 다른 것은?",
+   "choices": [
+    "It was already dark [when] I arrived there.",
+    "[When] she opens the window, fresh air fills the room.",
+    "[When] did he buy that laptop computer?",
+    "[When] the phone rang, was he sleeping?",
+    "[When] you finish your homework, you can watch TV."
+   ],
+   "answer": 3,
+   "explanation": "정답의 When은 '언제'라는 뜻의 의문사이고, 나머지 when은 '~할 때'라는 뜻의 접속사예요.",
+   "choiceExplanations": [
+    "when 뒤에 'I arrived'(주어 + 동사)가 이어져 '내가 도착했을 때'라는 시간의 접속사예요.",
+    "When 뒤에 'she opens'가 이어지고 쉼표 뒤에 주절이 따로 있어요. '그녀가 창문을 열 때'라는 접속사예요.",
+    "정답. 정답의 When은 '언제'라는 뜻의 의문사이고, 나머지 when은 '~할 때'라는 뜻의 접속사예요.",
+    "의문문처럼 보이지만 When the phone rang은 '전화가 울렸을 때'라는 절이고, 뒤의 was he sleeping?이 주절이라 접속사예요.",
+    "When 뒤에 'you finish'가 이어져 '숙제를 끝냈을 때'라는 접속사예요."
+   ],
+   "detail": "·접속사 when은 '~할 때'라는 뜻이고 뒤에 '주어 + 동사'가 이어져요(교과서 p.107 'When I'm sad, I eat peanut ice cream.').\n·의문사 When은 '언제'라는 뜻으로 의문문 맨 앞에 쓰이고 뒤에 did you처럼 의문문 어순이 와요(p.108 'When did you decide to do this job?').\n·When did he buy that laptop computer?는 '그는 그 노트북을 언제 샀니?'라는 질문이라 의문사예요.\n·나머지는 모두 '~할 때'로 해석되는 절이고, When the phone rang, was he sleeping?도 When절 뒤에 주절이 따로 있어요.",
+   "tip": "When 뒤에 did 같은 의문문 어순이 오면 '언제', 주어 + 동사면 '~할 때'예요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "when의 두 쓰임",
+     "text": "접속사 when: '~할 때', 뒤에 주어 + 동사 (p.107). 의문사 When: '언제', 의문문 어순 (p.108 Q3)."
+    },
+    {
+     "kind": "text",
+     "title": "when절의 위치와 쉼표 (p.107)",
+     "text": "when절이 앞에 오면 절 뒤에 쉼표(When I'm sad, I eat peanut ice cream.), 뒤에 오면 쉼표 없이 이어져요(My dad cooks dinner when he comes home early.)."
+    }
+   ],
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-18"
+  },
+  {
+   "id": "u6-Q06-b",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "when의 쓰임",
+   "source": "교과서 p.107, p.108",
+   "question": "다음 [ ]로 표시한 when의 쓰임이 나머지 넷과 다른 것은?",
+   "choices": [
+    "[When] did you start playing the piano?",
+    "[When] is your birthday?",
+    "[When] will the next bus come?",
+    "[When] does the movie begin?",
+    "We had lunch [when] the rain stopped."
+   ],
+   "answer": 5,
+   "explanation": "정답의 when은 '~할 때'라는 뜻의 접속사이고, 나머지 When은 '언제'라는 뜻의 의문사예요.",
+   "choiceExplanations": [
+    "When 뒤에 did you가 오는 의문문 어순이에요. 시작한 때를 묻는 '언제 시작했니?'라서 의문사예요.",
+    "When으로 묻는 질문이라 생일 날짜를 묻는 '네 생일은 언제니?'라서 의문사예요.",
+    "When 뒤에 will the next bus로 의문문 어순이 이어져 버스가 오는 때를 묻는 '언제 올까?'라서 의문사예요.",
+    "When 뒤에 does the movie로 의문문 어순이 이어져 영화 시작 시각을 묻는 '언제 시작하니?'라서 의문사예요.",
+    "정답. 정답의 when은 '~할 때'라는 뜻의 접속사이고, 나머지 When은 '언제'라는 뜻의 의문사예요."
+   ],
+   "detail": "·접속사 when은 뒤에 '주어 + 동사'가 이어져 시간을 나타내요. 'My dad cooks dinner when he comes home early.'(교과서 p.107)가 그 예예요.\n·의문사 When은 질문 맨 앞에 와서 '언제'를 물어요(p.108 'When did you decide to do this job?').\n·We had lunch when the rain stopped는 'the rain stopped'가 이어지는 '비가 그쳤을 때'라는 접속사예요.\n·나머지 네 문장은 모두 문장 맨 앞의 When이 질문을 이끄는 의문사예요.",
+   "tip": "한 문장 안에서 '~할 때'로 이어지면 접속사, 질문 맨 앞이면 의문사예요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "when의 두 쓰임",
+     "text": "접속사 when: '~할 때', 뒤에 주어 + 동사 (p.107). 의문사 When: '언제', 의문문 어순 (p.108 Q3)."
+    },
+    {
+     "kind": "text",
+     "title": "when절의 위치와 쉼표 (p.107)",
+     "text": "when절이 앞에 오면 절 뒤에 쉼표, 뒤에 오면 쉼표 없이 이어져요. 접속사 when은 한 문장 안에서 두 절을 이어요."
+    }
+   ]
+  },
+  {
+   "id": "u6-Q07-a",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "어법 조합(밑줄 ⓐ~ⓔ)",
+   "source": "교과서 p.107",
+   "question": "다음 [ ]로 표시한 ⓐ~ⓔ 중 어법상 올바르지 않은 것끼리 짝지어진 것은?",
+   "choices": [
+    "ⓑ, ⓓ, ⓔ",
+    "ⓐ, ⓑ, ⓒ",
+    "ⓐ, ⓓ, ⓔ",
+    "ⓐ, ⓒ, ⓓ",
+    "ⓑ, ⓒ, ⓔ"
+   ],
+   "answer": 1,
+   "explanation": "ⓑ는 3인칭 단수 주어에 like를 써서, ⓓ는 when 뒤에 주어가 없어서, ⓔ는 to 뒤에 leaving을 써서 틀려요.",
+   "choiceExplanations": [
+    "정답. ⓑ는 3인칭 단수 주어에 like를 써서, ⓓ는 when 뒤에 주어가 없어서, ⓔ는 to 뒤에 leaving을 써서 틀려요.",
+    "ⓐ(loves to paint)와 ⓒ(When Mina was)는 올바른 표현이라 틀린 것에 넣으면 안 돼요. ⓓ와 ⓔ가 빠졌어요.",
+    "ⓐ(loves to paint)는 올바른 표현이에요. ⓑ의 like가 빠졌어요.",
+    "ⓐ와 ⓒ는 올바르고, ⓑ와 ⓔ가 틀린 표현인데 빠졌어요.",
+    "ⓒ(When Mina was ten years old)는 when 뒤에 주어와 동사가 있어 올바르고, ⓓ가 빠졌어요."
+   ],
+   "detail": "·to부정사는 'to + 동사원형'이고 3인칭 단수 주어일 때 -s는 앞의 동사에 붙어요(p.107 연습 문항 'Jack likes to ride his bike after school').\n·when은 뒤에 '주어 + 동사'가 이어져요(p.107 'when he comes home early').\n·ⓑ Jack like(→ likes), ⓓ when comes(→ when he comes), ⓔ decided to leaving(→ decided to leave)이 틀려요.\n·ⓐ loves to paint와 ⓒ When Mina was ten years old는 올바른 표현이라 틀린 것은 ⓑ, ⓓ, ⓔ예요.",
+   "tip": "to 뒤는 동사원형, when 뒤는 주어 + 동사인지 하나씩 확인해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "올바른 형태 점검(p.107)",
+     "head": [
+      "항목",
+      "올바른 형태"
+     ],
+     "rows": [
+      [
+       "to부정사",
+       "to + 동사원형 (wants to play)"
+      ],
+      [
+       "3인칭 단수 주어",
+       "-s는 앞 동사에 (Jack likes to ride, p.107 연습 문항)"
+      ],
+      [
+       "접속사 when",
+       "when + 주어 + 동사 (when he comes)"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "보기",
+   "passage": "ⓐ Hana [loves to paint] animals.\nⓑ Jack [like to ride] his bike after school.\nⓒ [When Mina was] ten years old, she moved to Busan.\nⓓ Dad cooks dinner [when comes] home early.\nⓔ Sam [decided to leaving] early.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u6-Q07-b",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "어법 조합(밑줄 ⓐ~ⓔ)",
+   "source": "교과서 p.107, p.110",
+   "question": "다음 [ ]로 표시한 ⓐ~ⓔ 중 어법상 올바른 것끼리 짝지어진 것은?",
+   "choices": [
+    "ⓐ, ⓑ, ⓒ",
+    "ⓐ, ⓓ, ⓔ",
+    "ⓐ, ⓒ, ⓓ",
+    "ⓑ, ⓒ, ⓔ",
+    "ⓑ, ⓓ, ⓔ"
+   ],
+   "answer": 4,
+   "explanation": "ⓑ·ⓒ·ⓔ는 to 뒤에 동사원형, when 뒤에 주어와 동사(미래 내용은 현재시제)가 있어 올바르고, ⓐ와 ⓓ는 형태가 틀려요.",
+   "choiceExplanations": [
+    "ⓐ(wants to being)는 to 뒤에 being을 써서 틀렸고, ⓔ가 빠졌어요.",
+    "ⓐ(wants to being)와 ⓓ(when saw)는 둘 다 틀린 표현이에요.",
+    "ⓐ와 ⓓ는 틀린 표현이고, 올바른 ⓑ와 ⓔ가 빠졌어요.",
+    "정답. ⓑ·ⓒ·ⓔ는 to 뒤에 동사원형, when 뒤에 주어와 동사(미래 내용은 현재시제)가 있어 올바르고, ⓐ와 ⓓ는 형태가 틀려요.",
+    "ⓓ(Sora smiled when saw)는 when 뒤에 주어가 없어 틀렸고, 올바른 ⓒ가 빠졌어요."
+   ],
+   "detail": "·to부정사는 'to + 동사원형'이에요(교과서 p.107 'We plan to visit a few theaters in London').\n·when은 뒤에 '주어 + 동사'가 이어져요(p.107 'When Rahul was in middle school, he acted...').\n·ⓐ wants to being(→ wants to be)과 ⓓ when saw(→ when she saw)가 틀리고, ⓑ plans to travel, ⓒ likes to cook, ⓔ When I become a doctor는 올바른 표현이에요(미래의 일을 말하는 when절은 현재시제로 써요, p.110 'when I become 28 years old').\n·그러므로 올바른 것끼리는 ⓑ, ⓒ, ⓔ예요.",
+   "tip": "틀린 것 둘을 먼저 찾고, 남는 올바른 것을 모으면 쉬워요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "올바른 형태 점검(p.107)",
+     "head": [
+      "항목",
+      "올바른 형태"
+     ],
+     "rows": [
+      [
+       "to부정사",
+       "to + 동사원형 (plan to visit)"
+      ],
+      [
+       "접속사 when",
+       "when + 주어 + 동사 (When Rahul was ...)"
+      ],
+      [
+       "미래 내용의 when절",
+       "현재시제 (when I become 28 years old, p.110)"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "보기",
+   "passage": "ⓐ Mina [wants to being] a designer.\nⓑ Jisu [plans to travel] around Korea.\nⓒ My mother [likes to cook] dinner.\nⓓ Sora smiled [when saw] the puppy.\nⓔ [When I become] a doctor, I will help many people.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u6-Q08-a",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "틀린 표현 찾기(밑줄)",
+   "source": "교과서 p.98, p.107",
+   "question": "다음 글에서 [ ]로 표시한 부분 중 어법상 틀린 것은?",
+   "choices": [
+    "likes to draw pictures at home",
+    "plans to study design abroad",
+    "When Jisu was ten years old",
+    "made small dresses for her dolls",
+    "is interested in to make clothes"
+   ],
+   "answer": 5,
+   "explanation": "interested in의 in은 전치사라서 뒤에 to부정사가 아니라 동명사나 명사가 와야 해요.",
+   "choiceExplanations": [
+    "likes 뒤에 to draw가 와서 '그리기를 좋아한다'가 되는 올바른 표현이에요.",
+    "plan 뒤에 to + 동사원형(to study)이 이어진 올바른 표현이에요(p.107).",
+    "when 다음에 Jisu was가 와서 '열 살 때'가 되는 올바른 표현이에요.",
+    "made small dresses(작은 옷을 만들었다) 뒤에 '인형들을 위해'를 뜻하는 for her dolls가 붙은 올바른 표현이에요.",
+    "정답. interested in의 in은 전치사라서 뒤에 to부정사가 아니라 동명사나 명사가 와야 해요."
+   ],
+   "detail": "·be interested in 뒤에는 동명사나 명사가 와요(교과서 p.98 'I'm interested in solving puzzles').\n·in은 전치사라서 그 뒤에 'to + 동사원형'을 붙일 수 없어요. interested in making clothes로 고쳐야 해요.\n·likes to draw, plans to study, When Jisu was, made dresses는 p.107과 같은 형태의 올바른 표현이에요.\n·따라서 틀린 부분은 is interested in to make clothes예요.\n·(이 글은 새로 쓴 글이에요.)",
+   "tip": "전치사(in, about, with) 뒤에는 to부정사를 쓰지 않아요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "관심 말하기 (p.98)",
+     "text": "I'm interested in + 동명사(구)/명사. in 뒤에는 solving puzzles, playing sports처럼 -ing 형태가 이어져요."
+    },
+    {
+     "kind": "text",
+     "title": "전치사 뒤 동명사 (p.98, p.104)",
+     "text": "interested in solving, fell in love with acting처럼 전치사 뒤에는 -ing 형태나 명사가 와요. to부정사(want to solve)와 구분해요."
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "Jisu [likes to draw pictures at home]. She [plans to study design abroad]. [When Jisu was ten years old], she [made small dresses for her dolls]. Now she [is interested in to make clothes]."
+  },
+  {
+   "id": "u6-Q08-b",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "틀린 표현 찾기(밑줄)",
+   "source": "교과서 p.99, p.105",
+   "question": "다음 글에서 [ ]로 표시한 부분 중 어법상 틀린 것은?",
+   "choices": [
+    "loved to play the drums",
+    "wanted be a drummer",
+    "When he was ten years old",
+    "works as a drummer",
+    "loves to travel to many cities"
+   ],
+   "answer": 2,
+   "explanation": "wanted 뒤에는 'to + 동사원형'이 와야 하는데 to가 빠져서 wanted be가 틀려요.",
+   "choiceExplanations": [
+    "loved 뒤에 to play가 와서 '연주하기를 좋아했다'가 되는 올바른 표현이에요.",
+    "정답. wanted 뒤에는 'to + 동사원형'이 와야 하는데 to가 빠져서 wanted be가 틀려요.",
+    "when 다음에 he was가 와서 '열 살 때'가 되는 올바른 표현이에요.",
+    "직업을 말할 때 '~로서'를 뜻하는 as를 쓴 works as a drummer가 맞아요.",
+    "loves 뒤에 to travel이 와서 '여행하기를 좋아한다'가 되는 올바른 표현이에요."
+   ],
+   "detail": "·want는 'to + 동사원형'을 목적어로 취해서 wanted to be가 되어야 해요. 교과서 p.99의 'I want to be a doctor'처럼 want 뒤에는 to + 동사원형이 오고, 같은 표현의 과거형이 'Kevin wanted to be a doctor'(p.105)예요.\n·wanted be처럼 to를 빼고 동사원형만 쓰면 어색한 문장이 돼요.\n·loved to play, When he was ten years old, works as a drummer, loves to travel은 교과서 p.104~105와 같은 형태의 올바른 표현이에요.\n·따라서 틀린 부분은 wanted be a drummer예요.\n·(이 글은 새로 쓴 글이에요.)",
+   "tip": "want, love, plan 뒤에는 to를 빠뜨리지 않았는지 확인해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "want to be (p.99, p.105)",
+     "text": "I want to be a doctor. / Kevin wanted to be a doctor. want 뒤에는 'to + 동사원형'을 써요."
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "Dan [loved to play the drums]. [When he was ten years old], he joined a school band. At that time, he [wanted be a drummer]. Now he [works as a drummer] for a famous band and [loves to travel to many cities]."
+  },
+  {
+   "id": "u6-Q09-a",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "바른 문장·단어 배열",
+   "source": "교과서 p.107, p.108",
+   "question": "어법상 바른 문장은?",
+   "choices": [
+    "Jin wants play the guitar after school today.",
+    "My sister decided to join the school band.",
+    "Mina plans to buys a new bag this weekend.",
+    "Hana love to draw cartoons after school.",
+    "Sam wants to going home early today."
+   ],
+   "answer": 2,
+   "explanation": "decide 뒤에는 'to + 동사원형'을 쓰므로 decided to join이 바른 문장이에요.",
+   "choiceExplanations": [
+    "wants 뒤에 to가 빠졌어요. wants to play로 써야 해요.",
+    "정답. decide 뒤에는 'to + 동사원형'을 쓰므로 decided to join이 바른 문장이에요.",
+    "to 뒤에는 동사원형을 써야 하므로 to buy가 맞아요. buys는 틀려요.",
+    "주어 Hana가 3인칭 단수라 love에 -s를 붙여 loves로 써야 해요(p.107 연습 문항 Jack likes to ride).",
+    "to 뒤에 going을 쓸 수 없어요. to go로 써야 해요."
+   ],
+   "detail": "·교과서 p.108의 'I decided to be a writer...'처럼 decide 뒤에는 to + 동사원형이 와요.\n·wants play는 to가 빠졌고, plans to buys와 wants to going은 to 뒤에 동사원형이 아닌 형태를 썼어요.\n·Hana love는 3인칭 단수 주어에 -s를 붙이지 않은 문장이에요(p.107 연습 문항 'Amy plans', 'Jack likes').\n·따라서 어법상 바른 문장은 decided to join이 쓰인 문장이에요.",
+   "tip": "to가 있는지, to 뒤가 동사원형인지, 3인칭 단수 -s가 맞는지 차례로 확인해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "점검 순서 (p.107, p.108)",
+     "text": "to가 있는가 → to 뒤가 동사원형인가 → 3인칭 단수 주어에 -s가 붙었는가를 차례로 확인해요."
+    },
+    {
+     "kind": "text",
+     "title": "to부정사를 목적어로 취하는 동사 (p.99, p.107, p.108)",
+     "text": "want(p.99), plan(p.107), decide(p.108), love·like(p.104, p.107) 뒤에는 to + 동사원형이 와서 '~하는 것을, ~하기를'의 뜻이 돼요."
+    }
+   ]
+  },
+  {
+   "id": "u6-Q09-b",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "바른 문장·단어 배열",
+   "source": "교과서 p.107",
+   "question": "다음 우리말과 같은 뜻이 되도록 주어진 단어를 배열할 때, 3번째로 오는 단어는?",
+   "choices": [
+    "when",
+    "he",
+    "very",
+    "young",
+    "was"
+   ],
+   "answer": 5,
+   "explanation": "'When he was very young' 순서이므로 3번째 단어는 was예요.",
+   "choiceExplanations": [
+    "when은 '~할 때'를 이끄는 접속사라서 절의 맨 앞(1번째)에 와요.",
+    "he는 when 바로 뒤에 오는 주어라서 2번째에 와요.",
+    "very는 형용사 young을 꾸미므로 young 바로 앞인 4번째에 와요.",
+    "young은 문장 끝에 오는 형용사로 5번째에 와요.",
+    "정답. 'When he was very young' 순서이므로 3번째 단어는 was예요."
+   ],
+   "detail": "·접속사 when 뒤에는 '주어 + 동사'가 이어져요(교과서 p.107 'When Rahul was in middle school').\n·그래서 When(1) he(2) was(3) very(4) young(5) 순서가 되어 When he was very young이에요.\n·very는 형용사 young 앞에 와서 young을 꾸며요.\n·따라서 3번째 단어는 was예요.",
+   "tip": "when 뒤에는 '주어 → 동사' 순서로 쌓고 마지막에 꾸미는 말을 놓아요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "when절 어순 (p.107)",
+     "text": "When + 주어 + 동사: When Rahul was in middle school, he acted in a school play."
+    },
+    {
+     "kind": "text",
+     "title": "when절의 위치와 쉼표 (p.107)",
+     "text": "When Rahul was in middle school, he acted in a school play.처럼 when절이 앞에 오면 쉼표로 주절과 나눠요."
+    },
+    {
+     "kind": "text",
+     "title": "Project 예시 (p.110)",
+     "text": "When I was 7 years old, my sister was born.처럼 행복 지수 그래프에 쓰는 문장도 when절이 앞에 오면 쉼표를 써요."
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "그는 아주 어렸을 때 그림 그리기를 좋아했다.\n( when / was / he / very / young )\n➜ ______ ______ ______ ______ ______ , he liked to draw."
+  },
+  {
+   "id": "u6-Q10-a",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어색한 대화",
+   "source": "교과서 p.98, p.99",
+   "question": "다음 대화 중 어색한 것은?",
+   "choices": [
+    "A: What are you interested in? B: I'm interested in taking pictures. It's fun.",
+    "A: What do you want to be in the future? B: I want to be a baker.",
+    "A: Why do you want to be a nurse? B: I want to help sick people.",
+    "A: What are you interested in? B: I want to be a scientist.",
+    "A: I want to be a reporter. B: Good luck to you!"
+   ],
+   "answer": 4,
+   "explanation": "관심을 묻는 질문에는 I'm interested in ~으로 답해야 하는데, 장래 희망 표현으로 답해 어색해요.",
+   "choiceExplanations": [
+    "관심을 묻는 질문에 I'm interested in taking pictures로 답하고 It's fun으로 이유를 덧붙여요(p.98).",
+    "장래 희망을 묻는 질문에 I want to be a baker로 직업을 답했어요(p.99).",
+    "Why 질문에 I want to help sick people로 이유를 말했어요(p.99).",
+    "정답. 관심을 묻는 질문에는 I'm interested in ~으로 답해야 하는데, 장래 희망 표현으로 답해 어색해요.",
+    "희망을 말한 사람에게 Good luck to you!로 응원했어요(p.101)."
+   ],
+   "detail": "·What are you interested in?은 관심 분야를 묻는 질문이라 'I'm interested in + 동명사(구)'로 답해요(교과서 p.98).\n·'I want to be + 직업'은 What do you want to be in the future?에 대한 답이에요(p.99).\n·그런데 이 대화는 관심을 물었는데 장래 희망으로 답했으므로 질문과 답이 어긋나요.\n·나머지 대화는 질문과 대답이 서로 맞아서 자연스러워요.\n·(이 대화는 교과서 p.98~101의 표현을 활용해 새로 쓴 대화예요.)",
+   "tip": "질문이 관심이면 interested in, 장래 희망이면 want to be로 답해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "질문과 대답 짝 (p.98, p.99)",
+     "head": [
+      "질문",
+      "대답"
+     ],
+     "rows": [
+      [
+       "What are you interested in?",
+       "I'm interested in ~."
+      ],
+      [
+       "What do you want to be in the future?",
+       "I want to be a(n) ~."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u6-Q10-b",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어색한 대화",
+   "source": "교과서 p.98, p.99",
+   "question": "다음 중 자연스럽지 않은 대화는?",
+   "choices": [
+    "A: What do you want to be in the future? B: I want to be a car designer.",
+    "A: What are you interested in? B: I'm interested in playing the drums. It's exciting.",
+    "A: Why do you want to be a designer? B: Yes, I do.",
+    "A: I want to be a pianist. B: That sounds wonderful.",
+    "A: What do you like to do? B: I like to read books."
+   ],
+   "answer": 3,
+   "explanation": "Why로 이유를 물었는데 Yes로 답해서 어색해요. 이유를 묻는 질문에는 I want to ~로 이유를 말해요.",
+   "choiceExplanations": [
+    "장래 희망을 묻는 질문에 I want to be ~로 답해 자연스러워요.",
+    "관심을 묻는 질문에 I'm interested in ~으로 답하고 느낌(It's exciting)을 덧붙여 자연스러워요.",
+    "정답. Why로 이유를 물었는데 Yes로 답해서 어색해요. 이유를 묻는 질문에는 I want to ~로 이유를 말해요.",
+    "장래 희망을 들은 뒤 '멋지다'고 호응하는 말이라 자연스러워요.",
+    "좋아하는 일을 묻는 질문에 like to + 동사원형으로 답해 자연스러워요(p.101)."
+   ],
+   "detail": "·Why do you want to be a doctor?라는 질문에는 'I want to help sick people.'처럼 이유를 말해요(교과서 p.99).\n·Why로 묻는 질문은 Yes나 No로 대답할 수 없는 질문이에요.\n·이 대화는 이유를 물었는데 Yes, I do.라고 답해서 질문과 대답이 맞지 않아요.\n·나머지 대화는 질문의 종류에 맞는 대답이 이어져요.\n·(이 대화는 교과서 p.98~101의 표현을 활용해 새로 쓴 대화예요.)",
+   "tip": "Why로 묻는 질문에는 이유를 말하고, Yes/No로 답하지 않아요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "Why 질문과 대답 (p.99)",
+     "text": "A: Why do you want to be a doctor? B: I want to help sick people. Why 질문에는 이유로 답해요."
+    }
+   ]
+  },
+  {
+   "id": "u6-Q11-a",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "대화 순서 배열",
+   "source": "교과서 p.99, p.101",
+   "question": "다음 대화의 흐름이 자연스럽도록 (A)~(E)를 바르게 배열한 것은?",
+   "choices": [
+    "(C) – (A) – (E) – (D) – (B)",
+    "(A) – (C) – (E) – (D) – (B)",
+    "(C) – (E) – (A) – (D) – (B)",
+    "(C) – (A) – (E) – (B) – (D)",
+    "(E) – (C) – (A) – (D) – (B)"
+   ],
+   "answer": 1,
+   "explanation": "첫 질문에 희망을 답하고(C), 이유를 묻고(A), 이유를 답한 뒤(E), 응원(D)과 인사(B)로 끝나요.",
+   "choiceExplanations": [
+    "정답. 첫 질문에 희망을 답하고(C), 이유를 묻고(A), 이유를 답한 뒤(E), 응원(D)과 인사(B)로 끝나요.",
+    "Why do you want to be a cook?이 먼저 나오면 아직 cook이라는 희망이 나오지 않았어요. 희망을 말하는 (C)가 먼저예요.",
+    "이유를 말하는 (E)가 이유를 묻는 (A)보다 앞에 올 수 없어요. 질문이 먼저예요.",
+    "Thank you.인 (B)는 응원(D)을 들은 뒤의 인사라서 (D) 앞에 올 수 없어요.",
+    "장래 희망을 묻는 첫 질문에 이유(E)부터 말하면 질문과 맞지 않아요."
+   ],
+   "detail": "·장래 희망을 묻는 첫 질문 다음에는 'I want to be a ...'로 답하는 (C)가 와요(교과서 p.99).\n·그 뒤에 Why do you want to be ...?인 (A)가 오고, 이유를 말하는 (E) I want to make food ...가 이어져요(p.99의 질문·이유 짝과 같은 구조).\n·마지막으로 Good luck to you!인 (D)(p.101)와 그에 대한 Thank you.인 (B)가 와요.\n·따라서 순서는 (C)–(A)–(E)–(D)–(B)예요.\n·(이 대화는 교과서 p.98~101의 표현을 활용해 새로 쓴 대화예요.)",
+   "tip": "질문 → 대답 → Why → 이유 → 응원 → 인사 순서로 이어지는지 확인해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "대화를 이어 주는 말 (p.99, p.101)",
+     "text": "What do you want to be? → I want to be ~. → Why? → I want to ~. → Good luck to you!"
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "Jina: What do you want to be in the future?\n(A) Jina: Why do you want to be a cook?\n(B) Tom: Thank you.\n(C) Tom: I want to be a cook.\n(D) Jina: Good luck to you!\n(E) Tom: I want to make food for many people.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u6-Q11-b",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "대화 순서 배열",
+   "source": "교과서 p.98",
+   "question": "다음 대화의 흐름이 자연스럽도록 (A)~(E)를 바르게 배열한 것은?",
+   "choices": [
+    "(B) – (A) – (D) – (C) – (E)",
+    "(B) – (D) – (A) – (C) – (E)",
+    "(B) – (A) – (C) – (D) – (E)",
+    "(D) – (B) – (A) – (C) – (E)",
+    "(B) – (A) – (D) – (E) – (C)"
+   ],
+   "answer": 1,
+   "explanation": "Ben이 먼저 답하고(B), Jisu가 호응한 뒤(A), Ben이 되묻고(D), Jisu가 답하면(C), Ben이 호응해요(E).",
+   "choiceExplanations": [
+    "정답. Ben이 먼저 답하고(B), Jisu가 호응한 뒤(A), Ben이 되묻고(D), Jisu가 답하면(C), Ben이 호응해요(E).",
+    "(D)는 Ben이 Jisu에게 되묻는 말인데, 그 전에 Jisu가 동물 이야기에 호응하는 (A)가 먼저 나와야 해요.",
+    "(C)는 Jisu가 자기 관심을 답하는 말이라서, Ben이 먼저 묻는 (D) 뒤에 와야 해요.",
+    "첫 질문은 Ben에게 한 것이므로 Ben이 먼저 되묻는 (D)가 올 수 없어요. 대답하는 (B)가 먼저예요.",
+    "(E)는 퍼즐 이야기에 호응하는 말인데 퍼즐 이야기를 하는 (C)보다 앞에 올 수 없어요."
+   ],
+   "detail": "·관심을 묻는 질문에는 'I'm interested in + 동명사(구)'로 답해요(교과서 p.98). 그래서 Ben이 답하는 (B)가 첫 줄 다음에 와요.\n·Jisu가 동물 이야기에 호응하는 (A) 뒤에 Ben이 What are you interested in, Jisu?로 되묻는 (D)가 오고, Jisu가 퍼즐이라고 답하는 (C)가 이어져요.\n·퍼즐 이야기에 호응하는 (E)는 (C) 뒤에 와요.\n·따라서 순서는 (B)–(A)–(D)–(C)–(E)예요.\n·(이 대화는 교과서 p.98~101의 표현을 활용해 새로 쓴 대화예요.)",
+   "tip": "누가 말하는지와 무엇에 대한 말인지를 따라가며 순서를 정해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "관심 묻고 답하기 (p.98)",
+     "text": "A: What are you interested in? B: I'm interested in ~. It's fun. 질문에 대한 답, 되묻기, 호응 순서로 이어져요."
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "Jisu: What are you interested in, Ben?\n(A) Jisu: Animals? That sounds fun.\n(B) Ben: I'm interested in helping animals.\n(C) Jisu: I'm interested in solving puzzles.\n(D) Ben: What are you interested in, Jisu?\n(E) Ben: Puzzles? That sounds challenging.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u6-Q12-a",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해 내용 일치",
+   "source": "교과서 p.104~105 글 구성을 본뜬 새 지문(교과서 밖 창작)",
+   "question": "다음 글의 내용과 일치하는 것은?",
+   "choices": [
+    "Tim cooked with his dad every weekend at home.",
+    "Tim works as a baker in a big city near the sea.",
+    "Tim began to love baking at the age of ten.",
+    "Tim makes bread and cakes only for his own family.",
+    "Tim is a great swimmer and swims every weekend."
+   ],
+   "answer": 3,
+   "explanation": "When Tim was ten과 At that time, he started to love baking을 이으면 열 살 때 제빵을 좋아하기 시작했다는 것을 알 수 있어요.",
+   "choiceExplanations": [
+    "글에는 Tim이 엄마(mom)와 요리했다고 나와요. 아빠가 아니에요.",
+    "글에는 작은 마을(small town)의 제빵사라고 나와요. 큰 도시가 아니에요.",
+    "정답. When Tim was ten과 At that time, he started to love baking을 이으면 열 살 때 제빵을 좋아하기 시작했다는 것을 알 수 있어요.",
+    "글에는 많은 사람들을 위해 만든다고 나와요. 가족만을 위한 것이 아니에요.",
+    "글에는 수영을 잘하지 못한다고 나와요. 수영을 잘한다는 말은 없어요."
+   ],
+   "detail": "·글의 흐름은 좋아하던 일(요리) → 계기(동생에게 케이크를 만든 일) → 현재 직업(제빵사)이에요(이 지문은 교과서 p.104~105의 글 구성을 본떠 새로 쓴 글이에요).\n·열 살 때(When Tim was ten years old) 동생에게 케이크를 만들었고 At that time, he started to love baking이라고 해서 그때 제빵을 좋아하기 시작했다는 것을 알 수 있어요.\n·엄마와 요리했고, 작은 마을에서 일하고, 많은 사람에게 빵을 만들며, 수영은 못한다는 내용이 보기와 하나씩 달라요.\n·따라서 글과 일치하는 것은 열 살 때 제빵을 좋아하게 됐다는 보기예요.",
+   "tip": "보기 속 사람·장소·때를 글의 문장과 하나씩 대조해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "본문 근거",
+     "text": "When Tim was ten years old, he made a birthday cake for his sister. At that time, he started to love baking."
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "Tim loved to cook. He cooked with his mom every weekend. When Tim was ten years old, he made a birthday cake for his sister. At that time, he started to love baking. Now he works as a baker in a small town. He makes bread and cakes for many people. He is a great baker, but he is not good at swimming."
+  },
+  {
+   "id": "u6-Q12-b",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해 내용 일치",
+   "source": "교과서 p.105 글 구성을 본뜬 새 지문(교과서 밖 창작)",
+   "question": "다음 글의 내용과 일치하는 것은?",
+   "choices": [
+    "유나는 어릴 때 가수가 되고 싶었다.",
+    "유나는 병원에서 사람들을 치료한다.",
+    "유나는 바이올린을 좋아하지만 연주하지는 않는다.",
+    "유나는 동물원에서 아침마다 바이올린을 켠다.",
+    "유나는 동물들이 아플 때 돌본다."
+   ],
+   "answer": 5,
+   "explanation": "글에 'She looks after the animals when they get sick.'가 나와 동물이 아플 때 돌본다는 것을 알 수 있어요.",
+   "choiceExplanations": [
+    "글에는 어릴 때 동물 의사(animal doctor)가 되고 싶었다고 나와요. 가수가 아니에요.",
+    "글에는 동물원(zoo)에서 일한다고 나와요. 병원에서 사람을 치료하지 않아요.",
+    "글에는 저녁마다 동물들에게 바이올린을 연주해 준다고 나와요.",
+    "글에는 every evening(저녁마다)이라고 나와요. 아침이 아니에요.",
+    "정답. 글에 'She looks after the animals when they get sick.'가 나와 동물이 아플 때 돌본다는 것을 알 수 있어요."
+   ],
+   "detail": "·글은 어릴 때 꿈(동물 의사) → 좋아하던 일(바이올린) → 현재 직업(동물원 의사) 순서예요.\n·looks after the animals when they get sick에서 동물이 아플 때 돌본다는 것을 확인할 수 있어요.\n·가수가 되고 싶었다는 말, 병원에서 사람을 치료한다는 말, 바이올린을 연주하지 않는다는 말, 아침에 연주한다는 말은 글과 맞지 않아요.\n·따라서 글과 일치하는 것은 동물이 아플 때 돌본다는 보기예요.\n·(이 지문은 교과서 p.105 Kevin 글의 구성을 본떠 새로 쓴 글이에요.)",
+   "tip": "한국어 보기도 글의 영어 문장과 사람·장소·때를 하나씩 대조해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "본문 근거",
+     "text": "She looks after the animals when they get sick. She also plays the violin for them every evening."
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "Yuna wanted to be an animal doctor. She also loved to play the violin. Now she works as a doctor for a zoo. She looks after the animals when they get sick. Yuna loves to help the animals. She also plays the violin for them every evening."
+  },
+  {
+   "id": "u6-Q13-a",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "답할 수 없는 질문",
+   "source": "교과서 p.105",
+   "question": "다음 글을 읽고 답할 수 없는 질문은?",
+   "choices": [
+    "What did Leo love when he was young?",
+    "How old is Leo now?",
+    "Who watched baseball games with Leo?",
+    "What did Leo write about in middle school?",
+    "What does Leo do for a living?"
+   ],
+   "answer": 2,
+   "explanation": "글에는 Leo의 현재 나이가 나와 있지 않아서 How old is Leo now?에는 답할 수 없어요.",
+   "choiceExplanations": [
+    "글 첫 문장에 Leo loved sports.가 나와 스포츠라고 답할 수 있어요.",
+    "정답. 글에는 Leo의 현재 나이가 나와 있지 않아서 How old is Leo now?에는 답할 수 없어요.",
+    "글에 with his father라고 나와 아버지라고 답할 수 있어요.",
+    "글에 wrote a story about his team이라고 나와 자기 팀에 대한 이야기라고 답할 수 있어요.",
+    "글에 Now Leo works as a sports reporter.가 나와 스포츠 기자라고 답할 수 있어요."
+   ],
+   "detail": "·글에서 Leo가 좋아한 것(sports), 함께 야구를 본 사람(his father), 중학생 때 쓴 글(his team), 현재 직업(sports reporter)은 모두 확인할 수 있어요.\n·하지만 Leo가 몇 살인지는 글 어디에도 나오지 않아요.\n·'답할 수 없는 질문' 문제는 보기 질문마다 글에서 근거 문장을 찾아 확인하고, 근거가 없는 질문을 고르는 문제예요.\n·따라서 답할 수 없는 질문은 Leo의 현재 나이를 묻는 질문이에요.\n·(이 글은 교과서 p.104~105의 글 구성을 본떠 새로 쓴 글이에요.)",
+   "tip": "질문마다 근거 문장을 찾고, 근거가 없는 것을 골라요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "본문 근거 찾기",
+     "text": "sports → Leo loved sports. / his father → with his father / his team → a story about his team / sports reporter → works as a sports reporter"
+    },
+    {
+     "kind": "text",
+     "title": "글 구조 확인 (p.104~105)",
+     "text": "교과서 글은 '좋아하던 일 → 계기 → 현재 직업' 순서예요. 나이·팀 이름·사는 곳처럼 글에 나오지 않는 정보는 질문의 답이 될 수 없어요."
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "Leo loved sports. He watched baseball games with his father every weekend. When Leo was in middle school, he wrote a story about his team for the school newspaper. He loved to write, too. Now Leo works as a sports reporter. He travels to many cities and watches the games up close. He loves his job."
+  },
+  {
+   "id": "u6-Q13-b",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "답할 수 없는 질문",
+   "source": "교과서 p.99, p.101",
+   "question": "다음 대화를 읽고 답할 수 없는 질문은?",
+   "choices": [
+    "What is Sam interested in?",
+    "What does Hana suggest for Sam's future?",
+    "What does Hana love to do?",
+    "Which sport does Sam like best?",
+    "What does Hana want to be?"
+   ],
+   "answer": 4,
+   "explanation": "Sam은 sports에 관심이 있다고만 말했고 어떤 종목을 가장 좋아하는지는 대화에 나오지 않아요.",
+   "choiceExplanations": [
+    "Sam이 drawing and sports에 관심이 있다고 말해 답할 수 있어요.",
+    "Hana가 How about designing shoes for sports players?라고 제안해 답할 수 있어요.",
+    "Hana가 I love to write.라고 말해 글쓰기라고 답할 수 있어요.",
+    "정답. Sam은 sports에 관심이 있다고만 말했고 어떤 종목을 가장 좋아하는지는 대화에 나오지 않아요.",
+    "Hana가 I want to be a reporter.라고 말해 기자라고 답할 수 있어요."
+   ],
+   "detail": "·대화에서 Sam의 관심사(drawing and sports), Hana의 제안(designing shoes), Hana가 좋아하는 일(write), Hana의 희망(reporter)은 모두 확인돼요.\n·하지만 Sam이 sports 중에서 어떤 종목을 가장 좋아하는지는 대화에 한 번도 나오지 않아요.\n·관심 분야와 장래 희망을 묻고 답하는 대화(교과서 p.98~99)에서 질문별로 근거 문장을 찾는 연습이에요.\n·따라서 답할 수 없는 질문은 Sam이 가장 좋아하는 종목을 묻는 질문이에요.\n·(이 대화는 교과서 p.98~101의 표현을 활용해 새로 쓴 대화예요.)",
+   "tip": "대화에 말로 나온 내용만 답이 돼요. 추측해서 답하는 질문은 고르지 않아요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "대화 근거 찾기",
+     "text": "Sam: I'm interested in drawing and sports. / Hana: How about designing shoes ...? / Hana: I want to be a reporter. I love to write."
+    },
+    {
+     "kind": "text",
+     "title": "대화에 없는 정보 (p.98~99)",
+     "text": "관심 분야·장래 희망 대화에서는 말로 나온 내용만 답이 돼요. 말하지 않은 세부 내용은 '답할 수 없는 질문'이에요."
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "Hana: What do you want to be in the future, Sam?\nSam: I'm not sure yet. I'm interested in drawing and sports.\nHana: How about designing shoes for sports players?\nSam: That's a great idea! What about you, Hana?\nHana: I want to be a reporter. I love to write."
+  },
+  {
+   "id": "u6-S01-a",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "when 영작(어형 변화·단어 추가)",
+   "source": "교과서 p.107",
+   "question": "다음 우리말과 같은 뜻이 되도록 주어진 단어를 이용하여 영어 문장을 완성하시오. (단, 필요하면 어형을 바꾸고 단어를 1개만 추가할 것. 빈칸에는 한 칸에 한 단어씩 쓰며, 대소문자와 철자 오류는 감점)\n비가 올 때, 나는 집에서 쿠키 굽는 것을 좋아한다.\n( when / it / rain / I / like / bake / cookies / at home )\n➜ ______ ______ ______ , ______ ______ ______ ______ ______ ______ ______ .",
+   "answerHint": "빈칸 10칸(한 칸에 한 단어), 어형 변화 1개와 추가 단어 1개, 쉼표는 빈칸 밖. 대소문자·철자 오류는 감점",
+   "modelAnswer": "When it rains, I like to bake cookies at home.",
+   "explanation": "모범 답안: When it rains, I like to bake cookies at home. (근거: p.107)",
+   "rubric": [
+    {
+     "criterion": "When it rains를 바르게 씀(when + 주어 + 동사, rain → rains)",
+     "points": 2,
+     "tip": "when 뒤에 주어 it과 동사가 와야 하고, it이 3인칭 단수라 rain에 -s를 붙여 rains로 써요."
+    },
+    {
+     "criterion": "like 뒤에 to부정사(to bake)를 씀",
+     "points": 1,
+     "tip": "like 뒤에 목적어로 to + 동사원형을 쓰므로 추가할 단어 1개는 to예요."
+    },
+    {
+     "criterion": "나머지 단어의 순서와 철자(cookies, at home)",
+     "points": 1,
+     "tip": "I like to bake cookies at home 순서로, cookies·at home의 철자와 대소문자를 확인해요."
+    }
+   ],
+   "detail": "·접속사 when은 '~할 때'라는 뜻이고 뒤에 '주어 + 동사'가 이어져요(교과서 p.107 'When I'm sad, I eat peanut ice cream.').\n·When it rains에서 주어 it이 3인칭 단수이므로 rain은 rains로 어형을 바꿔요.\n·like 뒤에는 to + 동사원형을 써서 like to bake가 되고, 추가하는 단어 1개가 to예요(p.107 연습 문항 'Jack likes to ride his bike').\n·주어진 단어 순서대로 맞추면 When it rains, I like to bake cookies at home.이 돼요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: rain을 그대로 쓰기, to를 빠뜨리기, cookies를 cookys로 쓰기",
+   "tip": "when절은 '주어 + 동사' 순서로, 3인칭 단수 현재형에는 -s를 붙여요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "영작 순서 (p.107)",
+     "text": "① When + 주어 + 동사 ② 쉼표 ③ 주절(주어 + like to + 동사원형) 순서로 쌓아요."
+    },
+    {
+     "kind": "text",
+     "title": "Check Up Sentence Master (p.111)",
+     "text": "want to, when 같은 표현을 활용해 문장을 만드는 활동이 p.111 Sentence Master에 있어요."
+    }
+   ]
+  },
+  {
+   "id": "u6-S01-b",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "when 영작(어형 변화·단어 추가)",
+   "source": "교과서 p.107",
+   "question": "다음 우리말과 같은 뜻이 되도록 주어진 단어를 이용하여 영어 문장을 완성하시오. (단, 필요하면 어형을 바꾸고 단어를 1개만 추가할 것. 빈칸에는 한 칸에 한 단어씩 쓰며, 대소문자와 철자 오류는 감점)\nMinho가 집에 올 때, 그는 개를 산책시키고 싶어 한다.\n( when / Minho / come / home / he / want / walk / the dog )\n➜ ______ ______ ______ ______ , ______ ______ ______ ______ ______ ______ .",
+   "answerHint": "빈칸 10칸(한 칸에 한 단어), 어형 변화 2개(comes, wants)와 추가 단어 1개(to), 쉼표는 빈칸 밖. 대소문자·철자 오류는 감점",
+   "modelAnswer": "When Minho comes home, he wants to walk the dog.",
+   "explanation": "모범 답안: When Minho comes home, he wants to walk the dog. (근거: p.107)",
+   "rubric": [
+    {
+     "criterion": "When Minho comes home을 바르게 씀(when + 주어 + 동사, come → comes)",
+     "points": 2,
+     "tip": "when 뒤에 주어 Minho와 동사가 오고, Minho가 3인칭 단수라 come에 -s를 붙여요."
+    },
+    {
+     "criterion": "he wants에서 want에 -s를 붙임",
+     "points": 1,
+     "tip": "주어 he가 3인칭 단수라 want를 wants로 써야 해요."
+    },
+    {
+     "criterion": "to walk the dog를 바르게 씀(to 추가, 어순·철자)",
+     "points": 1,
+     "tip": "want 뒤에 to + 동사원형을 써서 to walk가 되고, the dog의 철자를 확인해요."
+    }
+   ],
+   "detail": "·접속사 when 뒤에는 '주어 + 동사'가 이어져요(교과서 p.107 'My dad cooks dinner when he comes home early.').\n·Minho는 3인칭 단수이므로 come은 comes, 주절의 want는 wants로 바꿔요.\n·want 뒤에는 to + 동사원형을 써서 wants to walk가 되고 추가 단어 1개는 to예요(p.107 연습 문항 'Bill wants to play with the dog').\n·정리하면 When Minho comes home, he wants to walk the dog.이 돼요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: come·want를 그대로 쓰기, to를 빠뜨리기, the를 빠뜨리기",
+   "tip": "주어가 3인칭 단수이면 when절과 주절의 동사에 모두 -s를 붙여요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "영작 순서 (p.107)",
+     "text": "When + 주어 + 동사 , 주어 + wants to + 동사원형 순서로 쌓고 두 동사에 -s를 확인해요."
+    },
+    {
+     "kind": "text",
+     "title": "Check Up Sentence Master (p.111)",
+     "text": "want to, when 같은 표현을 활용해 문장을 만드는 활동이 p.111 Sentence Master에 있어요."
+    }
+   ]
+  },
+  {
+   "id": "u6-S02-a",
+   "slot": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어법 오류 고치기",
+   "source": "교과서 p.104, p.105, p.107",
+   "question": "다음 (1)~(4)의 각 문장에는 어법상 틀린 단어가 하나씩 있다. 틀린 단어를 찾아 바르게 고쳐 쓰시오. (각 1점, 철자 오류는 감점)",
+   "answerHint": "각 문장에서 틀린 단어 1개를 찾아 고쳐 씀. 각 1점. 철자 오류는 감점",
+   "modelAnswer": "(1) played → play (2) like → likes (3) at → as (4) ride → rode",
+   "explanation": "모범 답안: (1) played → play (2) like → likes (3) at → as (4) ride → rode (근거: p.104~108)",
+   "rubric": [
+    {
+     "criterion": "(1) played → play",
+     "points": 1,
+     "tip": "to 뒤에는 동사원형을 써서 loves to play가 돼요."
+    },
+    {
+     "criterion": "(2) like → likes",
+     "points": 1,
+     "tip": "주어 Somin이 3인칭 단수이고 these days가 현재를 나타내므로 like에 -s를 붙여 likes로 써요. liked(과거)는 these days와 맞지 않아 인정하지 않아요. like를 wants처럼 단어 자체를 다른 낱말로 바꾸는 답은 어법 수정이 아니므로 인정하지 않아요."
+    },
+    {
+     "criterion": "(3) at → as",
+     "points": 1,
+     "tip": "'~로서'를 뜻하는 전치사는 as예요. works as a bus driver로 써요. 다음 문장(He drives a bus)에서 아버지가 버스 기사임이 확정되므로 for·with로 고친 답은 인정하지 않아요. driver를 company·station처럼 다른 낱말로 바꾸는 답도 어법 수정이 아니므로 인정하지 않아요."
+    },
+    {
+     "criterion": "(4) ride → rode",
+     "points": 1,
+     "tip": "Last summer와 was가 과거이므로 주절도 과거형 rode로 써야 시제가 맞아요. was를 is로 고친 답은 Last summer와 맞지 않아 인정하지 않아요."
+    }
+   ],
+   "detail": "·(1) to부정사의 to 뒤에는 동사원형이 와서 loves to play가 돼요(교과서 p.107 'We plan to visit a few theaters in London').\n·(2) 현재를 나타내는 these days가 있고 Somin이 3인칭 단수이므로 -s는 동사에 붙어서 likes to swim이 돼요(p.107 연습 문항 'Jack likes to ride').\n·(3) 직업을 말할 때 '~로서'는 as라서 works as a bus driver로 써요(p.105 'works as a doctor').\n·(4) Last summer와 when절의 was가 과거이므로 주절도 과거 rode로 써요(p.104 'When Rahul was in middle school, he acted in a school play.').\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: played를 playing으로 고치기, like를 liked로 고치기(these days와 맞지 않음), was를 is로 고치기(Last summer와 맞지 않음), at을 for·with로 고치기",
+   "tip": "to 뒤 동사원형, 3인칭 단수 -s, 직업 앞 as, when절과 주절의 시제를 차례로 점검해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "고치는 방법",
+     "head": [
+      "틀린 부분",
+      "바른 형태",
+      "근거"
+     ],
+     "rows": [
+      [
+       "to + 동사원형",
+       "to play",
+       "p.107"
+      ],
+      [
+       "3인칭 단수 -s",
+       "likes",
+       "p.107"
+      ],
+      [
+       "~로서",
+       "as",
+       "p.105"
+      ],
+      [
+       "과거 시제 맞추기",
+       "was ... rode",
+       "p.104"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "Think and Write (p.108)",
+     "text": "20년 후의 나를 소개하는 글 예시: I decided to be a writer when I was in middle school. I liked to read books. 접속사 when을 바르게 썼는지 점검해요."
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "(1) My uncle loves to played soccer on weekends.\n(2) Somin like to swim in the lake these days.\n(3) Her father works at a bus driver in my town. He drives a bus every day.\n(4) Last summer, when it was sunny, we ride our bikes."
+  },
+  {
+   "id": "u6-S02-b",
+   "slot": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어법 오류 고치기",
+   "source": "교과서 p.104, p.107, p.108",
+   "question": "다음 (1)~(4)의 각 문장에는 어법상 틀린 단어가 하나씩 있다. 틀린 단어를 찾아 바르게 고쳐 쓰시오. (각 1점, 철자 오류는 감점)",
+   "answerHint": "각 문장에서 틀린 단어 1개를 찾아 고쳐 씀. 각 1점. 철자 오류는 감점",
+   "modelAnswer": "(1) visits → visit (2) play → plays (3) a → an (4) join → joined",
+   "explanation": "모범 답안: (1) visits → visit (2) play → plays (3) a → an (4) join → joined (근거: p.100~107)",
+   "rubric": [
+    {
+     "criterion": "(1) visits → visit",
+     "points": 1,
+     "tip": "to 뒤에는 동사원형을 써서 wants to visit가 돼요."
+    },
+    {
+     "criterion": "(2) play → plays",
+     "points": 1,
+     "tip": "주어 Minjun이 3인칭 단수이고 these days가 현재를 나타내므로 play에 -s를 붙여 plays로 써요. played(과거)는 these days와 맞지 않아 인정하지 않아요. always를 can·will처럼 다른 낱말로 바꾸는 답은 어법 수정이 아니므로 인정하지 않아요."
+    },
+    {
+     "criterion": "(3) a → an",
+     "points": 1,
+     "tip": "모음 소리로 시작하는 engineer 앞에는 a가 아니라 an을 써요."
+    },
+    {
+     "criterion": "(4) join → joined",
+     "points": 1,
+     "tip": "when절이 was로 과거이므로 주절도 과거형 joined로 써야 시제가 맞아요."
+    }
+   ],
+   "detail": "·(1) 'to + 동사원형' 형태라서 wants to visit가 돼요(p.107 연습 문항 'Bill wants to play with the dog').\n·(2) 현재를 나타내는 these days가 있고 3인칭 단수 주어이므로 동사에 -s를 붙여 plays가 돼요('Jack likes to ride'는 p.107 연습 문항을 완성한 문장).\n·(3) 직업을 말할 때 모음 소리 앞에는 an을 써요(p.100 'I want to be a(n) ...').\n·(4) when절이 과거(was)이면 주절도 과거 joined로 써요(p.104 'When Rahul was in middle school, he acted in a school play.').\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: visits를 visiting으로 고치기, play를 played로 고치기(these days와 맞지 않음), join을 joins로 고치기(시제가 맞지 않음)",
+   "tip": "to 뒤 동사원형, 3인칭 단수 -s, a/an, when절과 주절의 시제를 차례로 점검해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "고치는 방법",
+     "head": [
+      "틀린 부분",
+      "바른 형태",
+      "근거"
+     ],
+     "rows": [
+      [
+       "to + 동사원형",
+       "to visit",
+       "p.107"
+      ],
+      [
+       "3인칭 단수 -s",
+       "plays",
+       "p.107"
+      ],
+      [
+       "a / an",
+       "an engineer",
+       "p.100"
+      ],
+      [
+       "과거 시제 맞추기",
+       "was ... joined",
+       "p.104"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "(1) Doyun wants to visits his aunt this weekend.\n(2) Minjun always play the piano after dinner these days.\n(3) Yuri wants to be a engineer.\n(4) When Nari was twelve, she join a swimming team."
+  },
+  {
+   "id": "u6-S03-a",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "하",
+   "points": 4,
+   "concept": "본문에서 단어 찾기",
+   "source": "교과서 p.104 글 흐름을 본뜬 새 지문",
+   "question": "윗글의 내용과 일치하도록 요약문의 빈칸 (1)~(4)에 알맞은 단어를 윗글에서 찾아 쓰시오. (각 1점, 한 칸에 한 단어, 철자 오류는 감점)\n요약문: Minsu (1) ______ to fly kites. At the age of twelve, he joined the model airplane (2) ______. Now he works as a (3) ______ and (4) ______ many kinds of people.",
+   "answerHint": "윗글에 나온 단어를 그대로 찾아 씀(한 칸에 한 단어). (4)는 글에 나온 형태를 쓸 것. 철자 오류는 감점",
+   "modelAnswer": "(1) loved (2) club (3) pilot (4) meets",
+   "explanation": "모범 답안: (1) loved (2) club (3) pilot (4) meets (근거: 글의 각 문장)",
+   "rubric": [
+    {
+     "criterion": "(1) loved",
+     "points": 1,
+     "tip": "첫 문장 'Minsu loved to fly kites.'에서 찾아요. love의 과거형 loved를 써요."
+    },
+    {
+     "criterion": "(2) club",
+     "points": 1,
+     "tip": "'joined the model airplane club'에서 찾아요."
+    },
+    {
+     "criterion": "(3) pilot",
+     "points": 1,
+     "tip": "'works as a pilot'에서 찾아요. as 뒤의 직업이에요."
+    },
+    {
+     "criterion": "(4) meets",
+     "points": 1,
+     "tip": "'meets many kinds of people'에서 찾아요. 주어 he가 3인칭 단수라 -s가 붙은 meets예요."
+    }
+   ],
+   "detail": "·(1)은 글 첫 문장의 'Minsu loved to fly kites.'에서 loved를 찾아요.\n·(2)는 열두 살 때 가입한 곳이므로 'joined the model airplane club'에서 club을 찾아요.\n·(3)은 현재 직업이므로 'Now he works as a pilot.'에서 as 뒤의 pilot을 찾아요.\n·(4)는 'meets many kinds of people'에서 찾는데, 요약문의 주어 he가 3인칭 단수라 글에 나온 meets를 그대로 써요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: love로 현재형을 쓰기, meet로 -s를 빠뜨리기\n·(이 글은 교과서 p.104 Rahul 글의 흐름을 본떠 새로 쓴 글이에요. 교과서에 있는 문장이 아니에요.)",
+   "tip": "요약문의 빈칸마다 대응하는 글의 문장을 먼저 찾고, 단어 형태는 글에 나온 그대로 써요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "글에서 근거 찾기",
+     "text": "loved to fly kites / joined the model airplane club / works as a pilot / meets many kinds of people"
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "Minsu loved to fly kites. He flew them in the park every Sunday. When Minsu was twelve, he joined the model airplane club. Now he works as a pilot. He flies to many countries and meets many kinds of people."
+  },
+  {
+   "id": "u6-S03-b",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "하",
+   "points": 4,
+   "concept": "본문에서 단어 찾기",
+   "source": "교과서 p.104 글 흐름을 본뜬 새 지문",
+   "question": "윗글의 내용과 일치하도록 요약문의 빈칸 (1)~(4)에 알맞은 단어를 윗글에서 찾아 쓰시오. (각 1점, 한 칸에 한 단어, 철자 오류는 감점)\n요약문: Jun (1) ______ with his brother every evening. When he was fifteen, he (2) ______ his own game. Now he works as a game (3) ______ in Busan. He (4) ______ new games for kids.",
+   "answerHint": "윗글에 나온 단어를 그대로 찾아 씀(한 칸에 한 단어). 글에 나온 형태를 쓸 것. 철자 오류는 감점",
+   "modelAnswer": "(1) played (2) made (3) programmer (4) makes",
+   "explanation": "모범 답안: (1) played (2) made (3) programmer (4) makes (근거: 글의 각 문장)",
+   "rubric": [
+    {
+     "criterion": "(1) played",
+     "points": 1,
+     "tip": "'He played them with his brother every evening.'에서 찾아요. 'with his brother'와 이어지는 동사는 played이고, loved는 뒤에 to가 와야 해서 안 돼요."
+    },
+    {
+     "criterion": "(2) made",
+     "points": 1,
+     "tip": "'he made his own game'에서 찾아요. make의 과거형 made예요. 윗글 내용과 일치하지 않는 낱말은 인정하지 않아요."
+    },
+    {
+     "criterion": "(3) programmer",
+     "points": 1,
+     "tip": "'works as a game programmer'에서 찾아요. m이 겹치는 철자에 주의해요."
+    },
+    {
+     "criterion": "(4) makes",
+     "points": 1,
+     "tip": "'He makes new games for kids.'에서 찾아요. 3인칭 단수 현재형 makes예요."
+    }
+   ],
+   "detail": "·(1)은 'He played them with his brother every evening.'에서 played를 찾아요.\n·(2)는 열다섯 살 때의 일이므로 'he made his own game'에서 made를 찾아요.\n·(3)은 현재 직업이므로 'Now he works as a game programmer'에서 programmer를 찾아요.\n·(4)는 마지막 문장 'He makes new games for kids.'에서 makes를 찾아요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: play로 현재형을 쓰기, loved를 쓰기('with his brother'와 이어지지 않음), programer처럼 m을 한 번만 쓰기\n·(이 글은 교과서 p.104 Mina 글의 흐름을 본떠 새로 쓴 글이에요. 교과서에 있는 문장이 아니에요.)",
+   "tip": "요약문의 빈칸마다 대응하는 글의 문장을 찾고, 시제와 -s까지 글 그대로 써요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "글에서 근거 찾기",
+     "text": "played them with his brother / made his own game / works as a game programmer / makes new games for kids"
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "Jun loved to play games. He played them with his brother every evening. When Jun was fifteen, he made his own game. Now he works as a game programmer in Busan. He makes new games for kids."
+  },
+  {
+   "id": "u6-S04-a",
+   "slot": "S04",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "to부정사 목적어 영작",
+   "source": "교과서 p.99, p.107",
+   "question": "다음 우리말과 같은 뜻이 되도록 주어진 단어를 이용하여 영어 문장을 쓰시오. (한 칸에 한 단어씩 쓰며, 필요하면 어형을 바꾸고 단어를 추가할 수 있다. 대소문자와 철자 오류는 감점, 각 2점)\n(1) 나는 어린이들을 가르치고 싶다.\n( I / want / teach / children )\n➜ ______ ______ ______ ______ ______ .\n(2) 그녀는 매일 아침 달리기하는 것을 좋아한다.\n( she / like / run / every / morning )\n➜ ______ ______ ______ ______ ______ ______ .",
+   "answerHint": "(1) 빈칸 5칸, 추가 단어 1개 / (2) 빈칸 6칸, 어형 변화 1개와 추가 단어 1개. 대소문자·철자 오류는 감점",
+   "modelAnswer": "(1) I want to teach children. (2) She likes to run every morning.",
+   "explanation": "모범 답안: (1) I want to teach children. (2) She likes to run every morning. (근거: p.99, p.107)",
+   "rubric": [
+    {
+     "criterion": "(1) want 뒤에 to를 추가함(want to teach)",
+     "points": 1,
+     "tip": "want 뒤에는 to + 동사원형을 쓰므로 추가할 단어 1개는 to예요."
+    },
+    {
+     "criterion": "(1) I want to teach children의 어순·철자",
+     "points": 1,
+     "tip": "I want to teach children 순서로 쓰고 children의 철자를 확인해요."
+    },
+    {
+     "criterion": "(2) likes(like → likes)와 to를 씀",
+     "points": 1,
+     "tip": "주어 she가 3인칭 단수라 like에 -s를 붙이고, 뒤에 to를 추가해 likes to run이 돼요."
+    },
+    {
+     "criterion": "(2) She likes to run every morning의 어순·철자",
+     "points": 1,
+     "tip": "She likes to run every morning 순서로 쓰고 every·morning의 철자를 확인해요."
+    }
+   ],
+   "detail": "·(1) want 뒤에는 'to + 동사원형'을 써요(교과서 p.99 'I want to help sick people.').\n·그래서 추가할 단어 1개는 to이고 I want to teach children이 돼요.\n·(2) like 뒤에도 to + 동사원형을 쓸 수 있고(p.107 연습 문항 'Jack likes to ride his bike after school'), 주어 she가 3인칭 단수이므로 likes로 바꿔요.\n·정리하면 She likes to run every morning.이 돼요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: want help처럼 to를 빠뜨리기, she like처럼 -s를 빠뜨리기, children을 childs로 쓰기",
+   "tip": "want·like 뒤에는 to + 동사원형을 쓰고, 3인칭 단수 주어이면 동사에 -s를 붙여요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "to부정사 목적어 (p.99, p.107)",
+     "head": [
+      "동사",
+      "뒤에 오는 형태",
+      "교과서 예"
+     ],
+     "rows": [
+      [
+       "want",
+       "to + 동사원형",
+       "I want to help sick people (p.99)"
+      ],
+      [
+       "like",
+       "to + 동사원형",
+       "Jack likes to ride his bike (p.107 연습 문항)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u6-S04-b",
+   "slot": "S04",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "to부정사 목적어 영작",
+   "source": "교과서 p.107",
+   "question": "다음 우리말과 같은 뜻이 되도록 주어진 단어를 이용하여 영어 문장을 쓰시오. (한 칸에 한 단어씩 쓰며, 필요하면 어형을 바꾸고 단어를 추가할 수 있다. 대소문자와 철자 오류는 감점, 각 2점)\n(1) 우리는 박물관을 방문할 계획이다.\n( we / plan / visit / a / museum )\n➜ ______ ______ ______ ______ ______ ______ .\n(2) Eric은 새 자전거를 사고 싶었다.\n( Eric / want / buy / a / new / bike )\n➜ ______ ______ ______ ______ ______ ______ ______ .",
+   "answerHint": "(1) 빈칸 6칸, 추가 단어 1개 / (2) 빈칸 7칸, 어형 변화 1개와 추가 단어 1개. 대소문자·철자 오류는 감점",
+   "modelAnswer": "(1) We plan to visit a museum. (2) Eric wanted to buy a new bike.",
+   "explanation": "모범 답안: (1) We plan to visit a museum. (2) Eric wanted to buy a new bike. (근거: p.107)",
+   "rubric": [
+    {
+     "criterion": "(1) plan 뒤에 to를 추가함(plan to visit)",
+     "points": 1,
+     "tip": "plan 뒤에는 to + 동사원형을 쓰므로 추가할 단어 1개는 to예요."
+    },
+    {
+     "criterion": "(1) We plan to visit a museum의 어순·철자",
+     "points": 1,
+     "tip": "We plan to visit a museum 순서로 쓰고 museum의 철자를 확인해요."
+    },
+    {
+     "criterion": "(2) wanted(want → wanted)와 to를 씀",
+     "points": 1,
+     "tip": "우리말이 과거(~고 싶었다)이므로 want를 wanted로 바꾸고, 뒤에 to를 추가해요."
+    },
+    {
+     "criterion": "(2) Eric wanted to buy a new bike의 어순·철자",
+     "points": 1,
+     "tip": "Eric wanted to buy a new bike 순서로 쓰고 철자를 확인해요."
+    }
+   ],
+   "detail": "·(1) plan 뒤에는 'to + 동사원형'을 써요(교과서 p.107 'We plan to visit a few theaters in London').\n·그래서 추가할 단어 1개는 to이고 We plan to visit a museum이 돼요.\n·(2) 우리말이 과거(~고 싶었다)이므로 want를 wanted로 바꿔 wanted to buy를 만들어요(p.107 'Kevin wanted to leave early').\n·정리하면 Eric wanted to buy a new bike.가 돼요.\n채점 안내: 조건 낱말을 쓰지 않으면 그 조건 항목은 0점이고, 나머지 항목은 내용에 따라 따로 점수를 줘요. 모범 답안과 뜻이 같으면 다른 표현도 인정해요.\n흔한 감점: plan visit처럼 to를 빠뜨리기, want를 그대로 쓰기(시제 오류), museum 철자 틀리기",
+   "tip": "우리말의 시제를 먼저 확인하고, plan·want 뒤에는 to를 넣어요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "to부정사 목적어 (p.107)",
+     "head": [
+      "동사",
+      "뒤에 오는 형태",
+      "교과서 예"
+     ],
+     "rows": [
+      [
+       "plan",
+       "to + 동사원형",
+       "We plan to visit a few theaters (p.107)"
+      ],
+      [
+       "want(ed)",
+       "to + 동사원형",
+       "Kevin wanted to leave early (p.107)"
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

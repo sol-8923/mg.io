@@ -1,0 +1,21 @@
+{
+ "schema": "slides-v2/1",
+ "book": "g1s2-english", "unit": "u7",
+ "title": "Lesson 7. Money Doesn't Grow on Trees",
+ "titleFull": "Lesson 7. Money Doesn't Grow on Trees - 교과 정리",
+ "budget": {"min": 10, "max": 12},
+ "slides": [
+  {"id": "s01", "file": "slides/s01.html", "class": "slide cover active", "style": null},
+  {"id": "s02", "file": "slides/s02.html", "class": "slide", "style": null},
+  {"id": "s03", "file": "slides/s03.html", "class": "slide", "style": null},
+  {"id": "s04", "file": "slides/s04.html", "class": "slide", "style": null},
+  {"id": "s05", "file": "slides/s05.html", "class": "slide", "style": null},
+  {"id": "s06", "file": "slides/s06.html", "class": "slide", "style": null},
+  {"id": "s07", "file": "slides/s07.html", "class": "slide", "style": null},
+  {"id": "s08", "file": "slides/s08.html", "class": "slide", "style": null},
+  {"id": "s09", "file": "slides/s09.html", "class": "slide", "style": null},
+  {"id": "s10", "file": "slides/s10.html", "class": "slide", "style": null},
+  {"id": "s11", "file": "slides/s11.html", "class": "slide", "style": null},
+  {"id": "s12", "file": "slides/s12.html", "class": "slide", "style": null}
+ ]
+}

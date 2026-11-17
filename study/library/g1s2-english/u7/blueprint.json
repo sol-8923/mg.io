@@ -1,0 +1,313 @@
+{
+ "unitName": "Money Doesn't Grow on Trees",
+ "profile": "past-exam",
+ "basis": "past-exam-pattern",
+ "analysis": "u7 기출 행이 없어(past-exams.md 단원id u7 없음) 편입은 없고, docs/subjects/영어.md 0절(2024·2025 기말 분석)의 문형·배점·난이도·서술형 유형만 반영했다. 선택형 15슬롯 + 서술형 4슬롯 = 19슬롯 × 변형 2 = 38문항(객관 58점 + 서술형 16점 = 74점, 서술형 22%). 영역: 어휘 4(Q01~04) · 어법 4(Q05~08) + 서술형 3(S01~03) · 대화 3(Q09~11) · 독해 4(Q12~15) + 서술형 1(S04). 어휘+어법 11/19=58%. 배점: 3점 3개(하) · 4점 11개(중) · 5점 1개(Q08 어법 조합형, 상) · 서술형 4점 4개. 난이도 하 4·중 13·상 2. 문형: (가) 두 단어 관계(Q01)·잘못된 뜻(Q02)·공통 빈칸(Q03) (나) 쓰임이 나머지와 다른 것(Q05·Q07) (다) 밑줄 어법 조합(Q08)·틀린 문장(Q06) (라) 어색한 대화(Q09)·(A)~(E) 순서(Q10)·대화 빈칸 조합(Q11) (마) 독해 내용 일치(Q12)·답할 수 없는 질문(Q13)·흐름상 어색한 문장(Q14)·지칭·의미 파악(Q15). 서술형은 주어진 단어 영작 2·어법 오류 고치기 1·지문에서 단어 찾기 1. 지문·대화는 모두 새로 쓴 짧은 글(교과서 본문 길게 인용 없음)이고 문항 안에 넣었다. [사실 배분표] Q01 유의·반의 단어 관계(p115·p119·p124) | Q02 구·관용구 뜻(p114·p119~120, 참인 보기는 try on·one by one·agree 등으로 Q04 정답 전치사 구를 쓰지 않음) | Q03 hard·play(p118~119) | Q04 전치사 짝(p119·p121) | Q05 수여동사 4·3형식 구분(p121·p123) | Q06 수여동사 어순·to 오류(p121·p123) | Q07 have to 의무·불필요·일반동사 have(p123) | Q08 수여동사+have to 종합 조합형(p121·p123) | Q09 어색한 대화(p114~115) | Q10 가게 대화 순서(p114~117) | Q11 대화 빈칸(p114~115) | Q12 독해 일치(p119~121 구조) | Q13 용돈 일기 답할 수 없는 질문(p124) | Q14 흐름상 어색한 문장 | Q15 지칭·의미 파악(this의 지시 대상·Kids will be kids)(p119·p121) | S01 give·send 4형식 영작(p123) | S02 have to 영작(p123) | S03 동명사·to부정사·과거진행·has to 뒤 동사원형 오류 수정(p119~123, 4형식 전치사 오류는 Q06 정답 틀이라 쓰지 않음) | S04 reward·broken·accidental·replied 지문 찾기(p119~121). 슬롯 간 같은 사실을 정답으로 반복하지 않는다(수여동사는 Q05 문형 구분·Q06 틀린 문장·Q08 조합·S01 영작이 각각 다른 오류·문장). 듣기 스크립트·More Questions·Practice 정답·seller·shopper·choice·sign·sneakers·latest·after all·thrown·must not·bring의 to 그룹은 출제 근거로 쓰지 않았다. [정답 번호 배분표(Q01~Q15 순)] 변형 a = 3·1·4·2·5·3·1·4·2·5·3·1·4·2·5 (①3 ②3 ③3 ④3 ⑤3), 변형 b = 5·3·1·4·2·5·3·1·4·2·5·3·1·4·2 (①3 ②3 ③3 ④3 ⑤3), 각 변형 3연속 없음. [서술형 조건] 서술형 정답 단어·문장(reward·broken·accidental·replied, 영작·수정 정답)은 선택형 지문·보기·발문에 쓰지 않는다. 교과서 밖 일반 어휘·문법(cost·angry·to/for 외 영어 일반 지식)은 해당 문항 detail에 '교과서 밖 일반 상식'으로 표시했다.",
+ "totalQuestions": 38,
+ "totalPoints": 74,
+ "timeLimitMin": 40,
+ "variantsPerSlot": 2,
+ "types": {
+  "mc": 15,
+  "short": 0,
+  "essay": 4
+ },
+ "difficulty": {
+  "하": 4,
+  "중": 13,
+  "상": 2
+ },
+ "slots": [
+  {
+   "id": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "단어 관계(유의어·반의어)",
+   "intent": "[어휘·3점] 두 단어의 관계가 나머지와 다른 것 고르기. 반의어 쌍 4개 + 유의어 쌍 1개(변형 a price-cost, b mad-angry). 돈 관련 동사(buy-sell, spend-save 등)와 교과서 어휘를 섞는다.",
+   "facts": [
+    "spend(쓰다)와 save(저축하다)는 용돈 글쓰기에서 짝을 이루는 동사다 [p124]",
+    "price는 가격을 뜻한다 [p115]",
+    "mad는 '화난'을 뜻한다 [p119]"
+   ]
+  },
+  {
+   "id": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "구·관용구 의미 짝짓기(옳지 않은 것)",
+   "intent": "[어휘·3점] 영어 표현과 우리말 뜻이 바르게 짝지어지지 않은 것 고르기. a: in the end를 '처음에'로 짝지은 오답, b: show up을 '사라지다'로 짝지은 오답. 참인 보기에는 Q04 정답 전치사 구(pay for·take responsibility for·be proud of)를 쓰지 않고 try on·one by one·agree 같은 다른 구·낱말을 쓴다.",
+   "facts": [
+    "in the end는 '마침내, 결국', at first는 '처음에' [p120]",
+    "show up은 '나타나다' [p120]",
+    "one by one 하나씩, work up a sweat 땀 흘리며 일하다 [p120]",
+    "agree 동의하다 [p119]",
+    "try on 입어 보다 [p114]"
+   ]
+  },
+  {
+   "id": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "두 문장 공통 빈칸",
+   "intent": "[어휘·4점] 두 문장의 빈칸에 공통으로 들어갈 말. a: hard(세게·열심히), b: play(play catch·play the guitar). 오답은 한 문장에만 어울리거나 둘 다 어색한 낱말.",
+   "facts": [
+    "hard는 부사로 '세게, 열심히' [p119]",
+    "play catch(캐치볼을 하다) [p118~119]"
+   ]
+  },
+  {
+   "id": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "전치사 짝(mad at·pay for·proud of·spend on·responsibility for)",
+   "intent": "[어휘·4점] 세 문장의 빈칸(A)~(C)에 들어갈 전치사 조합. a: at/for/of, b: on/for/at. 전치사 조합형.",
+   "facts": [
+    "mad at, pay for [p119]",
+    "proud of [p121]",
+    "take responsibility for [p121]",
+    "spend the money on ~ [p121]"
+   ]
+  },
+  {
+   "id": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "수여동사 문형: 쓰임이 나머지와 다른 것",
+   "intent": "[어법·4점] 다섯 문장 중 문장 형식이 나머지와 다른 것. a: 4형식 4개 + 3형식(to) 1개, b: 3형식(to) 4개 + 4형식 1개. 영어.md 0-3 '쓰임이 나머지와 다른 것' 문형.",
+   "facts": [
+    "수여동사는 '주어+동사+간접목적어+직접목적어' 순서다 [p123]",
+    "gave 40 dollars to ~ (3형식 표현) [p121]"
+   ]
+  },
+  {
+   "id": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "수여동사 어순·전치사: 어법상 틀린 문장",
+   "intent": "[어법·4점] 어법상 틀린 문장 고르기. a: 직접목적어를 간접목적어 앞에 둔 어순 오류, b: 4형식에 불필요한 to를 넣은 오류.",
+   "facts": [
+    "4형식 어순: 간접목적어 다음에 직접목적어 [p123]",
+    "3형식은 직접목적어 뒤에 to+간접목적어 [p121]"
+   ]
+  },
+  {
+   "id": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "have to: 쓰임이 나머지와 다른 것",
+   "intent": "[어법·4점] 밑줄 대신 문장 전체를 비교하는 '쓰임이 나머지와 다른 것'. a: 일반동사 have(가지고 있다) vs have to(의무), b: don't have to(불필요) vs have to(의무). b 발문은 '의무/필요 여부에서 의미가 나머지와 다른 것'. 보기 주어는 Q08의 You·I와 겹치지 않게 They·Min 등을 쓴다. had to는 교과서 밖 일반 문법(해설에 표시).",
+   "facts": [
+    "have to는 '~해야 한다', 3인칭 단수는 has to [p119][p123]",
+    "don't have to는 '~할 필요가 없다' [p123]"
+   ]
+  },
+  {
+   "id": "Q08",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "밑줄 어법 조합형",
+   "intent": "[어법·5점·상] 짧은 글의 [ ]로 표시한 ⓐ~ⓔ 중 어법상 올바르지 않은 것끼리 짝짓기(조합 보기, fixedOrder). 오답 조합은 모두 2개짜리, 각 오답은 틀린 항목을 하나씩만 포함. 단원 5점 문항 1개. 틀린 항목은 수여동사 어순(물건이 사람보다 앞)과 has/have 일치만 쓰고, 4형식에 to를 넣는 오류(Q06 b 정답 틀)는 쓰지 않는다.",
+   "facts": [
+    "수여동사 4형식 어순 [p123]",
+    "수여동사 4형식에서 간접목적어(사람)가 직접목적어(물건)보다 먼저 온다 [p123]",
+    "has to는 3인칭 단수, have to 다음은 동사원형 [p123]",
+    "don't have to [p123]"
+   ]
+  },
+  {
+   "id": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어색한 대화",
+   "intent": "[대화·4점] 다섯 개의 짧은 대화 중 자연스럽지 않은 것. a: 가격 질문에 찾는 물건으로 답함, b: 도움을 제안하는 말에 가격으로 답함.",
+   "facts": [
+    "Can I help you? - I'm looking for ~ [p114]",
+    "How about this one? - It's perfect! [p114]",
+    "How much is it? - It's $~ [p115]",
+    "I'll take it [p115]"
+   ]
+  },
+  {
+   "id": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화 순서 배열",
+   "intent": "[대화·4점] 주어진 첫 말 다음에 이어질 (A)~(E)의 올바른 순서. a: 가방 사기, b: 신발 사기. 모두 fixedOrder, 오답은 질문-응답 순서를 어긋나게 한 배열.",
+   "facts": [
+    "손님이 찾는 물건 말하기 → 점원의 권유 → 가격 묻기 → 가격 답하기 → 구매 결정 흐름 [p114~115][p117]"
+   ]
+  },
+  {
+   "id": "Q11",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "대화 빈칸 조합",
+   "intent": "[대화·3점] 가게 대화의 빈칸 (A)(B)에 알맞은 표현 조합. a: (A) looking for / (B) I'll take it, b: (A) looking for / (B) too expensive.",
+   "facts": [
+    "I'm looking for ~ [p114][p117]",
+    "I'll take it [p115]",
+    "It's too expensive [p115]"
+   ]
+  },
+  {
+   "id": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해 내용 일치",
+   "intent": "[독해·4점] 교과서 본문 줄거리를 새 문장으로 짧게 요약한 지문(약 60~70단어)을 읽고 내용과 일치하는 것. a: p.119~120(공이 Mr. Leigh의 창문을 깸, 아버지가 40달러를 줌, 세차로 21대·42달러), b: p.121(돈을 돌려받음, Julie·Mike의 말, 은행에 넣기로 함). 지문 속 사실로 오답 설계, 다른 슬롯 정답 표현은 쓰지 않는다.",
+   "facts": [
+    "Julie가 던진 공이 Mr. Leigh의 창문을 깼고 Julie의 아버지가 40달러를 주었다 [p119]",
+    "두 친구는 세차로 차 21대를 닦아 42달러를 벌었다 [p120]",
+    "Julie의 아버지는 돈을 돌려주었고 친구들은 돈을 은행에 넣기로 했다 [p121]",
+    "Julie는 책임을, Mike는 Money doesn't grow on trees를 말했다 [p121]"
+   ]
+  },
+  {
+   "id": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해 답할 수 없는 질문",
+   "intent": "[독해·4점] 용돈 일기·경험담을 읽고 답할 수 없는 질문 고르기(영어.md 0-3 독해 문형). 정답은 지문에 없는 정보(장소·기간)를 묻는 질문.",
+   "facts": [
+    "I had ~. I spent ~ on ~. I saved ~. 용돈 글쓰기 문형 [p124]",
+    "decided to put the money in the bank [p121]"
+   ]
+  },
+  {
+   "id": "Q14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "흐름상 어색한 문장",
+   "intent": "[독해·4점] 5문장(ⓐ~ⓔ) 글에서 흐름상 어색한 문장 찾기, 보기는 ⓐ~ⓔ(fixedOrder). 사건 → 해결 → 결과 흐름에서 주제와 무관한 문장 하나.",
+   "facts": [
+    "이야기는 필요 → 돈 마련 방법 → 결과 순서로 이어진다 [p119~121]"
+   ]
+  },
+  {
+   "id": "Q15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "지칭·의미 파악(지시어·관용 표현)",
+   "intent": "[독해·4점] notes 시험 포인트 독해 4번 '지칭·의미 파악'. 변형 a: 새로 쓴 짧은 지문(떨어진 꽃 화분)에서 this won't be the last pot to fall의 this가 가리키는 것 고르기(교과서 p.121 this won't be their last broken window의 지칭 틀, 지문은 새로 쓰고 broken·깨진을 쓰지 않음), 변형 b: 새로 쓴 짧은 대화에서 Kids will be kids.의 의미 고르기(철없는 아이들의 행동을 이해해 줄 때 쓰는 관용 표현, p.119 '의미를 말해 봅시다'). 선택지는 한국어. 다른 슬롯 정답·본문 표현(window·gave the money back·Money doesn't grow on trees)을 지문에 쓰지 않는다.",
+   "facts": [
+    "this won't be their last broken window의 this는 이번에 깬 유리창이다 [p121]",
+    "Kids will be kids.는 철없는 아이들의 행동을 이해해 줄 때 쓰는 관용 표현이다 [p119]"
+   ]
+  },
+  {
+   "id": "S01",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "조건 영작: 수여동사 4형식",
+   "intent": "[서술형·영작 4점] 우리말과 뜻이 같도록 주어진 단어를 모두 사용해 4형식 문장 쓰기(어순 1·시제 1·단어 조건 1·철자·대소문자·마침표 1). a: give, b: send. 3형식(to 추가) 답안은 4형식 조건과 '단어를 더하지 않음' 조건을 모두 어겨 1·3번 항목 0점(2점).",
+   "facts": [
+    "수여동사 4형식 어순 [p123]"
+   ],
+   "avoidMotifs": [
+    "선택형에 쓴 이름 Julie·Mike·Mr. Leigh·Tom·Hana·Emma·Ben·Mina·Mr. Kim을 서술형 사례에 쓰지 않는다",
+    "선택형 장면(캐치볼 중 Mr. Leigh의 창문을 깨 40달러를 내고 세차로 42달러를 번 이야기, 돈을 돌려받아 은행에 넣기, 용돈 일기(공책·스티커), 꽃가게에서 일해 30달러 저금, 동생 선물을 위한 저금, 자전거를 사려고 돈 벌기, 모자·가방·신발 가게 대화)과 겹치지 않는다",
+    "선택형 정답 문장(He gave 20 dollars to his sister. / Dad wrote me a long email. / Mr. Kim gave 10 dollars Tom. / He told to me a scary story. / I have two cousins in Busan. / You don't have to wait for me. / The friends earned 42 dollars by washing cars. / Julie's father gave the money back to the friends.)을 모범 답안에 쓰지 않는다",
+    "선택형 정답 어휘(hard·play·price–cost·mad–angry·in the end–처음에·show up–사라지다)를 지문·모범 답안에 쓰지 않는다",
+    "영작 소재는 give·send 외에 선택형 문장(gave me a new cap, showed us her photos, wrote her mom a short letter, told the teacher the truth 등)과 다른 사람·물건으로 정한다"
+   ]
+  },
+  {
+   "id": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "조건 영작: have to / don't have to",
+   "intent": "[서술형·영작 4점] 우리말 두 문장을 have to 또는 don't(doesn't) have to로 영작(각 2점, 소문항 채점). a: 의무(I) + 불필요(he), b: 의무(has to) + 불필요(we). 인정 범위: 분리형 take the trash out·does not 비축약·문법에 맞는 어순 변경은 인정, have to가 아닌 표현은 불인정.",
+   "facts": [
+    "have to / has to / don't have to [p123]"
+   ],
+   "avoidMotifs": [
+    "선택형에 쓴 이름 Julie·Mike·Mr. Leigh·Tom·Hana·Emma·Ben·Mina·Mr. Kim을 서술형 사례에 쓰지 않는다",
+    "선택형 장면(캐치볼 중 Mr. Leigh의 창문을 깨 40달러를 내고 세차로 42달러를 번 이야기, 돈을 돌려받아 은행에 넣기, 용돈 일기(공책·스티커), 꽃가게에서 일해 30달러 저금, 동생 선물을 위한 저금, 자전거를 사려고 돈 벌기, 모자·가방·신발 가게 대화)과 겹치지 않는다",
+    "선택형 정답 문장(He gave 20 dollars to his sister. / Dad wrote me a long email. / Mr. Kim gave 10 dollars Tom. / He told to me a scary story. / I have two cousins in Busan. / You don't have to wait for me. / The friends earned 42 dollars by washing cars. / Julie's father gave the money back to the friends.)을 모범 답안에 쓰지 않는다",
+    "선택형 정답 어휘(hard·play·price–cost·mad–angry·in the end–처음에·show up–사라지다)를 지문·모범 답안에 쓰지 않는다",
+    "have to 영작 문장은 선택형 문장(clean my room, take care of her dog, wear a helmet, leave now, wash the dishes, save more money, hurry 등)과 다른 동작으로 정한다"
+   ]
+  },
+  {
+   "id": "S03",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "어법 오류 고치기",
+   "intent": "[서술형·오류 수정 4점] 네 문장에서 어법에 맞지 않는 곳을 고쳐 문장 전체를 다시 쓰기(각 1점). a: How about+동명사, want+to부정사, 과거진행형 were, has to / b: How about+동명사, decide+to부정사, 과거진행형 were, has to 뒤 동사원형(has to meets → meet). 4형식 전치사(Q06 b 정답 틀)는 쓰지 않는다. 채점은 한 곳만 고쳐 뜻·시제를 지킨 답만 인정(낱말 삭제·문장 바꿔 쓰기는 불인정).",
+   "facts": [
+    "How about doing ~? [p120]",
+    "wanted to spend, decided to put [p121]",
+    "were playing(과거진행) [p119]",
+    "has to [p123]",
+    "has to 뒤에는 동사원형이 온다(-s를 붙이지 않음) [p123]"
+   ],
+   "avoidMotifs": [
+    "선택형에 쓴 이름 Julie·Mike·Mr. Leigh·Tom·Hana·Emma·Ben·Mina·Mr. Kim을 서술형 사례에 쓰지 않는다",
+    "선택형 장면(캐치볼 중 Mr. Leigh의 창문을 깨 40달러를 내고 세차로 42달러를 번 이야기, 돈을 돌려받아 은행에 넣기, 용돈 일기(공책·스티커), 꽃가게에서 일해 30달러 저금, 동생 선물을 위한 저금, 자전거를 사려고 돈 벌기, 모자·가방·신발 가게 대화)과 겹치지 않는다",
+    "선택형 정답 문장(He gave 20 dollars to his sister. / Dad wrote me a long email. / Mr. Kim gave 10 dollars Tom. / He told to me a scary story. / I have two cousins in Busan. / You don't have to wait for me. / The friends earned 42 dollars by washing cars. / Julie's father gave the money back to the friends.)을 모범 답안에 쓰지 않는다",
+    "선택형 정답 어휘(hard·play·price–cost·mad–angry·in the end–처음에·show up–사라지다)를 지문·모범 답안에 쓰지 않는다",
+    "오류 문장 소재는 선택형 passage(Hana·Tom의 선물·자전거, Emma의 저금)와 다른 장면으로 정한다",
+    "has to 오류 문장은 Q07·Q08·S02 문장(take care of her dog, You has to save, finish her homework 등)과 다른 사람·동작으로 정하고, 선택형 정답 오류 틀(4형식에 to를 넣음)은 쓰지 않는다"
+   ]
+  },
+  {
+   "id": "S04",
+   "type": "essay",
+   "difficulty": "하",
+   "points": 4,
+   "concept": "본문(지문)에서 단어 찾기",
+   "intent": "[서술형·지문 찾기 4점] 새로 쓴 짧은 지문에서 우리말 뜻에 해당하는 단어를 찾아 쓰기(각 2점). a: reward·broken, b: accidental·replied(지문에 나온 형태 그대로).",
+   "facts": [
+    "reward 보상, broken 깨진 [p121]",
+    "accidental 우연한 [p119]",
+    "reply 대답하다 [p120]"
+   ],
+   "avoidMotifs": [
+    "선택형에 쓴 이름 Julie·Mike·Mr. Leigh·Tom·Hana·Emma·Ben·Mina·Mr. Kim을 서술형 사례에 쓰지 않는다",
+    "선택형 장면(캐치볼 중 Mr. Leigh의 창문을 깨 40달러를 내고 세차로 42달러를 번 이야기, 돈을 돌려받아 은행에 넣기, 용돈 일기(공책·스티커), 꽃가게에서 일해 30달러 저금, 동생 선물을 위한 저금, 자전거를 사려고 돈 벌기, 모자·가방·신발 가게 대화)과 겹치지 않는다",
+    "선택형 정답 문장(He gave 20 dollars to his sister. / Dad wrote me a long email. / Mr. Kim gave 10 dollars Tom. / He told to me a scary story. / I have two cousins in Busan. / You don't have to wait for me. / The friends earned 42 dollars by washing cars. / Julie's father gave the money back to the friends.)을 모범 답안에 쓰지 않는다",
+    "선택형 정답 어휘(hard·play·price–cost·mad–angry·in the end–처음에·show up–사라지다)를 지문·모범 답안에 쓰지 않는다",
+    "지문 소재는 선택형 지문과 다른 장면으로 정하고, 지문에서 찾는 단어(reward·broken·accidental·replied)를 선택형 지문·보기에 쓰지 않는다"
+   ]
+  }
+ ],
+ "concepts": {
+  "단어 관계(유의어·반의어)": 1,
+  "구·관용구 의미 짝짓기(옳지 않은 것)": 1,
+  "두 문장 공통 빈칸": 1,
+  "전치사 짝(mad at·pay for·proud of·spend on·responsibility for)": 1,
+  "수여동사 문형: 쓰임이 나머지와 다른 것": 1,
+  "수여동사 어순·전치사: 어법상 틀린 문장": 1,
+  "have to: 쓰임이 나머지와 다른 것": 1,
+  "밑줄 어법 조합형": 1,
+  "어색한 대화": 1,
+  "대화 순서 배열": 1,
+  "대화 빈칸 조합": 1,
+  "독해 내용 일치": 1,
+  "독해 답할 수 없는 질문": 1,
+  "흐름상 어색한 문장": 1,
+  "조건 영작: 수여동사 4형식": 1,
+  "조건 영작: have to / don't have to": 1,
+  "어법 오류 고치기": 1,
+  "본문(지문)에서 단어 찾기": 1,
+  "지칭·의미 파악(지시어·관용 표현)": 1
+ }
+}

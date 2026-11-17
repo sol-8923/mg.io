@@ -1,0 +1,1904 @@
+{
+ "questions": [
+  {
+   "id": "u7-Q01-a",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "단어 관계(유의어·반의어)",
+   "source": "교과서 p.115·p.124 (price, spend, save)",
+   "question": "다음 중 두 단어의 관계가 나머지와 다른 것은?",
+   "choices": [
+    "buy – sell",
+    "high – low",
+    "price – cost",
+    "spend – save",
+    "early – late"
+   ],
+   "answer": 3,
+   "explanation": "price(가격)와 cost(비용)는 뜻이 비슷한 유의어이고, 나머지 네 쌍은 뜻이 반대인 반의어예요.",
+   "choiceExplanations": [
+    "buy(사다)와 sell(팔다)은 뜻이 반대인 반의어 관계예요. 나머지 쌍과 같은 관계라서 답이 아니에요.",
+    "high(높은)와 low(낮은)는 뜻이 반대인 반의어예요. 둘 다 높이에 관한 말이라 비슷해 보이지만 반대말이에요.",
+    "정답. price(가격)와 cost(비용)는 뜻이 비슷한 유의어이고, 나머지 네 쌍은 뜻이 반대인 반의어예요.",
+    "spend(쓰다)와 save(저축하다)는 돈을 다루는 반대 행동이라 반의어 쌍이에요. 나머지와 같은 관계예요.",
+    "early(이른)와 late(늦은)는 시간에 관한 반의어예요. 같은 반의어 관계라서 정답이 아니에요."
+   ],
+   "detail": "두 단어의 관계 문제는 먼저 각 쌍이 '비슷한 뜻'인지 '반대 뜻'인지 나눠 보는 게 좋아요. buy–sell, high–low, spend–save, early–late는 모두 뜻이 반대인 반의어 쌍이에요. price(가격)는 교과서 p.115에, spend와 save는 용돈 글쓰기를 하는 p.124에 나오는 낱말이에요. price와 cost는 값을 뜻하는 비슷한 말이라 혼자 관계가 달라요. (이 문제에서 교과서 근거가 있는 낱말은 price, spend, save뿐이에요. cost와 buy–sell·high–low·early–late의 반의어 짝은 교과서 밖 일반 어휘예요. buy, sell은 p.117 활동표에 낱말로만 나와요.)",
+   "tip": "쌍마다 '비슷한 말인지 반대말인지' 표시한 뒤 혼자 다른 쌍을 찾으세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "유의어와 반의어",
+     "text": "유의어는 뜻이 비슷한 단어 쌍, 반의어는 뜻이 반대인 단어 쌍이에요. 문제의 쌍마다 어느 쪽인지 먼저 나눠 보세요. (문제 속 쌍은 대부분 교과서 밖 일반 어휘예요.)"
+    },
+    {
+     "kind": "table",
+     "title": "돈과 관련된 동사(p.124)",
+     "head": [
+      "동사",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "spend",
+       "(돈을) 쓰다"
+      ],
+      [
+       "save",
+       "저축하다"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q01-b",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "단어 관계(유의어·반의어)",
+   "source": "교과서 p.119 (mad)",
+   "question": "다음 중 짝지어진 두 단어의 관계가 나머지와 다른 것은?",
+   "choices": [
+    "come – go",
+    "open – close",
+    "hard – easy",
+    "big – small",
+    "mad – angry"
+   ],
+   "answer": 5,
+   "explanation": "mad(화난)와 angry(화난)는 뜻이 비슷한 유의어이고, 나머지 네 쌍은 뜻이 반대인 반의어예요.",
+   "choiceExplanations": [
+    "come(오다)과 go(가다)는 움직이는 방향이 반대인 반의어예요. 나머지 쌍과 같은 관계라서 답이 아니에요.",
+    "open(열다)과 close(닫다)는 동작이 반대인 반의어 쌍이에요. 같은 관계라서 정답이 아니에요.",
+    "형용사 hard는 '어려운', easy는 '쉬운'이라 뜻이 반대예요. 교과서에서는 hard가 부사 '세게'로 쓰였지만 이 쌍은 반의어 관계예요.",
+    "big(큰)과 small(작은)은 크기가 반대인 반의어예요. 나머지와 같은 관계라서 답이 아니에요.",
+    "정답. mad(화난)와 angry(화난)는 뜻이 비슷한 유의어이고, 나머지 네 쌍은 뜻이 반대인 반의어예요."
+   ],
+   "detail": "먼저 쌍마다 뜻을 우리말로 바꿔 '비슷한가, 반대인가'를 가려요. come–go, open–close, hard–easy, big–small은 모두 반대말 쌍이에요. mad(화난)는 교과서 p.119에 나오고, angry(화난)와 뜻이 비슷한 유의어예요. 따라서 혼자 유의어 관계인 쌍이 답이에요. (교과서 근거는 mad뿐이고, angry와 come–go·open–close·hard–easy·big–small의 반의어 짝은 교과서 밖 일반 어휘예요. hard는 p.119에 나오지만 easy와의 짝은 교과서 밖이에요.)",
+   "tip": "mad는 '화난'이라는 뜻이에요. 같은 뜻의 다른 낱말과 짝을 지어 외워 두세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "mad의 쓰임(p.119)",
+     "text": "mad는 '화난'이라는 뜻이고, 사람에게 화가 났을 때는 mad at + 사람으로 써요."
+    },
+    {
+     "kind": "text",
+     "title": "유의어와 반의어",
+     "text": "유의어는 뜻이 비슷한 단어 쌍, 반의어는 뜻이 반대인 단어 쌍이에요."
+    }
+   ]
+  },
+  {
+   "id": "u7-Q02-a",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "구·관용구 의미 짝짓기(옳지 않은 것)",
+   "source": "교과서 p.114·p.120 (try on, show up, one by one, work up a sweat, in the end)",
+   "question": "다음 영어 표현과 우리말 뜻이 바르게 짝지어지지 않은 것은?",
+   "choices": [
+    "in the end – 처음에",
+    "show up – 나타나다",
+    "one by one – 하나씩",
+    "work up a sweat – 땀 흘리며 일하다",
+    "try on – ~을 입어 보다"
+   ],
+   "answer": 1,
+   "explanation": "in the end는 '마침내, 결국'이라는 뜻이고, '처음에'는 at first예요.",
+   "choiceExplanations": [
+    "정답. in the end는 '마침내, 결국'이라는 뜻이고, '처음에'는 at first예요.",
+    "show up은 '나타나다'라는 뜻이 맞아요. 교과서 p.120에서 '아무도 나타나지 않았다'는 장면에 쓰였어요.",
+    "one by one은 '하나씩, 한 명씩'이라는 뜻이 맞아요. 사람들이 한 명씩 오는 장면에 쓰였어요.",
+    "work up a sweat는 '땀을 흘리며 일하다'라는 뜻이 맞아요. 힘껏 노력해 일하는 모습을 나타내요.",
+    "try on은 '~을 입어 보다'라는 뜻이 맞아요. 교과서 p.114에 입어 보고 싶은 것을 묻는 과제가 있어요."
+   ],
+   "detail": "구 표현은 낱말을 하나씩 보지 말고 한 덩어리로 뜻을 외워야 해요. in the end는 교과서 p.120에서 '마침내 차 21대를 닦았다'처럼 결과를 말할 때 쓰였어요. 반대로 '처음에'는 같은 쪽의 At first로 나타내요. 나머지 show up(나타나다), one by one(하나씩), work up a sweat(땀 흘리며 일하다), try on(~을 입어 보다)은 뜻이 맞게 짝지어졌어요.",
+   "tip": "in the end는 '마지막에 결과가', at first는 '맨 처음에'로 시간 순서를 붙여 외우세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "구 표현(p.114·p.120)",
+     "head": [
+      "표현",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "show up",
+       "나타나다"
+      ],
+      [
+       "one by one",
+       "하나씩"
+      ],
+      [
+       "work up a sweat",
+       "땀 흘리며 일하다"
+      ],
+      [
+       "try on",
+       "~을 입어 보다"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "시간 순서 표현",
+     "text": "at first(처음에)로 시작해 in the end(마침내)로 끝나는 식으로 이야기의 순서를 나타내요."
+    }
+   ]
+  },
+  {
+   "id": "u7-Q02-b",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "구·관용구 의미 짝짓기(옳지 않은 것)",
+   "source": "교과서 p.114·p.119~p.120 (try on, one by one, agree, in the end, show up)",
+   "question": "다음 영어 표현과 우리말 뜻이 짝지어진 것 중 바르지 않은 것은?",
+   "choices": [
+    "one by one – 하나씩",
+    "agree – 동의하다",
+    "show up – 사라지다",
+    "try on – ~을 입어 보다",
+    "in the end – 마침내"
+   ],
+   "answer": 3,
+   "explanation": "show up은 '나타나다'라는 뜻이라 '사라지다'와 짝지으면 틀려요.",
+   "choiceExplanations": [
+    "one by one은 '하나씩, 한 명씩'이라는 뜻이 맞아요. 사람들이 한 명씩 오는 장면에 쓰여요.",
+    "agree는 '동의하다'라는 뜻이 맞아요. 교과서 p.119의 어휘 목록에 나와요.",
+    "정답. show up은 '나타나다'라는 뜻이라 '사라지다'와 짝지으면 틀려요.",
+    "try on은 '~을 입어 보다'라는 뜻이 맞아요. 교과서 p.114에 입어 보고 싶은 것을 묻는 과제가 있어요.",
+    "in the end는 '마침내, 결국'이라는 뜻이 맞아요. 교과서 p.120에서 결과를 말할 때 쓰였어요."
+   ],
+   "detail": "show up은 show(보여 주다)와 up이 합쳐진 구동사로 '나타나다'라는 뜻이에요. 교과서 p.120의 no one showed up은 '아무도 나타나지 않았다'는 뜻이라, '사라지다'와는 반대예요. 나머지 one by one(하나씩), agree(동의하다), try on(~을 입어 보다), in the end(마침내)는 뜻이 맞아요.",
+   "tip": "show up은 '위로 모습이 드러난다'고 생각하면 '나타나다'로 기억하기 쉬워요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "구 표현 정리",
+     "head": [
+      "표현",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "one by one",
+       "하나씩"
+      ],
+      [
+       "agree",
+       "동의하다"
+      ],
+      [
+       "try on",
+       "~을 입어 보다"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "구동사 show up",
+     "text": "show up은 '나타나다'라는 뜻이에요. 교과서 p.120에 no one showed up(아무도 나타나지 않았다)이 나와요."
+    }
+   ]
+  },
+  {
+   "id": "u7-Q03-a",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "두 문장 공통 빈칸",
+   "source": "교과서 p.119 (Throw it harder!, hard)",
+   "question": "다음 두 문장의 빈칸에 공통으로 들어갈 말로 가장 알맞은 것은?",
+   "choices": [
+    "well",
+    "fast",
+    "loud",
+    "hard",
+    "near"
+   ],
+   "answer": 4,
+   "explanation": "hard는 부사로 '세게'(rained very hard)와 '열심히'(studied hard)의 뜻이 모두 있어 두 문장에 다 들어가요.",
+   "choiceExplanations": [
+    "studied well은 자연스럽지만 It rained very well은 말이 안 돼요. 두 문장에 모두 어울리는 낱말이 아니에요.",
+    "studied fast는 가능하지만 rained fast는 쓰지 않아요. 한 문장에만 어울려서 답이 아니에요.",
+    "loud는 소리가 큰 것을 말해요. 비가 오는 정도나 공부하는 태도에는 알맞지 않아요.",
+    "정답. hard는 부사로 '세게'(rained very hard)와 '열심히'(studied hard)의 뜻이 모두 있어 두 문장에 다 들어가요.",
+    "near는 '가까운, 가까이'라는 뜻이라 두 문장 모두 의미가 통하지 않아요."
+   ],
+   "detail": "공통 빈칸 문제는 보기를 두 문장에 모두 넣어 읽고, 둘 다 자연스러운 낱말을 골라요. hard는 부사로 쓰이면 '세게, 열심히'라는 뜻이라 rained very hard(비가 세게 왔다)와 studied hard(열심히 공부했다)가 모두 가능해요. 교과서 p.119의 Throw it harder!에서도 hard가 '세게'라는 뜻으로 쓰였어요. well, fast는 공부하다에는 어울려도 비가 오다에는 어울리지 않아요. (rained very hard의 '심하게'와 studied hard의 '열심히'는 교과서 밖 일반 용법이에요.)",
+   "tip": "한 낱말이 여러 뜻을 가질 때는 문장마다 뜻을 바꿔 넣어 보세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "hard의 두 가지 뜻(부사)",
+     "text": "부사 hard는 '세게', '열심히'라는 뜻이에요. 교과서 p.119에서는 Throw it harder!처럼 '더 세게'를 뜻하는 비교급 harder로 나와요."
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "(1) It rained very ____ last night.\n(2) Tom studied ____ for the math test."
+  },
+  {
+   "id": "u7-Q03-b",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "두 문장 공통 빈칸",
+   "source": "교과서 p.118~p.119 (play catch, were playing catch)",
+   "question": "다음 두 문장의 빈칸에 공통으로 들어갈 말로 가장 알맞은 것은?",
+   "choices": [
+    "play",
+    "do",
+    "make",
+    "take",
+    "get"
+   ],
+   "answer": 1,
+   "explanation": "play는 'play catch(캐치볼을 하다)'와 'play the guitar(기타를 치다)'에 모두 쓰여요.",
+   "choiceExplanations": [
+    "정답. play는 'play catch(캐치볼을 하다)'와 'play the guitar(기타를 치다)'에 모두 쓰여요.",
+    "do 뒤에는 do the laundry처럼 해야 할 일이 와요. 캐치볼이나 기타 앞에는 쓰지 않아요.",
+    "make는 '만들다'라는 뜻이라 catch나 guitar 앞에서는 어울리지 않아요.",
+    "take는 take a bus(탈것), take two hours(걸리는 시간)처럼 쓰는 말이에요. 캐치볼이나 기타 앞에는 어울리지 않아요.",
+    "get은 get a gift(받다), get angry(~해지다)처럼 '얻다, ~해지다'의 뜻으로 써요. '하다, 치다'의 뜻을 만들지 못해요."
+   ],
+   "detail": "먼저 두 문장에서 빈칸 뒤의 낱말을 살펴보세요. catch(캐치볼)와 the guitar(기타) 앞에는 모두 play를 써요. 교과서 p.118~119에 play catch와 were playing catch가 나오기 때문에 play catch는 꼭 익혀 둬야 해요. do, make, take, get은 이 두 표현에서 쓰지 않는 동사예요. (play the guitar는 교과서 밖 일반 용법이에요.)",
+   "tip": "play는 놀이·운동·악기 앞에 널리 써요. play catch, play the guitar를 덩어리로 외우세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "play가 쓰이는 말",
+     "text": "play catch(캐치볼을 하다)는 교과서 p.118~119에 나와요. 악기 이름 앞에도 play를 써서 play the guitar처럼 말해요."
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "(1) Let's ____ catch after school.\n(2) My sister can ____ the guitar very well."
+  },
+  {
+   "id": "u7-Q04-a",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "전치사 짝(mad at·pay for·proud of·spend on·responsibility for)",
+   "source": "교과서 p.119·p.121 (mad at, pay for, be proud of)",
+   "question": "다음 글의 빈칸 (A)~(C)에 들어갈 말이 바르게 짝지어진 것은?",
+   "choices": [
+    "at – on – of",
+    "at – for – of",
+    "for – for – at",
+    "of – on – with",
+    "at – for – with"
+   ],
+   "answer": 2,
+   "explanation": "mad at(~에게 화가 난), pay for(~의 값을 치르다), proud of(~을 자랑스러워하는)가 알맞아요.",
+   "choiceExplanations": [
+    "(B)에는 pay for(~의 값을 치르다)를 써요. pay on은 이런 뜻으로 쓰지 않아요.",
+    "정답. mad at(~에게 화가 난), pay for(~의 값을 치르다), proud of(~을 자랑스러워하는)가 알맞아요.",
+    "(A)는 mad at, (C)는 proud of예요. mad for, proud at은 이 뜻으로는 쓰지 않아요.",
+    "세 곳 모두 틀렸어요. mad at, pay for, proud of로 써야 해요.",
+    "(A) mad at, (B) pay for는 맞지만 (C)는 proud of예요. proud with는 쓰지 않아요."
+   ],
+   "detail": "형용사나 동사는 함께 쓰는 전치사가 정해져 있어요. (A)는 사람에게 화가 났다는 mad at, (B)는 값을 치른다는 pay for, (C)는 자랑스러워한다는 be proud of에서 of예요. 세 표현은 교과서 p.119(mad at, pay for)와 p.121(proud of)에 나와요. 짝이 틀린 보기는 전치사 하나 이상이 다른 표현으로 바뀌어 있어요.",
+   "tip": "mad at, pay for, proud of는 전치사까지 한 덩어리로 외우세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "형용사·동사 + 전치사",
+     "head": [
+      "표현",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "mad at + 사람",
+       "~에게 화가 난"
+      ],
+      [
+       "pay for + 물건",
+       "~의 값을 치르다"
+      ],
+      [
+       "proud of",
+       "~을 자랑스러워하는"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "(A) Dad was not mad ____ me.\n(B) We have to pay ____ the lunch.\n(C) She is proud ____ her brother."
+  },
+  {
+   "id": "u7-Q04-b",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "전치사 짝(mad at·pay for·proud of·spend on·responsibility for)",
+   "source": "교과서 p.121 (spend the money on, take responsibility for, mad at p.119)",
+   "question": "다음 글의 빈칸 (A)~(C)에 들어갈 말이 바르게 짝지어진 것은?",
+   "choices": [
+    "on – of – at",
+    "to – for – at",
+    "on – for – of",
+    "on – for – at",
+    "in – on – with"
+   ],
+   "answer": 4,
+   "explanation": "spend the money on(~에 돈을 쓰다), take responsibility for(~에 책임을 지다), mad at(~에게 화가 난)이 알맞아요.",
+   "choiceExplanations": [
+    "(B)는 take responsibility for(~에 책임을 지다)예요. responsibility of로는 이 뜻을 나타내지 않아요.",
+    "(A)는 spend the money on(~에 돈을 쓰다)이에요. spend ... to는 쓰지 않아요.",
+    "(C)는 mad at(~에게 화가 난)이에요. mad of는 쓰지 않아요.",
+    "정답. spend the money on(~에 돈을 쓰다), take responsibility for(~에 책임을 지다), mad at(~에게 화가 난)이 알맞아요.",
+    "세 곳 모두 틀렸어요. on(~에 쓰다), for(~에 책임을 지다), at(~에게 화가 난)이 알맞아요."
+   ],
+   "detail": "(A)는 돈을 쓴 대상 앞에 쓰는 on이에요. 교과서 p.121의 spend the money on snacks에서 볼 수 있어요. (B)는 take responsibility for로, 같은 쪽에서 책임을 지는 대상 앞에 for를 써요. (C)는 mad at + 사람으로 p.119에 나와요. 전치사만 바꿔도 뜻이 달라지니 덩어리로 기억해 두세요.",
+   "tip": "spend ~ on, responsibility for, mad at처럼 세트로 외우세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "전치사 짝",
+     "head": [
+      "표현",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "spend A on B",
+       "A를 B에 쓰다"
+      ],
+      [
+       "take responsibility for",
+       "~에 책임을 지다"
+      ],
+      [
+       "mad at + 사람",
+       "~에게 화가 난"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "(A) We spent the money ____ snacks.\n(B) He took responsibility ____ his mistake.\n(C) Don't be mad ____ your little sister."
+  },
+  {
+   "id": "u7-Q05-a",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "수여동사 문형: 쓰임이 나머지와 다른 것",
+   "source": "교과서 p.121·p.123 (수여동사 4형식, gave 40 dollars to ~)",
+   "question": "다음 중 문장의 형식이 나머지와 다른 것은?",
+   "choices": [
+    "My uncle gave me a new cap.",
+    "Please tell us a secret.",
+    "She showed her friends the picture.",
+    "Mina will send her cousin a card.",
+    "He gave 20 dollars to his sister."
+   ],
+   "answer": 5,
+   "explanation": "He gave 20 dollars to his sister.는 '직접목적어 + to + 간접목적어' 순서의 3형식이고, 나머지는 '간접목적어 + 직접목적어' 순서의 4형식이에요.",
+   "choiceExplanations": [
+    "간접목적어 me 다음에 직접목적어 a new cap이 오는 4형식이에요. 나머지와 같은 형식이라서 답이 아니에요.",
+    "tell us a secret은 간접목적어 us 다음에 직접목적어 a secret이 와서 4형식이에요.",
+    "showed her friends the picture는 사람(her friends) 다음에 물건(the picture)이 오는 4형식이에요.",
+    "send her cousin a card는 간접목적어 her cousin 다음에 직접목적어 a card가 오는 4형식이에요.",
+    "정답. He gave 20 dollars to his sister.는 '직접목적어 + to + 간접목적어' 순서의 3형식이고, 나머지는 '간접목적어 + 직접목적어' 순서의 4형식이에요."
+   ],
+   "detail": "수여동사 문장은 목적어 순서를 보면 형식을 알 수 있어요. 교과서 p.123의 gave Mr. Leigh 40 dollars처럼 '사람 + 물건' 순서면 4형식이에요. 반대로 p.121의 gave 40 dollars to Julie's father처럼 '물건 + to + 사람'으로 쓰면 3형식이에요. 이 문제에서는 4개가 4형식이고 He gave 20 dollars to his sister.만 3형식이에요.",
+   "tip": "목적어 둘이 바로 붙어 있으면 4형식, 중간에 to가 끼면 3형식이에요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "수여동사 문장 두 가지",
+     "head": [
+      "형식",
+      "어순",
+      "예"
+     ],
+     "rows": [
+      [
+       "4형식",
+       "간접목적어(사람) + 직접목적어(물건)",
+       "gave Mr. Leigh 40 dollars"
+      ],
+      [
+       "3형식",
+       "직접목적어 + to + 간접목적어",
+       "gave 40 dollars to Mr. Leigh"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q05-b",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "수여동사 문형: 쓰임이 나머지와 다른 것",
+   "source": "교과서 p.121·p.123 (수여동사 3형식·4형식)",
+   "question": "다음 중 문장의 형식이 나머지와 다른 하나는?",
+   "choices": [
+    "He gave a book to me.",
+    "Dad wrote me a long email.",
+    "Mina sent a letter to her uncle.",
+    "Tom told the news to his mom.",
+    "She showed the ticket to the guard."
+   ],
+   "answer": 2,
+   "explanation": "Dad wrote me a long email.은 '간접목적어 + 직접목적어' 순서의 4형식이고, 나머지는 'to + 사람'이 붙는 3형식이에요.",
+   "choiceExplanations": [
+    "직접목적어 a book 뒤에 to me가 오는 3형식이에요. 나머지와 같은 형식이라서 답이 아니에요.",
+    "정답. Dad wrote me a long email.은 '간접목적어 + 직접목적어' 순서의 4형식이고, 나머지는 'to + 사람'이 붙는 3형식이에요.",
+    "sent a letter to her uncle은 직접목적어 뒤에 to + 사람이 오는 3형식이에요.",
+    "told the news to his mom은 물건(the news) 다음에 to + 사람이 오는 3형식이에요.",
+    "showed the ticket to the guard는 물건 뒤에 to + 사람이 오는 3형식이에요."
+   ],
+   "detail": "이번에는 3형식 문장이 여러 개이고 하나만 4형식이에요. give, send, tell, show 문장은 모두 '물건 + to + 사람'으로 쓰여 3형식이에요. 반면 Dad wrote me a long email.은 me(사람) 다음에 a long email(물건)이 바로 와서 to가 필요 없는 4형식이에요. 교과서 p.123에서 4형식 어순을, p.121에서 to를 쓴 3형식 표현을 확인해 보세요.",
+   "tip": "to가 보이면 3형식, 사람과 물건이 바로 이어지면 4형식이에요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "수여동사 문장 두 가지",
+     "head": [
+      "형식",
+      "어순",
+      "예"
+     ],
+     "rows": [
+      [
+       "4형식",
+       "사람 + 물건",
+       "show my friends this painting"
+      ],
+      [
+       "3형식",
+       "물건 + to + 사람",
+       "gave 40 dollars to Julie's father"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q06-a",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "수여동사 어순·전치사: 어법상 틀린 문장",
+   "source": "교과서 p.123 (gave Mr. Leigh 40 dollars: 간접목적어 → 직접목적어)",
+   "question": "다음 중 어법상 틀린 문장은?",
+   "choices": [
+    "My aunt showed us her photos.",
+    "Please send me the file.",
+    "Mr. Kim gave 10 dollars Tom.",
+    "She wrote her mom a short letter.",
+    "I told the teacher the truth."
+   ],
+   "answer": 3,
+   "explanation": "4형식은 '간접목적어(사람) + 직접목적어(물건)' 순서인데, gave 10 dollars Tom은 순서가 거꾸로예요. gave Tom 10 dollars로 써야 해요.",
+   "choiceExplanations": [
+    "showed us her photos는 간접목적어 us 다음에 직접목적어 her photos가 와서 맞는 문장이에요.",
+    "send me the file은 '사람 + 물건' 순서의 4형식이라 맞는 문장이에요.",
+    "정답. 4형식은 '간접목적어(사람) + 직접목적어(물건)' 순서인데, gave 10 dollars Tom은 순서가 거꾸로예요. gave Tom 10 dollars로 써야 해요.",
+    "wrote her mom a short letter는 간접목적어 her mom 다음에 a short letter가 와서 맞는 문장이에요.",
+    "told the teacher the truth는 사람(the teacher) 다음에 물건(the truth)이 와서 맞는 문장이에요."
+   ],
+   "detail": "4형식 수여동사 문장에서는 '~에게'에 해당하는 사람이 먼저, '~을'에 해당하는 물건이 나중에 와요. 교과서 p.123의 Julie's father gave Mr. Leigh 40 dollars가 그 예예요. Mr. Kim gave 10 dollars Tom.은 물건(10 dollars)이 먼저 와서 틀렸고, Mr. Kim gave Tom 10 dollars.로 고쳐야 해요. 나머지 문장은 모두 사람 다음에 물건이 와서 맞아요.",
+   "tip": "수여동사 뒤에는 '사람 → 물건' 순서를 기억하세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "4형식 어순 확인",
+     "head": [
+      "틀린 문장",
+      "바른 문장"
+     ],
+     "rows": [
+      [
+       "gave 40 dollars Mr. Leigh",
+       "gave Mr. Leigh 40 dollars"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "목적어 두 개",
+     "text": "give, show, tell, send, write는 목적어를 두 개 가져요. 사람을 먼저, 물건을 나중에 써요."
+    }
+   ]
+  },
+  {
+   "id": "u7-Q06-b",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "수여동사 어순·전치사: 어법상 틀린 문장",
+   "source": "교과서 p.121·p.123 (4형식은 전치사 없이, 3형식은 to)",
+   "question": "다음 중 어법상 올바르지 않은 문장은?",
+   "choices": [
+    "She gave the money to her father.",
+    "Tom showed his new bike to us.",
+    "I will write a letter to my grandma.",
+    "My dad sent me a postcard.",
+    "He told to me a scary story."
+   ],
+   "answer": 5,
+   "explanation": "4형식(told me a scary story)에는 전치사 to를 넣지 않아요. to를 쓰려면 told a scary story to me처럼 순서를 바꿔야 해요.",
+   "choiceExplanations": [
+    "gave the money to her father는 '물건 + to + 사람'의 3형식이라 맞는 문장이에요.",
+    "showed his new bike to us는 3형식에서 to를 바르게 쓴 문장이에요.",
+    "write a letter to my grandma는 물건 뒤에 to + 사람을 쓴 3형식이라 맞아요.",
+    "sent me a postcard는 사람 다음에 물건이 오는 4형식이라 to 없이 써도 맞아요.",
+    "정답. 4형식(told me a scary story)에는 전치사 to를 넣지 않아요. to를 쓰려면 told a scary story to me처럼 순서를 바꿔야 해요."
+   ],
+   "detail": "수여동사 문장은 두 가지로 쓸 수 있어요. '사람 + 물건' 순서의 4형식에는 전치사가 없고, '물건 + to + 사람'의 3형식에만 to가 들어가요. He told to me a scary story.는 4형식 자리에 to를 넣어 섞어 쓴 문장이라 틀려요. told me a scary story 또는 told a scary story to me로 고쳐야 해요. 교과서 p.123의 Please tell me a funny story에서 to 없는 4형식을 볼 수 있어요.",
+   "tip": "to는 물건 뒤에 붙일 때만 써요. 사람 바로 앞에 to를 붙이면 틀려요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "바르게 쓰기",
+     "head": [
+      "틀린 문장",
+      "바른 문장 (둘 중 하나)"
+     ],
+     "rows": [
+      [
+       "told to me a story",
+       "told me a story / told a story to me"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q07-a",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "have to: 쓰임이 나머지와 다른 것",
+   "source": "교과서 p.123 (have to = ~해야 한다, 일반동사 have와 구별)",
+   "question": "다음 중 have의 쓰임이 나머지와 다른 것은?",
+   "choices": [
+    "I have two cousins in Busan.",
+    "Min has to go to bed early.",
+    "She has to take care of her dog.",
+    "We have to finish this today.",
+    "They have to wait for the bus."
+   ],
+   "answer": 1,
+   "explanation": "I have two cousins in Busan.의 have는 '가지고 있다'는 일반동사이고, 나머지 문장의 have to는 '~해야 한다'는 의무를 나타내요.",
+   "choiceExplanations": [
+    "정답. I have two cousins in Busan.의 have는 '가지고 있다'는 일반동사이고, 나머지 문장의 have to는 '~해야 한다'는 의무를 나타내요.",
+    "has to는 '~해야 한다'는 의무를 나타내요. 나머지 문장과 같은 쓰임이라서 답이 아니에요.",
+    "has to는 3인칭 단수 주어와 쓰는 '~해야 한다'예요. 의무의 뜻이라 같은 쓰임이에요.",
+    "have to finish는 '끝내야 한다'는 의무예요. 나머지와 같은 쓰임이에요.",
+    "have to wait는 '기다려야 한다'는 의무예요. 같은 쓰임이라 정답이 아니에요."
+   ],
+   "detail": "have 뒤에 무엇이 오는지를 보면 쓰임을 구분할 수 있어요. 일반동사 have는 뒤에 명사(two cousins)가 와서 '가지고 있다'라는 뜻이에요. have to는 뒤에 동사원형이 와서 '~해야 한다'는 의무를 나타내요. 교과서 p.123의 You have to pay for the window와 Susan has to take responsibility for her actions가 그 예예요. 따라서 명사가 이어지는 문장만 쓰임이 달라요.",
+   "tip": "have 뒤가 명사면 '가지다', to + 동사원형이면 '~해야 한다'예요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "have의 두 쓰임",
+     "head": [
+      "형태",
+      "뒤에 오는 말",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "have",
+       "명사",
+       "가지고 있다"
+      ],
+      [
+       "have to",
+       "동사원형",
+       "~해야 한다"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q07-b",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "have to: 쓰임이 나머지와 다른 것",
+   "source": "교과서 p.123 (have to와 don't have to)",
+   "question": "다음 중 의무/필요 여부에서 의미가 나머지와 다른 것은?",
+   "choices": [
+    "They have to wear a helmet.",
+    "He has to leave now.",
+    "You don't have to wait for me.",
+    "We have to be quiet here.",
+    "I had to wash the dishes last night."
+   ],
+   "answer": 3,
+   "explanation": "You don't have to wait for me.는 '기다릴 필요가 없다'는 불필요를 나타내고, 나머지는 '~해야 한다'는 의무예요.",
+   "choiceExplanations": [
+    "have to wear는 '써야 한다'는 의무예요. 나머지 문장과 같은 의무의 뜻이에요.",
+    "has to leave는 '떠나야 한다'는 의무예요. 3인칭 단수 주어와 쓰는 같은 쓰임이에요.",
+    "정답. You don't have to wait for me.는 '기다릴 필요가 없다'는 불필요를 나타내고, 나머지는 '~해야 한다'는 의무예요.",
+    "have to be quiet은 '조용히 해야 한다'는 의무예요. 같은 쓰임이라서 답이 아니에요.",
+    "had to는 have to의 과거형(교과서 밖 일반 문법)으로 '~해야 했다'는 의무예요. 시제만 다르고 뜻은 같아요."
+   ],
+   "detail": "have to는 의무('~해야 한다')를 나타내고, 앞에 don't를 붙인 don't have to는 '~할 필요가 없다'는 불필요를 나타내요. 교과서 p.123의 cf. We don't have to go to school tomorrow가 불필요의 예예요. 문제의 You don't have to wait for me.만 불필요이고, had to는 have to의 과거형이라 여전히 의무예요(had to는 교과서 밖 일반 문법이에요). 의무와 불필요는 뜻이 정반대에 가까우니 꼭 구분해야 해요.",
+   "tip": "don't have to는 '해야 한다'의 부정이 '하면 안 된다'가 아니라 '할 필요가 없다'예요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "have to의 의미",
+     "head": [
+      "표현",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "have to + 동사원형",
+       "~해야 한다(의무)"
+      ],
+      [
+       "don't have to + 동사원형",
+       "~할 필요가 없다(불필요)"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "과거형(교과서 밖 일반 문법)",
+     "text": "had to는 have to의 과거형이에요. 의무의 뜻은 그대로예요."
+    }
+   ]
+  },
+  {
+   "id": "u7-Q08-a",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "밑줄 어법 조합형",
+   "source": "교과서 p.121·p.123 (수여동사 어순·has to)",
+   "question": "윗글의 [ ]로 표시한 ⓐ~ⓔ 중 어법상 올바르지 않은 것끼리 짝지은 것은?",
+   "choices": [
+    "ⓐ, ⓒ",
+    "ⓐ, ⓓ",
+    "ⓑ, ⓒ",
+    "ⓒ, ⓓ",
+    "ⓓ, ⓔ"
+   ],
+   "answer": 4,
+   "explanation": "ⓒ는 told the plan her가 told her the plan으로, ⓓ는 You has to가 You have to로 고쳐야 해요.",
+   "choiceExplanations": [
+    "ⓐ gave her 10 dollars는 '사람 + 물건' 순서가 맞는 올바른 표현이라 틀린 것에 넣으면 안 돼요. 틀린 것은 ⓒ와 ⓓ예요.",
+    "ⓐ gave her 10 dollars는 올바른 4형식이에요. ⓓ는 틀렸지만 ⓐ를 틀린 것으로 본 점이 오답이에요.",
+    "ⓑ showed her sister the money는 사람 다음에 물건이 와서 올바른 문장이에요. 틀린 것은 ⓒ와 ⓓ예요.",
+    "정답. ⓒ는 told the plan her가 told her the plan으로, ⓓ는 You has to가 You have to로 고쳐야 해요.",
+    "ⓔ sent her mother a card는 올바른 4형식이에요. ⓓ만 틀린 쪽이고 ⓒ가 빠졌어요."
+   ],
+   "detail": "[ ] 안의 표현을 하나씩 문장 구조에 맞춰 확인해요. ⓐ gave her 10 dollars, ⓑ showed her sister the money, ⓔ sent her mother a card는 모두 '사람 + 물건' 순서의 올바른 4형식이에요(교과서 p.123). ⓒ told the plan her는 물건(the plan)이 사람(her)보다 앞에 와서 틀렸고, told her the plan이 바른 문장이에요. ⓓ You has to는 주어 You에는 have to를 써야 하므로 틀렸어요(has to는 He, She 같은 3인칭 단수 주어에 써요, p.123). 따라서 올바르지 않은 것은 ⓒ, ⓓ예요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "항목마다 '맞다/틀리다'를 먼저 표시한 뒤 틀린 것끼리 짝을 찾으세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "확인할 점",
+     "head": [
+      "문법",
+      "바른 모양"
+     ],
+     "rows": [
+      [
+       "4형식",
+       "동사 + 사람 + 물건 (전치사 없음)"
+      ],
+      [
+       "have to",
+       "I/You/We/They have to, He/She has to + 동사원형"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "Hana wanted to buy a birthday gift for her mother. Her grandmother [ⓐ gave her 10 dollars]. Hana [ⓑ showed her sister the money] and [ⓒ told the plan her]. Her sister said, \"You [ⓓ has to save] more money.\" Finally, Hana [ⓔ sent her mother a card] and some flowers.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u7-Q08-b",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "밑줄 어법 조합형",
+   "source": "교과서 p.121·p.123 (수여동사 어순, have to 다음 동사원형)",
+   "question": "윗글의 [ ]로 표시한 ⓐ~ⓔ 중 어법상 올바르지 않은 것끼리 짝지은 것은?",
+   "choices": [
+    "ⓐ, ⓑ",
+    "ⓐ, ⓒ",
+    "ⓐ, ⓓ",
+    "ⓑ, ⓒ",
+    "ⓑ, ⓔ"
+   ],
+   "answer": 1,
+   "explanation": "ⓐ는 gave him 20 dollars로, ⓑ는 showed his mom the bike로 순서를 고쳐야 해요.",
+   "choiceExplanations": [
+    "정답. ⓐ는 gave him 20 dollars로, ⓑ는 showed his mom the bike로 순서를 고쳐야 해요.",
+    "ⓒ I have to save는 have to 다음에 동사원형이 와서 올바른 문장이에요. 틀린 것은 ⓐ와 ⓑ예요.",
+    "ⓓ You don't have to hurry는 '서두를 필요가 없다'로 올바른 문장이에요. ⓐ만 맞게 골랐어요.",
+    "ⓒ have to save는 올바른 표현이에요. ⓑ만 틀린 쪽이고 ⓐ가 빠졌어요.",
+    "ⓔ sent his cousin a message는 올바른 4형식이에요. ⓑ만 맞게 골랐어요."
+   ],
+   "detail": "ⓐ gave 20 dollars him은 물건(20 dollars)이 사람(him)보다 앞에 와서 틀렸고, gave him 20 dollars가 바른 순서예요. ⓑ showed the bike his mom도 물건이 사람보다 앞에 와서 틀렸고, showed his mom the bike가 바른 문장이에요. ⓒ have to save와 ⓓ don't have to hurry는 have to 다음에 동사원형이 와서 올바르고(교과서 p.123), ⓔ sent his cousin a message도 올바른 4형식이에요. 따라서 올바르지 않은 것은 ⓐ, ⓑ예요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "4형식에서는 사람 → 물건 순서로 써요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "바르게 고치기",
+     "head": [
+      "틀린 표현",
+      "바른 표현"
+     ],
+     "rows": [
+      [
+       "gave 20 dollars him",
+       "gave him 20 dollars"
+      ],
+      [
+       "showed the bike his mom",
+       "showed his mom the bike"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "Tom saved money for a new bike. His uncle [ⓐ gave 20 dollars him]. Tom [ⓑ showed the bike his mom] in the store. He said, \"I [ⓒ have to save] more money.\" His mom said, \"You [ⓓ don't have to hurry].\" Later, Tom [ⓔ sent his cousin a message].",
+   "fixedOrder": true
+  },
+  {
+   "id": "u7-Q09-a",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어색한 대화",
+   "source": "교과서 p.114~p.115 (Can I help you? / How much is it? / I'll take it.)",
+   "question": "다음 중 대화의 흐름이 자연스럽지 않은 것은?",
+   "choices": [
+    "A: Can I help you? B: Yes. I need a blue jacket.",
+    "A: How much is the red cap? B: I need a gift for my sister.",
+    "A: How much is the talking refrigerator? B: It's $1,000.",
+    "A: How about this one? B: It's nice. I like it.",
+    "A: Do I have to pay now? B: Yes, you do. The cashier is over there."
+   ],
+   "answer": 2,
+   "explanation": "가격을 묻는 질문(How much is the red cap?)에 필요한 물건(I need a gift ...)으로 답해서 질문과 대답이 어긋나요.",
+   "choiceExplanations": [
+    "도와 드릴까요?라는 말에 필요한 물건으로 답해서 자연스러운 대화예요.",
+    "정답. 가격을 묻는 질문(How much is the red cap?)에 필요한 물건(I need a gift ...)으로 답해서 질문과 대답이 어긋나요.",
+    "가격을 묻는 말에 It's $1,000.이라고 가격으로 답해서 자연스러워요. talking refrigerator는 교과서 p.112·p.115에 나오는 말하는 냉장고예요.",
+    "권유에 마음에 든다고 답해서 자연스러운 대화예요.",
+    "지금 내야 하느냐는 질문에 그렇다고 답하고 계산대를 알려 줘서 자연스러워요."
+   ],
+   "detail": "대화 문제는 질문에 알맞은 대답인지 하나씩 확인해요. 필요한 물건을 말하는 대답은 '도와 드릴까요?' 같은 질문 뒤에 나와요(교과서 p.114). 가격을 물을 때는 It's $1,000.처럼 가격으로 답해야 해요(p.115). 그래서 How much is the red cap?에 I need a gift for my sister.라고 답하면 부자연스러워요. (이 대화는 교과서 p.114~115의 표현을 활용해 새로 쓴 대화예요.)",
+   "tip": "How much ~?는 가격, Can I help you?는 찾는 물건으로 짝을 지어 기억하세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "가게 대화의 짝",
+     "head": [
+      "질문",
+      "알맞은 대답"
+     ],
+     "rows": [
+      [
+       "Can I help you?",
+       "I'm looking for ~."
+      ],
+      [
+       "How much is it?",
+       "It's $~."
+      ],
+      [
+       "How about this one?",
+       "It's perfect! / I'll take it."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q09-b",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어색한 대화",
+   "source": "교과서 p.114~p.115 (Can I help you? / How much are ~? / It's too expensive)",
+   "question": "다음 중 대화가 자연스럽게 이어지지 않는 것은?",
+   "choices": [
+    "A: Can I help you? B: Yes. I want to buy a blanket.",
+    "A: How much are these shoes? B: They're $30.",
+    "A: How about this red one? B: It's perfect!",
+    "A: May I help you? B: It's $20.",
+    "A: This jacket costs too much. B: Then how about this one?"
+   ],
+   "answer": 4,
+   "explanation": "도와 드릴까요?(May I help you?)라는 제안에 가격(It's $20.)으로 답해서 질문과 대답이 어긋나요.",
+   "choiceExplanations": [
+    "도와 드릴까요?라는 말에 사고 싶은 물건으로 답해서 자연스러운 대화예요.",
+    "복수 물건의 가격을 묻는 말에 They're $30.이라고 답해서 자연스러워요.",
+    "권유에 마음에 든다고 답해서 자연스러운 대화예요.",
+    "정답. 도와 드릴까요?(May I help you?)라는 제안에 가격(It's $20.)으로 답해서 질문과 대답이 어긋나요.",
+    "값이 너무 많이 든다는 말에 다른 물건을 권해서 자연스러운 대화예요."
+   ],
+   "detail": "May I help you?는 점원이 손님에게 도움이 필요한지 묻는 말이에요(교과서 p.114의 Can I help you?와 같은 뜻). 이 말에는 I'm looking for ...처럼 찾는 물건을 말하거나 도움이 필요 없다고 답해야 해요. It's $20.은 How much ~?에 대한 대답이라서 어울리지 않아요(p.115). 나머지 대화는 질문과 대답이 맞게 이어져요. (이 대화는 교과서 p.114~115의 표현을 활용해 새로 쓴 대화예요. May I help you?는 교과서 밖 일반 표현이에요.)",
+   "tip": "대답이 질문의 종류(도움 요청 / 가격 / 권유)에 맞는지 확인하세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "가게 대화의 짝",
+     "head": [
+      "질문",
+      "알맞은 대답"
+     ],
+     "rows": [
+      [
+       "May I help you?",
+       "I'm looking for ~."
+      ],
+      [
+       "How much are these?",
+       "They're $~."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q10-a",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화 순서 배열",
+   "source": "교과서 p.114~p.115·p.117 (I'm looking for ~ / How about this one? / How much is it? / I'll take it.)",
+   "question": "주어진 말 다음에 이어질 (A)~(E)를 자연스러운 순서로 배열한 것은?",
+   "choices": [
+    "(A)-(B)-(D)-(C)-(E)",
+    "(B)-(A)-(C)-(D)-(E)",
+    "(B)-(D)-(A)-(C)-(E)",
+    "(B)-(A)-(D)-(E)-(C)",
+    "(B)-(A)-(D)-(C)-(E)"
+   ],
+   "answer": 5,
+   "explanation": "필요한 물건(B) → 권유(A) → 가격 묻기(D) → 가격 답하기(C) → 구매 결정(E) 순서가 자연스러워요.",
+   "choiceExplanations": [
+    "(A) How about this blue one?를 먼저 두면 손님의 대답(B)이 질문(Can I help you?) 뒤로 밀려요. 점원의 도움 제안에는 찾는 물건을 말하는 (B)가 먼저 와야 해요.",
+    "(C) It's $20.이 (D) How much is it? 앞에 오면 묻지도 않은 가격을 먼저 말하는 셈이에요.",
+    "(D)에서 'It's nice.'라고 말하려면 (A)의 권유가 먼저 나와야 해요. (D)가 (A) 앞에 오면 무엇을 두고 하는 말인지 알 수 없어요.",
+    "(E) Great. I'll buy it.이 가격을 듣기(C) 전에 나오면 가격도 모르고 사겠다고 하는 셈이에요.",
+    "정답. 필요한 물건(B) → 권유(A) → 가격 묻기(D) → 가격 답하기(C) → 구매 결정(E) 순서가 자연스러워요."
+   ],
+   "detail": "가게 대화는 '도움 제안 → 찾는 물건 → 권유 → 가격 → 구매 결정' 순서로 이어져요. 점원이 Can I help you?라고 하면 손님이 I want a backpack for school.처럼 필요한 물건을 말하고(B), 점원이 How about this blue one?으로 권해요(A). 손님이 마음에 들어 How much is it?이라고 묻고(D), 점원이 It's $20.이라고 답한 뒤(C), 손님이 I'll buy it.으로 마무리해요(E). 교과서 p.114~115의 대화 흐름과 같아요. (이 대화는 교과서 p.114~115의 표현을 활용해 새로 쓴 대화예요.)",
+   "tip": "질문 바로 뒤에는 그 질문의 대답이 오는지 짝을 지어 가며 순서를 맞추세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "가게 대화의 흐름",
+     "text": "도움 제안 → 찾는 물건 말하기 → 권유 → 가격 묻기·답하기 → 구매 결정 순서로 대화가 이어져요."
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "Can I help you?\n(A) How about this blue one?\n(B) Yes. I want a backpack for school.\n(C) It's $20.\n(D) It's nice. How much is it?\n(E) Great. I'll buy it.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u7-Q10-b",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화 순서 배열",
+   "source": "교과서 p.114~p.115 (How much are they? / They're $~ / I'll take them.)",
+   "question": "주어진 말 다음에 이어질 (A)~(E)를 자연스러운 순서로 배열한 것은?",
+   "choices": [
+    "(A)-(C)-(E)-(D)-(B)",
+    "(C)-(E)-(A)-(D)-(B)",
+    "(B)-(C)-(E)-(A)-(D)",
+    "(C)-(A)-(E)-(D)-(B)",
+    "(C)-(E)-(A)-(B)-(D)"
+   ],
+   "answer": 2,
+   "explanation": "필요한 물건(C) → 권유(E) → 가격 묻기(A) → 가격 답하기(D) → 구매 결정(B) 순서가 자연스러워요.",
+   "choiceExplanations": [
+    "(A) How much are they?를 먼저 두면 아직 어떤 물건인지 정해지기 전에 가격을 묻게 돼요. 도움 제안 뒤에는 (C)처럼 찾는 물건을 말해야 해요.",
+    "정답. 필요한 물건(C) → 권유(E) → 가격 묻기(A) → 가격 답하기(D) → 구매 결정(B) 순서가 자연스러워요.",
+    "(B) That's good. I'll buy them.이 맨 앞에 오면 아무것도 보지 않고 사겠다고 하는 셈이라 어색해요.",
+    "(A) 가격 질문 바로 뒤에 (D) 대답이 아니라 (E) 권유가 와서 질문과 대답이 어긋나요. 가격을 물으면 곧바로 가격으로 답해야 해요.",
+    "(B) I'll buy them.이 (D) They're $25. 앞에 오면 가격을 듣기도 전에 사겠다고 하는 셈이에요."
+   ],
+   "detail": "점원이 May I help you?라고 물으면 손님이 사고 싶은 물건을 말해요(C). 점원이 How about these white ones?로 권하면(E), 손님이 가격을 물어요(A). 점원이 They're $25.로 답하고(D), 손님이 That's good. I'll buy them.으로 사겠다고 해요(B). 또 가격을 묻는 질문(A) 바로 뒤에 가격 대답(D)이 이어지는지도 단서가 돼요(교과서 p.114~115의 대화 흐름). (이 대화는 교과서 p.114~115의 표현을 활용해 새로 쓴 대화예요. May I help you?는 교과서 밖 일반 표현이에요.)",
+   "tip": "질문 바로 뒤에 그 질문의 대답이 오는지 짝을 지어 가며 순서를 맞추세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "질문과 대답의 짝",
+     "text": "How much are they?(가격 질문) 바로 뒤에는 They're $25.처럼 가격을 말하는 대답이 와야 자연스러워요. 질문 뒤에 대답이 이어지는지 짝을 확인하세요."
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "May I help you?\n(A) How much are they?\n(B) That's good. I'll buy them.\n(C) Yes. I want shoes for my sister.\n(D) They're $25.\n(E) How about these white ones?",
+   "fixedOrder": true
+  },
+  {
+   "id": "u7-Q11-a",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "대화 빈칸 조합",
+   "source": "교과서 p.114~p.115 (I'm looking for ~ / I'll take it.)",
+   "question": "다음 대화의 빈칸 (A), (B)에 들어갈 말로 가장 알맞은 것은?",
+   "choices": [
+    "(A) It's perfect! I love it. (B) That's good. I'll take it.",
+    "(A) Yes, I'm looking for a cap. (B) It's too expensive.",
+    "(A) Yes, I'm looking for a cap. (B) I'll take it.",
+    "(A) It's $15. How about this one? (B) I'm looking for a cap.",
+    "(A) How much is it? (B) That's good. I'll take it."
+   ],
+   "answer": 3,
+   "explanation": "(A)는 도움 제안에 찾는 물건을 말하는 I'm looking for ...가, (B)는 가격을 듣고 사겠다는 I'll take it.이 알맞아요.",
+   "choiceExplanations": [
+    "(A)는 도와 드릴까요?에 대한 대답인데 '완벽해요, 마음에 들어요'는 어울리지 않아요. (B)는 맞아요.",
+    "(A)는 맞지만, 15달러를 듣고 곧바로 계산하자는 점원의 말(Great!)이 이어지므로 (B)로 '너무 비싸요'는 흐름에 맞지 않아요.",
+    "정답. (A)는 도움 제안에 찾는 물건을 말하는 I'm looking for ...가, (B)는 가격을 듣고 사겠다는 I'll take it.이 알맞아요.",
+    "(A)와 (B)가 서로 바뀐 듯 쓰였어요. 손님이 찾는 물건을 말하는 곳과 사겠다고 하는 곳을 구분해야 해요.",
+    "(A)는 점원이 도움을 제안한 직후라 아직 가격을 묻기엔 이르고, 다음 줄의 권유(How about this blue one?)와도 안 이어져요."
+   ],
+   "detail": "빈칸의 앞뒤 말을 살펴 흐름을 확인해요. (A) 앞은 점원의 Can I help you?이므로 I'm looking for a cap.처럼 찾는 물건을 말해야 하고, 바로 뒤에 점원이 How about this blue one?으로 권하는 것과도 이어져요(교과서 p.114). (B)는 가격 It's $15.를 듣고 점원이 Great! Please pay at the counter.라고 하므로 I'll take it.으로 사겠다고 해야 해요(p.115). (이 대화는 교과서 p.114~115의 표현을 활용해 새로 쓴 대화예요.)",
+   "tip": "빈칸 바로 앞 말(질문)과 바로 뒤 말(반응)을 모두 확인하세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "가게 대화 표현",
+     "text": "찾는 물건은 I'm looking for ~., 사겠다고 할 때는 I'll take it., 비싸다고 할 때는 It's too expensive.로 말해요."
+    },
+    {
+     "kind": "text",
+     "title": "for + 사람",
+     "text": "I'm looking for a cap for my brother.처럼 for 뒤에 사람을 덧붙이면 누구를 위한 물건인지 말할 수 있어요(p.112·p.114). 권할 때는 How about this one?(p.114)이라고 해요."
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "A: Can I help you?\nB: (A) ________\nA: How about this blue one?\nB: How much is it?\nA: It's $15.\nB: (B) ________\nA: Great! Please pay at the counter."
+  },
+  {
+   "id": "u7-Q11-b",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "대화 빈칸 조합",
+   "source": "교과서 p.114~p.115 (I'm looking for ~ / It's too expensive.)",
+   "question": "다음 대화의 빈칸 (A), (B)에 들어갈 말로 가장 알맞은 것은?",
+   "choices": [
+    "(A) Yes, I'm looking for a backpack. (B) I'll take it, thank you.",
+    "(A) Yes, I'll take it. (B) It's too expensive.",
+    "(A) It's only $90. (B) It's too expensive.",
+    "(A) Yes, how much is it? (B) I'll take it.",
+    "(A) I'm looking for a backpack. (B) It's too expensive."
+   ],
+   "answer": 5,
+   "explanation": "(A)는 찾는 물건을 말하는 I'm looking for ...가, (B)는 90달러를 듣고 비싸다고 하는 It's too expensive.가 알맞아요.",
+   "choiceExplanations": [
+    "(A)는 맞지만, 90달러를 듣고 점원이 더 싼 것을 권하는 흐름이라 (B)로 '사겠어요'는 어울리지 않아요.",
+    "(A)는 도움 제안에 대한 대답으로 어울리지 않아요. 아직 어떤 물건도 말하지 않았어요. (B)는 맞아요.",
+    "(A)에는 가격이 아니라 찾는 물건을 말해야 해요. 점원이 가격을 말하는 줄이 따로 있어요.",
+    "(A)는 아직 물건을 말하기 전이라 가격을 묻기엔 이르고, (B)도 다음 줄에서 점원이 더 싼 것을 권하는 흐름과 안 맞아요.",
+    "정답. (A)는 찾는 물건을 말하는 I'm looking for ...가, (B)는 90달러를 듣고 비싸다고 하는 It's too expensive.가 알맞아요."
+   ],
+   "detail": "(A) 앞의 Hi. Can I help you?에는 I'm looking for a backpack.처럼 찾는 물건으로 답해야 해요(교과서 p.114). (B)는 점원이 It's $90.이라고 말한 직후이고, 다음 줄에서 점원이 Then how about this cheaper one?이라며 더 싼 것을 권해요. 따라서 비싸다는 뜻의 It's too expensive.가 자연스러워요(p.115). (이 대화는 교과서 p.114~115의 표현을 활용해 새로 쓴 대화예요.)",
+   "tip": "뒤 문장에서 점원이 무엇을 권하는지 보면 (B)의 반응이 짐작돼요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "가게 대화 표현",
+     "text": "비싸다고 말할 때는 It's too expensive.를 써요. 사겠다고 할 때의 I'll take it.과 구분하세요."
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "A: Hi. Can I help you?\nB: (A) ________\nA: How about this red backpack?\nB: How much is it?\nA: It's $90.\nB: (B) ________\nA: Then how about this cheaper one? It's $40."
+  },
+  {
+   "id": "u7-Q12-a",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해 내용 일치",
+   "source": "교과서 p.119~p.120 (공을 세게 던져 창문을 깸, 창문 값, 세차로 42달러)",
+   "question": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "The friends earned 42 dollars by washing cars.",
+    "The ball broke the window of Mike's house.",
+    "Mr. Leigh gave Julie's father 40 dollars.",
+    "Julie's father was upset and gave Mr. Leigh no money.",
+    "The friends washed twelve cars at the car wash."
+   ],
+   "answer": 1,
+   "explanation": "두 친구는 차 21대를 닦아 42달러를 벌었다고 했어요(earned 42 dollars).",
+   "choiceExplanations": [
+    "정답. 두 친구는 차 21대를 닦아 42달러를 벌었다고 했어요(earned 42 dollars).",
+    "깨진 것은 Mike네 집이 아니라 Mr. Leigh의 창문이에요(broke Mr. Leigh's window).",
+    "돈을 낸 사람은 Julie의 아버지이고 받은 사람이 Mr. Leigh예요. 지문과 반대로 말하고 있어요.",
+    "아버지는 화나지 않았다고 말하고(I'm not upset with you) 창문 값 40달러도 Mr. Leigh에게 주었어요.",
+    "지문에서 두 친구는 12대가 아니라 21대의 차를 닦았어요."
+   ],
+   "detail": "내용 일치 문제는 보기를 지문의 문장과 하나씩 대조해요. 지문에서 Julie가 던진 공이 Mr. Leigh의 창문을 깼고, Julie의 아버지가 창문 값 40달러를 Mr. Leigh에게 주었어요. 다음 날 두 친구는 세차를 해서 차 21대를 닦고 42달러를 벌었어요(교과서 p.119~120). 나머지 보기는 깨진 창문의 주인, 돈을 낸 사람, 아버지의 태도, 닦은 차의 수 중 하나가 지문과 달라요. (이 지문은 교과서 p.119~121 이야기를 바탕으로 바꿔 새로 쓴 글이에요.)",
+   "tip": "보기마다 지문의 근거 문장에 표시하고, 하나라도 다르면 소거하세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "지문 속 사실",
+     "text": "Mr. Leigh의 창문이 깨졌고, Julie의 아버지가 40달러를 주었어요. 두 친구는 차 21대를 닦아 42달러를 벌었어요. 아버지는 화를 내지 않았어요."
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "After school, Julie and Mike threw a ball to each other. Mike said, \"Throw it faster!\" Julie agreed. The ball flew over Mike's head and broke Mr. Leigh's window. Julie's father gave Mr. Leigh 40 dollars for the window. At home, he said to Julie, \"I'm not upset with you, but you still have to cover the cost.\" The next day, Mike made some posters, and the two friends washed cars. They washed 21 cars and earned 42 dollars."
+  },
+  {
+   "id": "u7-Q12-b",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해 내용 일치",
+   "source": "교과서 p.121 (Money doesn't grow on trees, 돈을 돌려줌, 은행에 넣기로 결정)",
+   "question": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "Julie's father kept the money for the window.",
+    "Mike said they should be responsible for what they do.",
+    "Julie's father returned the money to the friends.",
+    "The friends bought snacks with all the money.",
+    "Julie's father was upset with them at the end."
+   ],
+   "answer": 3,
+   "explanation": "Julie의 아버지는 두 친구에게 돈을 돌려주었다고 했어요(returned the money).",
+   "choiceExplanations": [
+    "아버지는 돈을 가져가지 않고 아이들에게 돌려주었어요(returned the money).",
+    "그 말을 한 사람은 Julie예요. Mike는 Money doesn't grow on trees라고 말했어요.",
+    "정답. Julie의 아버지는 두 친구에게 돈을 돌려주었다고 했어요(returned the money).",
+    "친구들은 간식을 사려 했지만 결국 돈을 은행에 넣기로 했어요(put it in the bank).",
+    "아버지는 화를 내지 않고 두 친구에게 매우 기쁘다고 말했어요(very happy with them)."
+   ],
+   "detail": "지문에서 두 친구는 모은 돈 중 40달러를 Julie의 아버지께 드렸고, 아버지는 무엇을 배웠는지 물었어요. Julie는 자기가 한 일에 책임을 져야 한다고, Mike는 'Money doesn't grow on trees'라고 답했어요(속담 문장 자체는 교과서 p.121에 있고, 속담 뜻 풀이는 교과서 밖 일반 상식). 아버지는 웃으며 돈을 돌려주고 두 친구에게 기쁘다고 말했어요(교과서 p.121). 처음에는 간식을 사려 했지만 결국 은행에 넣기로 했어요. (이 지문은 교과서 p.119~121 이야기를 바탕으로 바꿔 새로 쓴 글이에요.)",
+   "tip": "누가 어떤 말을 했는지(Julie / Mike)를 헷갈리지 않게 지문에서 확인하세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "지문 속 사실",
+     "text": "Julie는 책임을 져야 한다고, Mike는 Money doesn't grow on trees라고 말했어요. 아버지는 돈을 돌려주었고, 친구들은 돈을 은행에 넣기로 했어요."
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "Julie and Mike gave the 40 dollars to Julie's father. He asked what they had learned. Julie answered, \"We have to be responsible for what we do.\" Mike answered, \"Money doesn't grow on trees.\" Julie's father smiled and returned the money. He said he was very happy with them. At first, the friends wanted to buy snacks with the money. But they decided to put it in the bank."
+  },
+  {
+   "id": "u7-Q13-a",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해 답할 수 없는 질문",
+   "source": "교과서 p.124 (I had ~. I spent ~ on ~. I saved ~. I'm going to ~ with the savings.)",
+   "question": "윗글을 읽고 답할 수 없는 질문은?",
+   "choices": [
+    "Who gave the writer the money?",
+    "How much money did the writer use?",
+    "What did the writer buy?",
+    "Where did the writer buy the notebook?",
+    "What is the writer going to do with the savings?"
+   ],
+   "answer": 4,
+   "explanation": "공책을 어디서 샀는지는 글에 나오지 않아서 답할 수 없어요.",
+   "choiceExplanations": [
+    "글에서 My uncle gave me the money라고 해서 삼촌이라고 답할 수 있는 질문이에요.",
+    "I used 6,000 won이라고 해서 6,000원이라고 답할 수 있어요.",
+    "a notebook and some stickers라고 나와 있어서 공책과 스티커라고 답할 수 있어요.",
+    "정답. 공책을 어디서 샀는지는 글에 나오지 않아서 답할 수 없어요.",
+    "글쓴이는 저축한 돈으로 선생님께 드릴 카드를 사려고 해요. 답할 수 있는 질문이에요."
+   ],
+   "detail": "'답할 수 없는 질문' 문제는 보기 질문마다 지문에서 답을 찾아봐야 해요. 돈을 준 사람(삼촌), 쓴 돈(6,000원), 산 물건(공책과 스티커), 저축한 돈으로 할 일(선생님께 드릴 카드)은 모두 글에 있어요. 반면 공책을 산 장소는 글에 나오지 않아요. 교과서 p.124의 용돈 글쓰기처럼 'I had ~, I spent ~, I saved ~' 순서로 쓴 글이에요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "질문마다 지문에서 답이 되는 문장을 찾아 보고, 못 찾으면 그것이 답이에요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "지문 속 정보",
+     "text": "돈을 준 사람, 쓴 돈, 산 물건, 저축한 돈과 계획은 글에 나와요. 산 장소는 나오지 않아요."
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "Saturday, October 14\nI had 10,000 won last week. My uncle gave me the money. I used 6,000 won to buy a notebook and some stickers. I saved the other 4,000 won in my piggy bank. I'm going to buy a card for my teacher with the savings."
+  },
+  {
+   "id": "u7-Q13-b",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해 답할 수 없는 질문",
+   "source": "교과서 p.121 (decided to put the money in the bank)",
+   "question": "윗글을 읽고 답할 수 없는 질문은?",
+   "choices": [
+    "How many days did Mina work at the shop?",
+    "Who did Mina help?",
+    "What did Mina do at the shop?",
+    "How much did her aunt give her?",
+    "What did Mina decide to do with the money?"
+   ],
+   "answer": 1,
+   "explanation": "Mina가 가게에서 며칠 동안 일했는지는 글에 나오지 않아서 답할 수 없어요.",
+   "choiceExplanations": [
+    "정답. Mina가 가게에서 며칠 동안 일했는지는 글에 나오지 않아서 답할 수 없어요.",
+    "첫 문장에서 Mina가 이모(her aunt)를 도왔다고 하므로 이모라고 답할 수 있어요.",
+    "She wrapped flowers and cleaned the floor.에서 꽃 포장과 바닥 청소라는 답을 찾을 수 있어요.",
+    "Her aunt gave her 30 dollars.라는 문장에 금액이 나와 있어요.",
+    "But she decided to put the money in the bank.에서 은행에 넣기로 했다는 답이 나와요."
+   ],
+   "detail": "각 질문의 답을 지문에서 찾아봐요. 도운 사람은 이모, 한 일은 꽃 포장과 바닥 청소, 받은 돈은 30달러, 돈으로 하기로 한 일은 은행에 넣기예요. 일한 기간은 글에 없으므로 답할 수 없어요. 돈을 쓰고 싶어 하다가 은행에 넣기로 하는 흐름은 교과서 p.121의 decided to put it in the bank와 같아요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "How long, How many days처럼 기간·횟수를 묻는 질문은 지문에 숫자가 있는지 먼저 확인하세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "지문 속 정보",
+     "text": "도운 사람(이모), 한 일, 받은 돈(30달러), 돈의 쓰임(은행에 넣기)은 나와요. 일한 기간은 나오지 않아요."
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "Last month, Mina helped her aunt at a flower shop. She wrapped flowers and cleaned the floor. Her aunt gave her 30 dollars. At first, Mina wanted to buy a new phone case with it. But she decided to put the money in the bank. \"I have to save for my trip,\" she said. Her aunt said, \"Good job!\""
+  },
+  {
+   "id": "u7-Q14-a",
+   "slot": "Q14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "흐름상 어색한 문장",
+   "source": "교과서 p.119~p.121 (이야기의 흐름: 필요 → 돈 마련 → 결과)",
+   "question": "다음 글의 흐름상 어색한 문장은?",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "answer": 2,
+   "explanation": "ⓑ는 남자 형제가 TV로 축구 보기를 좋아한다는 내용이라, 선물을 마련하는 글의 흐름과 관계가 없어요.",
+   "choiceExplanations": [
+    "ⓐ는 Emma가 친구에게 줄 선물을 사고 싶어 한다는 글의 주제를 소개하는 문장이라 흐름에 맞아요.",
+    "정답. ⓑ는 남자 형제가 TV로 축구 보기를 좋아한다는 내용이라, 선물을 마련하는 글의 흐름과 관계가 없어요.",
+    "ⓒ는 그래서 매주 2달러씩 저금하기로 했다는 내용으로, 선물을 사기 위한 방법이라 흐름에 맞아요.",
+    "ⓓ는 두 달 뒤 돈이 충분해졌다는 결과라서 흐름에 맞아요.",
+    "ⓔ는 마침내(Finally) 스카프를 샀다는 결말이라 흐름에 맞아요."
+   ],
+   "detail": "이 글은 '선물을 사고 싶다 → 매주 저금하기로 했다 → 두 달 뒤 돈이 모였다 → 마침내 선물을 샀다'로 이어져요. ⓑ Her brother likes to watch soccer on TV.은 선물이나 저금과 관련이 없어서 흐름에서 벗어나요. 나머지 문장은 So로 이어지는 결과(ⓒ), 시간이 지난 뒤의 상황(ⓓ), Finally로 시작하는 결말(ⓔ)처럼 서로 연결돼요. 교과서 p.119~121의 이야기도 문제 → 해결 → 결과 순서로 이어져요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "각 문장이 앞 문장의 이유·결과·시간 순서로 이어지는지 확인하세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "흐름 단서",
+     "text": "So(그래서), After ~(~ 뒤에), Finally(마침내) 같은 연결 표현은 앞 문장과의 관계를 알려 줘요."
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "ⓐ Emma wanted to buy a present for her best friend. ⓑ Her brother likes to watch soccer on TV. ⓒ So she decided to save 2 dollars every week. ⓓ After two months, she had enough money. ⓔ Finally, she bought a nice scarf.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u7-Q14-b",
+   "slot": "Q14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "흐름상 어색한 문장",
+   "source": "교과서 p.119~p.121 (You have to ~, so ~ / 돈을 벌어 해결)",
+   "question": "다음 글의 흐름상 어색한 문장은?",
+   "choices": [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ"
+   ],
+   "answer": 4,
+   "explanation": "ⓓ는 그 식당의 피자가 인기 있다는 내용이라, 자전거를 사기 위해 돈을 버는 흐름과 관계가 없어요.",
+   "choiceExplanations": [
+    "ⓐ는 자전거가 낡아서 새것을 원한다는 글의 시작으로 흐름에 맞아요.",
+    "ⓑ는 새 자전거를 사려고 아버지께 돈을 부탁했다는 내용이라 흐름에 맞아요.",
+    "ⓒ는 아버지가 먼저 돈을 벌어야 한다고 말하는 내용으로 앞 문장과 자연스럽게 이어져요.",
+    "정답. ⓓ는 그 식당의 피자가 인기 있다는 내용이라, 자전거를 사기 위해 돈을 버는 흐름과 관계가 없어요.",
+    "ⓔ는 그래서 Ben이 주말마다 이웃의 차를 닦았다는 내용으로, ⓒ의 말 때문에 한 행동이라 흐름에 맞아요."
+   ],
+   "detail": "이 글은 '새 자전거를 원한다 → 아버지께 돈을 부탁했다 → 먼저 벌어야 한다고 했다 → 그래서 일해서 돈을 벌었다'로 이어져요. ⓓ The pizza at that restaurant is very popular.는 자전거나 돈 버는 일과 무관해서 흐름에서 벗어나요. ⓔ는 So로 시작해 ⓒ에서 들은 말의 결과를 나타내므로 앞뒤가 이어져요. 돈을 벌어서 문제를 해결하는 흐름은 교과서 p.119~121과 같아요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "So가 있으면 바로 앞 문장이 이유인지 확인하고, 이어지지 않는 문장을 찾으세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "흐름 단서",
+     "text": "But(그러나)은 반대 내용을, So(그래서)는 결과를 이어 줘요. 화제가 갑자기 바뀌는 문장이 흐름상 어색한 문장이에요."
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "ⓐ Ben's bike was old, so he wanted a new one. ⓑ He asked his father for money. ⓒ But his father said, \"You have to earn it first.\" ⓓ The pizza at that restaurant is very popular. ⓔ So Ben washed cars for his neighbors every weekend.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u7-Q15-a",
+   "slot": "Q15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "지칭·의미 파악(지시어·관용 표현)",
+   "source": "교과서 p.121 (this won't be their last broken window의 this: 이번에 깬 유리창)",
+   "question": "윗글의 this가 가리키는 것으로 가장 알맞은 것은?",
+   "choices": [
+    "아이들이 찬 공",
+    "아이들이 놀던 마당",
+    "주인이 화를 내지 않은 일",
+    "아이들이 다음에 할 놀이",
+    "방금 떨어진 꽃 화분"
+   ],
+   "answer": 5,
+   "explanation": "this는 바로 앞에서 말한 방금 떨어진 꽃 화분을 가리켜요. 뒤의 the last pot to fall과 이어 읽으면 알 수 있어요.",
+   "choiceExplanations": [
+    "공은 화분을 맞힌 물건일 뿐이에요. this는 떨어진 것을 가리켜요.",
+    "마당은 놀이가 벌어진 장소예요. 떨어진 것이 아니라서 this가 가리키는 것이 아니에요.",
+    "I'm not angry.는 화가 나지 않았다는 말일 뿐이에요. this는 방금 떨어진 꽃 화분을 가리켜요.",
+    "다음 놀이는 글에 나오지 않아요. this는 이미 일어난 일 속의 물건을 가리켜요.",
+    "정답. this는 바로 앞에서 말한 방금 떨어진 꽃 화분을 가리켜요. 뒤의 the last pot to fall과 이어 읽으면 알 수 있어요."
+   ],
+   "detail": "이런 지칭·의미 파악 문제에서 this나 them 같은 지시어는 앞에서 이미 나온 말을 가리켜요. 이 글에서는 아이들이 찬 공에 맞아 꽃 화분이 떨어졌고, 주인이 this won't be the last pot to fall이라고 말해요. 교과서 p.121에도 this won't be their last ... window라는 문장이 나오는데, 여기서 this는 이번에 깬 유리창이에요. 이 문제도 같은 방식으로 this 바로 앞뒤에서 '일어난 일'을 찾으면 방금 떨어진 꽃 화분이에요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "지시어는 앞 문장에서 '이미 일어난 일이나 물건'을 찾아 대신 넣어 읽어 보세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "지시어 this",
+     "text": "this는 가까이 있는 것이나 방금 말한 것을 가리켜요. 교과서 p.121의 this won't be their last ... window에서는 이번에 깬 유리창을 뜻해요."
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "Two boys kicked a ball in the yard. The ball hit a flower pot, and the pot fell down. The owner looked at the pot and said, \"I'm not angry. But this won't be the last pot to fall.\""
+  },
+  {
+   "id": "u7-Q15-b",
+   "slot": "Q15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "지칭·의미 파악(지시어·관용 표현)",
+   "source": "교과서 p.119 (Kids will be kids: 철없는 아이들의 행동을 이해해 줄 때 쓰는 관용 표현, '의미를 말해 봅시다')",
+   "question": "윗글에서 Ms. Park가 한 말 Kids will be kids.의 의미로 가장 알맞은 것은?",
+   "choices": [
+    "아이들은 빨리 어른이 되어야 한다",
+    "아이들 행동은 이해해 줄 수 있다",
+    "아이들은 집안일을 도와야 한다",
+    "아이들 때문에 매우 화가 난다",
+    "아이들은 조용히 해야 한다"
+   ],
+   "answer": 2,
+   "explanation": "Kids will be kids.는 철없는 아이들의 행동을 이해해 줄 때 쓰는 관용 표현으로, '아이들은 원래 그렇지'라는 뜻이에요.",
+   "choiceExplanations": [
+    "kids가 어른이 되라는 말이 아니에요. 아이들의 행동을 받아들이는 표현이에요.",
+    "정답. Kids will be kids.는 철없는 아이들의 행동을 이해해 줄 때 쓰는 관용 표현으로, '아이들은 원래 그렇지'라는 뜻이에요.",
+    "일을 시키는 말이 아니에요. 아이의 실수를 이해해 주는 말이에요.",
+    "화가 났다면 That's okay.라고 하지 않아요. 앞의 That's okay.와도 맞지 않아요.",
+    "조용히 하라는 지시가 아니에요. 앞의 That's okay.처럼 괜찮다고 이해해 주는 말이에요."
+   ],
+   "detail": "지칭·의미 파악 문제 중 관용 표현은 낱말 뜻을 그대로 더하면 틀려요. Kids will be kids를 글자 그대로 풀면 '아이들은 아이들이 될 것이다'지만, 실제로는 아이들이 철없이 한 행동을 이해해 줄 때 쓰는 표현이에요. 이 글에서도 Ms. Park가 That's okay.라고 먼저 말하고 이어서 Kids will be kids.라고 해서 아이의 실수를 너그럽게 받아 주는 장면이에요. 교과서 p.119 '의미를 말해 봅시다'에서도 이 표현의 뜻을 묻고 있어요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "관용 표현은 앞뒤 말(That's okay.)의 분위기를 보고 뜻을 짐작하세요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "관용 표현 Kids will be kids.",
+     "text": "철없는 아이들의 행동을 이해해 줄 때 쓰는 표현이에요. 낱말 뜻을 그대로 옮기지 않고 한 덩어리로 기억하세요(p.119)."
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "Ms. Park's little son dropped a glass at the party. It broke on the floor. He said sorry again and again.\nMs. Park: That's okay. Kids will be kids."
+  },
+  {
+   "id": "u7-S01-a",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "조건 영작: 수여동사 4형식",
+   "source": "교과서 p.123 (수여동사 4형식)",
+   "question": "다음 우리말과 같은 뜻이 되도록 〈조건〉에 맞게 영어 문장을 쓰시오.",
+   "answerHint": "〈조건〉의 단어를 모두 사용하고 어순·시제·철자를 맞출 것. 한 문장으로 쓰고 마침표를 찍을 것.",
+   "modelAnswer": "Sora gave her brother three pencils.  (3형식 Sora gave three pencils to her brother.는 4형식 조건과 '단어를 더하지 않음' 조건을 모두 어겨 1번·3번 항목이 0점이므로 2점)",
+   "explanation": "모범 답안: Sora gave her brother three pencils.  (3형식 Sora gave three pencils to her brother.는 4형식 조건과 '단어를 더하지 않음' 조건을 모두 어겨 1번·3번 항목이 0점이므로 2점)",
+   "rubric": [
+    {
+     "criterion": "간접목적어(her brother) 다음에 직접목적어(three pencils)가 오는 4형식 어순으로 씀(3형식이면 0점)",
+     "points": 1,
+     "tip": "사람 다음에 물건 순서와 전치사 없는 4형식인지 확인하세요."
+    },
+    {
+     "criterion": "과거 시제 gave로 씀(give 그대로 쓰면 0점)",
+     "points": 1,
+     "tip": "우리말이 '주었다'이므로 과거형을 써요."
+    },
+    {
+     "criterion": "주어진 단어를 모두 사용하고 단어를 더하거나 빼지 않음(to를 더하면 0점, 소유격 her는 제시된 단어 그대로)",
+     "points": 1,
+     "tip": "Sora, give, her brother, three pencils를 모두 썼는지 확인하세요."
+    },
+    {
+     "criterion": "철자·대소문자·마침표가 정확함(문장 첫 글자 대문자 포함)",
+     "points": 1,
+     "tip": "문장 첫 글자 대문자와 마침표를 확인하세요."
+    }
+   ],
+   "detail": "수여동사 give는 '주어 + gave + 간접목적어(~에게) + 직접목적어(~을)' 순서로 써요. 소라가 남동생에게 연필을 주었으므로 Sora gave her brother three pencils.가 돼요. 교과서 p.123의 Julie's father gave Mr. Leigh 40 dollars와 같은 구조예요. 조건에서 4형식을 요구하고 단어를 추가하지 말라고 했으므로, to를 쓴 3형식은 어순·단어 조건 두 항목에서 점수를 받지 못해요(2점).\n채점 안내: 〈조건〉을 지키지 않은 항목은 그 항목만 0점이고, 철자·대소문자·마침표 오류도 해당 항목에서 감점해요. 나머지 항목은 따로 점수를 줘요. 3형식(to를 쓴 문장)은 허용 답안이 아니라 부분점수(2점)만 받아요.",
+   "tip": "give 다음에는 '사람 → 물건'을 쓰고, 우리말이 과거(주었다)이면 gave로 바꿔요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "4형식 영작 순서",
+     "head": [
+      "주어",
+      "수여동사",
+      "간접목적어(사람)",
+      "직접목적어(물건)"
+     ],
+     "rows": [
+      [
+       "Sora",
+       "gave",
+       "her brother",
+       "three pencils"
+      ]
+     ]
+    },
+    {
+     "kind": "table",
+     "title": "본문의 불규칙 동사 과거형(p.119~121)",
+     "head": [
+      "원형",
+      "과거형"
+     ],
+     "rows": [
+      [
+       "throw",
+       "threw"
+      ],
+      [
+       "fly",
+       "flew"
+      ],
+      [
+       "break",
+       "broke"
+      ],
+      [
+       "come",
+       "came"
+      ],
+      [
+       "hear",
+       "heard"
+      ],
+      [
+       "say",
+       "said"
+      ],
+      [
+       "tell",
+       "told"
+      ],
+      [
+       "give",
+       "gave"
+      ],
+      [
+       "become",
+       "became"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "조건",
+   "passage": "우리말: 소라는 남동생에게 연필 세 자루를 주었다.\n• 주어진 단어를 모두 사용할 것(필요하면 어형을 바꿀 것, 단어를 추가하지 말 것)\n• 간접목적어 다음에 직접목적어가 오는 4형식 문장으로 쓸 것\n• 단어: give, her brother, three pencils, Sora"
+  },
+  {
+   "id": "u7-S01-b",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "조건 영작: 수여동사 4형식",
+   "source": "교과서 p.123 (수여동사 4형식)",
+   "question": "다음 우리말과 같은 뜻이 되도록 〈조건〉에 맞게 영어 문장을 쓰시오.",
+   "answerHint": "〈조건〉의 단어를 모두 사용하고 어순·시제·철자를 맞출 것. 한 문장으로 쓰고 마침표를 찍을 것.",
+   "modelAnswer": "Kevin sent his friends some photos.  (3형식 Kevin sent some photos to his friends.는 4형식 조건과 '단어를 더하지 않음' 조건을 모두 어겨 1번·3번 항목이 0점이므로 2점)",
+   "explanation": "모범 답안: Kevin sent his friends some photos.  (3형식 Kevin sent some photos to his friends.는 4형식 조건과 '단어를 더하지 않음' 조건을 모두 어겨 1번·3번 항목이 0점이므로 2점)",
+   "rubric": [
+    {
+     "criterion": "간접목적어(his friends) 다음에 직접목적어(some photos)가 오는 4형식 어순으로 씀(3형식이면 0점)",
+     "points": 1,
+     "tip": "사람 다음에 물건 순서와 전치사 없는 4형식인지 확인하세요."
+    },
+    {
+     "criterion": "과거 시제 sent로 씀(send 그대로 쓰면 0점)",
+     "points": 1,
+     "tip": "우리말이 '보냈다'이므로 과거형을 써요."
+    },
+    {
+     "criterion": "주어진 단어를 모두 사용하고 단어를 더하거나 빼지 않음(to를 더하면 0점)",
+     "points": 1,
+     "tip": "Kevin, send, his friends, some photos를 모두 썼는지 확인하세요."
+    },
+    {
+     "criterion": "철자·대소문자·마침표가 정확함(문장 첫 글자 대문자 포함)",
+     "points": 1,
+     "tip": "문장 첫 글자 대문자와 마침표를 확인하세요."
+    }
+   ],
+   "detail": "수여동사 send는 '주어 + sent + 간접목적어 + 직접목적어' 순서로 써요. 케빈이 친구들에게 사진을 보냈으므로 Kevin sent his friends some photos.가 돼요. send는 교과서 p.123의 Practice에서 쓰인 수여동사와 같은 종류예요. send의 과거형은 불규칙 변화로 sent예요. 3형식(to를 더한 문장)으로 쓰면 어순·단어 조건 두 항목이 0점이라 2점이에요.\n채점 안내: 〈조건〉을 지키지 않은 항목은 그 항목만 0점이고, 철자·대소문자·마침표 오류도 해당 항목에서 감점해요. 나머지 항목은 따로 점수를 줘요. 3형식(to를 쓴 문장)은 허용 답안이 아니라 부분점수(2점)만 받아요.",
+   "tip": "send의 과거형은 sent예요. 사람 → 물건 순서로 이어 쓰세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "4형식 영작 순서",
+     "head": [
+      "주어",
+      "수여동사",
+      "간접목적어(사람)",
+      "직접목적어(물건)"
+     ],
+     "rows": [
+      [
+       "Kevin",
+       "sent",
+       "his friends",
+       "some photos"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "조건",
+   "passage": "우리말: 케빈은 친구들에게 사진 몇 장을 보냈다.\n• 주어진 단어를 모두 사용할 것(필요하면 어형을 바꿀 것, 단어를 추가하지 말 것)\n• 간접목적어 다음에 직접목적어가 오는 4형식 문장으로 쓸 것\n• 단어: send, his friends, some photos, Kevin"
+  },
+  {
+   "id": "u7-S02-a",
+   "slot": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "조건 영작: have to / don't have to",
+   "source": "교과서 p.123 (have to, don't have to)",
+   "question": "다음 우리말을 〈조건〉에 맞게 영어로 쓰시오. (1) 나는 쓰레기를 내다 버려야 한다. (2) 그는 오늘 일찍 일어날 필요가 없다.",
+   "answerHint": "(1) have to를 사용, (2) doesn't have to를 사용할 것. 주어진 단어를 모두 쓰고 문장마다 마침표를 찍을 것. 각 문장 2점.",
+   "modelAnswer": "(1) I have to take out the trash. (2) He doesn't have to get up early today.  (인정: take the trash out처럼 분리한 어순, does not have to처럼 풀어 쓴 부정, Today he doesn't have to get up early.처럼 문법에 맞게 어순만 바꾼 문장. 불인정: must·need 등 have to가 아닌 표현, don't have to(주어 He에 틀림))",
+   "explanation": "모범 답안: (1) I have to take out the trash. (2) He doesn't have to get up early today.  (인정: take the trash out처럼 분리한 어순, does not have to처럼 풀어 쓴 부정, Today he doesn't have to get up early.처럼 문법에 맞게 어순만 바꾼 문장. 불인정: must·need 등 have to가 아닌 표현, don't have to(주어 He에 틀림))",
+   "rubric": [
+    {
+     "criterion": "(1) have to + 동사원형으로 바르게 씀(I have to take out ...)",
+     "points": 1,
+     "tip": "have to 다음에는 동사원형 take가 와야 해요."
+    },
+    {
+     "criterion": "(1) 주어진 단어를 모두 사용하고 철자·대소문자·마침표가 정확함",
+     "points": 1,
+     "tip": "the trash, 대문자 I, 마침표를 확인하세요."
+    },
+    {
+     "criterion": "(2) 주어 He에 맞춰 doesn't have to + 동사원형(get)으로 씀",
+     "points": 1,
+     "tip": "He에는 doesn't(또는 does not)를 쓰고, have to 다음에는 동사원형 get을 써요."
+    },
+    {
+     "criterion": "(2) 주어진 단어를 모두 사용하고 철자·대소문자·마침표가 정확함",
+     "points": 1,
+     "tip": "get up early today, 첫 글자 대문자, 마침표를 확인하세요."
+    }
+   ],
+   "detail": "have to는 '~해야 한다'는 의무이고 뒤에 동사원형이 와요. 부정형 don't (doesn't) have to는 '~할 필요가 없다'는 뜻이에요. 주어가 He처럼 3인칭 단수이면 부정형은 doesn't have to로 써요. 교과서 p.123의 cf. 문장(We don't have to go to school tomorrow)과 같은 형태의 부정문이에요.\n채점 안내: 〈조건〉을 지키지 않은 항목은 그 항목만 0점이고, 철자·대소문자·마침표 오류도 해당 항목에서 감점해요. 나머지 항목은 따로 점수를 줘요. 모범 답안 옆에 적은 인정 답안도 정답으로 봐요.",
+   "tip": "해야 한다 → have to, 할 필요가 없다 → don't(doesn't) have to로 정리하세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "have to 정리",
+     "head": [
+      "우리말",
+      "영어 형태"
+     ],
+     "rows": [
+      [
+       "~해야 한다",
+       "have to + 동사원형"
+      ],
+      [
+       "~할 필요가 없다",
+       "don't / doesn't have to + 동사원형"
+      ]
+     ]
+    },
+    {
+     "kind": "table",
+     "title": "용돈 벌이 집안일 표현(p.118)",
+     "head": [
+      "표현",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "washing the car",
+       "세차하기"
+      ],
+      [
+       "doing the dishes",
+       "설거지하기"
+      ],
+      [
+       "vacuuming the house",
+       "청소기 돌리기"
+      ],
+      [
+       "taking out the garbage",
+       "쓰레기 내다 버리기"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "조건",
+   "passage": "• (1) 필요한 단어: I, take out, the trash\n• (2) 필요한 단어: he, get up, early, today\n• 필요하면 어형을 바꾸고 have to 외의 단어를 더하지 말 것(단, doesn't(does not)는 쓸 것)"
+  },
+  {
+   "id": "u7-S02-b",
+   "slot": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "조건 영작: have to / don't have to",
+   "source": "교과서 p.123 (has to, don't have to)",
+   "question": "다음 우리말을 〈조건〉에 맞게 영어로 쓰시오. (1) 제니는 숙제를 끝내야 한다. (2) 우리는 오늘 우산을 가져올 필요가 없다.",
+   "answerHint": "(1) has to를 사용, (2) don't have to를 사용할 것. 주어진 단어를 모두 쓰고 문장마다 마침표를 찍을 것. 각 문장 2점.",
+   "modelAnswer": "(1) Jenny has to finish her homework. (2) We don't have to bring an umbrella today.  (인정: do not have to처럼 풀어 쓴 부정, Today we don't have to bring an umbrella.처럼 문법에 맞게 어순만 바꾼 문장. 불인정: must·need 등 has to·have to가 아닌 표현, have to(주어 Jenny에 틀림))",
+   "explanation": "모범 답안: (1) Jenny has to finish her homework. (2) We don't have to bring an umbrella today.  (인정: do not have to처럼 풀어 쓴 부정, Today we don't have to bring an umbrella.처럼 문법에 맞게 어순만 바꾼 문장. 불인정: must·need 등 has to·have to가 아닌 표현, have to(주어 Jenny에 틀림))",
+   "rubric": [
+    {
+     "criterion": "(1) 주어 Jenny에 맞춰 has to + 동사원형(finish)으로 씀",
+     "points": 1,
+     "tip": "Jenny는 3인칭 단수이므로 has to를 써요."
+    },
+    {
+     "criterion": "(1) 주어진 단어를 모두 사용하고 철자·대소문자·마침표가 정확함",
+     "points": 1,
+     "tip": "her homework, 대문자 J, 마침표를 확인하세요."
+    },
+    {
+     "criterion": "(2) don't have to + 동사원형(bring)으로 씀",
+     "points": 1,
+     "tip": "We에는 don't have to를 쓰고 뒤에 동사원형 bring이 와요."
+    },
+    {
+     "criterion": "(2) 주어진 단어를 모두 사용하고 철자·대소문자·마침표가 정확함",
+     "points": 1,
+     "tip": "an umbrella today, 첫 글자 대문자, 마침표를 확인하세요."
+    }
+   ],
+   "detail": "주어가 3인칭 단수이면 의무는 has to로 써요. Jenny has to finish her homework.가 되고, has to 뒤에도 동사원형이 와요. '~할 필요가 없다'는 don't have to로 쓰므로 We don't have to bring an umbrella today.가 돼요. 교과서 p.123의 Susan has to take responsibility for her actions와 We don't have to go ...를 참고하세요.\n채점 안내: 〈조건〉을 지키지 않은 항목은 그 항목만 0점이고, 철자·대소문자·마침표 오류도 해당 항목에서 감점해요. 나머지 항목은 따로 점수를 줘요. 모범 답안 옆에 적은 인정 답안도 정답으로 봐요.",
+   "tip": "3인칭 단수는 has to, 나머지는 have to, 부정은 don't/doesn't have to예요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "have to 정리",
+     "head": [
+      "주어",
+      "의무",
+      "불필요"
+     ],
+     "rows": [
+      [
+       "I / You / We / They",
+       "have to",
+       "don't have to"
+      ],
+      [
+       "He / She / Jenny",
+       "has to",
+       "doesn't have to"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "조건",
+   "passage": "• (1) 필요한 단어: Jenny, finish, her homework\n• (2) 필요한 단어: we, bring, an umbrella, today\n• 필요하면 어형을 바꾸고 have to 외의 단어를 더하지 말 것(단, don't(do not)는 쓸 것)"
+  },
+  {
+   "id": "u7-S03-a",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "어법 오류 고치기",
+   "source": "교과서 p.119~p.123 (How about doing ~?, wanted to spend, were playing, has to)",
+   "question": "다음 (1)~(4)의 각 문장에는 어법상 틀린 곳이 한 군데씩 있다. 틀린 곳을 찾아 문장 전체를 바르게 고쳐 쓰시오.",
+   "answerHint": "문장마다 틀린 부분 한 곳만 고쳐 문장 전체를 다시 쓸 것. 문장마다 1점이고 철자·대소문자 오류는 감점.",
+   "modelAnswer": "(1) How about watching a movie together? (2) She wanted to buy a new hat. (3) We were waiting for the train. (4) My brother has to clean the garage.  (인정: 틀린 곳 한 곳만 고쳐 원래 문장의 뜻·시제를 지킨 답. 불인정: 낱말을 지우거나 문장을 새로 바꿔 쓴 답, 예 (2) buy를 지우고 She wanted a new hat., (1) 전체를 Why don't we ~?로 바꿈, (3) We waited for the train.)",
+   "explanation": "모범 답안: (1) How about watching a movie together? (2) She wanted to buy a new hat. (3) We were waiting for the train. (4) My brother has to clean the garage.  (인정: 틀린 곳 한 곳만 고쳐 원래 문장의 뜻·시제를 지킨 답. 불인정: 낱말을 지우거나 문장을 새로 바꿔 쓴 답, 예 (2) buy를 지우고 She wanted a new hat., (1) 전체를 Why don't we ~?로 바꿈, (3) We waited for the train.)",
+   "rubric": [
+    {
+     "criterion": "(1) How about + 동명사: watching으로 고침",
+     "points": 1,
+     "tip": "How about 다음에는 동사원형이 아니라 -ing를 써요."
+    },
+    {
+     "criterion": "(2) want + to부정사: wanted to buy로 고침(buy를 지우는 등 뜻을 바꾼 답은 0점)",
+     "points": 1,
+     "tip": "want는 뒤에 to + 동사원형이 와요."
+    },
+    {
+     "criterion": "(3) 과거진행형: We were waiting으로 고침",
+     "points": 1,
+     "tip": "We는 복수이므로 was가 아니라 were예요."
+    },
+    {
+     "criterion": "(4) 3인칭 단수 주어: My brother has to로 고침",
+     "points": 1,
+     "tip": "My brother는 3인칭 단수이므로 have가 아니라 has예요."
+    }
+   ],
+   "detail": "(1) How about 뒤에는 동명사(-ing)가 와서 watching이에요(교과서 p.120의 How about doing a car wash?). (2) want는 to부정사를 목적어로 취해 wanted to buy가 맞아요(p.121). (3) 과거진행형은 be동사 과거형 + -ing이고, We에는 were를 써요(p.119의 were playing catch). (4) 3인칭 단수 주어에는 has to를 써요(p.123).\n채점 안내: 철자·대소문자 오류는 해당 항목에서 감점해요. 나머지 항목은 따로 점수를 줘요. 모범 답안 옆에 적은 인정 답안도 정답으로 봐요.",
+   "tip": "How about + ing, want + to + 동사원형, were + -ing, has to를 하나씩 확인하세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "고칠 때 확인할 표현",
+     "head": [
+      "표현",
+      "바른 형태"
+     ],
+     "rows": [
+      [
+       "How about ~?",
+       "How about + 동명사(-ing)"
+      ],
+      [
+       "want / decide",
+       "want(decide) + to + 동사원형"
+      ],
+      [
+       "과거진행형",
+       "was/were + -ing"
+      ],
+      [
+       "has to",
+       "He/She/단수 주어 + has to"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "to부정사를 목적어로 취하는 동사",
+     "text": "want, decide는 to부정사를 목적어로 취하는 동사예요. 교과서 p.121의 wanted to spend, decided to put이 그 예예요."
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "(1) How about watch a movie together?\n(2) She wanted buy a new hat.\n(3) We was waiting for the train.\n(4) My brother have to clean the garage."
+  },
+  {
+   "id": "u7-S03-b",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "어법 오류 고치기",
+   "source": "교과서 p.119~p.123 (How about doing ~?, decided to put, were playing, has to)",
+   "question": "다음 (1)~(4)의 각 문장에는 어법상 틀린 곳이 한 군데씩 있다. 틀린 곳을 찾아 문장 전체를 바르게 고쳐 쓰시오.",
+   "answerHint": "문장마다 틀린 부분 한 곳만 고쳐 문장 전체를 다시 쓸 것. 문장마다 1점이고 철자·대소문자 오류는 감점.",
+   "modelAnswer": "(1) How about going to the park together? (2) At first, we decided to save the money. (3) Yena and I were making a poster. (4) Jun has to meet his coach after school.  (인정: 틀린 곳 한 곳만 고쳐 원래 문장의 뜻·시제를 지킨 답. 불인정: 낱말을 지우거나 문장을 새로 바꿔 쓴 답, 예 (2) save를 지우고 we decided the money., (3) Yena and I made a poster.)",
+   "explanation": "모범 답안: (1) How about going to the park together? (2) At first, we decided to save the money. (3) Yena and I were making a poster. (4) Jun has to meet his coach after school.  (인정: 틀린 곳 한 곳만 고쳐 원래 문장의 뜻·시제를 지킨 답. 불인정: 낱말을 지우거나 문장을 새로 바꿔 쓴 답, 예 (2) save를 지우고 we decided the money., (3) Yena and I made a poster.)",
+   "rubric": [
+    {
+     "criterion": "(1) How about + 동명사: going으로 고침",
+     "points": 1,
+     "tip": "How about 다음에는 동사원형이 아니라 -ing를 써요."
+    },
+    {
+     "criterion": "(2) decide + to부정사: decided to save로 고침(save를 지우는 등 뜻을 바꾼 답은 0점)",
+     "points": 1,
+     "tip": "decide는 뒤에 to + 동사원형이 와요."
+    },
+    {
+     "criterion": "(3) 과거진행형: Yena and I were making으로 고침",
+     "points": 1,
+     "tip": "Yena and I는 복수이므로 was가 아니라 were예요."
+    },
+    {
+     "criterion": "(4) has to + 동사원형: has to meet로 고침",
+     "points": 1,
+     "tip": "has to 다음에는 -s를 붙이지 않고 동사원형 meet을 써요."
+    }
+   ],
+   "detail": "(1) How about 뒤에는 동명사(-ing)가 와서 going이에요(교과서 p.120). (2) decide는 to부정사를 목적어로 취해 decided to save가 맞아요(p.121의 decided to put). (3) 과거진행형은 was/were + -ing이고, Yena and I는 복수이므로 were를 써요(p.119). (4) has to 다음에는 동사원형이 와서 meets가 아니라 meet이에요(p.123의 Susan has to take responsibility for her actions).\n채점 안내: 철자·대소문자 오류는 해당 항목에서 감점해요. 나머지 항목은 따로 점수를 줘요. 모범 답안 옆에 적은 인정 답안도 정답으로 봐요.",
+   "tip": "How about + ing, decide + to + 동사원형, 복수 주어 + were, has to 다음은 동사원형으로 정리하세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "고칠 때 확인할 표현",
+     "head": [
+      "표현",
+      "바른 형태"
+     ],
+     "rows": [
+      [
+       "How about ~?",
+       "How about + 동명사(-ing)"
+      ],
+      [
+       "want / decide",
+       "want(decide) + to + 동사원형"
+      ],
+      [
+       "과거진행형",
+       "was/were + -ing"
+      ],
+      [
+       "has to",
+       "has to + 동사원형(-s를 붙이지 않음)"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "활동 표현(p.118)",
+     "text": "make a poster(포스터를 만들다), play catch(캐치볼을 하다), put money in the bank(은행에 돈을 넣다)는 교과서 p.118에 나오는 표현이에요."
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "(1) How about go to the park together?\n(2) At first, we decided save the money.\n(3) Yena and I was making a poster.\n(4) Jun has to meets his coach after school."
+  },
+  {
+   "id": "u7-S04-a",
+   "slot": "S04",
+   "type": "essay",
+   "difficulty": "하",
+   "points": 4,
+   "concept": "본문(지문)에서 단어 찾기",
+   "source": "교과서 p.121 (reward, broken)",
+   "question": "윗글에서 다음 뜻에 해당하는 단어를 찾아 각각 한 단어로 쓰시오. (1) 보상 (2) 깨진",
+   "answerHint": "지문에 나온 형태 그대로 한 단어씩 쓸 것. 철자·대소문자 오류는 감점. 각 2점.",
+   "modelAnswer": "(1) reward (2) broken",
+   "explanation": "모범 답안: (1) reward (2) broken",
+   "rubric": [
+    {
+     "criterion": "(1) reward를 정확한 철자로 씀",
+     "points": 2,
+     "tip": "'보상'은 지문 마지막 부분의 reward예요. 철자를 확인하세요."
+    },
+    {
+     "criterion": "(2) broken을 정확한 철자로 씀",
+     "points": 2,
+     "tip": "'깨진'은 첫 문장의 broken이에요. 철자를 확인하세요."
+    }
+   ],
+   "detail": "(1) '보상'은 어머니가 한 말 This is your reward.의 reward예요. (2) '깨진'은 첫 문장 Sam found a broken cup ...의 broken이에요. 두 낱말은 교과서 p.121의 어휘 목록(reward, broken)에도 나와요. 지문에 나온 형태 그대로 쓰면 돼요.\n채점 안내: 철자·대소문자 오류는 해당 항목에서 감점해요. 나머지 항목은 따로 점수를 줘요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "우리말 뜻을 영어 낱말에 연결한 뒤 지문에서 같은 형태를 찾아 쓰세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "본문 어휘(p.121)",
+     "head": [
+      "영어",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "reward",
+       "보상"
+      ],
+      [
+       "broken",
+       "깨진"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "Sam found a broken cup on the kitchen floor. He cleaned it up and told his mother the truth. She was happy with him. \"You told the truth,\" she said. \"This is your reward.\" Then she gave him an extra apple."
+  },
+  {
+   "id": "u7-S04-b",
+   "slot": "S04",
+   "type": "essay",
+   "difficulty": "하",
+   "points": 4,
+   "concept": "본문(지문)에서 단어 찾기",
+   "source": "교과서 p.119~p.120 (accidental, reply)",
+   "question": "윗글에서 다음 뜻에 해당하는 단어를 찾아 각각 한 단어로 쓰시오. (1) 우연한 (2) 대답했다",
+   "answerHint": "지문에 나온 형태 그대로 한 단어씩 쓸 것. 철자·대소문자 오류는 감점. 각 2점.",
+   "modelAnswer": "(1) accidental (2) replied",
+   "explanation": "모범 답안: (1) accidental (2) replied",
+   "rubric": [
+    {
+     "criterion": "(1) accidental을 정확한 철자로 씀",
+     "points": 2,
+     "tip": "'우연한'은 둘째 문장의 accidental이에요. 철자를 확인하세요."
+    },
+    {
+     "criterion": "(2) replied를 정확한 철자로 씀(지문의 과거형 그대로)",
+     "points": 2,
+     "tip": "'대답했다'는 지문의 replied예요. reply(원형)만 쓰면 형태가 달라 0점이에요."
+    }
+   ],
+   "detail": "(1) '우연한'은 It was an accidental fall.의 accidental이에요. (2) '대답했다'는 Jisu replied, \"Yes, I'm fine.\"의 replied예요. accidental은 교과서 p.119, reply는 p.120의 어휘 목록에 나와요. 문제에서 '대답했다'라고 과거로 물었으므로 지문의 과거형 replied를 그대로 써야 해요.\n채점 안내: 철자·대소문자 오류는 해당 항목에서 감점해요. 나머지 항목은 따로 점수를 줘요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "우리말이 과거(~했다)이면 지문에 나온 과거형을 찾아 그대로 쓰세요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "본문 어휘(p.119~120)",
+     "head": [
+      "영어",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "accidental",
+       "우연한"
+      ],
+      [
+       "reply",
+       "대답하다"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "지문",
+   "passage": "Last Friday, Jisu slipped on the wet floor at school. It was an accidental fall, and she was not hurt. Her friend Yuna asked, \"Are you okay?\" Jisu replied, \"Yes, I'm fine. Thank you.\""
+  }
+ ]
+}
