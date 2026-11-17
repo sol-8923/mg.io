@@ -1,0 +1,91 @@
+{
+ "schema": "slides-v2/1",
+ "book": "g1s2-science",
+ "unit": "u6",
+ "title": "기체의 성질",
+ "titleFull": "기체의 성질 - 교과 정리",
+ "budget": {
+  "min": 10,
+  "max": 12
+ },
+ "slides": [
+  {
+   "id": "s01",
+   "file": "slides/s01.html",
+   "class": "slide cover active",
+   "style": null
+  },
+  {
+   "id": "s02",
+   "file": "slides/s02.html",
+   "class": "slide",
+   "style": "--z:1.28"
+  },
+  {
+   "id": "s03",
+   "file": "slides/s03.html",
+   "class": "slide",
+   "style": "--z:1.16"
+  },
+  {
+   "id": "s04",
+   "file": "slides/s04.html",
+   "class": "slide",
+   "style": "--z:1.1"
+  },
+  {
+   "id": "s05",
+   "file": "slides/s05.html",
+   "class": "slide",
+   "style": "--z:1.26"
+  },
+  {
+   "id": "s06",
+   "file": "slides/s06.html",
+   "class": "slide",
+   "style": "--z:1.24"
+  },
+  {
+   "id": "s07",
+   "file": "slides/s07.html",
+   "class": "slide",
+   "style": "--z:1.5"
+  },
+  {
+   "id": "s08",
+   "file": "slides/s08.html",
+   "class": "slide",
+   "style": "--z:1"
+  },
+  {
+   "id": "s09",
+   "file": "slides/s09.html",
+   "class": "slide",
+   "style": "--z:1.44"
+  },
+  {
+   "id": "s10",
+   "file": "slides/s10.html",
+   "class": "slide",
+   "style": "--z:1.36"
+  },
+  {
+   "id": "s11",
+   "file": "slides/s11.html",
+   "class": "slide",
+   "style": "--z:1.38"
+  },
+  {
+   "id": "s12",
+   "file": "slides/s12.html",
+   "class": "slide",
+   "style": "--z:1.46"
+  },
+  {
+   "id": "s13",
+   "file": "slides/s13.html",
+   "class": "slide",
+   "style": "--z:1.5"
+  }
+ ]
+}

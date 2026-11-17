@@ -1,0 +1,8 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="#261A52" stroke-width="2" fill="none"><path d="M90 30 L90 360 L760 360"/></g>
+                <text x="100" y="40">탄성력(N)</text><text x="792" y="412" text-anchor="end">늘어난 길이(cm)</text>
+                <line x1="90" y1="360" x2="640" y2="60" stroke="#C2186B" stroke-width="5"/>
+                <g fill="#FFC83D"><circle cx="258" cy="268" r="9"/><circle cx="423" cy="178" r="9"/><circle cx="588" cy="88" r="9"/></g>
+                <text x="258" y="390" text-anchor="middle">2</text><text x="423" y="390" text-anchor="middle">4</text><text x="588" y="390" text-anchor="middle">6</text>
+                <text x="60" y="275" text-anchor="end">1</text><text x="60" y="185" text-anchor="end">2</text><text x="60" y="95" text-anchor="end">3</text>
+            </svg>

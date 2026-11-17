@@ -1,0 +1,10 @@
+<svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg">
+                <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#C2186B"/></marker></defs>
+                <g stroke="#C2186B" stroke-width="3" fill="rgba(194,24,107,.10)"><rect x="20" y="410" width="200" height="80" rx="10"/><rect x="280" y="40" width="200" height="80" rx="10"/><rect x="540" y="410" width="200" height="80" rx="10"/></g>
+                <text class="b" x="120" y="462" text-anchor="middle">고체</text><text class="b" x="380" y="92" text-anchor="middle">액체</text><text class="b" x="640" y="462" text-anchor="middle">기체</text>
+                <g stroke="#C2186B" stroke-width="3" marker-end="url(#ar)" fill="none"><path d="M70 400 L280 130"/><path d="M330 130 L120 400" /><path d="M440 130 L650 400"/><path d="M590 400 L390 130"/><path d="M230 450 L530 450"/><path d="M540 480 L230 480" stroke-dasharray="8 6"/></g>
+                <text x="150" y="275" text-anchor="end">융해</text><text x="250" y="275" text-anchor="start">응고</text>
+                <text x="580" y="275" text-anchor="start">기화</text><text x="458" y="275" text-anchor="end">액화</text>
+                <text class="b" x="380" y="440" text-anchor="middle">승화</text>
+                <text class="w" x="380" y="515" text-anchor="middle">승화는 양방향</text>
+            </svg>

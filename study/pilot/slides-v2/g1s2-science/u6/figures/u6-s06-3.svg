@@ -1,0 +1,7 @@
+<svg class="wide" viewBox="0 0 1700 330" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#C2186B" stroke-width="3" fill="rgba(194,24,107,.07)"><rect x="40" y="50" width="760" height="190" rx="8"/><rect x="1070" y="50" width="400" height="190" rx="8"/></g>
+            <text class="b" x="420" y="34" text-anchor="middle">부피 큼 : 충돌 횟수 적음, 압력 작음</text>
+            <text class="b" x="1270" y="34" text-anchor="middle">부피 작음 : 충돌 횟수 많음</text>
+            <g fill="#FFC83D"><circle cx="150" cy="110" r="14"/><circle cx="330" cy="190" r="14"/><circle cx="520" cy="100" r="14"/><circle cx="650" cy="180" r="14"/><circle cx="1130" cy="100" r="14"/><circle cx="1200" cy="190" r="14"/><circle cx="1300" cy="120" r="14"/><circle cx="1370" cy="200" r="14"/></g>
+            <text x="420" y="290" text-anchor="middle">입자 수는 같다</text><text x="1270" y="290" text-anchor="middle">입자 수는 같다</text>
+        </svg>

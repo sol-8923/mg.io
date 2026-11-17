@@ -1,0 +1,11 @@
+<svg viewBox="0 0 700 540" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="350" cy="270" r="200" fill="none" stroke="#C2186B" stroke-width="2" stroke-dasharray="8 8"/>
+                <circle cx="350" cy="270" r="50" fill="#2d6bb3" stroke="#261A52" stroke-width="2"/>
+                <text x="350" y="278" text-anchor="middle" style="fill:#fff">지구</text>
+                <circle cx="150" cy="270" r="28" fill="#3a3466" stroke="#261A52" stroke-width="2"/><path d="M150 242 A28 28 0 0 0 150 298 Z" fill="#FFE9A8"/><circle cx="150" cy="270" r="28" fill="none" stroke="#261A52" stroke-width="2"/><circle cx="350" cy="470" r="28" fill="#3a3466" stroke="#261A52" stroke-width="2"/><path d="M350 442 A28 28 0 0 0 350 498 Z" fill="#FFE9A8"/><circle cx="350" cy="470" r="28" fill="none" stroke="#261A52" stroke-width="2"/><circle cx="550" cy="270" r="28" fill="#3a3466" stroke="#261A52" stroke-width="2"/><path d="M550 242 A28 28 0 0 0 550 298 Z" fill="#FFE9A8"/><circle cx="550" cy="270" r="28" fill="none" stroke="#261A52" stroke-width="2"/><circle cx="350" cy="70" r="28" fill="#3a3466" stroke="#261A52" stroke-width="2"/><path d="M350 42 A28 28 0 0 0 350 98 Z" fill="#FFE9A8"/><circle cx="350" cy="70" r="28" fill="none" stroke="#261A52" stroke-width="2"/>
+                <text class="b" x="106" y="279" text-anchor="end">삭</text>
+                <text class="b" x="350" y="532" text-anchor="middle">상현</text>
+                <text class="b" x="594" y="279" text-anchor="start">망</text>
+                <text class="b" x="350" y="30" text-anchor="middle">하현</text>
+                <text class="w" x="20" y="345">햇빛 →</text>
+            </svg>

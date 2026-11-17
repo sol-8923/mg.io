@@ -1,0 +1,8 @@
+<svg viewBox="0 0 800 440" style="max-height:388px" xmlns="http://www.w3.org/2000/svg">
+                <text class="b" x="400" y="30" text-anchor="middle">가열 곡선</text>
+                <g stroke="#261A52" stroke-width="2" fill="none"><path d="M70 50 L70 390 L780 390"/></g>
+                <text x="10" y="60">온도</text><text x="700" y="425">가열 시간</text>
+                <polyline points="70,360 180,270 330,270 430,190 580,190 770,90" fill="none" stroke="#C2186B" stroke-width="5"/>
+                <text x="150" y="350">고체</text><text x="170" y="250">고체+액체</text><text x="215" y="300" class="b">융해</text>
+                <text x="690" y="70">기체</text><text x="440" y="250">액체</text><text x="440" y="165" class="w">액체+기체</text><text x="560" y="225" class="b">기화</text>
+            </svg>

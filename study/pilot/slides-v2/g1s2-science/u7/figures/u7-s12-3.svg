@@ -1,0 +1,11 @@
+<svg class="wide" viewBox="0 0 1700 392" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="750,32 750,76 1114,54" fill="rgba(38,26,82,.30)"/>
+            <polygon points="750,216 750,288 1460,268 1460,236" fill="rgba(0,0,0,.40)"/>
+            <line x1="40" y1="196" x2="1660" y2="196" stroke="#E4DAF7" stroke-width="2"/>
+            <circle cx="200" cy="54" r="42" fill="#FFC83D"/><circle cx="750" cy="54" r="22" fill="#261A52"/><circle cx="1150" cy="54" r="36" fill="#2d6bb3"/>
+            <text class="b" x="60" y="176">일식 :</text><text x="180" y="176">태양 – 달 – 지구 순, 달이 삭</text>
+            <circle cx="200" cy="252" r="42" fill="#FFC83D"/><circle cx="750" cy="252" r="36" fill="#2d6bb3"/><circle cx="1150" cy="252" r="20" fill="#8D86A8"/>
+            <text class="b" x="60" y="374">월식 :</text><text x="180" y="374">태양 – 지구 – 달 순, 달이 망</text>
+            <text x="200" y="132" text-anchor="middle">태양</text><text x="750" y="132" text-anchor="middle">달</text><text x="1150" y="132" text-anchor="middle">지구</text>
+            <text x="750" y="330" text-anchor="middle">지구</text><text x="1150" y="330" text-anchor="middle">달</text>
+        </svg>

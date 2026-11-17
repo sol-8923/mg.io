@@ -1,0 +1,10 @@
+<svg viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="260" cy="280" r="250" fill="rgba(232,85,45,.14)" stroke="#D9461F" stroke-width="3" stroke-dasharray="10 8"/>
+                <circle cx="260" cy="280" r="190" fill="rgba(232,85,45,.38)" stroke="#D9461F" stroke-width="3"/>
+                <circle cx="260" cy="280" r="150" fill="#FFC83D" stroke="#C2186B" stroke-width="4"/>
+                <circle cx="230" cy="260" r="16" fill="#5a3a10"/><circle cx="290" cy="310" r="12" fill="#5a3a10"/>
+                <g stroke="#261A52" stroke-width="2"><line x1="400" y1="280" x2="520" y2="280"/><line x1="407" y1="195" x2="520" y2="130"/><line x1="422" y1="131" x2="520" y2="40"/></g>
+                <text class="b" x="525" y="288">광구</text><text class="w" x="525" y="138">채층</text><text x="525" y="48">코로나</text>
+                <g stroke="#261A52" stroke-width="2"><line x1="236" y1="342" x2="231" y2="278"/><line x1="262" y1="342" x2="286" y2="322"/></g>
+                <text x="201" y="374" style="fill:#261A52;font-size:24px">흑점</text>
+            </svg>

@@ -1,0 +1,252 @@
+
+/* === THEME (config/slide-style-science.md) : 과학 교과서 표지 메타포 = 우주 탐험/로켓 === */
+:root {
+    --bg: #FFF1F8;
+    --bg-2: #FFFFFF;
+    --bg-3: #3B2A7A;
+    --ink: #261A52;
+    --ink-dim: #5A4F85;
+    --brass: #C2186B;      /* 강조(마젠타) - 기존 변수명 유지 */
+    --purple: #5B2AA6;     /* 소제목 */
+    --line: #7A4FD0;       /* 카드 테두리(보라) */
+    --soft: #D9CCF3;
+    --cyan: #39C6E8;
+    --star: #FFC83D;
+    --warn: #B93A12;
+    --warn-line: #E8552D;
+    --font-display: 'Jua', 'Gowun Dodum', 'Malgun Gothic', sans-serif;
+    --font-body: 'Gowun Dodum', 'Malgun Gothic', sans-serif;
+    --stage-bg: #1B1245;
+    --slide-bg: var(--bg);
+    --deco: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201920%201080%22%3E%0A%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%221880%22%20height%3D%221040%22%20rx%3D%2244%22%20fill%3D%22none%22%20stroke%3D%22%23C9B3F2%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-dasharray%3D%220.1%2018%22%2F%3E%0A%3Cg%20opacity%3D%22.4%22%3E%3Cpath%20d%3D%22M1560%20190%20Q1740%20-10%201880%20150%22%20fill%3D%22none%22%20stroke%3D%22%23C9B3F2%22%20stroke-width%3D%224%22%20stroke-dasharray%3D%224%2012%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cellipse%20cx%3D%221790%22%20cy%3D%2296%22%20rx%3D%2264%22%20ry%3D%2216%22%20transform%3D%22rotate(-18%201790%2096)%22%20fill%3D%22none%22%20stroke%3D%22%23F06BB4%22%20stroke-width%3D%228%22%2F%3E%0A%3Ccircle%20cx%3D%221790%22%20cy%3D%2296%22%20r%3D%2230%22%20fill%3D%22%238E63E6%22%20stroke%3D%22%233B2A7A%22%20stroke-width%3D%225%22%2F%3E%0A%3Cellipse%20cx%3D%221790%22%20cy%3D%2296%22%20rx%3D%2264%22%20ry%3D%2216%22%20transform%3D%22rotate(-18%201790%2096)%22%20fill%3D%22none%22%20stroke%3D%22%23F06BB4%22%20stroke-width%3D%228%22%20stroke-dasharray%3D%220%2074%20200%22%2F%3E%3C%2Fg%3E%0A%3Cpath%20d%3D%22M52%20134%20Q52%20150%2068%20150%20Q52%20150%2052%20166%20Q52%20150%2036%20150%20Q52%20150%2052%20134Z%22%20fill%3D%22%23FFC83D%22%2F%3E%3Cpath%20d%3D%22M60%20408%20Q60%20420%2072%20420%20Q60%20420%2060%20432%20Q60%20420%2048%20420%20Q60%20420%2060%20408Z%22%20fill%3D%22%2339C6E8%22%2F%3E%3Cpath%20d%3D%22M44%20682%20Q44%20700%2062%20700%20Q44%20700%2044%20718%20Q44%20700%2026%20700%20Q44%20700%2044%20682Z%22%20fill%3D%22%23F06BB4%22%2F%3E%3Cpath%20d%3D%22M70%20888%20Q70%20900%2082%20900%20Q70%20900%2070%20912%20Q70%20900%2058%20900%20Q70%20900%2070%20888Z%22%20fill%3D%22%23FFC83D%22%2F%3E%3Cpath%20d%3D%22M1868%20316%20Q1868%20330%201882%20330%20Q1868%20330%201868%20344%20Q1868%20330%201854%20330%20Q1868%20330%201868%20316Z%22%20fill%3D%22%23F06BB4%22%2F%3E%3Cpath%20d%3D%22M1880%20542%20Q1880%20560%201898%20560%20Q1880%20560%201880%20578%20Q1880%20560%201862%20560%20Q1880%20560%201880%20542Z%22%20fill%3D%22%23FFC83D%22%2F%3E%3Cpath%20d%3D%22M1860%20788%20Q1860%20800%201872%20800%20Q1860%20800%201860%20812%20Q1860%20800%201848%20800%20Q1860%20800%201860%20788Z%22%20fill%3D%22%2339C6E8%22%2F%3E%3Cpath%20d%3D%22M1700%2030%20Q1700%2040%201710%2040%20Q1700%2040%201700%2050%20Q1700%2040%201690%2040%20Q1700%2040%201700%2030Z%22%20fill%3D%22%23FFC83D%22%2F%3E%3Cpath%20d%3D%22M1500%2034%20Q1500%2046%201512%2046%20Q1500%2046%201500%2058%20Q1500%2046%201488%2046%20Q1500%2046%201500%2034Z%22%20fill%3D%22%2339C6E8%22%2F%3E%3Cpath%20d%3D%22M300%2032%20Q300%2044%20312%2044%20Q300%2044%20300%2056%20Q300%2044%20288%2044%20Q300%2044%20300%2032Z%22%20fill%3D%22%23F06BB4%22%2F%3E%0A%3Cpath%20d%3D%22M0%201048%20Q420%20996%20900%201030%20T1920%201010%20V1080%20H0Z%22%20fill%3D%22%23E9DDFB%22%20stroke%3D%22%237A4FD0%22%20stroke-width%3D%224%22%2F%3E%0A%3Cellipse%20cx%3D%22260%22%20cy%3D%221052%22%20rx%3D%2246%22%20ry%3D%229%22%20fill%3D%22%23D3BFF3%22%2F%3E%3Cellipse%20cx%3D%22640%22%20cy%3D%221058%22%20rx%3D%2230%22%20ry%3D%226%22%20fill%3D%22%23D3BFF3%22%2F%3E%0A%3Cellipse%20cx%3D%221180%22%20cy%3D%221052%22%20rx%3D%2252%22%20ry%3D%229%22%20fill%3D%22%23D3BFF3%22%2F%3E%3Cellipse%20cx%3D%221530%22%20cy%3D%221046%22%20rx%3D%2234%22%20ry%3D%227%22%20fill%3D%22%23D3BFF3%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 96px;
+    font-size: 27px;
+    line-height: 1.5;
+    isolation: isolate;
+    background: linear-gradient(180deg, #FFE6F3 0%, #FFF4EC 100%);
+}
+.slide::before { /* 우주 장식: 점선 창틀 · 토성 · 별 · 달 표면 */
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: var(--deco) center / 1920px 1080px no-repeat;
+}
+.kicker { display: inline-block; font-size: 24px; letter-spacing: .06em; color: #fff; background: var(--brass); font-weight: 700; margin-bottom: 10px; padding: 2px 20px 3px; border-radius: 99px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 60px; line-height: 1.2; color: var(--ink); margin-bottom: 26px; }
+h2::before { content: ""; display: inline-block; width: 46px; height: 46px; margin-right: 16px; vertical-align: -6px; background: var(--star); border: 4px solid var(--bg-3); border-radius: 50%; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 400; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 400; font-size: 34px; color: var(--purple); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 64px; bottom: 14px; width: 66px; height: 66px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 30px; color: #fff; z-index: 2; }
+.pg::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--purple); border: 4px solid var(--bg-3); border-radius: 50%; box-shadow: 0 0 0 5px var(--cyan) inset; }
+.pg::after { content: ""; position: absolute; left: -24px; right: -24px; top: 50%; height: 14px; margin-top: -7px; border: 4px solid var(--star); border-radius: 50%; transform: rotate(-18deg); z-index: -2; }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { position: relative; background: var(--bg-2); border: 4px solid var(--line); border-radius: 30px; padding: 22px 30px; box-shadow: 0 7px 0 rgba(91,42,166,.22); }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 6px #FFE0EF, 0 7px 0 rgba(194,24,107,.22); }
+.card.hl::after { content: ""; position: absolute; top: -11px; right: 40px; width: 16px; height: 16px; border-radius: 50%; background: var(--cyan); border: 3px solid var(--bg-3); }
+.card.warn { border-color: var(--warn-line); background: #FFF3EC; box-shadow: 0 7px 0 rgba(232,85,45,.22); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 36px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .36em; width: 22px; height: 22px; background: var(--brass); clip-path: polygon(50% 0, 62% 36%, 98% 38%, 69% 60%, 80% 96%, 50% 74%, 20% 96%, 31% 60%, 2% 38%, 38% 36%); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 13px; border: 3px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; font-weight: 700; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 27px; border: 4px solid var(--bg-3); border-radius: 26px; overflow: hidden; background: #fff; }
+table.t th { background: var(--bg-3); color: #fff; font-family: var(--font-display); font-weight: 400; text-align: left; padding: 12px 18px; border-right: 2px solid #5A48A5; }
+table.t td { padding: 12px 18px; border-right: 2px solid var(--soft); border-bottom: 2px solid var(--soft); background: #fff; vertical-align: top; }
+table.t tr:nth-child(even) td { background: #FFF1F8; }
+table.t th:last-child, table.t td:last-child { border-right: 0; }
+table.t tr:last-child td { border-bottom: 0; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; color: var(--purple); }
+
+/* 순서 카드 (줄거리 흐름, 5단계) */
+.g5 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 46px; height: 46px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: #fff; font-family: var(--font-display); font-weight: 400; font-size: 28px; margin-bottom: 8px; border: 3px solid var(--bg-3); }
+
+/* 표지: 로켓 발사 장면 */
+.slide.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 150px; padding-right: 760px; color: #fff;
+    background: linear-gradient(180deg, #1F1553 0%, #4A2584 34%, #A02F94 66%, #F07BC6 100%); }
+.slide.cover::before { display: none; }
+.cover .scene { overflow: visible; position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; max-width: none; max-height: none; z-index: -1; }
+.cover .kicker { font-size: 30px; align-self: flex-start; background: var(--star); color: #261A52; }
+.cover h1 { font-family: var(--font-display); font-weight: 400; font-size: 136px; line-height: 1.12; margin: 18px 0 26px; color: #fff; text-shadow: 0 6px 0 rgba(27,18,69,.55); }
+.cover h1 span { color: var(--star); }
+.cover p { font-size: 36px; color: #fff; line-height: 1.55; }
+.cover .rule { width: 260px; height: 10px; margin: 10px 0 30px; border-radius: 99px; background: repeating-linear-gradient(90deg, var(--cyan) 0 26px, transparent 26px 44px); }
+
+/* 등장 효과 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖): 로켓이 궤도를 따라 이동하는 진행 표시 === */
+.deck-controls { display: flex; gap: 12px; align-items: center; background: rgba(27,18,69,.94); border: 3px solid var(--cyan); border-radius: 99px; padding: 4px 16px; font-family: var(--font-body); color: #fff; font-size: 16px; }
+.deck-controls button { background: var(--star); border: none; color: #261A52; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; cursor: pointer; padding: 0; }
+.deck-controls #count { min-width: 64px; text-align: center; font-weight: 700; }
+.deck-controls #orbit { display: block; width: 260px; height: 46px; max-width: none; max-height: none; overflow: visible; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--star); color: #261A52; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 2px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 1100px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: #2A1B64; }
+    .deck-viewport { position: static; overflow: visible; padding: 12px 0; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: calc(100% - 20px); margin: 0 10px 14px; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 56px; font-size: 17px; border: 3px solid var(--line); border-radius: 28px; }
+    .slide::before { background: #E9DDFB; inset: auto; left: 0; right: 0; bottom: 0; height: 26px; border-top: 3px solid var(--line); }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 30px; margin-bottom: 16px; }
+    h2::before { width: 26px; height: 26px; border-width: 3px; margin-right: 10px; vertical-align: -2px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 21px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g5 { grid-template-columns: 1fr; }
+    .card, .g5 .card { padding: 14px 16px; font-size: 17px; border-radius: 22px; border-width: 3px; }
+    .card.hl::after { top: -8px; right: 24px; width: 12px; height: 12px; }
+    ul.l li { padding-left: 28px; }
+    ul.l li::before { width: 17px; height: 17px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { right: 14px; bottom: 6px; width: 40px; height: 40px; font-size: 18px; }
+    .pg::before { border-width: 3px; box-shadow: 0 0 0 3px var(--cyan) inset; }
+    .pg::after { display: none; }
+    table.t { font-size: 16px; border-radius: 18px; border-width: 3px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 34px; height: 34px; font-size: 20px; }
+    .slide.cover { padding: 40px 18px 330px; background: linear-gradient(180deg, #1F1553 0%, #6B2A8E 55%, #F07BC6 100%); }
+    .slide.cover::before { display: none; }
+    .cover .scene { position: absolute; left: 50%; margin-left: -474px; top: auto; bottom: 0; width: 1920px; height: 1080px; transform-origin: 0 100%; transform: scale(.32); }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 50px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 7px; }
+}
+
+/* 도식·확장 */
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.svgbox { background: #fff; border: 4px solid var(--line); border-radius: 30px; padding: 10px; box-shadow: 0 7px 0 rgba(91,42,166,.22); }
+.svgbox svg { display: block; width: 100%; height: auto; max-height: none; }
+.svgbox svg text { fill: #261A52; font-family: 'Gowun Dodum','Malgun Gothic',sans-serif; font-size: 24px; }
+.svgbox svg text.b { fill: #C2186B; font-weight: 700; }
+.svgbox svg text.w { fill: #B93A12; font-weight: 700; }
+.big { font-size: 34px; line-height: 1.6; }
+@media (max-width: 1100px) and (orientation: portrait) { .g4 { grid-template-columns: 1fr; } .big { font-size: 20px; } .svgbox svg text { font-size: 24px; } }
+
+/* === 화면 검수 보정 (공통) === */
+.slide, .card { word-break: keep-all; overflow-wrap: break-word; }
+.slide td, .slide th { word-break: keep-all; overflow-wrap: anywhere; }
+.grid { align-items: start; }
+.g4, .g5 { align-items: stretch; }
+/* 본문 세로 중앙 정렬 + 슬라이드별 확대(--z, 내용이 적을수록 크게) */
+.slide:not(.cover) { display: flex; flex-direction: column; }
+.slide:not(.cover) > .kicker { align-self: flex-start; }
+.slide:not(.cover) > h2 + * { margin-top: auto; }
+.slide:not(.cover) > :nth-last-child(2) { margin-bottom: auto; }
+.slide:not(.cover) > :not(.pg):not(.kicker):not(h2) { zoom: var(--z, 1); }
+/* 카드 장식 점은 은은하게 */
+.card.hl::after { opacity: .4; }
+/* 카드 안 소제목(굵은 한 줄) */
+.slide p.sub { font-family: var(--font-display); font-size: 31px; line-height: 1.35; color: var(--ink); margin-bottom: 2px; }
+.slide p.sub b { color: inherit; font-weight: 400; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .slide:not(.cover) { display: block; }
+    .slide:not(.cover) > * { zoom: 1 !important; }
+    .grid, .g2, .g3, .g4, .g5 { grid-template-columns: 1fr !important; }
+    .slide table.t { font-size: 16px !important; }
+    .slide table.t.dense { font-size: 14px !important; }
+    .slide table.t.dense th, .slide table.t.dense td { padding: 7px 3px; }
+    .slide ul.l[style*="font-size"], .slide .card[style*="font-size"] { font-size: 17px !important; }
+    .svgbox { overflow-x: auto; }
+    .svgbox svg { max-height: none !important; }
+    .svgbox svg.wide { min-width: 1100px; }
+    .svgbox svg.wide text { font-size: 28px; }
+    .slide p.sub { font-size: 20px; }
+    .card.hl::after { opacity: .4; }
+}
+
+/* ===== 검수 정리 v3 ===== */
+/* 줄바꿈: 짧은 구절·괄호·숫자+단위는 줄 중간에서 끊지 않는다 */
+.nw { white-space: nowrap; }
+.slide li, .slide p, .slide td, .slide th, .slide .card { text-wrap: pretty; }
+/* 쪽번호 컨트롤: 두 자리 쪽수에서도 막대 폭 고정 */
+.deck-controls #count { min-width: 84px; font-variant-numeric: tabular-nums; }
+/* 덧붙임 표시(핵심 암기 N가지 밖의 보조 내용) */
+.slide h3 .tag { font-size: 20px; padding: 0 12px; margin-right: 10px; vertical-align: 4px; }
+.addnote { font-family: var(--font-display); font-size: 28px; color: var(--purple); margin-top: 22px; margin-bottom: 8px; }
+.addnote .tag { font-size: 20px; padding: 0 12px; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    /* 가로로 밀어서 보는 그림 위 안내 */
+    .svgbox:not(.fit):has(> svg.wide)::before { content: '← 옆으로 밀어서 보기 →'; display: block; position: sticky; left: 0; text-align: center; font-size: 15px; font-weight: 700; color: var(--brass); padding: 0 0 6px; }
+    /* 일식·월식 그림: 한 화면에 들어오게 오른쪽 여백만 잘라 보여 준다 */
+    .svgbox.fit { overflow: hidden; }
+    .svgbox.fit svg.wide { min-width: 0; max-width: none; width: 141.7%; margin-right: -41.7%; clip-path: inset(0 29.4% 0 0); }
+    .svgbox.fit svg.wide text { font-size: 38px; }
+    .slide h3 .tag { font-size: 13px; padding: 0 8px; margin-right: 6px; vertical-align: 2px; }
+    .slide table.t td:first-child { overflow-wrap: normal; }
+    .addnote { font-size: 19px; margin-top: 14px; }
+    .addnote .tag { font-size: 13px; padding: 0 8px; }
+}
+/* ===== 검수 정리 v4 (폰 화면) ===== */
+@media (max-width: 1100px) and (orientation: portrait) {
+    /* 인라인으로 박힌 큰 글자 크기가 카드·표 글자와 따로 노는 것을 막는다 */
+    .slide:not(.cover) :is(p, ul, ol, li, div, span, td, th, b)[style*="font-size"]:not(.fm):not(.fm *):not(.tag):not(.no) { font-size: inherit !important; }
+    /* 연도 알약(1960 등)이 제목을 가리지 않게 */
+    .card.step:has(.no[style*="width:auto"]) { padding-left: 22px !important; }
+    .card.step .no[style*="width:auto"] { position: static !important; display: inline-flex; margin: 0 0 8px; }
+    .card.step:has(.no[style*="width:auto"]) .no + br { display: none; }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+    /* 폰에서는 줄바꿈 금지 구절이 칸 밖으로 밀려나지 않게 */
+    span.nw { white-space: normal; }
+    /* 표를 행 단위 카드로 쌓아 오른쪽 열이 잘리지 않게 */
+    .slide table.stack, .slide table.stack tbody, .slide table.stack tr, .slide table.stack td, .slide table.stack th { display: block; width: auto !important; box-sizing: border-box; }
+    .slide table.stack { border: 0 !important; background: transparent !important; box-shadow: none !important; }
+    .slide table.stack tr.hrow { display: none; }
+    .slide table.stack tr { margin: 0 0 12px; border: 2px solid rgba(0,0,0,.14); border-radius: 12px; overflow: hidden; background: #fff; }
+    .slide table.stack td, .slide table.stack th { border: 0 !important; border-top: 1px solid rgba(0,0,0,.09) !important; padding: 8px 14px !important; text-align: left; white-space: normal !important; font-size: 16px !important; }
+    .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
+    .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
+}
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #C2186B; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
