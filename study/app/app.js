@@ -786,7 +786,7 @@ function toOriginal(q,a){
 var EXAM_DEFAULT = {
   '국어':{mc:25,short:4,essay:1,timeMin:50}, '사회':{mc:30,short:0,essay:0,timeMin:45}, '역사':{mc:30,short:0,essay:0,timeMin:45},
   '수학':{mc:18,short:0,essay:2,timeMin:50}, '영어':{mc:20,short:2,essay:3,timeMin:50}, '과학':{mc:25,short:0,essay:0,timeMin:45},
-  '도덕':{mc:25,short:0,essay:1,timeMin:45}
+  '도덕':{mc:29,short:0,essay:1,timeMin:45}
 };
 function examSpec(book){
   var d=EXAM_DEFAULT[book.subject]||{mc:20,short:3,essay:2,timeMin:45}, o=book.exam||{};
@@ -825,7 +825,21 @@ function planExam(book, unitIds){
       picks.push(best); left.splice(left.indexOf(best),1);
     }
   });
-  return {picks:picks,spec:spec,counts:k,n:N};
+  /* 시험 한 장의 총 배점은 100점을 넘지 않는다: 넘으면 배점이 가장 큰 객관식·단답을
+   * 더 낮은 배점의 후보로 바꾸고, 바꿀 후보가 없으면 그 문항을 뺀다(서술·논술은 그대로 둔다). */
+  var MAXPTS=100, guard=0;
+  function sumPts(){ return picks.reduce(function(s,c){ return s+(c.s.points||0); },0); }
+  while(sumPts()>MAXPTS && guard++<80){
+    var hi=null; picks.forEach(function(c){ if(c.kind!=='essay' && (!hi || (c.s.points||0)>(hi.s.points||0))) hi=c; });
+    if(!hi) break;
+    var hi_i=picks.indexOf(hi); picks.splice(hi_i,1);
+    var rep=null;
+    left.forEach(function(c){ if(c.kind===hi.kind && (c.s.points||0)<(hi.s.points||0) && !clash(c) && (!rep || (c.s.points||0)>(rep.s.points||0))) rep=c; });
+    if(rep){ picks.splice(hi_i,0,rep); left.splice(left.indexOf(rep),1); }
+    left.push(hi);
+  }
+  var k2={mc:0,short:0,essay:0}; picks.forEach(function(c){ k2[c.kind]++; });
+  return {picks:picks,spec:spec,counts:k2,n:picks.length};
 }
 function examCounts(book, unitIds){
   var spec=examSpec(book), av={mc:0,short:0,essay:0};
@@ -1053,22 +1067,24 @@ function finalize(){
 }
 
 /* ═════════ 결과 ═════════ */
+/* 원점수를 100점 만점 기준으로(소수 첫째 자리, 정수면 정수로) */
+function s100(x,max){ if(!max) return '0'; var v=Math.round(x/max*1000)/10; return String(v); }
 function renderResult(){
   var E=S.exam, R=summarize(E), app=$app(), page=h('div',{class:'page'}); app.appendChild(page);
   var mins=Math.max(1,Math.round((E.endAt-E.startAt)/60000));
   function table(title,obj,order){
     var keys=Object.keys(obj); if(order) keys.sort(function(a,b){ return order.indexOf(a)-order.indexOf(b); });
     return h('div',{class:'card'},[h('h3',{style:'font-size:1.05rem',text:title}),h('table',{},[
-      h('thead',{},[h('tr',{},[h('th',{text:'구분'}),h('th',{class:'n',text:'맞힘'}),h('th',{class:'n',text:'점수'})])]),
-      h('tbody',{},keys.map(function(k){ var v=obj[k]; return h('tr',{},[h('td',{text:k}),h('td',{class:'n',text:v.r+'/'+v.n}),h('td',{class:'n',text:v.g+'/'+v.m})]); }))
+      h('thead',{},[h('tr',{},[h('th',{text:'구분'}),h('th',{class:'n',text:'맞힘'}),h('th',{class:'n',text:'점수(100점 기준)'})])]),
+      h('tbody',{},keys.map(function(k){ var v=obj[k]; return h('tr',{},[h('td',{text:k}),h('td',{class:'n',text:v.r+'/'+v.n}),h('td',{class:'n',text:s100(v.g,R.max)+'/'+s100(v.m,R.max)})]); }))
     ])]);
   }
   var masteredNow=E.source==='notes'?E.qs.filter(function(q){ var n=Store.book(E.bookId).notes[q.id]; return n&&n.mastered&&n.masteredAt&&new Date(n.masteredAt).getTime()>=E.startAt; }).length:0;
   page.appendChild(h('div',{class:'topbar'},[h('div',{},[h('div',{class:'crumb',text:E.title}),h('h1',{text:'시험 결과'})])]));
   page.appendChild(h('div',{class:'card'},[
     h('div',{class:'muted',text:(E.mode==='exam'?'실전':'연습')+' · '+E.qs.length+'문항 · '+mins+'분'}),
-    h('div',{class:'big',text:R.got+' / '+R.max+'점'}),
-    h('div',{class:'muted',text:'100점 환산 '+R.score100+'점'+(R.wrong.length?' · 틀린 문제 '+R.wrong.length+'개는 오답노트에 저장했어요':'')}),
+    h('div',{class:'big',text:R.score100+' / 100점'}),
+    h('div',{class:'muted',text:'원점수 '+R.got+' / '+R.max+'점'+(R.wrong.length?' · 틀린 문제 '+R.wrong.length+'개는 오답노트에 저장했어요':'')}),
     masteredNow?h('div',{style:'margin-top:6px;color:var(--ok);font-weight:700',text:'🎓 오답노트에서 '+masteredNow+'문제 졸업!'}):null,
     h('div',{class:'row',style:'margin-top:16px'},[
       R.wrong.length?h('button',{class:'primary',onclick:function(){ openReview(R.wrong.map(function(q){ return {q:q,ans:E.ans[q.id],self:pickSelf(E.self,q)}; }),E.title+' 오답풀이','#/result'); }},['📝 상세 오답풀이 ('+R.wrong.length+')']):h('span',{style:'font-weight:700',text:'🎉 모두 맞혔어요!'}),
@@ -1947,7 +1963,7 @@ function renderStats(param){
       var trend=S2.H.slice(-20).map(function(e){ var s=e.max?Math.round(e.got/e.max*100):0;
         return {y:s,exam:e.mode==='exam',label:fmtDate(e.at),tip:fmtDate(e.at)+' · '+(labels[e.bookId]||'')+' · '+s+'점 ('+(e.source==='notes'?'오답노트':e.mode==='exam'?'실전':'연습')+')'}; });
       var table=h('details',{class:'tview'},[h('summary',{text:'표로 보기'}),h('table',{},[h('thead',{},[h('tr',{},[h('th',{text:'날짜'}),h('th',{text:'과목'}),h('th',{text:'방식'}),h('th',{class:'n',text:'점수'})])]),
-        h('tbody',{},S2.H.slice(-20).reverse().map(function(e){ return h('tr',{},[h('td',{text:fmtDate(e.at)}),h('td',{text:labels[e.bookId]||e.bookId}),h('td',{text:e.source==='notes'?'오답노트':e.mode==='exam'?'실전':'연습'}),h('td',{class:'n',text:e.got+'/'+e.max}) ]); }))])]);
+        h('tbody',{},S2.H.slice(-20).reverse().map(function(e){ return h('tr',{},[h('td',{text:fmtDate(e.at)}),h('td',{text:labels[e.bookId]||e.bookId}),h('td',{text:e.source==='notes'?'오답노트':e.mode==='exam'?'실전':'연습'}),h('td',{class:'n',text:(e.max?Math.round(e.got/e.max*100):0)+' / 100'}) ]); }))])]);
       page.appendChild(h('div',{class:'dash'},[
         h('div',{class:'card wide'},[h('h3',{text:'점수 추이 (최근 20회, 100점 환산)'}),h('p',{class:'legend-note',text:'● 연습   ◆ 실전   — 점에 손가락을 대면 자세히 보여요'}),lineChart(trend),table]),
         h('div',{class:'card'},[h('h3',{text:'공부 달력 (최근 12주)'}),heatmap(S2.days)]),
