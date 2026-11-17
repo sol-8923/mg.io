@@ -86,6 +86,7 @@ description: 학년·학기·과목 폴더(materials/<학년>/<학기>/<과목>/
 ### 5단계 · 교과 정리 → `slides.html`
 > 디자인 작업이므로 **Sonnet** 서브에이전트에 맡겨도 된다(사용자 허용).
 `frontend-slides` 스킬. 고정값: High density / reading-first, 입력은 notes.md, Vercel 배포·PDF 변환은 쓰지 않음. 스타일은 `config/slide-style.md`(없으면 첫 실행 때 정해 저장). 한글 글꼴 사용.
+**v2 방식 필수(2026-11-17, 사용자 지시): 새 슬라이드는 `slides.html` 한 파일을 직접 쓰지 않고 `docs/슬라이드-v2-규칙.md`대로 목차(`slides.v2.json`)·본문 조각·그림 파일로 만들어 `python engine/slides_v2.py build <책> --prod`로 조립한다. 분량 예산(10~12장, 도덕 11~12장)은 처음부터 지킨다.**
 
 ### 6단계 · 빌드 검사 · 기계 관문
 `python engine/build_library.py --check-unit drafts/<책id>/<단원id>` — `✖`가 없을 때까지 3·4단계로 돌아가 고친다. (1~7단계의 모든 작업 경로는 `drafts/<책id>/<단원id>/`)

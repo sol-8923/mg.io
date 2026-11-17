@@ -12,7 +12,8 @@
 사용:
   python engine/slides_v2.py extract <책id> [단원 ...]   # library 슬라이드 → v2 파일로 분해(기존 파일은 읽기만)
   python engine/slides_v2.py build   <책id> [단원 ...]   # v2 파일 → out/ 조립 + 점검(✖면 종료코드 1)
-  python engine/slides_v2.py compare <책id> [단원 ...]   # 조립 결과와 기존 slides.html 을 비교(동일 여부)
+  python engine/slides_v2.py compare <책id> [단원 ...]   # 조립 결과와 기존 slides.html 을 비교(동일 여부, 시범 모드 전용)
+  --prod 를 붙이면 운영 배치: 원본 library/<책>/<단원>/slides.v2/, 공통 config/slide-v2/<책>/, 결과 library/<책>/<단원>/slides.html
 점검(build): 자리표시자 누락, 그림 XML 형식, <section> 짝, 장수 예산(과목 10~12장, 넘으면 ⚠), 그림 글자 잘림·겹침(기존 SVG 점검기 재사용)."""
 import sys, re, json, hashlib, xml.etree.ElementTree as ET
 from pathlib import Path
@@ -24,6 +25,15 @@ V2 = ROOT / "pilot" / "slides-v2"
 BUDGET = {"min": 10, "max": 12}
 SEC = re.compile(r"<section\b([^>]*)>(.*?)</section>", re.S)
 SVG = re.compile(r"<svg\b[^>]*>.*?</svg>", re.S)
+
+
+PROD = "--prod" in sys.argv   # 운영 배치: 원본은 library/<책>/<단원>/slides.v2/, 공통은 config/slide-v2/<책>/, 결과는 library/<책>/<단원>/slides.html
+
+
+def tpl_dir(book): return (ROOT / "config" / "slide-v2" / book) if PROD else (V2 / book / "template")
+def ast_dir(book): return (ROOT / "config" / "slide-v2" / book / "assets") if PROD else (V2 / book / "assets")
+def unit_dir(book, u): return (LIB / book / u / "slides.v2") if PROD else (V2 / book / u)
+def out_path(book, u): return (LIB / book / u / "slides.html") if PROD else (V2 / "out" / book / (u + ".html"))
 
 
 def units_of(book, names):
@@ -39,7 +49,6 @@ def wr(p, t):
 
 def extract(book, names):
     us = units_of(book, names)
-    root = V2 / book
     htmls = {u: rd(LIB / book / u / "slides.html") for u in us}
     # 1) 공통 뼈대·스타일 (첫 단원 기준, 다른 단원과 같은지 확인)
     first = htmls[us[0]]
@@ -52,7 +61,7 @@ def extract(book, names):
     b = skel.rindex("</section>") + len("</section>")
     skel = skel[:a] + "\n\n{{SLIDES}}\n\n" + skel[b:].lstrip("\n")
     n0 = len(SEC.findall(first)); skel = skel.replace('id="count">1 / %d<' % n0, 'id="count">1 / {{N}}<', 1)
-    wr(root / "template" / "skeleton.html", skel); wr(root / "template" / "base.css", base_css)
+    wr(tpl_dir(book) / "skeleton.html", skel); wr(tpl_dir(book) / "base.css", base_css)
     # 2) 단원 간에 같은 그림 → 공통 자산
     cnt = {}
     for h in htmls.values():
@@ -63,7 +72,7 @@ def extract(book, names):
         if c >= 2 and svg not in ctrl:
             cl = re.search(r'class="([^"\s]+)', svg.split(">", 1)[0])
             name = (cl.group(1) if cl else "svg") + "-" + hashlib.md5(svg.encode()).hexdigest()[:5]
-            assets[svg] = name; wr(root / "assets" / (name + ".svg"), svg)
+            assets[svg] = name; wr(ast_dir(book) / (name + ".svg"), svg)
     # 3) 단원마다 목차 + 조각 + 내용 그림
     for u, h in htmls.items():
         title = re.search(r"<title>(.*?)</title>", h).group(1)
@@ -74,16 +83,16 @@ def extract(book, names):
                 nonlocal k
                 svg = mm.group(0)
                 if svg in assets: return "{{asset:%s}}" % assets[svg]
-                k += 1; fid = "%s-s%02d-%d" % (u, i, k); wr(root / u / "figures" / (fid + ".svg"), svg); return "{{figure:%s}}" % fid
+                k += 1; fid = "%s-s%02d-%d" % (u, i, k); wr(unit_dir(book, u) / "figures" / (fid + ".svg"), svg); return "{{figure:%s}}" % fid
             inner = SVG.sub(rep, inner)
             cls = re.search(r'class="([^"]*)"', attrs); sty = re.search(r'style="([^"]*)"', attrs)
-            wr(root / u / "slides" / ("s%02d.html" % i), inner)
+            wr(unit_dir(book, u) / "slides" / ("s%02d.html" % i), inner)
             slides.append({"id": "s%02d" % i, "file": "slides/s%02d.html" % i, "class": cls.group(1) if cls else "slide", "style": sty.group(1) if sty else None})
         man = {"schema": "slides-v2/1", "book": book, "unit": u, "title": re.sub(r"\s*-\s*교과 정리$", "", title), "titleFull": title,
                "budget": BUDGET, "slides": slides}
-        wr(root / u / "slides.v2.json", json.dumps(man, ensure_ascii=False, indent=1) + "\n")
+        wr(unit_dir(book, u) / "slides.v2.json", json.dumps(man, ensure_ascii=False, indent=1) + "\n")
         print("[%s/%s] 슬라이드 %d장, 내용 그림 %d개" % (book, u, len(slides), k))
-    print("공통 자산 %d개, 뼈대·스타일 저장: %s" % (len(assets), root / "template"))
+    print("공통 자산 %d개, 뼈대·스타일 저장: %s" % (len(assets), tpl_dir(book)))
 
 
 _SVGNS = None
@@ -122,16 +131,15 @@ def check_svg_file(fid, svg, errs, warns):
 
 
 def assemble(book, u, errs, warns):
-    root = V2 / book
-    man = json.loads(rd(root / u / "slides.v2.json"))
-    skel, css = rd(root / "template" / "skeleton.html"), rd(root / "template" / "base.css")
+    man = json.loads(rd(unit_dir(book, u) / "slides.v2.json"))
+    skel, css = rd(tpl_dir(book) / "skeleton.html"), rd(tpl_dir(book) / "base.css")
     parts, figs = [], {}
     for i, s in enumerate(man["slides"], 1):
-        frag = rd(root / u / s["file"])
+        frag = rd(unit_dir(book, u) / s["file"])
         def tok(m):
             kind, name = m.group(1), m.group(2)
-            if kind == "asset": p = root / "assets" / (name + ".svg")
-            else: p = root / u / "figures" / (name + ".svg")
+            if kind == "asset": p = ast_dir(book) / (name + ".svg")
+            else: p = unit_dir(book, u) / "figures" / (name + ".svg")
             if not p.exists(): errs.append("%s/%s %s: {{%s:%s}} 파일이 없음" % (book, u, s["id"], kind, name)); return ""
             t = rd(p)
             if kind == "figure" and name not in figs: figs[name] = t
@@ -151,7 +159,9 @@ def assemble(book, u, errs, warns):
 
 
 def v2_units(book, names):
-    return [p.parent.name for p in sorted((V2 / book).glob("u*/slides.v2.json"), key=lambda p: (len(p.parent.name), p.parent.name)) if not names or p.parent.name in names]
+    if PROD: files = sorted((LIB / book).glob("u*/slides.v2/slides.v2.json"), key=lambda p: (len(p.parent.parent.name), p.parent.parent.name)); nm = lambda p: p.parent.parent.name
+    else: files = sorted((V2 / book).glob("u*/slides.v2.json"), key=lambda p: (len(p.parent.name), p.parent.name)); nm = lambda p: p.parent.name
+    return [nm(p) for p in files if not names or nm(p) in names]
 
 
 def build(book, names):
@@ -159,8 +169,8 @@ def build(book, names):
     for u in v2_units(book, names):
         errs, warns = [], []
         out = assemble(book, u, errs, warns)
-        if not errs: wr(V2 / "out" / book / (u + ".html"), out)
-        print("[%s/%s] %s  (✖ %d, ⚠ %d)  → %s" % (book, u, "실패" if errs else "조립 완료", len(errs), len(warns), V2 / "out" / book / (u + ".html")))
+        if not errs: wr(out_path(book, u), out)
+        print("[%s/%s] %s  (✖ %d, ⚠ %d)  → %s" % (book, u, "실패" if errs else "조립 완료", len(errs), len(warns), out_path(book, u)))
         for m in errs: print("  ✖", m)
         for m in warns[:10]: print("  ⚠", m)
         bad += len(errs)
@@ -183,7 +193,7 @@ def compare(book, names):
 
 if __name__ == "__main__":
     if len(sys.argv) < 3: sys.exit(__doc__)
-    cmd, book, names = sys.argv[1], sys.argv[2], sys.argv[3:]
+    cmd, book, names = sys.argv[1], sys.argv[2], [a for a in sys.argv[3:] if a != "--prod"]
     if cmd == "extract": extract(book, names)
     elif cmd == "build": sys.exit(build(book, names))
     elif cmd == "compare": sys.exit(compare(book, names))
