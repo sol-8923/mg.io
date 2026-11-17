@@ -9,7 +9,7 @@
 종료 코드: ✖·b_scan 플래그·슬라이드 무결성 오류가 하나라도 있으면 1, ⚠만 있으면 0.
   (--drafts가 아닌 library 단원은 precheck가 drafts 경로만 읽으므로, 같은 단원 폴더를 임시로 가리키도록 실행 시에만 경로를 바꿔 돌린다.)
 """
-import re, subprocess, sys, os
+import json, re, subprocess, sys, os
 from pathlib import Path
 try: sys.stdout.reconfigure(encoding="utf-8")
 except Exception: pass
@@ -70,6 +70,18 @@ def main():
         else: rc2, o2 = run([sys.executable, str(ENG / "precheck_unit.py")] + cmd_tail + ["--root", "library"])
         e2, w2 = num(r"✖ (\d+)건", o2), num(r"⚠ (\d+)건", o2)
         if rc2 and not e2: e2 = 1   # 실행 자체가 실패한 경우도 오류로 센다
+        # 허용 목록: <단원>/review/gate-waivers.json = [{"match": "✖ 줄에 들어 있는 문자열", "reason": "…"}] — 사유를 적은 것만 오류에서 뺀다
+        wf = udir / "review" / "gate-waivers.json"
+        if wf.exists() and e2:
+            try:
+                wv = json.loads(wf.read_text(encoding="utf-8"))
+                waived = [l for l in o2.splitlines() if l.lstrip().startswith("✖") and any(w.get("match") and w.get("reason") and w["match"] in l for w in wv)]
+                if waived:
+                    e2 = max(0, e2 - len(waived))
+                    rc2 = 0 if not e2 else rc2
+                    o2 += "\n(허용 목록으로 제외한 ✖ %d건)" % len(waived)
+            except Exception as ex:
+                o2 += "\n허용 목록을 읽지 못함: %s" % ex
         # ③ b_scan
         cmd3 = [sys.executable, str(ENG / "b_scan.py"), "--book", book, "--unit", u] + (["--root", "drafts"] if drafts else [])
         rc3, o3 = run(cmd3)
