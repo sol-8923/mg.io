@@ -13,7 +13,7 @@
   python engine/slides_v2.py extract <책id> [단원 ...]   # library 슬라이드 → v2 파일로 분해(기존 파일은 읽기만)
   python engine/slides_v2.py build   <책id> [단원 ...]   # v2 파일 → out/ 조립 + 점검(✖면 종료코드 1)
   python engine/slides_v2.py compare <책id> [단원 ...]   # 조립 결과와 기존 slides.html 을 비교(동일 여부, 시범 모드 전용)
-  --prod 를 붙이면 운영 배치: 원본 library/<책>/<단원>/slides.v2/, 공통 config/slide-v2/<책>/, 결과 library/<책>/<단원>/slides.html
+  --drafts 는 검수 중 작업 공간(drafts/<책>/<단원>/slides.v2/ → 같은 폴더 slides.html), --prod 를 붙이면 운영 배치: 원본 library/<책>/<단원>/slides.v2/, 공통 config/slide-v2/<책>/, 결과 library/<책>/<단원>/slides.html
 점검(build): 자리표시자 누락, 그림 XML 형식, <section> 짝, 장수 예산(과목 10~12장, 넘으면 ⚠), 그림 글자 잘림·겹침(기존 SVG 점검기 재사용)."""
 import sys, re, json, hashlib, xml.etree.ElementTree as ET
 from pathlib import Path
@@ -27,13 +27,14 @@ SEC = re.compile(r"<section\b([^>]*)>(.*?)</section>", re.S)
 SVG = re.compile(r"<svg\b[^>]*>.*?</svg>", re.S)
 
 
-PROD = "--prod" in sys.argv   # 운영 배치: 원본은 library/<책>/<단원>/slides.v2/, 공통은 config/slide-v2/<책>/, 결과는 library/<책>/<단원>/slides.html
+DRAFTS = "--drafts" in sys.argv   # 검수 중인 작업 공간: drafts/<책>/<단원>/slides.v2/ → drafts/<책>/<단원>/slides.html
+PROD = "--prod" in sys.argv or DRAFTS   # 운영 배치: 원본은 library/<책>/<단원>/slides.v2/, 공통은 config/slide-v2/<책>/, 결과는 library/<책>/<단원>/slides.html
 
 
 def tpl_dir(book): return (ROOT / "config" / "slide-v2" / book) if PROD else (V2 / book / "template")
 def ast_dir(book): return (ROOT / "config" / "slide-v2" / book / "assets") if PROD else (V2 / book / "assets")
-def unit_dir(book, u): return (LIB / book / u / "slides.v2") if PROD else (V2 / book / u)
-def out_path(book, u): return (LIB / book / u / "slides.html") if PROD else (V2 / "out" / book / (u + ".html"))
+def unit_dir(book, u): return ((ROOT / "drafts" if DRAFTS else LIB) / book / u / "slides.v2") if PROD else (V2 / book / u)
+def out_path(book, u): return ((ROOT / "drafts" if DRAFTS else LIB) / book / u / "slides.html") if PROD else (V2 / "out" / book / (u + ".html"))
 
 
 def units_of(book, names):
@@ -159,7 +160,7 @@ def assemble(book, u, errs, warns):
 
 
 def v2_units(book, names):
-    if PROD: files = sorted((LIB / book).glob("u*/slides.v2/slides.v2.json"), key=lambda p: (len(p.parent.parent.name), p.parent.parent.name)); nm = lambda p: p.parent.parent.name
+    if PROD: files = sorted(((ROOT / "drafts" if DRAFTS else LIB) / book).glob("u*/slides.v2/slides.v2.json"), key=lambda p: (len(p.parent.parent.name), p.parent.parent.name)); nm = lambda p: p.parent.parent.name
     else: files = sorted((V2 / book).glob("u*/slides.v2.json"), key=lambda p: (len(p.parent.name), p.parent.name)); nm = lambda p: p.parent.name
     return [nm(p) for p in files if not names or nm(p) in names]
 
@@ -193,7 +194,7 @@ def compare(book, names):
 
 if __name__ == "__main__":
     if len(sys.argv) < 3: sys.exit(__doc__)
-    cmd, book, names = sys.argv[1], sys.argv[2], [a for a in sys.argv[3:] if a != "--prod"]
+    cmd, book, names = sys.argv[1], sys.argv[2], [a for a in sys.argv[3:] if a not in ("--prod", "--drafts")]
     if cmd == "extract": extract(book, names)
     elif cmd == "build": sys.exit(build(book, names))
     elif cmd == "compare": sys.exit(compare(book, names))

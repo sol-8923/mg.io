@@ -8,6 +8,21 @@ description: 학년·학기·과목 폴더(materials/<학년>/<학기>/<과목>/
 사용법: `/study <학년> <학기> <과목> [<단원> ...]` — 예: `/study 1학년 2학기 과학` (폴더의 자료 전체), `/study 1학년 2학기 과학 2단원` (특정 단원만)
 이미 있는 단원은 **보강 모드**: 기존 문제는 두고 슬롯마다 변형 문제를 더 추가한다.
 
+## 발간 절차 (2026-11-17 승인, "<학년> <학기> <과목> 발간"이면 이 절차로 끝까지 진행)
+> 계획서 `docs/study-작업절차-v2-계획서.md`가 기준이다. 아래는 코디네이터(메인 세션)가 그대로 따르는 실행 순서이고, **아래 '구 절차'의 5단계(슬라이드 시점)·7단계(4중 검수)는 이 절차가 대체한다**(나머지 규칙·정책은 그대로).
+0. **S0 준비**: 자료 인벤토리 → 교과서 차례 정리(`meta.json` textbookUnits, `units.md`) → 단원별 쪽 파일(`engine/split_src.py`, 쪽수가 책마다 다르면 단원 PDF에서 직접 `drafts/<책>/src/units/<단원>_교과서.txt` 생성) → `python engine/pipeline_state.py <책> init` → 기출 전사 에이전트(Sonnet, 시험지별 병렬) → `past-exams.md`·`exam-patterns.md`.
+1. **S1a notes**: 단원마다 `unit-builder` 에이전트(Sonnet, 병렬 ≤20)가 `notes.md` 작성 → **notes 동결 점검**(교과서 대조 1회, Sonnet) 통과 → 동결.
+2. **S1b ‖ S1c (동시)**: 같은 단원에 `unit-builder`(설계도·문항·해설)와 `slide-builder`(슬라이드 v2)를 병렬로 호출. 모델은 둘 다 Sonnet.
+3. **S2 기계 관문**: `python engine/gate.py <책> <단원> --drafts` + `coverage_check.py --root drafts` + 슬라이드 빌드(`slides_v2.py build --drafts`). 실패 메시지는 제작자에게 그대로 반송(최대 2회).
+4. **S3 검수(책 단위 일괄)**: 내용 검수 `review-content`(**Opus**), 해설·종합 검수 `review-explanation`+`review-overall`(Sonnet, 한 에이전트가 두 관점), 슬라이드 검수 `review-slides`(Sonnet, `python engine/slide_shots.py`로 만든 캡처 4종 + 갤럭시탭 S10 FE 강화 기준). 반려는 바뀐 문항·조각만(`python engine/review_diff.py`), 반려한 검수자만 재검수. A급이 있었던 단원만 4명 최종 확인. 기출 편입 문항은 2라운드 내 통과 못 하면 버린다(기존 규칙).
+5. **S4 반영**: 통과 단원을 `library`로 이동(`slides.v2/`는 `slides_v2.py build --prod`로 다시 조립), `review/status.json`, `python engine/build_library.py`, `pipeline_state`, 전 단원 gate.
+6. **S5 사후 점검·배포**: `python engine/audit_sample.py --rate 0.1 --book <책>` 표본 감사(내용 Opus 2 + 해설·형식 Sonnet 1), 새 반려 사유 환류(`출제-반려-예방.md`·과목 md), 커밋·push, **계획서 §5 합격 기준 측정 후 한두 줄 보고**.
+- 멈추는 경우(사용자에게 묻기): 판독 불가·기출 정답이 교과서와 다름·같은 쟁점 2라운드 미해결·단원 범위 불명·보류 정책 해당·한 단원 A급 반복. 그 외에는 묻지 않고 진행한다.
+- 규칙(모델 배정 등)과 다른 예외는 먼저 허락받는다.
+- 새 에이전트 지침: `.claude/agents/unit-builder.md`, `slide-builder.md`, `review-slides.md`, 공통 `_review-common.md`.
+
+## 구 절차 (이력 · 기존 방식, 위 발간 절차가 대체한 부분은 5·7단계)
+
 ## 앱이 동작하는 방식 (만들 때 꼭 알아야 할 것)
 - 사이트: `https://sol-8923.github.io/mg.io/study/` — 홈 → 시험으로 풀어보기(책장) → 책(시험 범위 선택) → 시험 → 결과 → 오답풀이(한 문제 한 페이지, 옆에 참고 자료) / 오답노트
 - **시험지는 들어갈 때마다 새로 조합된다.** 설계도의 슬롯마다 은행의 변형 문제 중 하나를 고르고(최근에 덜 본 것 우선), 선택형 보기 순서를 섞는다. 그래서:
