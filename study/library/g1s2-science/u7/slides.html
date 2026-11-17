@@ -258,6 +258,16 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+
+/* 일식·월식 도식(u7 장 12) */
+.svgbox svg.ecl { max-width: 660px; margin: 0 auto; }
+.svgbox svg.ecl text { font-size: 32px; }
+
+/* 달의 위상 도식(u7 장 11) */
+.svgbox svg.ph { height: 600px; }
+.svgbox svg.ph text { font-size: 32px; }
+@media (max-width: 1100px) and (orientation: portrait) { .svgbox svg.ph { height: auto; } }
+.svgbox svg.sunv text { font-size: 32px; }
 </style>
 </head>
 <body>
@@ -416,7 +426,7 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
     <h2>태양의 표면과 대기 <small>p.<span class="nw">232~234</span></small></h2>
     <div class="grid g2" style="grid-template-columns:1fr 1.2fr">
         <div class="svgbox reveal">
-            <svg viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg">
+            <svg class="sunv" viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="260" cy="280" r="250" fill="rgba(232,85,45,.14)" stroke="#D9461F" stroke-width="3" stroke-dasharray="10 8"/>
                 <circle cx="260" cy="280" r="190" fill="rgba(232,85,45,.38)" stroke="#D9461F" stroke-width="3"/>
                 <circle cx="260" cy="280" r="150" fill="#FFC83D" stroke="#C2186B" stroke-width="4"/>
@@ -424,7 +434,7 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
                 <g stroke="#261A52" stroke-width="2"><line x1="400" y1="280" x2="520" y2="280"/><line x1="407" y1="195" x2="520" y2="130"/><line x1="422" y1="131" x2="520" y2="40"/></g>
                 <text class="b" x="525" y="288">광구</text><text class="w" x="525" y="138">채층</text><text x="525" y="48">코로나</text>
                 <g stroke="#261A52" stroke-width="2"><line x1="236" y1="342" x2="231" y2="278"/><line x1="262" y1="342" x2="286" y2="322"/></g>
-                <text x="201" y="374" style="fill:#261A52;font-size:24px">흑점</text>
+                <text x="201" y="374" >흑점</text>
             </svg>
         </div>
         <div class="card hl reveal">
@@ -561,16 +571,23 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
     <h2>달의 위상 <small>p.<span class="nw">252~254</span></small></h2>
     <div class="grid g2" style="grid-template-columns:1fr 1.1fr">
         <div class="svgbox reveal">
-            <svg viewBox="0 0 700 540" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="350" cy="270" r="200" fill="none" stroke="#C2186B" stroke-width="2" stroke-dasharray="8 8"/>
-                <circle cx="350" cy="270" r="50" fill="#2d6bb3" stroke="#261A52" stroke-width="2"/>
-                <text x="350" y="278" text-anchor="middle" style="fill:#fff">지구</text>
-                <circle cx="150" cy="270" r="28" fill="#3a3466" stroke="#261A52" stroke-width="2"/><path d="M150 242 A28 28 0 0 0 150 298 Z" fill="#FFE9A8"/><circle cx="150" cy="270" r="28" fill="none" stroke="#261A52" stroke-width="2"/><circle cx="350" cy="470" r="28" fill="#3a3466" stroke="#261A52" stroke-width="2"/><path d="M350 442 A28 28 0 0 0 350 498 Z" fill="#FFE9A8"/><circle cx="350" cy="470" r="28" fill="none" stroke="#261A52" stroke-width="2"/><circle cx="550" cy="270" r="28" fill="#3a3466" stroke="#261A52" stroke-width="2"/><path d="M550 242 A28 28 0 0 0 550 298 Z" fill="#FFE9A8"/><circle cx="550" cy="270" r="28" fill="none" stroke="#261A52" stroke-width="2"/><circle cx="350" cy="70" r="28" fill="#3a3466" stroke="#261A52" stroke-width="2"/><path d="M350 42 A28 28 0 0 0 350 98 Z" fill="#FFE9A8"/><circle cx="350" cy="70" r="28" fill="none" stroke="#261A52" stroke-width="2"/>
-                <text class="b" x="106" y="279" text-anchor="end">삭</text>
-                <text class="b" x="350" y="532" text-anchor="middle">상현</text>
-                <text class="b" x="594" y="279" text-anchor="start">망</text>
-                <text class="b" x="350" y="30" text-anchor="middle">하현</text>
-                <text class="w" x="20" y="345">햇빛 →</text>
+            <svg class="ph" viewBox="0 0 600 670" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="330" cy="250" r="150" fill="none" stroke="#C2186B" stroke-width="3" stroke-dasharray="9 9"/>
+                <line x1="86" y1="250" x2="98" y2="250" stroke="#FFC83D" stroke-width="5" stroke-linecap="round"/><line x1="74" y1="278" x2="83" y2="287" stroke="#FFC83D" stroke-width="5" stroke-linecap="round"/><line x1="46" y1="290" x2="46" y2="302" stroke="#FFC83D" stroke-width="5" stroke-linecap="round"/><line x1="18" y1="278" x2="9" y2="287" stroke="#FFC83D" stroke-width="5" stroke-linecap="round"/><line x1="6" y1="250" x2="-6" y2="250" stroke="#FFC83D" stroke-width="5" stroke-linecap="round"/><line x1="18" y1="222" x2="9" y2="213" stroke="#FFC83D" stroke-width="5" stroke-linecap="round"/><line x1="46" y1="210" x2="46" y2="198" stroke="#FFC83D" stroke-width="5" stroke-linecap="round"/><line x1="74" y1="222" x2="83" y2="213" stroke="#FFC83D" stroke-width="5" stroke-linecap="round"/><circle cx="46" cy="250" r="32" fill="#FFC83D" stroke="#B8860B" stroke-width="3"/>
+                <text x="46" y="322" text-anchor="middle">태양</text>
+                <line x1="86" y1="150" x2="150" y2="150" stroke="#B93A12" stroke-width="7" stroke-linecap="round"/><polygon points="168,150 146,137 146,163" fill="#B93A12"/><line x1="86" y1="350" x2="150" y2="350" stroke="#B93A12" stroke-width="7" stroke-linecap="round"/><polygon points="168,350 146,337 146,363" fill="#B93A12"/>
+                <text class="w" x="125" y="126" text-anchor="middle">햇빛</text>
+                <circle cx="330" cy="250" r="42" fill="#2d6bb3" stroke="#14406f" stroke-width="3"/>
+                <text x="330" y="261" text-anchor="middle" style="fill:#fff">지구</text>
+                <circle cx="180" cy="250" r="30" fill="#3a3466"/><path d="M180 220 A30 30 0 0 0 180 280 Z" fill="#FFE9A8"/><circle cx="180" cy="250" r="30" fill="none" stroke="#261A52" stroke-width="3"/><circle cx="330" cy="400" r="30" fill="#3a3466"/><path d="M330 370 A30 30 0 0 0 330 430 Z" fill="#FFE9A8"/><circle cx="330" cy="400" r="30" fill="none" stroke="#261A52" stroke-width="3"/><circle cx="480" cy="250" r="30" fill="#3a3466"/><path d="M480 220 A30 30 0 0 0 480 280 Z" fill="#FFE9A8"/><circle cx="480" cy="250" r="30" fill="none" stroke="#261A52" stroke-width="3"/><circle cx="330" cy="100" r="30" fill="#3a3466"/><path d="M330 70 A30 30 0 0 0 330 130 Z" fill="#FFE9A8"/><circle cx="330" cy="100" r="30" fill="none" stroke="#261A52" stroke-width="3"/>
+                <text class="b" x="180" y="318" text-anchor="middle">삭</text>
+                <text class="b" x="330" y="466" text-anchor="middle">상현</text>
+                <text class="b" x="520" y="260" text-anchor="start">망</text>
+                <text class="b" x="330" y="56" text-anchor="middle">하현</text>
+                <line x1="20" y1="500" x2="580" y2="500" stroke="#D9CCF2" stroke-width="3"/>
+                <text x="300" y="540" text-anchor="middle">지구에서 본 모양</text>
+                <circle cx="90" cy="586" r="32" fill="#3a3466"/><circle cx="90" cy="586" r="32" fill="none" stroke="#261A52" stroke-width="3"/><circle cx="230" cy="586" r="32" fill="#3a3466"/><path d="M230 554 A32 32 0 0 1 230 618 Z" fill="#FFE9A8"/><circle cx="230" cy="586" r="32" fill="none" stroke="#261A52" stroke-width="3"/><circle cx="370" cy="586" r="32" fill="#FFE9A8"/><circle cx="370" cy="586" r="32" fill="none" stroke="#261A52" stroke-width="3"/><circle cx="510" cy="586" r="32" fill="#3a3466"/><path d="M510 554 A32 32 0 0 0 510 618 Z" fill="#FFE9A8"/><circle cx="510" cy="586" r="32" fill="none" stroke="#261A52" stroke-width="3"/>
+                <text class="b" x="90" y="656" text-anchor="middle">삭</text><text class="b" x="230" y="656" text-anchor="middle">상현</text><text class="b" x="370" y="656" text-anchor="middle">망</text><text class="b" x="510" y="656" text-anchor="middle">하현</text>
             </svg>
         </div>
         <div class="card hl reveal">
@@ -592,30 +609,30 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 <section class="slide" style="--z:1">
     <div class="kicker">2 지구와 달의 운동 · 일식과 월식</div>
     <h2>일식과 월식 <small>p.<span class="nw">256~259</span></small></h2>
-    <div class="svgbox reveal fit">
-        <svg class="wide" viewBox="0 0 1700 392" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="750,32 750,76 1114,54" fill="rgba(38,26,82,.30)"/>
-            <polygon points="750,216 750,288 1460,268 1460,236" fill="rgba(0,0,0,.40)"/>
-            <line x1="40" y1="196" x2="1660" y2="196" stroke="#E4DAF7" stroke-width="2"/>
-            <circle cx="200" cy="54" r="42" fill="#FFC83D"/><circle cx="750" cy="54" r="22" fill="#261A52"/><circle cx="1150" cy="54" r="36" fill="#2d6bb3"/>
-            <text class="b" x="60" y="176">일식 :</text><text x="180" y="176">태양 – 달 – 지구 순, 달이 삭</text>
-            <circle cx="200" cy="252" r="42" fill="#FFC83D"/><circle cx="750" cy="252" r="36" fill="#2d6bb3"/><circle cx="1150" cy="252" r="20" fill="#8D86A8"/>
-            <text class="b" x="60" y="374">월식 :</text><text x="180" y="374">태양 – 지구 – 달 순, 달이 망</text>
-            <text x="200" y="132" text-anchor="middle">태양</text><text x="750" y="132" text-anchor="middle">달</text><text x="1150" y="132" text-anchor="middle">지구</text>
-            <text x="750" y="330" text-anchor="middle">지구</text><text x="1150" y="330" text-anchor="middle">달</text>
+    <div class="svgbox reveal">
+        <svg class="ecl" viewBox="0 0 620 392" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="300,36 530,50 300,64" fill="rgba(38,26,82,.34)"/>
+            <circle cx="70" cy="50" r="42" fill="#FFC83D" stroke="#B8860B" stroke-width="3"/><circle cx="300" cy="50" r="18" fill="#261A52" stroke="#FFFFFF" stroke-width="3"/><circle cx="562" cy="50" r="34" fill="#2d6bb3" stroke="#14406f" stroke-width="3"/>
+            <text x="70" y="130" text-anchor="middle">태양</text><text x="300" y="130" text-anchor="middle">달</text><text x="562" y="130" text-anchor="middle">지구</text>
+            <text class="b" x="8" y="176">일식 :</text><text x="124" y="176">태양 – 달 – 지구 순, 달이 삭</text>
+            <line x1="8" y1="196" x2="612" y2="196" stroke="#D9CCF2" stroke-width="3"/>
+            <defs><linearGradient id="umb" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#261A52" stop-opacity=".42"/><stop offset=".7" stop-color="#261A52" stop-opacity=".34"/><stop offset="1" stop-color="#261A52" stop-opacity=".04"/></linearGradient></defs><polygon points="300,218 620,228 620,272 300,282" fill="url(#umb)"/>
+            <circle cx="70" cy="250" r="42" fill="#FFC83D" stroke="#B8860B" stroke-width="3"/><circle cx="300" cy="250" r="34" fill="#2d6bb3" stroke="#14406f" stroke-width="3"/><circle cx="562" cy="250" r="17" fill="#B5482F" stroke="#5A1F12" stroke-width="3"/>
+            <text x="70" y="330" text-anchor="middle">태양</text><text x="300" y="330" text-anchor="middle">지구</text><text x="562" y="330" text-anchor="middle">달</text>
+            <text class="b" x="8" y="378">월식 :</text><text x="124" y="378">태양 – 지구 – 달 순, 달이 망</text>
         </svg>
     </div>
-    <div class="grid g2" style="margin-top:28px">
-        <div class="card hl reveal" style="font-size:24px;padding:14px 28px">
+    <div class="grid g2" style="margin-top:18px">
+        <div class="card hl reveal" style="font-size:27px;padding:12px 28px">
             <h3>일식</h3>
             <p>달이 태양의 일부 또는 전체를 가리는 현상. 완전히 가려지면 <b>개기 일식</b>, 일부만 가려지면 <b>부분 일식</b>. 태양은 <b>오른쪽</b>부터 <span class="nw">가려지기 시작.</span></p>
         </div>
-        <div class="card hl reveal" style="font-size:24px;padding:14px 28px">
+        <div class="card hl reveal" style="font-size:27px;padding:12px 28px">
             <h3>월식</h3>
             <p>달이 지구의 그림자 속에 들어가 일부 또는 전체가 보이지 않는 현상. 일부만 들어가면 <b>부분 월식</b>, 완전히 들어가면 <b>개기 월식</b><span class="nw">(달이 붉게 보임)</span>. 달의 <b>왼쪽</b>부터 <span class="nw">어두워지기 시작.</span></p>
         </div>
     </div>
-    <div class="card reveal" style="margin-top:14px;font-size:24px;padding:14px 28px">개기 월식 때 달이 붉게 보이는 <span class="nw">까닭 :</span> <b>지구 대기</b> 때문에 햇빛의 붉은색 빛만 달에 비치기 때문이다. <span class="ref">월식은 달이 태양을 가린다 <span class="nw">(X)</span> → 지구 그림자에 들어감.</span></div>
+    <div class="card reveal" style="margin-top:14px;font-size:27px;padding:12px 28px">개기 월식 때 달이 붉게 보이는 <span class="nw">까닭 :</span> <b>지구 대기</b> 때문에 햇빛의 붉은색 빛만 달에 비치기 때문이다. <span class="ref">월식은 달이 태양을 가린다 <span class="nw">(X)</span> → 지구 그림자에 들어감.</span></div>
     <div class="pg">12</div>
 </section>
 

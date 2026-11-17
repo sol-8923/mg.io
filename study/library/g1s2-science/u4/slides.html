@@ -262,6 +262,16 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 .lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #C2186B; color: #fff; font-weight: 800;
       font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
 .lb + .ref { margin-right: .5em; }
+/* 입자 모형 3칸(u4 장 5): 폰에서는 세로로 쌓는다 */
+.ptc { gap: 16px; align-items: stretch; }
+.ptc .svgbox svg text { font-size: 30px; }
+@media (max-width: 1100px) and (orientation: portrait) { .ptc .svgbox svg text { font-size: 30px; } }
+/* 상태 변화 삼각 도식(u4 장 6) */
+.svgbox svg.tri { height: 500px; }
+.svgbox svg.tri text { font-size: 30px; }
+@media (max-width: 1100px) and (orientation: portrait) { .svgbox svg.tri { height: auto; } }
+/* 가열·냉각 곡선(u4 장 9) */
+.svgbox svg.crv text { font-size: 28px; }
 </style>
 </head>
 <body>
@@ -398,22 +408,11 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
 <section class="slide" style="--z:1.3">
     <div class="kicker">1 물질의 세 가지 상태 · 입자 모형</div>
     <h2>입자 모형으로 보기 <small>p.122</small></h2>
-    <div class="svgbox reveal">
-        <svg class="wide" viewBox="0 0 1700 360" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="#C2186B" stroke-width="2" fill="none"><rect x="20" y="50" width="520" height="250" rx="8"/><rect x="590" y="50" width="520" height="250" rx="8"/><rect x="1160" y="50" width="520" height="250" rx="8"/></g>
-            <text class="b" x="280" y="34" text-anchor="middle">고체</text><text class="b" x="850" y="34" text-anchor="middle">액체</text><text class="b" x="1420" y="34" text-anchor="middle">기체</text>
-            <g fill="#FFC83D">
-                <circle cx="110" cy="105" r="22"/><circle cx="170" cy="105" r="22"/><circle cx="230" cy="105" r="22"/><circle cx="290" cy="105" r="22"/><circle cx="350" cy="105" r="22"/><circle cx="410" cy="105" r="22"/>
-                <circle cx="110" cy="165" r="22"/><circle cx="170" cy="165" r="22"/><circle cx="230" cy="165" r="22"/><circle cx="290" cy="165" r="22"/><circle cx="350" cy="165" r="22"/><circle cx="410" cy="165" r="22"/>
-                <circle cx="110" cy="225" r="22"/><circle cx="170" cy="225" r="22"/><circle cx="230" cy="225" r="22"/><circle cx="290" cy="225" r="22"/><circle cx="350" cy="225" r="22"/><circle cx="410" cy="225" r="22"/>
-                <circle cx="660" cy="250" r="22"/><circle cx="715" cy="262" r="22"/><circle cx="772" cy="250" r="22"/><circle cx="830" cy="266" r="22"/><circle cx="888" cy="252" r="22"/><circle cx="946" cy="262" r="22"/><circle cx="1004" cy="250" r="22"/>
-                <circle cx="690" cy="205" r="22"/><circle cx="748" cy="200" r="22"/><circle cx="808" cy="212" r="22"/><circle cx="868" cy="202" r="22"/><circle cx="926" cy="210" r="22"/><circle cx="985" cy="200" r="22"/>
-                <circle cx="665" cy="158" r="22"/><circle cx="730" cy="150" r="22"/><circle cx="800" cy="160" r="22"/><circle cx="880" cy="150" r="22"/><circle cx="950" cy="162" r="22"/>
-                <circle cx="1230" cy="110" r="22"/><circle cx="1400" cy="90" r="22"/><circle cx="1580" cy="130" r="22"/><circle cx="1300" cy="220" r="22"/><circle cx="1480" cy="200" r="22"/><circle cx="1620" cy="260" r="22"/><circle cx="1220" cy="270" r="22"/><circle cx="1400" cy="270" r="22"/><circle cx="1520" cy="100" r="22"/>
-            </g>
-            <text x="280" y="338" text-anchor="middle">매우 가깝고 규칙적</text><text x="850" y="338" text-anchor="middle">비교적 가깝고 불규칙</text><text x="1420" y="338" text-anchor="middle">매우 멀고 불규칙</text>
-        </svg>
-    </div>
+    <div class="grid g3 ptc">
+    <div class="svgbox reveal"><svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg"><g stroke="#C2186B" stroke-width="2" fill="none"><rect x="20" y="50" width="520" height="250" rx="8"/></g><text class="b" x="280" y="34" text-anchor="middle">고체</text><g fill="#FFC83D"><circle cx="110" cy="105" r="22"/><circle cx="170" cy="105" r="22"/><circle cx="230" cy="105" r="22"/><circle cx="290" cy="105" r="22"/><circle cx="350" cy="105" r="22"/><circle cx="410" cy="105" r="22"/><circle cx="110" cy="165" r="22"/><circle cx="170" cy="165" r="22"/><circle cx="230" cy="165" r="22"/><circle cx="290" cy="165" r="22"/><circle cx="350" cy="165" r="22"/><circle cx="410" cy="165" r="22"/><circle cx="110" cy="225" r="22"/><circle cx="170" cy="225" r="22"/><circle cx="230" cy="225" r="22"/><circle cx="290" cy="225" r="22"/><circle cx="350" cy="225" r="22"/><circle cx="410" cy="225" r="22"/></g><text x="280" y="338" text-anchor="middle">매우 가깝고 규칙적</text></svg></div>
+    <div class="svgbox reveal"><svg viewBox="570 0 560 360" xmlns="http://www.w3.org/2000/svg"><g stroke="#C2186B" stroke-width="2" fill="none"><rect x="590" y="50" width="520" height="250" rx="8"/></g><text class="b" x="850" y="34" text-anchor="middle">액체</text><g fill="#FFC83D"><circle cx="660" cy="250" r="22"/><circle cx="715" cy="262" r="22"/><circle cx="772" cy="250" r="22"/><circle cx="830" cy="266" r="22"/><circle cx="888" cy="252" r="22"/><circle cx="946" cy="262" r="22"/><circle cx="1004" cy="250" r="22"/><circle cx="690" cy="205" r="22"/><circle cx="748" cy="200" r="22"/><circle cx="808" cy="212" r="22"/><circle cx="868" cy="202" r="22"/><circle cx="926" cy="210" r="22"/><circle cx="985" cy="200" r="22"/><circle cx="665" cy="158" r="22"/><circle cx="730" cy="150" r="22"/><circle cx="800" cy="160" r="22"/><circle cx="880" cy="150" r="22"/><circle cx="950" cy="162" r="22"/></g><text x="850" y="338" text-anchor="middle">비교적 가깝고 불규칙</text></svg></div>
+    <div class="svgbox reveal"><svg viewBox="1140 0 560 360" xmlns="http://www.w3.org/2000/svg"><g stroke="#C2186B" stroke-width="2" fill="none"><rect x="1160" y="50" width="520" height="250" rx="8"/></g><text class="b" x="1420" y="34" text-anchor="middle">기체</text><g fill="#FFC83D"><circle cx="1230" cy="110" r="22"/><circle cx="1400" cy="90" r="22"/><circle cx="1580" cy="130" r="22"/><circle cx="1300" cy="220" r="22"/><circle cx="1480" cy="200" r="22"/><circle cx="1620" cy="260" r="22"/><circle cx="1220" cy="270" r="22"/><circle cx="1400" cy="270" r="22"/><circle cx="1520" cy="100" r="22"/></g><text x="1420" y="338" text-anchor="middle">매우 멀고 불규칙</text></svg></div>
+</div>
     <div class="grid g2" style="margin-top:22px">
         <div class="card hl reveal"><h3><span class="nw">알아둘 점</span></h3><p>입자 사이의 <b>거리가 멀수록</b> 배열은 불규칙하고 운동은 활발하다.</p></div>
         <div class="card warn reveal"><h3><span class="nw">오해 주의</span></h3><p>"고체 입자는 움직이지 않는다" <span class="nw">(X)</span> → 제자리에서 <b>진동</b>한다.</p></div>
@@ -428,15 +427,15 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
     <div class="card reveal" style="margin-bottom:18px"><span class="nw"><b>상태 변화</b> :</span> 물질의 온도가 높아지거나 낮아지면서 상태가 <span class="nw">변하는 것.</span></div>
     <div class="grid g2" style="grid-template-columns:1fr 1.15fr">
         <div class="svgbox reveal">
-            <svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg">
-                <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#C2186B"/></marker></defs>
-                <g stroke="#C2186B" stroke-width="3" fill="rgba(194,24,107,.10)"><rect x="20" y="410" width="200" height="80" rx="10"/><rect x="280" y="40" width="200" height="80" rx="10"/><rect x="540" y="410" width="200" height="80" rx="10"/></g>
-                <text class="b" x="120" y="462" text-anchor="middle">고체</text><text class="b" x="380" y="92" text-anchor="middle">액체</text><text class="b" x="640" y="462" text-anchor="middle">기체</text>
-                <g stroke="#C2186B" stroke-width="3" marker-end="url(#ar)" fill="none"><path d="M70 400 L280 130"/><path d="M330 130 L120 400" /><path d="M440 130 L650 400"/><path d="M590 400 L390 130"/><path d="M230 450 L530 450"/><path d="M540 480 L230 480" stroke-dasharray="8 6"/></g>
-                <text x="150" y="275" text-anchor="end">융해</text><text x="250" y="275" text-anchor="start">응고</text>
-                <text x="580" y="275" text-anchor="start">기화</text><text x="458" y="275" text-anchor="end">액화</text>
-                <text class="b" x="380" y="440" text-anchor="middle">승화</text>
-                <text class="w" x="380" y="515" text-anchor="middle">승화는 양방향</text>
+            <svg class="tri" viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg">
+                <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#C2186B"/></marker></defs>
+                <g stroke="#C2186B" stroke-width="3" fill="rgba(194,24,107,.10)"><rect x="10" y="440" width="180" height="70" rx="10"/><rect x="190" y="30" width="180" height="70" rx="10"/><rect x="370" y="440" width="180" height="70" rx="10"/></g>
+                <text class="b" x="100" y="487" text-anchor="middle">고체</text><text class="b" x="280" y="77" text-anchor="middle">액체</text><text class="b" x="460" y="487" text-anchor="middle">기체</text>
+                <g stroke="#C2186B" stroke-width="4" marker-end="url(#ar)" fill="none"><path d="M70 432 L218 108"/><path d="M262 108 L132 432"/><path d="M490 432 L342 108"/><path d="M298 108 L428 432"/><path d="M196 462 L364 462"/><path d="M364 494 L196 494" stroke-dasharray="8 6"/></g>
+                <text x="126" y="276" text-anchor="end">융해</text><text x="214" y="276" text-anchor="start">응고</text>
+                <text x="434" y="276" text-anchor="start">액화</text><text x="346" y="276" text-anchor="end">기화</text>
+                <text class="b" x="280" y="440" text-anchor="middle">승화</text>
+                <text class="w" x="280" y="548" text-anchor="middle">승화는 양방향</text>
             </svg>
         </div>
         <div class="card hl reveal">
@@ -518,24 +517,24 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
     <h2>상태 변화 중에는 온도가 일정 <small>p.136, 140</small></h2>
     <div class="grid g2">
         <div class="svgbox reveal">
-            <svg viewBox="0 0 800 440" style="max-height:388px" xmlns="http://www.w3.org/2000/svg">
-                <text class="b" x="400" y="30" text-anchor="middle">가열 곡선</text>
-                <g stroke="#261A52" stroke-width="2" fill="none"><path d="M70 50 L70 390 L780 390"/></g>
-                <text x="10" y="60">온도</text><text x="700" y="425">가열 시간</text>
-                <polyline points="70,360 180,270 330,270 430,190 580,190 770,90" fill="none" stroke="#C2186B" stroke-width="5"/>
-                <text x="150" y="350">고체</text><text x="170" y="250">고체+액체</text><text x="215" y="300" class="b">융해</text>
-                <text x="690" y="70">기체</text><text x="440" y="250">액체</text><text x="440" y="165" class="w">액체+기체</text><text x="560" y="225" class="b">기화</text>
+            <svg class="crv" viewBox="0 0 560 440" style="max-height:388px" xmlns="http://www.w3.org/2000/svg">
+                <text class="b" x="300" y="30" text-anchor="middle">가열 곡선</text>
+                <g stroke="#261A52" stroke-width="2" fill="none"><path d="M60 50 L60 390 L548 390"/></g>
+                <text x="6" y="48">온도</text><text x="420" y="428">가열 시간</text>
+                <polyline points="60,360 135,270 238,270 306,190 409,190 535,90" fill="none" stroke="#C2186B" stroke-width="5"/>
+                <text x="100" y="350">고체</text><text x="186" y="304" text-anchor="middle">고체+액체</text><text x="186" y="248" text-anchor="middle" class="b">융해</text>
+                <text x="468" y="76">기체</text><text x="326" y="262">액체</text><text x="357" y="166" text-anchor="middle" class="w">액체+기체</text><text x="357" y="224" text-anchor="middle" class="b">기화</text>
             </svg>
         </div>
         <div class="svgbox reveal">
-            <svg viewBox="0 0 800 440" style="max-height:388px" xmlns="http://www.w3.org/2000/svg">
-                <text class="b" x="400" y="30" text-anchor="middle">냉각 곡선</text>
-                <g stroke="#261A52" stroke-width="2" fill="none"><path d="M70 50 L70 390 L780 390"/></g>
-                <text x="10" y="60">온도</text><text x="700" y="425">냉각 시간</text>
-                <polyline points="70,90 220,170 370,170 470,260 620,260 770,350" fill="none" stroke="#C2186B" stroke-width="5"/>
-                <text x="80" y="75">기체</text><text x="240" y="150" class="b">액화</text>
-                <text x="425" y="195">액체</text><text x="500" y="240" class="b">응고</text>
-                <text x="480" y="305">액체+고체</text><text x="690" y="285">고체</text>
+            <svg class="crv" viewBox="0 0 560 440" style="max-height:388px" xmlns="http://www.w3.org/2000/svg">
+                <text class="b" x="300" y="30" text-anchor="middle">냉각 곡선</text>
+                <g stroke="#261A52" stroke-width="2" fill="none"><path d="M60 50 L60 390 L548 390"/></g>
+                <text x="6" y="48">온도</text><text x="420" y="428">냉각 시간</text>
+                <polyline points="60,90 163,170 266,170 335,260 438,260 535,350" fill="none" stroke="#C2186B" stroke-width="5"/>
+                <text x="72" y="76">기체</text><text x="215" y="148" text-anchor="middle" class="b">액화</text>
+                <text x="196" y="210" text-anchor="middle">액체</text><text x="386" y="238" text-anchor="middle" class="b">응고</text>
+                <text x="386" y="306" text-anchor="middle">액체+고체</text><text x="455" y="250">고체</text>
             </svg>
         </div>
     </div>

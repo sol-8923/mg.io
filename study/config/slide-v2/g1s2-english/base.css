@@ -300,3 +300,15 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
 
 /* 표지 제목의 아포스트로피(Doesn't)가 글꼴에서 높게 떠 벌어져 보이는 것을 붙여 준다 (2026-11-17) */
 .cover h1 .ap { font-style: normal; display: inline-block; margin: 0 -.1em 0 -.08em; transform: translateY(.05em); }
+
+/* ===== 도식 카드 (HTML 글자 + 글자 없는 SVG 아이콘; 폰에서도 글자 크기 유지) (2026-11-17) ===== */
+.dg { display: grid; gap: 14px; align-items: stretch; }
+.dg .dc { background: #EEF5FF; border: 4px solid var(--line); border-radius: 24px; padding: 12px 14px 14px; text-align: center; font-size: 26px; line-height: 1.35; display: flex; flex-direction: column; justify-content: space-between; }
+.dg .dc .t { font-family: var(--font-display); font-size: 30px; color: var(--brass); font-weight: 700; margin: 2px 0 4px; }
+.dg .dc svg { display: block; width: 100%; max-width: 280px; height: auto; margin: 6px auto 10px; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .dg { grid-template-columns: 1fr !important; gap: 10px; }
+    .dg .dc { font-size: 17px; border-width: 3px; border-radius: 18px; padding: 8px 12px 10px; }
+    .dg .dc .t { font-size: 20px; }
+    .dg .dc svg { max-width: 130px; margin: 2px auto 4px; }
+}

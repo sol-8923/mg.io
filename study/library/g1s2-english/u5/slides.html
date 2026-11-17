@@ -312,6 +312,18 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
 
 /* 표지 제목의 아포스트로피(Doesn't)가 글꼴에서 높게 떠 벌어져 보이는 것을 붙여 준다 (2026-11-17) */
 .cover h1 .ap { font-style: normal; display: inline-block; margin: 0 -.1em 0 -.08em; transform: translateY(.05em); }
+
+/* ===== 도식 카드 (HTML 글자 + 글자 없는 SVG 아이콘; 폰에서도 글자 크기 유지) (2026-11-17) ===== */
+.dg { display: grid; gap: 14px; align-items: stretch; }
+.dg .dc { background: #EEF5FF; border: 4px solid var(--line); border-radius: 24px; padding: 12px 14px 14px; text-align: center; font-size: 26px; line-height: 1.35; display: flex; flex-direction: column; justify-content: space-between; }
+.dg .dc .t { font-family: var(--font-display); font-size: 30px; color: var(--brass); font-weight: 700; margin: 2px 0 4px; }
+.dg .dc svg { display: block; width: 100%; max-width: 280px; height: auto; margin: 6px auto 10px; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .dg { grid-template-columns: 1fr !important; gap: 10px; }
+    .dg .dc { font-size: 17px; border-width: 3px; border-radius: 18px; padding: 8px 12px 10px; }
+    .dg .dc .t { font-size: 20px; }
+    .dg .dc svg { max-width: 130px; margin: 2px auto 4px; }
+}
 </style>
 </head>
 <body>
@@ -332,12 +344,24 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
 <rect x="300" y="230" width="350" height="420" rx="6" fill="#EEF5FF" stroke="#14233F" stroke-width="6"/>
 <path d="M300 560 Q380 470 450 540 Q520 600 650 480 L650 650 L300 650Z" fill="#8DB3E6"/>
 <circle cx="560" cy="330" r="36" fill="#FFE08A"/>
-<ellipse cx="770" cy="912" rx="190" ry="26" fill="#0F2547" opacity=".45"/>
-<circle cx="770" cy="740" r="170" fill="#C23B22" stroke="#14233F" stroke-width="8"/>
-<path d="M670 650 Q700 600 770 596" stroke="#FFB8A6" stroke-width="16" fill="none" stroke-linecap="round"/>
-<rect x="800" y="250" width="110" height="110" fill="#FFC83D" stroke="#14233F" stroke-width="5"/>
-<rect x="740" y="380" width="110" height="110" fill="#F7A8C8" stroke="#14233F" stroke-width="5"/>
-<rect x="860" y="420" width="110" height="110" fill="#8FE3F4" stroke="#14233F" stroke-width="5"/>
+<ellipse cx="850" cy="912" rx="160" ry="22" fill="#0F2547" opacity=".45"/>
+<circle cx="840" cy="760" r="150" fill="#C23B22" stroke="#14233F" stroke-width="8"/>
+<path d="M702 700 Q840 640 978 700 M692 770 Q840 710 988 770 M702 840 Q840 780 978 840" stroke="#FFE08A" stroke-width="10" fill="none" stroke-linecap="round" opacity=".85"/>
+<path d="M840 610 L840 910" stroke="#8F2814" stroke-width="6" opacity=".6"/>
+<path d="M918 842 Q960 800 972 740 Q990 810 940 880Z" fill="#8F2814" opacity=".45"/>
+<path d="M742 662 Q770 622 830 612" stroke="#FFB8A6" stroke-width="16" fill="none" stroke-linecap="round"/>
+<path d="M800 250 L910 250 L910 326 L876 360 L800 360Z" fill="#FFC83D" stroke="#14233F" stroke-width="5" stroke-linejoin="round"/>
+<path d="M876 360 L876 326 L910 326Z" fill="#E0A21C" stroke="#14233F" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="855" cy="266" r="8" fill="#C23B22" stroke="#14233F" stroke-width="3"/>
+<path d="M816 292 L894 292 M816 312 L894 312 M816 332 L856 332" stroke="#14233F" stroke-width="4" opacity=".4" stroke-linecap="round"/>
+<path d="M740 380 L850 380 L850 456 L816 490 L740 490Z" fill="#F7A8C8" stroke="#14233F" stroke-width="5" stroke-linejoin="round"/>
+<path d="M816 490 L816 456 L850 456Z" fill="#DE7FAA" stroke="#14233F" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="795" cy="396" r="8" fill="#2D5A8C" stroke="#14233F" stroke-width="3"/>
+<path d="M756 422 L834 422 M756 442 L834 442 M756 462 L796 462" stroke="#14233F" stroke-width="4" opacity=".4" stroke-linecap="round"/>
+<path d="M860 420 L970 420 L970 496 L936 530 L860 530Z" fill="#8FE3F4" stroke="#14233F" stroke-width="5" stroke-linejoin="round"/>
+<path d="M936 530 L936 496 L970 496Z" fill="#56BFD6" stroke="#14233F" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="915" cy="436" r="8" fill="#C23B22" stroke="#14233F" stroke-width="3"/>
+<path d="M876 462 L954 462 M876 482 L954 482 M876 502 L916 502" stroke="#14233F" stroke-width="4" opacity=".4" stroke-linecap="round"/>
 </svg>
 
     <div class="kicker reveal">1학년 2학기 <span class="nw">영어 · Lesson 5</span> <span class="nw">교과 정리</span></div>
@@ -517,19 +541,20 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
                 <li>수가 많으면 <b>many</b> : There are <b>many</b> teddy bears.</li>
             </ul>
         </div>
-        <div class="svgbox reveal"><svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="6" width="240" height="288" rx="24" fill="#EEF5FF" stroke="#4F86C6" stroke-width="4"/>
-<rect x="260" y="6" width="514" height="288" rx="24" fill="#EEF5FF" stroke="#4F86C6" stroke-width="4"/>
-<text class="b" x="126" y="52" text-anchor="middle">a few pens</text>
-<text class="b" x="517" y="52" text-anchor="middle">many pens</text>
+        <div class="dg reveal" style="grid-template-columns:1fr 2fr">
+            <div class="dc"><div class="t">a few pens</div><svg viewBox="0 0 240 110" xmlns="http://www.w3.org/2000/svg">
 <g stroke="#14233F" stroke-width="3" fill="#39B8E8">
-<rect x="46" y="96" width="18" height="90" rx="6"/><rect x="116" y="96" width="18" height="90" rx="6"/><rect x="186" y="96" width="18" height="90" rx="6"/>
-<rect x="286" y="96" width="16" height="90" rx="6"/><rect x="326" y="96" width="16" height="90" rx="6"/><rect x="366" y="96" width="16" height="90" rx="6"/><rect x="406" y="96" width="16" height="90" rx="6"/><rect x="446" y="96" width="16" height="90" rx="6"/><rect x="486" y="96" width="16" height="90" rx="6"/><rect x="526" y="96" width="16" height="90" rx="6"/><rect x="566" y="96" width="16" height="90" rx="6"/><rect x="606" y="96" width="16" height="90" rx="6"/><rect x="646" y="96" width="16" height="90" rx="6"/><rect x="686" y="96" width="16" height="90" rx="6"/><rect x="726" y="96" width="16" height="90" rx="6"/>
+<rect x="46" y="10" width="20" height="90" rx="7"/><rect x="110" y="10" width="20" height="90" rx="7"/><rect x="174" y="10" width="20" height="90" rx="7"/>
 </g>
-<text x="126" y="246" text-anchor="middle">조금 (몇 개)</text>
-<text x="517" y="246" text-anchor="middle">많이 (수가 많을 때)</text>
 </svg>
-</div>
+<div>조금 (몇 개)</div></div>
+            <div class="dc"><div class="t">many pens</div><svg viewBox="0 0 480 110" xmlns="http://www.w3.org/2000/svg">
+<g stroke="#14233F" stroke-width="3" fill="#39B8E8">
+<rect x="14" y="10" width="16" height="90" rx="6"/><rect x="54" y="10" width="16" height="90" rx="6"/><rect x="94" y="10" width="16" height="90" rx="6"/><rect x="134" y="10" width="16" height="90" rx="6"/><rect x="174" y="10" width="16" height="90" rx="6"/><rect x="214" y="10" width="16" height="90" rx="6"/><rect x="254" y="10" width="16" height="90" rx="6"/><rect x="294" y="10" width="16" height="90" rx="6"/><rect x="334" y="10" width="16" height="90" rx="6"/><rect x="374" y="10" width="16" height="90" rx="6"/><rect x="414" y="10" width="16" height="90" rx="6"/><rect x="454" y="10" width="16" height="90" rx="6"/>
+</g>
+</svg>
+<div>많이 (수가 많을 때)</div></div>
+        </div>
     </div>
     <div class="grid g2" style="margin-top:20px">
         <div class="card warn xs reveal">
@@ -575,32 +600,25 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
     <div class="kicker">본문 사실 확인 · 읽기 후</div>
     <h2>도시별 · 사실 확인표 <small>p.88~90 · p.95</small></h2>
     <div class="grid g2">
-        <div class="svgbox reveal"><svg viewBox="0 0 780 420" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="6" width="248" height="408" rx="24" fill="#EEF5FF" stroke="#4F86C6" stroke-width="4"/>
-<rect x="266" y="6" width="248" height="408" rx="24" fill="#EEF5FF" stroke="#4F86C6" stroke-width="4"/>
-<rect x="526" y="6" width="248" height="408" rx="24" fill="#EEF5FF" stroke="#4F86C6" stroke-width="4"/>
-<text class="b" x="130" y="48" text-anchor="middle">Sydney</text>
-<text class="b" x="390" y="48" text-anchor="middle">London</text>
-<text class="b" x="650" y="48" text-anchor="middle">Taipei</text>
-<circle cx="150" cy="140" r="38" fill="#C23B22" stroke="#14233F" stroke-width="4"/>
-<circle cx="70" cy="112" r="13" fill="#FFC83D" stroke="#14233F" stroke-width="3"/>
-<path d="M70 125 L70 170 M70 142 L104 132 M70 170 L56 198 M70 170 L86 198" stroke="#14233F" stroke-width="4" fill="none"/>
-<path d="M340 140 Q390 90 440 140 Q390 190 340 140Z" fill="#fff" stroke="#14233F" stroke-width="4"/>
-<circle cx="390" cy="140" r="20" fill="#2D5A8C" stroke="#14233F" stroke-width="3"/>
-<rect x="600" y="112" width="100" height="68" rx="10" fill="#FFC83D" stroke="#14233F" stroke-width="4"/>
-<circle cx="650" cy="146" r="20" fill="#fff" stroke="#14233F" stroke-width="4"/>
-<polygon points="624,112 632,98 668,98 676,112" fill="#14233F"/>
-<text x="130" y="262" text-anchor="middle">공과 함께</text>
-<text x="130" y="292" text-anchor="middle">놀았다</text>
-<text class="b" x="130" y="336" text-anchor="middle">played with</text>
-<text x="390" y="262" text-anchor="middle">그냥 바라보며</text>
-<text x="390" y="292" text-anchor="middle">이야기했다</text>
-<text class="b" x="390" y="336" text-anchor="middle">talked about</text>
-<text x="650" y="262" text-anchor="middle">어디든 따라다니며</text>
-<text x="650" y="292" text-anchor="middle">사진을 찍었다</text>
-<text class="b" x="650" y="336" text-anchor="middle">took pictures</text>
+        <div class="dg reveal" style="grid-template-columns:1fr 1fr 1fr">
+            <div class="dc"><div class="t">Sydney</div><svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg">
+<circle cx="120" cy="90" r="38" fill="#C23B22" stroke="#14233F" stroke-width="4"/>
+<circle cx="40" cy="62" r="13" fill="#FFC83D" stroke="#14233F" stroke-width="3"/>
+<path d="M40 75 L40 120 M40 92 L74 82 M40 120 L26 148 M40 120 L56 148" stroke="#14233F" stroke-width="4" fill="none"/>
 </svg>
-</div>
+<div>공과 함께 놀았다</div><div class="t">played with</div></div>
+            <div class="dc"><div class="t">London</div><svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 85 Q100 35 150 85 Q100 135 50 85Z" fill="#fff" stroke="#14233F" stroke-width="4"/>
+<circle cx="100" cy="85" r="20" fill="#2D5A8C" stroke="#14233F" stroke-width="3"/>
+</svg>
+<div>그냥 바라보며 이야기했다</div><div class="t">talked about</div></div>
+            <div class="dc"><div class="t">Taipei</div><svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg">
+<rect x="50" y="62" width="100" height="68" rx="10" fill="#FFC83D" stroke="#14233F" stroke-width="4"/>
+<circle cx="100" cy="96" r="20" fill="#fff" stroke="#14233F" stroke-width="4"/>
+<polygon points="74,62 82,48 118,48 126,62" fill="#14233F"/>
+</svg>
+<div>어디든 따라다니며 사진을 찍었다</div><div class="t">took pictures</div></div>
+        </div>
         <div>
             <table class="t tight">
                 <tr><td>공 크기</td><td><b>4.57 meters tall</b>, <b>113 kilograms</b></td></tr>

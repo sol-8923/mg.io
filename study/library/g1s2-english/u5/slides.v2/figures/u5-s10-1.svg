@@ -1,25 +1,5 @@
-<svg viewBox="0 0 780 420" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="6" width="248" height="408" rx="24" fill="#EEF5FF" stroke="#4F86C6" stroke-width="4"/>
-<rect x="266" y="6" width="248" height="408" rx="24" fill="#EEF5FF" stroke="#4F86C6" stroke-width="4"/>
-<rect x="526" y="6" width="248" height="408" rx="24" fill="#EEF5FF" stroke="#4F86C6" stroke-width="4"/>
-<text class="b" x="130" y="48" text-anchor="middle">Sydney</text>
-<text class="b" x="390" y="48" text-anchor="middle">London</text>
-<text class="b" x="650" y="48" text-anchor="middle">Taipei</text>
-<circle cx="150" cy="140" r="38" fill="#C23B22" stroke="#14233F" stroke-width="4"/>
-<circle cx="70" cy="112" r="13" fill="#FFC83D" stroke="#14233F" stroke-width="3"/>
-<path d="M70 125 L70 170 M70 142 L104 132 M70 170 L56 198 M70 170 L86 198" stroke="#14233F" stroke-width="4" fill="none"/>
-<path d="M340 140 Q390 90 440 140 Q390 190 340 140Z" fill="#fff" stroke="#14233F" stroke-width="4"/>
-<circle cx="390" cy="140" r="20" fill="#2D5A8C" stroke="#14233F" stroke-width="3"/>
-<rect x="600" y="112" width="100" height="68" rx="10" fill="#FFC83D" stroke="#14233F" stroke-width="4"/>
-<circle cx="650" cy="146" r="20" fill="#fff" stroke="#14233F" stroke-width="4"/>
-<polygon points="624,112 632,98 668,98 676,112" fill="#14233F"/>
-<text x="130" y="262" text-anchor="middle">공과 함께</text>
-<text x="130" y="292" text-anchor="middle">놀았다</text>
-<text class="b" x="130" y="336" text-anchor="middle">played with</text>
-<text x="390" y="262" text-anchor="middle">그냥 바라보며</text>
-<text x="390" y="292" text-anchor="middle">이야기했다</text>
-<text class="b" x="390" y="336" text-anchor="middle">talked about</text>
-<text x="650" y="262" text-anchor="middle">어디든 따라다니며</text>
-<text x="650" y="292" text-anchor="middle">사진을 찍었다</text>
-<text class="b" x="650" y="336" text-anchor="middle">took pictures</text>
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg">
+<circle cx="120" cy="90" r="38" fill="#C23B22" stroke="#14233F" stroke-width="4"/>
+<circle cx="40" cy="62" r="13" fill="#FFC83D" stroke="#14233F" stroke-width="3"/>
+<path d="M40 75 L40 120 M40 92 L74 82 M40 120 L26 148 M40 120 L56 148" stroke="#14233F" stroke-width="4" fill="none"/>
 </svg>

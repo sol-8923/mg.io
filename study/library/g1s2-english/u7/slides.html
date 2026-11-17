@@ -312,6 +312,18 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
 
 /* 표지 제목의 아포스트로피(Doesn't)가 글꼴에서 높게 떠 벌어져 보이는 것을 붙여 준다 (2026-11-17) */
 .cover h1 .ap { font-style: normal; display: inline-block; margin: 0 -.1em 0 -.08em; transform: translateY(.05em); }
+
+/* ===== 도식 카드 (HTML 글자 + 글자 없는 SVG 아이콘; 폰에서도 글자 크기 유지) (2026-11-17) ===== */
+.dg { display: grid; gap: 14px; align-items: stretch; }
+.dg .dc { background: #EEF5FF; border: 4px solid var(--line); border-radius: 24px; padding: 12px 14px 14px; text-align: center; font-size: 26px; line-height: 1.35; display: flex; flex-direction: column; justify-content: space-between; }
+.dg .dc .t { font-family: var(--font-display); font-size: 30px; color: var(--brass); font-weight: 700; margin: 2px 0 4px; }
+.dg .dc svg { display: block; width: 100%; max-width: 280px; height: auto; margin: 6px auto 10px; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .dg { grid-template-columns: 1fr !important; gap: 10px; }
+    .dg .dc { font-size: 17px; border-width: 3px; border-radius: 18px; padding: 8px 12px 10px; }
+    .dg .dc .t { font-size: 20px; }
+    .dg .dc svg { max-width: 130px; margin: 2px auto 4px; }
+}
 </style>
 </head>
 <body>
@@ -536,14 +548,17 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
             <p class="dim">본문 : <i>Julie and Mike gave 40 dollars to Julie's father.</i> p.121</p>
         </div>
     </div>
-    <div class="card warn reveal" style="margin-top:20px">
+    <div class="card warn reveal" style="margin-top:14px">
         <h3><span class="tag">참고</span>자주 하는 오류 : 틀린 문장 → 고친 문장</h3>
         <p>✕ <i>gave 40 dollars Mr. Leigh</i> → ○ <b>gave Mr. Leigh 40 dollars</b> (간접목적어 → 직접목적어 순서)</p>
         <p>✕ <i>gave Mr. Leigh to 40 dollars</i> / <i>gave to Mr. Leigh 40 dollars</i> → ○ <b>gave 40 dollars to Mr. Leigh</b> (전치사는 3형식에만)</p>
         <p>✕ <i>He made a cake to me</i> → ○ <b>made a cake for me</b> / ✕ <i>He gave a book for me</i> → ○ <b>gave a book to me</b></p>
         <p>✕ <i>told to me a story</i> → ○ <b>told me a story</b> / told a story to me (4형식에는 전치사를 넣지 않는다)</p>
     </div>
-    <p style="margin-top:14px"><span class="lb">Practice</span><span class="dim">교사용 정답</span> He will make his mom a cake. / He will write his dad a letter. / He will send his grandparents flowers.</p>
+    <div class="card hl reveal" style="margin-top:14px;padding:10px 22px">
+        <h3 style="margin-bottom:4px">Practice <span class="tag">교사용 정답</span></h3>
+        <p>He will make his mom a cake. / He will write his dad a letter. / He will send his grandparents flowers.</p>
+    </div>
     <div class="pg">7</div>
 </section>
 
@@ -551,11 +566,11 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
 <section class="slide">
     <div class="kicker">언어 형식 2 · have to</div>
     <h2>have to 의무와 불필요 <small>p.<span class="nw">123</span></small></h2>
-    <div class="grid g2" style="grid-template-columns:1.6fr 1fr">
-        <table class="t reveal" style="font-size:24px">
+    <div class="grid g2" style="grid-template-columns:1.3fr 1fr">
+        <table class="t tight reveal" style="font-size:24px">
             <tr><th>의미·형태</th><th>뜻·예</th></tr>
             <tr><td>have to + 동사원형</td><td>~해야 한다(의무) <i>You have to pay for the window.</i></td></tr>
-            <tr><td>has to</td><td>3인칭 단수 <i>Susan has to take responsibility…</i></td></tr>
+            <tr><td>has to</td><td>3인칭 단수<br><i>Susan has to take responsibility…</i></td></tr>
             <tr><td>don't (doesn't) have to</td><td>~할 필요가 없다 <i>We don't have to go to school tomorrow.</i></td></tr>
             <tr><td>의문문 : Do/Does + 주어 + have to ~? <span class="ref">지도서</span>322</td><td><i>Do you have to go now?</i></td></tr>
             <tr><td>과거·미래 : had to / will have to <span class="ref">지도서</span>322</td><td>과거 <i>They had to pay for the broken window.</i><br>미래 <i>She will have to finish her report by tomorrow.</i></td></tr>
@@ -571,12 +586,12 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
                 <h3>Practice <span class="tag">교사용 정답</span></h3>
                 <p>Spot is hungry. I <b>have to</b> feed him.</p>
                 <p>The table is dirty. I <b>have to</b> clean it.</p>
-                <p style="font-size:23px">I already watered the plants. I <b>don't have to</b> water them.</p>
+                <p>I already watered the plants. I <b>don't have to</b> water them.</p>
             </div>
         </div>
     </div>
-    <div class="card warn reveal" style="margin-top:6px;font-size:24px;padding:6px 24px">
-        <h3 style="margin:0 0 4px"><span class="tag">참고</span>자주 하는 오류 : 틀린 문장 → 고친 문장</h3>
+    <div class="card warn reveal" style="margin-top:10px;font-size:25px;line-height:1.5;padding:8px 26px 10px">
+        <h3 style="margin:0 0 6px"><span class="tag">참고</span>자주 하는 오류 : 틀린 문장 → 고친 문장</h3>
         <p style="margin:0">✕ <i>I have to pays / to paying</i> → ○ <b>I have to pay</b> · ✕ <i>Susan have to</i> → ○ <b>Susan has to</b></p>
         <p style="margin:0">✕ <i>Does she has to ~?</i> → ○ <b>Does she have to ~?</b> · ✕ <i>He has to went</i> → ○ <b>He had to go</b></p>
         <p style="margin:0">✕ <i>We don't have to go</i> = '가면 안 된다로 해석' → ○ <b>'갈 필요가 없다'</b> (금지는 must not)</p>
@@ -625,7 +640,7 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
     <div class="kicker">듣기·활동 정리 <span class="tag" style="background:#fff">교사용 정답 · 참고</span></div>
     <h2>듣기 정답과 가격·화폐 <small>p.<span class="nw">114~117 · 125~126</span></small></h2>
     <div class="grid g2">
-        <table class="t reveal">
+        <table class="t tight reveal">
             <tr><th>활동</th><th>정답·내용</th></tr>
             <tr><td>Listen and Number p.114</td><td>1 옷 가게, 2 서점 (식료품 가게는 번호 없음)</td></tr>
             <tr><td>Listen and Choose p.114</td><td>정답 : 사이즈 28 청바지 → 탈의실에서 입어 볼 것이다</td></tr>
@@ -638,18 +653,18 @@ table.t.tight th, table.t.tight td { padding: 6px 14px; }
                 <h3>벼룩시장 역할극 p.116~117</h3>
                 <p>Seller는 물건 가격을 <b>1~10달러</b>로 정한다. Shopper는 다섯 개를 총 <b>20달러</b> 안에서 산다. <i>May I help you? → I'm looking for a backpack. → How about this one? → How much is it? → It's $5. → I'll take it.</i></p>
             </div>
-            <div class="card hl reveal" style="margin-top:18px">
+            <div class="card hl reveal" style="margin-top:12px">
                 <h3>큰 숫자 읽기·가격 어법</h3>
                 <p>1,000 one thousand · 10,000 ten thousand · 100,000 one hundred thousand · 1,000,000 one million. <b>thousand·million에는 -s를 붙이지 않는다</b>(<i>twenty thousand dollars</i> ○). 가격은 <i>How much</i>로 묻는다.</p>
             </div>
         </div>
     </div>
-    <table class="t reveal" style="margin-top:20px">
+    <table class="t tight reveal" style="margin-top:14px">
         <tr><th>currency 이름 p.125</th><th>미국 Jenny</th><th>중국 Mei</th><th>태국 Anurak</th><th>프랑스 Julien</th></tr>
         <tr><td>단위</td><td>dollars</td><td>yuan</td><td>baht</td><td>euros</td></tr>
         <tr><td>번 방법·금액</td><td>삼촌 차를 닦아 16</td><td>할머니가 새해에 160</td><td>헌 책을 팔아 35</td><td>이웃의 개를 산책시켜 18</td></tr>
     </table>
-    <p class="dim" style="margin-top:12px">Project p.126 : 용돈 10,000원 사용처 조사·그래프 발표 · Think and Write p.124 : <i>I had ~. I spent it on ~. I saved ~.</i></p>
+    <p class="dim" style="margin-top:8px;line-height:1.4">Project p.126 : 용돈 10,000원 사용처 조사·그래프 발표 · Think and Write p.124 : <i>I had ~. I spent it on ~. I saved ~.</i></p>
     <div class="pg">10</div>
 </section>
 

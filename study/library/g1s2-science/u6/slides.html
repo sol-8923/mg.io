@@ -258,6 +258,10 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
     .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
     .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
 }
+/* 보일 법칙 그래프(u6 장 5) */
+.svgbox svg.bl { height: 460px; }
+.svgbox svg.bl text { font-size: 32px; }
+@media (max-width: 1100px) and (orientation: portrait) { .svgbox svg.bl { height: auto; } }
 </style>
 </head>
 <body>
@@ -406,12 +410,12 @@ body.editing [contenteditable] { outline: 2px dashed var(--brass); }
             </ul>
         </div>
         <div class="svgbox reveal">
-            <svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#261A52" stroke-width="2" fill="none"><path d="M100 30 L100 370 L770 370"/></g>
-                <text x="110" y="40">부피(mL)</text><text x="560" y="415">압력(기압)</text>
-                <path d="M217.0 60.0 C219.2 65.2 221.3 75.1 230.0 91.0 C238.7 106.9 256.0 137.9 269.0 155.4 C282.0 172.8 292.8 183.1 308.0 195.6 C323.2 208.1 338.3 219.3 360.0 230.5 C381.7 241.7 412.0 254.0 438.0 262.7 C464.0 271.4 485.7 276.6 516.0 282.8 C546.3 289.1 581.0 295.0 620.0 300.2 C659.0 305.5 728.3 311.9 750.0 314.2" fill="none" stroke="#C2186B" stroke-width="5" stroke-linecap="round"/>
-                <g fill="#FFC83D"><circle cx="230" cy="91" r="9"/><circle cx="360" cy="230" r="9"/><circle cx="620" cy="300" r="9"/></g>
-                <text x="252" y="88">0.5기압 · 60 mL</text><text x="382" y="214">1.0기압 · 30 mL</text><text x="474" y="346">2.0기압 · 15 mL</text>
+            <svg class="bl" viewBox="0 0 560 440" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="#261A52" stroke-width="2" fill="none"><path d="M60 30 L60 370 L548 370"/></g>
+                <text x="70" y="40">부피(mL)</text><text x="400" y="418">압력(기압)</text>
+                <path d="M140.1 60.0 C141.7 65.2 143.1 75.1 149.1 91.0 C155.0 106.9 166.9 137.9 175.8 155.4 C184.7 172.8 192.1 183.1 202.5 195.6 C212.9 208.1 223.2 219.3 238.1 230.5 C253.0 241.7 273.7 254.0 291.5 262.7 C309.3 271.4 324.2 276.6 345.0 282.8 C365.7 289.1 389.5 295.0 416.2 300.2 C442.9 305.5 490.4 311.9 505.3 314.2" fill="none" stroke="#C2186B" stroke-width="5" stroke-linecap="round"/>
+                <g fill="#FFC83D" stroke="#261A52" stroke-width="2"><circle cx="149" cy="91" r="11"/><circle cx="238" cy="230" r="11"/><circle cx="416" cy="300" r="11"/></g>
+                <text x="164" y="82">0.5기압 · 60 mL</text><text x="253" y="212">1.0기압 · 30 mL</text><text x="276" y="350">2.0기압 · 15 mL</text>
             </svg>
         </div>
     </div>

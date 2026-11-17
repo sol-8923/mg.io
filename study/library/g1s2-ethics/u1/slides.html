@@ -349,6 +349,46 @@ ul.l li::after { display: none; }
 .deck-stage > .slide:nth-child(11) { --z: 1.35; }
 .deck-stage > .slide:nth-child(12) { --z: 1.08; }
 
+
+/* ===== 폰 도식 카드 (flow-m): 가로 스크롤 SVG 대신 세로 카드 ===== */
+.flow-m { display: none; }
+.fm-nowrap { white-space: nowrap; }
+h2, .cover h1 { word-spacing: -0.15em; }
+h2 small { word-spacing: normal; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .svgbox.sx { display: none !important; }
+    .swipe-hint { display: none !important; }
+    .flow-m { display: block; margin: 8px 0 2px; }
+    h2 { word-break: keep-all; text-wrap: balance; }
+    .slide .flow-m div.fm-box { text-wrap: balance; box-sizing: border-box; background: #fff; border: 3px solid #2b6cb0; border-radius: 14px; padding: 10px 12px; text-align: center; font-size: 20px !important; font-weight: 700; line-height: 1.35; color: #1c3a5e; }
+    .slide .flow-m .fm-box b { display: block; font-weight: 700; color: inherit; }
+    .slide .flow-m .fm-box span { display: block; font-weight: 600; }
+    .slide .flow-m div.fm-box.b { background: #1f6fb5; border-color: #1f6fb5; color: #fff; }
+    .slide .flow-m div.fm-box.g { background: #2f7d46; border-color: #2f7d46; color: #fff; }
+    .slide .flow-m div.fm-box.o { background: #a35a10; border-color: #a35a10; color: #fff; }
+    .slide .flow-m div.fm-box.lt { background: #dcecfa; }
+    .slide .flow-m div.fm-box.sg { border-color: #2f7d46; }
+    .slide .flow-m div.fm-box.so { border-color: #a35a10; color: #a35a10; }
+    .slide .flow-m div.fm-box.round { border-radius: 40px; }
+    .slide .flow-m div.fm-box.w1 { width: 52%; margin: 0 auto; }
+    .slide .flow-m div.fm-box.w2 { width: 64%; margin: 0 auto; }
+    .slide .flow-m div.fm-box.w3 { width: 76%; margin: 0 auto; }
+    .slide .flow-m div.fm-box.w4 { width: 88%; margin: 0 auto; }
+    .slide .flow-m div.fm-box.w5 { width: 100%; }
+    .slide .flow-m div.fm-arrow { text-align: center; font-size: 17px !important; font-weight: 800; color: #1c3a5e; line-height: 1.3; padding: 5px 4px; }
+    .slide .flow-m .fm-arrow i { display: block; font-style: normal; font-size: 24px; line-height: 1; margin-bottom: 1px; }
+    .slide .flow-m div.fm-note { text-align: center; font-size: 18px !important; font-weight: 700; color: #1c3a5e; margin: 10px 0 8px; line-height: 1.4; }
+    .slide .flow-m div.fm-head { text-align: center; font-size: 22px !important; font-weight: 800; color: #1c3a5e; margin: 0 0 6px; }
+    .slide .flow-m div.fm-stack { display: flex; flex-direction: column; gap: 8px; }
+    .slide .flow-m div.fm-col div.fm-box { padding: 10px 6px; }
+    .slide .flow-m div.fm-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .slide .flow-m div.fm-col { display: flex; flex-direction: column; gap: 8px; }
+    .slide .flow-m div.fm-pair { display: flex; flex-direction: column; }
+    .slide .flow-m div.fm-pair .fm-box:first-child { border-radius: 14px 14px 0 0; }
+    .slide .flow-m div.fm-pair .fm-box:last-child { border-radius: 0 0 14px 14px; border-top: 0; }
+    .slide .flow-m div.fm-gap { height: 10px; }
+    .slide .flow-m div.fm-sep { border-top: 2px dashed #b9c9b2; margin: 14px 0; }
+}
 </style>
 
 </head>
@@ -422,7 +462,7 @@ ul.l li::after { display: none; }
 <!-- === 3. 자아의 의미 === -->
 <section class="slide">
     <div class="kicker">01 나는 어떤 사람일까?</div>
-    <h2>자아의 의미 <small><span class="nw">p.12</span></small></h2>
+    <h2>자아의&nbsp;의미 <small><span class="nw">p.12</span></small></h2>
     <div class="card hl reveal" style="margin-bottom:24px">
         <p style="font-size:30px"><b>자아</b> : 자신에게 '나는 누구인가?'를 묻고 답을 찾는 과정에서 알게 되는 <b>나의 모습</b>. 특징·성격·능력·가치관뿐 아니라 <b>사회적 역할과 의무</b>도 들어간다.</p>
     </div>
@@ -460,7 +500,7 @@ ul.l li::after { display: none; }
 <!-- === 5. 가치 === -->
 <section class="slide">
     <div class="kicker">01 나는 어떤 사람일까?</div>
-    <h2>가치의 의미와 종류 <small><span class="nw">p.14</span></small></h2>
+    <h2>가치의 의미와&nbsp;종류 <small><span class="nw">p.14</span></small></h2>
     <div class="card hl reveal" style="margin-bottom:24px">
         <p style="font-size:30px"><b>가치</b> : 자신이 소중하게 여겨 추구하는 대상이나 목표 <span class="nw">(돈·직장·사랑·행복 등).</span></p>
     </div>
@@ -481,7 +521,7 @@ ul.l li::after { display: none; }
 <!-- === 6. 바람직한 가치와 가치관 === -->
 <section class="slide">
     <div class="kicker">01 나는 어떤 사람일까?</div>
-    <h2>바람직한 가치와 가치관 <small><span class="nw">p.14~15</span></small></h2>
+    <h2>바람직한 가치와&nbsp;가치관 <small><span class="nw">p.14~15</span></small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>바람직한 가치의 특징</h3>
@@ -508,7 +548,7 @@ ul.l li::after { display: none; }
 <!-- === 7. 도덕의 특성 === -->
 <section class="slide">
     <div class="kicker">02 도덕은 왜 필요할까?</div>
-    <h2>도덕의 특성 <small><span class="nw">p.16</span></small></h2>
+    <h2>도덕의&nbsp;특성 <small><span class="nw">p.16</span></small></h2>
     <div class="card hl reveal" style="margin-bottom:24px">
         <p style="font-size:30px"><b>도덕</b> : 사람으로서 마땅히 지켜야 할 도리이자, 도리에 따라 살아가려는 바른 품성.</p>
     </div>
@@ -536,7 +576,7 @@ ul.l li::after { display: none; }
 <!-- === 8. 도덕·법·예절 === -->
 <section class="slide">
     <div class="kicker">02 도덕은 왜 필요할까?</div>
-    <h2>도덕 · 법 · 예절 <small><span class="nw">p.17</span></small></h2>
+    <h2>도덕&nbsp;·&nbsp;법 ·&nbsp;예절 <small><span class="nw">p.17</span></small></h2>
     <table class="t reveal">
         <tr><th style="width:16%">구분</th><th style="width:44%">성격</th><th>지키게 하는 방식</th></tr>
         <tr><td>도덕</td><td>옳고 그름에 관한 <b>가치와 원칙</b></td><td>스스로 실천해야 해서 다른 사람이 <b>강제로 지키게 할 수 없다</b></td></tr>
@@ -552,7 +592,7 @@ ul.l li::after { display: none; }
 <!-- === 9. 도덕의 필요성 === -->
 <section class="slide">
     <div class="kicker">02 도덕은 왜 필요할까?</div>
-    <h2>도덕의 필요성 <small><span class="nw">p.18</span></small></h2>
+    <h2>도덕의&nbsp;필요성 <small><span class="nw">p.18</span></small></h2>
     <div class="grid g3">
         <div class="card hl reveal step">
             <span class="no">1</span><br>
@@ -580,7 +620,7 @@ ul.l li::after { display: none; }
 <!-- === 10. 도덕적 정체성 === -->
 <section class="slide">
     <div class="kicker">03 도덕적으로 살려면 어떻게 해야 할까?</div>
-    <h2>도덕적 정체성 <small><span class="nw">p.20</span></small></h2>
+    <h2>도덕적&nbsp;정체성 <small><span class="nw">p.20</span></small></h2>
     <div class="grid g2">
         <div class="card hl reveal">
             <h3>자아 정체성</h3>
@@ -610,6 +650,11 @@ ul.l li::after { display: none; }
                 <text x="845" y="161" text-anchor="middle" fill="#fff" font-size="28" font-weight="700">원동력</text>
             </svg>
         </div>
+        <div class="flow-m" aria-hidden="true">
+            <div class="fm-stack"><div class="fm-box">도덕적으로 행동하겠다는 마음가짐</div><div class="fm-box">자율적 실천</div><div class="fm-box">도덕적 책임감으로 도덕적 가치·기준에 따라 살려는 노력</div></div>
+            <div class="fm-arrow"><i>↓</i></div>
+            <div class="fm-box b">도덕적 행동의 원동력</div>
+        </div>
     </div>
     <div class="pg">8</div>
 </section>
@@ -617,7 +662,7 @@ ul.l li::after { display: none; }
 <!-- === 11. 정체성 형성 노력 === -->
 <section class="slide">
     <div class="kicker">03 도덕적으로 살려면 어떻게 해야 할까?</div>
-    <h2>도덕적 정체성을 형성하기 위한 노력 <small>4가지 · <span class="nw">p.22</span></small></h2>
+    <h2>도덕적 정체성을 형성하기 위한&nbsp;노력 <small>4가지 · <span class="nw">p.22</span></small></h2>
     <div class="grid g4">
         <div class="card hl reveal step">
             <span class="no">1</span><br>
@@ -654,7 +699,7 @@ ul.l li::after { display: none; }
 <!-- === 12. 관계 속의 나 === -->
 <section class="slide">
     <div class="kicker">특집 · 단원 탐구</div>
-    <h2>관계 속의 나 <small>특집 · <span class="nw">p.24~25</span></small></h2>
+    <h2>관계 속의&nbsp;나 <small>특집 · <span class="nw">p.24~25</span></small></h2>
     <div class="card reveal">
         <div class="swipe-hint" aria-hidden="true">← 옆으로 밀어서 보기 →</div>
         <div class="svgbox sx">
@@ -671,6 +716,13 @@ ul.l li::after { display: none; }
                 <path d="M740 220 H135 V132" stroke="#1c3a5e" stroke-width="4" fill="none" marker-end="url(#ar3)"/>
                 <text x="450" y="206" text-anchor="middle" fill="#1c3a5e" font-size="26" font-weight="700">환경에 적응하며 다른 개인이 된다</text>
             </svg>
+        </div>
+        <div class="flow-m" aria-hidden="true">
+            <div class="fm-box so">환경</div>
+            <div class="fm-arrow"><i>↓</i> 환경에 적응하며 다른 개인이 된다</div>
+            <div class="fm-box b">개인</div>
+            <div class="fm-arrow"><i>↓</i> 공동체에 영향을 미친다</div>
+            <div class="fm-box g">공동체</div>
         </div>
     </div>
     <div class="card hl reveal" style="margin-top:24px">
@@ -709,7 +761,7 @@ ul.l li::after { display: none; }
 <!-- === 12. 시험 포인트 · 핵심 정리 === -->
 <section class="slide">
     <div class="kicker">꼭 기억할 것</div>
-    <h2>시험 포인트와 핵심 정리 <small>쪽수는 교과서 기준</small></h2>
+    <h2>시험 포인트와 핵심&nbsp;정리 <small>쪽수는 교과서 기준</small></h2>
     <div class="grid g3">
         <div class="card hl reveal">
             <h3 style="font-size:40px"><span class="tag">01</span>나는 어떤 사람일까?</h3>
