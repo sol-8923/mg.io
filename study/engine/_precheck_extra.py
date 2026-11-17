@@ -112,6 +112,7 @@ for q in qs:
     nums = [NUMW[m] for m in re.findall(r"(한|두|세|네)\s*문장", cond)]
     if not nums: continue
     ma = q.get("modelAnswer", "") or ""
+    if not isinstance(ma, str): ma = " ".join(str(v) for v in (ma.values() if isinstance(ma, dict) else ma))   # 선택지별 dict·리스트 답안
     n = len([s for s in re.split(r"(?<=[.?!다요])\s+", re.sub(r"[‘“'\"]([^’”'\"]*)[’”'\"]", lambda m: m.group(0).replace(".", ""), ma)) if len(s.strip()) > 3])
     if n > sum(nums) + 1: W("%s: 서술형 문장 수 조건(합 %d문장)보다 모범 답안이 길어 보임(%d문장 추정) — 발문 조건을 지키는지 확인" % (q["id"], sum(nums), n))
 
@@ -142,6 +143,102 @@ def svg_boxes(svg):
         x0 = x - w / 2 if anc == "middle" else (x - w if anc == "end" else x)
         boxes.append((x0, y - fs * 0.8, x0 + w, y + fs * 0.2, inner))
     return W_, H_, boxes
+# ── R-H2. SVG 박스·선·화살표 점검(근사, 모두 ⚠) ─────────────
+_NUMRE = r"-?\d*\.?\d+(?:[eE]-?\d+)?"
+def _fa(a, k):
+    v = attr(a, k)
+    try: return float(v.replace("px", "")) if v is not None else None
+    except ValueError: return None
+def svg_rects(svg):
+    out = []
+    for m in re.finditer(r"<rect\b([^>]*?)/?>", svg):
+        a = m.group(1)
+        x, y, w, h = (_fa(a, "x") or 0.0), (_fa(a, "y") or 0.0), _fa(a, "width"), _fa(a, "height")
+        if w is None or h is None or w < 6 or h < 6: continue     # 범례 색 표시 같은 작은 사각형은 제외
+        out.append((x, y, x + w, y + h))
+    return out
+def _light_or_dashed(a):
+    """격자선·보조선(점선, 연한 색, 아주 가는 선)은 라벨 위를 지나도록 일부러 그리는 경우가 많아 선 점검에서 뺀다"""
+    if "stroke-dasharray" in a: return True
+    sw = _fa(a, "stroke-width")
+    if sw is not None and sw < 1: return True
+    col = (attr(a, "stroke", "") or "").lstrip("#")
+    if re.fullmatch(r"[0-9a-fA-F]{6}", col):
+        r_, g_, b_ = int(col[0:2], 16), int(col[2:4], 16), int(col[4:6], 16)
+        if 0.299 * r_ + 0.587 * g_ + 0.114 * b_ > 170: return True
+    if re.fullmatch(r"[0-9a-fA-F]{3}", col) and sum(int(ch, 16) for ch in col) > 33: return True
+    return False
+def svg_segments(svg):
+    """직선 선분 [(x1,y1,x2,y2)]와, 서브패스 M이 2개 이상인데 marker-end가 있는 path 수. 곡선(C·Q·A) 구간은 근사가 어려워 건너뜀"""
+    segs, multi = [], 0
+    for m in re.finditer(r"<line\b([^>]*?)/?>", svg):
+        v = [_fa(m.group(1), k) for k in ("x1", "y1", "x2", "y2")]
+        if None not in v and not _light_or_dashed(m.group(1)): segs.append(tuple(v))
+    for m in re.finditer(r"<path\b([^>]*?)/?>", svg):
+        a = m.group(1); d = attr(a, "d", "") or ""
+        if len(re.findall(r"[Mm]", d)) >= 2 and "marker-end" in a: multi += 1
+        if _light_or_dashed(a) or (attr(a, "fill", "black") or "black") != "none": continue    # 채워진 도형·보조선은 제외
+        cx = cy = sx = sy = 0.0; curve = False
+        for cmd, args in re.findall(r"([MmLlHhVvZzCcSsQqTtAa])([^MmLlHhVvZzCcSsQqTtAa]*)", d):
+            nums = [float(t) for t in re.findall(_NUMRE, args)]
+            rel = cmd.islower(); c = cmd.upper()
+            if c == "Z":
+                if (cx, cy) != (sx, sy) and not curve: segs.append((cx, cy, sx, sy))
+                cx, cy = sx, sy; continue
+            if c == "M" and len(nums) >= 2:
+                cx, cy = (cx + nums[0], cy + nums[1]) if rel else (nums[0], nums[1]); sx, sy = cx, cy; curve = False
+                for k in range(2, len(nums) - 1, 2):
+                    nx, ny = (cx + nums[k], cy + nums[k + 1]) if rel else (nums[k], nums[k + 1]); segs.append((cx, cy, nx, ny)); cx, cy = nx, ny
+            elif c == "L":
+                for k in range(0, len(nums) - 1, 2):
+                    nx, ny = (cx + nums[k], cy + nums[k + 1]) if rel else (nums[k], nums[k + 1]); segs.append((cx, cy, nx, ny)); cx, cy = nx, ny
+            elif c == "H":
+                for n_ in nums: nx = cx + n_ if rel else n_; segs.append((cx, cy, nx, cy)); cx = nx
+            elif c == "V":
+                for n_ in nums: ny = cy + n_ if rel else n_; segs.append((cx, cy, cx, ny)); cy = ny
+            elif nums:
+                curve = True
+                k = {"C": 6, "S": 4, "Q": 4, "T": 2, "A": 7}[c]
+                if len(nums) >= k: cx, cy = (cx + nums[k - 2], cy + nums[k - 1]) if rel else (nums[k - 2], nums[k - 1])
+    return segs, multi
+def _clip_len(seg, box):
+    """선분이 사각형 안을 지나는 길이(Liang-Barsky)"""
+    x1, y1, x2, y2 = seg; dx, dy = x2 - x1, y2 - y1
+    t0, t1 = 0.0, 1.0
+    for p, q_ in ((-dx, x1 - box[0]), (dx, box[2] - x1), (-dy, y1 - box[1]), (dy, box[3] - y1)):
+        if p == 0:
+            if q_ < 0: return 0.0
+        else:
+            r = q_ / p
+            if p < 0: t0 = max(t0, r)
+            else: t1 = min(t1, r)
+            if t0 > t1: return 0.0
+    return (t1 - t0) * (dx * dx + dy * dy) ** 0.5
+def check_svg_extra(qid, where, svg, W_, H_, bx):
+    rc = svg_rects(svg)
+    for i in range(len(rc)):          # (a) 박스끼리 겹침(완전 포함은 제외)
+        for j in range(i + 1, len(rc)):
+            a_, b_ = rc[i], rc[j]
+            ox = min(a_[2], b_[2]) - max(a_[0], b_[0]); oy = min(a_[3], b_[3]) - max(a_[1], b_[1])
+            if ox <= 1 or oy <= 1: continue
+            inside = lambda p, q_: p[0] >= q_[0] - 1 and p[1] >= q_[1] - 1 and p[2] <= q_[2] + 1 and p[3] <= q_[3] + 1
+            if inside(a_, b_) or inside(b_, a_): continue
+            W("%s %s: SVG 박스 (%d,%d)-(%d,%d)와(과) (%d,%d)-(%d,%d)이(가) 일부만 겹침" % ((qid, where) + tuple(round(v) for v in a_ + b_)))
+    if W_ and H_:                      # (b) 박스 테두리가 그림 가장자리에 접하거나 넘음
+        for r_ in rc:
+            if (r_[2] - r_[0]) * (r_[3] - r_[1]) >= 0.9 * W_ * H_: continue     # 배경 사각형
+            if min(r_[0], r_[1], W_ - r_[2], H_ - r_[3]) < 1:       # 1px 미만(접하거나 넘음). 1~2px 여백은 테두리 선 두께 때문에 일부러 두는 경우가 대부분이라 제외
+                W("%s %s: SVG 박스 (%d,%d)-(%d,%d)의 테두리가 그림 가장자리(viewBox %d×%d)에 닿거나 넘음" % (qid, where, r_[0], r_[1], r_[2], r_[3], W_, H_))
+    segs, multi = svg_segments(svg)
+    for sg in segs:                   # (c) 선·화살표가 글자 영역을 가로지름 (한 선이 글자 3개 이상을 지나면 눈금·격자로 보고 제외)
+        hit = []
+        for b in bx:
+            bw, bh = b[2] - b[0], b[3] - b[1]
+            inner = (b[0] + bw * 0.1, b[1] + bh * 0.25, b[2] - bw * 0.1, b[3] - bh * 0.25)
+            if _clip_len(sg, inner) > 3: hit.append(b)
+        if 0 < len(hit) < 3:
+            for b in hit: W("%s %s: SVG 선·화살표 (%d,%d)→(%d,%d)이(가) 글자 '%s'을(를) 가로지름" % (qid, where, sg[0], sg[1], sg[2], sg[3], b[4][:10]))
+    if multi: W("%s %s: SVG path %d개가 서브패스(M) 2개 이상인데 marker-end(화살촉)를 씀 — 화살촉이 마지막 선에만 붙음(선마다 path를 나눌 것)" % (qid, where, multi))
 def check_svg(qid, where, svg):
     if "transform" in svg: return   # 이동·회전이 있는 그림은 좌표를 근사할 수 없어 눈으로 확인(스크린샷)
     W_, H_, bx = svg_boxes(svg)
@@ -155,6 +252,7 @@ def check_svg(qid, where, svg):
             if ox > 1 and oy > 1:
                 small = min((a_[2] - a_[0]) * (a_[3] - a_[1]), (b_[2] - b_[0]) * (b_[3] - b_[1]))
                 if small > 0 and ox * oy / small > 0.3: E("%s %s: SVG 글자 '%s'와(과) '%s'이(가) 겹침" % (qid, where, a_[4][:10], b_[4][:10]))
+    check_svg_extra(qid, where, svg, W_, H_, bx)
 for q in qs:
     if (q.get("figure") or {}).get("svg"): check_svg(q["id"], "figure", q["figure"]["svg"])
     for i, r in enumerate(q.get("refs") or []):
@@ -256,3 +354,70 @@ for q in qs:
         t = norm(c)
         if t in _slot_val and (_slot_val[t] - {q["slot"]}):
             W("%s: 선택지 '%s'가 다른 슬롯 %s의 정답 값과 같음 — 수치 세트를 슬롯마다 따로 정할 것(수학)" % (q["id"], c[:20], ",".join(sorted(_slot_val[t] - {q["slot"]}))))
+
+# ── R-P. 서술형 answerHint 'N문장 이상' ↔ 모범 답안 문장 수 (✖) ──────
+_NUMK = {"한": 1, "두": 2, "세": 3, "네": 4, "다섯": 5, "여섯": 6}
+def _sent_split(t):
+    t = re.sub(r"[‘“'\"]([^’”'\"]*)[’”'\"]", lambda m: m.group(0).replace(".", ""), t or "")   # 인용 속 마침표는 문장 끝이 아님
+    t = re.sub(r"\((?:교과서\s*)?p\.\s*\d+[^)]*\)", " ", t)                                  # '(교과서 p.NN)' 쪽 표기 제외
+    return [x for x in re.split(r"(?<=[.?!])\s+|(?<=[요다])\s+", t.strip()) if re.sub(r"[\s.?!()0-9ㄱ-ㅎ가-힣]{0,2}$", "", x.strip()) and len(norm(x)) >= 2]
+def _model_answers(ma):
+    """modelAnswer가 문자열이면 [(None, 문자열)], dict·리스트(선택지별)면 [(키, 문자열)…]"""
+    if isinstance(ma, str): return [(None, ma)]
+    if isinstance(ma, dict): return [(str(k), v) for k, v in ma.items() if isinstance(v, str)]
+    if isinstance(ma, list): return [("[%d]" % i, v) for i, v in enumerate(ma) if isinstance(v, str)]
+    return []
+for q in qs:
+    if q["type"] != "essay": continue
+    m = re.search(r"(\d+|한|두|세|네|다섯|여섯)\s*문장\s*이상", q.get("answerHint", "") or "")
+    if not m: continue
+    need = int(m.group(1)) if m.group(1).isdigit() else _NUMK[m.group(1)]
+    for key, txt in _model_answers(q.get("modelAnswer")):
+        n = len(_sent_split(txt))
+        if n < need: E("%s: answerHint는 '%d문장 이상'인데 모범 답안%s은 %d문장 — 모범 답안을 늘리거나 hint를 고칠 것" % (q["id"], need, "(%s)" % key if key else "", n))
+
+# ── R-Q. 서술형 발문·쪽지·모범 답안이 같은 단원 선택형의 보기·정답 문장과 거의 같음 (⚠) ──
+def _lcs_len(a, b):
+    import difflib
+    return difflib.SequenceMatcher(None, a, b, autojunk=False).find_longest_match(0, len(a), 0, len(b)).size
+def _eoj(s): return set(w for w in re.split(r"\s+", re.sub(r"[.,?!…·‘’“”\"'()\[\]]", " ", s).strip()) if len(w) >= 2)
+_src_norm = "".join("".join(v) for v in pages.values()) if pages else ""
+_mc_sents = []      # (문항 id, 보기 문장 원문)
+for q in qs:
+    if q["type"] == "mc" and not combo_sets(q["choices"]):
+        for c in q["choices"]:
+            if len(norm(c)) >= 12: _mc_sents.append((q["id"], c))
+for q in qs:
+    if q["type"] != "essay": continue
+    parts = [("발문", q.get("question", "")), ("쪽지", q.get("passage", ""))] + [("모범 답안" + ("(%s)" % k if k else ""), t) for k, t in _model_answers(q.get("modelAnswer"))]
+    for label, txt in parts:
+        hit = None
+        for s_ in _sent_split(txt):
+            ns = norm(s_)
+            if len(ns) < 12: continue
+            es = _eoj(s_)
+            for qid, c in _mc_sents:
+                nc = norm(c)
+                jac = len(es & _eoj(c)) / max(1, len(es | _eoj(c))) if len(es) >= 4 else 0
+                if jac >= 0.7 or _lcs_len(ns, nc) >= 12:
+                    hit = (s_, qid, c, ns in _src_norm if _src_norm else False); break
+            if hit: break
+        if hit:
+            note = " — 교과서 정의·인용 문장이면 허용될 수 있으나 확인" if hit[3] else " — 선택형 정답·보기를 서술형이 다시 알려 주는지 확인"
+            W("%s %s: 서술형 문장 '%s'이(가) 같은 단원 선택형 %s의 보기 '%s'와(과) 거의 같음%s" % (q["id"], label, hit[0].strip()[:30], hit[1], hit[2].strip()[:30], note))
+
+# ── R-R. 설계도·발문 괄호 안 서술형 조건 낱말('…' 낱말을 사용)이 다른 슬롯에 나옴 (⚠) ──
+_cw = collections.defaultdict(set)
+for q in qs:
+    if q["type"] != "essay": continue
+    for par in re.findall(r"\(([^()]*(?:낱말|용어|말)[^()]*(?:사용|써)[^()]*)\)", (q.get("question", "") or "") + " " + (q.get("answerHint", "") or "")):
+        _cw[q["slot"]].update(re.findall(r"['‘“\"]([^'’”\"]{1,8})['’”\"]", par))
+for s_ in bp["slots"]:
+    if s_.get("type") == "essay":
+        for mm in re.findall(r"조건 낱말\s*((?:['‘][^'’]{1,8}['’][,，、 ·및과와]*)+)", s_.get("intent", "") or ""):
+            _cw[s_["id"]].update(re.findall(r"['‘]([^'’]{1,8})['’]", mm))
+for slot, ws in _cw.items():
+    for w in sorted(ws - conds.get(slot, set())):      # 기존 규칙이 이미 보고한 낱말은 중복 보고하지 않음
+        for o in qs:
+            if o["slot"] != slot and norm(w) in open_text(o):
+                W("서술형 %s 조건 낱말 '%s'(발문·설계도)이(가) %s의 발문·지문·보기에 나옴 (정답·조건을 알려 주는지 검수자가 판단)" % (slot, w, o["id"]))
