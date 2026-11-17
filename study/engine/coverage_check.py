@@ -73,6 +73,10 @@ def extract_concepts(md):
         # 문장형 개념 정리: '=' / ',' 양쪽, 'A와 B를 구분', 주어(은/는/이/가) 앞까지, 긴 '·' 나열
         c = re.sub(r"\s*(\d+|[두세네다여일])\s*(가지|종|요소|원칙|단계|유형|관점|특징|형태|개)(과|와)?", "", c).strip()
         c = re.sub(r"\s+[와과]\s*$", "", c)
+        m = re.fullmatch(r"(\S+의)\s+(\S+?)[와과]\s+(\S+)", c)
+        if m:   # 신념의 의미와 역할 → 신념의 의미 / 신념의 역할 (2026-11-17)
+            add(m.group(1) + " " + m.group(2)); add(m.group(1) + " " + m.group(3))
+            return
         if re.search(r"[=,/.]", c):
             for x in re.split(r"=|,|/|\.\s*", c):
                 add(x)
@@ -221,10 +225,18 @@ def make_matcher(concept):
         # 어절 사이에 조사 등 최대 3자 허용
         pat = re.compile(r".{0,3}".join(re.escape(t) for t in toks))
 
+    alt = None
+    if len(toks) >= 3 and toks[0].endswith("적"):          # 도덕적 인격의 특성 → 인격의 특성
+        alt = re.compile(r".{0,3}".join(re.escape(t) for t in toks[1:]))
+    elif len(toks) == 2 and toks[0].endswith("적"):         # 도덕적 실천 → 실천
+        alt = re.compile(re.escape(toks[1]))
+    if alt is not None and len(toks) == 2 and len(toks[1]) < 3: alt = None   # 너무 짧은 낱말 하나만 남으면 과대 매칭이라 쓰지 않음
+
     def match(hay_norm):
         if n in hay_norm:
             return True
-        return bool(pat and pat.search(hay_norm))
+        if pat and pat.search(hay_norm): return True
+        return bool(alt and alt.search(hay_norm))
 
     return match
 
