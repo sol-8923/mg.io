@@ -51,10 +51,11 @@ def quotes(text):
 # 1) 원문 인용 + 쪽수
 page_cites = collections.defaultdict(list)
 for q in qs:
+    own = norm(" ".join(str(x) for x in ([q.get("question"), q.get("passage"), q.get("modelAnswer"), q.get("answerHint")] + list(q.get("choices") or []) + [r.get("criterion", "") for r in (q.get("rubric") or []) if isinstance(r, dict)]) if x))   # 문항 자기 본문(발문·지문·보기·모범 답안)에 있는 인용은 직접 만든 것이라 제외(2026-11-17 B4)
     for fname, text in fields(q):
         if not text: continue
         for part, n in quotes(text):
-            if pages and n not in full:
+            if pages and n not in full and n not in own:
                 W("%s %s: 원문에서 찾을 수 없는 인용 → '%s' (직접 만든 〈보기〉·바꿔 쓴 말이면 무시)" % (q["id"], fname, part[:40]))
         # 같은 문장 안에 인용과 쪽수가 함께 있으면 그 쪽에 인용이 있는지
         for sent in re.split(r"(?<=[.다요])\s+", text):
@@ -108,7 +109,7 @@ for q in qs:
         if len(q.get("tip", "")) < 6: W("%s: tip이 비어 있거나 너무 짧음" % q["id"])
     if q["type"] == "essay":
         if not q.get("explanation"): E("%s: 서술형 explanation 없음" % q["id"])
-        if "조건 낱말" not in d and "조건" not in d: W("%s: detail에 조건 낱말 채점 안내가 없음" % q["id"])
+        if re.search(r"'[^']{1,10}'|조건", q.get("answerHint", "") or "") and "조건 낱말" not in d and "조건" not in d: W("%s: detail에 조건 낱말 채점 안내가 없음" % q["id"])
         if sum(r["points"] for r in q["rubric"]) != q["points"]: E("%s: rubric 합이 배점과 다름" % q["id"])
     if q["type"] == "short":
         if not q.get("commonMistakes"): E("%s: commonMistakes 없음" % q["id"])

@@ -40,3 +40,5 @@
 - 점검: gate 통과(build·precheck ✖0, b_scan 0), review_diff 변경 id는 위 목록뿐(정답 번호·id·배점 불변).
 - 마무리 정리(2026-11-17): 문체·표기 수준 정리. 바뀐 문항 Q04-a/b·Q09-a·S01-b·S02-a/b·S03-a/b·S04-a/b(S01-b 허용 답안 They'll 추가, S02 rubric·허용 답안 문구 명확화, Q09-a source 근거 표시, Q04 refs·detail 표기, S03·S04 채점 안내에서 〈조건〉 제외, S03 source·마침표 정리). 정답·id·배점·정답 번호 불변.
 - 표본 감사 반영·확산 수정(2026-11-17): Q07-a 일기 passage ⓐ를 'I visited a street art festival with my friends today.'로 바꿔 시제 통일(정답 ②, 틀린 것 ⓑ·ⓓ 불변), 해설·보기 ② 해설의 'were(are)'→'were', ⓔ 근거 쪽을 p.89(took pictures of it)·p.91(a few + 복수 명사)로 정정, 관련 ⓐ 해설·tip·refs·source 정리. 새로 쓴 지문 표시 추가: Q03-a·Q07-a/b·Q11~Q13·S04. 정답·id·배점·유형·보기·발문 불변.
+
+B4(2026-11-17): precheck ⚠ 4건 판정 — 고침 0, 무시 4(S03-a/b·S04-a/b는 발문에 '조건 낱말'을 쓰는 문항이 아니라 오류 고치기·글에서 낱말 찾기이고, detail에 형식·철자·허용/불인정 답안을 담은 '채점 안내'가 이미 있음).

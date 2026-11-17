@@ -401,10 +401,10 @@
    "question": "다음은 어느 대륙의 가~라 지역의 특성을 나타낸 모식도이다. 이에 대한 설명으로 적절하지 않은 것은?",
    "choices": [
     "나와 라처럼 자연환경이 열악한 지역에서는 그 환경에 맞는 생활양식이나 문화가 나타나지 않는다.",
-    "가는 기후가 온화하고 하천 주변에 평지가 넓어 도시와 산업이 발달하기에 유리하다.",
-    "나는 연 강수량이 매우 적은 지나치게 건조한 곳이므로 거주하는 사람이 많지 않을 것이다.",
-    "다는 높은 산지여서 평지가 넓은 지역에 비해 거주하는 사람이 적을 가능성이 크다.",
-    "라는 연중 매우 추워 거주하는 사람은 적지만 추위에 적응한 의식주 생활양식이 나타날 수 있다."
+    "가는 기후가 온화하고 하천 주변에 평지가 넓어서 도시와 여러 산업이 발달하기에 유리하다.",
+    "나는 연 강수량이 매우 적은 지나치게 건조한 곳이므로 거주하는 사람이 그리 많지 않을 것이다.",
+    "다는 높은 산지여서 평지가 넓은 지역에 비해 거주하는 사람의 수가 적을 가능성이 크다.",
+    "라는 연중 매우 추워 거주하는 사람은 적지만 추위에 적응한 그들만의 의식주 생활양식이 나타날 수 있다."
    ],
    "answer": 1,
    "explanation": "자연환경이 열악한 지역에서도 사람들은 환경에 적응한 생활양식과 문화를 만들어 살아가므로 '나타나지 않는다'는 말이 적절하지 않다.",
@@ -1108,7 +1108,7 @@
     }
    ],
    "figure": {
-    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 206' font-family='sans-serif'><rect width='420' height='206' fill='#fff'/><line x1='60' y1='62' x2='170' y2='62' stroke='#1f6fb2' stroke-width='3'/><line x1='170' y1='62' x2='280' y2='62' stroke='#1f6fb2' stroke-width='3'/><line x1='280' y1='62' x2='370' y2='62' stroke='#1f6fb2' stroke-width='3'/><line x1='170' y1='62' x2='170' y2='150' stroke='#1f6fb2' stroke-width='3'/><circle cx='60' cy='62' r='16' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='60' y='67' font-size='14' text-anchor='middle' fill='#111' font-weight='bold'>가</text><circle cx='170' cy='62' r='16' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='170' y='67' font-size='14' text-anchor='middle' fill='#111' font-weight='bold'>나</text><circle cx='280' cy='62' r='16' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='280' y='67' font-size='14' text-anchor='middle' fill='#111' font-weight='bold'>다</text><circle cx='370' cy='62' r='16' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='370' y='67' font-size='14' text-anchor='middle' fill='#111' font-weight='bold'>라</text><circle cx='170' cy='150' r='16' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='170' y='155' font-size='14' text-anchor='middle' fill='#111' font-weight='bold'>마</text><line x1='14' y1='192' x2='44' y2='192' stroke='#1f6fb2' stroke-width='3'/><text x='50' y='196' font-size='10.5' text-anchor='start' fill='#222' font-weight='normal'>해저 케이블(직접 연결)</text><text x='14' y='20' font-size='10.5' text-anchor='start' fill='#444' font-weight='normal'>가~마는 서로 다른 나라</text></svg>",
+    "svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 206' font-family='sans-serif'><rect width='420' height='206' fill='#fff'/><line x1='76' y1='62' x2='154' y2='62' stroke='#1f6fb2' stroke-width='3'/><line x1='186' y1='62' x2='264' y2='62' stroke='#1f6fb2' stroke-width='3'/><line x1='296' y1='62' x2='354' y2='62' stroke='#1f6fb2' stroke-width='3'/><line x1='170' y1='78' x2='170' y2='134' stroke='#1f6fb2' stroke-width='3'/><circle cx='60' cy='62' r='16' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='60' y='67' font-size='14' text-anchor='middle' fill='#111' font-weight='bold'>가</text><circle cx='170' cy='62' r='16' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='170' y='67' font-size='14' text-anchor='middle' fill='#111' font-weight='bold'>나</text><circle cx='280' cy='62' r='16' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='280' y='67' font-size='14' text-anchor='middle' fill='#111' font-weight='bold'>다</text><circle cx='370' cy='62' r='16' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='370' y='67' font-size='14' text-anchor='middle' fill='#111' font-weight='bold'>라</text><circle cx='170' cy='150' r='16' fill='#fff' stroke='#222' stroke-width='1.5'/><text x='170' y='155' font-size='14' text-anchor='middle' fill='#111' font-weight='bold'>마</text><line x1='14' y1='192' x2='44' y2='192' stroke='#1f6fb2' stroke-width='3'/><text x='50' y='196' font-size='10.5' text-anchor='start' fill='#222' font-weight='normal'>해저 케이블(직접 연결)</text><text x='14' y='20' font-size='10.5' text-anchor='start' fill='#444' font-weight='normal'>가~마는 서로 다른 나라</text></svg>",
     "caption": "다섯 나라의 해저 케이블 연결 모식도"
    }
   },
