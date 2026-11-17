@@ -4,16 +4,19 @@
 <path d="M300 70 Q300 90 320 90 Q300 90 300 110 Q300 90 280 90 Q300 90 300 70Z" fill="#FFC83D"/>
 <path d="M930 120 Q930 134 944 134 Q930 134 930 148 Q930 134 916 134 Q930 134 930 120Z" fill="#fff"/>
 <path d="M600 60 Q600 72 612 72 Q600 72 600 84 Q600 72 588 72 Q600 72 600 60Z" fill="#FFC83D"/>
-<path d="M250 640 Q420 560 560 470 Q700 380 760 330" fill="none" stroke="#fff" stroke-width="8" stroke-dasharray="4 22" stroke-linecap="round"/>
-<path d="M740 350 L920 262 L820 380 L850 420 L790 392 L752 440 L760 372Z" fill="#fff" stroke="#14305F" stroke-width="6" stroke-linejoin="round"/>
-<path d="M920 262 L790 392" stroke="#14305F" stroke-width="5" fill="none"/>
-<path d="M760 372 L790 392" stroke="#FFC83D" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M230 660 Q400 580 540 490 Q630 425 680 372" fill="none" stroke="#fff" stroke-width="8" stroke-dasharray="4 22" stroke-linecap="round"/>
+<g stroke="#14305F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M965 225 L792 388 L856 488Z" fill="#B7CCEC"/>
+<path d="M792 388 L856 488 L752 437Z" fill="#7FA3DA"/>
+<path d="M965 225 L695 332 L792 388Z" fill="#fff"/>
+<path d="M965 225 L792 388" fill="none"/>
+</g>
 <circle cx="360" cy="780" r="84" fill="#FFC83D" stroke="#14305F" stroke-width="7"/>
 <path d="M388 740 L388 800 M388 740 L338 752 L338 812" fill="none" stroke="#14305F" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
 <ellipse cx="372" cy="816" rx="24" ry="17" fill="#14305F"/><ellipse cx="322" cy="828" rx="24" ry="17" fill="#14305F"/>
 <circle cx="610" cy="700" r="84" fill="#F4A6C8" stroke="#14305F" stroke-width="7"/>
-<path d="M590 660 L630 660 L650 690 L690 730 L530 730 L570 690Z" fill="#fff" stroke="#14305F" stroke-width="6" stroke-linejoin="round"/>
-<path d="M570 690 L650 690" stroke="#14305F" stroke-width="5"/>
+<path d="M558 668 L592 650 Q610 672 628 650 L662 668 L644 706 L632 698 L632 752 L588 752 L588 698 L576 706Z" fill="#fff" stroke="#14305F" stroke-width="6" stroke-linejoin="round"/>
+<path d="M600 722 Q610 736 620 722" fill="none" stroke="#F06BB4" stroke-width="6" stroke-linecap="round"/>
 <circle cx="860" cy="760" r="84" fill="#9BE0F2" stroke="#14305F" stroke-width="7"/>
 <path d="M860 710 L860 810 M810 760 L910 760" stroke="#C23B22" stroke-width="26" stroke-linecap="butt" fill="none"/>
 <path d="M-920 1080 L-920 990 Q-300 930 240 1000 Q520 900 800 960 Q920 985 1000 940 L3000 940 L3000 1080Z" fill="#3E7CC0"/>
