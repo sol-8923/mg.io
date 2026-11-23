@@ -862,7 +862,7 @@ function makeExam(book, unitIds, mode){
   picked.sort(function(a,b){ return TYPE_ORDER[a.q.type]-TYPE_ORDER[b.q.type]||a.ui-b.ui||a.si-b.si; });
   var orig={}; picked.forEach(function(p){ orig[p.q.id]=p.q; });
   var total=plan.spec.mc+plan.spec.short+plan.spec.essay, time=Math.max(10,Math.round(plan.spec.timeMin*picked.length/(total||1)));
-  return newExam({bookId:book.id,title:bookLabel(book),mode:mode,source:'exam',units:unitIds,qs:picked.map(function(p){return prepare(p.q);}),orig:orig,timeLimitMin:mode==='exam'?time:0});
+  return newExam({bookId:book.id,title:bookLabel(book),mode:mode,source:'exam',units:unitIds,qs:picked.map(function(p){return prepare(p.q);}),orig:orig,printMin:time,timeLimitMin:mode==='exam'?time:0});
 }
 function makeNotesExam(bookId, title){
   var notes=Store.book(bookId).notes, list=[];
@@ -924,6 +924,7 @@ function renderQ(){
       h('span',{class:'muted',style:'font-size:.92rem',text:E.title+' · '+(practice?'연습':'실전')+' · '+(E.idx+1)+' / '+n}),
       h('span',{class:'spacer'}),
       left!=null?h('span',{id:'timer',class:'timer'+(left<180?' low':''),text:'⏱ '+fmtTime(left)}):null,
+      h('button',{style:'min-height:38px;padding:6px 12px',title:'이 시험지를 종이로 출력',onclick:function(){ openPrint(E); }},['🖨️']),
       h('button',{style:'min-height:38px;padding:6px 12px',onclick:function(){ if(confirm('시험을 그만둘까요? 푼 내용은 사라져요.')){ var b=E.bookId; S.exam=null; go(E.source==='notes'?'#/notes/'+encodeURIComponent(b):'#/book/'+encodeURIComponent(b)); } }},['나가기'])
     ]),
     h('div',{class:'bar'},[h('i',{style:'width:'+(answeredCount(E)/n*100)+'%'})])
@@ -1090,11 +1091,82 @@ function renderResult(){
     h('div',{class:'row',style:'margin-top:16px'},[
       R.wrong.length?h('button',{class:'primary',onclick:function(){ openReview(R.wrong.map(function(q){ return {q:q,ans:E.ans[q.id],self:pickSelf(E.self,q)}; }),E.title+' 오답풀이','#/result'); }},['📝 상세 오답풀이 ('+R.wrong.length+')']):h('span',{style:'font-weight:700',text:'🎉 모두 맞혔어요!'}),
       E.source==='exam'?h('button',{onclick:function(){ Data.bookP(E.bookId).then(function(b){ S.exam=makeExam(b,E.units,E.mode); go('#/quiz'); }); }},['✏️ 새로운 시험 보기']):null,
+      h('button',{onclick:function(){ openPrint(E); }},['🖨️ 시험지 인쇄']),
       h('a',{class:'btn',href:'#/notes/'+encodeURIComponent(E.bookId)},['📒 오답노트']),
       h('a',{class:'btn',href:'#/'},['홈'])
     ])
   ]));
   page.appendChild(h('div',{class:'res-grid'},[table('난이도별',R.byD,['하','중','상','-']),table('개념별',R.byC)]));
+}
+
+/* ═════════ 시험지 인쇄 ═════════
+ * 출제된 문제(S.exam)를 종이 시험지 모양으로 모아 브라우저 인쇄(PDF 저장 포함)로 내보낸다.
+ * 화면용 #app 은 인쇄 때 숨기고(@media print), body 끝에 붙인 #print-sheet 만 찍는다.
+ * 정답·해설은 끝 쪽에 따로 붙이며, 체크를 끄면 문제지만 나온다. */
+function printSheet(E, withKey){
+  var T=totalPts(E.qs), min=E.printMin||E.timeLimitMin||0, root=h('div',{id:'print-sheet'});
+  root.appendChild(h('div',{class:'ps-head'},[
+    h('div',{class:'ps-title',text:E.title+(E.source==='notes'?'':' 시험지')}),
+    h('table',{class:'ps-info'},[h('tr',{},[
+      h('td',{text:'학년 반 번 이름 :'}),h('td',{text:'날짜 :  '+(new Date().getMonth()+1)+'월 '+new Date().getDate()+'일'}),
+      h('td',{text:'문항 '+E.qs.length+'개 · 총 '+T+'점'+(min?' · '+min+'분':'')}),h('td',{text:'점수 :        / '+T})
+    ])])
+  ]));
+  var cols=h('div',{class:'ps-cols'}), full=h('div',{class:'ps-full'});
+  E.qs.forEach(function(q,i){
+    var box=h('div',{class:'ps-q'});
+    box.appendChild(h('div',{class:'ps-qt'},[h('b',{text:(i+1)+'. '}),h('span',{text:q.question}),h('span',{class:'ps-pt',text:' ['+(q.points||0)+'점]'})]));
+    if(isMulti(q)) box.appendChild(h('div',{class:'ps-hint',text:'(정답 '+q.answer.length+'개를 모두 고르시오.)'}));
+    if(q.passage) box.appendChild(passageEl(q));
+    if(q.figure) box.appendChild(figureEl(q.figure));
+    if(q.type==='mc') box.appendChild(h('div',{class:'ps-ch'},q.choices.map(function(c,k){ return h('div',{},[CIRCLED[k]+' '+c]); })));
+    else if(q.type==='ox') box.appendChild(h('div',{class:'ps-ch'},[h('div',{text:'(      ) O / X'})]));
+    else if(q.type==='short') box.appendChild(h('div',{class:'ps-line',text:'답 :'}));
+    else if(q.type==='essay'){
+      if(q.answerHint) box.appendChild(h('div',{class:'ps-hint',text:'('+q.answerHint+')'}));
+      box.appendChild(h('div',{class:'ps-essay'}));
+    }
+    (q.type==='essay'?full:cols).appendChild(box);
+  });
+  root.appendChild(cols); if(full.childNodes.length) root.appendChild(full);
+  if(withKey){
+    var key=h('div',{class:'ps-key'},[h('div',{class:'ps-title',text:'정답 및 해설'})]);
+    var tbl=h('table',{class:'ps-ans'}), tr=null;
+    E.qs.forEach(function(q,i){
+      if(q.type==='essay') return;
+      if(i%5===0||!tr){ tr=h('tr',{}); tbl.appendChild(tr); }
+      tr.appendChild(h('td',{},[h('b',{text:(i+1)+'번 '}),q.type==='mc'?(isMulti(q)?q.answer:[q.answer]).map(function(n){ return CIRCLED[n-1]; }).join(' '):rightText(q)]));
+    });
+    key.appendChild(tbl);
+    E.qs.forEach(function(q,i){
+      var kids=[h('b',{text:(i+1)+'번 ('+(q.points||0)+'점) '}),h('span',{text:q.type==='essay'?'모범 답안':'정답 '+rightText(q)})];
+      var b=h('div',{class:'ps-kq'},kids);
+      if(q.type==='essay'){
+        b.appendChild(h('div',{class:'ps-exp',text:q.modelAnswer||''}));
+        if(q.rubric&&q.rubric.length) b.appendChild(h('div',{class:'ps-exp'},['채점 기준: '+q.rubric.map(function(r){ return r.criterion+'('+r.points+'점)'; }).join(' / ')]));
+      }else if(q.explanation) b.appendChild(h('div',{class:'ps-exp',text:q.explanation}));
+      key.appendChild(b);
+    });
+    root.appendChild(key);
+  }
+  return root;
+}
+function openPrint(E){
+  var cb=h('input',{type:'checkbox'}); cb.checked=true;
+  var m=openModal([
+    h('h3',{style:'margin:0 0 6px',text:'🖨️ 시험지 인쇄'}),
+    h('div',{class:'muted',style:'font-size:.9rem',text:E.qs.length+'문항 · 총 '+totalPts(E.qs)+'점 · A4 세로. 인쇄 창에서 "PDF로 저장"도 고를 수 있어요.'}),
+    h('label',{style:'display:flex;gap:8px;align-items:center;margin:14px 0'},[cb,h('span',{text:'정답 및 해설을 맨 뒤 쪽에 붙이기'})]),
+    h('div',{class:'row',style:'gap:8px;justify-content:flex-end'},[h('button',{onclick:function(){ m.close(); }},['닫기']),
+      h('button',{class:'primary',onclick:function(){
+        var old=document.getElementById('print-sheet'); if(old) old.remove();
+        var sheet=printSheet(E,cb.checked); document.body.appendChild(sheet);
+        m.close(); document.body.classList.add('printing');
+        function done(){ window.removeEventListener('afterprint',done); document.body.classList.remove('printing'); sheet.remove(); }
+        window.addEventListener('afterprint',done);
+        setTimeout(function(){ window.print(); },60);
+      }},['인쇄하기'])])
+  ]);
 }
 
 /* ═════════ 문제 오류 신고 ═════════
@@ -1325,9 +1397,13 @@ function rangeModal(book){
   function refresh(){
     var c=chosen(), ec=examCounts(book,c.map(function(u){ return u.id; }));
     allCb.checked=c.length===book.units.length;
-    startBtn.disabled=!c.length; startBtn.textContent=c.length?'시험 시작 ('+ec.n+'문항)':'단원을 골라 주세요';
+    printBtn.disabled=!c.length; startBtn.disabled=!c.length; startBtn.textContent=c.length?'시험 시작 ('+ec.n+'문항)':'단원을 골라 주세요';
     info.textContent=c.length?'객관식 '+ec.mc+(ec.short?' · 단답 '+ec.short:'')+(ec.essay?' · 서술 '+ec.essay:'')+' — 고른 범위에서 단원·난이도·배점이 고르게 섞여요.':'';
   }
+  var printBtn=h('button',{onclick:function(){
+    var ids=chosen().map(function(u){ return u.id; }); if(!ids.length) return;
+    st.lastUnits=ids; Store.save(); m.close(); openPrint(makeExam(book,ids,S.mode));
+  }},['🖨️ 시험지 출력']);
   startBtn=h('button',{class:'primary',onclick:function(){
     var ids=chosen().map(function(u){ return u.id; }); if(!ids.length) return;
     st.lastUnits=ids; Store.save(); m.close();
@@ -1339,7 +1415,7 @@ function rangeModal(book){
     h('label',{class:'all-pick'},[allCb,h('b',{text:'전체 선택'})]),
     list,
     info,
-    h('div',{class:'row',style:'margin-top:16px;justify-content:flex-end'},[h('button',{onclick:function(){ m.close(); }},['취소']),startBtn])
+    h('div',{class:'row',style:'margin-top:16px;justify-content:flex-end'},[h('button',{onclick:function(){ m.close(); }},['취소']),printBtn,startBtn])
   ]);
   refresh();
 }
