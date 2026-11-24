@@ -1,0 +1,459 @@
+{
+ "unitName": "Have a Special Day!",
+ "profile": "past-exam",
+ "basis": "past-exam-pattern",
+ "analysis": "1학년 영어 2024·2025 기말(docs/subjects/영어.md 0번)을 기준으로 한 기출 반영형(profile=past-exam). u5 몫은 선택형 17슬롯(64점)+서술형 5슬롯(20점)=84점, 서술형 비중 24%. 난이도: 하 5(Q02·Q04·Q06·Q12·Q16) · 상 2(Q08·S03) · 중 15. 5점은 어법 조합형 Q08 하나(기출 2025-10·14 두 문항을 변형 a·b로, 새 변형 c 추가). 선택형 17슬롯의 영역: 어휘 5(Q01~Q04, Q16, 29%)·어법 5(Q05~Q09, 29%)·대화 3(Q10~Q12, 18%)·독해 4(Q13~Q15, Q17, 24%)이고, 서술형 5개가 어법·독해를 보강한다. 기출 7문항 전부 배정: 2024-18→Q06-a, 2024-19→Q07-a, 2025-03→Q01-a, 2025-08→Q05-a, 2025-10→Q08-a, 2025-14→Q08-b, 2025-11→Q13-a. [사실 배분표] Q01 steep/mountain, Q02 sunrise-sunset/trip-journey, Q03 wonderful/like, Q04 put up/moment, Q05 대명사 it(소유·앞 명사 가리킴), Q06 목적의 to부정사, Q07 hope/want to 올바른 형태, Q08 This→It·scared→scary·plan to going·consider to studying 등 어법 오류 고르기, Q09 be going to/want to 어순, Q10 계획 질문에 계획으로 답하기, Q11 대화 흐름 순서, Q12 계획 묻기·기원하기·할 일 묻기 표현, Q13 9월 6일 일기 사실(a)·새 글(b), Q14 글에 없는 정보, Q15 주제 이탈 문장, Q16 서수·날짜 표기(1st·2nd·4th, first~fourth), Q17 일기 속 사건 순서. 서술형은 선택형 정답 문장과 겹치지 않는 소재(S01 지정 동사 뒤 to + 동사원형, S02 be going to 영작, S03 시제·수일치 오류 찾기, S04 글에서 단어 찾기, S05 it으로 요일·날짜·날씨 답하기). [정답 번호 배분표 (a 변형 ①~⑤ 4·3·3·3·4개, b 변형 3·3·4·3·4개, 3연속 없음)] a: Q01 3,Q02 5,Q03 2,Q04 4,Q05 1,Q06 1,Q07 2,Q08 1,Q09 5,Q10 3,Q11 5,Q12 4,Q13 4,Q14 2,Q15 3,Q16 5,Q17 1 / b: Q01 1,Q02 3,Q03 4,Q04 2,Q05 5,Q06 4,Q07 3,Q08 3,Q09 1,Q10 5,Q11 1,Q12 5,Q13 2,Q14 5,Q15 2,Q16 4,Q17 3 / Q08-c 4. 기출 문항은 원본 보기 순서를 유지해 학교 정답표 번호와 같고 배분표는 그 번호를 포함한 값이다.",
+ "totalQuestions": 22,
+ "totalPoints": 84,
+ "timeLimitMin": 45,
+ "variantsPerSlot": 2,
+ "types": {
+  "mc": 17,
+  "essay": 5
+ },
+ "difficulty": {
+  "중": 15,
+  "하": 5,
+  "상": 2
+ },
+ "concepts": {
+  "어휘: 두 문장 공통 빈칸": 1,
+  "어휘: 두 단어의 관계": 1,
+  "어휘: [ ]로 표시한 낱말의 의미": 1,
+  "어휘: 문맥 속 표현": 1,
+  "어법: 비인칭 주어 it과 대명사 it 구분": 1,
+  "어법: to부정사의 쓰임 구분": 1,
+  "어법: want/hope/plan 뒤 to + 동사원형": 1,
+  "어법: [ ]·ⓐ~ⓔ 문장 올바른/올바르지 않은 것끼리 짝짓기": 1,
+  "어법: 문장 어순(단어 배열)": 1,
+  "대화: 어색한 대화 고르기": 1,
+  "대화: (A)~(E) 순서 배열": 1,
+  "대화: 빈칸 완성": 1,
+  "독해: 내용 일치(한국어 선지)": 1,
+  "독해: 글을 읽고 답할 수 없는 질문": 1,
+  "독해: 흐름상 어색한 문장": 1,
+  "어휘: 서수와 날짜 표기": 1,
+  "독해: 일기 속 사건 순서": 1,
+  "서술형: 지정 동사 뒤 to + 동사원형 문장 완성": 1,
+  "서술형: be going to 영작": 1,
+  "서술형: 어법 틀린 단어 4개 찾아 고치기": 1,
+  "서술형: 글에서 단어 찾아 쓰기": 1,
+  "서술형: it으로 요일·날짜·날씨 답하기": 1
+ },
+ "slots": [
+  {
+   "id": "Q01",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어휘: 두 문장 공통 빈칸",
+   "intent": "두 문장의 빈칸에 공통으로 들어갈 낱말 고르기. a=기출 2025 기말 3번(원문), b=새 문항(같은 낱말이 같은 뜻으로 쓰인 두 문장).",
+   "facts": [
+    "steep은 '가파른'이라는 형용사이다 (p.91)",
+    "mountain은 '산'이다 (p.91)"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-03"
+   ],
+   "avoid": [
+    "Q04",
+    "Q13"
+   ]
+  },
+  {
+   "id": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어휘: 두 단어의 관계",
+   "intent": "다섯 단어쌍 중 관계(유의/반의)가 나머지와 다른 하나 고르기. a=유의어 4쌍+반의어 1쌍, b=반의어 4쌍+유의어 1쌍.",
+   "facts": [
+    "sunrise(해돋이)는 sunset(해넘이)과 반의어 관계이다 (sunrise p.90, sunset은 교과서 밖)",
+    "trip(여행)과 journey는 유의어 관계이다 (trip p.91, journey는 교과서 밖)"
+   ],
+   "avoid": [
+    "Q03"
+   ]
+  },
+  {
+   "id": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어휘: [ ]로 표시한 낱말의 의미",
+   "intent": "[ ]로 표시한 낱말의 우리말 뜻이 잘못된 것 고르기(교과서 p.90~91 낱말).",
+   "facts": [
+    "wonderful은 '훌륭한'이다 (p.91)",
+    "like는 '~와 같은'이라는 전치사로도 쓰인다 (p.91)"
+   ],
+   "avoid": [
+    "Q02",
+    "Q08",
+    "Q09",
+    "Q13"
+   ]
+  },
+  {
+   "id": "Q04",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어휘: 문맥 속 표현",
+   "intent": "우리말 상황에 맞는 구동사·낱말 고르기.",
+   "facts": [
+    "put up은 '(텐트를) 치다, 설치하다'이다 (p.90)",
+    "moment는 '순간'이다 (p.91, '잠깐'의 Wait a moment는 교과서 밖 일상 표현)"
+   ],
+   "avoid": [
+    "Q01",
+    "Q08"
+   ]
+  },
+  {
+   "id": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어법: 비인칭 주어 it과 대명사 it 구분",
+   "intent": "[ ]로 표시한 it의 쓰임이 나머지와 다른 것 고르기. a=기출 2025 기말 8번(원문), b=새 문항.",
+   "facts": [
+    "비인칭 주어 it은 시간·요일·날짜·날씨·명암을 나타내며 '그것'으로 해석하지 않는다 (p.96~97)",
+    "대명사 it은 앞에 나온 명사를 가리킨다 (p.90~91 본문의 It)"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-08"
+   ],
+   "avoid": [
+    "Q16",
+    "S05"
+   ]
+  },
+  {
+   "id": "Q06",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어법: to부정사의 쓰임 구분",
+   "intent": "[ ]로 표시한 to부정사의 쓰임이 나머지와 다른 것 고르기. a=기출 2024 기말 18번(원문), b=새 문항.",
+   "facts": [
+    "want/hope/plan + to + 동사원형은 동사의 목적어로 쓰인 to부정사이다 (p.96~97)",
+    "'~하기 위해'(목적)로 쓰인 to부정사는 이 단원 교과서 밖이다"
+   ],
+   "pastExams": [
+    "2024-2학기-기말-18"
+   ],
+   "avoid": [
+    "Q07",
+    "Q08",
+    "Q09",
+    "S01",
+    "S03"
+   ]
+  },
+  {
+   "id": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어법: want/hope/plan 뒤 to + 동사원형",
+   "intent": "어법상 바른 문장 고르기. a=기출 2024 기말 19번(원문), b=새 문항.",
+   "facts": [
+    "hope/want/plan 뒤에는 to + 동사원형을 쓴다 (p.96)",
+    "주어가 3인칭 단수이면 wants/hopes/plans (p.96 예문)"
+   ],
+   "pastExams": [
+    "2024-2학기-기말-19"
+   ],
+   "avoid": [
+    "Q06",
+    "Q08",
+    "Q09",
+    "S01",
+    "S03"
+   ]
+  },
+  {
+   "id": "Q08",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "어법: [ ]·ⓐ~ⓔ 문장 올바른/올바르지 않은 것끼리 짝짓기",
+   "intent": "ⓐ~ⓔ 중 어법상 올바른(올바르지 않은) 것끼리 짝짓기. a=기출 2025 기말 10번(속초 일기), b=기출 2025 기말 14번, c=새 문항. 5점은 이 슬롯 하나.",
+   "facts": [
+    "It was sunny today처럼 날씨는 비인칭 주어 It (p.90)",
+    "scary는 상황이 '무서운', scared는 사람이 '겁먹은' (scary p.90)",
+    "put은 현재·과거 동형 (p.90)",
+    "decide/plan 뒤에는 to + 동사원형 (p.96)",
+    "be going to + 동사원형 (p.84)"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-10",
+    "2025-2학기-기말-14"
+   ],
+   "avoid": [
+    "Q03",
+    "Q04",
+    "Q06",
+    "Q07",
+    "Q13",
+    "S05"
+   ]
+  },
+  {
+   "id": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어법: 문장 어순(단어 배열)",
+   "intent": "우리말에 맞게 단어를 배열할 때 N번째 단어 찾기(문장의 첫 단어를 조건으로 명시).",
+   "facts": [
+    "be going to + 동사원형 (p.82, p.84)",
+    "want to + 동사원형 (p.90, p.96)"
+   ],
+   "avoid": [
+    "Q03",
+    "Q06",
+    "Q07",
+    "Q10",
+    "Q12",
+    "Q13",
+    "Q14",
+    "Q15",
+    "Q17",
+    "S02",
+    "S04"
+   ]
+  },
+  {
+   "id": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화: 어색한 대화 고르기",
+   "intent": "계획 묻기·말하기·기원하기 대화 5개 중 어색한 것 고르기.",
+   "facts": [
+    "계획 묻기 What are you going to do ~? 에는 I'm going to ~ 로 답한다 (p.84~85)",
+    "Have a good time! 에는 You, too. 로 답한다 (p.85, p.88)"
+   ],
+   "avoid": [
+    "Q09",
+    "Q12"
+   ]
+  },
+  {
+   "id": "Q11",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화: (A)~(E) 순서 배열",
+   "intent": "첫 발화 뒤 (A)~(E) 다섯 발화를 대화 순서로 배열.",
+   "facts": [
+    "묻고(What are you going to do?) → 답하고(I'm going to ~. How about you?) → 응답 → 기원(Have a good time!) → You, too. 흐름 (p.85)"
+   ],
+   "avoid": [
+    "Q12"
+   ]
+  },
+  {
+   "id": "Q12",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "대화: 빈칸 완성",
+   "intent": "대화 속 (A)(B) 빈칸에 알맞은 표현 짝 고르기.",
+   "facts": [
+    "계획을 묻는 말 What are you going to do ~? (p.85)",
+    "여행지에서 할 일을 묻는 말 What can we do there? (p.87)",
+    "기원하기 Have a good time! (p.85)"
+   ],
+   "avoid": [
+    "Q09",
+    "Q10",
+    "Q11"
+   ]
+  },
+  {
+   "id": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 내용 일치(한국어 선지)",
+   "intent": "글을 읽고 내용과 일치하는 것 고르기(한국어 선지). a=기출 2025 기말 11번(원문, 속초 일기 9월 6일), b=새로 쓴 글.",
+   "facts": [
+    "9월 6일: 해돋이는 해변, 점심은 감자전, 점심 뒤 등대 전망대 꼭대기 (p.91)",
+    "등대는 약 70년 되었고 지금도 빛을 비춘다 (p.91)"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-11"
+   ],
+   "avoid": [
+    "Q01",
+    "Q03",
+    "Q08",
+    "Q09"
+   ]
+  },
+  {
+   "id": "Q14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 글을 읽고 답할 수 없는 질문",
+   "intent": "새로 쓴 글을 읽고 글에서 답을 찾을 수 없는 질문 고르기.",
+   "facts": [
+    "글에 정보가 없는 질문은 답할 수 없다 (독해 유형)",
+    "be going to / want·plan to로 쓴 계획 글 (p.84, p.90, p.96)"
+   ],
+   "avoid": [
+    "Q09"
+   ]
+  },
+  {
+   "id": "Q15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 흐름상 어색한 문장",
+   "intent": "새로 쓴 글의 ㉠~㉤ 중 글 전체 흐름과 관계없는 문장 고르기.",
+   "facts": [
+    "여행·견학 글은 같은 주제의 문장으로 이어진다 (p.90~91 일기 구조)"
+   ],
+   "avoid": [
+    "Q09"
+   ]
+  },
+  {
+   "id": "Q16",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어휘: 서수와 날짜 표기",
+   "intent": "서수(first~fourth)의 철자와 날짜 표기(1st, 2nd, 4th)가 올바른 것 고르기. a=날짜 표기, b=우리말-서수 짝.",
+   "facts": [
+    "날짜는 월 + 서수로 쓰고 1일은 1st, 2일은 2nd, 4일은 4th로 쓴다 (p.88, p.96, p.97)",
+    "first, second, third, fourth는 순서를 나타내는 서수이다 (p.88)"
+   ],
+   "avoid": [
+    "Q05",
+    "S05"
+   ]
+  },
+  {
+   "id": "Q17",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 일기 속 사건 순서",
+   "intent": "새로 쓴 일기에서 글쓴이가 한 일을 일어난 순서대로 배열(p.98 Check Up E와 같은 유형).",
+   "facts": [
+    "순서 표현(in the morning, Then, After lunch, At the end)으로 사건 순서를 안다 (p.90~91, p.98)"
+   ],
+   "avoid": [
+    "Q09"
+   ]
+  },
+  {
+   "id": "S01",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "서술형: 지정 동사 뒤 to + 동사원형 문장 완성",
+   "intent": "동사(want/hope/plan)를 괄호로 지정하고 to부정사 형태(to + 동사원형)만 보기에서 골라 완성(빈칸 4개, 칸마다 1점).",
+   "facts": [
+    "hope/plan/want + to + 동사원형 (p.96~97)"
+   ],
+   "avoidMotifs": [
+    "이름 Subin·수빈·Tom·Hana·Mina·Jisu·Yuna·Daniel·Jina 사용 금지(서술형은 Jun·Minho·Yeri·Sua 사용)",
+    "소재: 속초·해변 일기, 부산 여행, 제주도 여행, 과학관 견학, 한강 공원 자전거, 해변 수영·국수 장면",
+    "선택형 정답 문장 'Juwon hopes to learn Chinese.' 'My brother wants to play the guitar.' 'She studies hard to pass the test.' 와 같은 표현 금지",
+    "go camping, play soccer, play the guitar, learn Chinese, travel the world 소재 금지"
+   ],
+   "avoid": [
+    "Q06",
+    "Q07"
+   ]
+  },
+  {
+   "id": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "서술형: be going to 영작",
+   "intent": "우리말 문장을 주어진 단어와 조건(be going to, 추가 단어 3개)으로 영작(항목당 1점).",
+   "facts": [
+    "be going to + 동사원형 (p.82, p.84)"
+   ],
+   "avoidMotifs": [
+    "이름 Subin·수빈·Tom·Hana·Mina·Jisu·Yuna·Daniel·Jina 사용 금지(서술형은 Jun·Minho·Yeri·Sua 사용)",
+    "소재: 속초·해변 일기, 부산 여행, 제주도 여행, 과학관 견학, 한강 공원 자전거, 해변 수영·국수 장면",
+    "'They are going to visit Busan next week.' 'I want to play soccer after school.' 문장 금지",
+    "go camping, ride my bike, practice the piano, go fishing, visit my cousin 소재 금지"
+   ],
+   "avoid": [
+    "Q09"
+   ]
+  },
+  {
+   "id": "S03",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "서술형: 어법 틀린 단어 4개 찾아 고치기",
+   "intent": "새로 쓴 글에서 [ ]로 표시한 7개 단어 중 어법상 틀린 4개를 찾아 고치기(1개당 1점). 시점 단서와 주어를 분명히 해 정답이 하나로 확정되게 한다.",
+   "facts": [
+    "과거 시제·3인칭 단수·be동사 수일치·to부정사 (p.84, p.90~91, p.96)"
+   ],
+   "avoidMotifs": [
+    "이름 Subin·수빈·Tom·Hana·Mina·Jisu·Yuna·Daniel·Jina 사용 금지(서술형은 Jun·Minho·Yeri·Sua 사용)",
+    "소재: 속초·해변 일기, 부산 여행, 제주도 여행, 과학관 견학, 한강 공원 자전거, 해변 수영·국수 장면",
+    "선택형 해설·지문의 It was windy today / It was scared / It was fun, but I tired / I'm going to rode 같은 오류 문장 금지",
+    "scared, scary, tired, rode(오류형 rode), put up 소재 금지"
+   ],
+   "avoid": [
+    "Q06",
+    "Q07"
+   ]
+  },
+  {
+   "id": "S04",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "서술형: 글에서 단어 찾아 쓰기",
+   "intent": "새로 쓴 글의 내용과 일치하도록 빈칸 2개에 글에서 단어를 찾아 쓰기(칸마다 2점).",
+   "facts": [
+    "글에서 단어를 찾아 빈칸을 완성하는 독해 서술형 (p.92 Read and Complete 유형)"
+   ],
+   "avoidMotifs": [
+    "이름 Subin·수빈·Tom·Hana·Mina·Jisu·Yuna·Daniel·Jina 사용 금지(서술형은 Jun·Minho·Yeri·Sua 사용)",
+    "소재: 속초·해변 일기, 부산 여행, 제주도 여행, 과학관 견학, 한강 공원 자전거, 해변 수영·국수 장면",
+    "선택형 지문의 감자전(gamjajeon)·샌드위치·국수·시장·수족관·한라산·과학관 소재 금지",
+    "정답 낱말을 다른 문항 지문에 쓰지 않는다(kimbap의 fruit, rainbow, bibimbap, robot)"
+   ],
+   "avoid": [
+    "Q09"
+   ]
+  },
+  {
+   "id": "S05",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "서술형: it으로 요일·날짜·날씨 답하기",
+   "intent": "정보(날짜·요일·날씨)를 보고 What day/date is it? How's the weather?에 it을 주어로 완전한 문장으로 답하기(문장당 1점, 형식 1점).",
+   "facts": [
+    "비인칭 주어 it으로 요일·날짜·날씨를 답한다 (p.96~97)"
+   ],
+   "avoidMotifs": [
+    "이름 사용 금지(정보만 제시)",
+    "Friday·Wednesday·Sunday 요일 답, 'It is Friday', 'It's Wednesday today' 같은 선택형 문장 금지",
+    "날짜 October 2nd·November 1st·March 4th 사용 금지"
+   ],
+   "avoid": [
+    "Q05",
+    "Q08",
+    "Q16"
+   ]
+  }
+ ]
+}

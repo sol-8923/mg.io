@@ -1,0 +1,15 @@
+<svg viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="설악산, 속초 해수욕장, 속초 등대 전망대 순서 그림">
+<path d="M20 120 L80 30 L110 70 L140 40 L190 120Z" fill="#6E8FB8" stroke="#14233F" stroke-width="5" stroke-linejoin="round"/>
+<path d="M80 30 L62 58 L80 52 L92 66Z" fill="#fff" stroke="#14233F" stroke-width="3" stroke-linejoin="round"/>
+<path d="M205 75 L245 75" stroke="#C23B22" stroke-width="7" stroke-linecap="round"/>
+<path d="M233 60 L250 75 L233 90" stroke="#C23B22" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="320" cy="55" r="24" fill="#FFC83D" stroke="#14233F" stroke-width="5"/>
+<rect x="260" y="95" width="120" height="30" rx="8" fill="#39B8E8" stroke="#14233F" stroke-width="5"/>
+<path d="M275 108 Q290 98 305 108 Q320 118 335 108 Q350 98 365 108" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M395 75 L435 75" stroke="#C23B22" stroke-width="7" stroke-linecap="round"/>
+<path d="M423 60 L440 75 L423 90" stroke="#C23B22" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M490 125 L500 45 L540 45 L550 125Z" fill="#fff" stroke="#14233F" stroke-width="5" stroke-linejoin="round"/>
+<rect x="498" y="82" width="44" height="18" fill="#C23B22"/>
+<rect x="502" y="20" width="36" height="26" fill="#FFF6D8" stroke="#14233F" stroke-width="5"/>
+<path d="M496 20 L520 4 L544 20Z" fill="#C23B22" stroke="#14233F" stroke-width="4" stroke-linejoin="round"/>
+</svg>

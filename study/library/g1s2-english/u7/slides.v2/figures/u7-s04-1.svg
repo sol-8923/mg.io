@@ -1,0 +1,6 @@
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="오리와 토끼 착시 그림">
+<path d="M40 150 Q30 100 80 90 Q120 85 140 100 Q200 60 250 90 L262 100 L240 112 Q230 150 190 160 Q120 175 40 150Z" fill="#FFF6D6" stroke="#14233F" stroke-width="6" stroke-linejoin="round"/>
+<path d="M120 98 Q100 40 130 28 Q150 40 140 98Z" fill="#FFF6D6" stroke="#14233F" stroke-width="6" stroke-linejoin="round"/>
+<path d="M150 96 Q160 40 188 36 Q196 60 172 100Z" fill="#FFF6D6" stroke="#14233F" stroke-width="6" stroke-linejoin="round"/>
+<circle cx="205" cy="104" r="8" fill="#14233F"/>
+</svg>

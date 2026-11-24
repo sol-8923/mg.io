@@ -1,6 +1,17 @@
 {
  "books": [
   {
+   "id": "g1s2-english",
+   "grade": 1,
+   "semester": 2,
+   "subject": "영어",
+   "color": null,
+   "cover": "g1s2-english/cover.png?v=1794837784",
+   "sample": false,
+   "units": 3,
+   "questions": 127
+  },
+  {
    "id": "g1s2-ethics",
    "grade": 1,
    "semester": 2,

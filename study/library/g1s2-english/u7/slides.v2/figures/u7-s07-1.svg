@@ -1,0 +1,16 @@
+<svg viewBox="0 0 440 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="밝은 자화상 틀과 더 어두운 자화상 틀">
+<rect x="14" y="10" width="190" height="190" rx="10" fill="#FFC83D" stroke="#14233F" stroke-width="6"/>
+<rect x="34" y="30" width="150" height="150" fill="#CFEAFF" stroke="#14233F" stroke-width="4"/>
+<circle cx="109" cy="92" r="40" fill="#FFE2B8" stroke="#14233F" stroke-width="5"/>
+<path d="M72 78 Q109 38 146 78 Z" fill="#E8B54A" stroke="#14233F" stroke-width="4"/>
+<circle cx="94" cy="96" r="5" fill="#14233F"/><circle cx="124" cy="96" r="5" fill="#14233F"/>
+<path d="M96 116 Q109 126 122 116" stroke="#14233F" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M50 180 Q109 130 168 180Z" fill="#39B8E8" stroke="#14233F" stroke-width="4"/>
+<rect x="236" y="10" width="190" height="190" rx="10" fill="#B07A2A" stroke="#14233F" stroke-width="6"/>
+<rect x="256" y="30" width="150" height="150" fill="#3B4F78" stroke="#14233F" stroke-width="4"/>
+<circle cx="331" cy="92" r="40" fill="#D9A46A" stroke="#14233F" stroke-width="5"/>
+<path d="M294 80 Q331 44 368 80 Z" fill="#7A4A1E" stroke="#14233F" stroke-width="4"/>
+<circle cx="316" cy="96" r="5" fill="#14233F"/><circle cx="346" cy="96" r="5" fill="#14233F"/>
+<path d="M318 120 Q331 114 344 120" stroke="#14233F" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M272 180 Q331 130 390 180Z" fill="#2F5E4A" stroke="#14233F" stroke-width="4"/>
+</svg>

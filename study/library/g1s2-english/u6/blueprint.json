@@ -1,0 +1,399 @@
+{
+ "unitName": "Taste the World",
+ "profile": "past-exam",
+ "basis": "past-exam-pattern",
+ "analysis": "1학년 2학기 영어 2024·2025 기말(, 영어.md 0절)의 구성·문형을 따라 객관식(mc) 16슬롯 + 서술형(essay) 4슬롯 × 변형 2 = 40문항, 단원 총점 76점(객관식 60 + 서술형 16, 서술형 비중 21%)으로 구성했다. [기출 편입] 이 단원에 배정된 기출 9문항(2024 기말 10·서술형1·서술형4, 2025 기말 4·9·12·13·20·서술형2(22))을 모두 슬롯 pastExams에 넣었다. 슬롯마다 변형 a=기출 원문(밑줄은 [ ]로 표시, 학교명·교사명 없음), b=같은 개념·형태의 새 변형이며, 기출이 없는 새 슬롯(Q01·Q03·Q04·Q07·Q08·Q11·Q13·Q14·Q15·Q16·S04)은 a·b 모두 새 변형이다. 밑줄 친 부분은 앱이 밑줄을 지원하지 않아 [ ]로 표시했다. [영역 배분(슬롯 20개)] 어휘 5(Q01~Q04·Q16, 25%) · 어법 7(Q05~Q08·S01~S03, 35%) · 대화 3(Q09~Q11, 15%) · 독해 5(Q12~Q15·S04, 25%). [난이도·배점] 3점 5(Q01~Q04·Q16, 하) · 4점 14(Q05~Q07·Q09~Q15·S01~S04) · 5점 1(Q08, 상 어법 조합형), 서술형 4점 단위(소문항 1~2점). [필수 문형] (가) 단어 관계·공통 빈칸·잘못된 뜻 Q01·Q02·Q03·Q04 (나) 쓰임이 나머지와 다른 것 Q05·Q06 (다) 밑줄 어법 올바르지 않은 것끼리 Q08 (라) 어색한 대화 Q09·(A)~(E) 순서 Q11 (마) 독해 알 수 없는 것 Q12·내용 일치 Q13·문장 순서 Q14·대명사 지칭 Q15, 국적 형용사 어휘 Q16. [사실 배분표] Q01 나라-음식/나라-국적/재료-음식/맛 형용사 짝(p101·103·106·108·110·111·113) | Q02 dip(p110)·dish(p110) | Q03 sour·fresh의 뜻(p108·111) | Q04 shrimp·heat가 쓰이지 않는 빈칸(p108·110·111) | Q05 동명사 vs 형용사 역할 -ing(p116) | Q06 동명사 vs 현재진행(p116) | Q07 감각동사+형용사(p116) | Q08 감각동사·enjoy+동명사 조합(p116) | Q09 원하는 것·권유 대화의 어색한 응답(p102·103·106) | Q10 희망 표현·감각동사·권유에 답하기 빈칸(p102·103·106·116) | Q11 권유·주문 대화의 흐름(p102·103·105·106) | Q12 지문에 없는 정보(p108) | Q13 새로 쓴 글 일치 | Q14 만드는 순서(p110·115) | Q15 it의 지칭(p111) | Q16 국적 형용사(p103·111) | S01 수일치·대명사·감각동사 오류 고치기(p111·115·116) | S02 enjoy+동명사 영작(p116) | S03 3인칭 단수 동사+동명사 영작(p116) | S04 글에서 단어 찾기. 슬롯 간 같은 사실을 정답으로 반복하지 않으며, 서술형 정답 낱말(is·tastes·it·smells, are·colorful·loves·tomatoes, cooking·listening, practices·playing, dancing·likes, together·meat, warm·picking)과 Q02·Q04의 정답 낱말(dip·dish·shrimp·heat)은 다른 슬롯 본문에 쓰지 않았다. [정답 번호 배분표] 변형 a = 3·1·5·2·4·1·3·2·5·3·4·2·5·4·1·4 (①3 ②3 ③3 ④4 ⑤3), 변형 b = 2·4·1·5·3·5·2·4·1·3·1·3·2·5·4·1 (①4 ②3 ③3 ④3 ⑤3), 각 변형 3연속 없음. [교과서 밖 표시] 교과서에 없는 용례(smoking man·현재진행형·practice+동명사·cover/move/face 뜻 등)는 해설에 '(교과서 밖 일반 상식)'을 붙였다. 새로 쓴 글은 지문 제목에 '새로 쓴 글'을 표시했다.",
+ "timeLimitMin": 35,
+ "totalPoints": 76,
+ "variantsPerSlot": 2,
+ "totalQuestions": 20,
+ "types": {
+  "mc": 16,
+  "short": 0,
+  "essay": 4
+ },
+ "difficulty": {
+  "상": 2,
+  "중": 13,
+  "하": 5
+ },
+ "concepts": {
+  "단어 관계(나머지와 다른 짝)": 1,
+  "두 문장 공통 빈칸(어휘)": 1,
+  "[ ] 표시 낱말의 뜻이 잘못된 것(어휘)": 1,
+  "어느 빈칸에도 들어갈 수 없는 것(어휘)": 1,
+  "-ing의 쓰임 구분(동명사 vs 그 밖의 -ing)": 1,
+  "-ing의 쓰임 구분(동명사 vs 현재진행)": 1,
+  "감각동사 뒤 형용사": 1,
+  "어법 조합(감각동사·동명사)": 1,
+  "어색한 대화(원하는 것 말하기·권유)": 1,
+  "대화 빈칸 조합(감각동사·희망 표현)": 1,
+  "대화 순서 배열 (A)~(E)": 1,
+  "독해: 알 수 없는 것": 1,
+  "독해: 내용 일치(한국어 선지)": 1,
+  "독해: 문장 순서(만드는 순서)": 1,
+  "독해: 대명사 it이 가리키는 것": 1,
+  "국적 형용사(어휘)": 1,
+  "어법 오류 찾아 고치기(수일치·대명사·감각동사)": 1,
+  "영작: enjoy + 동명사": 1,
+  "영작: 3인칭 단수 + 동명사 목적어": 1,
+  "독해: 본문에서 단어 찾아 쓰기": 1
+ },
+ "slots": [
+  {
+   "id": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "단어 관계(나머지와 다른 짝)",
+   "intent": "[어휘 앞쪽 3점] 두 단어의 관계가 나머지와 다른 것 고르기. a=나라-대표 음식 4짝 중 나라-국적 형용사(Korea-Korean) 1짝, b=음식 재료-음식 4짝(cheese-fondue·fish-poke·bread-fondue·vegetables-poke) 중 맛 형용사 두 개 짝(sweet-spicy) 1짝.",
+   "facts": [
+    "pho는 베트남, fondue는 스위스의 인기 있는 치즈 요리, tom yum goong은 태국의 인기 있는 수프, pizza는 이탈리아에서 온 음식이다 [p101·103·110·111·113]",
+    "Korean은 '한국의'를 뜻하는 낱말이다 [p102·103]",
+    "sweet(달콤한)·spicy(매운)는 맛을 표현하는 형용사이다 [p106]"
+   ]
+  },
+  {
+   "id": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "두 문장 공통 빈칸(어휘)",
+   "intent": "[기출 2025 기말 4 편입 + 새 변형] a=원문(dip), b=두 문장(요리·그릇 뜻을 가진 dish) 공통 빈칸 고르기.",
+   "facts": [
+    "dip은 '살짝 담그다'라는 뜻의 동사이다 [p110]",
+    "dish는 '요리; 그릇'의 두 뜻을 가진 명사이다 [p110, 단어 목록]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-04"
+   ],
+   "avoid": [
+    "Q04"
+   ]
+  },
+  {
+   "id": "Q03",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "[ ] 표시 낱말의 뜻이 잘못된 것(어휘)",
+   "intent": "[어휘 3점] 문장 속 [ ] 단어와 우리말 뜻풀이 5개 중 잘못 짝지은 것 고르기. a=sour를 '단'으로 쓴 것, b=fresh를 '오래된'으로 쓴 것.",
+   "facts": [
+    "sour는 '신맛의'이다 [p111]",
+    "fresh는 '신선한'이다 [p108]",
+    "island 섬·add 추가하다·bowl 그릇·famous 유명한 [p108]",
+    "mean 의미하다 [p108]·easy 쉬운 [p110]·weather 날씨 [p111]"
+   ],
+   "avoid": [
+    "Q04",
+    "S01"
+   ]
+  },
+  {
+   "id": "Q04",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어느 빈칸에도 들어갈 수 없는 것(어휘)",
+   "intent": "[어휘 3점] 네 문장 빈칸에 각각 하나씩 들어가고 한 단어는 어느 빈칸에도 못 들어가는 5개 단어 중 고르기. a=answer shrimp, b=answer heat.",
+   "facts": [
+    "mean은 '의미하다', bowl은 '그릇', weather는 '날씨', island는 '섬' [p108·111]; heat는 '데우다' [p110]",
+    "add는 '추가하다', fresh는 '신선한', easy는 '쉬운' [p108·110]",
+    "shrimp는 '새우' [p111]"
+   ],
+   "avoid": [
+    "Q02",
+    "Q03",
+    "S01"
+   ]
+  },
+  {
+   "id": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "-ing의 쓰임 구분(동명사 vs 그 밖의 -ing)",
+   "intent": "[기출 2024 기말 10 편입 + 새 변형, 어법 '쓰임이 나머지와 다른 것'] a=원문(smoking), b=동명사 문장 4개와 명사를 꾸미는 -ing(sleeping) 1개.",
+   "facts": [
+    "동명사는 동사원형+-ing이며 ‘~하는 것’이라는 뜻으로 enjoy·like 뒤 목적어나 문장 주어로 쓰인다 [p116]",
+    "명사를 꾸미는 -ing(교과서 밖 구분)와 현재진행형(I’m making kimchijeon now, p119)은 동명사가 아니다 (대비 항목)"
+   ],
+   "pastExams": [
+    "2024-2학기-기말-10"
+   ],
+   "avoid": [
+    "Q06",
+    "S02"
+   ]
+  },
+  {
+   "id": "Q06",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "-ing의 쓰임 구분(동명사 vs 현재진행)",
+   "intent": "[기출 2025 기말 13 편입 + 새 변형] a=원문(writing=현재진행), b=동명사 문장 4개와 현재진행형(is washing) 1개.",
+   "facts": [
+    "동명사는 문장 안에서 주어·목적어 자리에 쓰인다: Reading a book is fun, I like playing baseball [p116]",
+    "be동사+-ing 현재진행형은 동명사가 아니다: I’m making kimchijeon now [p119] (대비 항목)"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-13"
+   ],
+   "avoid": [
+    "Q05"
+   ]
+  },
+  {
+   "id": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "감각동사 뒤 형용사",
+   "intent": "[어법 4점] a=어법상 틀린 문장 고르기(looks beautifully), b=감각동사 뒤 빈칸에 들어갈 수 없는 낱말(부사 quietly).",
+   "facts": [
+    "감각동사(look·sound·feel·smell·taste) 뒤에는 형용사를 쓴다: The cat looks cute, The song sounds beautiful [p116]"
+   ],
+   "avoid": [
+    "Q10",
+    "S01"
+   ]
+  },
+  {
+   "id": "Q08",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "어법 조합(감각동사·동명사)",
+   "intent": "[어법 조합형 5점 상, 단원 1개] 새로 쓴 짧은 글의 ⓐ~ⓔ 중 어법상 올바르지 않은 것끼리 고르기(오답 보기도 모두 2개 조합). a=ⓑ(feel+부사)·ⓒ(enjoy+to eat), b=ⓒ(주어 Draw)·ⓓ(enjoy+to take).",
+   "facts": [
+    "감각동사 뒤에는 형용사: Tom yum goong smells good [p116]",
+    "enjoy는 동명사를 목적어로 쓰고, 동명사는 주어도 된다: I enjoy riding a bike, Making a movie is not easy [p116]"
+   ],
+   "avoid": [
+    "Q10",
+    "S01"
+   ]
+  },
+  {
+   "id": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어색한 대화(원하는 것 말하기·권유)",
+   "intent": "[기출 2025 기말 9 편입 + 새 변형, 대화] a=원문(What would you like to learn? - That sounds fun! 어색), b=5개 짧은 대화 중 질문과 응답이 어긋난 것(What would you like to try? - It's a Mexican hat).",
+   "facts": [
+    "What would you like to try? / I'd like to try a Korean hat. 은 원하는 것을 묻고 말하는 표현이다 [p102·103]",
+    "원하는 것은 I'd like to ~로 답하고, 권유 뒤에는 That sounds good 같은 말로 답한다 [p103·106]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-09"
+   ],
+   "avoid": [
+    "Q10",
+    "Q11"
+   ]
+  },
+  {
+   "id": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화 빈칸 조합(감각동사·희망 표현)",
+   "intent": "[기출 2025 기말 12 편입 + 새 변형, 대화] a=원문(푸드 트럭), b=새로 쓴 부스 대화 (A) try/trying (B) looks/looks like (C) sounds/sounds like.",
+   "facts": [
+    "감각동사 뒤에는 형용사: Everything looks delicious [p104 영상 대화는 학생 본문에 없음, p116 감각동사 문법]",
+    "I'd like to try ~ 는 해 보고 싶은 것을 말하는 표현이다 [p102·103]",
+    "That sounds good은 권유에 답하는 말이다 [p106]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-12"
+   ],
+   "avoid": [
+    "Q07",
+    "Q08",
+    "Q09",
+    "S01"
+   ]
+  },
+  {
+   "id": "Q11",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화 순서 배열 (A)~(E)",
+   "intent": "[대화 순서 배열 4점, 새로 쓴 대화] a=세계 문화 부스에서 먹을 것 권유(D-B-A-C-E), b=푸드 트럭 주문(D-C-B-E-A). 오답 보기는 질문→희망→권유→수락/주문→추가 주문→감사의 흐름이 깨진 순서.",
+   "facts": [
+    "What would you like to try? → I'd like to try … → How about …? → 수락의 흐름 [p102·103·106]",
+    "주문 대화는 What would you like to order? → I'd like to have … → Anything else? 의 흐름 [p105]"
+   ],
+   "avoid": [
+    "Q09",
+    "Q14"
+   ]
+  },
+  {
+   "id": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 알 수 없는 것",
+   "intent": "[기출 2025 기말 20 편입 + 새 변형, 독해 '알 수 없는 것'] a=원문(poke 지문, 함께 먹는 음식은 언급 없음), b=새로 쓴 글(비빔밥)에서 언급되지 않은 정보(만드는 데 걸리는 시간).",
+   "facts": [
+    "Poke is a famous fish salad from Hawaii. People cut fish into small pieces and put them in a bowl [p108]",
+    "새로 쓴 글(비빔밥)의 내용은 문항 지문에 모두 주어진다"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-20"
+   ],
+   "avoid": [
+    "S01"
+   ]
+  },
+  {
+   "id": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 내용 일치(한국어 선지)",
+   "intent": "[독해 4점, 새로 쓴 글] a=쌀국수(pho) 지문, 일치하는 것은 '국물을 붓기 전에 국수를 그릇에 담는다', b=카레(curry) 지문, 일치하는 것은 '냄비에 채소와 닭고기를 함께 요리한다'. 선지는 한국어.",
+   "facts": [
+    "세계 음식을 소개하는 글은 나라·재료·만드는 순서를 설명한다 [p108·110·111]",
+    "pho는 베트남, curry는 인도의 음식이다 [p101 그림 부스, p103]"
+   ],
+   "avoid": [
+    "S01"
+   ]
+  },
+  {
+   "id": "Q14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 문장 순서(만드는 순서)",
+   "intent": "[독해 4점, 새로 쓴 글] 만드는 순서를 나타내는 글의 (A)~(C) 또는 (A)~(D) 배열. a=퐁뒤 만드는 순서(치즈 데우기→빵 자르기→빵 담그기), b=떡볶이 레시피 순서(First 볶기→Second 우유·떡→Third 치즈→Last 파, 순서 표시로 확정).",
+   "facts": [
+    "퐁뒤는 First 치즈를 냄비에 데우고 Next 빵을 작은 조각으로 자른 뒤 빵 조각을 따뜻한 치즈에 담근다 [p110, p118]",
+    "떡볶이 레시피 예시는 베이컨·양파 볶기, 우유·떡 넣기, 치즈 넣고 섞기, 파 더하기 순서이다 [p115]"
+   ],
+   "avoid": [
+    "Q11"
+   ]
+  },
+  {
+   "id": "Q15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 대명사 it이 가리키는 것",
+   "intent": "[독해 4점, 새로 쓴 글] 글의 [ ]로 표시한 it이 가리키는 명사 고르기. a=hot dog과 orange juice 중 drank의 대상, b=복수 apples와 단수 cocoa 중 drank의 대상.",
+   "facts": [
+    "it은 앞에서 말한 단수 명사를 가리킨다: Tom yum goong has shrimp in it [p111]"
+   ]
+  },
+  {
+   "id": "Q16",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "국적 형용사(어휘)",
+   "intent": "[어휘 3점] a=A beret is a ___ hat. 빈칸에 French(France·Frencher·Frenchish·Franch가 오답), b=Pho is a ___ food. 빈칸에 Vietnamese.",
+   "facts": [
+    "French·Vietnamese [p103]",
+    "Thai는 태국의를 뜻하는 형용사이다 [p111]"
+   ]
+  },
+  {
+   "id": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "어법 오류 찾아 고치기(수일치·대명사·감각동사)",
+   "intent": "[서술형 4점, 기출 2025 기말 서술형 2 편입 + 새 변형] a=원문(태국 글 4개 오류 are→is, taste→tastes, them→it, smell→smells), b=새로 쓴 샐러드 글 8개 [ ] 표시 중 4개(is→are, colorfully→colorful, love→loves, tomato→tomatoes), 각 1점.",
+   "facts": [
+    "감각동사 뒤 형용사, 주어에 맞는 동사 형태 [p111·116]",
+    "tomatoes는 복수형이다 [p115]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-22"
+   ],
+   "avoidMotifs": [
+    "선택형이 쓴 소재: hotteok 소개 글(Q08a), 푸드 트럭 일기·hot dog(Q08b), 세계 문화 부스·모자(beret, sombrero, non la)와 risotto 권유(Q09~Q11), 샌드위치·레모네이드 주문(Q11b), poke·bibimbap·pho·curry 소개 글(Q12·Q13), 퐁뒤·똠얌꿍·피자의 나라 짝(Q01)",
+    "선택형 사례 이름: Andy, Yena(Q10a), Tom, Jina(Q10b), Hana(Q06b), Jun(Q08b)",
+    "선택형 정답 문장: Korea – Korean / sweet – spicy / dip / dish / shrimp / island / My dad is that smoking man / The sleeping baby is very cute / The teacher is writing a book / My brother is washing the car now / The flower looks beautifully / What would you like to learn? – Oh, that sounds fun! / delicious – What – try / try – looks – sounds / 포케랑 같이 먹는 음식 / 비빔밥을 만드는 데 걸리는 시간 / 국물을 붓기 전에 국수를 그릇에 담는다 / 냄비에 채소와 닭고기를 함께 요리한다"
+   ],
+   "avoid": [
+    "Q03",
+    "Q04",
+    "Q07",
+    "Q08",
+    "Q10",
+    "Q12",
+    "Q13",
+    "S04"
+   ]
+  },
+  {
+   "id": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "영작: enjoy + 동명사",
+   "intent": "[서술형 4점, 기출 2024 기말 서술형 1 편입 + 새 변형] a=원문(남극 일기 지문의 (A) 우리말: I enjoy cooking for the people here), b=우리말 '나는 친구들과 함께 음악 듣는 것을 즐긴다'(주어진 단어, 한 단어 추가).",
+   "facts": [
+    "enjoy는 동명사(동사원형+-ing)를 목적어로 쓴다: I enjoy riding a bike, Tom enjoys watching movies [p116]"
+   ],
+   "pastExams": [
+    "2024-2학기-기말-서1"
+   ],
+   "avoidMotifs": [
+    "선택형이 쓴 소재: hotteok 소개 글(Q08a), 푸드 트럭 일기·hot dog(Q08b), 세계 문화 부스·모자(beret, sombrero, non la)와 risotto 권유(Q09~Q11), 샌드위치·레모네이드 주문(Q11b), poke·bibimbap·pho·curry 소개 글(Q12·Q13), 퐁뒤·똠얌꿍·피자의 나라 짝(Q01)",
+    "선택형 사례 이름: Andy, Yena(Q10a), Tom, Jina(Q10b), Hana(Q06b), Jun(Q08b)",
+    "선택형 정답 문장: Korea – Korean / sweet – spicy / dip / dish / shrimp / island / My dad is that smoking man / The sleeping baby is very cute / The teacher is writing a book / My brother is washing the car now / The flower looks beautifully / What would you like to learn? – Oh, that sounds fun! / delicious – What – try / try – looks – sounds / 포케랑 같이 먹는 음식 / 비빔밥을 만드는 데 걸리는 시간 / 국물을 붓기 전에 국수를 그릇에 담는다 / 냄비에 채소와 닭고기를 함께 요리한다"
+   ],
+   "avoid": [
+    "Q05"
+   ]
+  },
+  {
+   "id": "S03",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "영작: 3인칭 단수 + 동명사 목적어",
+   "intent": "[서술형 4점, 기출 2024 기말 서술형 4 편입 + 새 변형] a=원문(Betty practices playing the guitar every day, practice는 교과서 밖 동사), b=우리말 'Mina는 밤에 춤추는 것을 좋아한다'(like·dance·at·night).",
+   "facts": [
+    "like 뒤에는 동명사를 쓸 수 있다: I like playing baseball [p116]",
+    "3인칭 단수 주어에는 동사에 -s를 붙인다: Tom enjoys watching movies [p116]"
+   ],
+   "pastExams": [
+    "2024-2학기-기말-서4"
+   ],
+   "avoidMotifs": [
+    "선택형이 쓴 소재: hotteok 소개 글(Q08a), 푸드 트럭 일기·hot dog(Q08b), 세계 문화 부스·모자(beret, sombrero, non la)와 risotto 권유(Q09~Q11), 샌드위치·레모네이드 주문(Q11b), poke·bibimbap·pho·curry 소개 글(Q12·Q13), 퐁뒤·똠얌꿍·피자의 나라 짝(Q01)",
+    "선택형 사례 이름: Andy, Yena(Q10a), Tom, Jina(Q10b), Hana(Q06b), Jun(Q08b)",
+    "선택형 정답 문장: Korea – Korean / sweet – spicy / dip / dish / shrimp / island / My dad is that smoking man / The sleeping baby is very cute / The teacher is writing a book / My brother is washing the car now / The flower looks beautifully / What would you like to learn? – Oh, that sounds fun! / delicious – What – try / try – looks – sounds / 포케랑 같이 먹는 음식 / 비빔밥을 만드는 데 걸리는 시간 / 국물을 붓기 전에 국수를 그릇에 담는다 / 냄비에 채소와 닭고기를 함께 요리한다"
+   ]
+  },
+  {
+   "id": "S04",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 본문에서 단어 찾아 쓰기",
+   "intent": "[서술형 4점 각 2점] 새로 쓴 짧은 글을 읽고 빈칸 (A)(B)에 알맞은 단어를 글에서 찾아 쓰기. a=만두 글(meat, together), b=제주 글(warm, picking).",
+   "facts": [
+    "세계의 음식과 지역을 소개하는 글의 읽기 [p108·110·111]",
+    "enjoy + 동명사 [p116]"
+   ],
+   "avoidMotifs": [
+    "선택형이 쓴 소재: hotteok 소개 글(Q08a), 푸드 트럭 일기·hot dog(Q08b), 세계 문화 부스·모자(beret, sombrero, non la)와 risotto 권유(Q09~Q11), 샌드위치·레모네이드 주문(Q11b), poke·bibimbap·pho·curry 소개 글(Q12·Q13), 퐁뒤·똠얌꿍·피자의 나라 짝(Q01)",
+    "선택형 사례 이름: Andy, Yena(Q10a), Tom, Jina(Q10b), Hana(Q06b), Jun(Q08b)",
+    "선택형 정답 문장: Korea – Korean / sweet – spicy / dip / dish / shrimp / island / My dad is that smoking man / The sleeping baby is very cute / The teacher is writing a book / My brother is washing the car now / The flower looks beautifully / What would you like to learn? – Oh, that sounds fun! / delicious – What – try / try – looks – sounds / 포케랑 같이 먹는 음식 / 비빔밥을 만드는 데 걸리는 시간 / 국물을 붓기 전에 국수를 그릇에 담는다 / 냄비에 채소와 닭고기를 함께 요리한다"
+   ],
+   "avoid": [
+    "S01"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+<svg class="scene" viewBox="0 0 1920 1080" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<path d="M1250 120 Q1250 140 1270 140 Q1250 140 1250 160 Q1250 140 1230 140 Q1250 140 1250 120Z" fill="#FFC83D"/>
+<path d="M1750 90 Q1750 106 1766 106 Q1750 106 1750 122 Q1750 106 1734 106 Q1750 106 1750 90Z" fill="#fff"/>
+<circle cx="1480" cy="250" r="64" fill="#FFC83D" stroke="#14233F" stroke-width="6"/>
+<ellipse cx="1240" cy="330" rx="90" ry="32" fill="#fff" opacity=".4"/>
+<ellipse cx="1780" cy="400" rx="80" ry="28" fill="#fff" opacity=".4"/>
+<path d="M1130 800 L1350 410 L1450 560 L1560 450 L1780 800Z" fill="#6E8FB8" stroke="#14233F" stroke-width="7" stroke-linejoin="round"/>
+<path d="M1350 410 L1300 500 L1345 485 L1370 520 L1405 480Z" fill="#fff" stroke="#14233F" stroke-width="4" stroke-linejoin="round"/>
+<path d="M-200 800 L3000 800 L3000 1080 L-200 1080Z" fill="#39B8E8"/>
+<path d="M1160 850 Q1200 830 1240 850 Q1280 870 1320 850" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M1400 900 Q1440 880 1480 900 Q1520 920 1560 900" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M1230 960 Q1270 940 1310 960 Q1350 980 1390 960" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M1640 800 Q1700 730 1790 760 L1850 800Z" fill="#F4D7A4" stroke="#14233F" stroke-width="6" stroke-linejoin="round"/>
+<path d="M1680 480 L1760 480 L1756 540 L1684 540Z" fill="#C23B22"/>
+<path d="M1660 770 L1690 330 L1750 330 L1780 770Z" fill="#fff" stroke="#14233F" stroke-width="7" stroke-linejoin="round"/>
+<path d="M1676 640 L1764 640 L1768 700 L1672 700Z" fill="#C23B22"/>
+<path d="M1685 480 L1757 480 L1753 540 L1688 540Z" fill="#C23B22"/>
+<rect x="1680" y="270" width="80" height="60" fill="#FFF6D8" stroke="#14233F" stroke-width="6"/>
+<path d="M1670 270 L1720 220 L1770 270Z" fill="#C23B22" stroke="#14233F" stroke-width="6" stroke-linejoin="round"/>
+<path d="M1680 300 L1360 230 L1360 350Z" fill="#FFC83D" opacity=".45"/>
+<path d="M-200 930 L3000 930 L3000 1080 L-200 1080Z" fill="#0F2547"/>
+<path d="M-200 930 L3000 930" stroke="#7FB6E8" stroke-width="8"/>
+</svg>

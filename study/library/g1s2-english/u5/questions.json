@@ -1,0 +1,2792 @@
+{
+ "questions": [
+  {
+   "id": "u5-Q01-a",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어휘: 두 문장 공통 빈칸",
+   "source": "교과서 p.91 (2025 2학기 기말 3번)",
+   "question": "다음 두 문장의 빈칸에 공통으로 들어갈 단어는? (대소문자 구분 없음)",
+   "choices": [
+    "hike",
+    "popular",
+    "steep",
+    "different",
+    "touched"
+   ],
+   "answer": 3,
+   "explanation": "steep은 '가파른'이라는 형용사라서, 산이 너무 가파르면 천천히 오르고 계단이 가파르면 조심해야 한다는 두 문장에 모두 들어가요.",
+   "choiceExplanations": [
+    "hike는 '등산하다'라는 동사예요. too 뒤나 stairs 앞처럼 형용사가 필요한 자리에는 쓸 수 없어요(교과서 p.90에서는 hiked Seoraksan처럼 동사로 나와요).",
+    "popular는 '인기 있는'이라는 뜻이라 stairs를 꾸미는 것까지는 가능하지만, '산이 너무 인기 있어서 천천히 올랐다'는 앞 문장의 흐름이 이어지지 않아요.",
+    "정답. steep은 '가파른'이라는 형용사라서, 산이 너무 가파르면 천천히 오르고 계단이 가파르면 조심해야 한다는 두 문장에 모두 들어가요.",
+    "different는 '다른'이라는 뜻이에요. '산이 너무 달라서 천천히 올랐다'도, '다른 계단에서 조심하라'도 문맥이 어색해요.",
+    "touched는 touch(만지다)의 과거형·과거분사형이라 '만져진, 감동한'의 뜻이에요. 산을 천천히 오르는 상황과 계단에서 조심하라는 말에 맞지 않아요."
+   ],
+   "detail": "먼저 두 문장을 모두 읽고 빈칸 앞뒤의 단서를 찾아요. 첫 문장은 'too ___, so we climbed it slowly(너무 ___해서 천천히 올랐다)'이므로 산이 '가파르다'는 뜻의 형용사가 알맞아요. 둘째 문장은 'the ___ stairs'에서 stairs를 꾸미는 형용사 자리이고, 가파른 계단이라면 조심하라는 말이 자연스러워요. 교과서 p.91에서 steep은 '가파른'이라는 뜻의 형용사로 'many steep stairs'에 나와요(교과서 p.91). 그래서 두 빈칸에 모두 steep을 넣으면 두 문장이 모두 자연스러워져요.",
+   "tip": "'too + 형용사, so + 결과' 문장에서는 결과 문장이 단서예요. 'steep stairs'는 가파른 계단!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "steep 한눈에 보기",
+     "head": [
+      "낱말",
+      "품사",
+      "뜻",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "steep",
+       "형용사",
+       "가파른",
+       "p.91"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "- The mountain was too _____, so we climbed it slowly.\n- Be careful on the _____ stairs.",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-03"
+  },
+  {
+   "id": "u5-Q01-b",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어휘: 두 문장 공통 빈칸",
+   "source": "교과서 p.90, p.91",
+   "question": "다음 두 문장의 빈칸에 공통으로 들어갈 단어는?",
+   "choices": [
+    "mountain",
+    "ocean",
+    "wave",
+    "moment",
+    "wish"
+   ],
+   "answer": 1,
+   "explanation": "mountain은 '산'이라는 뜻이라, 높은 산을 올랐다는 문장과 설악산이 한국의 유명한 산이라는 문장에 모두 들어가요.",
+   "choiceExplanations": [
+    "정답. mountain은 '산'이라는 뜻이라, 높은 산을 올랐다는 문장과 설악산이 한국의 유명한 산이라는 문장에 모두 들어가요.",
+    "ocean은 '대양, 바다'라는 뜻이라 '높은 바다에 올랐다'도, '한국의 유명한 바다 설악산'도 말이 되지 않아요(교과서 p.91).",
+    "wave는 '파도, 물결'이라는 뜻이라 '높은 파도에 올랐다'는 말은 어색하고 설악산을 설명하는 말로도 맞지 않아요(교과서 p.90).",
+    "moment는 '순간; 잠깐'이라는 뜻이라 산을 오른다는 말에도, 설악산을 소개하는 말에도 맞지 않아요(교과서 p.91).",
+    "wish는 '소원'이라는 뜻이라 '높은 소원에 올랐다'는 말이 되지 않아요(교과서 p.91)."
+   ],
+   "detail": "첫 문장은 'We climbed a high ___(우리는 높은 ___에 올랐다)'이므로 오를 수 있는 장소가 필요해요. 둘째 문장은 'Seoraksan is a famous ___ in Korea.'로 설악산이 어떤 곳인지 설명하는 말이에요. 교과서 p.91의 'the ocean, and the mountains'에서 mountain은 '산'이라는 뜻의 명사이고, 설악산(Seoraksan)은 p.90에서 등산한 산이에요(교과서 p.91, p.90). 두 문장에서 모두 '산'이 알맞으므로 빈칸에는 mountain이 들어가요.",
+   "tip": "오르는 곳, 높은 곳이면 mountain! 두 문장에 모두 넣어 읽어 봐요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "mountain",
+     "head": [
+      "낱말",
+      "품사",
+      "뜻",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "mountain",
+       "명사",
+       "산",
+       "p.91"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "- We climbed a high _____ yesterday.\n- Seoraksan is a famous _____ in Korea."
+  },
+  {
+   "id": "u5-Q02-a",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어휘: 두 단어의 관계",
+   "source": "교과서 p.90, p.91, p.93",
+   "question": "다음 중 두 단어의 관계가 나머지와 다른 하나는?",
+   "choices": [
+    "delicious - tasty",
+    "ocean - sea",
+    "wonderful - great",
+    "begin - start",
+    "sunrise - sunset"
+   ],
+   "answer": 5,
+   "explanation": "sunrise(해돋이)와 sunset(해넘이)은 뜻이 반대인 반의어이고, 나머지 네 쌍은 뜻이 비슷한 유의어예요.",
+   "choiceExplanations": [
+    "delicious(맛있는)와 tasty(맛있는)는 뜻이 비슷한 유의어예요('It was delicious!'(p.90), 'It was tasty.'(p.93)).",
+    "ocean(대양, 바다)과 sea(바다)는 모두 바다를 가리키는 유의어예요(ocean은 교과서 p.91, sea는 이 단원 밖 교과서 p.62).",
+    "wonderful(훌륭한)과 great(훌륭한)는 칭찬할 때 쓰는 비슷한 뜻이에요(wonderful은 교과서 p.91, great는 교과서 p.85).",
+    "begin과 start는 둘 다 '시작하다'라서 유의어예요(이 단원 밖 교과서 p.9, p.60에 나와요).",
+    "정답. sunrise(해돋이)와 sunset(해넘이)은 뜻이 반대인 반의어이고, 나머지 네 쌍은 뜻이 비슷한 유의어예요."
+   ],
+   "detail": "단어 관계 문제는 먼저 각 단어쌍의 우리말 뜻을 쓰고 '같은 뜻인지, 반대 뜻인지'로 나눠요. delicious와 tasty는 모두 '맛있는', ocean과 sea는 모두 '바다', wonderful과 great는 모두 '훌륭한', begin과 start는 모두 '시작하다'로 유의어예요. 반면 sunrise는 '해돋이'(교과서 p.90), sunset은 '해넘이'(교과서 밖 일반 상식)로 반대 뜻이라 혼자 관계가 달라요. 그래서 정답은 sunrise - sunset이에요.",
+   "tip": "뜻이 같은 쌍이 네 개면 다른 하나는 반의어! 먼저 뜻을 모두 적어 봐요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "단어쌍 관계 정리",
+     "head": [
+      "단어쌍",
+      "관계",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "delicious - tasty",
+       "유의어",
+       "맛있는"
+      ],
+      [
+       "ocean - sea",
+       "유의어",
+       "바다"
+      ],
+      [
+       "wonderful - great",
+       "유의어",
+       "훌륭한"
+      ],
+      [
+       "begin - start",
+       "유의어",
+       "시작하다"
+      ],
+      [
+       "sunrise - sunset",
+       "반의어",
+       "해돋이 - 해넘이"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5-Q02-b",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어휘: 두 단어의 관계",
+   "source": "교과서 p.90, p.91",
+   "question": "두 단어의 관계가 나머지 넷과 다른 것은?",
+   "choices": [
+    "early - late",
+    "dark - bright",
+    "trip - journey",
+    "sunny - cloudy",
+    "push - pull"
+   ],
+   "answer": 3,
+   "explanation": "trip(여행)과 journey(여행)는 뜻이 비슷한 유의어이고, 나머지 네 쌍은 뜻이 반대인 반의어예요.",
+   "choiceExplanations": [
+    "early(이른)와 late(늦은)는 뜻이 반대인 반의어예요(early는 교과서 p.91, late는 이 단원 밖 교과서 p.31).",
+    "dark(어두운)와 bright(밝은)는 뜻이 반대인 반의어예요(dark는 교과서 p.91, bright는 이 단원 밖 교과서 p.126, p.129).",
+    "정답. trip(여행)과 journey(여행)는 뜻이 비슷한 유의어이고, 나머지 네 쌍은 뜻이 반대인 반의어예요.",
+    "sunny(화창한)와 cloudy(흐린)는 날씨가 반대인 반의어 관계예요(sunny는 교과서 p.90, cloudy는 이 단원 밖 교과서 p.55).",
+    "push(밀다)와 pull(당기다)은 방향이 반대인 반의어예요(push는 교과서 p.90, pull은 이 단원 밖 교과서 p.146)."
+   ],
+   "detail": "각 단어쌍의 뜻을 우리말로 써서 '반대'인지 '비슷'한지 구분해요. early–late(이른–늦은), dark–bright(어두운–밝은), sunny–cloudy(화창한–흐린), push–pull(밀다–당기다)은 모두 뜻이 반대예요. trip은 교과서 p.91에서 '여행'이라는 뜻으로 나오고 journey도 '여행'이라는 뜻이라 유의어예요(journey는 교과서 밖 일반 상식). 네 쌍이 반의어이므로 혼자 유의어인 trip - journey가 정답이에요.",
+   "tip": "반대말 네 쌍 속에 숨은 비슷한말 한 쌍을 찾는 문제! 뜻부터 적어 봐요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "단어쌍 관계 정리",
+     "head": [
+      "단어쌍",
+      "관계",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "early - late",
+       "반의어",
+       "이른 - 늦은"
+      ],
+      [
+       "dark - bright",
+       "반의어",
+       "어두운 - 밝은"
+      ],
+      [
+       "trip - journey",
+       "유의어",
+       "여행"
+      ],
+      [
+       "sunny - cloudy",
+       "반의어",
+       "화창한 - 흐린"
+      ],
+      [
+       "push - pull",
+       "반의어",
+       "밀다 - 당기다"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5-Q03-a",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어휘: [ ]로 표시한 낱말의 의미",
+   "source": "교과서 p.90, p.91",
+   "question": "[ ]로 표시한 부분의 의미가 잘못된 것은?",
+   "choices": [
+    "My brother [pushed](밀었다) the heavy door.",
+    "The weather was [wonderful](끔찍한) today.",
+    "The movie was [scary](무서운), so I closed my eyes.",
+    "We heard the [waves](파도) at the beach.",
+    "This [lighthouse](등대) still shines at night."
+   ],
+   "answer": 2,
+   "explanation": "wonderful은 '훌륭한'이라는 뜻이라 '날씨가 훌륭했다'가 맞는 의미예요. '끔찍한'은 반대 뜻이라 잘못된 의미예요.",
+   "choiceExplanations": [
+    "pushed는 push(밀다)의 과거형이라 '밀었다'가 맞는 뜻이에요(교과서 p.90).",
+    "정답. wonderful은 '훌륭한'이라는 뜻이라 '날씨가 훌륭했다'가 맞는 의미예요. '끔찍한'은 반대 뜻이라 잘못된 의미예요.",
+    "scary는 '무서운, 겁나는'이라는 뜻이라 영화가 무서워서 눈을 감았다는 문장과 잘 맞아요(교과서 p.90).",
+    "wave는 '파도, 물결'이라는 뜻이고, 해변에서 파도 소리를 들었다는 문장에 알맞아요(교과서 p.90).",
+    "lighthouse는 '등대'라는 뜻이고, 밤에도 빛을 비춘다는 문장과 맞아요(교과서 p.91)."
+   ],
+   "detail": "[ ]로 표시한 낱말마다 괄호 안의 우리말이 문장에 맞는지 확인해요. push(밀다)의 과거형 pushed는 '밀었다', scary는 '무서운', wave는 '파도', lighthouse는 '등대'로 모두 교과서 p.90~91의 뜻과 같아요. 반면 wonderful은 교과서 p.91에서 '훌륭한'이라는 뜻의 형용사로 나와요(교과서 p.91). 그래서 The weather was wonderful today.는 '오늘 날씨가 훌륭했다'로 해석해야 하고, '끔찍한'이라고 쓴 부분이 잘못된 의미예요.",
+   "tip": "wonderful = 훌륭한(좋은 뜻)! '끔찍한'과 반대예요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "교과서 p.90~91 낱말",
+     "head": [
+      "낱말",
+      "뜻",
+      "쪽"
+     ],
+     "rows": [
+      [
+       "push",
+       "밀다",
+       "p.90"
+      ],
+      [
+       "wonderful",
+       "훌륭한",
+       "p.91"
+      ],
+      [
+       "scary",
+       "무서운, 겁나는",
+       "p.90"
+      ],
+      [
+       "wave",
+       "파도, 물결",
+       "p.90"
+      ],
+      [
+       "lighthouse",
+       "등대",
+       "p.91"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5-Q03-b",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어휘: [ ]로 표시한 낱말의 의미",
+   "source": "교과서 p.91",
+   "question": "[ ]로 표시한 부분의 우리말 뜻이 알맞지 않은 것은?",
+   "choices": [
+    "We saw the [ocean](바다) from the top.",
+    "The stars [shine](빛나다) in the night sky.",
+    "My birthday is in [September](9월).",
+    "She runs fast [like](좋아하는) a cheetah.",
+    "We visited the [observatory](전망대)."
+   ],
+   "answer": 4,
+   "explanation": "이 문장의 like는 '~처럼, ~와 같은'이라는 전치사라서 '치타처럼 빠르게 달린다'가 되어야 해요. '좋아하는'은 동사 like의 뜻이라 문장에 맞지 않아요.",
+   "choiceExplanations": [
+    "ocean은 '대양, 바다'라는 뜻이라 꼭대기에서 바다를 봤다는 문장과 맞아요(교과서 p.91).",
+    "shine은 '비추다; 빛나다'라는 뜻이라 별이 밤하늘에서 빛난다는 문장과 맞아요(교과서 p.91).",
+    "September는 '9월'이라는 뜻이라 생일이 9월에 있다는 문장과 맞아요(교과서 p.90).",
+    "정답. 이 문장의 like는 '~처럼, ~와 같은'이라는 전치사라서 '치타처럼 빠르게 달린다'가 되어야 해요. '좋아하는'은 동사 like의 뜻이라 문장에 맞지 않아요.",
+    "observatory는 '전망대'라는 뜻이고, 방문한 장소를 말하는 문장에 어울려요(교과서 p.91)."
+   ],
+   "detail": "각 문장의 [ ]로 표시한 낱말과 괄호 안의 뜻을 비교해요. ocean(바다), shine(빛나다), September(9월), observatory(전망대)는 모두 교과서 p.91의 뜻과 같아요. like는 교과서 p.91에서 '~와 같은'이라는 전치사로 나와 'It was like a pancake.'처럼 쓰여요(교과서 p.91). She runs fast like a cheetah.에서도 like 뒤에 명사 a cheetah가 와서 '~처럼'을 뜻하므로, '좋아하는'이라고 쓴 부분이 알맞지 않은 의미예요.",
+   "tip": "like 뒤에 명사가 와서 '~처럼'이면 전치사, 'I like pizza'처럼 동사 자리면 '좋아하다'!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "교과서 p.91 낱말",
+     "head": [
+      "낱말",
+      "뜻",
+      "쪽"
+     ],
+     "rows": [
+      [
+       "ocean",
+       "대양, 바다",
+       "p.91"
+      ],
+      [
+       "shine",
+       "비추다; 빛나다",
+       "p.91"
+      ],
+      [
+       "September",
+       "9월",
+       "p.90"
+      ],
+      [
+       "like",
+       "~와 같은 (전치사)",
+       "p.91"
+      ],
+      [
+       "observatory",
+       "전망대",
+       "p.91"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5-Q04-a",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어휘: 문맥 속 표현",
+   "source": "교과서 p.90",
+   "question": "다음 우리말과 같은 뜻이 되도록 빈칸에 들어갈 말로 알맞은 것은?",
+   "choices": [
+    "put on",
+    "pick up",
+    "take off",
+    "put up",
+    "make up"
+   ],
+   "answer": 4,
+   "explanation": "put up은 '(텐트를) 치다, 설치하다'라는 뜻이라 텐트를 친다는 우리말과 같아요.",
+   "choiceExplanations": [
+    "put on은 '(옷을) 입다, 쓰다'라는 뜻이라 텐트를 친다는 말과 맞지 않아요(이 단원 밖 교과서 p.160에 나와요).",
+    "pick up은 '줍다, 집어 들다'라는 뜻이라 텐트를 설치하는 동작과 맞지 않아요(이 단원 밖 교과서 p.110에 나와요).",
+    "take off는 '벗다, 이륙하다'라는 뜻이라 텐트를 치는 동작과 맞지 않아요(교과서 밖 일반 상식).",
+    "정답. put up은 '(텐트를) 치다, 설치하다'라는 뜻이라 텐트를 친다는 우리말과 같아요.",
+    "make up은 '지어내다, 화장하다'라는 뜻이라 텐트를 치는 동작과 관련이 없어요(교과서 밖 일반 상식)."
+   ],
+   "detail": "빈칸 뒤의 two tents(텐트 두 개)를 단서로 어떤 동작인지 생각해요. 텐트를 '치다'는 교과서 p.90에서 put up으로 나오고, 'We put up two tents near the beach.'처럼 쓰여요(교과서 p.90). put은 현재형과 과거형이 같으므로 이 문장의 put up도 같은 모양이에요. 다른 보기는 '입다, 줍다, 벗다, 지어내다'라는 전혀 다른 뜻이라 텐트와 어울리지 않아요.",
+   "tip": "put up = 텐트를 치다. tent 하면 put up!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "put up",
+     "head": [
+      "표현",
+      "뜻",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "put up",
+       "(텐트를) 치다, 설치하다",
+       "p.90"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "우리말",
+   "passage": "우리는 강가에 텐트 두 개를 쳤다.\nWe _____ two tents by the river."
+  },
+  {
+   "id": "u5-Q04-b",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어휘: 문맥 속 표현",
+   "source": "교과서 p.91",
+   "question": "다음 우리말과 같은 뜻이 되도록 빈칸에 들어갈 말로 알맞은 것은?",
+   "choices": [
+    "ocean",
+    "moment",
+    "mountain",
+    "wish",
+    "wave"
+   ],
+   "answer": 2,
+   "explanation": "moment는 '순간'이라는 뜻이고, Wait a moment.는 '잠깐만 기다려 주세요.'라는 뜻의 일상 표현이에요(교과서 밖 일상 표현).",
+   "choiceExplanations": [
+    "ocean은 '대양, 바다'라는 명사라서 '잠깐'이라는 뜻도 안 되고 앞의 a와도 문법이 맞지 않아요(교과서 p.91).",
+    "정답. moment는 '순간'이라는 뜻이고, Wait a moment.는 '잠깐만 기다려 주세요.'라는 뜻의 일상 표현이에요(교과서 밖 일상 표현).",
+    "mountain은 '산'이라는 뜻이라 '잠깐만 기다려 주세요'라는 우리말과 맞지 않아요(교과서 p.91).",
+    "wish는 '소원'이라는 뜻이라 '소원을 기다려 주세요'가 되어 말이 되지 않아요(교과서 p.91).",
+    "wave는 '파도, 물결'이라는 뜻이라 '잠깐'이라는 시간의 뜻과 거리가 멀어요(교과서 p.90)."
+   ],
+   "detail": "우리말 '잠깐만 기다려 주세요'에서 시간이 아주 짧다는 뜻이 필요해요. moment는 교과서 p.91에서 '순간'이라는 뜻으로 나오고(교과서 p.91), '잠깐'이라는 뜻의 a moment는 교과서 밖 일상 표현이에요. 나머지 낱말은 '바다, 산, 소원, 파도'로 시간과 관계가 없어요. 그래서 빈칸에는 moment가 들어가요.",
+   "tip": "moment는 '순간'! Wait a moment(잠깐만요)는 일상 표현으로 함께 외워요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "moment",
+     "head": [
+      "낱말",
+      "뜻",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "moment",
+       "순간",
+       "p.91"
+      ],
+      [
+       "Wait a moment.",
+       "잠깐만 기다려요",
+       "교과서 밖 일상 표현"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "우리말",
+   "passage": "잠깐만 기다려 주세요. 곧 올게요.\nWait a _____, please. I'll be back soon."
+  },
+  {
+   "id": "u5-Q05-a",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어법: 비인칭 주어 it과 대명사 it 구분",
+   "source": "교과서 p.96~97 (2025 2학기 기말 8번)",
+   "question": "다음 [ ]로 표시한 it 중 쓰임이 나머지와 다른 것은?",
+   "choices": [
+    "[It] belongs to my brother.",
+    "[It] is May 15th.",
+    "How far is [it] from London to Paris?",
+    "[It] is getting dark.",
+    "What time is [it]?"
+   ],
+   "answer": 1,
+   "explanation": "It belongs to my brother.의 It은 my brother의 물건을 가리키는 대명사이고, 나머지는 날짜·거리·명암·시각을 나타내는 비인칭 주어예요.",
+   "choiceExplanations": [
+    "정답. It belongs to my brother.의 It은 my brother의 물건을 가리키는 대명사이고, 나머지는 날짜·거리·명암·시각을 나타내는 비인칭 주어예요.",
+    "날짜를 말하는 비인칭 주어 It이에요. 교과서 p.96의 'It's March 4th.'처럼 '그것'으로 해석하지 않아요(교과서 p.96).",
+    "거리를 묻는 문장의 it도 특정 물건을 가리키지 않는 비인칭 주어예요(거리 표현은 교과서 밖 일반 상식, 앞에 가리킬 명사가 없다는 점은 같아요).",
+    "밖이 어두워지는 상태(명암)를 나타내는 비인칭 주어예요. 교과서 p.91의 'It was dark outside.'와 같은 쓰임이에요(교과서 p.91).",
+    "시각을 묻는 비인칭 주어예요. 교과서 p.97의 'What time is it now?'처럼 '그것'으로 해석하지 않아요(교과서 p.97)."
+   ],
+   "detail": "[ ]로 표시한 it이 앞에서 말한 어떤 물건·사람을 가리키는지, 아니면 날짜·시각·날씨·명암 같은 상황을 나타내는지 구분해요. 'It belongs to my brother.'의 It은 물건 하나를 가리키는 대명사라 '그것은'으로 해석돼요. May 15th(날짜), getting dark(명암), What time(시각)은 교과서 p.96~97에서 비인칭 주어 it으로 배운 쓰임이고 '그것'이라고 해석하지 않아요(교과서 p.97). 그래서 혼자 다른 쓰임은 It belongs to my brother의 It이에요.",
+   "tip": "it이 가리킬 명사가 있으면 '그것', 시간·날짜·날씨·밝기를 말하면 해석하지 않는 it!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "it의 두 가지 쓰임",
+     "head": [
+      "구분",
+      "특징",
+      "예"
+     ],
+     "rows": [
+      [
+       "비인칭 주어 it",
+       "시간·요일·날짜·날씨·명암, 해석하지 않음",
+       "It's eleven thirty. (p.97)"
+      ],
+      [
+       "대명사 it",
+       "앞에 나온 명사를 가리킴, '그것'",
+       "It was Heundeulbawi. (p.90)"
+      ]
+     ]
+    }
+   ],
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-08"
+  },
+  {
+   "id": "u5-Q05-b",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어법: 비인칭 주어 it과 대명사 it 구분",
+   "source": "교과서 p.96~97",
+   "question": "[ ]로 표시한 it 중 쓰임이 나머지 넷과 다른 것은?",
+   "choices": [
+    "[It] is Friday, so we have art class.",
+    "What time is [it] now in Seoul?",
+    "[It] was cold last night, so I slept well.",
+    "[It] is June 1st, my birthday.",
+    "I lost my bag, but I found [it]."
+   ],
+   "answer": 5,
+   "explanation": "I lost my bag, but I found it.의 it은 앞에 나온 my bag을 가리키는 대명사('그것')이고, 나머지는 요일·시각·날씨·날짜를 나타내는 비인칭 주어예요.",
+   "choiceExplanations": [
+    "요일을 말하는 비인칭 주어 It이에요. 교과서 p.96의 'What day is it today?'라는 질문에 답할 때 쓰는 It과 같은 쓰임이에요(교과서 p.96).",
+    "시각을 묻는 비인칭 주어 it이에요. 'What time is it now?'에서 it은 해석하지 않아요(교과서 p.97).",
+    "날씨(추위)를 나타내는 비인칭 주어 It이에요. 과거 시제로 쓴 It was cold도 '그것'이라고 해석하지 않아요(교과서 p.90 'It was sunny today.'와 같은 쓰임).",
+    "날짜를 말하는 비인칭 주어 It이에요. 교과서 p.96의 'It's March 4th.'처럼 월과 서수로 쓴 날짜 문장이에요(교과서 p.96).",
+    "정답. I lost my bag, but I found it.의 it은 앞에 나온 my bag을 가리키는 대명사('그것')이고, 나머지는 요일·시각·날씨·날짜를 나타내는 비인칭 주어예요."
+   ],
+   "detail": "각 문장의 it이 앞의 명사를 대신하는지 상황을 나타내는지 확인해요. Friday(요일), What time(시각), cold(날씨), June 1st(날짜)는 교과서 p.96~97에서 비인칭 주어 it으로 배운 쓰임이라 해석하지 않아요(교과서 p.97). I lost my bag, but I found it.의 it은 앞에 나온 my bag을 가리켜 '그것을'이라고 해석해요. 그래서 혼자 쓰임이 다른 것은 I lost my bag, but I found it.의 it이에요.",
+   "tip": "'앞에 나온 명사를 바꿔 말한 it'만 대명사! 요일·시각·날씨·날짜는 비인칭이에요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "it의 두 가지 쓰임",
+     "head": [
+      "구분",
+      "특징",
+      "예"
+     ],
+     "rows": [
+      [
+       "비인칭 주어 it",
+       "시간·요일·날짜·날씨·명암, 해석하지 않음",
+       "What time is it now? (p.97)"
+      ],
+      [
+       "대명사 it",
+       "앞에 나온 명사를 가리킴, '그것'",
+       "Subin and I pushed it. (p.90)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5-Q06-a",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어법: to부정사의 쓰임 구분",
+   "source": "교과서 p.96~97 (2024 2학기 기말 18번)",
+   "question": "[ ]로 표시한 부분의 쓰임이 나머지와 다른 것은?",
+   "choices": [
+    "What should I do [to get] better at English?",
+    "We decided [to travel] around Jejudo.",
+    "He promised [to learn] English.",
+    "He hates [to go] shopping with her.",
+    "Jane does not plan [to visit] her aunt this weekend."
+   ],
+   "answer": 1,
+   "explanation": "What should I do to get better at English?의 to get은 '~하기 위해'라는 목적을 나타내고(교과서 밖), 나머지 네 문장의 to부정사는 동사의 목적어로 쓰였어요.",
+   "choiceExplanations": [
+    "정답. What should I do to get better at English?의 to get은 '~하기 위해'라는 목적을 나타내고(교과서 밖), 나머지 네 문장의 to부정사는 동사의 목적어로 쓰였어요.",
+    "decided의 목적어로 쓰인 to travel이에요. 'decide + to + 동사원형'은 동사의 목적어 자리이고, 교과서 p.96의 'We decided to watch a movie.'와 같은 쓰임이에요(교과서 p.96).",
+    "promised의 목적어로 쓰인 to learn이에요('약속하다'는 교과서 밖 동사지만 쓰임은 want/hope처럼 동사의 목적어예요).",
+    "hates의 목적어로 쓰인 to go예요('싫어하다'는 교과서 밖 동사지만 동사 뒤에서 목적어로 쓰였어요).",
+    "plan의 목적어로 쓰인 to visit이에요. 교과서 p.96의 'She plans to meet her friends.'처럼 plan 뒤의 to부정사는 동사의 목적어예요(교과서 p.96)."
+   ],
+   "detail": "[ ]로 표시한 to부정사가 앞의 동사 바로 뒤에서 그 동사의 목적어('~하는 것을, ~하기를')로 쓰였는지 확인해요. decided to travel, promised to learn, hates to go, plan to visit는 모두 동사 바로 뒤에서 목적어 역할을 해요. 교과서 p.96~97은 want/hope/plan 같은 동사 뒤에 to + 동사원형이 오는 목적어 쓰임을 다뤄요. 반면 What should I do to get better at English?의 to get은 영어를 더 잘하기 위해라는 뜻의 목적을 나타내요(교과서 밖 일반 상식). 그래서 쓰임이 다른 것은 to get이에요.",
+   "tip": "동사 뒤에서 '~하기를/~하는 것을'로 풀리면 목적어, '~하기 위해'로 풀리면 목적!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "to부정사의 두 쓰임 비교",
+     "head": [
+      "쓰임",
+      "해석",
+      "예"
+     ],
+     "rows": [
+      [
+       "동사의 목적어",
+       "~하기를, ~하는 것을",
+       "She plans to meet her friends. (p.96)"
+      ],
+      [
+       "목적(교과서 밖)",
+       "~하기 위해",
+       "to get better at English"
+      ]
+     ]
+    }
+   ],
+   "origin": "past-exam",
+   "pastExamRef": "2024-2학기-기말-18"
+  },
+  {
+   "id": "u5-Q06-b",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어법: to부정사의 쓰임 구분",
+   "source": "교과서 p.90, p.96~97",
+   "question": "[ ]로 표시한 to부정사의 쓰임이 나머지 넷과 다른 것은?",
+   "choices": [
+    "She hopes [to visit] her uncle soon.",
+    "I want [to eat] pizza for lunch.",
+    "They plan [to go] camping soon.",
+    "She studies hard [to pass] the test.",
+    "We decided [to take] a bus today."
+   ],
+   "answer": 4,
+   "explanation": "She studies hard to pass the test.의 to pass는 '통과하기 위해'라는 목적을 나타내고(교과서 밖), 나머지는 hope·want·plan·decide의 목적어로 쓰였어요.",
+   "choiceExplanations": [
+    "hopes 뒤의 to visit은 동사의 목적어예요. 교과서 p.96의 'He hopes to travel the world.'와 같은 쓰임이에요(교과서 p.96).",
+    "want 뒤의 to eat은 동사의 목적어예요. 교과서 p.90의 'I really want to see the sunrise tomorrow.'와 같은 쓰임이에요(교과서 p.90).",
+    "plan 뒤의 to go는 동사의 목적어예요. 교과서 p.96의 'She plans to meet her friends.'처럼 plan + to + 동사원형이에요(교과서 p.96).",
+    "정답. She studies hard to pass the test.의 to pass는 '통과하기 위해'라는 목적을 나타내고(교과서 밖), 나머지는 hope·want·plan·decide의 목적어로 쓰였어요.",
+    "decided 뒤의 to take는 동사의 목적어예요. 교과서 p.96의 'We decided to watch a movie.'와 같은 쓰임이에요(교과서 p.96)."
+   ],
+   "detail": "[ ]로 표시한 to부정사 바로 앞의 동사를 보고, 그 동사가 '~하기를 원하다/바라다/계획하다/결정하다'처럼 to부정사를 목적어로 취하는지 확인해요. hopes to visit, want to eat, plan to go, decided to take는 교과서 p.96~97에서 배운 목적어 쓰임이에요(교과서 p.96). 반면 studies hard to pass the test는 시험에 통과하기 위해 열심히 공부한다로 풀리는 목적의 쓰임이에요(교과서 밖 일반 상식). 그래서 쓰임이 다른 것은 studies hard to pass예요.",
+   "tip": "to부정사가 '~하기 위해'로 풀리면 목적 → 목적어 쓰임과 구별!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "to부정사의 두 쓰임 비교",
+     "head": [
+      "쓰임",
+      "해석",
+      "예"
+     ],
+     "rows": [
+      [
+       "동사의 목적어",
+       "~하기를, ~하는 것을",
+       "He hopes to travel the world. (p.96)"
+      ],
+      [
+       "목적(교과서 밖)",
+       "~하기 위해",
+       "studies hard to pass the test"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5-Q07-a",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어법: want/hope/plan 뒤 to + 동사원형",
+   "source": "교과서 p.96 (2024 2학기 기말 19번)",
+   "question": "어법상 바른 문장은?",
+   "choices": [
+    "We not should talk loudly in the library.",
+    "Juwon hopes to learn Chinese.",
+    "She wants being a nurse.",
+    "Should he learns sign language?",
+    "Tom likes teach English to his brother."
+   ],
+   "answer": 2,
+   "explanation": "hope는 to부정사(to + 동사원형)를 목적어로 쓰는 동사이고, 주어가 3인칭 단수라 hopes to learn이 맞는 문장이에요.",
+   "choiceExplanations": [
+    "should의 부정문은 should 뒤에 not을 써서 'We should not talk ...'가 돼요. not이 should 앞에 올 수 없어요(should는 이 단원 교과서 밖).",
+    "정답. hope는 to부정사(to + 동사원형)를 목적어로 쓰는 동사이고, 주어가 3인칭 단수라 hopes to learn이 맞는 문장이에요.",
+    "want 뒤에는 to + 동사원형이 와야 해서 wants to be a nurse가 맞아요. being(동명사)을 쓰면 틀려요(교과서 p.96).",
+    "should 뒤에는 동사원형이 와야 해요. 의문문에서도 'Should he learn ...?'처럼 learns가 아니라 learn이어야 해요(should는 이 단원 교과서 밖).",
+    "like 뒤에는 to teach 또는 teaching처럼 동사를 바꿔서 써야 하고, 동사원형 teach를 그대로 쓸 수 없어요(교과서 밖 일반 상식)."
+   ],
+   "detail": "각 문장에서 동사 뒤의 모양을 확인해요. 교과서 p.96에서 hope/want/plan 뒤에는 'to + 동사원형'이 오고, 주어가 3인칭 단수면 'He hopes to travel the world.'처럼 hopes로 써요(교과서 p.96). Juwon hopes to learn Chinese.는 hopes 뒤에 to learn이 왔으므로 이 규칙에 맞아요. wants being은 동명사, Should he learns는 should 뒤 동사 모양, likes teach는 to가 빠진 모양이라 모두 어법에 맞지 않아요.",
+   "tip": "hope/want/plan 뒤에는 to + 동사원형! being, learning, learns는 안 돼요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "to부정사를 목적어로 쓰는 동사",
+     "head": [
+      "동사",
+      "뜻",
+      "교과서 예문 쪽"
+     ],
+     "rows": [
+      [
+       "want",
+       "원하다",
+       "p.96"
+      ],
+      [
+       "hope",
+       "바라다",
+       "p.96"
+      ],
+      [
+       "plan",
+       "계획하다",
+       "p.96"
+      ]
+     ]
+    }
+   ],
+   "origin": "past-exam",
+   "pastExamRef": "2024-2학기-기말-19"
+  },
+  {
+   "id": "u5-Q07-b",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어법: want/hope/plan 뒤 to + 동사원형",
+   "source": "교과서 p.96",
+   "question": "다음 중 어법상 올바른 문장은?",
+   "choices": [
+    "She plans buy a new bike today.",
+    "He want to learn judo every weekend.",
+    "My brother wants to play the guitar.",
+    "We decided going to the beach.",
+    "I hope to meeting my friends soon."
+   ],
+   "answer": 3,
+   "explanation": "wants 뒤에 to play(to + 동사원형)가 왔고 주어 My brother가 3인칭 단수라 wants를 쓴 문장이 맞아요.",
+   "choiceExplanations": [
+    "plan 뒤에는 to + 동사원형이 와야 해서 plans to buy가 맞아요. to가 빠지면 틀려요(교과서 p.96).",
+    "주어 He가 3인칭 단수라서 want가 아니라 wants를 써야 해요. to learn 부분은 맞지만 동사 want의 형태가 틀려요(교과서 p.96).",
+    "정답. wants 뒤에 to play(to + 동사원형)가 왔고 주어 My brother가 3인칭 단수라 wants를 쓴 문장이 맞아요.",
+    "decided 뒤에는 going이 아니라 to go가 와야 해요. 동명사를 쓰면 틀려요(교과서 p.96의 'We decided to watch a movie.' 참고).",
+    "hope 뒤에는 to meeting이 아니라 to meet(to + 동사원형)이어야 해요. to 뒤에 -ing를 쓰면 틀려요(교과서 p.96)."
+   ],
+   "detail": "문장마다 동사의 모양과 to부정사의 모양을 확인해요. 교과서 p.96에서 want/hope/plan/decide 뒤에는 'to + 동사원형'이 오고, 주어가 3인칭 단수일 때는 hopes, plans처럼 -s를 붙여요(교과서 p.96). My brother wants to play the guitar.는 주어 My brother에 맞게 wants를 썼고 to play도 올바른 모양이에요. 다른 문장은 to가 빠졌거나(plans buy), 동사 -s가 빠졌거나(He want), 동명사를 썼거나(going, meeting) 해서 틀렸어요.",
+   "tip": "want/hope/plan + to + 동사원형, 3인칭 단수 주어면 동사에 -s!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "틀린 문장 고치기",
+     "head": [
+      "틀린 문장",
+      "고친 문장"
+     ],
+     "rows": [
+      [
+       "She plans buy ...",
+       "She plans to buy ..."
+      ],
+      [
+       "He want to ...",
+       "He wants to ..."
+      ],
+      [
+       "We decided going ...",
+       "We decided to go ..."
+      ],
+      [
+       "I hope to meeting ...",
+       "I hope to meet ..."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5-Q08-a",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "어법: [ ]·ⓐ~ⓔ 문장 올바른/올바르지 않은 것끼리 짝짓기",
+   "source": "교과서 p.90 (2025 2학기 기말 10번)",
+   "question": "[ ]로 표시한 부분 중 어법상 올바르지 않은 것끼리 짝지어진 것은?",
+   "choices": [
+    "ⓐ, ⓑ",
+    "ⓐ, ⓑ, ⓒ",
+    "ⓐ, ⓒ, ⓓ",
+    "ⓑ, ⓒ, ⓓ",
+    "ⓒ, ⓓ, ⓔ"
+   ],
+   "answer": 1,
+   "explanation": "ⓐ는 날씨를 말하므로 This가 아니라 비인칭 주어 It이어야 하고, ⓑ는 상황이 '무서웠다'는 뜻이므로 scared가 아니라 scary여야 해요.",
+   "choiceExplanations": [
+    "정답. ⓐ는 날씨를 말하므로 This가 아니라 비인칭 주어 It이어야 하고, ⓑ는 상황이 '무서웠다'는 뜻이므로 scared가 아니라 scary여야 해요.",
+    "ⓐ와 ⓑ는 올바르지 않지만 ⓒ의 'put up two tents'는 올바른 문장이에요. put은 현재형과 과거형이 같아서 과거 일기에 그대로 쓸 수 있어요(교과서 p.90).",
+    "ⓐ는 올바르지 않지만 ⓒ와 ⓓ는 올바른 문장이에요. ⓑ의 scared를 놓친 선택이에요(교과서 p.90).",
+    "ⓑ는 올바르지 않지만 ⓒ와 ⓓ는 올바른 문장이고, ⓐ의 This를 놓친 선택이에요(교과서 p.90).",
+    "ⓒ, ⓓ, ⓔ는 세 문장 모두 올바른 문장이라 '올바르지 않은 것'에 해당하지 않아요(교과서 p.90)."
+   ],
+   "detail": "일기에서 [ ]로 표시한 다섯 문장을 하나씩 확인해요. ⓐ는 날씨를 말하는 문장이라 교과서 p.90처럼 'It was sunny today.'로 써야 하고 This는 틀려요(교과서 p.90). ⓑ는 교과서 p.90의 'It was scary, but I had a lot of fun!'에서 scary(무서운)를 scared(겁먹은)로 바꾼 것으로, 사람이 아닌 상황이 무서웠다는 뜻이라 틀려요. ⓒ put up은 과거형도 put, ⓓ heard는 hear의 과거형, ⓔ want to see는 want + to + 동사원형이라 모두 올바르므로 올바르지 않은 것은 ⓐ와 ⓑ예요.",
+   "tip": "날씨·명암은 It, '무서운 상황'은 scary, '무서워하는 사람'은 scared!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "ⓐ~ⓔ 점검",
+     "head": [
+      "문장",
+      "판정",
+      "이유"
+     ],
+     "rows": [
+      [
+       "ⓐ This was sunny today.",
+       "틀림",
+       "날씨는 비인칭 주어 It"
+      ],
+      [
+       "ⓑ It was scared",
+       "틀림",
+       "상황이 무서운 것은 scary"
+      ],
+      [
+       "ⓒ put up two tents",
+       "맞음",
+       "put의 과거형은 put"
+      ],
+      [
+       "ⓓ heard the waves",
+       "맞음",
+       "hear의 과거형 heard"
+      ],
+      [
+       "ⓔ want to see",
+       "맞음",
+       "want + to + 동사원형"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "Friday, September 5th\nⓐ[This was sunny today.] Subin's family and I hiked Seoraksan and saw a very big rock. It was Heundeulbawi. Subin and I pushed it. The rock shook a little. ⓑ[It was scared, but I had a lot of fun!]\nNext, we went to Sokcho Beach. ⓒ[We put up two tents near the beach.] We had Korean beef for dinner. It was delicious! ⓓ[In our tent, Subin and I heard the waves.] We talked and laughed a lot. ⓔ[I really want to see the sunrise tomorrow.]",
+   "fixedOrder": true,
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-10"
+  },
+  {
+   "id": "u5-Q08-b",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "어법: [ ]·ⓐ~ⓔ 문장 올바른/올바르지 않은 것끼리 짝짓기",
+   "source": "교과서 p.96 (2025 2학기 기말 14번)",
+   "question": "다음 문장 중 어법상 올바른 것끼리 짝지어진 것은?",
+   "choices": [
+    "ⓐ, ⓑ, ⓓ",
+    "ⓐ, ⓑ, ⓔ",
+    "ⓐ, ⓒ, ⓓ",
+    "ⓐ, ⓒ, ⓔ",
+    "ⓑ, ⓒ, ⓔ"
+   ],
+   "answer": 3,
+   "explanation": "ⓐ는 decide 뒤에 to watch, ⓒ는 look like, ⓓ는 practice 뒤에 동명사 dancing을 써서 모두 올바르고, ⓑ와 ⓔ는 틀려요.",
+   "choiceExplanations": [
+    "ⓐ와 ⓓ는 올바르지만 ⓑ의 'consider to studying'은 to 뒤에 -ing를 써서 틀린 문장이에요. ⓒ를 올바른 문장으로 보지 못한 선택이에요(ⓑ의 consider는 교과서 밖 동사).",
+    "ⓐ는 올바르지만 ⓑ와 ⓔ는 틀린 문장이에요. plan to going처럼 to 뒤에 -ing를 쓰면 안 돼요(교과서 p.96).",
+    "정답. ⓐ는 decide 뒤에 to watch, ⓒ는 look like, ⓓ는 practice 뒤에 동명사 dancing을 써서 모두 올바르고, ⓑ와 ⓔ는 틀려요.",
+    "ⓐ와 ⓒ는 올바르지만 ⓔ의 plan to going은 to 뒤에 -ing를 써서 틀린 문장이에요. ⓓ를 놓친 선택이기도 해요(교과서 p.96).",
+    "ⓒ는 올바르지만 ⓑ(consider to studying)와 ⓔ(plan to going)는 to 뒤에 -ing가 있어 틀린 문장이에요."
+   ],
+   "detail": "다섯 문장을 하나씩 확인해요. ⓐ decide to watch는 교과서 p.96의 'We decided to watch a movie.'처럼 decide 뒤에 to + 동사원형을 쓴 올바른 문장이에요(교과서 p.96). ⓔ plan to going은 plan 뒤에 'to + 동사원형'이 와야 하므로 to go라고 고쳐야 해요. ⓑ의 consider는 to부정사가 아니라 동명사(studying)를 목적어로 쓰고(교과서 밖 일반 상식), ⓓ의 practice는 교과서 p.85에 나오는 낱말이지만 뒤에 동명사(dancing)를 쓰는 용법은 교과서 밖 일반 상식이며, ⓒ look like는 '~처럼 보이다'로 쓰는 올바른 표현이에요(이 단원 밖 교과서 p.128). 그래서 올바른 문장은 ⓐ, ⓒ, ⓓ예요.",
+   "tip": "decide·plan·want·hope 뒤에는 to + 동사원형. to 뒤에 -ing는 쓰지 않아요!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "ⓐ~ⓔ 점검",
+     "head": [
+      "문장",
+      "판정",
+      "이유"
+     ],
+     "rows": [
+      [
+       "ⓐ decide to watch",
+       "맞음",
+       "decide + to + 동사원형"
+      ],
+      [
+       "ⓑ consider to studying",
+       "틀림",
+       "consider 뒤는 동명사(교과서 밖)"
+      ],
+      [
+       "ⓒ looks like a monkey",
+       "맞음",
+       "look like ~처럼 보이다(이 단원 밖 p.128)"
+      ],
+      [
+       "ⓓ practices dancing",
+       "맞음",
+       "practice는 p.85, 뒤에 동명사를 쓰는 용법은 교과서 밖"
+      ],
+      [
+       "ⓔ plan to going",
+       "틀림",
+       "to 뒤에는 동사원형 go"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "ⓐ They decide to watch a movie.\nⓑ People consider to studying English.\nⓒ My friend looks like a monkey.\nⓓ He practices dancing every morning.\nⓔ I plan to going to Egypt.",
+   "fixedOrder": true,
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-14"
+  },
+  {
+   "id": "u5-Q08-c",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "어법: [ ]·ⓐ~ⓔ 문장 올바른/올바르지 않은 것끼리 짝짓기",
+   "source": "교과서 p.84, p.90 (새로 쓴 글)",
+   "question": "대괄호([ ])로 표시한 부분 중 어법상 올바르지 않은 것끼리 짝지어진 것은?",
+   "choices": [
+    "ⓐ, ⓑ",
+    "ⓑ, ⓒ, ⓔ",
+    "ⓐ, ⓓ, ⓔ",
+    "ⓑ, ⓔ",
+    "ⓒ, ⓓ"
+   ],
+   "answer": 4,
+   "explanation": "ⓑ는 be동사가 빠져 'I was very tired'가 되어야 하고, ⓔ는 be going to 뒤에 동사원형이 와야 하므로 'I'm going to ride my bike next week.'로 고쳐야 해요.",
+   "choiceExplanations": [
+    "ⓐ는 올바른 문장이에요. 날씨를 말할 때는 It was windy처럼 비인칭 주어 It을 쓰고, ⓑ의 틀린 곳만 맞게 찾은 선택이에요(교과서 p.90).",
+    "ⓑ와 ⓔ는 틀렸지만 ⓒ 'It was delicious!'는 올바른 문장이에요. 음식 맛을 말하는 It은 앞에서 먹은 음식을 가리키는 대명사로 맞게 쓰였어요(교과서 p.90).",
+    "ⓔ는 틀렸지만 ⓐ와 ⓓ는 올바른 문장이에요. ⓓ want to ride는 want + to + 동사원형이라 맞아요(교과서 p.90). ⓑ를 놓친 선택이에요.",
+    "정답. ⓑ는 be동사가 빠져 'I was very tired'가 되어야 하고, ⓔ는 be going to 뒤에 동사원형이 와야 하므로 'I'm going to ride my bike next week.'로 고쳐야 해요.",
+    "ⓒ와 ⓓ는 올바른 문장이라 '올바르지 않은 것'에 해당하지 않아요. ⓓ는 교과서 p.90의 want to see와 같은 모양이에요(교과서 p.90)."
+   ],
+   "detail": "일기의 다섯 문장을 하나씩 확인해요. ⓐ 'It was windy today.'는 날씨를 말하는 비인칭 주어 It을 쓴 올바른 문장이에요(교과서 p.90). ⓑ I very tired는 '매우 피곤했다'는 말에 be동사가 빠졌으므로 'I was very tired'가 되어야 해요. ⓔ going to rode는 be going to 뒤에 동사원형이 와야 하므로(교과서 p.84) 'going to ride'로 고쳐야 하고, ⓒ와 ⓓ는 올바른 문장이에요. 그래서 올바르지 않은 것은 ⓑ와 ⓔ예요. (이 지문은 새로 쓴 글이에요.)",
+   "tip": "be going to 뒤에는 항상 동사원형! 형용사 앞에는 be동사!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "ⓐ~ⓔ 점검",
+     "head": [
+      "문장",
+      "판정",
+      "이유"
+     ],
+     "rows": [
+      [
+       "ⓐ It was windy today.",
+       "맞음",
+       "날씨는 비인칭 주어 It"
+      ],
+      [
+       "ⓑ I very tired",
+       "틀림",
+       "be동사 was 필요"
+      ],
+      [
+       "ⓒ It was delicious!",
+       "맞음",
+       "음식 맛을 말하는 It"
+      ],
+      [
+       "ⓓ want to ride",
+       "맞음",
+       "want + to + 동사원형"
+      ],
+      [
+       "ⓔ going to rode",
+       "틀림",
+       "be going to + 동사원형"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "Sunday, October 12th\nⓐ[It was windy today.] My friends and I went to Hangang Park. We rode bikes along the river. ⓑ[It was fun, but I very tired.] For lunch, we had ramen. ⓒ[It was delicious!] ⓓ[I really want to ride a bike again.] ⓔ[I'm going to rode my bike next week.]\n(이 글은 새로 쓴 글이에요.)",
+   "fixedOrder": true
+  },
+  {
+   "id": "u5-Q09-a",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어법: 문장 어순(단어 배열)",
+   "source": "교과서 p.82, p.84",
+   "question": "다음 우리말과 같도록 주어진 단어를 바르게 배열할 때, 5번째 단어는? (문장은 They로 시작하고 때를 나타내는 말로 끝난다.)",
+   "choices": [
+    "are",
+    "going",
+    "to",
+    "Busan",
+    "visit"
+   ],
+   "answer": 5,
+   "explanation": "They are going to visit Busan next week.로 배열하면 5번째 단어는 visit이에요.",
+   "choiceExplanations": [
+    "are는 문장의 두 번째 단어예요. 주어 They 바로 뒤에 be동사가 와요(교과서 p.84의 'Sumin is going to ...' 같은 어순).",
+    "going은 문장의 세 번째 단어예요. be going to에서 are 다음에 going이 와요(교과서 p.84).",
+    "to는 문장의 네 번째 단어예요. going 다음에 to가 오고 그 뒤에 동사원형이 와요(교과서 p.84).",
+    "Busan은 문장의 여섯 번째 단어예요. They로 시작하는 문장에서 동사 visit 뒤에 목적어로 와요.",
+    "정답. They are going to visit Busan next week.로 배열하면 5번째 단어는 visit이에요."
+   ],
+   "detail": "be going to + 동사원형 어순으로 문장을 만들어요. 문장은 They로 시작하고 때를 나타내는 말로 끝난다는 조건이 있으므로 주어 They, be동사 are, going, to, 동사원형 visit, 목적어 Busan, 시간 표현 next week의 순서로 놓으면 They are going to visit Busan next week.가 돼요(교과서 p.84, p.82). 단어를 하나씩 세면 They(1), are(2), going(3), to(4), visit(5)이므로 5번째 단어는 visit이에요.",
+   "tip": "'주어 + be동사 + going to + 동사원형 + 목적어 + 시간'으로 배열하고 세어 봐요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "be going to 문장 어순",
+     "head": [
+      "순서",
+      "자리",
+      "예"
+     ],
+     "rows": [
+      [
+       "1",
+       "주어",
+       "They"
+      ],
+      [
+       "2",
+       "be동사",
+       "are"
+      ],
+      [
+       "3~4",
+       "going to",
+       "going to"
+      ],
+      [
+       "5",
+       "동사원형",
+       "visit"
+      ],
+      [
+       "6~8",
+       "목적어·시간",
+       "Busan next week"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "우리말과 단어",
+   "passage": "그들은 다음 주에 부산을 방문할 예정이다.\n(visit / Busan / They / are / going / next / to / week)"
+  },
+  {
+   "id": "u5-Q09-b",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "어법: 문장 어순(단어 배열)",
+   "source": "교과서 p.90, p.96",
+   "question": "다음 우리말과 같도록 주어진 단어를 바르게 배열할 때, 4번째 단어는? (문장은 I로 시작하고 때를 나타내는 말로 끝난다.)",
+   "choices": [
+    "play",
+    "soccer",
+    "want",
+    "after",
+    "to"
+   ],
+   "answer": 1,
+   "explanation": "I want to play soccer after school.로 배열하면 4번째 단어는 play예요.",
+   "choiceExplanations": [
+    "정답. I want to play soccer after school.로 배열하면 4번째 단어는 play예요.",
+    "soccer는 문장의 다섯 번째 단어예요. 동사 play 뒤에 목적어로 와요.",
+    "want는 문장의 두 번째 단어예요. 주어 I 바로 뒤에 와요(교과서 p.90 'I really want to see ...' 참고).",
+    "after는 문장의 여섯 번째 단어예요. I로 시작하는 문장에서 'after school'은 문장 끝에서 때를 나타내요.",
+    "to는 문장의 세 번째 단어예요. want 바로 뒤에 to가 오고 그 뒤에 동사원형 play가 와요(교과서 p.96)."
+   ],
+   "detail": "want + to + 동사원형 어순으로 문장을 만들어요. 문장은 I로 시작하고 때를 나타내는 말로 끝난다는 조건이 있으므로 주어 I, 동사 want, to, 동사원형 play, 목적어 soccer, 때를 나타내는 after school의 순서로 놓으면 I want to play soccer after school.가 돼요(교과서 p.96). I(1), want(2), to(3), play(4)이므로 4번째 단어는 play예요.",
+   "tip": "want 바로 뒤에는 to, 그 뒤에는 동사원형!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "want to 문장 어순",
+     "head": [
+      "순서",
+      "자리",
+      "예"
+     ],
+     "rows": [
+      [
+       "1",
+       "주어",
+       "I"
+      ],
+      [
+       "2",
+       "동사 want",
+       "want"
+      ],
+      [
+       "3",
+       "to",
+       "to"
+      ],
+      [
+       "4",
+       "동사원형",
+       "play"
+      ],
+      [
+       "5~7",
+       "목적어·때",
+       "soccer after school"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "우리말과 단어",
+   "passage": "나는 방과 후에 축구를 하고 싶다.\n(want / I / soccer / after / to / play / school)"
+  },
+  {
+   "id": "u5-Q10-a",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화: 어색한 대화 고르기",
+   "source": "교과서 p.82, p.85",
+   "question": "다음 대화 중 가장 어색한 것은?",
+   "choices": [
+    "A: What are you going to do on Friday?\nB: I'm going to go camping with my family.",
+    "A: I'm going to visit my cousin on Sunday.\nB: That sounds like fun.",
+    "A: What are you going to do after school?\nB: It's Wednesday today.",
+    "A: Do you have any plans for tomorrow?\nB: Yes, I'm going to watch a movie.",
+    "A: I'm going to ride a bike in the park. How about you?\nB: I'm going to play basketball with my friends."
+   ],
+   "answer": 3,
+   "explanation": "방과 후 계획을 묻는 질문에 요일로 답해서 질문과 대답이 맞지 않아요.",
+   "choiceExplanations": [
+    "계획을 묻는 질문에 'I'm going to ~.'로 계획을 말했으므로 자연스러운 대화예요(교과서 p.82, p.85).",
+    "친구의 계획을 듣고 재미있겠다는 반응을 했으므로 자연스러운 대화예요.",
+    "정답. 방과 후 계획을 묻는 질문에 요일로 답해서 질문과 대답이 맞지 않아요.",
+    "계획이 있는지 묻는 질문에 Yes로 답하고 계획을 말했으므로 자연스러운 대화예요(교과서 p.98).",
+    "자기 계획을 말하고 'How about you?'로 되묻자 상대가 자기 계획을 말했으므로 자연스러운 대화예요(교과서 p.85)."
+   ],
+   "detail": "대화마다 질문과 대답이 서로 맞는지 확인해요. 교과서 p.82와 p.85에서 계획을 물으면 'I'm going to ~.'로 계획을 말해요(교과서 p.85). 방과 후 계획을 묻는 질문에 오늘이 수요일이라고 답하면 질문한 계획을 말하지 않아 어색해요. 나머지는 계획 묻고 말하기, 계획에 대한 반응, 계획 유무 묻기와 대답, 되묻기와 대답으로 모두 자연스러워요.",
+   "tip": "'뭐 할 거야?'라는 질문에는 'I'm going to ~.'로 계획을 대답해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "대화 표현 짝",
+     "head": [
+      "말하는 사람 A",
+      "알맞은 B의 응답",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "What are you going to do ~?",
+       "I'm going to ~.",
+       "p.85"
+      ],
+      [
+       "Do you have any plans for ~?",
+       "Yes, I'm going to ~.",
+       "p.98"
+      ],
+      [
+       "I'm going to ~. How about you?",
+       "자기 계획 말하기",
+       "p.85"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5-Q10-b",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화: 어색한 대화 고르기",
+   "source": "교과서 p.84, p.85",
+   "question": "다음 대화 중 자연스럽지 않은 것은?",
+   "choices": [
+    "A: What are you going to do on Sunday?\nB: I'm going to practice the piano.",
+    "A: I'm going to go fishing tomorrow.\nB: Sounds great.",
+    "A: What are you going to do this afternoon?\nB: I'm going to play badminton. How about you?",
+    "A: I'm going to see a movie tonight.\nB: That sounds fun.",
+    "A: What are you going to do tomorrow?\nB: Yes, I do."
+   ],
+   "answer": 5,
+   "explanation": "What으로 시작하는 계획 질문에 Yes로 답해서 질문한 내용에 대한 대답이 되지 않아 어색해요.",
+   "choiceExplanations": [
+    "일요일 계획을 묻는 질문에 'I'm going to ~.'로 계획을 말했으므로 자연스러운 대화예요(교과서 p.84).",
+    "낚시 계획을 듣고 좋겠다는 반응을 했으므로 자연스러운 대화예요(계획에 대한 반응 표현).",
+    "오후 계획을 묻는 질문에 계획을 말하고 'How about you?'로 되물었으므로 자연스러운 대화예요(교과서 p.85).",
+    "영화를 볼 계획을 듣고 재미있겠다는 반응을 했으므로 자연스러운 대화예요.",
+    "정답. What으로 시작하는 계획 질문에 Yes로 답해서 질문한 내용에 대한 대답이 되지 않아 어색해요."
+   ],
+   "detail": "계획을 묻는 질문에 알맞은 대답이 왔는지 확인해요. 교과서 p.85에서 'What are you going to do ~?'라고 물으면 'I'm going to ~.'로 계획을 말해요(교과서 p.85). What으로 묻는 질문에는 Yes나 No로 답할 수 없으므로 내일 계획을 묻는 말에 Yes라고 답한 대화가 어색해요. 나머지 대화는 질문과 대답, 계획에 대한 반응이 서로 알맞게 이어져요.",
+   "tip": "What 질문에는 Yes/No가 아니라 내용(I'm going to ~)으로 대답해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "대화 표현 짝",
+     "head": [
+      "말하는 사람 A",
+      "알맞은 B의 응답",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "What are you going to do ~?",
+       "I'm going to ~.",
+       "p.84~85"
+      ],
+      [
+       "I'm going to ~. (계획 말하기)",
+       "Sounds great. / That sounds fun.",
+       "교과서 밖 일반 상식"
+      ],
+      [
+       "What ~? (의문사 질문)",
+       "Yes/No가 아닌 내용",
+       "일반 원리"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5-Q11-a",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화: (A)~(E) 순서 배열",
+   "source": "교과서 p.85 (일부 새로 쓴 글)",
+   "question": "대화의 흐름상 (A)~(E)를 순서대로 알맞게 배열한 것은?",
+   "choices": [
+    "(A) - (C) - (E) - (D) - (B)",
+    "(C) - (A) - (E) - (D) - (B)",
+    "(E) - (C) - (A) - (D) - (B)",
+    "(C) - (E) - (A) - (B) - (D)",
+    "(C) - (E) - (A) - (D) - (B)"
+   ],
+   "answer": 5,
+   "explanation": "계획 말하기(C) → 같은 계획과 함께하기 요청(E) → 승낙(A) → 만날 시간 묻기(D) → 대답(B) 순서로 이어져요.",
+   "choiceExplanations": [
+    "(A) 'Sure. That'll be great.'는 함께 해도 되는지 묻는 말에 대한 승낙이라 대화 맨 앞에 올 수 없어요(교과서 p.85).",
+    "(C) 다음에 (A)가 오면 'Can I join you?'를 묻기도 전에 'Sure.'라고 답하는 셈이라 흐름이 어긋나요(교과서 p.85).",
+    "(E) 'I'm going to watch a movie, too.'는 상대가 먼저 계획을 말한 뒤에 하는 말이라 (C)보다 앞에 올 수 없어요.",
+    "(B) 'Let's meet at two o'clock.'는 만날 시간을 묻는 (D)에 대한 대답이라 (D)보다 앞에 오면 흐름이 어긋나요.",
+    "정답. 계획 말하기(C) → 같은 계획과 함께하기 요청(E) → 승낙(A) → 만날 시간 묻기(D) → 대답(B) 순서로 이어져요."
+   ],
+   "detail": "첫 발화는 Hana가 Jisu의 토요일 계획을 묻는 말이에요. 그다음 (C) Jisu가 계획을 말하고 'How about you?'로 되묻고, (E) Hana가 같은 계획을 말하며 함께해도 되는지 물어요(교과서 p.85의 'Can I join you?' 흐름). 이어서 (A) Jisu가 'Sure. That'll be great.'로 승낙하고, (D) Hana가 만날 시간을 묻고, (B) Jisu가 시간을 대답해요. 그래서 순서는 (C)-(E)-(A)-(D)-(B)예요. (대화의 일부는 새로 쓴 글이에요.)",
+   "tip": "질문 → 대답 → 되묻기 → 요청 → 승낙 → 시간 묻기 → 대답의 순서를 찾아봐요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "대화 흐름",
+     "head": [
+      "단계",
+      "말",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "질문",
+       "What are you going to do ~?",
+       "p.85"
+      ],
+      [
+       "대답·되묻기",
+       "I'm going to ~. How about you?",
+       "p.85"
+      ],
+      [
+       "함께하기 요청",
+       "Can I join you?",
+       "p.85"
+      ],
+      [
+       "승낙",
+       "Sure. That'll be great.",
+       "p.85"
+      ],
+      [
+       "시간 묻기·대답",
+       "What time should we meet? / Let's meet at two o'clock.",
+       "새로 쓴 글"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "Hana: Jisu, what are you going to do this Saturday?\n(A) Jisu: Sure. That'll be great.\n(B) Jisu: Let's meet at two o'clock.\n(C) Jisu: I'm going to watch a movie. How about you?\n(D) Hana: Great! What time should we meet?\n(E) Hana: I'm going to watch a movie, too. Can I join you?\n(이 대화는 일부 새로 쓴 글이에요.)",
+   "fixedOrder": true
+  },
+  {
+   "id": "u5-Q11-b",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화: (A)~(E) 순서 배열",
+   "source": "교과서 p.85 (새로 쓴 글)",
+   "question": "대화의 흐름상 (A)~(E)를 순서대로 알맞게 배열한 것은?",
+   "choices": [
+    "(D) - (B) - (E) - (A) - (C)",
+    "(D) - (E) - (B) - (A) - (C)",
+    "(B) - (D) - (E) - (A) - (C)",
+    "(D) - (B) - (A) - (E) - (C)",
+    "(D) - (B) - (E) - (C) - (A)"
+   ],
+   "answer": 1,
+   "explanation": "방과 후 계획 말하기와 되묻기(D) → 쇼핑 계획(B) → 무엇을 살지 질문(E) → 대답(A) → 반응(C) 순서예요.",
+   "choiceExplanations": [
+    "정답. 방과 후 계획 말하기와 되묻기(D) → 쇼핑 계획(B) → 무엇을 살지 질문(E) → 대답(A) → 반응(C) 순서예요.",
+    "(E) 'What are you going to buy?'는 쇼핑하러 간다는 말(B)을 들은 뒤에 할 수 있는 질문이라 (B)보다 앞에 올 수 없어요.",
+    "(B) 'I'm going to go shopping with my mom.'은 'How about you?'라는 되묻기(D)에 대한 대답이라 (D)보다 앞에 올 수 없어요.",
+    "(A) 'I'm going to buy new shoes.'는 무엇을 살 거냐는 질문(E)에 대한 대답이라 (E)보다 앞에 오면 안 돼요.",
+    "(C) 'Blue ones will look nice.'는 신발에 대한 반응이라 무엇을 살지 말하는 (A)보다 앞에 오면 흐름이 어긋나요."
+   ],
+   "detail": "첫 발화는 Mina가 Tom의 방과 후 계획을 묻는 말이에요. 이어서 (D) Tom이 계획을 말하고 'How about you?'로 되묻고, (B) Mina가 자기 계획을 말해요. 그다음 (E) Tom이 'What are you going to buy?'라고 구체적으로 묻고, (A) Mina가 대답한 뒤, (C) Tom이 그 대답에 반응하며 마무리해요(교과서 p.85 대화에서도 질문-대답-되묻기 순서로 이어져요). 그래서 순서는 (D)-(B)-(E)-(A)-(C)예요. (이 대화는 새로 쓴 글이에요.)",
+   "tip": "'How about you?' 다음에는 상대의 대답, 대답에 대한 반응은 대화의 마지막!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "대화 흐름",
+     "head": [
+      "단계",
+      "말",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "질문",
+       "What are you going to do ~?",
+       "p.85"
+      ],
+      [
+       "대답·되묻기",
+       "I'm going to ~. How about you?",
+       "p.85"
+      ],
+      [
+       "추가 질문·대답",
+       "What are you going to buy? / I'm going to buy ~.",
+       "새로 쓴 글"
+      ],
+      [
+       "반응",
+       "대답에 대한 감상 말하기",
+       "새로 쓴 글"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "Mina: Tom, what are you going to do after school today?\n(A) Mina: I'm going to buy new shoes.\n(B) Mina: I'm going to go shopping with my mom.\n(C) Tom: Good idea. Blue ones will look nice.\n(D) Tom: I'm going to practice the piano. How about you?\n(E) Tom: Nice! What are you going to buy?\n(이 대화는 새로 쓴 글이에요.)",
+   "fixedOrder": true
+  },
+  {
+   "id": "u5-Q12-a",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "대화: 빈칸 완성",
+   "source": "교과서 p.85",
+   "question": "다음 대화의 빈칸 (A), (B)에 들어갈 말로 알맞게 짝지어진 것은?",
+   "choices": [
+    "(A) What time is it now? (B) How about you?",
+    "(A) What are you going to do this weekend? (B) Can I join you, please?",
+    "(A) What did you do yesterday afternoon? (B) Have a good time!",
+    "(A) What are you going to do this weekend? (B) Have a good time!",
+    "(A) Where are you from? (B) You, too."
+   ],
+   "answer": 4,
+   "explanation": "(A)에는 계획을 묻는 'What are you going to do this weekend?', (B)에는 기원하는 'Have a good time!'이 알맞아요.",
+   "choiceExplanations": [
+    "(A)가 시각을 묻는 말이라 'I'm going to visit my grandmother.'라는 대답과 맞지 않고, (B)도 이미 되묻기를 한 뒤라 어울리지 않아요(교과서 p.97에 시각을 묻는 표현이 나와요).",
+    "(A)는 알맞지만 (B)의 함께하자는 요청은 기원하는 흐름에서 이어지는 'You, too.'와 맞지 않아요(교과서 p.85).",
+    "(B)는 알맞지만 (A)가 어제 한 일을 묻는 과거 질문이라 'I'm going to ~.'라는 미래 계획의 대답과 맞지 않아요.",
+    "정답. (A)에는 계획을 묻는 'What are you going to do this weekend?', (B)에는 기원하는 'Have a good time!'이 알맞아요.",
+    "(A)가 출신을 묻는 말이라 계획을 말하는 대답과 맞지 않고, (B)에 You, too.를 쓰면 바로 뒤 A의 응답과 겹쳐요."
+   ],
+   "detail": "빈칸 (A)는 뒤의 대답 'I'm going to visit my grandmother.'가 단서예요. 이 대답에 어울리는 질문은 계획을 묻는 'What are you going to do this weekend?'예요(교과서 p.85). (B)는 뒤에서 A가 'You, too.'라고 답하므로 그 앞말은 기원하는 'Have a good time!'이에요(교과서 p.85). 따라서 (A), (B)에 알맞은 짝은 계획 묻기와 기원하기예요.",
+   "tip": "대답을 먼저 보고 질문을 찾고, 'You, too.' 앞에는 기원하는 말!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "빈칸 단서",
+     "head": [
+      "빈칸",
+      "단서",
+      "알맞은 말"
+     ],
+     "rows": [
+      [
+       "(A)",
+       "I'm going to visit my grandmother.",
+       "계획 묻기"
+      ],
+      [
+       "(B)",
+       "You, too.",
+       "기원하기"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "A: Jina, (A) ______\nB: I'm going to visit my grandmother. How about you?\nA: I'm going to ride my bike.\nB: Great. (B) ______\nA: You, too.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u5-Q12-b",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "대화: 빈칸 완성",
+   "source": "교과서 p.85, p.87 (새로 쓴 글)",
+   "question": "다음 대화의 빈칸 (A), (B)에 들어갈 말로 알맞게 짝지어진 것은?",
+   "choices": [
+    "(A) Who is going with you? (B) You, too.",
+    "(A) What can you do there? (B) You, too.",
+    "(A) What did you do there? (B) Have a wonderful trip!",
+    "(A) What time is it now? (B) Have a wonderful trip!",
+    "(A) What can you do there? (B) Have a wonderful trip!"
+   ],
+   "answer": 5,
+   "explanation": "(A)에는 여행지에서 할 수 있는 일을 묻는 'What can you do there?', (B)에는 여행을 기원하는 'Have a wonderful trip!'이 알맞아요.",
+   "choiceExplanations": [
+    "(A)의 동행을 묻는 질문은 'We can go to the beach'라는 할 수 있는 일에 대한 대답과 맞지 않고, (B)의 You, too.는 먼저 기원하는 말이 없어서 어색해요.",
+    "(A)는 알맞지만 (B)의 You, too.는 상대의 기원에 대한 응답인데 기원하는 말이 앞에 없어서 어색해요(교과서 p.85).",
+    "(A)의 'What did you do there?'는 과거 질문인데 여행을 가기 전이라 알맞지 않아요. (B)는 알맞아요.",
+    "(A)가 시각을 묻는 말이라 할 수 있는 일을 말하는 대답과 맞지 않아요. (B)는 알맞아요.",
+    "정답. (A)에는 여행지에서 할 수 있는 일을 묻는 'What can you do there?', (B)에는 여행을 기원하는 'Have a wonderful trip!'이 알맞아요."
+   ],
+   "detail": "(A)는 뒤의 대답 'We can go to the beach, and we can see the city at night.'가 단서예요. 이 대답은 그곳에서 할 수 있는 일이므로 질문은 할 일을 묻는 What can ~ do there? 형태예요(교과서 p.87의 'What can we do there?'와 같은 형태이고 여기서는 we 대신 you를 써요). (B)는 뒤에서 A가 'Thank you.'라고 답하므로 그 앞말은 여행을 기원하는 'Have a wonderful trip!'이에요. 따라서 알맞은 짝은 할 일 묻기와 기원하기예요. (이 대화는 새로 쓴 글이에요.)",
+   "tip": "대답에서 '할 수 있는 일'이 나오면 What can ~ do there?, 'Thank you.' 앞에는 기원!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "빈칸 단서",
+     "head": [
+      "빈칸",
+      "단서",
+      "알맞은 말"
+     ],
+     "rows": [
+      [
+       "(A)",
+       "We can go to the beach ...",
+       "What can you do there?"
+      ],
+      [
+       "(B)",
+       "Thank you.",
+       "Have a wonderful trip!"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "A: We're going to travel to Busan this weekend!\nB: Great! (A) ______\nA: We can go to the beach, and we can see the city at night.\nB: Sounds fun! (B) ______\nA: Thank you.\n(이 대화는 새로 쓴 글이에요.)",
+   "fixedOrder": true
+  },
+  {
+   "id": "u5-Q13-a",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 내용 일치(한국어 선지)",
+   "source": "교과서 p.91 (2025 2학기 기말 11번)",
+   "question": "다음 글의 내용과 일치하는 것은?",
+   "choices": [
+    "10월 6일의 일과를 담고 있다.",
+    "석양을 바라보며 글쓴이는 소원을 빌었다.",
+    "점심으로 수빈이는 팬케이크를 먹었다.",
+    "글쓴이는 전망대 꼭대기에 올라갔다.",
+    "등대는 세워진 지 70년이 지나 작동하지 않는다."
+   ],
+   "answer": 4,
+   "explanation": "글쓴이는 계단을 걸어 올라가 전망대 꼭대기에서 도시와 바다와 산을 보았다고 했으므로 '꼭대기에 올라갔다'가 일치해요.",
+   "choiceExplanations": [
+    "글의 제목이 'Saturday, September 6th'라서 10월이 아니라 9월 6일의 일과예요(교과서 p.91).",
+    "소원을 빈 것은 하늘이 붉게 변하며 해가 떠오를 때(sun is rising)이지 석양이 아니에요(교과서 p.91).",
+    "점심으로 먹은 것은 감자전(gamjajeon)이고, 팬케이크는 감자전이 팬케이크 같았다는 비유에 나온 말이에요(교과서 p.91).",
+    "정답. 글쓴이는 계단을 걸어 올라가 전망대 꼭대기에서 도시와 바다와 산을 보았다고 했으므로 '꼭대기에 올라갔다'가 일치해요.",
+    "등대는 약 70년이 되었지만 지금도 밤에 배를 위해 빛을 비춘다고 했어요. 작동하지 않는다는 말은 글과 반대예요(교과서 p.91)."
+   ],
+   "detail": "글의 내용을 보기와 하나씩 대조해요. 글의 날짜는 9월 6일이고, 소원은 해가 떠오를 때 해변에서 빌었으며, 점심은 감자전이에요(교과서 p.91). 등대는 'It still shines its light for ships at night.'라고 했으므로 지금도 빛을 비춰요(교과서 p.91). 글쓴이는 계단을 걸어 올라간 뒤 'at the top, the view was beautiful.'이라고 했으므로 꼭대기에 올라가 경치를 봤어요(교과서 p.91). 그래서 일치하는 것은 전망대 꼭대기에 올라갔다는 내용이에요.",
+   "tip": "글의 날짜, 시간대(해돋이), 먹은 것, 간 곳을 보기와 하나씩 확인해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "9월 6일 일과",
+     "head": [
+      "순서",
+      "한 일",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "1",
+       "해변에서 해돋이를 보고 소원을 빎",
+       "p.91"
+      ],
+      [
+       "2",
+       "점심으로 감자전을 먹음",
+       "p.91"
+      ],
+      [
+       "3",
+       "전망대 꼭대기에 올라 경치를 봄",
+       "p.91"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "Saturday, September 6th\nWe woke up very early. It was dark outside. Subin and I ran to the beach. Slowly, the sky turned red. Subin said, \"The sun is rising. Make a wish!\" I closed my eyes and made a wish.\nFor lunch, we ate gamjajeon. It was like a pancake. I loved it. After lunch, we visited Sokcho Lighthouse Observatory. We walked up many stairs. Our legs were tired. But at the top, the view was beautiful. We saw the city, the ocean, and the mountains.\nSubin said, \"This lighthouse is about 70 years old. It still shines its light for ships at night.\" I said, \"Wow, that's amazing!\"",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-11"
+  },
+  {
+   "id": "u5-Q13-b",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 내용 일치(한국어 선지)",
+   "source": "교과서 p.90~91 (새로 쓴 글)",
+   "question": "다음 글의 내용과 일치하는 것은?",
+   "choices": [
+    "날씨가 흐려서 하루 종일 집에 있었다.",
+    "사촌과 함께 자전거를 타고 공원에 갔다.",
+    "점심으로 라면을 끓여서 맛있게 먹었다.",
+    "연을 날린 뒤에 점심을 먹었다.",
+    "바람이 약해서 연이 낮게 날았다."
+   ],
+   "answer": 2,
+   "explanation": "글쓴이는 사촌 Jisu와 자전거를 타고 공원에 갔다고 했으므로 이 보기가 글의 내용과 일치해요.",
+   "choiceExplanations": [
+    "글에서 날씨는 맑고 따뜻했다고 했어요. 날씨가 흐려서 하루 종일 집에 있었다는 말은 글과 반대예요.",
+    "정답. 글쓴이는 사촌 Jisu와 자전거를 타고 공원에 갔다고 했으므로 이 보기가 글의 내용과 일치해요.",
+    "점심으로 먹은 것은 샌드위치(sandwiches)예요. 라면은 글에 나오지 않아요.",
+    "글에서는 점심을 먹은 뒤에 연을 날렸어요. 순서가 반대예요.",
+    "글에서는 바람이 세서(strong) 연이 아주 높이 올라갔다고 했어요. 낮게 날았다는 말은 글과 반대예요."
+   ],
+   "detail": "글의 내용을 보기와 하나씩 대조해요. 첫 문장에서 날씨가 'sunny and warm'이라고 했고, 둘째 문장에서 사촌 Jisu와 자전거로 Hanbat Park에 갔다고 했어요. 점심은 샌드위치였고, 점심을 먹고 난 뒤에 연을 날렸으며 바람이 세서 연이 높이 올라갔어요. 그래서 글과 일치하는 것은 사촌과 자전거를 타고 공원에 갔다는 내용이에요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "글의 사실(날씨·함께한 사람·교통수단·먹은 것·순서)을 보기와 하나씩 비교해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "글의 정보 정리",
+     "head": [
+      "항목",
+      "글의 내용"
+     ],
+     "rows": [
+      [
+       "날씨",
+       "맑고 따뜻함"
+      ],
+      [
+       "함께한 사람·교통수단",
+       "사촌 Jisu, 자전거"
+      ],
+      [
+       "점심",
+       "샌드위치"
+      ],
+      [
+       "순서",
+       "점심 → 연날리기"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "Sunday, May 18th\nIt was sunny and warm today. My cousin Jisu and I rode bikes to Hanbat Park. We sat down under a tree and had sandwiches for lunch. After lunch, we flew a kite. The wind was strong, so the kite went very high. We had a great time. In the evening, we rode our bikes home along the river. I really want to come here again.\n(이 글은 새로 쓴 글이에요.)"
+  },
+  {
+   "id": "u5-Q14-a",
+   "slot": "Q14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 글을 읽고 답할 수 없는 질문",
+   "source": "교과서 p.90 (새로 쓴 글)",
+   "question": "윗글을 읽고 답할 수 없는 질문은?",
+   "choices": [
+    "How was the weather on July 11th?",
+    "What did the writer buy at the market?",
+    "Who went to the aquarium with the writer?",
+    "What did the writer eat for dinner?",
+    "What place did the writer visit instead of going to the beach?"
+   ],
+   "answer": 2,
+   "explanation": "글에는 시장에서 무엇을 먹었는지만 나오고 무엇을 샀는지는 나오지 않아서 답할 수 없는 질문이에요.",
+   "choiceExplanations": [
+    "날씨는 글에 'It was rainy today.'로 나와 있어서 답할 수 있어요(비 오는 날씨).",
+    "정답. 글에는 시장에서 무엇을 먹었는지만 나오고 무엇을 샀는지는 나오지 않아서 답할 수 없는 질문이에요.",
+    "글쓴이와 함께 수족관에 간 사람은 brother Daniel이라고 나와 있어서 답할 수 있어요.",
+    "저녁 식사로 시장에서 신선한 해산물을 먹었다고 나와 있어서 답할 수 있어요.",
+    "해변에 가는 대신 부산의 수족관을 방문했다고 나와 있어서 답할 수 있어요."
+   ],
+   "detail": "각 질문의 답이 글 속에 있는지 하나씩 찾아봐요. 날씨(rainy), 함께 간 사람(brother Daniel), 저녁 식사(fresh seafood), 해변 대신 간 곳(aquarium)은 모두 글에 나와 있어요. 하지만 시장에서 무엇을 샀는지는 글에 언급이 없어요. 그래서 답할 수 없는 질문은 'What did the writer buy at the market?'예요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "'답할 수 없는 질문'은 보기마다 글에서 답이 되는 부분을 찾고, 찾지 못한 것을 골라요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "질문별 근거",
+     "head": [
+      "질문",
+      "글의 근거"
+     ],
+     "rows": [
+      [
+       "날씨",
+       "It was rainy today."
+      ],
+      [
+       "함께 간 사람",
+       "brother Daniel"
+      ],
+      [
+       "저녁 식사",
+       "fresh seafood"
+      ],
+      [
+       "해변 대신 간 곳",
+       "aquarium"
+      ],
+      [
+       "시장에서 산 것",
+       "글에 없음"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "Friday, July 11th\nIt was rainy today, so we didn't go to the beach. Instead, my brother Daniel and I visited an aquarium in Busan. We saw many sea animals. There was a big shark tank. I was a little afraid, but Daniel smiled. For dinner, we ate fresh seafood at a market. It was delicious! Tomorrow, we are going to go to Gwangalli Beach if it's sunny.\n(이 글은 새로 쓴 글이에요.)"
+  },
+  {
+   "id": "u5-Q14-b",
+   "slot": "Q14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 글을 읽고 답할 수 없는 질문",
+   "source": "교과서 p.84, p.87, p.96 (새로 쓴 글)",
+   "question": "윗글을 읽고 답할 수 없는 질문은?",
+   "choices": [
+    "Who is going to travel to Jeju-do?",
+    "What are they going to do on Saturday?",
+    "What does Yuna's brother like?",
+    "What does Yuna plan to do at the beach?",
+    "How will they get to Jeju-do?"
+   ],
+   "answer": 5,
+   "explanation": "글에는 제주도까지 무엇을 타고 가는지(교통수단)가 나오지 않아서 답할 수 없는 질문이에요.",
+   "choiceExplanations": [
+    "여행을 가는 사람은 글에 my family로 나와 있어서 답할 수 있어요.",
+    "토요일에는 한라산을 등산할 예정이라고 나와 있어서 답할 수 있어요.",
+    "남동생은 수영을 좋아한다고 나와 있어서 답할 수 있어요.",
+    "Yuna는 해변에서 책을 읽을 계획이라고 나와 있어서 답할 수 있어요.",
+    "정답. 글에는 제주도까지 무엇을 타고 가는지(교통수단)가 나오지 않아서 답할 수 없는 질문이에요."
+   ],
+   "detail": "각 질문의 답이 글에 있는지 찾아봐요. 누가 가는지(Yuna의 가족), 토요일에 할 일(한라산 등산), 남동생이 좋아하는 것(수영), Yuna가 해변에서 할 일(책 읽기)은 모두 글에 나와 있어요. 하지만 제주도까지 무엇을 타고 가는지는 글에 나오지 않아요. 그래서 답할 수 없는 질문은 'How will they get to Jeju-do?'예요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "글에 교통수단에 대한 말이 없으면 'How will ~ get to ~?'는 답할 수 없는 질문이에요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "질문별 근거",
+     "head": [
+      "질문",
+      "글의 근거"
+     ],
+     "rows": [
+      [
+       "누가 가는가",
+       "my family"
+      ],
+      [
+       "토요일에 할 일",
+       "hike Hallasan"
+      ],
+      [
+       "남동생이 좋아하는 것",
+       "swimming"
+      ],
+      [
+       "Yuna가 해변에서 할 일",
+       "read a book"
+      ],
+      [
+       "제주도까지 가는 방법",
+       "글에 없음"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "소개 글",
+   "passage": "Hi, I'm Yuna. This weekend, my family is going to travel to Jeju-do. On Saturday, we are going to hike Hallasan. I want to see the beautiful view from the top. On Sunday, we are going to go to the beach. My little brother likes swimming, but I plan to read a book there. We hope to have a great time.\n(이 글은 새로 쓴 글이에요.)"
+  },
+  {
+   "id": "u5-Q15-a",
+   "slot": "Q15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 흐름상 어색한 문장",
+   "source": "교과서 p.90~91 (새로 쓴 글)",
+   "question": "다음 글의 흐름상 어색한 문장은?",
+   "choices": [
+    "㉠",
+    "㉡",
+    "㉢",
+    "㉣",
+    "㉤"
+   ],
+   "answer": 3,
+   "explanation": "㉢은 brother가 컴퓨터 게임을 좋아한다는 내용으로, 해변에서 보낸 하루라는 글의 흐름과 관계가 없어요.",
+   "choiceExplanations": [
+    "㉠은 아침 일찍 해변에 갔다는 글의 첫 장면이라 하루의 이야기와 잘 이어져요.",
+    "㉡은 날씨가 맑아서 바다에서 수영했다는 내용으로 해변 이야기와 이어져요.",
+    "정답. ㉢은 brother가 컴퓨터 게임을 좋아한다는 내용으로, 해변에서 보낸 하루라는 글의 흐름과 관계가 없어요.",
+    "㉣은 수영한 뒤 해변에서 국수를 먹었다는 내용으로 해변에서의 하루와 이어져요.",
+    "㉤은 즐거운 하루였고 사진을 많이 찍었다는 맺음 문장이라 글의 흐름과 맞아요."
+   ],
+   "detail": "글 전체의 주제는 해변에서 보낸 하루예요. ㉠(해변에 감), ㉡(수영), ㉣(해변에서 국수를 먹음), ㉤(즐거운 하루와 사진)은 모두 그날 한 일로 시간 순서대로 이어져요. 반면 ㉢ 'My brother likes playing computer games.'는 그날의 활동과 관계없이 brother의 취미를 말해서 흐름에서 벗어나요. 그래서 흐름상 어색한 문장은 ㉢이에요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "글의 중심 소재(해변에서 한 일)와 관계없는 문장을 찾아요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "문장별 역할",
+     "head": [
+      "문장",
+      "내용",
+      "흐름"
+     ],
+     "rows": [
+      [
+       "㉠",
+       "해변에 감",
+       "맞음"
+      ],
+      [
+       "㉡",
+       "수영함",
+       "맞음"
+      ],
+      [
+       "㉢",
+       "brother의 컴퓨터 게임 취미",
+       "어색함"
+      ],
+      [
+       "㉣",
+       "해변에서 국수를 먹음",
+       "맞음"
+      ],
+      [
+       "㉤",
+       "즐거운 하루, 사진",
+       "맞음"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "Saturday, August 9th\n㉠ We got up early and went to Namhae Beach. ㉡ It was sunny, so we swam in the sea. ㉢ My brother likes playing computer games. ㉣ After swimming, we ate hot noodles on the beach. ㉤ It was a great day, and I took many pictures.\n(이 글은 새로 쓴 글이에요.)",
+   "fixedOrder": true
+  },
+  {
+   "id": "u5-Q15-b",
+   "slot": "Q15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 흐름상 어색한 문장",
+   "source": "교과서 p.90~91 (새로 쓴 글)",
+   "question": "다음 글의 흐름상 어색한 문장은?",
+   "choices": [
+    "㉠",
+    "㉡",
+    "㉢",
+    "㉣",
+    "㉤"
+   ],
+   "answer": 2,
+   "explanation": "㉡은 삼촌이 은행에서 일한다는 내용으로, 학급 현장학습(과학관 견학)이라는 글의 흐름과 관계가 없어요.",
+   "choiceExplanations": [
+    "㉠은 버스를 타고 과학관에 갔다는 견학의 첫 장면이라 글의 흐름과 맞아요.",
+    "정답. ㉡은 삼촌이 은행에서 일한다는 내용으로, 학급 현장학습(과학관 견학)이라는 글의 흐름과 관계가 없어요.",
+    "㉢은 과학관에서 공룡 뼈와 큰 고래 모형을 봤다는 내용으로 견학 이야기와 이어져요.",
+    "㉣은 안내원이 흥미로운 이야기를 들려줬다는 견학 중의 일이라 흐름과 맞아요.",
+    "㉤은 가족과 다시 방문하고 싶다는 견학의 소감이라 글의 마무리로 알맞아요."
+   ],
+   "detail": "글 전체의 주제는 학급이 과학관으로 견학을 간 일이에요. ㉠(과학관에 감), ㉢(공룡 뼈와 고래 모형을 봄), ㉣(안내원의 이야기), ㉤(다시 오고 싶음)은 모두 견학 이야기로 이어져요. 반면 ㉡ 'My uncle works at a bank near my house.'는 삼촌의 직업을 말해서 견학 흐름과 관계가 없어요. 그래서 흐름상 어색한 문장은 ㉡이에요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "소감이나 설명도 글의 중심 사건과 이어지는지 확인해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "문장별 역할",
+     "head": [
+      "문장",
+      "내용",
+      "흐름"
+     ],
+     "rows": [
+      [
+       "㉠",
+       "버스로 과학관에 감",
+       "맞음"
+      ],
+      [
+       "㉡",
+       "삼촌의 직업",
+       "어색함"
+      ],
+      [
+       "㉢",
+       "공룡 뼈와 고래 모형",
+       "맞음"
+      ],
+      [
+       "㉣",
+       "안내원의 이야기",
+       "맞음"
+      ],
+      [
+       "㉤",
+       "다시 오고 싶음",
+       "맞음"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "견학 글",
+   "passage": "Our class had a field trip on Friday.\n㉠ We took a bus to the science museum. ㉡ My uncle works at a bank near my house. ㉢ At the museum, we saw dinosaur bones and a big model of a whale. ㉣ The guide told us many interesting stories. ㉤ I want to visit the museum again with my family.\n(이 글은 새로 쓴 글이에요.)",
+   "fixedOrder": true
+  },
+  {
+   "id": "u5-Q16-a",
+   "slot": "Q16",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어휘: 서수와 날짜 표기",
+   "source": "교과서 p.88, p.96, p.97",
+   "question": "다음 중 날짜 표기가 올바른 것은?",
+   "choices": [
+    "It's September 1th.",
+    "It's March 4rd.",
+    "It's August 2th.",
+    "It's July 4nd.",
+    "It's November 1st."
+   ],
+   "answer": 5,
+   "explanation": "1일은 first를 줄인 1st로 쓰므로 It's November 1st.가 올바른 날짜 표기예요.",
+   "choiceExplanations": [
+    "1일은 1th가 아니라 1st로 써요. 교과서 p.97의 날짜 November 1st처럼 first를 줄인 모양은 1st예요(교과서 p.97).",
+    "4일은 4rd가 아니라 4th로 써요. 교과서 p.96의 날짜 March 4th처럼 fourth를 줄인 모양은 4th예요(교과서 p.96).",
+    "2일은 2th가 아니라 2nd로 써요. 교과서 p.88의 'It's August 2nd.'처럼 second를 줄인 모양은 2nd예요(교과서 p.88).",
+    "4일은 4nd가 아니라 4th로 써요. 4th는 fourth를 줄인 모양이에요(교과서 p.96의 March 4th).",
+    "정답. 1일은 first를 줄인 1st로 쓰므로 It's November 1st.가 올바른 날짜 표기예요."
+   ],
+   "detail": "날짜는 '월 + 서수'로 말하고 서수는 숫자 뒤에 줄인 글자를 붙여 써요. 교과서 p.88은 first, second, third, fourth를 배우고 날짜 예로 'It's August 2nd.'를 보여 줘요(교과서 p.88). p.96~97의 날짜 March 4th, November 1st에서 1일은 1st, 4일은 4th로 쓴다는 것을 알 수 있어요(교과서 p.96, p.97). 그래서 1일을 1st로 쓴 It's November 1st.가 올바른 표기예요.",
+   "tip": "1일 = 1st, 2일 = 2nd, 4일 = 4th! 숫자 뒤 글자는 서수에서 가져와요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "서수와 날짜 표기",
+     "head": [
+      "숫자",
+      "서수",
+      "날짜 표기",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "1",
+       "first",
+       "1st",
+       "p.88, p.97"
+      ],
+      [
+       "2",
+       "second",
+       "2nd",
+       "p.88"
+      ],
+      [
+       "4",
+       "fourth",
+       "4th",
+       "p.88, p.96"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5-Q16-b",
+   "slot": "Q16",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "어휘: 서수와 날짜 표기",
+   "source": "교과서 p.88",
+   "question": "다음 우리말과 영어 서수가 알맞게 짝지어진 것은?",
+   "choices": [
+    "첫 번째 - one",
+    "두 번째 - twice",
+    "네 번째 - forth",
+    "세 번째 - third",
+    "두 번째 - secend"
+   ],
+   "answer": 4,
+   "explanation": "'세 번째'를 뜻하는 서수는 third예요.",
+   "choiceExplanations": [
+    "one은 '하나'를 뜻하는 기수예요. '첫 번째'는 순서를 나타내는 서수 first로 써요(교과서 p.88).",
+    "twice는 '두 번'이라는 횟수를 뜻해요. '두 번째'는 서수 second로 써요(교과서 p.88).",
+    "'네 번째'는 forth가 아니라 fourth예요. 철자가 틀렸어요(교과서 p.88).",
+    "정답. '세 번째'를 뜻하는 서수는 third예요.",
+    "'두 번째'를 뜻하는 말은 secend가 아니라 second예요. 철자가 틀렸어요(교과서 p.88)."
+   ],
+   "detail": "순서를 나타내는 서수는 교과서 p.88에서 first(첫 번째), second(두 번째), third(세 번째), fourth(네 번째)로 배워요(교과서 p.88). one은 기수, twice는 횟수라서 서수가 아니고, forth와 secend는 fourth와 second의 철자가 틀린 형태예요. 따라서 우리말과 영어가 알맞게 짝지어진 것은 세 번째 - third예요.",
+   "tip": "서수는 철자까지! first, second, third, fourth.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "서수 짝",
+     "head": [
+      "우리말",
+      "영어 서수",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "첫 번째",
+       "first",
+       "p.88"
+      ],
+      [
+       "두 번째",
+       "second",
+       "p.88"
+      ],
+      [
+       "세 번째",
+       "third",
+       "p.88"
+      ],
+      [
+       "네 번째",
+       "fourth",
+       "p.88"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5-Q17-a",
+   "slot": "Q17",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 일기 속 사건 순서",
+   "source": "교과서 p.90~91, p.98 (새로 쓴 글)",
+   "question": "윗글에서 글쓴이 가족이 한 일을 일어난 순서대로 바르게 배열한 것은?",
+   "choices": [
+    "(D) - (B) - (A) - (C)",
+    "(B) - (D) - (A) - (C)",
+    "(D) - (A) - (B) - (C)",
+    "(D) - (B) - (C) - (A)",
+    "(A) - (D) - (B) - (C)"
+   ],
+   "answer": 1,
+   "explanation": "아침에 언덕에 올라(D) 정상에서 샌드위치를 먹고(B) 호수에서 배를 탄 뒤(A) 호숫가 식당에서 저녁을 먹었어요(C).",
+   "choiceExplanations": [
+    "정답. 아침에 언덕에 올라(D) 정상에서 샌드위치를 먹고(B) 호수에서 배를 탄 뒤(A) 호숫가 식당에서 저녁을 먹었어요(C).",
+    "(B) 정상에서 샌드위치를 먹는 일은 언덕에 오른 뒤에 일어나요. 오르기 전에 정상에서 먹을 수는 없어요.",
+    "(A) 배를 탄 일은 정상에서 샌드위치를 먹은 뒤(Then)에 일어나요. 샌드위치보다 먼저가 아니에요.",
+    "(C) 저녁 식사는 하루의 마지막 일이라 배를 탄 뒤에 와요. 저녁이 배보다 앞서면 순서가 어긋나요.",
+    "(A) 배를 타는 일은 언덕에 오르고 정상에서 먹은 뒤에 일어나 맨 처음이 될 수 없어요."
+   ],
+   "detail": "순서를 알려 주는 말을 찾아 일어난 차례대로 놓아요. 글에서 아침(in the morning)에 언덕에 올랐고, 그곳 정상(at the top)에서 샌드위치를 먹었으며, 그다음(Then) 호수에서 배를 탔어요. 마지막으로 호숫가 식당에서 저녁을 먹었어요. 교과서 p.98의 Check Up E도 일기 속 일을 일어난 순서대로 배열하는 문제예요(교과서 p.98). 그래서 순서는 (D)-(B)-(A)-(C)예요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "in the morning, Then, After, At the end 같은 순서 표현에 표시해 가며 읽어요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "일어난 순서",
+     "head": [
+      "순서",
+      "한 일",
+      "순서 단서"
+     ],
+     "rows": [
+      [
+       "1",
+       "언덕에 오름 (D)",
+       "in the morning"
+      ],
+      [
+       "2",
+       "정상에서 샌드위치를 먹음 (B)",
+       "at the top"
+      ],
+      [
+       "3",
+       "호수에서 배를 탐 (A)",
+       "Then"
+      ],
+      [
+       "4",
+       "호숫가 식당에서 저녁 (C)",
+       "dinner"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "Sunday, April 13th\nIt was cloudy today. My family hiked a small hill in the morning. We ate sandwiches at the top. Then we went to a lake and rode a boat. We had dinner at a restaurant near the lake. I want to come here again.\n(이 글은 새로 쓴 글이에요.)\n\n(A) 호수에서 배를 탔다.\n(B) 정상에서 샌드위치를 먹었다.\n(C) 호숫가 식당에서 저녁을 먹었다.\n(D) 작은 언덕에 올랐다.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u5-Q17-b",
+   "slot": "Q17",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해: 일기 속 사건 순서",
+   "source": "교과서 p.90~91, p.98 (새로 쓴 글)",
+   "question": "윗글에서 글쓴이의 반 친구들이 한 일을 일어난 순서대로 바르게 배열한 것은?",
+   "choices": [
+    "(B) - (A) - (D) - (C)",
+    "(D) - (B) - (A) - (C)",
+    "(B) - (D) - (A) - (C)",
+    "(B) - (D) - (C) - (A)",
+    "(A) - (B) - (D) - (C)"
+   ],
+   "answer": 3,
+   "explanation": "딸기를 따고(B) 잼을 만든 뒤(D) 점심 후에 소에게 먹이를 주고(A) 하루의 끝에 단체 사진을 찍었어요(C).",
+   "choiceExplanations": [
+    "(A) 소에게 먹이를 준 일은 점심 뒤(After lunch)에 일어나므로 잼을 만든 일(D)보다 뒤예요. 순서가 어긋나요.",
+    "(D) 잼 만들기는 딸기를 딴(First) 뒤에 일어나요. 잼을 먼저 만들 수는 없어요.",
+    "정답. 딸기를 따고(B) 잼을 만든 뒤(D) 점심 후에 소에게 먹이를 주고(A) 하루의 끝에 단체 사진을 찍었어요(C).",
+    "(C) 단체 사진은 하루의 끝(At the end of the day)에 찍은 일이라 마지막이어야 해요.",
+    "(A) 소에게 먹이를 주는 일은 맨 처음이 아니에요. 글은 딸기 따기(First)로 시작해요."
+   ],
+   "detail": "순서를 알려 주는 말을 찾아요. First(처음에) 딸기를 땄고, Then(그다음) 부엌에서 잼을 만들었으며, After lunch(점심 후에) 소에게 먹이를 주었고, At the end of the day(하루의 끝에) 단체 사진을 찍었어요. 교과서 p.98의 Check Up E처럼 일기 속 일을 일어난 순서대로 배열하는 방법이에요(교과서 p.98). 그래서 순서는 (B)-(D)-(A)-(C)예요. (이 글은 새로 쓴 글이에요.)",
+   "tip": "First → Then → After → At the end! 순서 표현이 곧 정답의 단서예요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "일어난 순서",
+     "head": [
+      "순서",
+      "한 일",
+      "순서 단서"
+     ],
+     "rows": [
+      [
+       "1",
+       "딸기를 땀 (B)",
+       "First"
+      ],
+      [
+       "2",
+       "잼을 만듦 (D)",
+       "Then"
+      ],
+      [
+       "3",
+       "소에게 먹이를 줌 (A)",
+       "After lunch"
+      ],
+      [
+       "4",
+       "단체 사진을 찍음 (C)",
+       "At the end of the day"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "Friday, June 6th\nIt was hot today. My class visited a farm. First, we picked strawberries. Then we made jam in the kitchen. After lunch, we fed the cows. At the end of the day, we took a group photo.\n(이 글은 새로 쓴 글이에요.)\n\n(A) 소에게 먹이를 주었다.\n(B) 딸기를 땄다.\n(C) 단체 사진을 찍었다.\n(D) 잼을 만들었다.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u5-S01-a",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "서술형: 지정 동사 뒤 to + 동사원형 문장 완성",
+   "source": "교과서 p.96~97",
+   "question": "다음 우리말과 같도록 보기에서 필요한 단어를 골라 문장을 완성하시오. (괄호 안의 동사를 써서 완성하며, 어형 변화 없음, 같은 단어를 여러 번 써도 됨, 철자·대소문자 오류는 감점)",
+   "answerHint": "빈칸 4개, 칸마다 1점. 보기의 단어를 형태를 바꾸지 말고 골라 써요.",
+   "modelAnswer": "(1) I hope to go to Spain. (2) Sua plans to bake a cake. — 정답 칸: to, go / to, bake",
+   "explanation": "모범 답안: (1) I hope to go to Spain. (2) Sua plans to bake a cake. — 정답 칸: to, go / to, bake",
+   "rubric": [
+    {
+     "criterion": "(1) 첫 번째 빈칸에 to를 씀",
+     "points": 1,
+     "tip": "hope 뒤에는 to + 동사원형이 와요. to 없이 go를 바로 쓰면 틀려요."
+    },
+    {
+     "criterion": "(1) 두 번째 빈칸에 go를 씀",
+     "points": 1,
+     "tip": "to 뒤에는 동사원형이 와야 하므로 going, goes가 아니라 go예요."
+    },
+    {
+     "criterion": "(2) 첫 번째 빈칸에 to를 씀",
+     "points": 1,
+     "tip": "plans 뒤에도 to + 동사원형이 와요. to를 빠뜨리면 틀려요."
+    },
+    {
+     "criterion": "(2) 두 번째 빈칸에 bake를 씀",
+     "points": 1,
+     "tip": "to 뒤에는 동사원형이 와야 하므로 baking, bakes가 아니라 bake예요."
+    }
+   ],
+   "detail": "이 문제는 동사(hope, plans)가 이미 주어져 있어서 to부정사 모양만 채점해요. hope와 plan은 뒤에 'to + 동사원형'을 쓰는 동사예요(교과서 p.96의 'He hopes to travel the world.', 'She plans to meet her friends.'). (1)은 hope 뒤에 to를 쓰고 go는 동사원형으로, (2)는 plans 뒤에 to를 쓰고 bake는 동사원형으로 써요. 인정하지 않는 답: (1) going, goes, to going / (2) baking, bakes, to baking.\n흔한 감점: 철자 오류와 대소문자 오류는 해당 칸 0점이에요.",
+   "tip": "hope/plan 뒤에는 to + 동사원형! to 뒤 동사는 -ing, -s 없이!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "S01 채점 한눈에",
+     "head": [
+      "칸",
+      "정답",
+      "이유"
+     ],
+     "rows": [
+      [
+       "(1)-1",
+       "to",
+       "hope 뒤 to부정사"
+      ],
+      [
+       "(1)-2",
+       "go",
+       "to 뒤 동사원형"
+      ],
+      [
+       "(2)-1",
+       "to",
+       "plans 뒤 to부정사"
+      ],
+      [
+       "(2)-2",
+       "bake",
+       "to 뒤 동사원형"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "보기와 문장",
+   "passage": "보기: to / go / going / goes / bake / baking / bakes\n(1) 나는 스페인에 가기를 바란다. (hope 사용)\n→ I hope _____ _____ to Spain.\n(2) 수아는 케이크를 구울 계획이다. (plan 사용)\n→ Sua plans _____ _____ a cake."
+  },
+  {
+   "id": "u5-S01-b",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "서술형: 지정 동사 뒤 to + 동사원형 문장 완성",
+   "source": "교과서 p.96~97",
+   "question": "다음 우리말과 같도록 보기에서 필요한 단어를 골라 문장을 완성하시오. (괄호 안의 동사를 써서 완성하며, 어형 변화 없음, 같은 단어를 여러 번 써도 됨, 철자·대소문자 오류는 감점)",
+   "answerHint": "빈칸 4개, 칸마다 1점. 보기의 단어를 형태를 바꾸지 말고 골라 써요.",
+   "modelAnswer": "(1) I want to buy a new hat. (2) Minho hopes to win the game. — 정답 칸: to, buy / to, win",
+   "explanation": "모범 답안: (1) I want to buy a new hat. (2) Minho hopes to win the game. — 정답 칸: to, buy / to, win",
+   "rubric": [
+    {
+     "criterion": "(1) 첫 번째 빈칸에 to를 씀",
+     "points": 1,
+     "tip": "want 뒤에는 to + 동사원형이 와요. to를 빠뜨리면 틀려요."
+    },
+    {
+     "criterion": "(1) 두 번째 빈칸에 buy를 씀",
+     "points": 1,
+     "tip": "to 뒤에는 동사원형이 와야 하므로 buying, buys가 아니라 buy예요."
+    },
+    {
+     "criterion": "(2) 첫 번째 빈칸에 to를 씀",
+     "points": 1,
+     "tip": "hopes 뒤에도 to + 동사원형이 와요. to를 빠뜨리면 틀려요."
+    },
+    {
+     "criterion": "(2) 두 번째 빈칸에 win을 씀",
+     "points": 1,
+     "tip": "to 뒤에는 동사원형이 와야 하므로 winning, wins가 아니라 win이에요."
+    }
+   ],
+   "detail": "동사(want, hopes)가 이미 주어져 있으므로 to부정사 모양만 채점해요. want와 hope는 뒤에 'to + 동사원형'이 오는 동사예요(교과서 p.96의 'I want to buy new sneakers.', 'He hopes to travel the world.'). (1)은 want 뒤에 to를 쓰고 buy는 동사원형으로, (2)는 hopes 뒤에 to를 쓰고 win은 동사원형으로 써요. 인정하지 않는 답: (1) buying, buys, to buying / (2) winning, wins, to winning.\n흔한 감점: 철자 오류와 대소문자 오류는 해당 칸 0점이에요.",
+   "tip": "want/hope 뒤에는 to + 동사원형! to 뒤 동사는 -ing, -s 없이!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "S01 채점 한눈에",
+     "head": [
+      "칸",
+      "정답",
+      "이유"
+     ],
+     "rows": [
+      [
+       "(1)-1",
+       "to",
+       "want 뒤 to부정사"
+      ],
+      [
+       "(1)-2",
+       "buy",
+       "to 뒤 동사원형"
+      ],
+      [
+       "(2)-1",
+       "to",
+       "hopes 뒤 to부정사"
+      ],
+      [
+       "(2)-2",
+       "win",
+       "to 뒤 동사원형"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "보기와 문장",
+   "passage": "보기: to / buy / buying / buys / win / winning / wins\n(1) 나는 새 모자를 사고 싶다. (want 사용)\n→ I want _____ _____ a new hat.\n(2) 민호는 경기에서 이기기를 바란다. (hope 사용)\n→ Minho hopes _____ _____ the game."
+  },
+  {
+   "id": "u5-S02-a",
+   "slot": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "서술형: be going to 영작",
+   "source": "교과서 p.82, p.84",
+   "question": "다음 우리말과 같도록 〈조건〉에 맞게 영어 문장을 쓰시오. (철자·대소문자·마침표 오류는 감점)",
+   "answerHint": "〈조건〉 주어진 단어를 모두 순서대로 쓰고, be going to를 사용하며 필요한 단어 3개를 추가해요. 줄임형은 쓰지 않아요.",
+   "modelAnswer": "I am going to make cookies tomorrow.",
+   "explanation": "모범 답안: I am going to make cookies tomorrow.",
+   "rubric": [
+    {
+     "criterion": "be동사를 주어에 맞게 씀 (I am)",
+     "points": 1,
+     "tip": "주어가 I이면 be동사는 am이에요. is나 are를 쓰면 틀리고, 줄임형 I'm은 조건에 맞지 않아요."
+    },
+    {
+     "criterion": "going to + 동사원형 구조를 씀",
+     "points": 1,
+     "tip": "be going to 뒤에는 동사원형 make가 와요. makes나 making은 틀려요."
+    },
+    {
+     "criterion": "주어진 단어를 모두 순서대로 씀",
+     "points": 1,
+     "tip": "I, make, cookies, tomorrow를 빠뜨리거나 순서를 바꾸면 감점이에요."
+    },
+    {
+     "criterion": "철자·대소문자·마침표가 정확함",
+     "points": 1,
+     "tip": "문장 첫 글자 I와 마침표를 확인해요."
+    }
+   ],
+   "detail": "'~할 예정이다'는 be going to + 동사원형으로 나타내요(교과서 p.82, p.84). 주어 I에 맞는 be동사 am을 쓰고 going to를 붙인 뒤 동사원형 make를 써요. 주어진 단어를 순서대로 놓으면 'I am going to make cookies tomorrow.'가 돼요. 추가한 단어는 am, going, to 세 개예요. 인정하지 않는 답: I going to make ..., I am go to make ..., I am going to makes ..., I'm going to make ...(줄임형) 조건 낱말(be going to)을 쓰지 않으면 'going to + 동사원형 구조를 씀' 항목은 0점이고, 나머지 항목은 따로 채점해요.\n흔한 감점: going을 빠뜨리거나 to 뒤에 동사원형 대신 makes·making을 쓰는 오류가 많아요.",
+   "tip": "be동사 + going to + 동사원형! be동사는 주어에 맞게!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "be going to 만들기",
+     "head": [
+      "자리",
+      "알맞은 말"
+     ],
+     "rows": [
+      [
+       "주어",
+       "I"
+      ],
+      [
+       "be동사",
+       "am"
+      ],
+      [
+       "going to",
+       "going to"
+      ],
+      [
+       "동사원형 + 나머지",
+       "make cookies tomorrow"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "우리말과 조건",
+   "passage": "우리말: 나는 내일 쿠키를 만들 예정이다.\n주어진 단어: I / make / cookies / tomorrow\n〈조건〉 1. 주어진 단어를 모두, 순서대로 사용할 것 (어형 변화 없음)\n2. be going to를 사용하고, 필요한 단어 3개를 추가할 것\n3. 줄임형(I'm 등)은 쓰지 말고 풀어서 쓸 것"
+  },
+  {
+   "id": "u5-S02-b",
+   "slot": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "서술형: be going to 영작",
+   "source": "교과서 p.82, p.84",
+   "question": "다음 우리말과 같도록 〈조건〉에 맞게 영어 문장을 쓰시오. (철자·대소문자·마침표 오류는 감점)",
+   "answerHint": "〈조건〉 주어진 단어를 모두 순서대로 쓰고, be going to를 사용하며 필요한 단어 3개를 추가해요. 줄임형은 쓰지 않아요.",
+   "modelAnswer": "Dohyun is going to swim in the pool on Sunday.",
+   "explanation": "모범 답안: Dohyun is going to swim in the pool on Sunday.",
+   "rubric": [
+    {
+     "criterion": "be동사를 주어에 맞게 씀 (Dohyun is)",
+     "points": 1,
+     "tip": "주어 Dohyun은 3인칭 단수이므로 be동사는 is예요. am이나 are는 틀려요."
+    },
+    {
+     "criterion": "going to + 동사원형 구조를 씀",
+     "points": 1,
+     "tip": "be going to 뒤에는 동사원형 swim이 와요. swims나 swimming은 틀려요."
+    },
+    {
+     "criterion": "주어진 단어를 모두 순서대로 씀",
+     "points": 1,
+     "tip": "Dohyun, swim, in the pool, on Sunday의 순서를 지켜요. 때를 나타내는 on Sunday는 문장 끝에 와요."
+    },
+    {
+     "criterion": "철자·대소문자·마침표가 정확함",
+     "points": 1,
+     "tip": "Dohyun과 Sunday의 첫 글자를 대문자로 쓰고 마침표를 확인해요."
+    }
+   ],
+   "detail": "'~할 예정이다'는 be going to + 동사원형으로 나타내요(교과서 p.82, p.84). 주어 Dohyun은 3인칭 단수이므로 be동사 is를 쓰고 going to를 붙인 뒤 동사원형 swim을 써요. 주어진 단어 순서대로 장소 in the pool과 때 on Sunday를 뒤에 놓아(영어에서는 보통 장소가 때보다 앞에 와요) 'Dohyun is going to swim in the pool on Sunday.'가 돼요. 인정하지 않는 답: Dohyun are going to ..., Dohyun is going swim ..., Dohyun is going to swims ... 조건 낱말(be going to)을 쓰지 않으면 'going to + 동사원형 구조를 씀' 항목은 0점이고, 나머지 항목은 따로 채점해요.\n흔한 감점: 주어에 맞지 않는 be동사(Dohyun am)와 to 뒤 동사의 -s·-ing 오류가 많아요.",
+   "tip": "주어가 3인칭 단수이면 is going to!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "be going to 만들기",
+     "head": [
+      "자리",
+      "알맞은 말"
+     ],
+     "rows": [
+      [
+       "주어",
+       "Dohyun"
+      ],
+      [
+       "be동사",
+       "is"
+      ],
+      [
+       "going to",
+       "going to"
+      ],
+      [
+       "동사원형 + 나머지",
+       "swim in the pool on Sunday"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "우리말과 조건",
+   "passage": "우리말: 도현이는 일요일에 수영장에서 수영할 예정이다.\n주어진 단어: Dohyun / swim / in the pool / on Sunday\n〈조건〉 1. 주어진 단어를 모두, 순서대로 사용할 것 (어형 변화 없음)\n2. be going to를 사용하고, 필요한 단어 3개를 추가할 것\n3. 줄임형(I'm 등)은 쓰지 말고 풀어서 쓸 것"
+  },
+  {
+   "id": "u5-S03-a",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "서술형: 어법 틀린 단어 4개 찾아 고치기",
+   "source": "교과서 p.90~91, p.96 (새로 쓴 글)",
+   "question": "다음 글에서 대괄호([ ])로 표시한 부분 중 어법상 잘못된 네 개의 단어를 찾아 바르게 고치시오. (과거의 일을 말한 문장은 과거 시제로 고칠 것, 고친 단어의 철자·대소문자가 틀리면 그 칸은 0점)",
+   "answerHint": "잘못된 단어 4개를 찾아 각각 한 단어로 고쳐요. 옳은 단어를 고쳐 쓰면 그 칸은 0점이에요.",
+   "modelAnswer": "ⓑ writed → wrote / ⓒ buyed → bought / ⓓ was → were / ⓕ an → a",
+   "explanation": "모범 답안: ⓑ writed → wrote / ⓒ buyed → bought / ⓓ was → were / ⓕ an → a",
+   "rubric": [
+    {
+     "criterion": "ⓑ writed를 wrote로 고침",
+     "points": 1,
+     "tip": "write의 과거형은 불규칙형 wrote예요. -ed를 붙이지 않아요(이 단원 밖 교과서 p.138에 나와요)."
+    },
+    {
+     "criterion": "ⓒ buyed를 bought로 고침",
+     "points": 1,
+     "tip": "buy의 과거형은 불규칙형 bought예요(이 단원 밖 교과서 p.156에 나와요)."
+    },
+    {
+     "criterion": "ⓓ was를 were로 고침",
+     "points": 1,
+     "tip": "주어 They는 복수이므로 과거 be동사는 were예요. 글이 과거 시제이므로 are로 고치면 안 돼요."
+    },
+    {
+     "criterion": "ⓕ an을 a로 고침",
+     "points": 1,
+     "tip": "very는 자음 소리로 시작하므로 an이 아니라 a를 써요(이 단원 밖의 기본 문법)."
+    }
+   ],
+   "detail": "먼저 글의 시제를 확인해요. 'yesterday'가 있고 went처럼 일기가 과거로 쓰였으므로 동사는 과거형이어야 해요. ⓑ writed는 불규칙 동사 write의 과거형 wrote로, ⓒ buyed는 buy의 과거형 bought로 고쳐요. ⓓ 'They was'는 주어가 복수라서 were로, ⓕ 'an very'는 자음 소리 앞이므로 a로 고쳐요. ⓐ was(과거 be동사), ⓔ to(hope to + 동사원형, 교과서 p.96), ⓖ like(현재의 느낌 표현)는 올바른 단어예요. (표시: writed→wrote, buyed→bought의 불규칙 과거형은 이 단원 밖 교과서 p.138, p.156에서 배우고, an→a는 교과서 밖 일반 상식이에요.) 인정하지 않는 답: ⓓ are/is로 고치기, ⓕ the로 고치기.\n흔한 감점: 옳은 단어(ⓐ, ⓔ, ⓖ)를 고쳐 쓰거나 한 칸에 두 단어를 쓰면 감점이에요.",
+   "tip": "과거 일기에서는 불규칙 동사 과거형을 점검하고, 복수 주어에는 were!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "고쳐 쓰기 정리",
+     "head": [
+      "기호",
+      "틀린 단어",
+      "고친 단어",
+      "이유"
+     ],
+     "rows": [
+      [
+       "ⓑ",
+       "writed",
+       "wrote",
+       "write의 과거형"
+      ],
+      [
+       "ⓒ",
+       "buyed",
+       "bought",
+       "buy의 과거형"
+      ],
+      [
+       "ⓓ",
+       "was",
+       "were",
+       "복수 주어 They"
+      ],
+      [
+       "ⓕ",
+       "an",
+       "a",
+       "very는 자음 소리"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "Sunday, July 20th\nIt ⓐ[was] hot and sunny yesterday. My friends and I went to Dream Park. We ⓑ[writed] postcards to our parents. After that, we ⓒ[buyed] two ice creams. They ⓓ[was] sweet and cold. I hope ⓔ[to] go there again. It is ⓕ[an] very big park. I ⓖ[like] it a lot!\n(이 글은 새로 쓴 글이에요.)"
+  },
+  {
+   "id": "u5-S03-b",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "서술형: 어법 틀린 단어 4개 찾아 고치기",
+   "source": "교과서 p.84, p.96 (새로 쓴 글)",
+   "question": "다음 글에서 대괄호([ ])로 표시한 부분 중 어법상 잘못된 네 개의 단어를 찾아 바르게 고치시오. (글은 현재 시제로 쓸 것, 고친 단어의 철자·대소문자가 틀리면 그 칸은 0점)",
+   "answerHint": "잘못된 단어 4개를 찾아 각각 한 단어로 고쳐요. 옳은 단어를 고쳐 쓰면 그 칸은 0점이에요.",
+   "modelAnswer": "ⓑ am → are / ⓒ have → has / ⓓ is → are / ⓕ seeing → see",
+   "explanation": "모범 답안: ⓑ am → are / ⓒ have → has / ⓓ is → are / ⓕ seeing → see",
+   "rubric": [
+    {
+     "criterion": "ⓑ am을 are로 고침",
+     "points": 1,
+     "tip": "주어 We에는 be동사 are를 써요. 'We are going to ~'가 올바른 모양이고, 글이 현재 시제이므로 were는 인정하지 않아요."
+    },
+    {
+     "criterion": "ⓒ have를 has로 고침",
+     "points": 1,
+     "tip": "주어 My father는 3인칭 단수이므로 has를 써요(교과서 밖 일반 상식). 글이 현재 시제이므로 had는 인정하지 않아요."
+    },
+    {
+     "criterion": "ⓓ is를 are로 고침",
+     "points": 1,
+     "tip": "There 뒤의 명사 cafes가 복수이므로 There are가 맞아요(교과서 p.94의 There are some cool places in ~와 같은 표현). 글이 현재 시제이므로 were는 인정하지 않아요."
+    },
+    {
+     "criterion": "ⓕ seeing을 see로 고침",
+     "points": 1,
+     "tip": "hope 뒤에는 to + 동사원형이 오므로 to seeing이 아니라 to see예요."
+    }
+   ],
+   "detail": "주어와 동사의 수가 맞는지 하나씩 확인해요. ⓑ는 주어 We에 맞게 am을 are로, ⓒ는 3인칭 단수 주어 My father에 맞게 have를 has로 고쳐요. ⓓ 'There is many nice cafes'는 뒤의 cafes가 복수이므로 are로 고치고, ⓕ는 hope 뒤에 to + 동사원형을 써야 하므로(교과서 p.96) seeing을 see로 고쳐요. ⓐ is(주어 my family는 단수), ⓔ hope(주어 I), ⓖ will(미래를 나타내는 will + 동사원형)은 올바른 단어예요. (표시: have→has는 교과서 밖 일반 상식이고, There is→There are는 교과서 p.94의 There are some cool places와 같은 표현이에요.) 인정하지 않는 답: ⓑ is·were로 고치기, ⓒ had로 고치기, ⓓ were로 고치기, ⓓ many를 바꾸는 것([ ]로 표시한 단어만 고칠 수 있어요).\n흔한 감점: 옳은 단어(ⓐ, ⓔ, ⓖ)를 고쳐 쓰거나 한 칸에 두 단어를 쓰면 감점이에요.",
+   "tip": "주어가 We·They면 are, 3인칭 단수면 is/has, there 뒤는 뒤 명사의 수에 맞춰요!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "고쳐 쓰기 정리",
+     "head": [
+      "기호",
+      "틀린 단어",
+      "고친 단어",
+      "이유"
+     ],
+     "rows": [
+      [
+       "ⓑ",
+       "am",
+       "are",
+       "주어 We"
+      ],
+      [
+       "ⓒ",
+       "have",
+       "has",
+       "3인칭 단수 My father"
+      ],
+      [
+       "ⓓ",
+       "is",
+       "are",
+       "뒤 명사 cafes가 복수"
+      ],
+      [
+       "ⓕ",
+       "seeing",
+       "see",
+       "hope to + 동사원형"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "소개 글",
+   "passage": "Hi, I'm Yeri. My family ⓐ[is] going to take a trip to Gangneung next month. We ⓑ[am] going to stay at a hotel near the beach. My father ⓒ[have] a big camera. He is going to take many pictures. There ⓓ[is] many nice cafes near the hotel. I ⓔ[hope] to ⓕ[seeing] the stars on the beach. It ⓖ[will] be a special trip.\n(이 글은 새로 쓴 글이에요.)"
+  },
+  {
+   "id": "u5-S04-a",
+   "slot": "S04",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "서술형: 글에서 단어 찾아 쓰기",
+   "source": "교과서 p.92 Read and Complete 유형 (새로 쓴 글)",
+   "question": "다음 글을 읽고, 글의 내용과 일치하도록 (1), (2)의 빈칸에 알맞은 단어를 글에서 찾아 쓰시오. (철자·대소문자 오류는 칸마다 1점 감점)",
+   "answerHint": "각 빈칸에 글에서 찾은 한 단어를 써요. 칸마다 2점이고, 철자·대소문자가 틀리면 그 칸은 1점만 인정해요.",
+   "modelAnswer": "(1) fruit (2) rainbow",
+   "explanation": "모범 답안: (1) fruit (2) rainbow",
+   "rubric": [
+    {
+     "criterion": "(1) 빈칸에 fruit를 씀",
+     "points": 2,
+     "tip": "'We ate kimbap and fruit under a big tree.' 문장에서 kimbap과 함께 먹은 것을 찾아요. 철자나 대소문자가 틀리면 1점만 인정해요."
+    },
+    {
+     "criterion": "(2) 빈칸에 rainbow를 씀",
+     "points": 2,
+     "tip": "'we saw a beautiful rainbow'에서 하늘에서 본 것을 찾아요. 철자나 대소문자가 틀리면 1점만 인정해요."
+    }
+   ],
+   "detail": "(1) 'We ate kimbap and fruit under a big tree.'에서 김밥과 함께 먹은 것은 fruit(과일)이에요. (2) 'In the sky, we saw a beautiful rainbow.'에서 하늘에서 본 것은 rainbow(무지개)예요. 이렇게 빈칸 앞뒤 낱말(ate kimbap and, a beautiful)을 글에서 찾으면 한 단어로 정해져요. 철자가 틀리면 그 칸은 감점이에요.\n흔한 감점: 철자 오류(rainbow→rainbo)와 대소문자 오류는 칸마다 1점 감점이에요.",
+   "tip": "빈칸 앞뒤 낱말을 글에서 찾아 같은 문장을 확인해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "정답 근거",
+     "head": [
+      "빈칸",
+      "글의 문장",
+      "정답"
+     ],
+     "rows": [
+      [
+       "(1)",
+       "We ate kimbap and fruit under a big tree.",
+       "fruit"
+      ],
+      [
+       "(2)",
+       "In the sky, we saw a beautiful rainbow.",
+       "rainbow"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "일기",
+   "passage": "Saturday, May 10th\nIt was cloudy this morning, but the sun came out after lunch. My family had a picnic at Seoul Forest. We ate kimbap and fruit under a big tree. Then my brother and I played badminton. In the sky, we saw a beautiful rainbow. I took a picture of it.\n(이 글은 새로 쓴 글이에요.)\n\n(1) We ate kimbap and _____ under a big tree.\n(2) We saw a beautiful _____ in the sky."
+  },
+  {
+   "id": "u5-S04-b",
+   "slot": "S04",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "서술형: 글에서 단어 찾아 쓰기",
+   "source": "교과서 p.92 Read and Complete 유형, p.93 (새로 쓴 글)",
+   "question": "다음 글을 읽고, 글의 내용과 일치하도록 (1), (2)의 빈칸에 알맞은 단어를 글에서 찾아 쓰시오. (철자·대소문자 오류는 칸마다 1점 감점)",
+   "answerHint": "각 빈칸에 글에서 찾은 한 단어를 써요. 칸마다 2점이고, 철자·대소문자가 틀리면 그 칸은 1점만 인정해요.",
+   "modelAnswer": "(1) bibimbap (2) panda",
+   "explanation": "모범 답안: (1) bibimbap (2) panda",
+   "rubric": [
+    {
+     "criterion": "(1) 빈칸에 bibimbap을 씀",
+     "points": 2,
+     "tip": "'He is going to eat bibimbap there.'에서 전주에서 먹을 음식을 찾아요. 철자나 대소문자가 틀리면 1점만 인정해요."
+    },
+    {
+     "criterion": "(2) 빈칸에 panda를 씀",
+     "points": 2,
+     "tip": "'They are going to see a panda there.'에서 동물원에서 볼 동물을 찾아요. 철자나 대소문자가 틀리면 1점만 인정해요."
+    }
+   ],
+   "detail": "(1) 'He is going to eat bibimbap there.'에서 전주에서 먹을 음식은 bibimbap이에요. (2) 'They are going to see a panda there.'에서 동물원에서 볼 동물은 panda예요. 빈칸 앞의 are going to see a와 같은 표현(They are going to see a panda there.)을 글에서 찾으면 한 단어로 정해져요.\n흔한 감점: 철자 오류(bibimbap→bibimbab)와 대소문자 오류는 칸마다 1점 감점이에요.",
+   "tip": "빈칸 문장과 같은 표현이 글에 있는지 찾아요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "정답 근거",
+     "head": [
+      "빈칸",
+      "글의 문장",
+      "정답"
+     ],
+     "rows": [
+      [
+       "(1)",
+       "He is going to eat bibimbap there.",
+       "bibimbap"
+      ],
+      [
+       "(2)",
+       "They are going to see a panda there.",
+       "panda"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "주말 계획",
+   "passage": "Jun's Weekend Plan\nThis Saturday, Jun is going to see his grandparents in Jeonju. He is going to eat bibimbap there. On Sunday, he is going to go to a zoo with his friends. They are going to see a panda there. Jun hopes to have a great weekend.\n(이 글은 새로 쓴 글이에요.)\n\n(1) Jun is going to eat _____ in Jeonju.\n(2) Jun and his friends are going to see a _____ at the zoo."
+  },
+  {
+   "id": "u5-S05-a",
+   "slot": "S05",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "서술형: it으로 요일·날짜·날씨 답하기",
+   "source": "교과서 p.96~97",
+   "question": "다음 정보를 보고 (1)~(3)의 질문에 it을 주어로 하는 완전한 문장으로 답하시오. (날짜는 숫자 서수 줄임 표기로 쓰고, 철자·대소문자 오류는 감점)",
+   "answerHint": "(1)~(3)에 각각 it을 주어로 하는 완전한 문장을 써요. 날짜는 숫자와 서수 줄임 표기(예: 5th)로 써요. It's와 It is는 모두 인정해요.",
+   "modelAnswer": "(1) It's Thursday. (2) It's February 2nd. (3) It's windy. (It is로 써도 인정)",
+   "explanation": "모범 답안: (1) It's Thursday. (2) It's February 2nd. (3) It's windy. (It is로 써도 인정)",
+   "rubric": [
+    {
+     "criterion": "(1) 요일을 it을 주어로 바르게 답함 (It's Thursday.)",
+     "points": 1,
+     "tip": "What day로 물었으므로 요일을 말해요. 날짜나 날씨로 답하면 0점이에요."
+    },
+    {
+     "criterion": "(2) 날짜를 it을 주어로 월 + 서수로 답함 (It's February 2nd.)",
+     "points": 1,
+     "tip": "날짜는 '월 + 서수 줄임 표기'로 써요. 2일은 2nd예요(second처럼 단어로 쓴 서수는 이 문항에서 인정하지 않아요)."
+    },
+    {
+     "criterion": "(3) 날씨를 it을 주어로 바르게 답함 (It's windy.)",
+     "points": 1,
+     "tip": "날씨도 it을 주어로 말해요. 'The weather is windy.'처럼 it을 쓰지 않으면 0점이에요."
+    },
+    {
+     "criterion": "세 문장 모두 철자·대소문자·마침표가 정확함",
+     "points": 1,
+     "tip": "문장 첫 글자 It과 마침표, Thursday·February의 대문자를 확인해요."
+    }
+   ],
+   "detail": "요일·날짜·날씨를 묻는 질문에는 비인칭 주어 it으로 답해요(교과서 p.96~97). 정보를 보면 오늘은 2월 2일 목요일이고 바람이 불어요. (1)은 What day로 물었으므로 요일을 It's Thursday.로, (2)는 What date로 물었으므로 날짜를 It's February 2nd.로, (3)은 날씨를 It's windy.로 답해요. 이때 it은 '그것'으로 해석하지 않아요. 인정 범위: It's와 It is는 모두 인정하고, 날짜는 숫자 서수 표기(2nd)만 인정해요. 인정하지 않는 답: The weather is windy. 처럼 it이 없는 문장, 요일 대신 날짜로 답한 문장, February second처럼 단어로 쓴 서수.\n흔한 감점: 날짜를 February 2나 February two로 쓰면 서수 표기 조건을 지키지 않아 감점이에요.",
+   "tip": "요일·날짜·날씨 질문에는 It's ~.로! it은 해석하지 않아요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "질문과 답",
+     "head": [
+      "질문",
+      "답",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "What day is it today?",
+       "It's + 요일",
+       "p.96"
+      ],
+      [
+       "What date is it today?",
+       "It's + 월 + 서수",
+       "p.96"
+      ],
+      [
+       "How's the weather today?",
+       "It's + 날씨",
+       "p.86 (p.96에는 now)"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "정보와 질문",
+   "passage": "오늘의 정보: 2월 2일 목요일, 날씨는 바람이 붊(windy)\n(1) What day is it today?\n(2) What date is it today?\n(3) How's the weather today?"
+  },
+  {
+   "id": "u5-S05-b",
+   "slot": "S05",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "서술형: it으로 요일·날짜·날씨 답하기",
+   "source": "교과서 p.96~97",
+   "question": "다음 정보를 보고 (1)~(3)의 질문에 it을 주어로 하는 완전한 문장으로 답하시오. (날짜는 숫자 서수 줄임 표기로 쓰고, 철자·대소문자 오류는 감점)",
+   "answerHint": "(1)~(3)에 각각 it을 주어로 하는 완전한 문장을 써요. 날짜는 숫자와 서수 줄임 표기(예: 5th)로 써요. It's와 It is는 모두 인정해요.",
+   "modelAnswer": "(1) It's Monday. (2) It's December 4th. (3) It's snowy. (It is로 써도, It's snowing.도 인정)",
+   "explanation": "모범 답안: (1) It's Monday. (2) It's December 4th. (3) It's snowy. (It is로 써도, It's snowing.도 인정)",
+   "rubric": [
+    {
+     "criterion": "(1) 요일을 it을 주어로 바르게 답함 (It's Monday.)",
+     "points": 1,
+     "tip": "What day로 물었으므로 요일을 말해요. 날짜나 날씨로 답하면 0점이에요."
+    },
+    {
+     "criterion": "(2) 날짜를 it을 주어로 월 + 서수로 답함 (It's December 4th.)",
+     "points": 1,
+     "tip": "날짜는 '월 + 서수 줄임 표기'로 써요. 4일은 4th예요(fourth처럼 단어로 쓴 서수는 이 문항에서 인정하지 않아요)."
+    },
+    {
+     "criterion": "(3) 날씨를 it을 주어로 바르게 답함 (It's snowy.)",
+     "points": 1,
+     "tip": "날씨도 it을 주어로 말해요. It's snowing.도 인정해요."
+    },
+    {
+     "criterion": "세 문장 모두 철자·대소문자·마침표가 정확함",
+     "points": 1,
+     "tip": "문장 첫 글자 It과 마침표, Monday·December의 대문자를 확인해요."
+    }
+   ],
+   "detail": "요일·날짜·날씨를 묻는 질문에는 비인칭 주어 it으로 답해요(교과서 p.96~97). 정보를 보면 오늘은 12월 4일 월요일이고 눈이 와요. (1)은 요일을 It's Monday.로, (2)는 날짜를 It's December 4th.로, (3)은 날씨를 It's snowy.로 답해요. 이때 it은 '그것'으로 해석하지 않아요. 인정 범위: It's와 It is는 모두 인정하고, 날씨는 It's snowy.와 It's snowing.을 인정하며, 날짜는 숫자 서수 표기(4th)만 인정해요. 인정하지 않는 답: The weather is snowy. 처럼 it이 없는 문장, 날짜를 December 4로만 쓴 문장, December fourth처럼 단어로 쓴 서수.\n흔한 감점: 날짜를 December 4로만 쓰면 서수 표기 조건을 지키지 않아 감점이에요.",
+   "tip": "비인칭 it으로 답하기: It's + 요일/날짜/날씨!",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "질문과 답",
+     "head": [
+      "질문",
+      "답",
+      "교과서 쪽"
+     ],
+     "rows": [
+      [
+       "What day is it today?",
+       "It's + 요일",
+       "p.96"
+      ],
+      [
+       "What date is it today?",
+       "It's + 월 + 서수",
+       "p.96"
+      ],
+      [
+       "How's the weather today?",
+       "It's + 날씨",
+       "p.86 (p.96에는 now)"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "정보와 질문",
+   "passage": "오늘의 정보: 12월 4일 월요일, 날씨는 눈(snowy)\n(1) What day is it today?\n(2) What date is it today?\n(3) How's the weather today?"
+  }
+ ]
+}

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Think Big, Be Creative! - 교과 정리</title>
+
+<!-- 한글 글꼴 CDN (유일한 외부 의존) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+<style>
+/* === THEME (config/slide-style-english.md) : 영어 = 여행 엽서·말풍선(항공 노선) === */
+:root {
+    --bg: #EEF5FF;
+    --bg-2: #FFFFFF;
+    --bg-3: #1F3F73;
+    --ink: #14233F;
+    --ink-dim: #4A5F80;
+    --brass: #C23B22;      /* 강조(마젠타) - 기존 변수명 유지 */
+    --purple: #2D5A8C;     /* 소제목 */
+    --line: #4F86C6;       /* 카드 테두리(보라) */
+    --soft: #CFE0F7;
+    --cyan: #39B8E8;
+    --star: #FFC83D;
+    --warn: #B93A12;
+    --warn-line: #E8552D;
+    --font-display: 'Jua', 'Gowun Dodum', 'Malgun Gothic', sans-serif;
+    --font-body: 'Gowun Dodum', 'Malgun Gothic', sans-serif;
+    --stage-bg: #0F2547;
+    --slide-bg: var(--bg);
+    --deco: none;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css (전체 포함) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+.deck-controls { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 1000; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-controls { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE 공통 (1920x1080 기준 px) === */
+.slide {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: 64px 96px 96px;
+    font-size: 27px;
+    line-height: 1.5;
+    isolation: isolate;
+    background: linear-gradient(180deg, #E3EEFF 0%, #F4F9FF 100%);
+}
+.slide::before { /* 우주 장식: 점선 창틀 · 토성 · 별 · 달 표면 */
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: var(--deco) center / 1920px 1080px no-repeat;
+}
+.kicker { display: inline-block; font-size: 24px; letter-spacing: .06em; color: #fff; background: var(--brass); font-weight: 700; margin-bottom: 10px; padding: 2px 20px 3px; border-radius: 99px; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 60px; line-height: 1.2; color: var(--ink); margin-bottom: 26px; }
+h2::before { content: ""; display: inline-block; width: 46px; height: 46px; margin-right: 16px; vertical-align: -6px; background: var(--star); border: 4px solid var(--bg-3); border-radius: 50%; }
+h2 small { font-family: var(--font-body); font-size: 26px; font-weight: 400; color: var(--ink-dim); margin-left: 14px; }
+h3 { font-family: var(--font-display); font-weight: 400; font-size: 34px; color: var(--purple); margin-bottom: 10px; }
+b, strong { color: var(--brass); font-weight: 700; }
+.dim { color: var(--ink-dim); }
+.pg { position: absolute; right: 64px; bottom: 14px; width: 66px; height: 66px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 30px; color: #fff; z-index: 2; }
+.pg::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--purple); border: 4px solid var(--bg-3); border-radius: 50%; box-shadow: 0 0 0 5px var(--cyan) inset; }
+.pg::after { content: ""; position: absolute; left: -24px; right: -24px; top: 50%; height: 14px; margin-top: -7px; border: 4px solid var(--star); border-radius: 50%; transform: rotate(-18deg); z-index: -2; }
+
+.grid { display: grid; gap: 24px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.card { position: relative; background: var(--bg-2); border: 4px solid var(--line); border-radius: 30px; padding: 22px 30px; box-shadow: 0 7px 0 rgba(91,42,166,.22); }
+.card.hl { border-color: var(--brass); box-shadow: inset 0 0 0 6px #FFE0EF, 0 7px 0 rgba(194,24,107,.22); }
+.card.hl::after { content: ""; position: absolute; top: -11px; right: 40px; width: 16px; height: 16px; border-radius: 50%; background: var(--cyan); border: 3px solid var(--bg-3); }
+.card.warn { border-color: var(--warn-line); background: #FFF3EC; box-shadow: 0 7px 0 rgba(232,85,45,.22); }
+.card.warn h3 { color: var(--warn); }
+ul.l { list-style: none; }
+ul.l li { position: relative; padding-left: 36px; margin-bottom: 8px; }
+ul.l li::before { content: ""; position: absolute; left: 4px; top: .36em; width: 22px; height: 22px; background: var(--brass); clip-path: polygon(50% 0, 62% 36%, 98% 38%, 69% 60%, 80% 96%, 50% 74%, 20% 96%, 31% 60%, 2% 38%, 38% 36%); }
+.tag { display: inline-block; font-size: 22px; padding: 1px 13px; border: 3px solid var(--brass); border-radius: 99px; color: var(--brass); margin-right: 8px; vertical-align: 2px; font-weight: 700; }
+.ref { font-size: 22px; color: var(--ink-dim); }
+
+table.t { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 27px; border: 4px solid var(--bg-3); border-radius: 26px; overflow: hidden; background: #fff; }
+table.t th { background: var(--bg-3); color: #fff; font-family: var(--font-display); font-weight: 400; text-align: left; padding: 12px 18px; border-right: 2px solid #5A48A5; }
+table.t td { padding: 12px 18px; border-right: 2px solid var(--soft); border-bottom: 2px solid var(--soft); background: #fff; vertical-align: top; }
+table.t tr:nth-child(even) td { background: #EEF5FF; }
+table.t th:last-child, table.t td:last-child { border-right: 0; }
+table.t tr:last-child td { border-bottom: 0; }
+table.t td:first-child { font-weight: 700; white-space: nowrap; color: var(--purple); }
+
+/* 순서 카드 (줄거리 흐름, 5단계) */
+.g5 .card { font-size: 25px; padding: 18px 20px; }
+.step .no { display: inline-flex; width: 46px; height: 46px; align-items: center; justify-content: center; border-radius: 50%; background: var(--brass); color: #fff; font-family: var(--font-display); font-weight: 400; font-size: 28px; margin-bottom: 8px; border: 3px solid var(--bg-3); }
+
+/* 표지: 로켓 발사 장면 */
+.slide.cover { display: flex; flex-direction: column; justify-content: center; padding-left: 150px; padding-right: 760px; color: #fff;
+    background: linear-gradient(180deg, #1F1553 0%, #4A2584 34%, #A02F94 66%, #F07BC6 100%); }
+.slide.cover::before { display: none; }
+.cover .scene { overflow: visible; position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; max-width: none; max-height: none; z-index: -1; }
+.cover .kicker { font-size: 30px; align-self: flex-start; background: var(--star); color: #14233F; }
+.cover h1 { font-family: var(--font-display); font-weight: 400; font-size: 136px; line-height: 1.12; margin: 18px 0 26px; color: #fff; text-shadow: 0 6px 0 rgba(27,18,69,.55); }
+.cover h1 span { color: var(--star); }
+.cover p { font-size: 36px; color: #fff; line-height: 1.55; }
+.cover .rule { width: 260px; height: 10px; margin: 10px 0 30px; border-radius: 99px; background: repeating-linear-gradient(90deg, var(--cyan) 0 26px, transparent 26px 44px); }
+
+/* 등장 효과 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(2) { transition-delay: .1s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: .2s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: .3s; }
+
+/* === 컨트롤(무대 밖): 로켓이 궤도를 따라 이동하는 진행 표시 === */
+.deck-controls { display: flex; gap: 12px; align-items: center; background: rgba(27,18,69,.94); border: 3px solid var(--cyan); border-radius: 99px; padding: 4px 16px; font-family: var(--font-body); color: #fff; font-size: 16px; }
+.deck-controls button { background: var(--star); border: none; color: #14233F; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; cursor: pointer; padding: 0; }
+.deck-controls #count { min-width: 64px; text-align: center; font-weight: 700; }
+.deck-controls #orbit { display: block; width: 260px; height: 46px; max-width: none; max-height: none; overflow: visible; }
+.edit-toggle { position: fixed; top: 10px; left: 10px; z-index: 1001; background: var(--star); color: #14233F; border: 0; border-radius: 6px; padding: 4px 10px; font-size: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; }
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 1000; }
+body.editing [contenteditable] { outline: 2px dashed var(--brass); }
+
+/* === 모바일(세로 좁은 화면): 무대를 풀고 세로 스크롤 카드로 === */
+@media (max-width: 1100px) and (orientation: portrait) {
+    html, body { overflow: auto; height: auto; background: #2A1B64; }
+    .deck-viewport { position: static; overflow: visible; padding: 12px 0; }
+    .deck-stage { position: static; width: 100%; height: auto; transform: none !important; overflow: visible; background: none; }
+    .slide { position: relative; width: calc(100% - 20px); margin: 0 10px 14px; height: auto; visibility: visible; opacity: 1; pointer-events: auto;
+             padding: 30px 18px 56px; font-size: 17px; border: 3px solid var(--line); border-radius: 28px; }
+    .slide::before { background: #E4EEFB; inset: auto; left: 0; right: 0; bottom: 0; height: 26px; border-top: 3px solid var(--line); }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .deck-controls, .edit-hotzone, .edit-toggle { display: none !important; }
+    .kicker { font-size: 14px; }
+    h2 { font-size: 30px; margin-bottom: 16px; }
+    h2::before { width: 26px; height: 26px; border-width: 3px; margin-right: 10px; vertical-align: -2px; }
+    h2 small { display: block; margin: 4px 0 0; font-size: 15px; }
+    h3 { font-size: 21px; }
+    .grid { gap: 12px; }
+    .g2, .g3, .g5 { grid-template-columns: 1fr; }
+    .card, .g5 .card { padding: 14px 16px; font-size: 17px; border-radius: 22px; border-width: 3px; }
+    .card.hl::after { top: -8px; right: 24px; width: 12px; height: 12px; }
+    ul.l li { padding-left: 28px; }
+    ul.l li::before { width: 17px; height: 17px; }
+    .tag { font-size: 14px; }
+    .ref { font-size: 14px; }
+    .pg { right: 14px; bottom: 6px; width: 40px; height: 40px; font-size: 18px; }
+    .pg::before { border-width: 3px; box-shadow: 0 0 0 3px var(--cyan) inset; }
+    .pg::after { display: none; }
+    table.t { font-size: 16px; border-radius: 18px; border-width: 3px; }
+    table.t th, table.t td { padding: 8px 9px; }
+    table.t td:first-child { white-space: normal; }
+    .step .no { width: 34px; height: 34px; font-size: 20px; }
+    .slide.cover { padding: 40px 18px 330px; background: linear-gradient(180deg, #1F1553 0%, #6B2A8E 55%, #F07BC6 100%); }
+    .slide.cover::before { display: none; }
+    .cover .scene { position: absolute; left: 50%; margin-left: -474px; top: auto; bottom: 0; width: 1920px; height: 1080px; transform-origin: 0 100%; transform: scale(.32); }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 50px; }
+    .cover p { font-size: 18px; }
+    .cover .rule { width: 120px; height: 7px; }
+}
+
+/* 도식·확장 */
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.svgbox { background: #fff; border: 4px solid var(--line); border-radius: 30px; padding: 10px; box-shadow: 0 7px 0 rgba(91,42,166,.22); }
+.svgbox svg { display: block; width: 100%; height: auto; max-height: none; }
+.svgbox svg text { fill: #14233F; font-family: 'Gowun Dodum','Malgun Gothic',sans-serif; font-size: 24px; }
+.svgbox svg text.b { fill: #C23B22; font-weight: 700; }
+.svgbox svg text.w { fill: #B93A12; font-weight: 700; }
+.big { font-size: 34px; line-height: 1.6; }
+@media (max-width: 1100px) and (orientation: portrait) { .g4 { grid-template-columns: 1fr; } .big { font-size: 20px; } .svgbox svg text { font-size: 24px; } }
+
+/* === 화면 검수 보정 (공통) === */
+.slide, .card { word-break: keep-all; overflow-wrap: break-word; }
+.slide td, .slide th { word-break: keep-all; overflow-wrap: anywhere; }
+.grid { align-items: start; }
+.g4, .g5 { align-items: stretch; }
+/* 본문 세로 중앙 정렬 + 슬라이드별 확대(--z, 내용이 적을수록 크게) */
+.slide:not(.cover) { display: flex; flex-direction: column; }
+.slide:not(.cover) > .kicker { align-self: flex-start; }
+.slide:not(.cover) > h2 + * { margin-top: auto; }
+.slide:not(.cover) > :nth-last-child(2) { margin-bottom: auto; }
+.slide:not(.cover) > :not(.pg):not(.kicker):not(h2) { zoom: var(--z, 1); }
+/* 카드 장식 점은 은은하게 */
+.card.hl::after { opacity: .4; }
+/* 카드 안 소제목(굵은 한 줄) */
+.slide p.sub { font-family: var(--font-display); font-size: 31px; line-height: 1.35; color: var(--ink); margin-bottom: 2px; }
+.slide p.sub b { color: inherit; font-weight: 400; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .slide:not(.cover) { display: block; }
+    .slide:not(.cover) > * { zoom: 1 !important; }
+    .grid, .g2, .g3, .g4, .g5 { grid-template-columns: 1fr !important; }
+    .slide table.t { font-size: 16px !important; }
+    .slide table.t.dense { font-size: 14px !important; }
+    .slide table.t.dense th, .slide table.t.dense td { padding: 7px 3px; }
+    .slide ul.l[style*="font-size"], .slide .card[style*="font-size"] { font-size: 17px !important; }
+    .svgbox { overflow-x: auto; }
+    .svgbox svg { max-height: none !important; }
+    .svgbox svg.wide { min-width: 1100px; }
+    .svgbox svg.wide text { font-size: 28px; }
+    .slide p.sub { font-size: 20px; }
+    .card.hl::after { opacity: .4; }
+}
+
+/* ===== 검수 정리 v3 ===== */
+/* 줄바꿈: 짧은 구절·괄호·숫자+단위는 줄 중간에서 끊지 않는다 */
+.nw { white-space: nowrap; }
+.slide li, .slide p, .slide td, .slide th, .slide .card { text-wrap: pretty; }
+/* 쪽번호 컨트롤: 두 자리 쪽수에서도 막대 폭 고정 */
+.deck-controls #count { min-width: 84px; font-variant-numeric: tabular-nums; }
+/* 덧붙임 표시(핵심 암기 N가지 밖의 보조 내용) */
+.slide h3 .tag { font-size: 20px; padding: 0 12px; margin-right: 10px; vertical-align: 4px; }
+.addnote { font-family: var(--font-display); font-size: 28px; color: var(--purple); margin-top: 22px; margin-bottom: 8px; }
+.addnote .tag { font-size: 20px; padding: 0 12px; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    /* 가로로 밀어서 보는 그림 위 안내 */
+    .svgbox:not(.fit):has(> svg.wide)::before { content: '← 옆으로 밀어서 보기 →'; display: block; position: sticky; left: 0; text-align: center; font-size: 15px; font-weight: 700; color: var(--brass); padding: 0 0 6px; }
+    /* 일식·월식 그림: 한 화면에 들어오게 오른쪽 여백만 잘라 보여 준다 */
+    .svgbox.fit { overflow: hidden; }
+    .svgbox.fit svg.wide { min-width: 0; max-width: none; width: 141.7%; margin-right: -41.7%; clip-path: inset(0 29.4% 0 0); }
+    .svgbox.fit svg.wide text { font-size: 38px; }
+    .slide h3 .tag { font-size: 13px; padding: 0 8px; margin-right: 6px; vertical-align: 2px; }
+    .slide table.t td:first-child { overflow-wrap: normal; }
+    .addnote { font-size: 19px; margin-top: 14px; }
+    .addnote .tag { font-size: 13px; padding: 0 8px; }
+}
+/* ===== 검수 정리 v4 (폰 화면) ===== */
+@media (max-width: 1100px) and (orientation: portrait) {
+    /* 인라인으로 박힌 큰 글자 크기가 카드·표 글자와 따로 노는 것을 막는다 */
+    .slide:not(.cover) :is(p, ul, ol, li, div, span, td, th, b)[style*="font-size"]:not(.fm):not(.fm *):not(.tag):not(.no) { font-size: inherit !important; }
+    /* 연도 알약(1960 등)이 제목을 가리지 않게 */
+    .card.step:has(.no[style*="width:auto"]) { padding-left: 22px !important; }
+    .card.step .no[style*="width:auto"] { position: static !important; display: inline-flex; margin: 0 0 8px; }
+    .card.step:has(.no[style*="width:auto"]) .no + br { display: none; }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+    /* 폰에서는 줄바꿈 금지 구절이 칸 밖으로 밀려나지 않게 */
+    span.nw { white-space: normal; }
+    /* 표를 행 단위 카드로 쌓아 오른쪽 열이 잘리지 않게 */
+    .slide table.stack, .slide table.stack tbody, .slide table.stack tr, .slide table.stack td, .slide table.stack th { display: block; width: auto !important; box-sizing: border-box; }
+    .slide table.stack { border: 0 !important; background: transparent !important; box-shadow: none !important; }
+    .slide table.stack tr.hrow { display: none; }
+    .slide table.stack tr { margin: 0 0 12px; border: 2px solid rgba(0,0,0,.14); border-radius: 12px; overflow: hidden; background: #fff; }
+    .slide table.stack td, .slide table.stack th { border: 0 !important; border-top: 1px solid rgba(0,0,0,.09) !important; padding: 8px 14px !important; text-align: left; white-space: normal !important; font-size: 16px !important; }
+    .slide table.stack tr > :first-child { border-top: 0 !important; background: rgba(0,0,0,.07); font-weight: 800; font-size: 17px !important; }
+    .slide table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; opacity: .62; margin-bottom: 1px; letter-spacing: .02em; }
+}
+/* ===== 라벨 알약 (암기·정리 같은 '꼬리표'가 문장 첫 단어로 읽히지 않게 따로 표시) ===== */
+.lb { display: inline-block; padding: 0 .72em; margin-right: .6em; border-radius: 999px; background: #C23B22; color: #fff; font-weight: 800;
+      font-size: .8em; line-height: 1.55; letter-spacing: .02em; vertical-align: .1em; white-space: nowrap; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.lb + .ref { margin-right: .5em; }
+
+/* ===== 영어 전용 추가 (u7 제작: 표지 하늘색 배경 · 말풍선) ===== */
+.slide.cover { background: linear-gradient(180deg, #14305F 0%, #2D5A8C 45%, #7FB6E8 100%); }
+.bubs { display: flex; flex-direction: column; gap: 12px; }
+.bub { max-width: 88%; padding: 10px 22px; border: 4px solid var(--line); border-radius: 28px; background: #fff; font-size: 27px; line-height: 1.45; }
+.bub.a { align-self: flex-start; border-bottom-left-radius: 6px; }
+.bub.b { align-self: flex-end; background: #FFF6D8; border-color: var(--star); border-bottom-right-radius: 6px; }
+.bub .who { font-family: var(--font-display); color: var(--purple); margin-right: 8px; }
+.bub .ko { display: block; font-size: 24px; color: var(--ink-dim); }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .slide.cover { background: linear-gradient(180deg, #14305F 0%, #2D5A8C 55%, #7FB6E8 100%); }
+    .bub { max-width: 96%; font-size: 17px; padding: 8px 14px; border-radius: 20px; border-width: 3px; }
+    .bub .ko { font-size: 15px; }
+}
+
+/* ===== 영어 전용 추가 (대화 말풍선 · 파란 표지) ===== */
+.dlg { display: flex; flex-direction: column; gap: 18px; }
+.bub { position: relative; max-width: 92%; padding: 14px 26px; border-radius: 30px; border: 4px solid var(--line); background: #fff; font-size: 28px; line-height: 1.45; }
+.bub .who { display: inline-block; margin-right: 10px; font-family: var(--font-display); color: #fff; background: var(--purple); border-radius: 99px; padding: 0 14px; font-size: 24px; }
+.bub.a { margin-right: auto; border-bottom-left-radius: 6px; }
+.bub.b { margin-left: auto; border-bottom-right-radius: 6px; background: #FFF6D6; border-color: var(--star); }
+.bub.b .who { background: var(--brass); }
+.slide.cover { background: linear-gradient(180deg, #14305F 0%, #2D5A8C 52%, #6FA8E6 100%); }
+.cover .scene { overflow: visible; }
+.card.sm { font-size: 25px; }
+.card.sm h3 { font-size: 30px; }
+.ok { color: #1E7A46; font-weight: 700; }
+.bad { color: var(--warn); font-weight: 700; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .dlg { gap: 12px; }
+    .bub { font-size: 17px; padding: 10px 16px; max-width: 96%; border-width: 3px; }
+    .bub .who { font-size: 14px; padding: 0 9px; }
+    .slide.cover { background: linear-gradient(180deg, #14305F 0%, #2D5A8C 60%, #6FA8E6 100%); }
+    .card.sm { font-size: 17px; }
+    .card.sm h3 { font-size: 21px; }
+}
+/* 촘촘한 표·카드 (최소 24px 유지) */
+table.t.tight { font-size: 25px; }
+table.t.tight th, table.t.tight td { padding: 6px 14px; }
+.card.xs { font-size: 24px; padding: 14px 22px; }
+.card.xs h3 { font-size: 28px; margin-bottom: 4px; }
+.card.xs ul.l li { margin-bottom: 4px; }
+@media (max-width: 1100px) and (orientation: portrait) { .card.xs { font-size: 17px; } .card.xs h3 { font-size: 21px; } table.t.tight { font-size: 16px; } }
+
+/* === 태블릿(갤럭시탭 S10 FE) 적합성: 컨트롤 터치 영역 44px, 하단 제스처 바 여백 (2026-11-17 검수 반영) === */
+.deck-controls { bottom: max(22px, calc(env(safe-area-inset-bottom, 0px) + 14px)); gap: 14px; }
+.deck-controls button { width: 44px; height: 44px; font-size: 20px; flex: 0 0 auto; touch-action: manipulation; }
+
+/* 표지 제목의 아포스트로피(Doesn't)가 글꼴에서 높게 떠 벌어져 보이는 것을 붙여 준다 (2026-11-17) */
+.cover h1 .ap { font-style: normal; display: inline-block; margin: 0 -.1em 0 -.08em; transform: translateY(.05em); }
+
+/* ===== 도식 카드 (HTML 글자 + 글자 없는 SVG 아이콘; 폰에서도 글자 크기 유지) (2026-11-17) ===== */
+.dg { display: grid; gap: 14px; align-items: stretch; }
+.dg .dc { background: #EEF5FF; border: 4px solid var(--line); border-radius: 24px; padding: 12px 14px 14px; text-align: center; font-size: 26px; line-height: 1.35; display: flex; flex-direction: column; justify-content: space-between; }
+.dg .dc .t { font-family: var(--font-display); font-size: 30px; color: var(--brass); font-weight: 700; margin: 2px 0 4px; }
+.dg .dc svg { display: block; width: 100%; max-width: 280px; height: auto; margin: 6px auto 10px; }
+@media (max-width: 1100px) and (orientation: portrait) {
+    .dg { grid-template-columns: 1fr !important; gap: 10px; }
+    .dg .dc { font-size: 17px; border-width: 3px; border-radius: 18px; padding: 8px 12px 10px; }
+    .dg .dc .t { font-size: 20px; }
+    .dg .dc svg { max-width: 130px; margin: 2px auto 4px; }
+}
+</style>
+</head>
+<body>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="편집 모드 (E) / 저장 (Ctrl+S)">편집</button>
+
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- === 1 === -->
+<section class="slide cover active">    <svg class="scene" viewBox="0 0 1920 1080" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<path d="M1250 120 Q1250 140 1270 140 Q1250 140 1250 160 Q1250 140 1230 140 Q1250 140 1250 120Z" fill="#FFC83D"/>
+<path d="M1750 90 Q1750 106 1766 106 Q1750 106 1750 122 Q1750 106 1734 106 Q1750 106 1750 90Z" fill="#fff"/>
+<path d="M1100 220 Q1100 232 1112 232 Q1100 232 1100 244 Q1100 232 1088 232 Q1100 232 1100 220Z" fill="#fff"/>
+<ellipse cx="1180" cy="640" rx="90" ry="34" fill="#fff" opacity=".35"/>
+<ellipse cx="1760" cy="560" rx="80" ry="30" fill="#fff" opacity=".35"/>
+<rect x="1270" y="230" width="420" height="340" rx="14" fill="#FFC83D" stroke="#14233F" stroke-width="8"/>
+<rect x="1298" y="258" width="364" height="284" fill="#CFEAFF" stroke="#14233F" stroke-width="6"/>
+<circle cx="1590" cy="330" r="38" fill="#FFC83D" stroke="#14233F" stroke-width="5"/>
+<path d="M1298 500 Q1400 400 1500 470 Q1580 410 1662 480 L1662 542 L1298 542Z" fill="#6BD28A" stroke="#14233F" stroke-width="5"/>
+<rect x="1390" y="410" width="14" height="60" fill="#8A5A2B" stroke="#14233F" stroke-width="4"/>
+<circle cx="1397" cy="392" r="36" fill="#3FA862" stroke="#14233F" stroke-width="5"/>
+<path d="M1370 570 L1330 880" stroke="#14233F" stroke-width="12" stroke-linecap="round"/>
+<path d="M1590 570 L1630 880" stroke="#14233F" stroke-width="12" stroke-linecap="round"/>
+<path d="M1480 570 L1480 880" stroke="#14233F" stroke-width="10" stroke-linecap="round"/>
+<rect x="1290" y="572" width="380" height="18" rx="6" fill="#C23B22" stroke="#14233F" stroke-width="5"/>
+<g>
+<ellipse cx="1780" cy="820" rx="70" ry="46" fill="#F4D7A4" stroke="#14233F" stroke-width="6"/>
+<circle cx="1752" cy="800" r="11" fill="#C23B22"/><circle cx="1790" cy="790" r="11" fill="#39B8E8"/><circle cx="1818" cy="820" r="11" fill="#FFC83D"/>
+<ellipse cx="1760" cy="842" rx="14" ry="10" fill="#14233F"/>
+</g>
+<path d="M-200 930 L3000 930 L3000 1080 L-200 1080Z" fill="#0F2547"/>
+<path d="M-200 930 L3000 930" stroke="#7FB6E8" stroke-width="8"/>
+</svg>
+
+    <div class="kicker">Lesson 7 · 예술과 상상력</div>
+    <h1>Think Big,<br><span>Be Creative!</span></h1>
+    <div class="rule"></div>
+    <p>의견 말하기 · 공감 표현하기<br>비교급 · 접속사 <b style="color:#FFC83D">when</b><br>반 고흐와 프리다 칼로의 자화상</p>
+</section>
+
+<!-- === 2 === -->
+<section class="slide" style="--z:1.00;padding-top:30px">    <div class="kicker">단원 한눈에</div>
+    <h2 style="margin-bottom:10px">예술과 상상력, 4개의 Topic <small>교과서 p.<span class="nw">120~139</span></small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>4개 Topic</h3>
+            <ul class="l">
+                <li><span class="tag" style="font-size:24px">1</span><b>At the School Festival</b> <span class="ref" style="font-size:24px">(p.122)</span><br><span class="dim">의견 말하기·공감 대화</span></li>
+                <li><span class="tag" style="font-size:24px">2</span><b>Different Looks</b> <span class="ref" style="font-size:24px">(p.124)</span><br><span class="dim">착시 그림, Word Power</span></li>
+                <li><span class="tag" style="font-size:24px">3</span><b>Faces of Great Artists</b> <span class="ref" style="font-size:24px">(p.127)</span><br><span class="dim">고흐·칼로 자화상 읽기</span></li>
+                <li><span class="tag" style="font-size:24px">4</span><b>Be a Museum Guide</b> <span class="ref" style="font-size:24px">(p.134)</span><br><span class="dim">작품 소개 글쓰기</span></li>
+            </ul>
+        </div>
+        <div class="grid" style="gap:20px">
+            <div class="card reveal">
+                <h3>의사소통 기능</h3>
+                <p><b>의견 말하기</b>: What do you think about the board game? / I think it's fun.</p>
+                <p><b>공감 표현하기</b>: I feel the same.</p>
+            </div>
+            <div class="card reveal">
+                <h3>언어 형식</h3>
+                <p><b>비교급</b>: One is brighter than the other.</p>
+                <p><b>접속사 when</b>: When he was 33, he moved to Paris.</p>
+            </div>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:22px">
+        <span class="lb" style="font-size:24px">목표</span> 의견을 묻고 말하며 공감하기, 두 화가의 삶과 작품 글 이해하기, 미술 작품 소개 글 쓰기. <span class="ref" style="font-size:24px">(p.120, 139)</span>
+    </div>
+    <div class="pg">2</div>
+</section>
+
+<!-- === 3 === -->
+<section class="slide" style="--z:1.00;padding-top:30px">    <div class="kicker">의사소통 기능 · 의견 묻기·말하기·공감하기</div>
+    <h2 style="margin-bottom:10px">의견 묻고, 말하고, 공감하기 <small>p.<span class="nw">122~126</span></small></h2>
+    <div class="grid g2">
+        <div class="dlg reveal">
+            <div class="bub a"><span class="who">A</span><b>What do you think about</b> the board game?</div>
+            <div class="bub b"><span class="who">B</span><b>I think it's fun.</b></div>
+            <div class="bub a"><span class="who">A</span><b>I feel the same.</b> I can enjoy it with my friends.</div>
+        </div>
+        <div class="card hl reveal">
+            <h3>꼭 외울 3가지</h3>
+            <ul class="l">
+                <li><span class="lb" style="font-size:24px">묻기</span><b>What do you think about ~?</b></li>
+                <li><span class="lb" style="font-size:24px">말하기</span><b>I think it's ~.</b> (I think + 주어 + 동사)</li>
+                <li><span class="lb" style="font-size:24px">공감</span><b>I feel the same.</b> 뒤에 이유를 덧붙인다</li>
+            </ul>
+        </div>
+    </div>
+    <table class="t reveal" style="margin-top:22px;font-size:25px">
+        <tr><th style="width:24%">상황</th><th>표현</th></tr>
+        <tr><td>동의하지 않을 때</td><td><b>I don't think so.</b> + 자기 의견 덧붙이기 <span class="ref" style="font-size:24px">(p.125)</span></td></tr>
+        <tr><td>추측하며 말하기</td><td>I think it's <b>a cup</b>. / I think it's <b>a flower pot</b>.</td></tr>
+        <tr><td>대화 속 다른 표현</td><td>What about you? / I like it, too. / That's interesting!</td></tr>
+    </table>
+    <div class="ref reveal" style="margin-top:12px;font-size:24px">※ think 뒤가 아니라 <b>about 뒤</b>에 의견 대상이 온다. <span class="nw">(p.123, 126)</span></div>
+    <div class="pg">3</div>
+</section>
+
+<!-- === 4 === -->
+<section class="slide" style="--z:1.02;padding-top:30px">    <div class="kicker">Topic 1 · Topic 2 · 대화 장면</div>
+    <h2 style="margin-bottom:10px">축제와 착시 그림 대화 <small>p.<span class="nw">122~126</span></small></h2>
+    <div class="grid g3" style="align-items:stretch">
+        <div class="card reveal">
+            <h3>학교 축제 (p.122)</h3>
+            <ul class="l">
+                <li>사진 전시 → <b>wonderful</b></li>
+                <li>밴드·가수 → <b>cool</b>, 목소리 <b>beautiful</b></li>
+                <li>마술쇼 → <b>amazing</b>, so cool</li>
+                <li>수연의 face painting에 민호 <b>cute</b> → <b>I feel the same.</b> 민호는 4개 중 flower 선택</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>Different Looks (p.125)</h3>
+            <div style="max-width:170px;margin:0 auto 6px"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="오리와 토끼 착시 그림">
+<path d="M40 150 Q30 100 80 90 Q120 85 140 100 Q200 60 250 90 L262 100 L240 112 Q230 150 190 160 Q120 175 40 150Z" fill="#FFF6D6" stroke="#14233F" stroke-width="6" stroke-linejoin="round"/>
+<path d="M120 98 Q100 40 130 28 Q150 40 140 98Z" fill="#FFF6D6" stroke="#14233F" stroke-width="6" stroke-linejoin="round"/>
+<path d="M150 96 Q160 40 188 36 Q196 60 172 100Z" fill="#FFF6D6" stroke="#14233F" stroke-width="6" stroke-linejoin="round"/>
+<circle cx="205" cy="104" r="8" fill="#14233F"/>
+</svg>
+</div>
+            <ul class="l">
+                <li>같은 그림이 <b>오리</b>(cute, 눈이 큼)와 <b>토끼</b>로 보인다</li>
+                <li><b>We can see different things in the same picture.</b></li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>Fun Fun Story (p.126)</h3>
+            <ul class="l">
+                <li>What do you think about my house? → <b>I think it's beautiful!</b></li>
+                <li>The cat is scary. → <b>I feel the same.</b></li>
+                <li>묻기=<b>What do you think about the book?</b>, 말하기=I think it's boring., 공감=I feel the same.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card hl reveal" style="margin-top:14px;font-size:25px">
+        <span class="lb" style="font-size:24px">의견 형용사</span> fun, exciting, amazing, interesting, boring, beautiful, hard, cute, scary, wonderful, useful &nbsp;<span class="ref" style="font-size:24px">Listening Tip: 듣기 전 그림을 보고 단어를 떠올리기 (p.124)</span>
+    </div>
+    <div class="pg">4</div>
+</section>
+
+<!-- === 5 === -->
+<section class="slide" style="--z:1.05;padding-top:30px">    <div class="kicker">Word Power · 형용사 반의어</div>
+    <h2 style="margin-bottom:10px">반의어 5쌍 <small>p.<span class="nw">126, 138</span></small></h2>
+    <table class="t reveal">
+        <tr><th>형용사</th><th>뜻</th><th>반의어</th><th>뜻</th></tr>
+        <tr><td>strong</td><td>강한</td><td><b>weak</b></td><td>약한</td></tr>
+        <tr><td>fast</td><td>빠른</td><td><b>slow</b></td><td>느린</td></tr>
+        <tr><td>same</td><td>같은</td><td><b>different</b></td><td>다른</td></tr>
+        <tr><td>expensive</td><td>비싼</td><td><b>cheap</b></td><td>싼</td></tr>
+        <tr><td>bright</td><td>밝은</td><td><b>dark</b></td><td>어두운</td></tr>
+    </table>
+    <div class="grid g2" style="margin-top:24px">
+        <div class="card hl reveal">
+            <span class="lb" style="font-size:24px">예문</span> We go to the <b>same</b> school. But we are in <b>different</b> classes. <span class="ref" style="font-size:24px">(p.138)</span>
+        </div>
+        <div class="card reveal">
+            <span class="lb" style="font-size:24px">암기</span> strong–weak, fast–slow, bright–dark<br><span class="lb" style="font-size:24px">파생</span> paint → painting(그림), artist&nbsp;←&nbsp;art.<br>비교급&nbsp;brighter·weaker
+        </div>
+    </div>
+    <div class="pg">5</div>
+</section>
+
+<!-- === 6 === -->
+<section class="slide" style="--z:1.00;padding-top:30px">    <div class="kicker">핵심 어휘 · 주요 어휘 23개</div>
+    <h2 style="margin-bottom:10px">주요 어휘 <small>Word List p.<span class="nw">177~178</span></small></h2>
+    <div class="grid g2">
+        <table class="t tight reveal" style="font-size:24px">
+            <tr><th>단어</th><th>뜻</th></tr>
+            <tr><td>accident</td><td>사고</td></tr>
+            <tr><td>anyone</td><td>누구, 누구나</td></tr>
+            <tr><td>artist</td><td>화가, 예술가</td></tr>
+            <tr><td>become</td><td>~이 되다 (became)</td></tr>
+            <tr><td>bright</td><td>밝은 (brighter)</td></tr>
+            <tr><td>common</td><td>공통의 (have ~ in common)</td></tr>
+            <tr><td>different</td><td>다른 (↔ same)</td></tr>
+            <tr><td>Dutch</td><td>네덜란드의</td></tr>
+            <tr><td>expensive</td><td>비싼 (↔ cheap)</td></tr>
+            <tr><td>find out</td><td>알아내다</td></tr>
+            <tr><td>get well</td><td>나아지다, 회복하다</td></tr>
+        </table>
+        <table class="t tight reveal" style="font-size:24px">
+            <tr><th>단어</th><th>뜻</th></tr>
+            <tr><td>heart</td><td>마음; 심장</td></tr>
+            <tr><td>lifetime</td><td>일생, 평생</td></tr>
+            <tr><td>move</td><td>이사하다 (move to Paris)</td></tr>
+            <tr><td>other</td><td>다른 것 (the other)</td></tr>
+            <tr><td>paint</td><td>그리다</td></tr>
+            <tr><td>reason</td><td>이유</td></tr>
+            <tr><td>self-portrait</td><td>자화상</td></tr>
+            <tr><td>stay</td><td>머물다 (stayed)</td></tr>
+            <tr><td>terrible</td><td>끔찍한, 지독한</td></tr>
+            <tr><td>think</td><td>생각하다 (thought)</td></tr>
+            <tr><td>touch</td><td><b>감동시키다</b>(본문); 만지다</td></tr>
+            <tr><td>weak</td><td>약한 (↔ strong)</td></tr>
+        </table>
+    </div>
+    <div class="pg">6</div>
+</section>
+
+<!-- === 7 === -->
+<section class="slide" style="--z:1.13;padding-top:30px">    <div class="kicker">Topic 3 · Faces of Great Artists ①</div>
+    <h2 style="margin-bottom:10px">빈센트 반 고흐 <small>p.<span class="nw">128~129</span></small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>고흐의 이야기 흐름</h3>
+            <ul class="l">
+                <li><b>a Dutch artist</b>(네덜란드 화가), 살아 있을 때는 유명하지 않았다 (<b>not famous</b> in his lifetime)</li>
+                <li><b>When he was 33, he moved to Paris.</b></li>
+                <li>사람을 그리고 싶었지만 <b>모델이 너무 비쌌다</b> → 자기 자신을 그리기 시작</li>
+                <li>자화상 <b>36점</b>, 모두 서로 다르다</li>
+            </ul>
+        </div>
+        <div>
+            <div class="svgbox reveal" style="max-width:480px;margin:0 auto"><svg viewBox="0 0 440 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="밝은 자화상 틀과 더 어두운 자화상 틀">
+<rect x="14" y="10" width="190" height="190" rx="10" fill="#FFC83D" stroke="#14233F" stroke-width="6"/>
+<rect x="34" y="30" width="150" height="150" fill="#CFEAFF" stroke="#14233F" stroke-width="4"/>
+<circle cx="109" cy="92" r="40" fill="#FFE2B8" stroke="#14233F" stroke-width="5"/>
+<path d="M72 78 Q109 38 146 78 Z" fill="#E8B54A" stroke="#14233F" stroke-width="4"/>
+<circle cx="94" cy="96" r="5" fill="#14233F"/><circle cx="124" cy="96" r="5" fill="#14233F"/>
+<path d="M96 116 Q109 126 122 116" stroke="#14233F" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M50 180 Q109 130 168 180Z" fill="#39B8E8" stroke="#14233F" stroke-width="4"/>
+<rect x="236" y="10" width="190" height="190" rx="10" fill="#B07A2A" stroke="#14233F" stroke-width="6"/>
+<rect x="256" y="30" width="150" height="150" fill="#3B4F78" stroke="#14233F" stroke-width="4"/>
+<circle cx="331" cy="92" r="40" fill="#D9A46A" stroke="#14233F" stroke-width="5"/>
+<path d="M294 80 Q331 44 368 80 Z" fill="#7A4A1E" stroke="#14233F" stroke-width="4"/>
+<circle cx="316" cy="96" r="5" fill="#14233F"/><circle cx="346" cy="96" r="5" fill="#14233F"/>
+<path d="M318 120 Q331 114 344 120" stroke="#14233F" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M272 180 Q331 130 390 180Z" fill="#2F5E4A" stroke="#14233F" stroke-width="4"/>
+</svg>
+</div>
+            <div class="card reveal" style="margin-top:18px">
+                <p><b>One</b> is brighter than <b>the other</b>.<br><span class="dim">두 자화상 중 하나가 다른 하나보다 더 밝다.</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="card reveal" style="margin-top:20px;font-size:25px">
+        <span class="lb" style="font-size:24px">Do You Know</span> 반 고흐(1853~1890)는 목회자로 살다가 1886년 프랑스 파리로 이주해 화가의 길을 걸었다. <span class="ref" style="font-size:24px">(p.129)</span>
+    </div>
+    <div class="pg">7</div>
+</section>
+
+<!-- === 8 === -->
+<section class="slide" style="--z:1.30;padding-top:30px">    <div class="kicker">Topic 3 · Faces of Great Artists ②</div>
+    <h2 style="margin-bottom:10px">프리다 칼로 <small>p.<span class="nw">130~131</span></small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>칼로의 이야기 흐름</h3>
+            <ul class="l">
+                <li>칼로: 멕시코 화가 (<b>a Mexican artist</b>)</li>
+                <li><b>여섯 살</b>에 매우 아파서 <b>오른쪽 다리</b>가 왼쪽 다리보다 약해졌다 (weaker than)</li>
+                <li><b>I will get well. I will help sick people like me.</b></li>
+                <li><b>18세</b>에 <b>a terrible bus accident</b> → 병원에 오래 머묾(stayed)</li>
+                <li><b>I look weak. But I am stronger than anyone.</b> → 자기 자신을 그리기 시작, 일생 자화상 <b>55점</b></li>
+            </ul>
+        </div>
+        <div class="grid" style="gap:20px">
+            <div class="card reveal">
+                <span class="lb" style="font-size:24px">Do You Know</span> 칼로(1907~1954)는 버스 사고 후 평생 고통 속에 살았지만 자화상으로 강인한 정신력과 생명력을 표현했다. <span class="ref" style="font-size:24px">(p.130)</span>
+            </div>
+            <div class="card hl reveal">
+                <span class="lb" style="font-size:24px">공통점</span> 두 화가는 <b>for different reasons</b>(다른 이유)로 자신을 그렸지만, 그림은 <b>touch the hearts of many people</b>(많은 사람의 마음을 감동시킨다). <span class="ref" style="font-size:24px">(p.131)</span>
+            </div>
+        </div>
+    </div>
+    <div class="pg">8</div>
+</section>
+
+<!-- === 9 === -->
+<section class="slide" style="--z:1.11;padding-top:30px">    <div class="kicker">After You Read · Meet the World</div>
+    <h2 style="margin-bottom:10px">고흐 vs 칼로, 세계의 미술관 <small>p.<span class="nw">129~133</span></small></h2>
+    <table class="t tight reveal">
+        <tr><th style="width:20%">비교</th><th>고흐</th><th>칼로</th></tr>
+        <tr><td>나라</td><td>네덜란드</td><td>멕시코</td></tr>
+        <tr><td>계기</td><td>33세 파리 이사, 모델이 비쌈</td><td>18세 버스 사고, 병원 생활</td></tr>
+        <tr><td>자화상</td><td>36점, 모두 다르다</td><td>55점</td></tr>
+        <tr><td>O/X</td><td>36점 ○ / 생전에 유명했다 <b>✕</b></td><td>왼쪽 다리가 더 약했다 <b>✕</b>(오른쪽) / 사고 후 그리기 시작 ○</td></tr>
+    </table>
+    <div class="grid g2" style="margin-top:20px">
+        <div class="card sm reveal">
+            <h3>Meet the World (p.133)</h3>
+            <ul class="l">
+                <li>New York, The Museum of Modern Art: <b>고흐·칼로 모두</b></li>
+                <li>Mexico City, Frida Kahlo Museum: <b>칼로</b></li>
+                <li>London The National Gallery, Paris Orsay Museum, Amsterdam Van Gogh Museum: <b>고흐</b></li>
+            </ul>
+        </div>
+        <div class="card warn sm reveal">
+            <h3>헷갈리지 마세요</h3>
+            <p>다리가 약해진 때 = <b>여섯 살</b> / 버스 사고 = <b>18세</b>(결과는 오랜 병원 생활, Kahlo stayed in the hospital for a long time).</p>
+        </div>
+    </div>
+    <div class="pg">9</div>
+</section>
+
+<!-- === 10 === -->
+<section class="slide" style="--z:1.00;padding-top:30px">    <div class="kicker">언어 형식 1 · 접속사 when</div>
+    <h2 style="margin-bottom:10px">when = ~할 때 <small>p.<span class="nw">136~139</span></small></h2>
+    <div class="grid g2">
+        <div class="card hl reveal">
+            <h3>형태와 쓰임 · when 위치</h3>
+            <ul class="l">
+                <li>「<b>when + 주어 + 동사</b> ~」: 시간 부사절 (when 뒤는 주어 + 동사)</li>
+                <li>절이 <b>앞</b>에 오면 끝에 <b>콤마(,)</b>, 뒤에 오면 콤마 없음</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <h3>교과서 예문</h3>
+            <p><b>When</b> she was six years old, she was sick.</p>
+            <p>I saw the sun <b>when</b> I woke up.</p>
+            <p><b>When</b> he was 33, he moved to Paris.</p>
+        </div>
+    </div>
+    <div class="card warn reveal" style="margin-top:6px;padding:14px 26px">
+        <p><span class="lb" style="font-size:24px">자주 하는 오류</span><span class="bad">✕</span> When she was six she was sick. &nbsp;→ <span class="ok">○</span> When she was six<b>,</b> she was sick. (앞에 오면 콤마)</p>
+        <p><span class="bad">✕</span> She was sick<b>,</b> when she was six. &nbsp;→ <span class="ok">○</span> She was sick when she was six. (뒤에 오면 콤마 없음)</p>
+    </div>
+    <div class="card reveal" style="margin-top:6px;font-size:24px;padding:14px 26px">
+        <span class="lb" style="font-size:24px">배열</span> when 문장 만들기
+        <div class="grid g2" style="gap:0 24px;margin-top:4px">
+            <div>When Greena was 7<br>when she saw the polar bear<br>when she brushes her teeth<br>When Kate gets home, she washes her hands.</div>
+            <div>Cars stop when the light is red.<br>When I'm tired, I eat chocolate.<br>When she was 10 years old, she wrote a song.<br>My father cried when he watched the movie.</div>
+        </div>
+    </div>
+    <div class="pg">10</div>
+</section>
+
+<!-- === 11 === -->
+<section class="slide" style="--z:1.02;padding-top:30px">    <div class="kicker">언어 형식 2 · 비교급</div>
+    <h2>비교급 + than = ~보다 더 ~한 <small>p.<span class="nw">136~137</span></small></h2>
+    <div class="card hl reveal">
+        <p><span class="lb" style="font-size:24px">교과서 p.137</span> <b>faster</b> / <b>heavier</b> / <b>more famous</b> + <b>than</b></p>
+        <p style="font-size:25px">An airplane is <b>faster than</b> a car. / Nancy is <b>busier than</b> Tom. / Busan is <b>hotter than</b> Sokcho. / The movie is <b>more famous than</b> the book. <span class="ref" style="font-size:24px">(p.136~137)</span></p>
+    </div>
+    <div class="addnote reveal" style="margin-top:12px"><span class="tag" style="font-size:24px">교사용 보충</span> 비교급 만드는 규칙 (교과서 밖 정리)</div>
+    <table class="t tight reveal" style="font-size:24px">
+        <tr><th style="width:36%">비교급 규칙</th><th style="width:26%">방법</th><th>예</th></tr>
+        <tr><td>대부분의 형용사</td><td>+ -er</td><td>fast–faster, tall–taller</td></tr>
+        <tr><td>-e로 끝남</td><td>+ -r</td><td>large–larger</td></tr>
+        <tr><td>「자음+y」로 끝남</td><td>y→i + -er</td><td>busy–busier, easy–easier</td></tr>
+        <tr><td>「단모음+단자음」으로 끝남</td><td>자음 한 번 더 + -er</td><td>hot–hotter, big–bigger</td></tr>
+        <tr><td>3음절 이상, -ous·-ful·-ive 등</td><td>more + 원급</td><td>beautiful–more beautiful <span class="dim">(-er vs more 구분)</span></td></tr>
+        <tr><td>불규칙</td><td colspan="2">good/well–better, bad–worse, many/much–more, little–less</td></tr>
+    </table>
+    <div class="pg">11</div>
+</section>
+
+<!-- === 12 === -->
+<section class="slide" style="--z:1.01;padding-top:30px">    <div class="kicker">읽기 어법 · 글쓰기 · 시험 포인트</div>
+    <h2 style="margin-bottom:10px">마무리 체크 <small>p.<span class="nw">128~139</span></small></h2>
+    <div class="grid g2">
+        <div class="card xs reveal">
+            <h3>읽기 어법 (p.128~131)</h3>
+            <ul class="l">
+                <li><b>재귀대명사</b>: himself, herself, themselves (주어와 목적어가 같을 때) ↔ 일반 대명사 (painted him은 다른 사람)</li>
+                <li><b>one ~, the other ~</b>: 정해진 두 개 중 하나, 나머지 하나</li>
+                <li>want/start + to부정사, look + 형용사(I look weak)</li>
+            </ul>
+        </div>
+        <div class="card xs reveal">
+            <h3>글쓰기 (p.134~135)</h3>
+            <ul class="l">
+                <li>THINK → WRITE → REWRITE: 작품명·작가·연도 (The Bedroom, Vincent van Gogh, 1888)</li>
+                <li><b>There&nbsp;is/are&nbsp;~</b>&#8288;로 보이는 것, <b>I&nbsp;feel&nbsp;~</b>&#8288;로 감상</li>
+                <li>지도서 평가 방향: 수행평가는 Topic&nbsp;2 말하기, Topic&nbsp;4 쓰기&#8288;·&#8288;프로젝트</li>
+            </ul>
+        </div>
+    </div>
+    <table class="t tight reveal" style="margin-top:20px">
+        <tr><th style="width:16%">시험 포인트</th><th>내용</th></tr>
+        <tr><td>어휘</td><td>반의어 5쌍, 단어 뜻(accident, self-portrait, touch), 구동사·표현(find out, get well, move to, have ~ in common), 영영·문맥 의미</td></tr>
+        <tr><td>어법</td><td>밑줄 친 when의 쓰임·시제, 비교급 형태, 재귀대명사, one/the other, 단어 배열</td></tr>
+        <tr><td>대화</td><td>묻기/말하기/공감 구분, 어색한 대화 찾기, 순서 배열</td></tr>
+        <tr><td>독해</td><td>내용 일치·불일치(36점·33세·18세·55점·오른쪽 다리), 답할 수 없는 질문, 본문에서 단어 찾기</td></tr>
+        <tr><td>서술형 소재 후보</td><td>주어진 단어로 영작(when, 비교급 문장 완성), 그림 속 상황 문장</td></tr>
+    </table>
+    <div class="pg">12</div>
+</section>
+
+</main>
+</div>
+
+<div class="deck-controls" id="controls">
+    <button id="prev" aria-label="이전">&#9664;</button>
+    <svg id="orbit" viewBox="0 0 260 46" aria-hidden="true">
+        <path id="orbitPath" d="M20 38 Q130 -22 240 38" fill="none" stroke="#8DB3E6" stroke-width="3" stroke-dasharray="3 7" stroke-linecap="round"/>
+        <path id="orbitDone" d="M20 38 Q130 -22 240 38" fill="none" stroke="#FFC83D" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="16" cy="38" r="8" fill="#3B9AE8" stroke="#fff" stroke-width="2"/>
+        <circle cx="244" cy="38" r="8" fill="#E4EEFB" stroke="#fff" stroke-width="2"/>
+        <g id="rocketMark"><g transform="rotate(0)"><path d="M-14 -3 L14 0 L-14 5 L-9 0Z" fill="#fff" stroke="#14233F" stroke-width="1.5" stroke-linejoin="round"/><path d="M-9 0 L-14 -3 M-9 0 L-14 5" stroke="#14233F" stroke-width="1.2"/><path d="M-2 -1.5 L4 -8 L6 -7 L2 -1Z" fill="#FFC83D" stroke="#14233F" stroke-width="1"/></g></g>
+    </svg>
+    <span id="count">1 / 12</span>
+    <button id="next" aria-label="다음">&#9654;</button>
+</div>
+
+<script>
+/* === 슬라이드 컨트롤러: 무대 크기 맞춤, 키보드/터치/휠, 편집 모드 === */
+(function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('deckStage');
+    var count = document.getElementById('count');
+    var cur = 0;
+    var mobile = window.matchMedia('(max-width: 1100px) and (orientation: portrait)');
+
+    function scale() {
+        if (mobile.matches) { stage.style.transform = ''; return; }
+        var f = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        var x = (window.innerWidth - 1920 * f) / 2;
+        var y = (window.innerHeight - 1080 * f) / 2;
+        stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + f + ')';
+    }
+    function show(i) {
+        cur = Math.max(0, Math.min(i, slides.length - 1));
+        slides.forEach(function (s, k) {
+            s.classList.toggle('active', k === cur);
+            s.classList.toggle('visible', k === cur);
+        });
+        count.textContent = (cur + 1) + ' / ' + slides.length;
+        var op = document.getElementById('orbitPath');
+        if (op && op.getTotalLength) {
+            var L = op.getTotalLength(), p = slides.length > 1 ? cur / (slides.length - 1) : 0;
+            var a = op.getPointAtLength(p * L), b = op.getPointAtLength(Math.min(L, p * L + 1)), c = op.getPointAtLength(Math.max(0, p * L - 1));
+            var ang = Math.atan2(b.y - c.y, b.x - c.x) * 180 / Math.PI;
+            document.getElementById('rocketMark').setAttribute('transform', 'translate(' + a.x + ' ' + a.y + ') rotate(' + ang + ')');
+            var od = document.getElementById('orbitDone');
+            od.style.strokeDasharray = L; od.style.strokeDashoffset = L * (1 - p);
+        }
+    }
+    window.addEventListener('resize', scale);
+    scale(); show(0);
+
+    document.getElementById('prev').onclick = function () { show(cur - 1); };
+    document.getElementById('next').onclick = function () { show(cur + 1); };
+
+    var editing = false;
+    document.addEventListener('keydown', function (e) {
+        if (e.target.isContentEditable) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) { e.preventDefault(); save(); }
+            return;
+        }
+        if (mobile.matches) return;
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); show(cur + 1); }
+        else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); show(cur - 1); }
+        else if (e.key === 'Home') show(0);
+        else if (e.key === 'End') show(slides.length - 1);
+        else if (e.key === 'e' || e.key === 'E') toggleEdit();
+    });
+    var tx = null;
+    document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null || mobile.matches || editing) return;
+        var dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    });
+    var wheelLock = false;
+    document.addEventListener('wheel', function (e) {
+        if (mobile.matches || wheelLock || editing) return;
+        wheelLock = true; setTimeout(function () { wheelLock = false; }, 500);
+        show(cur + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+
+    /* 편집 모드: 왼쪽 위 모서리 hover 또는 E 키, Ctrl+S로 저장(내려받기) */
+    var tgl = document.getElementById('editToggle');
+    var hz = document.querySelector('.edit-hotzone');
+    var t = null;
+    function toggleEdit() {
+        editing = !editing;
+        document.body.classList.toggle('editing', editing);
+        tgl.classList.toggle('active', editing);
+        tgl.textContent = editing ? '편집 중 (Ctrl+S 저장)' : '편집';
+        document.querySelectorAll('.slide h2, .slide p, .slide li, .slide td, .slide th, .slide h3')
+            .forEach(function (n) { n.contentEditable = editing ? 'true' : 'false'; });
+    }
+    function save() {
+        var was = editing; if (was) toggleEdit();
+        var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        a.download = 'slides.html'; a.click();
+        if (was) toggleEdit();
+    }
+    hz.addEventListener('mouseenter', function () { clearTimeout(t); tgl.classList.add('show'); });
+    hz.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('mouseenter', function () { clearTimeout(t); });
+    tgl.addEventListener('mouseleave', function () { t = setTimeout(function () { if (!editing) tgl.classList.remove('show'); }, 400); });
+    tgl.addEventListener('click', toggleEdit);
+})();
+</script>
+<script>
+/* 폰 화면용: 표 머리 글을 각 칸에 붙여 두면(data-label) CSS가 행 단위 카드로 쌓아 보여 준다 */
+(function(){
+  document.querySelectorAll('.slide table').forEach(function(t){
+    var rows=[].slice.call(t.rows); if(rows.length<2) return;
+    var hr=rows[0]; if(![].every.call(hr.cells,function(c){return c.tagName==='TH';})) return;
+    var labels=[], col=0;
+    [].forEach.call(hr.cells,function(c){ var n=c.colSpan||1; for(var k=0;k<n;k++) labels[col++]=c.textContent.replace(/\s+/g,' ').trim(); });
+    hr.classList.add('hrow');
+    var busy=[];
+    rows.slice(1).forEach(function(r){
+      var c=0;
+      [].forEach.call(r.cells,function(cell){
+        while(busy[c]>0){ c++; }
+        if(c>0 && labels[c]) cell.setAttribute('data-label',labels[c]);
+        var rs=cell.rowSpan||1, cs=cell.colSpan||1;
+        for(var k=0;k<cs;k++){ if(rs>1) busy[c+k]=rs; }
+        c+=cs;
+      });
+      for(var i=0;i<busy.length;i++){ if(busy[i]>0 && !(busy[i]===undefined)) { /* 아래에서 감소 */ } }
+      busy=busy.map(function(v){ return v>0 ? v-1 : 0; });
+    });
+    t.classList.add('stack');
+  });
+})();
+</script>
+</body>
+</html>

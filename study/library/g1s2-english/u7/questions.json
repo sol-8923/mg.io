@@ -1,0 +1,2056 @@
+{
+ "questions": [
+  {
+   "id": "u7-Q01-a",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "형용사 반의어·단어 관계",
+   "source": "교과서 p.126 (2025 2학기 기말 1번)",
+   "question": "두 단어의 관계가 나머지와 다른 하나는?",
+   "choices": [
+    "trip - travel",
+    "sunrise - sunset",
+    "dark - bright",
+    "weak - strong",
+    "cheap - expensive"
+   ],
+   "answer": 1,
+   "explanation": "trip과 travel은 뜻이 비슷한 관계이고, 나머지 네 쌍은 모두 뜻이 반대인 반의어예요(sunset은 교과서 밖 낱말).",
+   "choiceExplanations": [
+    "정답. trip과 travel은 뜻이 비슷한 관계이고, 나머지 네 쌍은 모두 뜻이 반대인 반의어예요(sunset은 교과서 밖 낱말).",
+    "해돋이와 해넘이는 서로 반대되는 때를 가리켜 뜻이 반대인 관계예요. 뜻이 반대인 짝이므로 나머지 세 쌍과 같은 종류예요(sunset은 교과서 밖 낱말).",
+    "어두운과 밝은은 정반대 뜻의 형용사 짝이에요. 교과서 p.126 형용사 반의어 연결 활동에 bright와 dark가 짝으로 나와요.",
+    "약한과 강한은 힘의 세기가 반대인 짝이라 반의어예요. p.126에서도 strong과 weak를 반대 뜻으로 이어요.",
+    "싼과 비싼은 값이 반대인 짝이라 반의어예요. p.126 활동의 expensive와 cheap과 같은 쌍이에요."
+   ],
+   "detail": "·p.126 Word Power는 strong–weak, fast–slow, same–different, expensive–cheap, bright–dark처럼 뜻이 반대인 형용사를 짝지어 익히는 활동이에요.\n·보기의 dark–bright, weak–strong, cheap–expensive는 모두 이 반의어 짝에 해당해요.\n·sunrise(해돋이)–sunset(해넘이)도 때가 반대여서 반의 관계로 묶을 수 있어요(교과서 밖 일반 상식).\n·trip(여행)과 travel(여행하다)은 뜻이 비슷해서 반의어가 아니므로 관계가 나머지와 달라요.",
+   "tip": "관계가 다른 하나를 찾을 때는 먼저 나머지 네 쌍이 어떤 관계인지부터 정해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "형용사 반의어(p.126 Word Power)",
+     "head": [
+      "낱말",
+      "뜻",
+      "반의어",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "strong",
+       "강한",
+       "weak",
+       "약한"
+      ],
+      [
+       "fast",
+       "빠른",
+       "slow",
+       "느린"
+      ],
+      [
+       "same",
+       "같은",
+       "different",
+       "다른"
+      ],
+      [
+       "expensive",
+       "비싼",
+       "cheap",
+       "싼"
+      ],
+      [
+       "bright",
+       "밝은",
+       "dark",
+       "어두운"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "관계 구분",
+     "text": "반의어는 뜻이 반대인 짝(strong–weak), 유의어는 뜻이 비슷한 짝이에요."
+    }
+   ],
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-01"
+  },
+  {
+   "id": "u7-Q01-b",
+   "slot": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "형용사 반의어·단어 관계",
+   "source": "교과서 p.126, p.129",
+   "question": "다음 중 두 단어의 관계가 나머지와 다른 것은?",
+   "choices": [
+    "same - different",
+    "paint - painting",
+    "fast - slow",
+    "expensive - cheap",
+    "bright - dark"
+   ],
+   "answer": 2,
+   "explanation": "paint는 '그리다'라는 동사이고 painting은 '그림'이라는 명사로, 품사가 다른 관계예요. 나머지 네 쌍은 뜻이 반대인 반의어예요.",
+   "choiceExplanations": [
+    "같은과 다른은 서로 뜻이 반대인 반의어예요. p.126 Word Power의 반의어 짝으로 나와 나머지와 같은 관계예요.",
+    "정답. paint는 '그리다'라는 동사이고 painting은 '그림'이라는 명사로, 품사가 다른 관계예요. 나머지 네 쌍은 뜻이 반대인 반의어예요.",
+    "빠른과 느린도 속도가 반대인 반의어 짝이에요. p.126에서 fast와 slow를 서로 반대 뜻으로 연결해요.",
+    "비싼과 싼은 값이 반대인 짝이에요. p.126에서 expensive와 cheap을 이어서 익혀요.",
+    "밝은과 어두운은 빛의 정도가 반대인 반의어예요. p.126 활동에서 bright와 dark가 짝이에요."
+   ],
+   "detail": "·p.126 Word Power에서는 same–different, fast–slow, expensive–cheap, bright–dark처럼 뜻이 반대인 형용사를 짝으로 익혀요.\n·paint는 p.129에서 'Van Gogh started to paint himself'처럼 '그리다'라는 동사로 쓰이고, painting은 p.129의 'these two paintings'처럼 '그림'을 뜻해요.\n·두 낱말은 뜻이 반대가 아니라 같은 어근에서 나온 동사와 명사의 짝이라 관계가 나머지와 달라요.",
+   "tip": "반의어 짝은 뜻이 서로 반대인지, 한 낱말에서 품사만 바뀐 것인지 구분해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "형용사 반의어(p.126 Word Power)",
+     "head": [
+      "낱말",
+      "뜻",
+      "반의어",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "strong",
+       "강한",
+       "weak",
+       "약한"
+      ],
+      [
+       "fast",
+       "빠른",
+       "slow",
+       "느린"
+      ],
+      [
+       "same",
+       "같은",
+       "different",
+       "다른"
+      ],
+      [
+       "expensive",
+       "비싼",
+       "cheap",
+       "싼"
+      ],
+      [
+       "bright",
+       "밝은",
+       "dark",
+       "어두운"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q02-a",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "L7 어휘 문맥 속 뜻",
+   "source": "교과서 p.131 (2025 2학기 기말 2번)",
+   "question": "다음 문장의 [ ] 안 표현의 의미가 잘못된 것은?",
+   "choices": [
+    "Wash the [dishes](그릇들) after dinner.",
+    "Could you speak more [slowly](천천히)?",
+    "They share a [common](흔한) interest in sports.",
+    "The company [puts up](설치하다) a fence for security.",
+    "We spent a week on the Greek [island](섬)."
+   ],
+   "answer": 3,
+   "explanation": "이 문장의 common은 '공통의'라는 뜻이라 '흔한'이라고 풀이한 것이 잘못이에요.",
+   "choiceExplanations": [
+    "dish는 '요리; 그릇'이라는 뜻이 있어(p.177 단어 목록) 저녁 식사 뒤에 닦는 그릇들이라는 풀이가 알맞아요.",
+    "slowly는 '천천히'라는 뜻의 부사예요. 교과서 p.91의 Slowly, the sky turned red처럼 서서히 변하는 모습에도 쓰여요.",
+    "정답. 이 문장의 common은 '공통의'라는 뜻이라 '흔한'이라고 풀이한 것이 잘못이에요.",
+    "put up은 텐트나 울타리를 '치다, 설치하다'라는 뜻이에요. p.90에서 텐트를 치는 장면에 나와 풀이가 알맞아요.",
+    "island는 바다로 둘러싸인 '섬'이에요. p.108에서 하와이의 섬들을 말할 때 쓰여 풀이가 알맞아요."
+   ],
+   "detail": "·common은 p.177 단어 목록에서 '공동의, 공통의; 흔한'으로 뜻이 둘이라서 문장 속에서 어느 뜻인지 가려야 해요.\n·'They share a common interest in sports'는 둘이 같은 관심사를 함께 가진다는 문장이라 '공통의 관심'이 맞아요.\n·p.131의 'have one thing in common'도 '공통점을 가지다'라는 뜻으로 같은 쓰임이에요.\n·'흔한'은 a common name처럼 자주 볼 수 있다는 뜻일 때의 풀이라서 이 문장에는 맞지 않아요.",
+   "tip": "뜻이 여러 개인 낱말은 문장 전체의 뜻을 보고 알맞은 풀이를 골라요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "common의 두 뜻(p.177 단어 목록)",
+     "head": [
+      "문장",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "They share a common interest.",
+       "공통의(같이 가진)"
+      ],
+      [
+       "Common names are easy to find.",
+       "흔한(자주 보이는)"
+      ]
+     ]
+    },
+    {
+     "kind": "text",
+     "title": "교과서 확인",
+     "text": "p.131: 두 화가의 그림은 one thing in common(한 가지 공통점)이 있다고 설명해요."
+    }
+   ],
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-02"
+  },
+  {
+   "id": "u7-Q02-b",
+   "slot": "Q02",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "L7 어휘 문맥 속 뜻",
+   "source": "교과서 p.129, p.130, p.177",
+   "question": "다음 문장의 [ ] 안 표현 중 의미가 잘못 짝지어진 것은?",
+   "choices": [
+    "She is a famous [Dutch](네덜란드의) painter.",
+    "This is a [self-portrait](자화상) of the artist.",
+    "I hope you [get well](나아지다) soon.",
+    "My new room is very [bright](어두운).",
+    "I [think](생각하다) it's fun."
+   ],
+   "answer": 4,
+   "explanation": "bright는 '밝은'이라는 뜻이라서 '어두운'이라고 풀이한 것이 잘못이에요.",
+   "choiceExplanations": [
+    "Dutch는 p.129에서 '네덜란드의'라는 뜻으로 나와요. 반 고흐를 소개하는 말이라 풀이가 알맞아요.",
+    "self-portrait는 화가가 자기 자신을 그린 '자화상'이에요. p.128~130 글의 중심 낱말이라 풀이가 알맞아요.",
+    "get well은 아프다가 '나아지다, 회복하다'라는 뜻이에요. p.130에서 칼로가 몸이 나아지길 바라는 말에 나와요.",
+    "정답. bright는 '밝은'이라는 뜻이라서 '어두운'이라고 풀이한 것이 잘못이에요.",
+    "think는 '생각하다'라는 뜻이에요. p.123의 I think it's fun.처럼 의견을 말할 때 써요."
+   ],
+   "detail": "·bright는 p.126 Word Power에서 dark(어두운)의 반대말로 나오는 '밝은'이에요.\n·'My new room is very bright'는 방이 밝다는 뜻이라 괄호의 '어두운'은 반대 뜻이에요.\n·나머지 네 낱말(Dutch·self-portrait·get well·think)은 p.129~130과 p.177 단어 목록의 뜻 그대로 풀이돼 있어요.",
+   "tip": "반의어 짝으로 외운 낱말은 뜻이 서로 뒤바뀌지 않았는지 확인해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "L7 낱말과 뜻(p.177~178 단어 목록)",
+     "head": [
+      "낱말",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "Dutch",
+       "네덜란드의"
+      ],
+      [
+       "self-portrait",
+       "자화상"
+      ],
+      [
+       "get well",
+       "나아지다, 회복하다"
+      ],
+      [
+       "think",
+       "생각하다"
+      ],
+      [
+       "bright",
+       "밝은"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q03-a",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "빈칸에 들어갈 수 없는 단어(1)",
+   "source": "교과서 p.131 (2025 2학기 기말 5번)",
+   "question": "다음의 문장 어느 빈칸에도 들어갈 수 없는 것은?",
+   "choices": [
+    "fresh",
+    "mean",
+    "stay",
+    "voice",
+    "reason"
+   ],
+   "answer": 5,
+   "explanation": "reason(이유)은 네 문장의 어느 빈칸에 넣어도 문장이 어색해져서 들어갈 수 없는 낱말이에요.",
+   "choiceExplanations": [
+    "'Let's go and get some fresh air.'처럼 '신선한' 공기에 들어가는 낱말이에요(p.108). 신선한 공기라는 말이 자연스러워서 이 보기는 빈칸에 쓸 수 있어요.",
+    "'What does this sentence mean?'처럼 '의미하다'라는 동사로 들어가요(p.108). 문장이 '이 문장은 무엇을 의미하니?'로 자연스럽게 이어져요.",
+    "'I enjoyed my stay in Prague.'에서 명사 '머묾, 체류'로 들어가요. 명사 자리에 놓여 '프라하에서의 머묾'이라는 뜻이 통해요.",
+    "'Please use a louder voice'처럼 '목소리'라는 명사가 들어가 더 큰 소리로 말하라는 뜻이 돼요.",
+    "정답. reason(이유)은 네 문장의 어느 빈칸에 넣어도 문장이 어색해져서 들어갈 수 없는 낱말이에요."
+   ],
+   "detail": "·네 문장의 빈칸에는 각각 voice(목소리), mean(의미하다), fresh(신선한), stay(머묾)가 들어가요.\n·reason은 p.131에서 '다른 이유로'(for different reasons)처럼 쓰이는 '이유'라는 명사예요.\n·'a louder reason'이나 'get some reason air'는 뜻이 통하지 않아서 reason은 어느 문장에도 맞지 않아요.\n·그래서 정답은 reason이에요.",
+   "tip": "빈칸마다 낱말을 하나씩 넣어 보고 하나도 맞지 않는 낱말을 찾아요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "보기 낱말과 알맞은 문장",
+     "head": [
+      "낱말",
+      "들어가는 문장"
+     ],
+     "rows": [
+      [
+       "fresh",
+       "get some fresh air"
+      ],
+      [
+       "mean",
+       "What does this sentence mean?"
+      ],
+      [
+       "stay",
+       "my stay in Prague"
+      ],
+      [
+       "voice",
+       "a louder voice"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "- Please use a louder _____ so everyone can hear you.\n- What does this sentence _____ ?\n- Let's go and get some _____ air.\n- I enjoyed my _____ in Prague.",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-05"
+  },
+  {
+   "id": "u7-Q03-b",
+   "slot": "Q03",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "빈칸에 들어갈 수 없는 단어(1)",
+   "source": "교과서 p.129, p.130",
+   "question": "다음의 문장 어느 빈칸에도 들어갈 수 없는 것은?",
+   "choices": [
+    "lifetime",
+    "weak",
+    "artist",
+    "move",
+    "expensive"
+   ],
+   "answer": 1,
+   "explanation": "lifetime(일생)은 네 문장의 어느 빈칸에 넣어도 뜻이 통하지 않아요.",
+   "choiceExplanations": [
+    "정답. lifetime(일생)은 네 문장의 어느 빈칸에 넣어도 뜻이 통하지 않아요.",
+    "weak는 'The old man is too weak to carry the box.'처럼 '약한'이라는 형용사로 들어가 상자를 들 힘이 없다는 뜻이 돼요(p.130 weaker와 같은 낱말, 새로 쓴 문장).",
+    "artist는 'My aunt is a famous artist from Italy.'처럼 '화가, 예술가'라는 명사로 들어가 이탈리아 출신 화가라는 뜻이 통해요(p.128, 새로 쓴 문장).",
+    "move는 'We will move to a bigger house'처럼 '이사하다'라는 동사로 들어가 더 큰 집으로 간다는 뜻이 돼요(새로 쓴 문장).",
+    "expensive는 'That bag is too expensive for me.'처럼 '비싼'이라는 형용사로 들어가 가방 값이 부담된다는 말이 돼요(새로 쓴 문장)."
+   ],
+   "detail": "·네 문장의 빈칸에는 weak(약한), artist(화가), move(이사하다), expensive(비싼)가 각각 들어가요.\n·lifetime은 p.129~130에서 '일생' 전체를 뜻하는 명사로 나와요.\n·'too lifetime to carry the box'나 'a famous lifetime from Italy'는 뜻이 통하지 않아서 어느 문장에도 맞지 않아요.",
+   "tip": "빈칸마다 낱말을 하나씩 넣어 보고 뜻이 통하는지 확인해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "보기 낱말과 알맞은 문장",
+     "head": [
+      "낱말",
+      "들어가는 문장"
+     ],
+     "rows": [
+      [
+       "weak",
+       "too weak to carry the box"
+      ],
+      [
+       "artist",
+       "a famous artist from Italy"
+      ],
+      [
+       "move",
+       "move to a bigger house"
+      ],
+      [
+       "expensive",
+       "too expensive for me"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장 (새로 쓴 글)",
+   "passage": "- The old man is too _____ to carry the box.\n- My aunt is a famous _____ from Italy.\n- We will _____ to a bigger house next month.\n- That bag is too _____ for me."
+  },
+  {
+   "id": "u7-Q04-a",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "빈칸에 들어갈 수 없는 단어(2)",
+   "source": "교과서 p.130 (2025 2학기 기말 6번)",
+   "question": "다음의 문장 어느 빈칸에도 들어갈 수 없는 것은?",
+   "choices": [
+    "learn",
+    "sick",
+    "paint",
+    "anyone",
+    "traditional"
+   ],
+   "answer": 2,
+   "explanation": "sick은 '아픈'이라는 뜻이라서 네 문장의 어느 빈칸에 넣어도 뜻이 통하지 않아요.",
+   "choiceExplanations": [
+    "'I could learn something from his lecture.'처럼 동사 자리에 알맞아 강의에서 배울 수 있다는 뜻이 돼요.",
+    "정답. sick은 '아픈'이라는 뜻이라서 네 문장의 어느 빈칸에 넣어도 뜻이 통하지 않아요.",
+    "paint(p.129)는 '그리다'라는 뜻이지만 'We are going to paint the hospital.'에서는 '칠하다'로 들어가 병원을 칠할 예정이라는 말이 성립해요.",
+    "anyone은 'Is anyone getting hungry?'처럼 '누구든'이라는 대명사로 들어가 주어 자리를 채워요.",
+    "'We ate a traditional Korean meal'처럼 명사 앞 형용사로 들어가 전통 한식이라는 뜻이 돼요."
+   ],
+   "detail": "·네 빈칸에는 learn(배우다), traditional(전통적인), anyone(누구든), paint(칠하다)가 각각 들어가요.\n·sick은 p.130의 'sick people like me'처럼 사람이 '아픈' 상태를 말하는 낱말이에요.\n·'a sick Korean meal(아픈 한식)'이나 'Is sick getting hungry?'처럼 넣으면 뜻이 통하지 않아요.",
+   "tip": "낱말의 뜻을 빈칸 문장에 넣어 보고 뜻이 통하는지 확인해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "보기 낱말과 알맞은 문장",
+     "head": [
+      "낱말",
+      "들어가는 문장"
+     ],
+     "rows": [
+      [
+       "learn",
+       "I could learn something from his lecture."
+      ],
+      [
+       "traditional",
+       "a traditional Korean meal"
+      ],
+      [
+       "anyone",
+       "Is anyone getting hungry?"
+      ],
+      [
+       "paint",
+       "We are going to paint the hospital."
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "- I could _____ something from his lecture.\n- We ate a _____ Korean meal for dinner.\n- Is _____ getting hungry?\n- We are going to _____ the hospital.",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-06"
+  },
+  {
+   "id": "u7-Q04-b",
+   "slot": "Q04",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "빈칸에 들어갈 수 없는 단어(2)",
+   "source": "교과서 p.129, p.130",
+   "question": "다음의 문장 어느 빈칸에도 들어갈 수 없는 것은?",
+   "choices": [
+    "paint",
+    "anyone",
+    "accident",
+    "become",
+    "stay"
+   ],
+   "answer": 3,
+   "explanation": "accident(사고)는 네 문장의 빈칸 어디에 넣어도 뜻이 통하지 않아요.",
+   "choiceExplanations": [
+    "'I want to paint a picture of the lake.'처럼 '그리다'라는 동사로 들어가 호수를 그리고 싶다는 뜻이 돼요(p.129).",
+    "'Did anyone call me?'처럼 '누구든'이라는 대명사로 들어가 누가 전화했는지 묻는 말이 돼요(p.130).",
+    "정답. accident(사고)는 네 문장의 빈칸 어디에 넣어도 뜻이 통하지 않아요.",
+    "become은 'My dream is to become a doctor.'처럼 to 뒤 동사로 들어가 꿈을 말하는 문장이 돼요(새로 쓴 문장).",
+    "stay는 'We will stay at the hotel.'처럼 will 뒤 동사로 들어가 호텔에 머문다는 뜻이 돼요(새로 쓴 문장)."
+   ],
+   "detail": "·네 문장의 빈칸에는 paint(그리다), anyone(누구든), become(~이 되다), stay(머물다)가 각각 들어가요.\n·accident는 p.130의 'a terrible bus accident'처럼 '사고'를 뜻하는 명사예요.\n·'to accident a doctor'나 'Did accident call me?'처럼 동사나 대명사 자리에 넣으면 뜻이 통하지 않아요.",
+   "tip": "동사 자리에는 동사, 대명사 자리에는 대명사가 와야 해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "보기 낱말과 알맞은 문장",
+     "head": [
+      "낱말",
+      "들어가는 문장"
+     ],
+     "rows": [
+      [
+       "paint",
+       "I want to paint a picture of the lake."
+      ],
+      [
+       "anyone",
+       "Did anyone call me?"
+      ],
+      [
+       "become",
+       "My dream is to become a doctor."
+      ],
+      [
+       "stay",
+       "We will stay at the hotel."
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장 (새로 쓴 글)",
+   "passage": "- I want to _____ a picture of the lake.\n- Did _____ call me yesterday?\n- My dream is to _____ a doctor.\n- We will _____ at the hotel this weekend."
+  },
+  {
+   "id": "u7-Q05-a",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "구동사 find out / wake up",
+   "source": "교과서 p.128 (2025 2학기 기말 7번)",
+   "question": "다음 빈칸에 들어갈 단어로 알맞은 것은?",
+   "choices": [
+    "with",
+    "on",
+    "to",
+    "out",
+    "in"
+   ],
+   "answer": 4,
+   "explanation": "find out은 '알아내다, 알아보다'라는 뜻의 표현이라 빈칸에 out이 들어가요.",
+   "choiceExplanations": [
+    "find with는 '알아내다'라는 뜻의 표현이 아니에요. with는 '~와 함께'라는 전치사라 이 문장의 뜻이 통하지 않아요.",
+    "find on은 '알아내다'를 뜻하지 않아요. 문장 안에서 on을 넣으면 시간을 알아보는 뜻이 되지 않아요.",
+    "find to는 어색한 표현이에요. 알아내다는 find와 짝이 되는 다른 낱말이 필요해요.",
+    "정답. find out은 '알아내다, 알아보다'라는 뜻의 표현이라 빈칸에 out이 들어가요.",
+    "find in도 '알아내다'가 되지 못해요. in은 '~안에'를 뜻해 이 문장에 맞지 않아요."
+   ],
+   "detail": "·find out은 p.128의 'Let's find out.'처럼 '알아내다'라는 뜻이고 p.177 단어 목록에도 나와요.\n·'Can you find out what time the meeting starts?'는 회의가 몇 시에 시작하는지 알아봐 달라는 말이에요.\n·find 뒤에 with, on, to, in을 넣으면 '알아내다'라는 뜻이 되지 않아서 out이 알맞아요.",
+   "tip": "find와 out이 한 덩어리로 '알아내다'가 되는 구동사로 외워요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "find out",
+     "text": "find out = 알아내다. p.128 'Let's find out.', p.177 단어 목록 '알아내다'."
+    }
+   ],
+   "passageTitle": "문장",
+   "passage": "Can you find _____ what time the meeting starts?\n그 회의가 몇 시에 시작하는지 당신이 알아볼 수 있어요?",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-07"
+  },
+  {
+   "id": "u7-Q05-b",
+   "slot": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "구동사 find out / wake up",
+   "source": "교과서 p.136 (새로 쓴 문장)",
+   "question": "다음 빈칸에 들어갈 단어로 알맞은 것은?",
+   "choices": [
+    "make",
+    "take",
+    "keep",
+    "have",
+    "wake"
+   ],
+   "answer": 5,
+   "explanation": "wake up은 '잠에서 깨다, 일어나다'라는 뜻이라 빈칸에 wake가 들어가요.",
+   "choiceExplanations": [
+    "make up은 '지어내다, 화장하다' 같은 다른 뜻이라 '잠에서 깨다'를 뜻하지 않아요(교과서 밖 일반 상식).",
+    "take up은 어떤 일을 새로 시작한다는 뜻이라 '일어나다'가 되지 않아요(교과서 밖 일반 상식).",
+    "keep up은 '계속하다'라는 뜻이라 시각에 일어난다는 문장에는 맞지 않아요(교과서 밖 일반 상식).",
+    "have up이라는 표현은 쓰지 않아서 '일어나다'라는 뜻이 되지 않아요(교과서 밖 일반 상식).",
+    "정답. wake up은 '잠에서 깨다, 일어나다'라는 뜻이라 빈칸에 wake가 들어가요."
+   ],
+   "detail": "·p.136의 'I saw the sun when I woke up.'에서 woke up은 wake up의 과거형으로 '잠에서 깼다'라는 뜻이에요.\n·'I usually wake up at six o'clock.'는 나는 보통 여섯 시에 일어난다는 말이에요.\n·up과 함께 '일어나다'가 되는 짝은 wake이고, make·take·keep·have는 다른 뜻이 되어 알맞지 않아요(교과서 밖 일반 상식).",
+   "tip": "wake와 up이 한 덩어리로 '일어나다'가 되는 구동사로 외워요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "wake up",
+     "text": "wake up = 잠에서 깨다. p.136 'I saw the sun when I woke up.'의 woke는 wake의 과거형이에요."
+    }
+   ],
+   "passageTitle": "문장 (새로 쓴 글)",
+   "passage": "I usually _____ up at six o'clock.\n나는 보통 여섯 시에 일어난다."
+  },
+  {
+   "id": "u7-Q06-a",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "접속사 when 쓰임 구분",
+   "source": "교과서 p.136, p.137 (2025 2학기 기말 18번)",
+   "question": "다음 [ ]로 표시한 when 중 쓰임이 나머지와 다른 것은?",
+   "choices": [
+    "[When] did he buy that laptop computer?",
+    "It was already dark [when] I arrived there.",
+    "[When] she opens the window, fresh air fills the room.",
+    "[When] the phone rang, was he sleeping?",
+    "[When] you finish your homework, you can watch TV."
+   ],
+   "answer": 1,
+   "explanation": "'When did he buy that laptop computer?'의 When은 '언제'를 묻는 의문사이고, 나머지 네 문장의 when은 '~할 때'를 뜻하는 접속사예요.",
+   "choiceExplanations": [
+    "정답. 'When did he buy that laptop computer?'의 When은 '언제'를 묻는 의문사이고, 나머지 네 문장의 when은 '~할 때'를 뜻하는 접속사예요.",
+    "'I arrived there'가 뒤따르는 「when + 주어 + 동사」로 '도착했을 때'라는 시간의 접속사예요. 나머지와 같은 쓰임이에요.",
+    "'she opens the window'가 뒤따르는 접속사 when으로 '창문을 열 때'라는 뜻이에요. 절 끝에 콤마가 있는 접속사 쓰임이에요.",
+    "When the phone rang은 '전화가 울렸을 때'라는 절이고 주절만 was he sleeping?이라는 의문문이에요. 의문사가 아니라 접속사 쓰임이에요.",
+    "'you finish your homework'가 뒤따르는 접속사 when으로 '숙제를 끝냈을 때'라는 뜻이에요."
+   ],
+   "detail": "·접속사 when은 '~할 때'라는 뜻으로 「when + 주어 + 동사」 형태의 절을 이끌어요(p.137).\n·p.136의 'When she was six years old, she was sick.'처럼 when절이 앞에 오면 뒤에 콤마가 오고, p.136의 'I saw the sun when I woke up.'처럼 뒤에도 올 수 있어요.\n·'When did he buy that laptop computer?'의 When은 '언제'를 묻는 의문사이고 뒤에 did he buy처럼 의문문 어순이 와요.\n·나머지 네 문장은 when 뒤에 주어와 동사가 이어진 시간의 접속사이므로 쓰임이 다른 것은 의문사 When이에요.",
+   "tip": "when 뒤에 평서문 어순이면 접속사, 의문문 어순이면 의문사예요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "when의 두 쓰임",
+     "head": [
+      "쓰임",
+      "뜻",
+      "뒤의 어순"
+     ],
+     "rows": [
+      [
+       "접속사 when(p.136~137)",
+       "~할 때",
+       "주어 + 동사"
+      ],
+      [
+       "의문사 When(교과서 밖)",
+       "언제",
+       "did he buy처럼 의문문 어순"
+      ]
+     ]
+    }
+   ],
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-18"
+  },
+  {
+   "id": "u7-Q06-b",
+   "slot": "Q06",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "접속사 when 쓰임 구분",
+   "source": "교과서 p.136, p.137",
+   "question": "다음 [ ]로 표시한 when 중 쓰임이 나머지와 다른 하나는?",
+   "choices": [
+    "[When] I was nine, my family moved to a new town.",
+    "[When] will the art show start?",
+    "We were at the museum [when] it began to rain.",
+    "[When] the music stopped, the children clapped.",
+    "Bring your umbrella [when] you go out."
+   ],
+   "answer": 2,
+   "explanation": "'When will the art show start?'의 When은 '언제'를 묻는 의문사이고, 나머지의 when은 '~할 때'를 뜻하는 접속사예요.",
+   "choiceExplanations": [
+    "'I was nine'이 뒤따르는 접속사 when으로 '내가 아홉 살이었을 때'라는 뜻이에요. 나머지와 같은 시간의 접속사예요.",
+    "정답. 'When will the art show start?'의 When은 '언제'를 묻는 의문사이고, 나머지의 when은 '~할 때'를 뜻하는 접속사예요.",
+    "'it began to rain'이 뒤따르는 접속사 when으로 '비가 오기 시작했을 때'라는 뜻이에요. 문장 뒤쪽에 온 접속사예요.",
+    "'the music stopped'가 뒤따르는 접속사 when으로 '음악이 멈췄을 때'라는 뜻이에요. 콤마 앞의 시간 절이에요.",
+    "'you go out'이 뒤따르는 접속사 when으로 '밖에 나갈 때'라는 뜻이에요. 주절 뒤에 온 접속사예요."
+   ],
+   "detail": "·새로 쓴 문장 'When will the art show start?'는 will the art show start처럼 조동사가 주어 앞에 오는 의문문이고 '미술 전시가 언제 시작해요?'라는 뜻이에요.\n·p.136의 'I saw the sun when I woke up.'처럼 when절은 주절 뒤에도, p.136의 'When he was 33, he moved to Paris.'처럼 앞에도 올 수 있고 모두 '~할 때'를 뜻해요.\n·나머지 네 문장은 when 뒤에 주어와 동사가 순서대로 이어진 접속사 쓰임이에요.",
+   "tip": "when 뒤가 '주어+동사'면 '~할 때', 의문문 어순이면 '언제'예요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "when의 두 쓰임",
+     "head": [
+      "쓰임",
+      "뜻",
+      "뒤의 어순"
+     ],
+     "rows": [
+      [
+       "접속사 when(p.136~137)",
+       "~할 때",
+       "주어 + 동사"
+      ],
+      [
+       "의문사 When(교과서 밖)",
+       "언제",
+       "did he buy처럼 의문문 어순"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q07-a",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "비교급의 형태",
+   "source": "교과서 p.136, p.137 (새로 쓴 문장)",
+   "question": "다음 문장 중 어법상 틀린 것끼리 짝지어진 것은?",
+   "choices": [
+    "ⓐ, ⓑ",
+    "ⓒ, ⓓ",
+    "ⓑ, ⓓ",
+    "ⓑ, ⓓ, ⓔ",
+    "ⓐ, ⓒ, ⓔ"
+   ],
+   "answer": 3,
+   "explanation": "ⓑ는 old에 more와 -er을 겹쳐 썼고 ⓓ는 easy의 y를 i로 바꾸지 않아서 둘 다 틀려요.",
+   "choiceExplanations": [
+    "ⓐ Sue is younger than Tom.은 young에 -er을 붙인 올바른 문장이에요. 올바른 ⓐ가 들어 있어 틀린 것끼리의 조합이 아니에요(이 문제에서 틀린 문장은 ⓑ와 ⓓ).",
+    "ⓒ Today is hotter than yesterday.는 hot의 자음을 겹쳐 쓴 올바른 문장이라 틀린 것끼리 묶이지 않아요.",
+    "정답. ⓑ는 old에 more와 -er을 겹쳐 썼고 ⓓ는 easy의 y를 i로 바꾸지 않아서 둘 다 틀려요.",
+    "ⓔ The red bag is more expensive than the blue one.은 expensive가 3음절 이상이라 more를 쓴 올바른 문장이에요. 틀린 문장은 ⓑ와 ⓓ뿐이에요.",
+    "ⓐ·ⓒ·ⓔ는 모두 비교급을 바르게 쓴 문장이라 정답은 오히려 틀린 문장들의 조합이에요."
+   ],
+   "detail": "·비교급은 p.136의 'An airplane is faster than a car.'처럼 -er을 붙이거나 'The movie is more famous than the book.'처럼 more를 붙이고 뒤에 than을 써요.\n·ⓑ my brother is more older는 old에 이미 -er을 붙이므로 more를 함께 쓰면 틀리고 older than이 맞아요(교과서 밖 일반 규칙).\n·ⓓ easy는 p.136의 'Nancy is busier than Tom.'처럼 y를 i로 바꾸고 -er을 붙여 easier라고 써야 해요.\n·ⓐ younger, ⓒ hotter, ⓔ more expensive는 p.136~137의 예문과 같은 방식으로 쓴 올바른 문장이에요.",
+   "tip": "-er을 쓰는지 more를 쓰는지, y를 i로 바꾸는지, 자음을 겹치는지 차례로 점검해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "비교급 문장 예(p.136~137)",
+     "head": [
+      "문장",
+      "비교급이 된 모양"
+     ],
+     "rows": [
+      [
+       "An airplane is faster than a car.",
+       "fast → faster"
+      ],
+      [
+       "Nancy is busier than Tom.",
+       "busy → busier"
+      ],
+      [
+       "Busan is hotter than Sokcho.",
+       "hot → hotter"
+      ],
+      [
+       "The movie is more famous than the book.",
+       "famous → more famous"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장 (새로 쓴 글)",
+   "passage": "ⓐ Sue is younger than Tom.\nⓑ My brother is more older than me.\nⓒ Today is hotter than yesterday.\nⓓ This quiz is easyer than that one.\nⓔ The red bag is more expensive than the blue one.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u7-Q07-b",
+   "slot": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "비교급의 형태",
+   "source": "교과서 p.136, p.137",
+   "question": "다음 문장 중 어법상 틀린 것끼리 짝지어진 것은?",
+   "choices": [
+    "ⓑ, ⓓ",
+    "ⓐ, ⓔ",
+    "ⓐ, ⓒ, ⓓ",
+    "ⓐ, ⓓ",
+    "ⓑ, ⓓ, ⓔ"
+   ],
+   "answer": 4,
+   "explanation": "ⓐ는 big의 자음을 겹쳐 쓰지 않았고 ⓓ는 cheap에 more를 썼으므로 둘 다 틀려요.",
+   "choiceExplanations": [
+    "ⓑ This road is longer than that one.은 long에 -er을 붙인 올바른 문장이에요. 올바른 ⓑ가 들어 있어 틀린 것끼리의 조합이 아니에요(이 문제에서 틀린 문장은 ⓐ와 ⓓ).",
+    "ⓔ That singer is more famous than this actor.는 famous가 긴 형용사라 more를 쓴 올바른 문장이에요. 틀린 것끼리의 조합이 아니에요.",
+    "ⓒ A rabbit is faster than a turtle.은 fast에 -er을 붙인 올바른 문장이에요. 틀린 문장은 ⓐ와 ⓓ뿐이에요.",
+    "정답. ⓐ는 big의 자음을 겹쳐 쓰지 않았고 ⓓ는 cheap에 more를 썼으므로 둘 다 틀려요.",
+    "ⓑ와 ⓔ는 올바른 비교급 문장이고 틀린 문장은 ⓐ와 ⓓ예요. 그래서 틀린 것끼리 묶인 조합이 아니에요."
+   ],
+   "detail": "·p.136의 'Busan is hotter than Sokcho.'처럼 자음을 한 번 더 써서 bigger로 쓰는데, ⓐ의 biger는 틀린 철자예요(big–bigger도 같은 규칙).\n·cheap은 한 음절의 짧은 형용사라 more cheap이 아니라 cheaper than으로 써야 해요(교과서 밖 일반 규칙).\n·ⓑ longer, ⓒ faster, ⓔ more famous는 올바른 비교급이에요(p.136의 faster than, more famous than 예문과 같은 모양).",
+   "tip": "짧은 형용사는 -er, 긴 형용사는 more예요. 단모음+단자음이면 자음을 겹쳐요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "비교급 문장 예(p.136~137)",
+     "head": [
+      "문장",
+      "비교급이 된 모양"
+     ],
+     "rows": [
+      [
+       "An airplane is faster than a car.",
+       "fast → faster"
+      ],
+      [
+       "Nancy is busier than Tom.",
+       "busy → busier"
+      ],
+      [
+       "Busan is hotter than Sokcho.",
+       "hot → hotter"
+      ],
+      [
+       "The movie is more famous than the book.",
+       "famous → more famous"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "문장 (새로 쓴 글)",
+   "passage": "ⓐ My bag is biger than yours.\nⓑ This road is longer than that one.\nⓒ A rabbit is faster than a turtle.\nⓓ This pencil is more cheap than that one.\nⓔ That singer is more famous than this actor.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u7-Q08-a",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "의견 묻기·말하기·공감 표현(어색한 대화)",
+   "source": "교과서 p.123 (새로 쓴 대화)",
+   "question": "다음 대화 중 가장 어색한 것은?",
+   "choices": [
+    "A: What do you think about the board game? B: I think it's fun.",
+    "A: I think the magic show is cool. B: I feel the same.",
+    "A: What do you think about my drawing? B: I think it's wonderful.",
+    "A: What do you think about the school festival? B: I think it's great.",
+    "A: What do you think about this poster? B: Yes, I do."
+   ],
+   "answer": 5,
+   "explanation": "What do you think about ~?는 의견을 묻는 말이라 Yes, I do.로 답하면 질문과 맞지 않아 어색해요.",
+   "choiceExplanations": [
+    "의견을 묻는 말에 I think it's fun.으로 의견을 말해 자연스러운 대화예요(p.123).",
+    "상대가 먼저 의견을 말했고 I feel the same.으로 공감하는 자연스러운 흐름이에요.",
+    "내 그림에 대한 의견을 물었고 wonderful로 의견을 답해 자연스러운 대화예요.",
+    "행사에 대한 의견을 묻고 great로 의견을 답해 자연스러운 대화예요.",
+    "정답. What do you think about ~?는 의견을 묻는 말이라 Yes, I do.로 답하면 질문과 맞지 않아 어색해요."
+   ],
+   "detail": "·What do you think about ~?는 어떻게 생각하는지 의견을 묻는 말이고, I think it's ~.로 의견을 답해요(p.123).\n·Yes, I do.는 Do you ~?처럼 예·아니요로 묻는 질문에 하는 대답이라 의견을 묻는 말에는 맞지 않아요.\n·상대의 의견과 같을 때는 I feel the same.으로 공감해요(p.123).",
+   "tip": "의견을 묻는 질문에는 Yes/No가 아니라 I think ...로 답해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "의견 말하기와 공감(p.123)",
+     "head": [
+      "기능",
+      "표현"
+     ],
+     "rows": [
+      [
+       "의견 묻기",
+       "What do you think about the board game?"
+      ],
+      [
+       "의견 말하기",
+       "I think it's fun."
+      ],
+      [
+       "공감 표현하기",
+       "I feel the same."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q08-b",
+   "slot": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "의견 묻기·말하기·공감 표현(어색한 대화)",
+   "source": "교과서 p.123 (새로 쓴 대화)",
+   "question": "다음 중 대화가 가장 어색한 것은?",
+   "choices": [
+    "A: What do you think about the school band? B: I feel the same.",
+    "A: What do you think about the photo exhibition? B: I think it's wonderful.",
+    "A: I think this poster is beautiful. B: I feel the same.",
+    "A: What do you think about my cat? B: I think it's cute.",
+    "A: What do you think about the movie? B: I think it's scary."
+   ],
+   "answer": 1,
+   "explanation": "I feel the same.은 상대의 의견에 공감할 때 쓰는 말인데, 질문에는 아직 의견이 없어서 대답으로 맞지 않아 어색해요.",
+   "choiceExplanations": [
+    "정답. I feel the same.은 상대의 의견에 공감할 때 쓰는 말인데, 질문에는 아직 의견이 없어서 대답으로 맞지 않아 어색해요.",
+    "의견을 묻고 I think it's wonderful.로 답하는 자연스러운 대화예요.",
+    "상대 의견에 I feel the same.으로 공감하는 자연스러운 흐름이에요(p.123).",
+    "내 고양이에 대한 의견을 묻고 cute로 의견을 답한 자연스러운 대화예요.",
+    "영화에 대한 의견을 묻고 scary로 의견을 답한 자연스러운 대화예요."
+   ],
+   "detail": "·I feel the same.은 앞에서 상대가 말한 의견에 공감하는 표현이에요(p.123).\n·A가 What do you think about the school band?로 의견을 물었으므로 B는 I think it's ~.처럼 자기 의견을 먼저 말해야 해요.\n·의견이 아직 나오지 않은 상태에서 I feel the same.이라고 하면 무엇에 공감하는지 알 수 없어 어색해요.",
+   "tip": "공감 표현은 상대가 먼저 의견을 말한 뒤에 써요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "의견 말하기와 공감(p.123)",
+     "head": [
+      "기능",
+      "표현"
+     ],
+     "rows": [
+      [
+       "의견 묻기",
+       "What do you think about the board game?"
+      ],
+      [
+       "의견 말하기",
+       "I think it's fun."
+      ],
+      [
+       "공감 표현하기",
+       "I feel the same."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q09-a",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화 순서 배열",
+   "source": "교과서 p.122 (2025 2학기 기말 17번)",
+   "question": "대화의 흐름상 (A)~(E)를 순서대로 알맞게 배열한 것은?",
+   "choices": [
+    "(B) - (D) - (E) - (C) - (A)",
+    "(C) - (A) - (D) - (B) - (E)",
+    "(D) - (E) - (B) - (A) - (C)",
+    "(C) - (E) - (D) - (B) - (A)",
+    "(D) - (A) - (C) - (E) - (B)"
+   ],
+   "answer": 2,
+   "explanation": "(C) 의견 말하기 → (A) 공감 → (D) 하고 싶다는 말 → (B) 디자인이 네 개라는 대답 → (E) 꽃 디자인 의견 묻기 순서가 자연스러워요.",
+   "choiceExplanations": [
+    "(B) Sure. There are four designs.가 맨 앞에 오면 아직 하고 싶다는 말이 없어 '물론이야'라는 대답이 어색해요.",
+    "정답. (C) 의견 말하기 → (A) 공감 → (D) 하고 싶다는 말 → (B) 디자인이 네 개라는 대답 → (E) 꽃 디자인 의견 묻기 순서가 자연스러워요.",
+    "(D) I want to get a face painting, too.가 바로 이어지면 앞의 What do you think about it? 질문에 의견이 아닌 바람으로 답해 흐름이 끊겨요.",
+    "(E) 꽃 디자인에 대한 의견 묻기가 (D) 페이스 페인팅을 하고 싶다는 말보다 앞서면 하고 싶다는 말 없이 디자인을 고르는 순서가 돼요.",
+    "(D)로 시작하면 질문에 대한 의견이 나오기 전에 하고 싶다는 말이 먼저 나오고, 곧바로 I feel the same.이 이어져 공감할 의견이 없어요."
+   ],
+   "detail": "·앞의 What do you think about it?에 답하는 말은 (C) I think it's cute.이고, 이어서 (A) I feel the same.으로 공감해요(p.122).\n·Minho가 (D) 자신도 하고 싶다고 말하면 (B) Sure. There are four designs.로 디자인이 네 개라고 답해요.\n·마지막에 (E) Hmm, what do you think about this flower design?으로 꽃 디자인에 대한 의견을 묻는 흐름이에요.",
+   "tip": "질문 → 의견 → 공감 → 요청 → 대답의 흐름으로 순서를 세워요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "의견 대화의 흐름",
+     "text": "의견을 묻는 말(What do you think about ~?) → 의견 말하기(I think ...) → 공감 표현하기(I feel the same.)로 이어져요(p.122~123)."
+    }
+   ],
+   "passageTitle": "대화",
+   "passage": "G: Suyeon, you got a face painting.\nB: Yes, Minho. What do you think about it?\n(A) I feel the same.\n(B) Sure. There are four designs.\n(C) I think it's cute. I like the cat.\n(D) I want to get a face painting, too.\n(E) Hmm, what do you think about this flower design?\n*G: Girl B: Boy",
+   "fixedOrder": true,
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-17"
+  },
+  {
+   "id": "u7-Q09-b",
+   "slot": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화 순서 배열",
+   "source": "교과서 p.122, p.123",
+   "question": "대화의 흐름상 (A)~(E)를 순서대로 알맞게 배열한 것은?",
+   "choices": [
+    "(A) - (C) - (D) - (B) - (E)",
+    "(D) - (C) - (A) - (B) - (E)",
+    "(D) - (A) - (C) - (B) - (E)",
+    "(D) - (A) - (B) - (C) - (E)",
+    "(A) - (D) - (C) - (E) - (B)"
+   ],
+   "answer": 3,
+   "explanation": "(D) 의견 묻기 → (A) 의견 말하기 → (C) 공감과 참가 제안 → (B) 승낙 → (E) 시작하자는 말 순서가 자연스러워요.",
+   "choiceExplanations": [
+    "(C) 공감과 참가 제안이 먼저 나온 뒤에 (D) What do you think about it?으로 의견을 다시 물으면 이미 의견을 나눈 뒤에 처음 묻는 꼴이 되고, (C)의 참가 제안에 (B) Sure.가 바로 이어지지 못해요.",
+    "(D) 의견을 묻는 말 바로 뒤에 (C) I feel the same.이 오면 공감할 의견이 아직 나오지 않았고, 같은 사람(B)이 연달아 말하는 흐름이 돼요.",
+    "정답. (D) 의견 묻기 → (A) 의견 말하기 → (C) 공감과 참가 제안 → (B) 승낙 → (E) 시작하자는 말 순서가 자연스러워요.",
+    "(B) Sure. Let's join it together.는 함께하자는 제안에 대한 대답이라서 (C) Do you want to join it?보다 먼저 올 수 없어요.",
+    "(A) 뒤에 (D)가 이어지면 같은 의견을 다시 묻는 셈이고, (E) Great! Let's start drawing이 (B) Sure.보다 앞서 승낙 없이 시작하자고 하는 꼴이에요."
+   ],
+   "detail": "·그림 대회가 있다는 말에 (D) What do you think about it?으로 의견을 묻고, (A) I think it's wonderful.로 의견을 말해요(p.122~123).\n·그다음 (C) I feel the same.으로 공감하면서 참가하겠느냐고 묻고, (B) Sure.로 받아들여요.\n·마지막으로 (E) Great! Let's start drawing after school.로 대화를 마무리하는 흐름이에요.",
+   "tip": "의견을 묻는 말이 나온 뒤에 의견, 공감, 제안 순으로 이어져요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "의견 대화의 흐름",
+     "text": "의견을 묻는 말(What do you think about ~?) → 의견 말하기(I think ...) → 공감 표현하기(I feel the same.)로 이어져요(p.122~123)."
+    }
+   ],
+   "passageTitle": "대화 (새로 쓴 글)",
+   "passage": "G: Jun, there is a drawing contest next week.\n(A) G: I think it's wonderful. We can show our own ideas.\n(B) G: Sure. Let's join it together.\n(C) B: I feel the same. Do you want to join it?\n(D) B: What do you think about it?\n(E) B: Great! Let's start drawing after school.\n*G: Girl B: Boy",
+   "fixedOrder": true
+  },
+  {
+   "id": "u7-Q10-a",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화 빈칸 형용사·표현",
+   "source": "교과서 p.123, p.125, p.126 (새로 쓴 대화)",
+   "question": "다음 대화의 흐름상 (A)~(C)에 들어갈 말로 알맞게 짝지어진 것은?",
+   "choices": [
+    "amazed - right - different",
+    "amazing - rights - different",
+    "amazing - right - difference",
+    "amazing - right - different",
+    "amazing - right - differently"
+   ],
+   "answer": 4,
+   "explanation": "(A)는 쇼를 설명하는 amazing, (B)는 상대 말이 맞다는 right, (C)는 '다른'을 뜻하는 different예요.",
+   "choiceExplanations": [
+    "it was 뒤에서 쇼를 설명하려면 amazing이 알맞아요. 사람이 놀란 느낌을 나타내는 amazed는 쇼를 설명하는 말로 어울리지 않아요(교과서 밖 일반 상식).",
+    "You're 뒤에는 '맞는'이라는 형용사 right가 와요. 복수형 rights는 틀려요(p.125에 Jiho, you're right.가 있어요).",
+    "was 뒤에는 상태를 나타내는 형용사가 와야 해서 명사 difference는 틀려요. '다른'은 형용사 different예요(p.126).",
+    "정답. (A)는 쇼를 설명하는 amazing, (B)는 상대 말이 맞다는 right, (C)는 '다른'을 뜻하는 different예요.",
+    "It was 뒤에는 쇼를 설명하는 형용사가 와야 해서 부사 differently는 틀려요. 형용사 different가 알맞아요."
+   ],
+   "detail": "·p.123에서 I think it's amazing.처럼 대상이 놀랍다고 말할 때 amazing을 써요.\n·상대의 말이 맞다고 할 때는 p.125의 Jiho, you're right.처럼 You're right.라고 해요.\n·'다른'은 p.126 Word Power에서 same(같은)의 반대말로 나오는 형용사 different예요.",
+   "tip": "사물을 설명하는 형용사와 상대 말에 동의하는 표현을 문장 틀로 외워요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "의견 말하기와 공감(p.123)",
+     "head": [
+      "기능",
+      "표현"
+     ],
+     "rows": [
+      [
+       "의견 묻기",
+       "What do you think about the board game?"
+      ],
+      [
+       "의견 말하기",
+       "I think it's fun."
+      ],
+      [
+       "공감 표현하기",
+       "I feel the same."
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "대화 (새로 쓴 글)",
+   "passage": "Jiho: I saw a magic show yesterday. I think it was (A).\nYena: You're (B)! I saw it, too. It was (C) from other shows."
+  },
+  {
+   "id": "u7-Q10-b",
+   "slot": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화 빈칸 형용사·표현",
+   "source": "교과서 p.123, p.125, p.126",
+   "question": "다음 대화의 흐름상 (A)~(C)에 들어갈 말로 알맞게 짝지어진 것은?",
+   "choices": [
+    "excited - so - boring",
+    "exciting - it - boring",
+    "exciting - so - bored",
+    "excited - it - bored",
+    "exciting - so - boring"
+   ],
+   "answer": 5,
+   "explanation": "(A)는 대회를 설명하는 exciting, (B)는 동의하지 않을 때 쓰는 I don't think so.의 so, (C)는 boring이에요.",
+   "choiceExplanations": [
+    "singing contest가 신난다는 뜻이면 사물을 설명하는 exciting을 써요. 사람이 느끼는 감정을 나타내는 excited는 It's 뒤에 어울리지 않아요(교과서 밖 일반 상식).",
+    "동의하지 않을 때는 I don't think so.라고 말해요(p.125). I don't think it은 뜻이 이어지지 않아요.",
+    "I think it's 뒤에는 대회를 설명하는 boring(지루한)이 와야 해요. 사람의 느낌을 나타내는 bored는 이 문장에 어울리지 않아요(교과서 밖 일반 상식).",
+    "(A)는 exciting, (B)는 so, (C)는 boring이 알맞아요. 세 군데 모두 다른 형태라 틀려요(excited·bored는 교과서 밖 일반 상식).",
+    "정답. (A)는 대회를 설명하는 exciting, (B)는 동의하지 않을 때 쓰는 I don't think so.의 so, (C)는 boring이에요."
+   ],
+   "detail": "·p.123에서 I think it's exciting.처럼 대상이 신난다고 말할 때 exciting을 쓰고, p.126에서는 I think it's boring.으로 지루하다고 말해요.\n·동의하지 않을 때는 I don't think so.라고 말한 뒤 자기 의견을 덧붙여요(p.125 Speaking Tip).\n·앤디는 exciting이라고 했고 예나는 so로 동의하지 않은 뒤 boring이라고 의견을 말해요.",
+   "tip": "대상을 설명할 때는 -ing 형용사(exciting, boring)를 써요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "의견 말하기와 공감(p.123)",
+     "head": [
+      "기능",
+      "표현"
+     ],
+     "rows": [
+      [
+       "의견 묻기",
+       "What do you think about the board game?"
+      ],
+      [
+       "의견 말하기",
+       "I think it's fun."
+      ],
+      [
+       "공감 표현하기",
+       "I feel the same."
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "대화 (새로 쓴 글)",
+   "passage": "Andy: I think the singing contest is (A). I can hear many songs.\nYena: I don't think (B). The songs are too long. I think it's (C)."
+  },
+  {
+   "id": "u7-Q11-a",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "반 고흐 글 내용 일치",
+   "source": "교과서 p.129 (2025 2학기 기말 15번)",
+   "question": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "All of Van Gogh's self-portraits are not the same.",
+    "Van Gogh was famous during his life.",
+    "Van Gogh was from Paris.",
+    "Van Gogh's self-portraits were popular.",
+    "Van Gogh only wanted to draw models."
+   ],
+   "answer": 1,
+   "explanation": "고흐의 자화상은 'They are all different.'라서 같은 그림이 하나도 없다는 보기가 글과 일치해요.",
+   "choiceExplanations": [
+    "정답. 고흐의 자화상은 'They are all different.'라서 같은 그림이 하나도 없다는 보기가 글과 일치해요.",
+    "글에 'He was not famous in his lifetime.'(p.129)이라고 되어 있어 생전에는 유명하지 않았어요.",
+    "고흐는 Dutch artist(네덜란드 화가)이고 33세에 파리로 이사했을 뿐 파리 출신이 아니에요.",
+    "글에는 자화상이 인기 있었다는 내용이 없고, 생전에는 유명하지 않았다고만 나와요.",
+    "글에는 고흐가 사람을 그리고 싶었지만 모델이 너무 비싸서 자신을 그렸다고 나와요. 모델만 그리고 싶어 했다는 내용이 아니에요."
+   ],
+   "detail": "·p.129에 'He painted 36 self-portraits. They are all different.'라고 되어 있어 자화상이 서로 다르다는 뜻이에요.\n·보기의 All ... are not the same은 '자화상이 모두 다르다, 곧 같은 것이 하나도 없다'로 읽을 수 있어 글의 '모두 다르다'와 같은 뜻이에요.\n·나머지 보기는 생전 명성, 출신, 인기, 그리는 대상에서 글의 내용과 달라요.",
+   "tip": "일치 문제는 보기마다 글의 해당 문장을 찾아 확인해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "p.129에서 확인할 곳",
+     "text": "생전에는 유명하지 않았다는 문장 / 33세에 파리로 이사했다는 문장 / He painted 36 self-portraits. They are all different."
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "Who is your favorite artist? What does she or he look like? Some artists painted self-portraits. Why did they paint themselves?\nVincent van Gogh was a Dutch artist. He was not famous in his lifetime. When he was 33, he moved to Paris. He wanted to paint people, but models were too expensive. He thought, \"I don't have money for a model. What can I do?\" So, Van Gogh started to paint himself. (A) He painted 36 self-portraits. They are all different. Look at these two paintings. One is brighter than (B) _____ . Which one do you like?",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-15"
+  },
+  {
+   "id": "u7-Q11-b",
+   "slot": "Q11",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "반 고흐 글 내용 일치",
+   "source": "새로 쓴 글 (교과서 p.129 구조 참고)",
+   "question": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "Hajin joined the art club last year.",
+    "Hajin finished three paintings.",
+    "The weather was good every day that week.",
+    "The three paintings are the same.",
+    "Hajin likes the first painting the best."
+   ],
+   "answer": 2,
+   "explanation": "글에서 Hajin은 일주일 동안 그림 세 점을 끝냈다고 했어요.",
+   "choiceExplanations": [
+    "글에서 Hajin은 last month에 미술 동아리에 들어갔다고 했어요. last year라는 내용은 없어요.",
+    "정답. 글에서 Hajin은 일주일 동안 그림 세 점을 끝냈다고 했어요.",
+    "글에는 비가 매일 왔다고 나와요. 맑았다는 내용은 반대예요.",
+    "글에서 세 그림은 모두 다르다(They are all different.)고 했어요. 같다는 내용은 반대예요.",
+    "글에서는 세 번째 그림이 좋다고 했어요. 첫 번째 그림이라는 내용은 일치하지 않아요."
+   ],
+   "detail": "·글의 'He finished three paintings in a week.'가 보기의 내용과 같아요.\n·나머지 보기는 동아리에 들어간 때, 날씨, 그림의 모양, 좋아하는 그림에서 글과 달라요.\n·일치 문제는 보기마다 글의 해당 문장을 찾아 확인해요.",
+   "tip": "보기의 시기·숫자·반대 내용을 글과 꼼꼼히 비교해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "글의 요점",
+     "text": "하진은 비가 와서 집에서 창밖 풍경을 세 점 그렸고 그림은 모두 다르다."
+    }
+   ],
+   "passageTitle": "글 (새로 쓴 글)",
+   "passage": "Hajin joined the art club last month. He wanted to paint his school, but it rained every day. So he stayed at home and painted the view from his window. He finished three paintings in a week. They are all different. In the first one, the sky is dark. In the third one, the sky is bright. Hajin likes the third one."
+  },
+  {
+   "id": "u7-Q12-a",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "one / the other",
+   "source": "교과서 p.129 (2025 2학기 기말 16번)",
+   "question": "윗글의 (B)에 들어갈 말로 알맞은 것은?",
+   "choices": [
+    "another",
+    "other",
+    "the other",
+    "others",
+    "the others"
+   ],
+   "answer": 3,
+   "explanation": "두 그림 중 하나와 남은 하나를 비교하므로 One ~, the other ~의 the other가 알맞아요.",
+   "choiceExplanations": [
+    "another는 '또 다른 하나'로 여러 개 중 하나를 말할 때 써요. 이 글은 두 그림 중 하나와 남은 하나를 비교하므로 맞지 않아요(교과서 밖 일반 상식).",
+    "other는 뒤에 명사가 오는 형용사라 단독으로 쓸 수 없어요. 앞에 the가 필요해요.",
+    "정답. 두 그림 중 하나와 남은 하나를 비교하므로 One ~, the other ~의 the other가 알맞아요.",
+    "others는 '다른 것들'로 여러 개를 가리켜요. 두 그림 중 남은 하나를 가리키는 자리에는 맞지 않아요(교과서 밖 일반 상식).",
+    "the others는 남은 여러 개를 가리켜요. 두 그림 중 남은 하나이므로 단수 the other가 알맞아요(교과서 밖 일반 상식)."
+   ],
+   "detail": "·p.129에서 'One is brighter than the other.'처럼 정해진 두 대상은 one과 the other로 나타내요.\n·글에서 'these two paintings'라고 두 개를 말하므로 한 그림이 밝다면 나머지 하나는 the other예요.\n·another, others, the others는 대상이 셋 이상일 때 쓰고, other는 단독으로 쓸 수 없어요(교과서 밖 일반 상식).",
+   "tip": "대상이 둘이면 one과 the other, 셋 이상이면 another·others를 써요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "one ~, the other ~",
+     "text": "정해진 두 대상 중 하나는 one, 나머지 하나는 the other로 써요. p.129: One is brighter than the other."
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "Who is your favorite artist? What does she or he look like? Some artists painted self-portraits. Why did they paint themselves?\nVincent van Gogh was a Dutch artist. He was not famous in his lifetime. When he was 33, he moved to Paris. He wanted to paint people, but models were too expensive. He thought, \"I don't have money for a model. What can I do?\" So, Van Gogh started to paint himself. (A) He painted 36 self-portraits. They are all different. Look at these two paintings. One is brighter than (B) _____ . Which one do you like?",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-16"
+  },
+  {
+   "id": "u7-Q12-b",
+   "slot": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "one / the other",
+   "source": "새로 쓴 글 (교과서 p.129 구조 참고)",
+   "question": "윗글의 (A)에 들어갈 말로 알맞은 것은?",
+   "choices": [
+    "another",
+    "other",
+    "others",
+    "the other",
+    "the others"
+   ],
+   "answer": 4,
+   "explanation": "새가 두 마리이므로 하나는 흰색이고 나머지 하나는 the other로 나타내요.",
+   "choiceExplanations": [
+    "another는 여러 개 중 하나를 말할 때 써요. 글에는 새가 두 마리뿐이므로 one과 짝이 되는 말로 맞지 않아요(교과서 밖 일반 상식).",
+    "other는 단독으로 쓰지 못하고 뒤에 명사가 필요해요. 이 자리에는 다른 한 마리를 가리키는 대명사가 와야 해요.",
+    "others는 여러 마리를 가리켜요. 글에는 한 마리가 남으므로 단수 표현이 필요해요(교과서 밖 일반 상식).",
+    "정답. 새가 두 마리이므로 하나는 흰색이고 나머지 하나는 the other로 나타내요.",
+    "the others는 남은 여러 개를 가리켜요. 두 마리 중 남은 한 마리이므로 단수가 알맞아요(교과서 밖 일반 상식)."
+   ],
+   "detail": "·글에서 Mina는 two pet birds(새 두 마리)를 키우므로 정해진 두 대상이에요(p.129의 one ~ the other).\n·한 마리가 white라면 남은 한 마리는 the other로 쓰고 뒤의 동사 is와 단수로 맞아요.\n·another·others·the others는 대상이 셋 이상일 때 쓰는 표현이고 other는 명사 앞 형용사예요(교과서 밖 일반 상식).",
+   "tip": "정해진 둘 중 남은 하나는 the other예요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "one ~, the other ~",
+     "text": "정해진 두 대상 중 하나는 one, 나머지 하나는 the other로 써요. p.129: One is brighter than the other."
+    }
+   ],
+   "passageTitle": "글 (새로 쓴 글)",
+   "passage": "Mina has two pet birds. One is white, and (A) _____ is blue. She feeds them every morning."
+  },
+  {
+   "id": "u7-Q13-a",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "답할 수 없는 질문(독해)",
+   "source": "교과서 p.130, p.131 (2025 2학기 기말 19번)",
+   "question": "윗글을 읽고 답할 수 없는 질문은?",
+   "choices": [
+    "Where was Kahlo from?",
+    "When did Kahlo have her bus accident?",
+    "How many self-portraits did Kahlo paint?",
+    "What do Van Gogh and Kahlo have in common?",
+    "What kinds of colors are in Kahlo's self-portraits?"
+   ],
+   "answer": 5,
+   "explanation": "글에는 칼로 자화상의 색에 관한 내용이 없어서 색의 종류는 답할 수 없어요.",
+   "choiceExplanations": [
+    "글의 첫 문장 'Frida Kahlo was a Mexican artist.'(p.130)로 멕시코 출신임을 알 수 있어 답할 수 있어요.",
+    "'When she was 18, she was in a terrible bus accident.'(p.130)에서 18세 때라고 답할 수 있어요.",
+    "'She painted 55 self-portraits in her lifetime.'에서 55점이라고 답할 수 있어요.",
+    "'They touch the hearts of many people.'(p.131)로 공통점을 답할 수 있어요.",
+    "정답. 글에는 칼로 자화상의 색에 관한 내용이 없어서 색의 종류는 답할 수 없어요."
+   ],
+   "detail": "·p.130 글은 칼로의 출신(Mexican artist), 사고 시기(18세), 자화상의 수(55점)를 알려 줘요.\n·p.131 마지막 문단은 두 화가의 공통점으로 많은 사람의 마음을 감동시킨다고 해요.\n·그러나 자화상에 어떤 색이 쓰였는지는 글에 한마디도 나오지 않아 답할 수 없어요.",
+   "tip": "답할 수 없는 질문은 글에서 근거 문장을 찾을 수 없는 것이에요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "글에서 알 수 있는 것",
+     "text": "출신: Mexican artist / 사고: 18세 버스 사고 / 자화상 수: 55점 / 공통점: 사람들의 마음을 감동시킴"
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "Frida Kahlo was a Mexican artist. When she was six years old, she was very sick. Her right leg became weaker than her left leg. But she thought, \"I will get well. I will help sick people like me.\" When she was 18, she was in a terrible bus accident. She stayed in the hospital for a long time. Kahlo said to herself, \"I am stronger than anyone.\" So, Kahlo started to paint herself. She painted 55 self-portraits in her lifetime. Look at her paintings. Isn't she strong?\nVan Gogh and Kahlo painted themselves for different reasons. But their paintings have one thing in common. They touch the hearts of many people.",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-19"
+  },
+  {
+   "id": "u7-Q13-b",
+   "slot": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "답할 수 없는 질문(독해)",
+   "source": "새로 쓴 글 (교과서 p.134 소재 참고)",
+   "question": "윗글을 읽고 답할 수 없는 질문은?",
+   "choices": [
+    "What did Tony eat for lunch?",
+    "Who did Tony visit the museum with?",
+    "What time did they arrive at the museum?",
+    "What painting did Tony like?",
+    "How did they go home?"
+   ],
+   "answer": 1,
+   "explanation": "글에는 점심 식사에 대한 내용이 없어서 무엇을 먹었는지는 답할 수 없어요.",
+   "choiceExplanations": [
+    "정답. 글에는 점심 식사에 대한 내용이 없어서 무엇을 먹었는지는 답할 수 없어요.",
+    "글에 'with his sister'라고 되어 있어 누구와 갔는지 답할 수 있어요.",
+    "글에 도착 시각이 ten o'clock이라고 나와 답할 수 있어요.",
+    "글에서 Tony는 바다 그림을 좋아했다고 했어요. 답할 수 있어요.",
+    "글에서 집에 버스로 갔다고 했어요. 답할 수 있어요."
+   ],
+   "detail": "·글에는 함께 간 사람(his sister), 도착 시각(10시), 좋아한 그림(바다 그림), 집에 간 방법(버스)이 나와요.\n·하지만 점심으로 무엇을 먹었는지는 글에 나와 있지 않아요.\n·답할 수 없는 질문은 글에서 근거 문장을 찾을 수 없는 질문이에요.",
+   "tip": "질문마다 글에서 근거를 찾아 가며 확인해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "글에서 알 수 있는 것",
+     "text": "함께 간 사람: his sister / 도착: ten o'clock / 좋아한 그림: the sea / 귀가: by bus"
+    }
+   ],
+   "passageTitle": "글 (새로 쓴 글)",
+   "passage": "Last Saturday, Tony visited the city art museum with his sister. They arrived at ten o'clock. The museum was very big. Tony liked a painting of the sea because the colors were bright. His sister bought a postcard. They stayed there for two hours and went home by bus."
+  },
+  {
+   "id": "u7-Q14-a",
+   "slot": "Q14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "미술 작품 소개 글 읽기",
+   "source": "교과서 p.134 (새로 쓴 글)",
+   "question": "윗글의 내용과 일치하지 않는 것은?",
+   "choices": [
+    "Spring Garden은 2025년에 그려졌다.",
+    "Rainy Day의 색은 밝다.",
+    "Spring Garden에는 꽃이 많이 있다.",
+    "Rainy Day에는 우산이 두 개 있다.",
+    "글쓴이는 Spring Garden을 볼 때 따뜻함을 느낀다."
+   ],
+   "answer": 2,
+   "explanation": "글에서 Rainy Day의 색은 dark(어두운)라고 했으므로 색이 밝다는 보기가 일치하지 않아요.",
+   "choiceExplanations": [
+    "글에 Sora가 2025년에 그렸다고 나와 있어 글과 일치해요.",
+    "정답. 글에서 Rainy Day의 색은 dark(어두운)라고 했으므로 색이 밝다는 보기가 일치하지 않아요.",
+    "글에 many flowers가 있다고 했어서 글과 일치해요.",
+    "글에 two umbrellas가 있다고 했어서 글과 일치해요.",
+    "글에서 I feel warm when I see it.이라고 했어서 일치해요."
+   ],
+   "detail": "·글의 두 번째 작품 소개에서 'The colors are dark, so I feel quiet when I see it.'이라고 해서 Rainy Day의 색은 어두워요.\n·작품명과 화가, 연도, 보이는 것, 감상을 차례로 소개하는 구성은 p.134 My Writing 예시 글과 같아요.\n·나머지 보기는 연도, 꽃, 우산, 글쓴이의 느낌이 모두 글에 나온 대로예요.",
+   "tip": "일치하지 않는 것은 반대되는 낱말(밝은/어두운)이 바뀐 보기를 찾아요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "작품 소개 글의 구성(p.134)",
+     "text": "작품명·화가·제작 연도 → 작품에서 보이는 것(There is/are ~) → 감상(I feel ~) 순서로 써요."
+    }
+   ],
+   "passageTitle": "글 (새로 쓴 글)",
+   "passage": "Welcome to our school art show. The first painting is Spring Garden. Sora painted it in 2025. There are many flowers and a small bench in the painting. The colors are bright, so I feel warm when I see it.\nThe second painting is Rainy Day. Dohyun painted it in 2024. There are two umbrellas in the painting. The colors are dark, so I feel quiet when I see it."
+  },
+  {
+   "id": "u7-Q14-b",
+   "slot": "Q14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "미술 작품 소개 글 읽기",
+   "source": "교과서 p.134 (새로 쓴 글)",
+   "question": "윗글의 내용과 일치하는 것은?",
+   "choices": [
+    "Yuri painted The Blue Boat.",
+    "There are two boats in the painting.",
+    "Suho Park painted The Blue Boat in 2022.",
+    "There is no sea in the painting.",
+    "Yuri feels excited when she looks at the painting."
+   ],
+   "answer": 3,
+   "explanation": "글에서 Suho Park이 2022년에 The Blue Boat를 그렸다고 해서 일치해요.",
+   "choiceExplanations": [
+    "글에서 그림을 그린 사람은 Suho Park이고 Yuri는 소개하는 사람이에요.",
+    "글에는 a small boat(작은 배 한 척)가 있다고 했어요. 두 척이 아니에요.",
+    "정답. 글에서 Suho Park이 2022년에 The Blue Boat를 그렸다고 해서 일치해요.",
+    "글에서 the sea가 그림에 있다고 했어요. 바다가 없다는 내용은 반대예요.",
+    "글에서 Yuri는 peaceful(평화로운)하다고 느낀다고 했어요. excited가 아니에요."
+   ],
+   "detail": "·글의 'The artist is Suho Park. He painted it in 2022.'가 보기의 내용과 같아요.\n·작품명, 화가, 연도를 먼저 소개하고 그림에서 보이는 것과 감상을 이어 쓰는 구성이에요(p.134).\n·나머지 보기는 그린 사람, 배의 수, 바다의 유무, 느낌에서 글과 달라요.",
+   "tip": "일치하는 것을 고를 때는 사람·숫자·감정이 글과 같은지 확인해요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "작품 소개 글의 구성(p.134)",
+     "text": "작품명·화가·제작 연도 → 작품에서 보이는 것(There is/are ~) → 감상(I feel ~) 순서로 써요."
+    }
+   ],
+   "passageTitle": "글 (새로 쓴 글)",
+   "passage": "Hello, I am Yuri. I want to introduce my favorite painting, The Blue Boat. The artist is Suho Park. He painted it in 2022. There is a small boat on the sea in the painting. The sea is calm, so I feel peaceful when I look at it."
+  },
+  {
+   "id": "u7-Q15-a",
+   "slot": "Q15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "touch의 문맥 속 뜻",
+   "source": "교과서 p.131, p.178 (새로 쓴 문장)",
+   "question": "다음 문장의 [ ] 안 touch 중 뜻이 나머지와 다른 것은?",
+   "choices": [
+    "Don't [touch] the hot pot.",
+    "The little boy wants to [touch] the snow.",
+    "Please do not [touch] the wet paint on the wall.",
+    "The singer's voice can [touch] many hearts.",
+    "She was afraid to [touch] the big dog."
+   ],
+   "answer": 4,
+   "explanation": "가수의 목소리가 많은 사람의 마음을 touch한다는 문장에서는 '감동시키다'라는 뜻이고, 나머지는 '만지다'예요.",
+   "choiceExplanations": [
+    "뜨거운 냄비를 '만지지 말라'는 뜻이에요. 몸으로 대는 '만지다'라서 나머지와 같은 뜻이에요.",
+    "눈을 손으로 '만지고' 싶다는 뜻이에요. 감정이 아닌 '만지다'예요.",
+    "마르지 않은 페인트에 손을 '대지 말라'는 뜻이에요. '만지다'예요.",
+    "정답. 가수의 목소리가 많은 사람의 마음을 touch한다는 문장에서는 '감동시키다'라는 뜻이고, 나머지는 '만지다'예요.",
+    "큰 개를 '만지기'가 무서웠다는 뜻이에요. 몸으로 대는 '만지다'예요."
+   ],
+   "detail": "·touch는 p.178 단어 목록에서 '감동시키다; 만지다'로 뜻이 둘이에요.\n·p.131의 'They touch the hearts of many people.'은 그림이 사람들의 마음을 감동시킨다는 뜻이에요.\n·'The singer's voice can touch many hearts.'도 목소리가 마음을 움직인다는 뜻이라 '감동시키다'이고, 나머지 네 문장은 손으로 '만지다'예요.",
+   "tip": "touch 뒤에 마음(hearts)이 오면 '감동시키다', 물건이 오면 '만지다'로 풀이해요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "touch의 두 뜻(p.178 단어 목록)",
+     "head": [
+      "뜻",
+      "예"
+     ],
+     "rows": [
+      [
+       "감동시키다",
+       "p.131: They touch the hearts of many people."
+      ],
+      [
+       "만지다",
+       "Don't touch the hot pot. (새로 쓴 문장)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q15-b",
+   "slot": "Q15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "touch의 문맥 속 뜻",
+   "source": "교과서 p.131, p.178 (새로 쓴 문장)",
+   "question": "다음 문장의 [ ] 안 touch의 뜻이 '감동시키다'인 것은?",
+   "choices": [
+    "Can you [touch] the ceiling with your hand?",
+    "Don't [touch] the stove. It is hot.",
+    "He tried to [touch] the butterfly.",
+    "My cat likes to [touch] my face with her paw.",
+    "The movie [touched] many students' hearts."
+   ],
+   "answer": 5,
+   "explanation": "영화가 많은 학생의 마음을 touch했다는 문장에서 touch는 '감동시키다'라는 뜻이에요.",
+   "choiceExplanations": [
+    "손이 천장에 닿는지 묻는 말이라 '만지다'예요.",
+    "뜨거운 난로를 '만지지 말라'는 경고예요. 감정과는 관계가 없어요.",
+    "나비에게 손을 뻗어 '만지려고' 했다는 뜻이라 마음과는 관계가 없어요.",
+    "고양이가 발로 얼굴을 '건드린다'는 뜻이라 몸에 닿는 '만지다'예요.",
+    "정답. 영화가 많은 학생의 마음을 touch했다는 문장에서 touch는 '감동시키다'라는 뜻이에요."
+   ],
+   "detail": "·touch는 p.178 단어 목록에서 '감동시키다; 만지다'로 뜻이 둘이에요.\n·p.131의 'They touch the hearts of many people.'처럼 마음(hearts)을 목적어로 하면 '감동시키다'예요.\n·나머지 네 문장은 손이나 발로 어떤 것에 닿는 '만지다'라서 정답이 아니에요.",
+   "tip": "목적어가 사람의 마음이면 touch는 '감동시키다'예요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "touch의 두 뜻(p.178 단어 목록)",
+     "head": [
+      "뜻",
+      "예"
+     ],
+     "rows": [
+      [
+       "감동시키다",
+       "p.131: They touch the hearts of many people."
+      ],
+      [
+       "만지다",
+       "Don't touch the hot pot. (새로 쓴 문장)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7-Q16-a",
+   "slot": "Q16",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해 사건 순서(원인과 결과)",
+   "source": "새로 쓴 글 (교과서 p.130 내용 요약)",
+   "question": "윗글에서 Kahlo에게 일어난 일을 순서대로 배열한 것은?\n(A) 버스 충돌로 다쳤다.\n(B) 자기 얼굴을 그리기 시작했다.\n(C) 오른쪽 다리가 왼쪽 다리보다 약해졌다.\n(D) 오랫동안 병원에 머물렀다.",
+   "choices": [
+    "(C) - (A) - (D) - (B)",
+    "(A) - (C) - (D) - (B)",
+    "(C) - (D) - (A) - (B)",
+    "(C) - (A) - (B) - (D)",
+    "(D) - (C) - (A) - (B)"
+   ],
+   "answer": 1,
+   "explanation": "여섯 살에 오른쪽 다리가 약해졌고, 18세에 버스 충돌로 다쳤으며, 병원에 오래 머문 뒤 자기 얼굴을 그리기 시작했어요.",
+   "choiceExplanations": [
+    "정답. 여섯 살에 오른쪽 다리가 약해졌고, 18세에 버스 충돌로 다쳤으며, 병원에 오래 머문 뒤 자기 얼굴을 그리기 시작했어요.",
+    "버스 충돌은 18세 때이고 오른쪽 다리가 약해진 것은 여섯 살 때예요. 그래서 충돌이 다리보다 먼저일 수 없어요.",
+    "병원에 오래 머문 것은 버스 충돌로 다친 뒤의 일이에요(Then). 그래서 충돌(A)보다 먼저 올 수 없어요.",
+    "자기 얼굴을 그리기 시작한 것은 병원에 오래 머문 뒤(After that)의 일이에요. 그래서 병원에 머문 일보다 앞서지 않아요.",
+    "병원에 오래 머문 일이 맨 앞에 오면 다리가 약해진 일과 충돌이 그 뒤가 돼요. 하지만 병원은 충돌 뒤에 머문 곳이라 순서가 맞지 않아요."
+   ],
+   "detail": "·p.130의 'Her right leg became weaker than her left leg.'는 여섯 살 때의 일이라 가장 먼저 일어난 일이에요.\n·글에서 18세에 버스 충돌로 다친 뒤 Then으로 병원에 오래 머무는 일이 이어져요.\n·마지막으로 After that 뒤에 자기 얼굴을 그리기 시작해요.",
+   "tip": "때를 나타내는 말(여섯 살, 18세)과 Then·After that을 순서의 단서로 삼아요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "사건 순서 찾기",
+     "text": "때를 나타내는 말(여섯 살, 18세)과 Then·After that 같은 이어 주는 말을 단서로 순서를 세워요."
+    }
+   ],
+   "passageTitle": "글 (새로 쓴 글)",
+   "passage": "Frida Kahlo was a Mexican artist. When she was six, she became ill, and her right leg got weaker than her left leg. When she was 18, she was hurt in a bus crash. Then she stayed in the hospital for a long time. After that, she started to paint her own face.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u7-Q16-b",
+   "slot": "Q16",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해 사건 순서(원인과 결과)",
+   "source": "새로 쓴 글 (교과서 p.130 구조 참고)",
+   "question": "윗글에서 Haeun에게 일어난 일을 순서대로 배열한 것은?\n(A) 친구들이 찾아와 책을 가져왔다.\n(B) 경기에서 왼쪽 다리를 다쳤다.\n(C) 책을 많이 읽기 시작했다.\n(D) 2주 동안 집에 머물렀다.",
+   "choices": [
+    "(B) - (A) - (D) - (C)",
+    "(B) - (D) - (A) - (C)",
+    "(D) - (B) - (A) - (C)",
+    "(B) - (D) - (C) - (A)",
+    "(A) - (B) - (D) - (C)"
+   ],
+   "answer": 2,
+   "explanation": "다리를 다침 → 집에 머묾 → 친구들이 책을 가져옴 → 책을 읽기 시작함 순서예요.",
+   "choiceExplanations": [
+    "글에서 친구들은 Then으로 이어져 집에 머문 뒤에 찾아와요. 그래서 친구들의 방문이 집에 머문 일보다 앞서지 않아요.",
+    "정답. 다리를 다침 → 집에 머묾 → 친구들이 책을 가져옴 → 책을 읽기 시작함 순서예요.",
+    "집에 머문 것은 다리를 다친 결과(So)예요. 그래서 다친 일보다 먼저 올 수 없어요.",
+    "책을 읽기 시작한 것은 친구들이 책을 가져온 뒤(After that)예요. 그래서 책을 가져온 일보다 앞서지 않아요.",
+    "친구들이 찾아온 것은 다친 뒤의 일이에요. 그래서 다치는 일보다 앞에 올 수 없어요."
+   ],
+   "detail": "·글의 'she hurt her left leg in a game'이 가장 먼저 일어난 일이에요.\n·'So she stayed home for two weeks.'로 집에 머무르고, 'Then her friends visited her and brought books.'로 친구들이 찾아와요.\n·마지막으로 'After that, she started to read a lot.'로 책을 읽기 시작해요. So, Then, After that이 순서의 단서예요.",
+   "tip": "So·Then·After that 같은 이어 주는 말을 순서의 단서로 삼아요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "사건 순서 찾기",
+     "text": "So·Then·After that 같은 이어 주는 말이 앞뒤 사건의 순서를 알려 줘요."
+    }
+   ],
+   "passageTitle": "글 (새로 쓴 글)",
+   "passage": "Haeun loves running. Last spring, she hurt her left leg in a game. So she stayed home for two weeks. Then her friends visited her and brought books. After that, she started to read a lot.",
+   "fixedOrder": true
+  },
+  {
+   "id": "u7-S01-a",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "when 절 영작(어형 변화)",
+   "source": "교과서 p.136, p.137 (2024 2학기 기말 서술형 8번)",
+   "question": "다음 우리말과 일치하도록 주어진 단어를 이용하되 필요한 경우 단어를 변형하여 영작하시오.",
+   "answerHint": "(빈칸에는 단어 하나씩만 쓸 것, 대소문자 구분 및 철자 오류 시 감점)",
+   "modelAnswer": "When it is sunny, he always wears sunglasses.",
+   "explanation": "모범 답안: When it is sunny, he always wears sunglasses.",
+   "rubric": [
+    {
+     "criterion": "when 절 'When it is sunny'를 어순과 어형에 맞게 씀",
+     "points": 2,
+     "tip": "접속사 when 뒤에 주어 it과 동사 is, 형용사 sunny를 차례로 써요. 단어 순서가 바뀌거나 철자가 틀리면 감점돼요."
+    },
+    {
+     "criterion": "주절 'he always wears sunglasses'를 어순과 어형(wears)에 맞게 씀",
+     "points": 2,
+     "tip": "주어 he 뒤에 빈도부사 always, 동사 wears(3인칭 단수 -s), 목적어 sunglasses를 써요. wear 그대로 쓰면 감점돼요."
+    }
+   ],
+   "detail": "·when은 '~할 때'를 뜻하는 접속사로 「when + 주어 + 동사」의 절을 이끌어요(p.136~137).\n·주절의 주어가 he(3인칭 단수)이고 현재의 습관이므로 동사 wear는 wears로 바꿔요.\n·always는 일반동사 앞에 두어 he always wears처럼 써요.\n·채점 안내: 철자·대소문자 오류는 감점하고, He always wears sunglasses when it is sunny.도 주어진 단어와 칸 수에 맞으므로 같은 점수로 인정해요(작성자 채점 기준).\n흔한 감점: wear를 wears로 바꾸지 않으면 주절 항목 감점 / 소문자 when으로 문장을 시작하면 감점",
+   "tip": "when 절 → 주절 순서로, 동사의 -s를 빠뜨리지 않아요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "when 절과 3인칭 단수 현재(p.136~137)",
+     "head": [
+      "표현",
+      "뜻·규칙"
+     ],
+     "rows": [
+      [
+       "when + 주어 + 동사",
+       "~할 때"
+      ],
+      [
+       "he wears / it rains",
+       "3인칭 단수 주어의 현재형은 동사에 -s"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "우리말과 주어진 단어",
+   "passage": "날씨가 맑을 때, 그는 항상 선글라스를 착용한다.\n( always / is / it / sunglasses / wear / when / he / sunny )\n➜ ______ ______ ______ ______ ______ ______ ______ ______.",
+   "origin": "past-exam",
+   "pastExamRef": "2024-2학기-기말-서8"
+  },
+  {
+   "id": "u7-S01-b",
+   "slot": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "when 절 영작(어형 변화)",
+   "source": "교과서 p.136, p.137",
+   "question": "다음 우리말과 일치하도록 주어진 단어를 이용하되 필요한 경우 단어를 변형하여 영작하시오.",
+   "answerHint": "(빈칸에는 단어 하나씩만 쓸 것, 대소문자 구분 및 철자 오류 시 감점)",
+   "modelAnswer": "When it rains, we read books.",
+   "explanation": "모범 답안: When it rains, we read books.",
+   "rubric": [
+    {
+     "criterion": "when 절 'When it rains'를 어순과 어형에 맞게 씀",
+     "points": 2,
+     "tip": "접속사 when 뒤에 주어 it과 동사 rains(3인칭 단수 -s)를 써요. rain을 그대로 쓰면 감점돼요."
+    },
+    {
+     "criterion": "주절 'we read books'를 어순과 어형에 맞게 씀",
+     "points": 2,
+     "tip": "주어 we 뒤에 동사 read와 복수형 books를 써요. book을 그대로 쓰면 감점돼요."
+    }
+   ],
+   "detail": "·when은 '~할 때'를 뜻하는 접속사로 「when + 주어 + 동사」의 절을 이끌어요(p.136~137).\n·when절의 주어 it은 3인칭 단수이므로 동사 rain은 현재형 rains로 써요.\n·주절은 we read books로 쓰고 책이 여러 권이라는 뜻이므로 book은 books로 바꿔요.\n·채점 안내: 철자·대소문자 오류는 감점하고, We read books when it rains.도 주어진 단어와 칸 수에 맞으므로 인정해요(작성자 채점 기준).\n흔한 감점: rain을 rains로, book을 books로 바꾸지 않으면 해당 항목 감점",
+   "tip": "시간의 절이 3인칭 단수 주어이면 동사에 -s를 붙여요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "when 절과 3인칭 단수 현재(p.136~137)",
+     "head": [
+      "표현",
+      "뜻·규칙"
+     ],
+     "rows": [
+      [
+       "when + 주어 + 동사",
+       "~할 때"
+      ],
+      [
+       "he wears / it rains",
+       "3인칭 단수 주어의 현재형은 동사에 -s"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "우리말과 주어진 단어 (새로 쓴 글)",
+   "passage": "비가 올 때, 우리는 책을 읽는다.\n( book / read / it / when / we / rain )\n➜ ______ ______ ______ ______ ______ ______."
+  },
+  {
+   "id": "u7-S02-a",
+   "slot": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "비교급 문장 완성",
+   "source": "교과서 p.136, p.137 (2025 2학기 기말 서술형 1번)",
+   "question": "보기 중 필요한 단어를 선택하여 문장을 완성하시오.",
+   "answerHint": "(필요한 경우 단어의 형태를 변화시킬 것, 단어 중복사용 가능, 대소문자 구분)",
+   "modelAnswer": "(1) more interesting than (2) heavier than",
+   "explanation": "모범 답안: (1) more interesting than (2) heavier than",
+   "rubric": [
+    {
+     "criterion": "(1) 'more interesting than'을 쓴 경우",
+     "points": 2,
+     "tip": "interesting은 3음절 이상이라 more를 앞에 쓰고 than을 붙여요. more와 -er를 겹치거나 than이 빠지면 0점이에요."
+    },
+    {
+     "criterion": "(2) 'heavier than'을 쓴 경우",
+     "points": 2,
+     "tip": "heavy는 「자음+y」로 끝나서 y를 i로 바꾸고 -er을 붙인 heavier 뒤에 than을 써요. heavyer 같은 철자는 0점이에요."
+    }
+   ],
+   "detail": "·비교급은 p.137 상자의 faster·heavier·more famous than ~처럼 -er 또는 more를 쓰고 than을 붙여 '~보다 더 …한'을 나타내요.\n·(1) interesting은 more famous처럼 긴 형용사라서 앞에 more를 붙여 more interesting than으로 써요(p.137 more famous than ~).\n·(2) heavy는 busy–busier처럼 y를 i로 바꾸고 -er을 붙여 heavier than으로 써요(p.137 heavier than ~).\n흔한 감점: more heavier 처럼 more와 -er를 함께 쓰면 감점 / than을 빠뜨리면 감점",
+   "tip": "짧은 형용사는 -er, 긴 형용사는 more, 뒤에는 than을 써요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "비교급 문장 예(p.136~137)",
+     "head": [
+      "문장",
+      "비교급이 된 모양"
+     ],
+     "rows": [
+      [
+       "An airplane is faster than a car.",
+       "fast → faster"
+      ],
+      [
+       "Nancy is busier than Tom.",
+       "busy → busier"
+      ],
+      [
+       "Busan is hotter than Sokcho.",
+       "hot → hotter"
+      ],
+      [
+       "The movie is more famous than the book.",
+       "famous → more famous"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "보기와 문장",
+   "passage": "보기: interesting / than / early / heavy / tasty / more\n(1) 이 책은 내 일기보다 더 재미있다.\nThis book is _____ _____ _____ my diary.\n(2) 하마는 표범보다 더 무겁다.\nThe hippo is _____ _____ the leopard.",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-21"
+  },
+  {
+   "id": "u7-S02-b",
+   "slot": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "비교급 문장 완성",
+   "source": "교과서 p.136, p.137",
+   "question": "보기 중 필요한 단어를 선택하여 문장을 완성하시오.",
+   "answerHint": "(필요한 경우 단어의 형태를 변화시킬 것, 단어 중복사용 가능, 대소문자 구분)",
+   "modelAnswer": "(1) more beautiful than (2) taller than",
+   "explanation": "모범 답안: (1) more beautiful than (2) taller than",
+   "rubric": [
+    {
+     "criterion": "(1) 'more beautiful than'을 쓴 경우",
+     "points": 2,
+     "tip": "beautiful은 3음절 이상이라 more를 앞에 쓰고 than을 붙여요. beautifuler 같은 형태는 0점이에요."
+    },
+    {
+     "criterion": "(2) 'taller than'을 쓴 경우",
+     "points": 2,
+     "tip": "tall은 짧은 형용사라 -er을 붙인 taller 뒤에 than을 써요. more taller는 0점이에요."
+    }
+   ],
+   "detail": "·비교급은 -er 또는 more를 쓰고 뒤에 than을 붙여요(p.136~137).\n·(1) beautiful은 긴 형용사라 p.136의 more famous처럼 more를 앞에 써요.\n·(2) tall은 fast–faster처럼 -er을 붙여 taller than으로 써요(p.137 taller than ~).\n흔한 감점: more taller처럼 겹쳐 쓰면 감점 / than을 빠뜨리면 감점",
+   "tip": "긴 형용사 앞에는 more, 짧은 형용사 뒤에는 -er을 붙여요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "비교급 문장 예(p.136~137)",
+     "head": [
+      "문장",
+      "비교급이 된 모양"
+     ],
+     "rows": [
+      [
+       "An airplane is faster than a car.",
+       "fast → faster"
+      ],
+      [
+       "Nancy is busier than Tom.",
+       "busy → busier"
+      ],
+      [
+       "Busan is hotter than Sokcho.",
+       "hot → hotter"
+      ],
+      [
+       "The movie is more famous than the book.",
+       "famous → more famous"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "보기와 문장 (새로 쓴 글)",
+   "passage": "보기: tall / than / fast / more / beautiful / easy\n(1) 이 그림은 저 그림보다 더 아름답다.\nThis picture is _____ _____ _____ that picture.\n(2) 내 동생은 나보다 키가 더 크다.\nMy brother is _____ _____ me."
+  },
+  {
+   "id": "u7-S03-a",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "접속사 when 영작(보기 선택)",
+   "source": "교과서 p.137 (2025 2학기 기말 서술형 3번)",
+   "question": "보기 중 필요한 단어를 선택하여 문장을 완성하시오.",
+   "answerHint": "(어형 변화 없음, 중복사용 불가, 대소문자 구분)",
+   "modelAnswer": "When I grow up",
+   "explanation": "모범 답안: When I grow up",
+   "rubric": [
+    {
+     "criterion": "접속사와 주어 'When I'를 앞에 쓴 경우",
+     "points": 2,
+     "tip": "문장의 첫 낱말이므로 When을 대문자로 쓰고 주어 I를 이어 써요."
+    },
+    {
+     "criterion": "동사구 'grow up'을 알맞게 쓴 경우",
+     "points": 2,
+     "tip": "grow와 up을 차례로 써요. 어형 변화는 없고 will은 주절에 이미 있으므로 넣지 않아요."
+    }
+   ],
+   "detail": "·when은 '~할 때'를 뜻하는 접속사로 「when + 주어 + 동사」의 절을 이끌어요(p.137).\n·'내가 컸을 때'는 When I grow up으로 쓰고, grow up은 '자라다'라는 동사구예요.\n·will은 주절 I will be a magician에 있고, myself와 on은 이 문장에 필요하지 않아요.\n·채점 안내: 학교 정답표에는 부분 점수 표기가 없고, 위 2항목 2점씩은 이 문제은행의 기준이에요.\n흔한 감점: when을 소문자로 시작하면 첫 항목 감점 / grow만 쓰고 up을 빠뜨리면 둘째 항목 감점",
+   "tip": "when 절은 「when + 주어 + 동사」 순서로 써요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "when 절의 형태(p.137)",
+     "head": [
+      "표현",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "when + 주어 + 동사",
+       "~할 때"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "보기와 문장",
+   "passage": "보기: up / I / myself / on / when / grow / will\n내가 컸을 때, 나는 마술사가 될 것이다.\n_____ _____ _____ _____ , I will be a magician.",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-23"
+  },
+  {
+   "id": "u7-S03-b",
+   "slot": "S03",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "접속사 when 영작(보기 선택)",
+   "source": "교과서 p.137",
+   "question": "보기 중 필요한 단어를 선택하여 문장을 완성하시오.",
+   "answerHint": "(어형 변화 없음, 중복사용 불가, 대소문자 구분)",
+   "modelAnswer": "When I am sleepy",
+   "explanation": "모범 답안: When I am sleepy",
+   "rubric": [
+    {
+     "criterion": "접속사와 주어 'When I'를 앞에 쓴 경우",
+     "points": 2,
+     "tip": "문장의 첫 낱말이므로 When을 대문자로 쓰고 주어 I를 이어 써요."
+    },
+    {
+     "criterion": "동사와 형용사 'am sleepy'를 알맞게 쓴 경우",
+     "points": 2,
+     "tip": "주어 I에 맞는 be동사 am과 형용사 sleepy를 차례로 써요. is나 me는 쓰지 않아요."
+    }
+   ],
+   "detail": "·when은 '~할 때'를 뜻하는 접속사로 「when + 주어 + 동사」의 절을 이끌어요(p.137).\n·'나는 졸릴 때'는 주어 I 뒤에 be동사 am과 형용사 sleepy를 써서 When I am sleepy가 돼요.\n·is와 me, on은 이 문장의 어순과 뜻에 맞지 않아 쓰지 않아요.\n흔한 감점: I에 is를 쓰면 둘째 항목 감점 / when을 소문자로 시작하면 첫 항목 감점",
+   "tip": "when 뒤에는 주어와 동사를 차례로 써요. I에는 am이에요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "when 절의 형태(p.137)",
+     "head": [
+      "표현",
+      "뜻"
+     ],
+     "rows": [
+      [
+       "when + 주어 + 동사",
+       "~할 때"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "보기와 문장 (새로 쓴 글)",
+   "passage": "보기: when / I / am / sleepy / is / me / on\n나는 졸릴 때, 물을 마신다.\n_____ _____ _____ _____ , I drink water."
+  },
+  {
+   "id": "u7-S04-a",
+   "slot": "S04",
+   "type": "essay",
+   "difficulty": "하",
+   "points": 4,
+   "concept": "재귀대명사(본문에서 한 단어 찾기)",
+   "source": "교과서 p.129 (2025 2학기 기말 서술형 4번)",
+   "question": "윗글의 (A) 문장을 의미가 같도록 다음과 같이 바꿔 쓸 때 빈칸에 들어갈 알맞은 한 단어를 윗글에서 찾아 쓰시오(대소문자 구분).",
+   "answerHint": "(한 단어, 대소문자 구분) → He drew many pictures of _____ .",
+   "modelAnswer": "himself",
+   "explanation": "모범 답안: himself",
+   "rubric": [
+    {
+     "criterion": "'himself'를 정확한 철자로 씀",
+     "points": 4,
+     "tip": "주어(Van Gogh)와 목적어가 같은 대상이므로 him이 아니라 재귀대명사 himself를 써요. 철자가 틀리면 0점이에요."
+    }
+   ],
+   "detail": "·p.129에서 'Van Gogh started to paint himself.'처럼 그린 대상이 주어와 같은 사람이면 재귀대명사 himself를 써요.\n·그래서 (A)의 He painted 36 self-portraits.는 문제에 제시된 'He drew many pictures of himself.'로 바꿔 쓸 수 있어요.\n·him은 주어와 다른 남자를 가리키므로 같은 뜻이 되지 않아요.\n흔한 감점: him이라고 쓰면 0점 / themselves는 주어 He와 맞지 않아 0점 / himselfe처럼 철자가 틀리면 0점",
+   "tip": "주어와 목적어가 같은 사람이면 -self를 붙인 재귀대명사를 써요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "재귀대명사(p.129~130)",
+     "head": [
+      "주어",
+      "재귀대명사",
+      "예"
+     ],
+     "rows": [
+      [
+       "Van Gogh (he)",
+       "himself",
+       "started to paint himself"
+      ],
+      [
+       "Kahlo (she)",
+       "herself",
+       "started to paint herself"
+      ],
+      [
+       "Van Gogh and Kahlo (they)",
+       "themselves",
+       "painted themselves"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "Who is your favorite artist? What does she or he look like? Some artists painted self-portraits. Why did they paint themselves?\nVincent van Gogh was a Dutch artist. He was not famous in his lifetime. When he was 33, he moved to Paris. He wanted to paint people, but models were too expensive. He thought, \"I don't have money for a model. What can I do?\" So, Van Gogh started to paint himself. (A) He painted 36 self-portraits. They are all different. Look at these two paintings. One is brighter than (B) _____ . Which one do you like?",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-24"
+  },
+  {
+   "id": "u7-S04-b",
+   "slot": "S04",
+   "type": "essay",
+   "difficulty": "하",
+   "points": 4,
+   "concept": "재귀대명사(본문에서 한 단어 찾기)",
+   "source": "새로 쓴 글 (교과서 p.129~130 구조 참고)",
+   "question": "윗글의 (A) 문장을 의미가 같도록 다음과 같이 바꿔 쓸 때 빈칸에 들어갈 알맞은 한 단어를 윗글에서 찾아 쓰시오(대소문자 구분).",
+   "answerHint": "(한 단어, 대소문자 구분) → She drew a picture of _____ .",
+   "modelAnswer": "herself",
+   "explanation": "모범 답안: herself",
+   "rubric": [
+    {
+     "criterion": "'herself'를 정확한 철자로 씀",
+     "points": 4,
+     "tip": "주어(Nara)와 그린 대상이 같은 사람이므로 her가 아니라 재귀대명사 herself를 써요. 철자가 틀리면 0점이에요."
+    }
+   ],
+   "detail": "·(A)의 'she drew a picture of her own face'는 '자기 자신의 얼굴을 그렸다'는 뜻이라 'She drew a picture of herself.'로 바꿔 쓸 수 있어요.\n·글의 said to herself에서 주어 Nara와 같은 대상을 가리키는 재귀대명사 herself를 찾을 수 있어요(p.130 said to herself와 같은 쓰임).\n·her는 주어와 다른 여자를 가리킬 수 있어 같은 뜻이 되지 않아요.\n흔한 감점: her라고 쓰면 0점 / herselfe처럼 철자가 틀리면 0점",
+   "tip": "주어와 같은 사람을 가리키는 낱말이 글 속에 이미 나와 있어요.",
+   "refs": [
+    {
+     "kind": "table",
+     "title": "재귀대명사(p.129~130)",
+     "head": [
+      "주어",
+      "재귀대명사",
+      "예"
+     ],
+     "rows": [
+      [
+       "Van Gogh (he)",
+       "himself",
+       "started to paint himself"
+      ],
+      [
+       "Kahlo (she)",
+       "herself",
+       "started to paint herself"
+      ],
+      [
+       "Van Gogh and Kahlo (they)",
+       "themselves",
+       "painted themselves"
+      ]
+     ]
+    }
+   ],
+   "passageTitle": "글 (새로 쓴 글)",
+   "passage": "Nara is a student in the art club. One day, she planned to paint a portrait, but her friends were busy. She looked at a small mirror and said to herself, \"I can be my model!\" So, (A) she drew a picture of her own face. She drew three pictures. They are all different."
+  },
+  {
+   "id": "u7-S05-a",
+   "slot": "S05",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "본문에서 단어 찾아 메시지 완성",
+   "source": "교과서 p.130 (2025 2학기 기말 서술형 5번)",
+   "question": "Frida Kahlo가 사람들에게 전하고 싶은 메시지를 다음과 같이 작성할 때 빈칸 (A)와 (B)에 들어갈 단어를 본문에서 찾아 차례대로 쓰시오(대소문자 구분).",
+   "answerHint": "(대소문자 구분) → Frida Kahlo wanted to tell people to be (A) _____ and not to give up, even when life is (B) _____ .",
+   "modelAnswer": "(A) strong (B) terrible",
+   "explanation": "모범 답안: (A) strong (B) terrible",
+   "rubric": [
+    {
+     "criterion": "(A) 'strong'을 쓴 경우",
+     "points": 2,
+     "tip": "글의 마지막 질문 Isn't she strong?에서 찾을 수 있어요. stronger는 비교급이라 문장에 맞지 않아 0점이에요."
+    },
+    {
+     "criterion": "(B) 'terrible'을 쓴 경우",
+     "points": 2,
+     "tip": "글의 a terrible bus accident에서 찾을 수 있어요. 철자가 틀리면 0점이에요."
+    }
+   ],
+   "detail": "·칼로는 사고와 병으로 몸이 약했지만 자신이 누구보다 강하다고 말하며 자화상을 그렸어요(p.130).\n·(A)는 to be 뒤에 오는 형용사라서 Isn't she strong?의 원급 strong이 알맞아요.\n·(B)는 삶이 어려울 때라는 뜻으로 글에서 끔찍한 사고를 말한 terrible이 알맞아요(p.130).\n흔한 감점: stronger처럼 비교급을 쓰면 (A) 0점 / terible처럼 철자가 틀리면 (B) 0점",
+   "tip": "빈칸의 문법 자리(to be 뒤 형용사)를 먼저 보고 본문에서 같은 품사를 찾아요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "p.130 글에서 찾을 곳",
+     "text": "Kahlo said to herself 부분과 마지막 질문 'Does she look strong?'(교과서 원문) 근처에서 형용사를 찾아요."
+    }
+   ],
+   "passageTitle": "글",
+   "passage": "Frida Kahlo was a Mexican artist. When she was six years old, she was very sick. Her right leg became weaker than her left leg. But she thought, \"I will get well. I will help sick people like me.\" When she was 18, she was in a terrible bus accident. She stayed in the hospital for a long time. Kahlo said to herself, \"I am stronger than anyone.\" So, Kahlo started to paint herself. She painted 55 self-portraits in her lifetime. Look at her paintings. Isn't she strong?\nVan Gogh and Kahlo painted themselves for different reasons. But their paintings have one thing in common. They touch the hearts of many people.",
+   "origin": "past-exam",
+   "pastExamRef": "2025-2학기-기말-25"
+  },
+  {
+   "id": "u7-S05-b",
+   "slot": "S05",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "본문에서 단어 찾아 메시지 완성",
+   "source": "새로 쓴 글 (교과서 p.130 구조 참고)",
+   "question": "Tom이 사람들에게 전하고 싶은 메시지를 다음과 같이 작성할 때 빈칸 (A)와 (B)에 들어갈 단어를 본문에서 찾아 차례대로 쓰시오(대소문자 구분).",
+   "answerHint": "(대소문자 구분) → Tom wants to tell people to be (A) _____ and not to give up, even when the training is (B) _____ .",
+   "modelAnswer": "(A) brave (B) hard",
+   "explanation": "모범 답안: (A) brave (B) hard",
+   "rubric": [
+    {
+     "criterion": "(A) 'brave'를 쓴 경우",
+     "points": 2,
+     "tip": "친구들이 말한 You are brave!에서 찾을 수 있어요. 철자가 틀리면 0점이에요."
+    },
+    {
+     "criterion": "(B) 'hard'를 쓴 경우",
+     "points": 2,
+     "tip": "글의 The training was hard에서 찾을 수 있어요. 철자가 틀리면 0점이에요."
+    }
+   ],
+   "detail": "·글에서 톰은 힘든 훈련에도 포기하지 않고 연습해 경기에서 이겼어요.\n·(A)는 to be 뒤에 오는 형용사이고, 친구들이 톰에게 한 말 You are brave!에서 찾아요.\n·(B)는 훈련이 어떤지를 말하는 형용사로 글의 The training was hard에서 찾아요.\n흔한 감점: bravely처럼 부사를 쓰면 (A) 0점 / cold는 수영장 이야기라 (B)에 쓸 수 없어 0점 / hard를 harden처럼 쓰면 (B) 0점",
+   "tip": "빈칸의 문법 자리를 먼저 보고 본문에서 알맞은 형용사를 찾아요.",
+   "refs": [
+    {
+     "kind": "text",
+     "title": "글에서 찾을 곳",
+     "text": "친구들의 칭찬 'You are brave!'와 훈련을 설명한 문장 'The training was hard'를 찾아요."
+    }
+   ],
+   "passageTitle": "글 (새로 쓴 글)",
+   "passage": "Tom is a swimmer. When he was twelve, he lost many races. The training was hard, and the pool was cold in the morning. But Tom did not give up. He practiced every day. One day, he won a race. His friends said, \"You are brave!\""
+  }
+ ]
+}

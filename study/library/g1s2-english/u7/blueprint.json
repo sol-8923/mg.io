@@ -1,0 +1,432 @@
+{
+ "unitName": "Think Big, Be Creative!",
+ "profile": "past-exam",
+ "basis": "past-exams",
+ "analysis": "기출(2025 기말 14문항 + 2024 기말 서8)을 모두 배정했다(기출 15문항 = 슬롯 15개에 한 개씩, 각 슬롯 변형 a=기출 원문, b=새 변형). 기출이 없는 새 슬롯은 Q07(비교급 형태 합답)·Q08(어색한 대화)·Q10(대화 빈칸 짝짓기)·Q14(작품 소개 글 읽기)·Q15(touch 뜻)·Q16(사건 순서) 6개로 변형 a·b 모두 새 문항이다. [구성] 선택형 16슬롯 62점 + 서술형 5슬롯 20점 = 82점, 변형 2개씩 42문항(서술형 비중 24%, 기출 2025 기말 20%·2024 기말 35% 사이). 2025 기말처럼 서술형 소문항 부분 점수를 둔다. [영역 배분] 어휘 Q01~Q05·Q15(6슬롯) · 어법 Q06·Q07·Q12·S01~S03(6슬롯) · 대화 Q08~Q10(3슬롯) · 독해 Q11·Q13·Q14·Q16·S04·S05(6슬롯). 어휘+어법이 기출(60~65%)과 비슷하다. [필수 문형] (가) 단어 관계·잘못된 뜻·어느 빈칸에도 못 들어가는 단어 Q01~Q04·Q15 (나) 쓰임이 다른 것 Q06 (다) 올바르지/틀린 것 조합 Q07 (라) 어색한 대화 Q08·순서 배열 Q09 (마) 내용 일치 Q11·답할 수 없는 질문 Q13. [배점] 3점 3개(Q01·Q03·Q04)·4점 12개·5점 1개(Q06, 기출 원문 5점). 5점 상 문항은 단원에서 하나뿐이다. [사실 배분표] Q01 형용사 반의어(p126)/paint-painting | Q02 common 뜻 구분(p131)/L7 어휘 뜻 | Q03 reason(p131)/lifetime(weak·artist·move·expensive가 들어가는 문장) | Q04 sick(p130)/accident | Q05 find out(p128)/wake up(p136) | Q06 when 접속사 vs 의문사(p136-137) | Q07 비교급 형태 오류(p137) | Q08 의견 묻기-말하기-공감 대응(p123) | Q09 의견 대화 순서(p122) | Q10 amazing-right-different / exciting-so-boring(p123·125·126) | Q11 고흐 생전 무명·자화상이 모두 다름(p129) | Q12 one/the other(p129) | Q13 칼로 지문 정보 범위(p130-131) | Q14 작품 소개 글 구성(p134) | Q15 touch 감동시키다/만지다(p131·178) | Q16 칼로 사건 순서(p130) | S01 when 절 어순+3인칭 단수 | S02 -er/more than | S03 when + 주어 + 동사 | S04 재귀대명사 | S05 본문 단어(strong·terrible / brave·hard). 같은 사실을 두 슬롯의 정답으로 반복하지 않는다. [교과서와 다른 시험 변형] 2025 기말 19·서술형5 칼로 지문은 시험 원문을 따른다(교과서의 'I look weak.' 삭제, 끝 문장 'Isn't she strong?'). [기출 지문 공유] 기출 15·16·서술형4는 같은 지문, 19·서술형5도 같은 지문이라 시험지에서 정답 단어가 지문에 나오는 것은 원문 그대로의 구조다(gate-waivers에 사유 기록). 새 변형 b의 지문·사례는 기출 지문과 다른 새로 쓴 글이다. [정답 번호 배분표] 변형 a(Q01~Q16 순) = 1·3·5·2·4·1·3·5·2·4·1·3·5·2·4·1 (①4 ②3 ③3 ④3 ⑤3). 변형 b(Q01~Q16 순) = 2·4·1·3·5·2·4·1·3·5·2·4·1·3·5·2 (①3 ②4 ③3 ④3 ⑤3).",
+ "timeLimitMin": 40,
+ "totalPoints": 82,
+ "variantsPerSlot": 2,
+ "totalQuestions": 21,
+ "types": {
+  "mc": 16,
+  "short": 0,
+  "essay": 5
+ },
+ "difficulty": {
+  "상": 2,
+  "중": 15,
+  "하": 4
+ },
+ "concepts": {
+  "형용사 반의어·단어 관계": 1,
+  "L7 어휘 문맥 속 뜻": 1,
+  "빈칸에 들어갈 수 없는 단어(1)": 1,
+  "빈칸에 들어갈 수 없는 단어(2)": 1,
+  "구동사 find out / wake up": 1,
+  "접속사 when 쓰임 구분": 1,
+  "비교급의 형태": 1,
+  "의견 묻기·말하기·공감 표현(어색한 대화)": 1,
+  "대화 순서 배열": 1,
+  "대화 빈칸 형용사·표현": 1,
+  "반 고흐 글 내용 일치": 1,
+  "one / the other": 1,
+  "답할 수 없는 질문(독해)": 1,
+  "미술 작품 소개 글 읽기": 1,
+  "touch의 문맥 속 뜻": 1,
+  "독해 사건 순서(원인과 결과)": 1,
+  "when 절 영작(어형 변화)": 1,
+  "비교급 문장 완성": 1,
+  "접속사 when 영작(보기 선택)": 1,
+  "재귀대명사(본문에서 한 단어 찾기)": 1,
+  "본문에서 단어 찾아 메시지 완성": 1
+ },
+ "slots": [
+  {
+   "id": "Q01",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "형용사 반의어·단어 관계",
+   "intent": "[기출 2025 기말 01 + 새 변형] a=두 단어의 관계가 나머지와 다른 것(반의어 4쌍 + 유의어 1쌍), b=반의어 4쌍 + 동사·명사 짝 1쌍(paint–painting).",
+   "facts": [
+    "strong–weak, fast–slow, same–different, expensive–cheap, bright–dark는 뜻이 반대인 형용사 짝이다 [p126]",
+    "paint(그리다)는 동사, painting(그림)은 명사다 [p129]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-01"
+   ],
+   "avoid": [
+    "Q10"
+   ]
+  },
+  {
+   "id": "Q02",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "L7 어휘 문맥 속 뜻",
+   "intent": "[기출 2025 기말 02 + 새 변형] a=표시한 부분의 의미가 잘못된 것 고르기(common=공통의/흔한 구분), b=L7 어휘 5개 중 뜻이 잘못 짝지어진 것(bright를 '어두운'으로 쓴 오답).",
+   "facts": [
+    "common은 '공동의, 공통의; 흔한'이며 have ~ in common·for different reasons에서는 '공통의' 뜻이다 [p131, p177]",
+    "Dutch 네덜란드의, self-portrait 자화상, get well 나아지다, bright 밝은, think 생각하다 [p129-130, p177-178]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-02"
+   ]
+  },
+  {
+   "id": "Q03",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "빈칸에 들어갈 수 없는 단어(1)",
+   "intent": "[기출 2025 기말 05 + 새 변형] 4개 문장 어느 빈칸에도 들어갈 수 없는 단어 찾기. a=reason, b=lifetime(weak·artist·move·expensive가 각 문장에 들어감).",
+   "facts": [
+    "reason은 '이유'(명사)로 voice·mean·fresh·stay 문장에 맞지 않는다 [p131]",
+    "lifetime은 '일생'이며 weak·artist·move·expensive 문장에 들어가지 않는다 [p128-130]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-05"
+   ],
+   "avoid": [
+    "Q11",
+    "Q12",
+    "Q13",
+    "S04",
+    "S05"
+   ]
+  },
+  {
+   "id": "Q04",
+   "type": "mc",
+   "difficulty": "하",
+   "points": 3,
+   "concept": "빈칸에 들어갈 수 없는 단어(2)",
+   "intent": "[기출 2025 기말 06 + 새 변형] a=sick(형용사)이 learn·traditional·anyone·paint 문장 어디에도 못 들어감, b=accident(paint·anyone·become·stay 문장).",
+   "facts": [
+    "sick은 '아픈'이라는 뜻이라 learn·traditional·anyone·paint 문장에 넣으면 뜻이 통하지 않는다 [p130]",
+    "accident는 '사고'라는 뜻이라 paint·anyone·become·stay 문장에 넣으면 뜻이 통하지 않는다 [p130]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-06"
+   ],
+   "avoid": [
+    "Q13",
+    "S05"
+   ]
+  },
+  {
+   "id": "Q05",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "구동사 find out / wake up",
+   "intent": "[기출 2025 기말 07 + 새 변형] a=Can you find ___ what time...(out), b=I usually ___ up at six o'clock(wake).",
+   "facts": [
+    "find out은 '알아내다'다 [p128, p177]",
+    "wake up은 '잠에서 깨다, 일어나다'다(p.136 I saw the sun when I woke up.의 woke up)"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-07"
+   ],
+   "avoid": [
+    "Q06",
+    "Q08",
+    "Q09",
+    "Q15"
+   ]
+  },
+  {
+   "id": "Q06",
+   "type": "mc",
+   "difficulty": "상",
+   "points": 5,
+   "concept": "접속사 when 쓰임 구분",
+   "intent": "[기출 2025 기말 18 + 새 변형] 5개 문장의 when 중 쓰임이 다른 것(접속사 4 + 의문사 1). 5점 상 문항은 단원에서 이 문항 하나.",
+   "facts": [
+    "접속사 when은 '~할 때'이고 「when + 주어 + 동사」 형태로 시간을 나타내는 절을 이끈다 [p136, p137]",
+    "의문사 when은 '언제'를 묻는 의문문을 이끈다(교과서 밖 대비)"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-18"
+   ],
+   "avoid": [
+    "Q05"
+   ]
+  },
+  {
+   "id": "Q07",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "비교급의 형태",
+   "intent": "[새 문항] 5개 비교급 문장 중 어법상 틀린 것끼리 짝짓기(ⓐ~ⓔ 합답, 정답 2개 조합·오답 2~3개 조합 혼합). a=more taller·easyer, b=biger·more cheap.",
+   "facts": [
+    "비교급은 faster·busier·hotter처럼 -er을 붙이거나 more famous처럼 more를 붙이고 than을 쓴다 [p136, p137]",
+    "easy→easier(busy→busier), big→bigger(hot→hotter) 규칙은 p.136 예문을 확장한 일반 규칙이다"
+   ]
+  },
+  {
+   "id": "Q08",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "의견 묻기·말하기·공감 표현(어색한 대화)",
+   "intent": "[새 문항] 5개 짧은 대화 중 가장 어색한 것 고르기(질문과 응답이 맞지 않음). 새로 쓴 대화.",
+   "facts": [
+    "What do you think about ~?에는 I think ...로 의견을 답한다 [p123]",
+    "I feel the same.은 상대 의견에 공감할 때 쓰며 의견 묻는 말에 대한 대답이 아니다 [p123]"
+   ],
+   "avoid": [
+    "Q05",
+    "Q09"
+   ]
+  },
+  {
+   "id": "Q09",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화 순서 배열",
+   "intent": "[기출 2025 기말 17 + 새 변형] (A)~(E) 순서 배열. a=기출(페이스 페인팅 대화), b=새로 쓴 대화(그림 대회).",
+   "facts": [
+    "의견을 물으면 I think ...로 답하고 공감할 때 I feel the same.을 이어 쓴다 [p122, p123]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-17"
+   ],
+   "avoid": [
+    "Q05",
+    "Q08",
+    "Q10",
+    "Q16"
+   ]
+  },
+  {
+   "id": "Q10",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "대화 빈칸 형용사·표현",
+   "intent": "[새 문항] 대화의 (A)~(C)에 알맞은 말 짝짓기. a=amazing/right/different, b=exciting/so/boring(I don't think so). 새로 쓴 대화. a의 정답 낱말은 Q08·Q09에 쓰지 않는다.",
+   "facts": [
+    "사물을 설명하는 -ing 형용사 amazing·exciting [p123], 상대 말에 You're right. [p125], different [p126]",
+    "동의하지 않을 때 I don't think so.에 자기 의견을 덧붙인다 [p125]",
+    "boring [p126]"
+   ],
+   "avoid": [
+    "Q01",
+    "Q09",
+    "Q11",
+    "Q13"
+   ]
+  },
+  {
+   "id": "Q11",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "반 고흐 글 내용 일치",
+   "intent": "[기출 2025 기말 15 + 새 변형] a=고흐 지문 내용 일치(모든 자화상이 다르다), b=새로 쓴 글 내용 일치.",
+   "facts": [
+    "반 고흐는 생전에 유명하지 않았고 36점의 자화상을 그렸으며 그림은 모두 다르다 [p129]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-15"
+   ],
+   "avoid": [
+    "Q03",
+    "Q10",
+    "S04"
+   ]
+  },
+  {
+   "id": "Q12",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "one / the other",
+   "intent": "[기출 2025 기말 16 + 새 변형] 지문 빈칸에 the other. a=기출, b=새로 쓴 글(두 마리 새).",
+   "facts": [
+    "정해진 두 대상 중 하나는 one, 다른 하나는 the other로 쓴다 [p129]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-16"
+   ],
+   "avoid": [
+    "Q03",
+    "S04"
+   ]
+  },
+  {
+   "id": "Q13",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "답할 수 없는 질문(독해)",
+   "intent": "[기출 2025 기말 19 + 새 변형] a=칼로 지문 기준 답할 수 없는 질문(색깔 정보 없음), b=새로 쓴 글.",
+   "facts": [
+    "칼로는 멕시코 화가이며 18세에 버스 사고를 당했고 자화상을 55점 그렸다 [p130]",
+    "두 화가의 그림은 많은 사람의 마음을 감동시킨다는 공통점이 있다 [p131]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-19"
+   ],
+   "avoid": [
+    "Q03",
+    "Q04",
+    "Q10",
+    "Q15",
+    "S04",
+    "S05"
+   ]
+  },
+  {
+   "id": "Q14",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "미술 작품 소개 글 읽기",
+   "intent": "[새 문항] 새로 쓴 작품 소개 글(작품명·화가·연도·보이는 것·감상)을 읽고 a=일치하지 않는 것, b=일치하는 것 고르기.",
+   "facts": [
+    "작품 소개 글은 작품명·화가·연도, 작품에서 보이는 것(There is/are ~), 감상(I feel ~)으로 쓴다 [p134]"
+   ]
+  },
+  {
+   "id": "Q15",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "touch의 문맥 속 뜻",
+   "intent": "[새 문항] a=touch가 '감동시키다'로 쓰인 문장 고르기(나머지는 '만지다'), b=touch가 '감동시키다'인 문장 고르기. 새로 쓴 문장.",
+   "facts": [
+    "touch는 '감동시키다; 만지다'이며 마음(hearts)을 목적어로 하면 '감동시키다'다 [p131, p178]"
+   ],
+   "avoid": [
+    "Q05",
+    "Q13",
+    "S05"
+   ]
+  },
+  {
+   "id": "Q16",
+   "type": "mc",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "독해 사건 순서(원인과 결과)",
+   "intent": "[새 문항] a=칼로 내용을 새로 쓴 요약 글(strong·terrible·touch 낱말 없음)로 여섯 살·18세 사건과 병원·자화상의 순서 배열, b=새로 쓴 글(So·Then·After that 순서 단서).",
+   "facts": [
+    "칼로는 여섯 살에 오른쪽 다리가 왼쪽보다 약해졌고 18세에 버스 사고를 당했으며 병원에 오래 머문 뒤 자화상을 그리기 시작했다 [p130]"
+   ],
+   "avoid": [
+    "Q09"
+   ]
+  },
+  {
+   "id": "S01",
+   "type": "essay",
+   "difficulty": "상",
+   "points": 4,
+   "concept": "when 절 영작(어형 변화)",
+   "intent": "[기출 2024 기말 서8 + 새 변형] 우리말 + 주어진 단어(어형 변화) 영작. a=when it is sunny(8칸), b=when it rains, we read books(6칸).",
+   "facts": [
+    "when + 주어 + 동사 ~할 때, 3인칭 단수 현재형은 -s [p136, p137]"
+   ],
+   "pastExams": [
+    "2024-2학기-기말-서8"
+   ],
+   "avoidMotifs": [
+    "Q06의 when 문장들(I arrived there, she opens the window, the phone rang, you finish your homework, I was nine, it began to rain, the music stopped, you go out)",
+    "Q06 정답 문장 'When did he buy that laptop computer?', 'When will the art show start?'",
+    "Q05-b wake up 문장(I usually wake up at six o'clock)"
+   ]
+  },
+  {
+   "id": "S02",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "비교급 문장 완성",
+   "intent": "[기출 2025 기말 서술형1 + 새 변형] 보기에서 골라 비교급 문장 완성(각 2점). a=more interesting than/heavier than, b=more beautiful than/taller than.",
+   "facts": [
+    "비교급은 -er/more + than 형태다 [p136, p137]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-21"
+   ],
+   "avoidMotifs": [
+    "Q07의 비교급 문장들(Sue is younger than Tom, Today is hotter than yesterday, The red bag is more expensive than the blue one, This road is longer than that one, A rabbit is faster than a turtle, That singer is more famous than this actor)",
+    "Q07 오답 형태 more older, easyer, biger, more cheap"
+   ]
+  },
+  {
+   "id": "S03",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "접속사 when 영작(보기 선택)",
+   "intent": "[기출 2025 기말 서술형3 + 새 변형] 보기에서 골라 When 절 4칸. a=When I grow up, b=When I am sleepy.",
+   "facts": [
+    "when + 주어 + 동사 ~할 때 [p137]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-23"
+   ],
+   "avoidMotifs": [
+    "Q06·Q10의 when 쓰임 설명과 sleepy·amazing·right·different·exciting·boring 문장",
+    "Q05-b wake up 문장"
+   ]
+  },
+  {
+   "id": "S04",
+   "type": "essay",
+   "difficulty": "하",
+   "points": 4,
+   "concept": "재귀대명사(본문에서 한 단어 찾기)",
+   "intent": "[기출 2025 기말 서술형4 + 새 변형] 같은 뜻 문장의 빈칸에 들어갈 재귀대명사를 본문에서 찾기. a=himself, b=herself(새로 쓴 글).",
+   "facts": [
+    "목적어가 주어와 같은 대상일 때 재귀대명사를 쓴다(paint himself, paint herself) [p129, p130]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-24"
+   ],
+   "avoidMotifs": [
+    "Q11-b의 Hajin 이야기, Q12-b의 Mina 새 이야기, Q14의 그림 소개 글(Sora·Dohyun·Yuri·Suho Park)",
+    "재귀대명사 정답 himself(기출 a)·herself(b) 외의 쪽지 소재"
+   ],
+   "avoid": [
+    "Q03",
+    "Q11",
+    "Q12",
+    "Q13",
+    "S05"
+   ]
+  },
+  {
+   "id": "S05",
+   "type": "essay",
+   "difficulty": "중",
+   "points": 4,
+   "concept": "본문에서 단어 찾아 메시지 완성",
+   "intent": "[기출 2025 기말 서술형5 + 새 변형] 본문에서 단어 두 개 찾기(각 2점). a=칼로 지문(strong·terrible), b=새로 쓴 글.",
+   "facts": [
+    "칼로는 끔찍한 버스 사고를 당했고 스스로 강하다고 말했다 [p130]"
+   ],
+   "pastExams": [
+    "2025-2학기-기말-25"
+   ],
+   "avoidMotifs": [
+    "Q13-b의 Tony 박물관 이야기, Q16-b의 Haeun 달리기 이야기, Q11-b의 Hajin 이야기",
+    "Q02-b·Q03-b의 weak·bright·artist 문장",
+    "정답 낱말 strong·terrible·brave·hard를 다른 슬롯 본문에 쓰지 않는다"
+   ],
+   "avoid": [
+    "Q03",
+    "Q04",
+    "Q13",
+    "Q15",
+    "S04"
+   ]
+  }
+ ]
+}
